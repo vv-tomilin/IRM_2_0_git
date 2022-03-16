@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.SvgFlow.Grey.pipe_tjunk
+NodeClass: Variable
+BrowseName: 1:pipe_tjunk
+DisplayName: en|pipe_tjunk
+Description: en|pipe_tjunk
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

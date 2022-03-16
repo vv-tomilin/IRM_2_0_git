@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.APD1.Slide.Offset.Run_Right
+NodeClass: Variable
+BrowseName: 1:Run_Right
+DisplayName: en|Run_Right
+Description: en|Run_Right
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

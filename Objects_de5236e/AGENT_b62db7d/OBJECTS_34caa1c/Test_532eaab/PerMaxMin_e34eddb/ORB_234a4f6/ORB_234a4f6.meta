@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.ORB
+NodeClass: Object
+BrowseName: 1:ORB
+DisplayName: en|ORB
+Description: en|ORB
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

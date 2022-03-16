@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ServiceParams.Mud.currentMud.current.LFMud
+NodeClass: Variable
+BrowseName: 1:LFMud
+DisplayName: en|LFMud
+Description: en|LFMud
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

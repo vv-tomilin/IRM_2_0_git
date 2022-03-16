@@ -1,0 +1,11 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/map_images/drilling-rig-black.svg
+NodeClass: Variable
+BrowseName: 1:drilling-rig-black.svg
+DisplayName: en|drilling-rig-black.svg
+Description: en|drilling-rig-black.svg
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Svg
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Svg.Compress
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Svg.Translate

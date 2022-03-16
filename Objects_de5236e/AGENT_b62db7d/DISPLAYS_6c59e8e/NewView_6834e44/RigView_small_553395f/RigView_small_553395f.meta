@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.RigView_small
+NodeClass: Variable
+BrowseName: 1:RigView_small
+DisplayName: en|RigView_small
+Description: en|RigView_small
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

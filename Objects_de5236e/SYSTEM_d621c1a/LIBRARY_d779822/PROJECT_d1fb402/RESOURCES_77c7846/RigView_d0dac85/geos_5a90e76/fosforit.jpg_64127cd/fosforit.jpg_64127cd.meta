@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/RigView/geos/fosforit.jpg
+NodeClass: Variable
+BrowseName: 1:fosforit.jpg
+DisplayName: en|fosforit.jpg
+Description: en|fosforit.jpg
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Jpeg

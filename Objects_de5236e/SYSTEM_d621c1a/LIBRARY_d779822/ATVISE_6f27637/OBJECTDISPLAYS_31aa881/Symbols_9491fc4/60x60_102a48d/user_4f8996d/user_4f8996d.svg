@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="60" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext" version="1.1" xmlns="http://www.w3.org/2000/svg" y="0px" height="60" enable-background="new 0 0 40 40" id="Ebene_1" x="0px" xml:space="preserve">
+ <defs/>
+ <metadata>
+  <atv:parameter desc="symbol color" defaultvalue="#000000" name="symbolColor" substitute="$SYMBOLCOLOR$" valuetype="color" behavior="optional"/>
+  <atv:gridconfig width="20" height="20" gridstyle="lines" enabled="false"/>
+  <atv:snapconfig width="10" height="10" enabled="false"/>
+ </metadata>
+ <g atv:refpy="30" id="id_3" transform="matrix(1,0,0,1,1.0935,-2.1131)" atv:refpx="30">
+  <g atv:refpy="32.113" id="id_2" transform="matrix(1.7067,0,0,1.7067,-5.2256,-2.0198)" atv:refpx="23.681">
+   <circle cx="20" stroke-width="0" atv:refpy="13.544" fill="$SYMBOLCOLOR$" cy="10.732" id="id_0" transform="matrix(1,0,0,0.9958,0,0)" atv:refpx="32.137" r="7.862"/>
+   <path stroke-width="0" atv:refpy="46.916" fill="$SYMBOLCOLOR$" id="id_1" atv:refpx="27.393" d="M32.603,37.14L32.603,23.458C32.603,20.94 30.554,18.897 28.022,18.897L25.653,18.897C24.045,19.998 22.098,20.645 19.999,20.645C17.899,20.645 15.952,19.997 14.343,18.896L11.974,18.896C9.445,18.896 7.394,20.94 7.394,23.457L7.394,37.14Z"/>
+  </g>
+ </g>
+</svg>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardList1Long
+NodeClass: Variable
+BrowseName: 1:CardList1Long
+DisplayName: en|CardList1Long
+Description: en|CardList1Long
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

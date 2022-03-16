@@ -1,0 +1,586 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="1015" version="1.2" width="1850" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <rect atv:refpx="925" atv:refpy="507.5" fill="#1f1f1f" height="1015" id="id_1" stroke="#0000ff" stroke-width="0" width="1850" x="0" y="0"/>
+ <foreignObject height="1015" id="id_0" width="750" x="584" y="0">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <script src="../../plotly/plotly-latest.min.js"/>
+   <div id="WELL_CHART" style="height:100%;width:100%"/>
+  </div>
+ </foreignObject>
+ <foreignObject height="812.221" id="id_2" width="593.907" x="138.5" y="103.288">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <ul id="complicationsList" style="font-family:Arial;font-weight:bold;color:white;background-color:rgb(42,44,43);list-style-type: none;padding:0"/>
+  </div>
+ </foreignObject>
+ <rect atv:refpx="1646.24" atv:refpy="768.843" fill="#333333" height="418.966" id="id_5" stroke="#000000" stroke-width="2" width="242.859" x="1524.812" y="559.361"/>
+ <rect atv:refpx="1655.852" atv:refpy="456.024" fill="#ffffff" height="33.345" id="id_6" stroke="#000000" stroke-width="0" width="214.155" x="1538.393" y="600.519"/>
+ <text atv:refpx="1650.437" atv:refpy="617.047" fill="#000000" font-family="Arial" font-size="12" id="id_4" transform="matrix(1.2979,0,0,1.1115,-478.1309,-67.3749)" x="1609.505" y="620.259">00.00.0000</text>
+ <text atv:refpx="1650.571" atv:refpy="574.622" fill="#ffffff" font-family="Arial" font-size="12" id="id_7" transform="matrix(1.2979,0,0,1.1115,-474.1107,-62.6445)" x="1596.01" y="577.834">Дата открытия</text>
+ <text atv:refpx="1650.571" atv:refpy="587.113" fill="#ffffff" font-family="Arial" font-size="12" id="id_8" text-anchor="middle" transform="matrix(1.2979,0,0,1.1115,-479.1372,-64.0373)" x="1640.883" y="590.325">скважины</text>
+ <rect atv:refpx="1641.55" atv:refpy="550.744" fill="#ffffff" height="33.345" id="id_9" stroke="#000000" stroke-width="0" width="214.155" x="1538.367" y="659.671"/>
+ <text atv:refpx="1650.411" atv:refpy="676.199" fill="#000000" font-family="Arial" font-size="12" id="id_10" text-anchor="middle" transform="matrix(1.2979,0,0,1.1115,-478.1232,-73.9704)" x="1639.979" y="679.412">00.00.0000</text>
+ <text atv:refpx="1650.545" atv:refpy="646.265" fill="#ffffff" font-family="Arial" font-size="12" id="id_11" text-anchor="middle" transform="matrix(1.2979,0,0,1.1115,-463.2771,-70.6328)" x="1628.643" y="649.478">Плановая длительность</text>
+ <rect atv:refpx="1625.515" atv:refpy="562.303" fill="#ffffff" height="33.345" id="id_12" stroke="#000000" stroke-width="0" width="214.155" x="1539.206" y="719.024"/>
+ <text atv:refpx="1651.25" atv:refpy="735.552" fill="#000000" font-family="Arial" font-size="12" id="id_13" text-anchor="middle" transform="matrix(1.2979,0,0,1.1115,-478.3728,-80.5882)" x="1640.817" y="738.764">00.00.0000</text>
+ <text atv:refpx="1646.192" atv:refpy="705.618" fill="#ffffff" font-family="Arial" font-size="12" id="id_14" text-anchor="middle" transform="matrix(1.2979,0,0,1.1115,-458.8873,-77.2506)" x="1621.907" y="708.83">Фактическая длительность</text>
+ <rect atv:refpx="1656.365" atv:refpy="752.205" fill="#ffffff" height="33.345" id="id_15" stroke="#000000" stroke-width="0" width="214.155" x="1538.906" y="791.108"/>
+ <text atv:refpx="1650.95" atv:refpy="807.636" fill="#000000" font-family="Arial" font-size="12" id="id_16" text-anchor="middle" transform="matrix(1.2979,0,0,1.1115,-478.2834,-88.6255)" x="1640.517" y="810.848">00.00.0000</text>
+ <text atv:refpx="1651.084" atv:refpy="765.211" fill="#ffffff" font-family="Arial" font-size="12" id="id_17" text-anchor="middle" transform="matrix(1.2979,0,0,1.1115,-474.2636,-83.895)" x="1637.523" y="768.422">Глубина забоя</text>
+ <text atv:refpx="1651.084" atv:refpy="777.702" fill="#ffffff" font-family="Arial" font-size="12" id="id_18" text-anchor="middle" transform="matrix(1.2979,0,0,1.1115,-475.8103,-85.2879)" x="1638.715" y="780.914">плановая (м)</text>
+ <rect atv:refpx="1656.217" atv:refpy="843.727" fill="#ffffff" height="33.345" id="id_19" stroke="#000000" stroke-width="0" width="214.155" x="1538.758" y="862.622"/>
+ <text atv:refpx="1650.802" atv:refpy="879.15" fill="#000000" font-family="Arial" font-size="12" id="id_20" text-anchor="middle" transform="matrix(1.2979,0,0,1.1115,-478.2393,-96.5993)" x="1640.369" y="882.361">00.00.0000</text>
+ <text atv:refpx="1650.936" atv:refpy="836.725" fill="#ffffff" font-family="Arial" font-size="12" id="id_21" text-anchor="middle" transform="matrix(1.2979,0,0,1.1115,-474.2195,-91.8689)" x="1637.375" y="839.936">Глубина забоя</text>
+ <text atv:refpx="1650.936" atv:refpy="849.216" fill="#ffffff" font-family="Arial" font-size="12" id="id_22" text-anchor="middle" transform="matrix(1.2979,0,0,1.1115,-472.2865,-93.2616)" x="1635.886" y="852.427">фактическая (м)</text>
+ <rect atv:refpx="1577.643" atv:refpy="861.596" fill="#ffffff" height="33.345" id="id_23" stroke="#000000" stroke-width="0" width="214.155" x="1538.058" y="933.843"/>
+ <text atv:refpx="1650.103" atv:refpy="950.371" fill="#000000" font-family="Arial" font-size="12" id="id_24" text-anchor="middle" transform="matrix(1.2979,0,0,1.1115,-478.0311,-104.5403)" x="1639.67" y="953.582">00.00.0000</text>
+ <text atv:refpx="1650.236" atv:refpy="907.946" fill="#ffffff" font-family="Arial" font-size="12" id="id_25" text-anchor="middle" transform="matrix(1.2979,0,0,1.1115,-481.1641,-99.81)" x="1642.187" y="911.157">Глубина</text>
+ <text atv:refpx="1650.236" atv:refpy="920.437" fill="#ffffff" font-family="Arial" font-size="12" id="id_26" text-anchor="middle" transform="matrix(1.2979,0,0,1.1115,-472.2713,-101.2027)" x="1635.335" y="923.648">инструмента (м)</text>
+ <svg atv:refpx="168.074" atv:refpy="101.4" height="130" id="id_64" transform="matrix(1.4371,0,0,1.3771,0,0)" width="200" x="13.952" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.HookView" y="3.631"/>
+ <svg atv:refpx="230.627" atv:refpy="598.055" height="591" id="id_28" transform="matrix(1.4371,0,0,1.3771,0,0)" width="290" x="3.479" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Test.DrillView" y="138.774"/>
+ <foreignObject height="223.288" id="id_27" width="252.861" x="1520" y="20">
+  <div style="width:100%;height:100%;" xmlns="http://www.w3.org/1999/xhtml">
+   <style>
+		.upload-area-button{
+		    border-radius:12px;
+            height:40px;
+            min-width:40%;
+            margin-bottom: 20px;
+            color:white;
+            background-color:#177ddc;
+            border:none;
+            font-size:1.7rem;
+            border:1px solid #177ddc;
+            transition: 0.2s ease;
+            text-align:center;
+        }
+        .upload-area-button-f{
+			background-color:#f00;
+			border:1px solid #f00;     
+        }
+        .upload-area-button:hover{
+		    background-color:gray;
+	    }
+        .inactive{
+		    background-color:gray;
+	    }
+	    .inactive:hover{
+		    background-color:rgb(10,34,46);
+	    }
+	    .hide{
+			display:none;
+	    }
+	    .deletebut{
+			background-color:#a00;
+			border:none;
+			height:40px;
+			margin-bottom:20px;
+			border-radius:12px;
+			margin-top:0px;
+			font-size:1.5rem;
+			margin-right:10px;
+	    }
+	    .upload-area-button-red{
+			border-radius:12px;
+            height:40px;
+            min-width:40%;
+            margin-bottom: 20px;
+            color:white;
+            background-color:#f00;
+            border:none;
+            font-size:1.7rem;
+            border:1px solid #f00;
+            transition: 0.2s ease;
+            text-align:center;
+	    }
+	    .chart-legend-line{
+			width:20px;
+			height:5px;
+			display:inline-block;
+	    }
+	    .plan{
+			background-color:#177ddc;	    
+	    }
+	    .fact{
+			background-color:red;
+	    }
+	    .chart-custom-leg{
+			color:white;
+			width:100%;			    
+	    }
+</style>
+   <button class="deletebut hide" id="db1">✖ ПЛАН</button>
+   <button class="deletebut hide" id="db2">✖ ФАКТ</button>
+   <div class="chart-custom-leg" id="pswitch">
+    <div class="chart-legend-line plan"/>
+    <div style="display:inline-block;">План</div>
+   </div>
+   <div class="chart-custom-leg" id="fswitch">
+    <div class="chart-legend-line fact"/>
+    <div style="display:inline-block;">Факт</div>
+   </div>
+  </div>
+ </foreignObject>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var CHART = document.getElementById("WELL_CHART")
+var compReady = false;
+webMI.gfx.setScaledEvents(CHART,true)
+var BG_COLOR = "#222";
+var MAIN_TEXT_COLOR = "#fff";
+var AXIES_TITLE_COLOR = "#fff";
+var AXIES_TICK_COLOR = "grey";
+var LAYOUT = {
+  // CHART_LAYOUT
+  hoverlabel: { 
+	font: { 
+		color: "#FFF" 
+	},
+	bgcolor:'#333e47' 
+	},
+  legend: {
+    font: {
+      color: MAIN_TEXT_COLOR,
+    },
+  },
+  showlegend:false,
+  scene: {
+	aspectmode:'data',
+    camera: {
+      center: {
+        x: 0,
+        y: 0,
+        z: 0,
+      },
+      eye: {
+        x: 2,
+        y: 2,
+        z: 1,
+      },
+      up: {
+        x: 0,
+        y: 0,
+        z: 1,
+      }
+    },
+    bgcolor: BG_COLOR,
+    xaxis: {
+      title: {
+        text: "Восток, м",
+        font: {
+          color: AXIES_TITLE_COLOR,
+        },
+      },
+
+      tickfont: {
+        color: AXIES_TICK_COLOR,
+        size: 11,
+      },
+    },
+
+    yaxis: {
+      title: {
+        text: "Север, м",
+        font: {
+          color: AXIES_TITLE_COLOR,
+        },
+      },
+      tickfont: {
+        color: AXIES_TICK_COLOR,
+        size: 11,
+      },
+    },
+    zaxis: {
+		autorange:'reversed',
+      title: {
+        text: "Глубина по вертикали, м",
+        font: {
+          color: AXIES_TITLE_COLOR,
+        },
+      },
+      tickfont: {
+        color: AXIES_TICK_COLOR,
+      }
+    },
+  },
+  autosize: true,
+  width: 750,
+  height: 1015,
+  margin: {
+    l: 0,
+    r: 0,
+    b: 0,
+    t: 0,
+  },
+  /*{
+    // CONFIG
+    displaylogo: false,
+    displayModeBar: false,
+  }*/
+};
+
+Plotly.react(
+	CHART,
+	[{
+	type: "scatter3d",
+	mode: "lines",
+	name: "preload",
+	line: {
+		color: "#1f77b4",
+		width: 6,
+		opacity: 1,
+	},
+	x:[0],
+	y:[0],
+	z:[0]
+},],
+	LAYOUT,
+	{
+		// CONFIG
+		displaylogo: false,
+		displayModeBar: false,
+	}
+)
+
+
+var traces = [
+{
+	type: "scatter3d",
+	mode: "lines",
+	name: "ФАКТ",
+	hoverlabel: { 
+	font: { 
+		color: "#FFF" 
+	},
+	bgcolor:'#F00' 
+	},
+	hovertemplate:"Глубина по вертикали:%{z} м<br>Север:%{x} м<br>Восток:%{y} м<extra></extra>",
+	line: {
+		color: "#FF0000",
+		width: 10,
+		opacity: 1,
+	},
+	x:[],
+	y:[],
+	z:[]
+},
+{
+	type: "scatter3d",
+	mode: "lines",
+	name: "ПЛАН",
+	hoverlabel: { 
+	font: { 
+		color: "FFF" 
+	},
+	bgcolor:'#1f77b4' 
+	},
+	hovertemplate:"Глубина по вертикали:%{z} м<br>Север:%{x} м<br>Восток:%{y} м<extra></extra>",
+	line: {
+		color: "#1f77b4",
+		width: 6,
+		opacity: 1,
+	},
+	x:[],
+	y:[],
+	z:[]
+},
+{
+	// TEXT_TRACE
+	type: "scatter3d",
+	mode: "markers+text",
+	name: "Осложнение",
+	showlegend: false,
+	meta: [],
+	texttemplate: "Затяжка",
+	hovertemplate:
+		"ОСЛОЖНЕНИЕ<br><extra>Тип: Затяжка<br>Забой: %{meta[0]} м<br>Дельта: %{meta[1]} т<br>Дата и время: %{meta[2]}</extra>",
+	textfont: {
+		color: MAIN_TEXT_COLOR,
+		size: 12,
+	},
+	marker: {
+		color: [],
+		symbol: "circle",
+		size: 6,
+		opacity: 1,
+	},
+	x: [],
+	y: [],
+	z: [],
+},
+{
+	type: "scatter3d",
+	mode: "markers+text",
+	name: "Компас имена",
+	showlegend: false,
+	text: ['Восток','Север'],
+	texttemplate: "%{text}",
+	textfont: {
+		color: MAIN_TEXT_COLOR,
+		size: 12,
+	},
+	marker: {
+		color: [],
+		symbol: "circle",
+		size: 6,
+		opacity: 1,
+	},
+	x: [100,0],
+	y: [0,100],
+	z: [0,0],
+},
+{
+	type: "scatter3d",
+	mode: "lines",
+	name: "Компас линии",
+	showlegend: false,
+	meta: [],
+	textfont: {
+		color: MAIN_TEXT_COLOR,
+		size: 12,
+	},
+	line: {
+		color: "#fff",
+		width: 6,
+		opacity: 1,
+	},
+	x: [0,100,0,0],
+	y: [0,0,0,100],
+	z: [0,0,0,0],
+}
+]
+
+webMI.data.read(['AGENT.OBJECTS.3D_WELL.fact.FactChartData','AGENT.OBJECTS.3D_WELL.plan.PlanChartData','AGENT.OBJECTS.3D_WELL.complications.CompChartData'],function(e){
+	var max = 100
+	var min = 0
+	for(var i=0;i<2;i++){
+		traces[i].x=JSON.parse(e[i].value).north
+		 
+		traces[i].y=JSON.parse(e[i].value).east
+		
+		traces[i].z=JSON.parse(e[i].value).depth
+	}
+	
+	
+	
+	var distances = [0]
+	for(var i=1;i<traces[0].x.length;i++){
+		var res=Math.sqrt(Math.pow((traces[0].x[i]-traces[0].x[i-1]),2)+Math.pow((traces[0].y[i]-traces[0].y[i-1]),2)+Math.pow((traces[0].z[i]-traces[0].z[i-1]),2))
+		var prev = distances[distances.length-1]
+		distances.push(prev+res)
+	}
+	if(compReady){
+	var raw = JSON.parse(e[2].value)
+	raw.forEach(function(f,cnt){
+	console.log(f.well_depth)
+		var num =0;
+		for(var i=0;i<distances.length;i++){
+			if(f.well_depth>distances[i]){
+				num++
+			}
+			else {break;}
+		}
+		//console.log(distances[num],distances[num-1],num)
+		var part = (distances[num]-f.well_depth)/(distances[num]-distances[num-1])
+		traces[2].x.push(traces[0].x[num-1]+(part*(traces[0].x[num] - traces[0].x[num-1])))
+		traces[2].y.push(traces[0].y[num-1]+(part*(traces[0].y[num] - traces[0].y[num-1])))
+		traces[2].z.push(traces[0].z[num-1]+(part*(traces[0].z[num] - traces[0].z[num-1])))
+		traces[2].marker.color.push('orange')
+		var meta=[f.well_depth,f.delta,new Date(f.timestamp).toLocaleString()]
+		traces[2].meta.push(meta)
+		addElToList(cnt,'Затяжка',meta)
+	})
+	}
+	Plotly.addTraces(CHART,traces)
+	
+})
+
+
+CHART.on('plotly_click',function(e){
+	if(e.points[0].curveNumber==3){
+		console.log('затяжка')
+		for(var i=0;i<traces[2].marker.color.length;i++){traces[2].marker.color[i]='orange'}
+		traces[2].marker.color[e.points[0].pointNumber]='green'
+		console.log(traces[2])
+		Plotly.deleteTraces(CHART,3)
+		Plotly.addTraces(CHART,traces[2])
+		var str=''
+		for(var i=0;i<traces[2].marker.color.length;i++){
+			str = 'cl'+i
+			document.getElementById(str).style.backgroundColor = 'rgb(51,62,71)'
+		}
+		str='cl'+e.points[0].pointNumber
+		document.getElementById(str).style.backgroundColor = 'red'
+		
+	}
+})
+
+function addElToList(num,type,meta){
+	var str = '<li id="cl'+num+'" style="width:100%;background-color:rgb(51,62,71); margin:5px">'+type+'<br><br>'
+	str=str+'Забой: '+meta[0]+'<br>'
+	str=str+'Дельта: '+meta[1]+'<br>'
+	str=str+'Дата и время'+meta[2]+'<br>'
+	str=str+'</li>'
+	document.getElementById('complicationsList').insertAdjacentHTML('beforeend',str)
+	document.getElementById('cl'+num).addEventListener('click',function(e){switchIfClickedOnEl(e)})
+}
+
+function switchIfClickedOnEl(e){
+	//console.log(e.path[0].id);
+	var str=''
+	for(var i=0;i<traces[2].marker.color.length;i++){
+		str = 'cl'+i
+		document.getElementById(str).style.backgroundColor = 'rgb(51,62,71)'
+	}
+	e.path[0].style.backgroundColor = 'red'
+	str=e.path[0].id
+	str = str.replace('cl','')
+	for(var i=0;i<traces[2].marker.color.length;i++){traces[2].marker.color[i]='orange'}
+	traces[2].marker.color[parseInt(str)]='green'
+	Plotly.deleteTraces(CHART,3)
+	Plotly.addTraces(CHART,traces[2])
+	//console.log(str)
+}
+webMI.data.subscribe("AGENT.OBJECTS.Depth_day_data.start_date", function(e) {
+var id = "id_4";
+var value = new Date();
+value.setTime(e.value)
+//console.log(value)
+var str =""
+var buf=value.getDate()
+if(buf<10){
+	str=str+"0"+buf
+}else{
+	str=str+buf
+}
+str=str+"."
+buf=value.getMonth()
+buf++;
+if(buf<10){
+	str=str+"0"+buf
+}else{
+	str=str+buf
+}
+str=str+"."
+buf=value.getFullYear()
+str=str+buf;
+webMI.gfx.setText(id, str);
+
+});
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////Заполнение 
+
+webMI.data.subscribeBlock(["AGENT.OBJECTS.Depth_day_data.end_date","AGENT.OBJECTS.Depth_day_data.start_date","AGENT.OBJECTS.Depth_day_data.plan_data","AGENT.OBJECTS.IVE50.Well.WellDepth","AGENT.OBJECTS.IVE50.Tool.ToolPosition"], function(e) {
+var id = "id_10";
+var res=e[0].value-e[1].value
+res = Math.floor(res/8640000)/10
+var str=res+" дней"
+webMI.gfx.setText(id, str);
+res = Date.now()-e[1].value
+res = Math.floor(res/8640000)/10
+str=res+" дней"
+webMI.gfx.setText("id_13", str);
+res = JSON.parse(e[2].value)
+res=res[res.length-1].vD
+str=res
+webMI.gfx.setText("id_16", str);
+res=Math.floor(e[3].value*100)/100
+webMI.gfx.setText("id_20", res);
+res=Math.floor(e[4].value*100)/100
+webMI.gfx.setText("id_24", res);
+});
+
+//////////////////////////////////////////КАСТОМНАЯ ЛЕГЕНДА
+
+document.getElementById('pswitch').addEventListener('click',function(e){
+console.log(e)
+	needEl = document.getElementById('pswitch')
+	subEl = document.getElementById('fswitch')
+	ok = true;
+	while (ok){
+		try{
+			console.log('deleting smth')
+			Plotly.deleteTraces(CHART, 0)
+		}
+		catch (err){
+		console.log(err)
+			ok = false		
+		}	
+	}
+	if(needEl.classList.contains('inactive')){
+		needEl.classList.remove('inactive')
+		Plotly.addTraces(CHART, traces[1])	
+	}
+	else{
+		needEl.classList.add('inactive')	
+	}
+	if(subEl.classList.contains('inactive')){
+		console.log('fact is invisible!')
+	}
+	else{
+		Plotly.addTraces(CHART, traces[0])	
+	}
+	Plotly.addTraces(CHART, traces[3])
+	Plotly.addTraces(CHART, traces[4])
+})
+
+document.getElementById('fswitch').addEventListener('click',function(e){
+console.log(e)
+	needEl = document.getElementById('fswitch')
+	subEl = document.getElementById('pswitch')
+	ok = true;
+	while (ok){
+		try{
+			console.log('deleting smth')
+			Plotly.deleteTraces(CHART, 0)
+		}
+		catch (err){
+		console.log(err)
+			ok = false		
+		}	
+	}
+	if(needEl.classList.contains('inactive')){
+		needEl.classList.remove('inactive')
+		Plotly.addTraces(CHART, traces[0])	
+	}
+	else{
+		needEl.classList.add('inactive')	
+	}
+	if(subEl.classList.contains('inactive')){
+		console.log('fact is invisible!')
+	}
+	else{
+		Plotly.addTraces(CHART, traces[1])	
+	}
+	Plotly.addTraces(CHART, traces[3])
+	Plotly.addTraces(CHART, traces[4])
+})
+
+
+
+webMI.addEvent(webMI.data, "clientvariableschange", function(e) {
+	if ("username" in e) {
+		var username = (e.username != "") ? e.username : null;
+		var loggedIn = (e.username != "");
+		if (loggedIn) {
+			if(username=='korenevrv'){
+				document.getElementById('db1').classList.remove("hide")
+				document.getElementById('db2').classList.remove("hide")
+			}
+			
+		} else {
+		}
+	}
+});
+
+document.getElementById('db1').addEventListener('click',function(e){
+	webMI.data.write('AGENT.OBJECTS.3D_WELL.plan.PlanChartData',JSON.stringify({north:[0],depth:[0],east:[0]}))
+	webMI.display.openDisplay('AGENT.DISPLAYS.NewView.ProfileComplications.Profile',webMI.query,'main_frame');
+})
+document.getElementById('db2').addEventListener('click',function(e){
+	webMI.data.write('AGENT.OBJECTS.3D_WELL.fact.FactChartData',JSON.stringify({north:[0],depth:[0],east:[0]}))
+	webMI.display.openDisplay('AGENT.DISPLAYS.NewView.ProfileComplications.Profile',webMI.query,'main_frame');
+})]]></script>
+</svg>

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.OilfieldBoard
+NodeClass: Object
+BrowseName: 1:OilfieldBoard
+DisplayName: en|OilfieldBoard
+Description: en|OilfieldBoard
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

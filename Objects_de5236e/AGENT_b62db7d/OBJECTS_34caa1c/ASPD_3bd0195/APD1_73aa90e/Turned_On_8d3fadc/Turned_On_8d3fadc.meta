@@ -1,0 +1,11 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.APD1.Turned_On
+NodeClass: Variable
+BrowseName: 1:Turned_On
+DisplayName: en|Turned_On
+Description: en|Turned_On
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

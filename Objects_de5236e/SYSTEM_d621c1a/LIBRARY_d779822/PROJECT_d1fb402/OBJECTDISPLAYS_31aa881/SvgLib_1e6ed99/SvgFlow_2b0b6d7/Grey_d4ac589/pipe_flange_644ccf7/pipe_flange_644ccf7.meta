@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.SvgFlow.Grey.pipe_flange
+NodeClass: Variable
+BrowseName: 1:pipe_flange
+DisplayName: en|pipe_flange
+Description: en|pipe_flange
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

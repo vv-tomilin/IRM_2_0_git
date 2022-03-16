@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.SimulatedDataMin.DrillSpeed
+NodeClass: Variable
+BrowseName: 1:DrillSpeed
+DisplayName: en|DrillSpeed
+Description: en|DrillSpeed
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.RawData

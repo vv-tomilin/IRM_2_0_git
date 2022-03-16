@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.ATVISE.RESOURCES/Plotly
+NodeClass: Object
+BrowseName: 1:Plotly
+DisplayName: en|Plotly
+Description: en|Plotly
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

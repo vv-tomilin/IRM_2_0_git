@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.PLOTLY_CHART.Plotly_3D_chart
+NodeClass: Variable
+BrowseName: 1:Plotly_3D_chart
+DisplayName: en|Plotly_3D_chart
+Description: en|Plotly_3D_chart
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

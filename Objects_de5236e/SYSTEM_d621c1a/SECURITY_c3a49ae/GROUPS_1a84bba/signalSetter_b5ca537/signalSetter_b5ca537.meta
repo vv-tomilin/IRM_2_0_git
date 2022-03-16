@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.SECURITY.GROUPS.signalSetter
+NodeClass: Object
+BrowseName: 1:signalSetter
+DisplayName: en|signalSetter
+Description: en|signalSetter
+EventNotifier: 0
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.RIGHTS.USER.SignalControl
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.steward
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.Group

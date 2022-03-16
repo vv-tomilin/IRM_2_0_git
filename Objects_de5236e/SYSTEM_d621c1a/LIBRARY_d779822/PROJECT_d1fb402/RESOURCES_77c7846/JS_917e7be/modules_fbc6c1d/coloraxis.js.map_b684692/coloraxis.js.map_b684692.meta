@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/coloraxis.js.map
+NodeClass: Variable
+BrowseName: 1:coloraxis.js.map
+DisplayName: en|coloraxis.js.map
+Description: en|coloraxis.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

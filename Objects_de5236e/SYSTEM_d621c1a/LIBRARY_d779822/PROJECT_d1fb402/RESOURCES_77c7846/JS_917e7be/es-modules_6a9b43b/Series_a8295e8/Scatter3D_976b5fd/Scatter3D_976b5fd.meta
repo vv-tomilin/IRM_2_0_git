@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/Scatter3D
+NodeClass: Object
+BrowseName: 1:Scatter3D
+DisplayName: en|Scatter3D
+Description: en|Scatter3D
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

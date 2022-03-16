@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <code><![CDATA[/**
+ * Code for the time_display and time_display_advanced object displays
+ * -------------------------------------------------------------------
+ * This control displays the current client time (hours, minutes, seconds and milliseconds).
+ */
+
+
+/**
+ * DECLARATION SECTION
+ */
+
+var secondsSet = webMI.gfx.getX("s");
+var millisecondsSet = webMI.gfx.getX("ms");
+var base = (webMI.query["base"] == undefined) ? "" : webMI.query["base"];
+var updateTime = (webMI.query["updateTime"] == undefined) ? 3000 : parseInt(webMI.query["updateTime"],10);
+
+/**
+ * RUNTIME SECTION
+ */
+
+if (base != "") {
+
+	rightsHandlingProperties = {
+		right: null,
+		checkBaseNodeWriteRight: false,
+		isActivationNodeSet: null,
+		notifierConfiguration: {"id":"bg_rect", "node_1": webMI.query["base"], "right_1": "read"},
+		setActiveTrigger: false,
+		handleStatus: true
+	};
+
+	if (typeof rightsHandling === "function") rightsHandling(rightsHandlingProperties);
+
+	webMI.data.subscribe(base, function(e) {
+		setTime(e.value);
+	});
+}
+else {
+	setTime();
+	var updateInterval = setInterval(function() { setTime(); }, updateTime);
+}
+
+/**
+ * FUNCTION SECTION
+ */
+
+function setTime(time) {
+	var displayedTime = (time == undefined) ? new Date() : new Date(time);
+
+	var h = displayedTime.getHours();
+	webMI.gfx.setText("h", webMI.sprintf("%02d", h));
+	
+	var m = displayedTime.getMinutes();
+	webMI.gfx.setText("m", webMI.sprintf("%02d", m));
+	
+	if (secondsSet) {
+		var s = displayedTime.getSeconds();
+		webMI.gfx.setText("s", webMI.sprintf("%02d", s));
+	}
+	
+	if (millisecondsSet) {
+		var ms = displayedTime.getMilliseconds();
+		webMI.gfx.setText("ms", webMI.sprintf("%03d", ms));
+	}
+}]]></code>
+</script>

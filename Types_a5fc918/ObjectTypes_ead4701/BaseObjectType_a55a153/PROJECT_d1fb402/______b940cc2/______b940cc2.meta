@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Шатун
+NodeClass: ObjectType
+BrowseName: 1:Шатун
+DisplayName: en|Шатун
+Description: en|Шатун
+IsAbstract: false

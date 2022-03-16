@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AKB.TMin
+NodeClass: Variable
+BrowseName: 1:TMin
+DisplayName: en|TMin
+Description: en|TMin
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

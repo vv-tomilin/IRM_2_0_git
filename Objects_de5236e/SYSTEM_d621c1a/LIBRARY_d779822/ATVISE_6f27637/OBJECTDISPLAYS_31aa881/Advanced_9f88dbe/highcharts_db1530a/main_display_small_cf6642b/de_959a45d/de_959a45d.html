@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=windows-1252"
+ http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Beschreibung</h1>
+<p>Dieses Display verbindet die Displays Highcharts, Toolbar und Legende.
+Es kann als Beispiel dienen oder unver&auml;ndert in einem Projekt verwendet werden.</p>
+<p>Die unten folgenden Parameter werden an die einzelnen Displays weitergereicht,
+sodass jedes Display dieselbe Chartinstanz als Basis besitzt. Dadurch wird sichergestellt,
+dass &Auml;nderungen im Konfigurationsdialog oder der Legende das richtige Diagramm ansprechen.</p>
+
+<h1>Parameter</h1>
+
+<p>Die nachstehenden allgemeinen Parameter sind verf&uuml;gbar:</p>
+<ul>
+  <li><span class="parameter">Diagrammname</span>: Eindeutiger Name zur Identifizierung der Chartinstanz</li>
+  <li><span class="parameter">Diagrammgruppe</span>: Dient dem Hinzuf&uuml;gen unterschiedlicher Chartinstanzen zu einer Gruppe.</li>
+  <li><span class="parameter">Standardmodule &uuml;berspringen</span>: Bestimmt, ob die Standardmodule f&uuml;r Highcharts geladen werden sollen.</li>
+  <li><span class="parameter">Zusatzmodule laden</span>: Definiert welche Module zus&auml;tzlich geladen werden sollen. (Beispiel: "highcharts/modules/exporting.js,highcharts/datasource/opcua.js,highcharts/atviseModules/datahandler.js,highcharts/atviseModules/measuringcursor.js,highcharts/atviseModules/utils.js,highcharts/atviseModules/downsample.js")</li>
+  <li><span class="parameter">Konfigurationsadresse</span>: Node (Adresse), welche eine vordefinierte Konfiguration enth&auml;lt.</li>
+  <li><span class="parameter">Datei bei Speicherung im Dateisystem</span>: Datei, welche eine vordefinierte Konfiguration neu h&auml;lt, wenn Speichern im Dateisystem eingestellt ist.</li>
+  <li><span class="parameter">Konfigurationsname</span>: Name der vordefinierten Konfiguration.</li>
+  <li><span class="parameter">Speichermethode</span>: Legt fest, ob Konfigurationen in Node(s) oder dem Dateisystem gespeichert werden.</li>
+  <li><span class="parameter">Komprimierung</span>: Legt fest, ob die Konfigurationsdaten beim Speichern komprimiert werden.</li>
+  <li><span class="parameter">Datenquelle</span>: Definiert den Typ der Datenquelle, welche &uuml;ber ein entsprechendes Javascript-Modul geladen wird.</li>
+  <li><span class="parameter">Zur&uuml;ck/Vor Schrittweite in Prozent</span>: Legt die Schrittweite f&uuml;r das Zur&uuml;ck/Vor-Bl&auml;ttern in historischen Daten fest.</li>
+</ul>
+
+<p>Au&szlig;erdem k&ouml;nnen &uuml;ber entsprechende Parameter die ben&ouml;tigten Rechte zur Anzeige des Konfigurationsdialogs ("Optionen anzeigen"),
+zum Laden und Speichern der Konfiguration und zur Anzeige des Exportmen&uuml;s vergeben werden:</p>
+<ul>
+  <li><span class="parameter">Ben&ouml;tigtes Recht</span>: Der Benutzer muss &uuml;ber dieses Recht verf&uuml;gen, um  die Funktion ausf&uuml;hren zu k&ouml;nnen.</li>
+  <li><span class="parameter">Aktivierungsadresse</span>: Stimmt der Wert dieser Adresse mit dem "Aktivierungswert" &uuml;berein, ist die Funktion aktiviert.</li>
+  <li><span class="parameter">Aktivierungswert</span>: Wert, von dem die Funktion aktiviert wird</li>
+</ul>
+
+</body>
+</html>

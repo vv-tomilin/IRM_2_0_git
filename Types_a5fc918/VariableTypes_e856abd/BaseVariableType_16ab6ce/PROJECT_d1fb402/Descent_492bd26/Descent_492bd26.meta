@@ -1,0 +1,9 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed"."Descent"
+NodeClass: VariableType
+BrowseName: 1:Descent
+DisplayName: en|Descent
+Description: en|Descent
+IsAbstract: false
+DataType: BaseDataType
+ValueRank: -1
+ValueType: i=0

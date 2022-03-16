@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" version="1.2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" width="51.43" xmlns="http://www.w3.org/2000/svg" height="21.64" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="false" gridstyle="lines" width="20" height="20"/>
+  <atv:snapconfig enabled="false" width="10" height="10"/>
+ </metadata>
+ <g id="id_2" atv:insensitive="true" atv:refpx="0" atv:refpy="0" transform="matrix(1,0,0,1.0001,0,0)">
+  <rect id="id_3" y="0" fill="#0000ff" fill-opacity="0" atv:refpx="25.715" atv:refpy="10.82" x="0" width="51.43" height="21.64"/>
+ </g>
+ <g id="id_1" atv:refpx="25.714" atv:refpy="10.82" transform="matrix(1,0,0,1,-0.2626,-0.2503)">
+  <g id="layer1" atv:refpx="25.977" atv:refpy="11.07" transform="translate(-76.140925,-27.395965)">
+   <polygon id="polygon28" stroke-linejoin="round" points="127.831,38.465 102.304,27.646 102.304,33.937 76.403,33.937 76.403,42.993 102.304,42.993 102.304,49.284" fill="#993300" atv:refpx="102.118" atv:refpy="38.465" stroke="#000000"/>
+  </g>
+ </g>
+</svg>

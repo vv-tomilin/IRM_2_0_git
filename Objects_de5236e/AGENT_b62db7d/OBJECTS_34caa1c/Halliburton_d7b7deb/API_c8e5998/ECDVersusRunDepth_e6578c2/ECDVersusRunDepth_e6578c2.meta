@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Halliburton.API.ECDVersusRunDepth
+NodeClass: Variable
+BrowseName: 1:ECDVersusRunDepth
+DisplayName: en|ECDVersusRunDepth
+Description: en|ECDVersusRunDepth
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

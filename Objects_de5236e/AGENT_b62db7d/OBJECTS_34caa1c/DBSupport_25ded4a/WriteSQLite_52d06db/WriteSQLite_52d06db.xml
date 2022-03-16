@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="interval" type="interval" trigger="false" relative="false" value="" offset="00:00:00" interval="00:01:00"/>
+  <code><![CDATA[var nodeStillRunning = new UaNode("AGENT.OBJECTS.DBSupport.StillRunning");
+if(nodeStillRunning.value) return;
+nodeStillRunning.assign({value: true});
+var cp = new ChildProcess("database/sqlite3.exe");
+if (cp.execAsync())
+{
+console.log("Connected!");
+try {
+	cp.write(".open database/Evrotec_raw.db\n", { timeout: 2 }); //2
+//	if(cp.join({ timeout: 10 })){
+		cp.write(".tables\n", { timeout: 2 }); //2
+//		if(cp.join({ timeout: 10 })){
+			console.log("\n\n\nNew Request!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");	
+			
+			console.log("Tables: ", cp.stdOut);
+			cp.write("select rowid from data order by rowid desc limit 1;\n", { timeout: 5 });
+//			if(cp.join({ timeout: 10 })){
+				//console.log("Last rowid: ", cp.stdOut);
+			
+				var lastRowId = cp.stdOut;
+				console.log("lastRowId: ", lastRowId);	
+					
+				var node = new UaNode("AGENT.OBJECTS.DBSupport.LastRowId");
+				
+				cp.write(".mode insert\n", { timeout: 0 }); //2
+//				if(cp.join({ timeout: 10 })){
+					var sqlReq = "select * from data where rowid > "+node.value+" order by rowid desc limit 10";
+					console.log("sqlReq:", sqlReq);
+					cp.write(sqlReq+";\n", { timeout: 5 }); //10
+//					if(cp.join({ timeout: 10 })){					
+						var strSelect = cp.stdOut;
+						console.log("Data:", strSelect);						
+						var newStr = strSelect.replace(/table/gi, "data");
+						var arrReq = newStr.split("\n");
+						if(arrReq.length > 0){
+							if(globals.has("tcpsqlite")){
+								console.log("tcpsqlite yes");
+								var cp2 = globals.get("tcpsqlite");
+								try {
+		//							cp2.write(".open d:/Pers/Serg/Work/RIGINTEL/IR-Master/DB/Evrotec_raw.db\n", { timeout: 2 });
+	//								cp2.write(".open d:/Pers/Serg/Work/RIGINTEL/IR-Master/DB/Evrotec_raw.db?replica=master&slave=tcp://192.168.0.23:1234\n", { timeout: 10});
+	//								if(cp2.join({ timeout: 10 })){
+										arrReq.forEach(function(strReq, indx, arrReq){
+											if(!!strReq){
+												strReq=strReq.slice(0,-2);
+												console.log("strReq:", strReq);	
+												cp2.write(strReq+";\n", { timeout: 0 });//2	
+											}
+										});
+										}
+	//								}
+								catch(e){
+									console.log("Exception2 = ", e);
+								}
+							} else {
+								console.log("tcpsqlite no");
+								var cp2 = new ChildProcess("d:/Pers/Serg/Work/RIGINTEL/IR-Master/DB/sqlite3.exe",{args: ["file:d:/Pers/Serg/Work/RIGINTEL/IR-Master/DB/Evrotec_raw.db?replica=master&slave=tcp://192.168.0.23:1234"]});
+								globals.set("tcpsqlite", cp2);
+								if (cp2.execAsync())
+								{
+									try {
+			//							cp2.write(".open d:/Pers/Serg/Work/RIGINTEL/IR-Master/DB/Evrotec_raw.db\n", { timeout: 2 });
+		//								cp2.write(".open d:/Pers/Serg/Work/RIGINTEL/IR-Master/DB/Evrotec_raw.db?replica=master&slave=tcp://192.168.0.23:1234\n", { timeout: 10});
+		//								if(cp2.join({ timeout: 10 })){
+											arrReq.forEach(function(strReq, indx, arrReq){
+												if(!!strReq){
+													strReq=strReq.slice(0,-2);
+													console.log("strReq:", strReq);	
+													cp2.write(strReq+";\n", { timeout: 0 });//2	
+												}
+											});
+										}
+									catch(e){
+										console.log("Exception2 = ", e);
+									}
+									//cp2.write(".exit\n");			
+								}
+							}
+/*							
+							var cp2 = new ChildProcess("database/sqlite3.exe",{args: ["file:d:/Pers/Serg/Work/RIGINTEL/IR-Master/DB/Evrotec_raw.db?replica=master&slave=tcp://192.168.0.23:1234"]});
+							if (cp2.execAsync())
+							{
+								try {
+	//							cp2.write(".open d:/Pers/Serg/Work/RIGINTEL/IR-Master/DB/Evrotec_raw.db\n", { timeout: 2 });
+//								cp2.write(".open d:/Pers/Serg/Work/RIGINTEL/IR-Master/DB/Evrotec_raw.db?replica=master&slave=tcp://192.168.0.23:1234\n", { timeout: 10});
+//								if(cp2.join({ timeout: 10 })){
+									arrReq.forEach(function(strReq, indx, arrReq){
+										if(!!strReq){
+											strReq=strReq.slice(0,-2);
+											console.log("strReq:", strReq);	
+											cp2.write(strReq+";\n", { timeout: 0 });//2	
+										}
+									});
+									}
+//								}
+								catch(e){
+									console.log("Exception2 = ", e);
+								}
+								cp2.write(".exit\n");			
+							}
+*/							
+						}
+						
+					//	console.log("newStr:", newStr);	
+						
+						if(Number(lastRowId)!=0){
+							var res = node.assign({value: Number(lastRowId)});	
+							if(res!=0){
+								console.log("Error write LastRowId: ", res);
+							} else {
+								//console.log("LastRowId updated succesfully!!");
+								console.log("LastRowId updated = "+node.value);
+							}
+						} else {
+							console.log("LastRowId not updated");
+						}
+//					}
+//				}
+//			}
+//		}
+//	}
+}
+catch(e){
+	console.log("Exception = ", e);
+}	
+	cp.write(".exit\n");
+		
+}
+else
+	console.error("Failed to execute sqlite3.exe!");
+	
+nodeStillRunning.assign({value: false});]]></code>
+</script>

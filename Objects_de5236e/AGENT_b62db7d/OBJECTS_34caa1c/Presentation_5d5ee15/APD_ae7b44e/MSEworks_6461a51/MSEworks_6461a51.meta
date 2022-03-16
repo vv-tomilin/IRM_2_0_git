@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Presentation.APD.MSEworks
+NodeClass: Variable
+BrowseName: 1:MSEworks
+DisplayName: en|MSEworks
+Description: en|MSEworks
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

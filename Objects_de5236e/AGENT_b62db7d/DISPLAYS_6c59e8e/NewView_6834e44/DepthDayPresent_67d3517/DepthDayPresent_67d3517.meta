@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.DepthDayPresent
+NodeClass: Variable
+BrowseName: 1:DepthDayPresent
+DisplayName: en|DepthDayPresent
+Description: en|DepthDayPresent
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

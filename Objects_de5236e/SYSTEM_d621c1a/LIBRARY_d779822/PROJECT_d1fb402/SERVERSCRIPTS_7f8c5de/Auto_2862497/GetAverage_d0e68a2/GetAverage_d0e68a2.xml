@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nodeStr" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="countSec" type="number" trigger="false" relative="false" value="40"/>
+  <code><![CDATA[var nodeProc = new UaNode(nodeStr);
+
+var timeend = new Date();
+var timestart = new Date(timeend.valueOf() - countSec * 1000);
+var result = 0;
+var resultRaw = nodeProc.datahistory({starttime: timestart, endtime: timeend});
+if(resultRaw.status < 0x40000000){
+	if(resultRaw.values.length==0 || resultRaw.values.length==1){		
+		//result = call('getUaDataLast',{strnode: nodeStr}).value;
+		result = nodeProc.value;
+	} else {	
+		//console.log('length = ', resultRaw.values.length);
+		var sum = 0;
+		resultRaw.values.forEach(function(item,i){
+			sum+=item.value;
+		})		
+		result = sum/resultRaw.values.length;
+	} 
+}
+return result;]]></code>
+</script>

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/OHLC
+NodeClass: Object
+BrowseName: 1:OHLC
+DisplayName: en|OHLC
+Description: en|OHLC
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

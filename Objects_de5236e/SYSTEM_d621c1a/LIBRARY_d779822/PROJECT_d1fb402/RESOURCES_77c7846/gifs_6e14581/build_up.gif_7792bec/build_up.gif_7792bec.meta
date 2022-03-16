@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/gifs/build_up.gif
+NodeClass: Variable
+BrowseName: 1:build_up.gif
+DisplayName: en|build_up.gif
+Description: en|build_up.gif
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Gif

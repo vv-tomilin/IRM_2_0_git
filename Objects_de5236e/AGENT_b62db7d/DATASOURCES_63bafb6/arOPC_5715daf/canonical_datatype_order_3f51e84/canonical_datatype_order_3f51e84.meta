@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DATASOURCES.arOPC.canonical_datatype_order
+NodeClass: Variable
+BrowseName: 1:canonical_datatype_order
+DisplayName: en|canonical_datatype_order
+Description: en|canonical_datatype_order
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

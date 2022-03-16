@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.TestVal
+NodeClass: Variable
+BrowseName: 1:TestVal
+DisplayName: en|TestVal
+Description: en|TestVal
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="varname" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="varvalue" type="number" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var nodevar = new UaNode(varname);
+if(nodevar.value != varvalue){
+	var res = nodevar.assign({value: varvalue});
+	//console.log("Set var value: ",varname," = ",varvalue);
+}]]></code>
+</script>

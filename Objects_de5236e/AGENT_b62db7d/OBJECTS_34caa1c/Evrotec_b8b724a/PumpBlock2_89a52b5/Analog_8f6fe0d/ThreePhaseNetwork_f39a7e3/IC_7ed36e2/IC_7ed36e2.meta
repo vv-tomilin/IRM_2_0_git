@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.PumpBlock2.Analog.ThreePhaseNetwork.IC
+NodeClass: Variable
+BrowseName: 1:IC
+DisplayName: en|IC
+Description: en|IC
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

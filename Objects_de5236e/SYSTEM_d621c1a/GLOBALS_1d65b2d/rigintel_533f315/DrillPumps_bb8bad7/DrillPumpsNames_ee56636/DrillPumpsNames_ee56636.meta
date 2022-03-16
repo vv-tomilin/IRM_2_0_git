@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.GLOBALS.rigintel.DrillPumps.DrillPumpsNames
+NodeClass: Variable
+BrowseName: 1:DrillPumpsNames
+DisplayName: en|DrillPumpsNames
+Description: en|DrillPumpsNames
+DataType: String
+ValueRank: 1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.GlobalVariable

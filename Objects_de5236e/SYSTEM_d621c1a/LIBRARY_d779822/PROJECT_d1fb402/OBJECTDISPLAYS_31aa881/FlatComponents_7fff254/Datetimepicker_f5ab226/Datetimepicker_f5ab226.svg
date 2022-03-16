@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns="http://www.w3.org/2000/svg" height="306.5" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="500">
+ <defs/>
+ <desc>The Input for a "Picker Date Time"</desc>
+ <title>Date Time Input</title>
+ <metadata>
+  <atv:gridconfig height="20" gridstyle="lines" width="20" enabled="false"/>
+  <atv:snapconfig height="10" width="10" enabled="false"/>
+ </metadata>
+ <svg y="0" atv:refpy="153.25" height="306.5" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.Datepicker" x="0" width="500" id="_datepicker" atv:refpx="250">
+  <atv:argument name="base" prefix="base"/>
+  <atv:argument value="_datepicker" name="popupId"/>
+ </svg>
+ <text text-anchor="start" y="98" atv:refpy="92" fill="#ffffff" x="364.5" font-family="Open Sans" id="timeLabel" atv:refpx="382.756" font-size="16">Time</text>
+ <svg y="160" atv:refpy="175.5" height="31" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.EditableLabel" transform="matrix(1.625,0,0,1,0,0)" x="221.538" width="80" id="timeInput" atv:refpx="425">
+  <atv:argument name="base" prefix=""/>
+  <atv:argument value="Time" name="validation"/>
+  <atv:overwrite transform="matrix(0.6154,0,0,1,0,0)" x="65" id="input_label"/>
+  <atv:overwrite transform="matrix(0.6154,0,0,1,0,0)" id="input_bg" width="129"/>
+  <atv:overwrite transform="matrix(0.6154,0,0,1,0,0)" id="blinking_frame" width="202.326"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[var popupId = webMI.query.popupId;
+
+function updateLabels() {
+	webMI.gfx.setText('timeLabel', new Date(_value.raw).toLocaleTimeString());
+	webMI.trigger.fire('setValue', webMI.sprintf("%02d:%02d:%02d.%03d", _value.hours, _value.minutes, _value.seconds, _value.millis), 'timeInput');
+}
+
+_value = {};
+
+function setValue(timestamp) {
+	var millis = 0;
+	
+	if (timestamp) {
+		millis = timestamp;
+		if (typeof millis != "number") {
+			millis = parseInt(timestamp, 10);
+			if (isNaN(millis)) {
+				millis = 0;
+			}
+		}
+	}
+
+	var newDate = new Date(millis);
+	_value.raw = millis;
+	_value.day = newDate.getDate();
+	_value.dayOfTheWeek = newDate.getDay();
+	_value.month = newDate.getMonth();
+	_value.year = newDate.getFullYear();
+	_value.hours = newDate.getHours();
+	_value.minutes = newDate.getMinutes();
+	_value.seconds = newDate.getSeconds();
+	_value.millis = newDate.getMilliseconds();
+
+	updateLabels();
+}
+
+webMI.addOnload(function() {
+	webMI.trigger.fire('setValue', webMI.query.value, '_datepicker');
+	setValue(webMI.query.value);
+});
+
+webMI.trigger.connect('com.atvise.datepicker__datepicker', function(e) {
+	var outDate = new Date(e.value);
+	outDate.setHours(_value.hours);
+	outDate.setMinutes(_value.minutes);
+	outDate.setSeconds(_value.seconds);
+	outDate.setMilliseconds(_value.millis);
+	webMI.trigger.fire("com.atvise.datetimepicker_" + popupId, outDate.valueOf());
+});
+
+webMI.trigger.connect('valuechanged', function(e) {
+	if (!_value.raw && _value.raw !== 0) return;
+	
+	var newDate = new Date(_value.raw),
+		time = new Date(e.value);
+
+	if (_value.hours == time.getHours() && _value.minutes == time.getMinutes() && _value.seconds == time.getSeconds() && _value.millis == time.getMilliseconds()) return;
+	
+	newDate.setHours(time.getHours());
+	newDate.setMinutes(time.getMinutes());
+	newDate.setSeconds(time.getSeconds());
+	newDate.setMilliseconds(time.getMilliseconds());	
+
+	setValue(newDate.valueOf());
+}, 'timeInput');]]></script>
+</svg>

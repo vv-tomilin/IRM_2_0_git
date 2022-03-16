@@ -1,0 +1,10 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Load".Drill_Limit
+NodeClass: Variable
+BrowseName: 1:Drill_Limit
+DisplayName: en|Drill_Limit
+Description: en|Drill_Limit
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseDataVariableType

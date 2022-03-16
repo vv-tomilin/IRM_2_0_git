@@ -1,0 +1,11 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed".Change.Slowed
+NodeClass: Variable
+BrowseName: 1:Slowed
+DisplayName: en|Slowed
+Description: en|Slowed
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseDataVariableType
+Reference: forward HasComponent ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed"."Change".Slowed.RelMirrorInput

@@ -1,0 +1,10 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"Sensor".No_Error
+NodeClass: Variable
+BrowseName: 1:No_Error
+DisplayName: en|No_Error
+Description: en|No_Error
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseDataVariableType

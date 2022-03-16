@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AKB.NumP
+NodeClass: Variable
+BrowseName: 1:NumP
+DisplayName: en|NumP
+Description: en|NumP
+DataType: UInt16
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

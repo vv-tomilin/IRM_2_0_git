@@ -1,0 +1,60 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Description</h1>
+<p>This Display generates a dialog for showing messages, information or warnings.
+With the function openWindow the dialog can be called.
+The parameters can be used to adapt the text for the headline, the three message lines and the buttons.</br>
+The actions of the buttons are defined via the name of the corresponding trigger functions.
+If no trigger name is defined both buttons will close the window without any additional effect.
+</p>
+<h1>Parameters</h1>
+<p>The following parameters are available:</p>
+Headline:<br/>
+<ul>
+	<li><span class="parameter">text</span>: headline for the dialog.</li>
+	<li><span class="parameter">font size</span>: font size of the headline in pixels.</li>
+	<li><span class="parameter">font weight</span>: font weight which will be applied to the headline.</li>
+	<li><span class="parameter">font family</span>: font family which will be applied to the headline.</li>
+	<li><span class="parameter">horizontal alignment</span>: the headline's horizontal alignment.</li>
+	<li><span class="parameter">vertical alignment</span>: the headline's vertical alignment.</li>
+</ul>
+Message:<br/>
+<ul>
+	<li><span class="parameter">message line 1</span>: text in the first message line.</li>
+	<li><span class="parameter">message line 2</span>: text in the second message line.</li>
+	<li><span class="parameter">message line 3</span>: text in the third message line.</li>
+	<li><span class="parameter">font size</span>: font size of the message in pixels.</li>
+	<li><span class="parameter">font weight</span>: font weight which will be applied to the message.</li>
+	<li><span class="parameter">font family</span>: font family which will be applied to the message.</li>
+	<li><span class="parameter">horizontal alignment</span>: the message's horizontal alignment.</li>
+	<li><span class="parameter">vertical alignment</span>: the message's vertical alignment.</li>
+</ul>
+Buttons:<br/>
+<ul>
+	<li><span class="parameter">text of button 1</span>: text of button 1</li>
+	<li><span class="parameter">text of button 2</span>: text of button 2</li>
+	<li><span class="parameter">action of button 1</span>: trigger function of button 1</li>
+	<li><span class="parameter">action of button 2</span>: trigger function of button 2</li>
+	<li><span class="parameter">font size</span>: the button's font size in pixels.</li>
+</ul>
+Symbol:<br/>
+<ul>
+	<li><span class="parameter">symbol</span>: address of the symbol.</li>
+	<li><span class="parameter">symbol color</span>: color of the symbol to be used (default: global parameter <i>atvSymbolColor</i>)</li>
+</ul>
+Appearance:<br/>
+<ul>
+	<li><span class="parameter">background color</span>: color of the display's background.</li>
+</ul>
+<h1>Example</h1>
+<p>Call the message dialog with openWindow function:</br></br>
+webMI.display.openWindow({display:"SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dialogs.message_dialog", x:0, y:0, width:900, height:560, modal:true, resizable:false, movable:true, scrollbars:false, menubar:false, status:false, toolbar:false, query: {headline:"my headline", msg1:"my message in line 1"}});
+</p>
+</body>
+</html>

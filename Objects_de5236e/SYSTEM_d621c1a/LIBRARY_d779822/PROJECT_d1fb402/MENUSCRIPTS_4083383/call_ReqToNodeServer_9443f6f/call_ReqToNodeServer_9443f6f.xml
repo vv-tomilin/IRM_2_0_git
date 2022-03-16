@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <code><![CDATA[var tfile = 'report_day_2021_09_15.csv';
+call("reqToNodeServer",{csvname:tfile});]]></code>
+</script>

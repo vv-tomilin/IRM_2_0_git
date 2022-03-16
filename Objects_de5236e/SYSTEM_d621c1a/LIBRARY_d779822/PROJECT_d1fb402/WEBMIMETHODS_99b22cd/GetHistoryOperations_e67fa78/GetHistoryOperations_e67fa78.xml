@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="t1" type="http.request" trigger="false" relative="false" value=""/>
+  <parameter name="t2" type="http.request" trigger="false" relative="false" value=""/>
+  <parameter name="address" type="http.request" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var from = +t1.postvalues["t1"]; 
+var to = +t2.postvalues["t2"]; 
+var adr = address.postvalues["address"];
+
+
+opers_to_colors = {
+	'Неопределенный':'#999999',
+	'ШАБЛОНИРОВКА':'#cc6633',
+	'ПРОРАБОТКА':'#666633',
+	'ПРОМЫВКА':'#1583dc',
+	'БУРЕНИЕ':'#00ff00',
+	'Постановка':'#ffff00',
+	'СПО':'#ffff00',
+	'Крюкоблок':'#ffff00',
+	'Разгрузка':'#990000',
+	'На клиньях':'#9900cc',
+	'Наращивание':'#0000c4',
+	'Остановка':'#ff0000',
+	'Снятие':'#ffff00',
+	'Остановка ':'#ff0000'
+	
+}
+
+var res=[]
+//var day_start=new Date()
+//day_start.setTime(from)
+//var day_end=new Date()
+//day_end.setTime(to)
+var tr=new Date(from)
+var raw_full = []
+var now_time=from
+var razn = (24*3600*1000)-(tr.getHours()*3600*1000)-(tr.getMinutes()*60*1000)-(tr.getSeconds()*1000)-tr.getMilliseconds()
+now_time+=razn
+
+/*ПОЛУЧАЕМ ВСЕ ЗНАЧЕНИЯ ИЗ БД*/
+
+var raw1=call("SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.Report.simplifier",{"nodeName":adr,"startT":from,"endT":now_time})
+raw_full.push(raw1)
+for(var i = now_time; i < to; i+=86400000){
+	raw = call("SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.Report.simplifier",{"nodeName":adr,"startT":i+1,"endT":i+86400000})
+	raw_full.push(raw)
+	
+}
+
+/**/
+
+function parseOps(data){
+	var res = []
+	var prevOp = null
+	if(data.length > 0){
+		res.push([data[0][0],JSON.parse(data[0][1])])
+		var prevOp = JSON.parse(data[0][1]).oper
+		console.log(prevOp)
+		for(var i = 1; i<data.length; i++){
+			var tmstp = data[i][0]
+			var oper = JSON.parse(data[i][1])
+			if(oper.oper!=prevOp){
+			console.log(oper.oper, prevOp)
+				res.push([tmstp,oper])
+				prevOp = oper.oper			
+			}		
+		}	
+	}
+	return res
+}
+
+/*ОТКИДЫВАНИЕ ПОВТОРОВ ЗНАЧЕНИЙ, изначальная обработка*/
+
+var raw_scrab = []
+
+raw_full.forEach(function(e){
+	raw_scrab.push(parseOps(e))
+})
+
+var prev_op = null
+
+raw_scrab.forEach(function(e,cnt){
+	var prev_x = 0 
+	if((e.length == 0)&(prev_op!=null)){
+		obj = {
+			x:res[res.length-1].x2,
+			x2:100,
+			y:cnt-1,
+			name: prev_op.oper,
+			color: opers_to_colors[prev_op.oper]		
+		}
+		if(obj.color == null){obj.color = prev_op.color}
+		res.push(obj)
+		obj = {
+			x:0,
+			x2:100,
+			y: cnt,
+			name: prev_op.oper,
+			color: opers_to_colors[prev_op.oper]
+		}
+		if(obj.color == null){obj.color = prev_op.color}
+		res.push(obj)
+		
+	}
+	else if(e.length != 0){
+		e.forEach(function(item,cnt2){
+			if(prev_op == null){
+				prev_x = ((item[0]+(5*3600*1000))%86400000)/86400000*100
+				prev_op = item[1].oper		
+			}
+			else{
+				if(cnt2==0){
+					obj = {
+						x: res[res.length-1].x2,
+						x2: 100,
+						y: cnt-1,
+						name: prev_op.oper,
+						color: opers_to_colors[prev_op.oper]			
+					}
+					if(obj.color == null){obj.color = prev_op.color}
+					res.push(obj)				
+				}
+				now_op = item[1]
+				now_x = ((item[0]+(5*3600*1000))%86400000)/86400000*100
+				obj = {
+					x: prev_x,
+					x2: now_x,
+					y: cnt,
+					name: prev_op.oper,
+					color: opers_to_colors[prev_op.oper]				
+				}
+				if(obj.color == null){obj.color = prev_op.color}
+				res.push(obj)
+				prev_x = now_x
+				prev_op = now_op			
+			}
+		})	
+	}
+})
+
+return [res,raw_scrab.length]]]></code>
+</script>

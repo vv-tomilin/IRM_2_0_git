@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.UPLOAD
+NodeClass: Object
+BrowseName: 1:UPLOAD
+DisplayName: en|UPLOAD
+Description: en|UPLOAD
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

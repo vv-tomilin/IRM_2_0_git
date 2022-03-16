@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.pie_chart
+NodeClass: Variable
+BrowseName: 1:pie_chart
+DisplayName: en|pie_chart
+Description: en|pie_chart
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

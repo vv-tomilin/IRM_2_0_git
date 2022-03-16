@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.ORB.MaxSerovodorod1
+NodeClass: Variable
+BrowseName: 1:MaxSerovodorod1
+DisplayName: en|MaxSerovodorod1
+Description: en|MaxSerovodorod1
+DataType: UInt32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

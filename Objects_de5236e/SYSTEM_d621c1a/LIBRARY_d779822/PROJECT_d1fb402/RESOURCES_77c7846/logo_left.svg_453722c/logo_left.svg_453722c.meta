@@ -1,0 +1,11 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/logo_left.svg
+NodeClass: Variable
+BrowseName: 1:logo_left.svg
+DisplayName: en|logo_left.svg
+Description: en|logo_left.svg
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Svg
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Svg.Compress
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Svg.Translate

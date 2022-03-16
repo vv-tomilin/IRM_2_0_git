@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.General_Time_Based.rotaryTorqueMax
+NodeClass: Variable
+BrowseName: 1:rotaryTorqueMax
+DisplayName: en|rotaryTorqueMax
+Description: en|rotaryTorqueMax
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.HISTORY.AGGREGATETEMPLATES.ATDelta.DeltaBoundsVal
+NodeClass: Object
+BrowseName: 1:DeltaBoundsVal
+DisplayName: en|DeltaBoundsVal
+Description: en|DeltaBoundsVal
+EventNotifier: 0
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.AggregateFunction
+Reference: forward HasComponent i=2359
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Aggregates

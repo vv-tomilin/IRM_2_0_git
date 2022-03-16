@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="t1" type="http.request" trigger="false" relative="false" value=""/>
+  <parameter name="t2" type="http.request" trigger="false" relative="false" value=""/>
+  <parameter name="address" type="http.request" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var from = t1.postvalues['t1']
+var to = t2.postvalues['t2']
+var adr = address.postvalues['address']
+
+var res=[]
+console.log('<imhere>')
+var raw=call("SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.Report.simplifier",{"nodeName":adr,"startT":from,"endT":to})
+console.log(raw)
+res = raw.map(function(e){
+	return e[1]
+})
+
+return res]]></code>
+</script>

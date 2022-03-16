@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Variables.Hook.SetToStopTimeOutSec
+NodeClass: Variable
+BrowseName: 1:SetToStopTimeOutSec
+DisplayName: en|SetToStopTimeOutSec
+Description: en|SetToStopTimeOutSec
+DataType: UInt32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

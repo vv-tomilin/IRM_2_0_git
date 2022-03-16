@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.DrillingRig.DiametrRope
+NodeClass: Variable
+BrowseName: 1:DiametrRope
+DisplayName: en|DiametrRope
+Description: en|DiametrRope
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

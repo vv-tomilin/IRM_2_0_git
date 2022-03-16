@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:xlink="http://www.w3.org/1999/xlink" width="160" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg" height="30">
+ <defs/>
+ <metadata>
+  <atv:parameter desc="chart name" defaultvalue="trend1" name="chartname" valuetype="string" behavior="mandatory"/>
+  <atv:parameter desc="x axis index" defaultvalue="0" name="xAxisIndex" valuetype="string" behavior="optional"/>
+  <atv:gridconfig width="20" enabled="false" height="20" gridstyle="lines"/>
+  <atv:snapconfig width="10" enabled="false" height="10"/>
+ </metadata>
+ <svg atv:refpx="80" y="0" id="cbb_configs_range" width="160" height="30" atv:refpy="15" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.combobox_range" x="0">
+  <atv:argument name="tooltip" value="T{Диапазон времени}"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[//var chartname = webMI.query["chartname"];
+var activeAxis = webMI.query["xAxisIndex"];
+//var chart;
+
+
+function checkChart() {
+/*	chart = webMI.trendFactory.getTrendByName(chartname);
+
+	if (!chart) {
+		setTimeout(function() {checkChart()}, 500);
+		return;
+	}	
+*/
+//	webMI.trigger.fire("setSelectedItem", "1 час", "cbb_configs_range");
+	webMI.trigger.fire("setSelectedItem", "10 минут", "cbb_configs_range");
+	
+}
+
+webMI.addOnload(function() {
+	checkChart();
+});
+
+
+webMI.trigger.connect("range_clicked", function(e) {
+	if (e.value == "")
+		return;
+//	if (!chart || e.value == "")
+//		return;		
+		
+	console.log("cbb_configs_range:range_clicked");	
+	webMI.trigger.fire("stopCharts",'');
+/*	
+	var allcharts = webMI.trendFactory.getAllTrends();
+	allcharts.forEach(function(chart, i, arr) {
+		chart.control.stopLiveMode();
+		chart.control.setMode("history");
+	});
+*/	
+}, "cbb_configs_range");
+
+
+
+webMI.trigger.connect("valuechanged", function(e) {
+	if (e.value == "")
+		return;
+//	if (!chart || e.value == "")
+//		return;	
+		
+	console.log("cbb_configs_range:valuechanged");	
+	
+//	var allcharts = webMI.trendFactory.getAllTrends();
+//	allcharts.forEach(function(item, i, arr) {
+////		if (item.control.isLiveModeRunning()) item.control.stopLiveMode();
+//		item.control.stopLiveMode();
+//		//var oldMode = item.chart.options.atviseOptions.mode;
+//		item.control.setMode("history");
+////			chart.control.updated(function() {
+////			chart.control.setMode(oldMode);
+////		});
+//	});
+		
+//console.log("e.value = "+e.value);
+
+	var allcharts = webMI.trendFactory.getAllTrends();
+	allcharts.forEach(function(chart, i, arr) {
+		var allmilliseconds = e.value*3600000;
+	
+		var extremes = chart.chart.xAxis[activeAxis].getExtremes();	
+		chart.chart.xAxis[activeAxis].setExtremes(extremes.min, extremes.min+allmilliseconds);
+		chart.chart.xAxis[activeAxis].options.min = extremes.min;
+		chart.chart.xAxis[activeAxis].options.max = extremes.min+allmilliseconds;
+		
+		chart.chart.xAxis[activeAxis].options.timeSpan = allmilliseconds/1000;	
+		
+		chart.control.updated(function() {
+			console.log("cbb_configs_range updated");
+		});
+	});
+/*	
+//	var diff = 	extremes.max - extremes.min;
+	
+
+	chart.chart.xAxis[activeAxis].setExtremes(e.value, e.value+diff);
+//	chart.chart.xAxis[activeAxis].setExtremes(e.value, extremes.max);
+	chart.chart.xAxis[activeAxis].options.min = e.value;
+	chart.chart.xAxis[activeAxis].options.max = e.value+diff;
+//	chart.chart.xAxis[activeAxis].options.max = extremes.max;
+
+*/
+
+/*	chart.control.updated(function(){
+		var allcharts = webMI.trendFactory.getAllTrends();
+		allcharts.forEach(function(item, i, arr) {
+//			if (item.control.isLiveModeRunning()) item.control.stopLiveMode();
+			item.control.stopLiveMode();
+			//var oldMode = item.chart.options.atviseOptions.mode;
+			item.control.setMode("history");
+//				chart.control.updated(function() {
+//				chart.control.setMode(oldMode);
+//			});
+		});
+	});
+*/	
+/*	if (chart.control.isLiveModeRunning()) chart.control.stopLiveMode();
+	var oldMode = chart.chart.options.atviseOptions.mode;
+	chart.control.setMode("history");
+	chart.control.updated(function() {
+		chart.control.setMode(oldMode);
+	});	
+*/
+}, "cbb_configs_range");
+]]></script>
+</svg>

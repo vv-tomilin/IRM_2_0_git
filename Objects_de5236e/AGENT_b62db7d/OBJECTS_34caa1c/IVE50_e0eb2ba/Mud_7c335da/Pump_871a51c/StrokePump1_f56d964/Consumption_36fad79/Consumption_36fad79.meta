@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.Pump.StrokePump1.Consumption
+NodeClass: Variable
+BrowseName: 1:Consumption
+DisplayName: en|Consumption
+Description: en|Consumption
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

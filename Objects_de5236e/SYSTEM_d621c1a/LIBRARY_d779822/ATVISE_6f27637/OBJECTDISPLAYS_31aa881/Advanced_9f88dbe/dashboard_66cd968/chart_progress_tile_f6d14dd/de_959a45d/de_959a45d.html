@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta content="text/html; charset=windows-1252" http-equiv="content-type">
+	<title>Kachel f&uuml;r Fortschrittsbalken Hilfe</title>
+	<style> #parameter {
+		font-weight: bold;
+	} </style>
+</head>
+<body>
+<h1>Beschreibung</h1>
+<p>Das Display stellt Prozesswerte in Form eines Fortschrittsbalken dar.</p>
+<p>Mit Hilfe einer Statusanzeige in Form eines zus&auml;tzlichen Rahmens kann zudem auch ein negativer Status des aktuellen Wertes und ein zus&auml;tzlich definierter Alarm dargestellt werden.
+	Die Farben und Blinkintervalle werden in globalen Listen definiert.</p>
+
+<h1>Parameter</h1>
+<ul>
+	<li><span class="parameter">base</span>: Adresse zur Ausgabe- und Status&uuml;berwachung..</li>
+	<li><span class="parameter">Alarmadresse</span>: Optionale Adresse f&uuml;r die Alarm&uuml;berwachung.</li>
+</ul>
+
+<p>Ausgabeeinstellung</p>
+<ul>
+	<li><span class="parameter">Titel</span>: Titel der angezeigten Kachel.</li>
+	<li><span class="parameter">Einheit</span>: Diese Einheit wird zus&auml;tzlich zum Wert angezeigt.</li>
+	<li><span class="parameter">Nachkommastellen</span>: Anzahl der Stellen rechts vom Dezimalkomma (Standard: 0).</li>
+	<li><span class="parameter">Schriftart Titel</span>: Schriftfamilie, die auf den Titel angewendet wird.</li>
+	<li><span class="parameter">Schriftgr&ouml;&szlig;e Titel</span>: Schriftgr&ouml;&szlig;e, die auf den Titel angewendet wird.</li>
+	<li><span class="parameter">Minimum</span>: Unterer Grenzwerte der angezeigten Werte.</li>
+	<li><span class="parameter">Maximum</span>: Oberer Grenzwert der angezeigten Werte.</li>
+	<li><span class="parameter">Balkenfarbe</span>: Definiert die Balkenfarbe der Progressbar (<i>frei definierbar</i>)</li>
+	<li><span class="parameter">Balkenhintergrundfarbe</span>: Definiert die Balkenhintergrundfarbe der Progressbar (<i>frei definierbar</i>)</li>
+	<li><span class="parameter">Balkenkonturfarbe</span>: Definiert die Balkenkonturfarbe der Progressbar (<i>frei definierbar</i>)</li>
+	<li><span class="parameter">Balkenkonturst&auml;rke</span>: Definiert die Balkenkonturst&auml;rke der Progressbar (<i>frei definierbar</i>)</li>
+</ul>
+
+<p>Verhalten bei Klick:</p>
+<ul>
+	<li><span class="parameter">Klickereignis aktivieren</span>: Aktivierung der Bearbeitung eines Klicks auf die Kachel.</li>
+	<li><span class="parameter">Klick auf Inhalt erlauben</span>: Zus&auml;tzliche Erkennung eines Klicks auf den Kachelinhalt.</li>
+	<li><span class="parameter">Zielanzeige</span>: Anzeige, die beim Erkennen eines Klicks ge&ouml;ffnet werden soll.</li>
+	<li><span class="parameter">Verkn&uuml;pftes Element</span>: Element, das auf externe Klickereignisse &uuml;berwacht werden soll (ID des Elements).</li>
+</ul>
+
+<p>Status:</p>
+<ul>
+	<li><span class="parameter">Status&uuml;berwachung aktivieren</span>: Schaltet die Anzeige des aktuellen Wertestatus ein oder aus.</li>
+	<li><span class="parameter">Statustrigger feuern</span>: Statt der Statusanzeige kann auch ein hier definierter Trigger global gefeuert werden.</li>
+</ul>
+
+<p>Darstellung:</p>
+<ul>
+	<li><span class="parameter">Hintergrundfarbe</span>: Hintergrundfarbe (Standard: Globaler Parameter <i>atvFillColor</i>)</li>
+	<li><span class="parameter">Schriftfarbe</span>: Schriftfarbe (Standard: Globaler Parameter <i>atvFontColor</i>)</li>
+	<li><span class="parameter">Rahmenfarbe</span>: Rahmenfarbe (Standard: Globaler Parameter <i>atvBorderColor</i>)	</li>
+	<li><span class="parameter">Deaktivierungsfarbe</span>: Deaktivierungsfarbe (Standard: Globaler Parameter <i>atvInactiveColor</i>) </li>
+	<li><span class="parameter">Statushinweis</span>: Spezifiziert die Darstellung des Status &uuml;ber eine definierte globale Liste (Standard: Globaler Parameter <i>atvStatusIndication</i>)</li>
+	<li><span class="parameter">Alarmhinweis</span>: Spezifiziert die Darstellung des Alarms &uuml;berber eine definierte globale Liste (Standard: Globaler Parameter <i>atvAlarmIndication</i>)</li>
+</ul>
+
+<p>Optionen:</p>
+<ul>
+	<li><span class="parameter">Tooltip</span>: Zeigt eine Tooltip Box mit dem eingegebenen Text an (Standard HTML-Elemente k&ouml;nnen auch eingegeben werden)</li>
+	<li><span class="parameter">Adresse f&uuml;r Minimum</span>: Optionale Adresse zum definieren der unteren Grenze</li>
+	<li><span class="parameter">Adresse f&uuml;r Maximum</span>: Optionale Adresse zum definieren der oberen Grenze</li>
+</ul>
+
+<p>Sicherheit:</p>
+<ul>
+	<li><span class="parameter">Ben&ouml;tigtes Recht</span>: Der Benutzer muss &uuml;ber dieses Recht verf&uuml;gen, um diese Schaltfl&auml;che zu aktivieren, d.&nbsp;h. eine der beiden Schaltfl&auml;chen bet&auml;tigen zu k&ouml;nnen.</li>
+	<li><span class="parameter">Aktivierungsadresse</span>: Stimmt der Wert dieser Adresse mit dem "Aktivierungswert" &uuml;berein, ist das Steuerelement aktiv, so dass es bet&auml;tigt werden kann.</li>
+	<li><span class="parameter">Aktivierungswert</span>: Wert, von dem das Steuerelement aktiviert wird</li>
+</ul>
+
+<h1></h1>
+<br>
+</body>
+</html>

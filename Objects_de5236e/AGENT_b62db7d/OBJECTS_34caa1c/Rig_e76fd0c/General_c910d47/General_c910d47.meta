@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Rig.General
+NodeClass: Object
+BrowseName: 1:General
+DisplayName: en|General
+Description: en|General
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

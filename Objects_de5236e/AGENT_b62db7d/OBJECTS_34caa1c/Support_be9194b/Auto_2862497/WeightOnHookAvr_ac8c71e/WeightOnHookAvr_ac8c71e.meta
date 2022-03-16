@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.WeightOnHookAvr
+NodeClass: Variable
+BrowseName: 1:WeightOnHookAvr
+DisplayName: en|WeightOnHookAvr
+Description: en|WeightOnHookAvr
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

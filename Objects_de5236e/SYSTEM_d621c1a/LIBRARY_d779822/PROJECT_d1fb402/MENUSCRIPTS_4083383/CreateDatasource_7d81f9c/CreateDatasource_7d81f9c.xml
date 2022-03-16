@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <code><![CDATA[// **************************************************************************************
+// * Create a datasource by menuScript
+// * Author: Johannes Rasinger (CERTEC EDV GmbH)
+// * Created on: 04.06.2018
+// *
+// **************************************************************************************
+
+var node = new UaNode("ns=1;s=AGENT.DATASOURCES.ScriptDatasource");
+
+var status = node.create({
+nodeclass:UaNode.NODECLASS_OBJECT,
+parent:"AGENT.DATASOURCES",
+typedefinition:"ObjectTypes.ATVISE.Datasource.OpcUa",
+reference:UaNode.HASCOMPONENT,});
+
+var node2 = new UaNode("ns=1;s=AGENT.DATASOURCES.ScriptDatasource.Redundancy");
+
+var status = node2.create({
+nodeclass:UaNode.NODECLASS_OBJECT,
+parent:"AGENT.DATASOURCES.test",
+typedefinition:"ObjectTypes.ATVISE.DatasourceRedundancy",
+reference:UaNode.HASCOMPONENT,});
+
+var url = new UaNode("ns=1;s=AGENT.DATASOURCES.ScriptDatasource.url");
+url.value = "opc.tcp://localhost:4841"
+var cc = new UaNode("ns=1;s=AGENT.DATASOURCES.ScriptDatasource.client_certificate");
+cc.value = "test.der";
+]]></code>
+</script>

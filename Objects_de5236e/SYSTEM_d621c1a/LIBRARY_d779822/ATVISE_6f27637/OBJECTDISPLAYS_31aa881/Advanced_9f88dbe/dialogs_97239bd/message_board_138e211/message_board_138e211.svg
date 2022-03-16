@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" height="540" version="1.2" xmlns:xlink="http://www.w3.org/1999/xlink" width="900">
+ <defs/>
+ <desc>Adjustable dialog for messages in table form.</desc>
+ <title>Message board</title>
+ <metadata>
+  <atv:parameter behavior="optional" defaultvalue="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.info" name="symbol" desc="symbol" substitute="$SYMBOL$" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="Headline" name="headline" desc="text of headline" substitute="$HEADLINE$" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvFontColor" name="fontColor" desc="color" group="Appearance" substitute="$FONTCOLOR$" valuetype="global"/>
+  <atv:parameter behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvSymbolColor" name="symbolColor" desc="symbol color" group="Appearance" substitute="$SYMBOLCOLOR$" valuetype="global"/>
+  <atv:parameter behavior="optional" defaultvalue="Button One" name="btn1" desc="text of button 1" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="Button Two" name="btn2" desc="text of button 2" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="" name="action_btn1" desc="action of button 1" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="" name="action_btn2" desc="action of button 2" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="" name="action_unload" desc="unload action" valuetype="string"/>
+  <atv:gridconfig enabled="true" height="10" gridstyle="lines" width="10"/>
+  <atv:snapconfig enabled="true" height="10" width="10"/>
+ </metadata>
+ <svg transform="matrix(1.5,0,0,1,0,0)" atv:refpy="502" id="button1" height="30" x="6.667" y="490" atv:refpx="70" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" width="80">
+  <atv:argument value="" prefix="btn1" name="label"/>
+  <atv:argument value="14" name="fontSize"/>
+  <atv:overwrite transform="matrix(0.1333,0,0,0.3,0,0)" id="id_2" height="94.499" width="594.5"/>
+  <atv:overwrite transform="matrix(0.1333,0,0,0.3,0,0)" id="id_0" height="99.499" width="599.5"/>
+  <atv:overwrite transform="matrix(0.1333,0,0,0.375,0,0)" id="id_1" height="80" width="600"/>
+  <atv:overwrite transform="matrix(0.6667,0,0,1,0,0)" id="id_6" width="118"/>
+  <atv:overwrite transform="matrix(0.6667,0,0,1,0,0)" id="button_symbol" x="50"/>
+  <atv:overwrite transform="matrix(0.6667,0,0,1,0,0)" id="button_label" x="60" baseline-shift="-25%"/>
+  <atv:overwrite transform="matrix(0.6667,0,0,1,0,0)" id="button_stroke" width="116"/>
+  <atv:overwrite transform="matrix(0.6667,0,0,1,0,0)" id="button_bg" width="118"/>
+  <atv:overwrite transform="matrix(0.6667,0,0,1,0,0)" id="outer_frame" width="120"/>
+ </svg>
+ <svg transform="matrix(1.5,0,0,1,0,0)" atv:refpy="502" id="button2" height="30" x="513.333" y="490" atv:refpx="830" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" width="80">
+  <atv:argument value="" prefix="btn2" name="label"/>
+  <atv:argument value="14" name="fontSize"/>
+  <atv:overwrite transform="matrix(0.1333,0,0,0.3,0,0)" id="id_2" height="94.499" width="594.5"/>
+  <atv:overwrite transform="matrix(0.1333,0,0,0.3,0,0)" id="id_0" height="99.499" width="599.5"/>
+  <atv:overwrite transform="matrix(0.1333,0,0,0.375,0,0)" id="id_1" height="80" width="600"/>
+  <atv:overwrite transform="matrix(0.6667,0,0,1,0,0)" id="id_6" width="118"/>
+  <atv:overwrite transform="matrix(0.6667,0,0,1,0,0)" id="button_symbol" x="50"/>
+  <atv:overwrite transform="matrix(0.6667,0,0,1,0,0)" id="button_label" x="60" baseline-shift="-25%"/>
+  <atv:overwrite transform="matrix(0.6667,0,0,1,0,0)" id="button_stroke" width="116"/>
+  <atv:overwrite transform="matrix(0.6667,0,0,1,0,0)" id="button_bg" width="118"/>
+  <atv:overwrite transform="matrix(0.6667,0,0,1,0,0)" id="outer_frame" width="120"/>
+ </svg>
+ <foreignObject id="id_0" height="470" x="10" y="10" width="880">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml" id="table_message_board">
+   <div style="width:100%;height:100%; overflow:auto;" xmlns="http://www.w3.org/1999/xhtml" id="table_message_content"/>
+  </div>
+ </foreignObject>
+	<script type="text/ecmascript"><![CDATA[/* set values for portal */
+webMI.gfx.setText(document.getElementById("headline"), webMI.query["headline"]);
+webMI.gfx.setText(document.getElementById("button1_button_label"), webMI.query["btn1"]);
+webMI.gfx.setText(document.getElementById("button2_button_label"), webMI.query["btn2"]);
+webMI.gfx.setFill(document.getElementById("symbol"), webMI.query["symbolColor"]);
+webMI.gfx.setFill(document.getElementById("headline"), webMI.query["fontColor"]);
+webMI.gfx.setFill(document.getElementById("button1_lable"), webMI.query["fontColor"]);
+webMI.gfx.setFill(document.getElementById("button2_lable"), webMI.query["fontColor"]);
+
+webMI.libraryLoader.jQuery(function () {
+
+	var boardID = document.getElementById("table_message_board").getAttribute("id");
+	var boardContent = document.getElementById("table_message_content").getAttribute("id");
+
+	var styling = {
+		"font-family": webMI.query["font_family"],
+		"font-size": webMI.query["font_size"],
+	}
+	webMI.rootWindow.jQuery("#" + boardID).css(styling);
+	webMI.rootWindow.jQuery("#" + boardContent).html("")
+
+	webMI.trigger.connect("com.atvise.message_board_update", function (e) {
+		var content = "";
+		for (var key in e.value) {
+			content += e.value[key] + "<br>";
+		}
+		webMI.rootWindow.jQuery("#" + boardContent).html(content);
+	});
+
+	webMI.trigger.connect("com.atvise.message_board_reset", function (e) {
+		var content = "";
+		webMI.rootWindow.jQuery("#" + boardContent).html(content)
+	});
+
+	webMI.trigger.connect("clicked", function (e) {
+		if (typeof webMI.query.action_btn1 == "undefined" || webMI.query.action_btn1 == "")
+			webMI.display.closeWindow();
+		else
+			webMI.trigger.fire(webMI.query.action_btn1, this);
+	}, "button1");
+
+	webMI.trigger.connect("clicked", function (e) {
+		if (typeof webMI.query.action_btn2 == "undefined" || webMI.query.action_btn2 == "")
+			webMI.display.closeWindow();
+		else
+			webMI.trigger.fire(webMI.query.action_btn2, this);
+	}, "button2");
+
+	webMI.addOnunload(
+		function () {
+			if (typeof webMI.query.action_unload == "undefined" || webMI.query.action_unload == "") {
+			} else {
+				webMI.trigger.fire(webMI.query.action_unload, this);
+			}
+		}
+	);
+
+	webMI.trigger.fire("com.atvise.message_board_loaded", this);
+
+});
+
+]]></script>
+</svg>

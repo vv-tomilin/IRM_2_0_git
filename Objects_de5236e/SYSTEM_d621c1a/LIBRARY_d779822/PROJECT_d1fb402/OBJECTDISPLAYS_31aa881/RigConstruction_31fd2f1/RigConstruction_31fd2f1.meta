@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.RigConstruction
+NodeClass: Object
+BrowseName: 1:RigConstruction
+DisplayName: en|RigConstruction
+Description: en|RigConstruction
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.PDF_View.Directory_Path
+NodeClass: Variable
+BrowseName: 1:Directory_Path
+DisplayName: en|Directory_Path
+Description: en|Directory_Path
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

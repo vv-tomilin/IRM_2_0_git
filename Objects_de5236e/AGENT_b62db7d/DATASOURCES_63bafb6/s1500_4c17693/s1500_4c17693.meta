@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.DATASOURCES.s1500
+NodeClass: Object
+BrowseName: 1:s1500
+DisplayName: en|s1500
+Description: en|s1500
+EventNotifier: 0
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.Datasource.OpcUa

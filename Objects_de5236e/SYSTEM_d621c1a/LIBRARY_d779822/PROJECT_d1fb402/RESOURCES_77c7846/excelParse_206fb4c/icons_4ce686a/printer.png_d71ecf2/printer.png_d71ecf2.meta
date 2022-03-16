@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/excelParse/icons/printer.png
+NodeClass: Variable
+BrowseName: 1:printer.png
+DisplayName: en|printer.png
+Description: en|printer.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

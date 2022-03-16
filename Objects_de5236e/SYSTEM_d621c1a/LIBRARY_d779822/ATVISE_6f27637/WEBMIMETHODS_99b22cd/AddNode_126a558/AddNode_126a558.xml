@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="request" type="http.request" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var address = request.postvalues.address;
+var typeDefinition = request.postvalues.typeDefinition;
+var dataType = request.postvalues.dataType;
+var value = request.postvalues.value;
+var nodeClass = request.postvalues.nodeClass;
+
+new UaNode(address).create({
+	"nodeclass": UaNode[nodeClass],
+	"parent": address.substring(0, address.lastIndexOf('.')),
+	"typedefinition": typeDefinition,
+	"datatype": UaNode[dataType],
+	"value": value
+});]]></code>
+</script>

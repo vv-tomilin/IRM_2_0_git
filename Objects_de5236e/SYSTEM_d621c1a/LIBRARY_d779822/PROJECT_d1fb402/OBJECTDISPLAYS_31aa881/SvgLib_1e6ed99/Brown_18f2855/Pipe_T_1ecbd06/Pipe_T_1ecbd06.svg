@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" version="1.2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" width="52" xmlns="http://www.w3.org/2000/svg" height="30" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="false" gridstyle="lines" width="20" height="20"/>
+  <atv:snapconfig enabled="false" width="10" height="10"/>
+ </metadata>
+ <g id="id_2" atv:insensitive="true" atv:refpx="0" atv:refpy="0" transform="matrix(1,0,0,1,0,0)">
+  <rect id="id_3" y="0" fill="#0000ff" fill-opacity="0" atv:refpx="26" atv:refpy="15" x="0" width="52.00" height="30.00"/>
+ </g>
+ <g id="id_1" atv:refpx="26" atv:refpy="15">
+  <g id="layer1" atv:refpx="26" atv:refpy="15" transform="translate(-4.9136906,-55.071131)">
+   <g id="shape" atv:refpx="30.914" atv:refpy="70.071" transform="matrix(0.52,0,0,0.51724138,4.9136906,55.071131)">
+    <polygon id="polygon43" points="58,42 58,0 42,0 42,42 0,42 0,58 100,58 100,42 " fill="#c78163" atv:refpx="50" atv:refpy="29"/>
+   </g>
+   <g id="dark" atv:refpx="30.914" atv:refpy="69.813" transform="matrix(0.52,0,0,0.51724138,4.9136906,55.071131)">
+    <polygon id="polygon46" points="57,43 57,0 43,0 43,43 0,43 0,57 100,57 100,43 " fill="#947365" atv:refpx="50" atv:refpy="28.5"/>
+   </g>
+   <g id="light" atv:refpx="30.914" atv:refpy="69.295" transform="matrix(0.52,0,0,0.51724138,4.9136906,55.071131)">
+    <polygon id="polygon49" points="55,45 55,0 45,0 45,45 0,45 0,55 100,55 100,45 " fill="#de9c5f" atv:refpx="50" atv:refpy="27.5"/>
+   </g>
+   <g id="hlight" atv:refpx="30.914" atv:refpy="68.907" transform="matrix(0.52,0,0,0.51724138,4.9136906,55.071131)">
+    <polygon id="polygon52" points="53.5,46.5 53.5,0 46.5,0 46.5,46.5 0,46.5 0,53.5 100,53.5 100,46.5 " fill="#fbbc5a" atv:refpx="50" atv:refpy="26.75"/>
+   </g>
+  </g>
+ </g>
+</svg>

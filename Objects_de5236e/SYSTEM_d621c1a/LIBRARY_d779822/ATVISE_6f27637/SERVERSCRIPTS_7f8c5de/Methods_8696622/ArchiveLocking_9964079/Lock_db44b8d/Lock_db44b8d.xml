@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="archivename" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="timeout" type="number" trigger="false" relative="false" value="-1"/>
+  <code><![CDATA[/** atvise server wrapper for UA method "AGENT.HISTORY.METHODS.lock"
+This script is a standard atvise resource and must not be modified.
+\example
+\code
+var result = call("Methods.ArchiveLocking.Lock", {
+	archivename: "C:/Program Files/atvise/database/datavalues_raw.db",
+	timeout: 10
+});
+if (result.error)
+	console.log(result.errorstring);
+else
+	console.log(result.result);
+\endcode
+
+\b Input:
+\param archivename {string}, The archive filename/path to lock.
+\param timeout {number}, {optional} Duration in seconds for the lock.
+\b Output:
+\return {Object} A result object is returned with the following properties:
+- Object.error {number},{optional} Returns the error code in case of an error. If no error occurred, it is undefined.
+- Object.errorstring {string},{optional} Returns the error string in case of an error. If no error occurred, it is undefined.
+- Object.result {object},{optional} Returns the result (empty) if no error occurred.
+*/
+
+var historyCall = new UaNode("AGENT.HISTORY.METHODS.lock");
+var callResult = historyCall.call({
+	object: "AGENT.HISTORY.METHODS",
+	input: [{type: UaNode.STRING, value: archivename},
+			{type: UaNode.UINT32, value: timeout}
+	]
+});
+var result = {};
+
+if (callResult.error) {
+	result.error = callResult.error;
+	result.errorstring = historyCall.statusToString(result.error);
+	if (callResult.argumentError) {
+		var parameterNames = [
+			server.script.origin.split('.').slice(-3,-2)[0],
+			"ns=1;s=AGENT.HISTORY.METHODS.lock"];
+		for (var i = 0; i < callResult.argumentError.length; ++i)
+			if (callResult.argumentError[i])
+				result.errorstring += ", " + parameterNames[i] + ":" + historyCall.statusToString(callResult.argumentError[i]);
+	}
+}
+else {
+	result.result = {};
+}
+
+return result;]]></code>
+</script>

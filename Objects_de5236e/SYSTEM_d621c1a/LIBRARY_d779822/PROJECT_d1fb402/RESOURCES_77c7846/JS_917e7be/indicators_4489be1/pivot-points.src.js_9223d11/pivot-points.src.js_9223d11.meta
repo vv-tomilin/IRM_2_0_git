@@ -1,0 +1,10 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/indicators/pivot-points.src.js
+NodeClass: Variable
+BrowseName: 1:pivot-points.src.js
+DisplayName: en|pivot-points.src.js
+Description: en|pivot-points.src.js
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Javascript
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Javascript.Compress

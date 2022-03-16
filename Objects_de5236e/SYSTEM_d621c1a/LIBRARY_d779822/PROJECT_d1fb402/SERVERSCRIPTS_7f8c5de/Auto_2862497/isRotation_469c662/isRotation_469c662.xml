@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nodeTdsRpm" type="node" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.IVE50.TDS.TDSSpeed"/>
+  <parameter name="nodeTdsRpmLimit" type="node" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Support.Auto.TdsRpmLimit"/>
+  <code><![CDATA[if(nodeTdsRpm.value > nodeTdsRpmLimit.value)
+ return true;
+return false;]]></code>
+</script>

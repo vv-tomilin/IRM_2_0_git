@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ServiceParams.NNB.cols.TechCol.current
+NodeClass: Variable
+BrowseName: 1:current
+DisplayName: en|current
+Description: en|current
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

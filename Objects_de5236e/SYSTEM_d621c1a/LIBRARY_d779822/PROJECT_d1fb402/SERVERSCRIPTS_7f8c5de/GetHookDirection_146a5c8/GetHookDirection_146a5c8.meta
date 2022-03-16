@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.GetHookDirection
+NodeClass: Variable
+BrowseName: 1:GetHookDirection
+DisplayName: en|GetHookDirection
+Description: en|GetHookDirection
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

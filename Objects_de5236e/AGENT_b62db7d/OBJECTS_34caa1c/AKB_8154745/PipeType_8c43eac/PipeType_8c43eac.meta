@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AKB.PipeType
+NodeClass: Variable
+BrowseName: 1:PipeType
+DisplayName: en|PipeType
+Description: en|PipeType
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

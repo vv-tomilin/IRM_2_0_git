@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.Pump.LevelFlowShot
+NodeClass: Variable
+BrowseName: 1:LevelFlowShot
+DisplayName: en|LevelFlowShot
+Description: en|LevelFlowShot
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

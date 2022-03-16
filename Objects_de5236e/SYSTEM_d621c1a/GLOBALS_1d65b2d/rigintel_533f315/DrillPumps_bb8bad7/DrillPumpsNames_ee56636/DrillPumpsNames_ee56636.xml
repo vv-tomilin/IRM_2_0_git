@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Value xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd" xmlns:uax="http://opcfoundation.org/UA/2008/02/Types.xsd">
+	<uax:ListOfString>
+		<uax:String>&quot;1&quot;:{&quot;text&quot;:&quot;Насос - У8-6М2А&quot;,&quot;type&quot;:&quot;duplex&quot;,&quot;value&quot;:&quot;У8-6М2А&quot;}</uax:String>
+		<uax:String>&quot;2&quot;:{&quot;text&quot;:&quot;Насос - У8-7М&quot;,&quot;type&quot;:&quot;duplex&quot;,&quot;value&quot;:&quot;У8-7М&quot;}</uax:String>
+		<uax:String>&quot;3&quot;:{&quot;text&quot;:&quot;Насос - УНБ-600&quot;,&quot;type&quot;:&quot;duplex&quot;,&quot;value&quot;:&quot;УНБ-600&quot;}</uax:String>
+		<uax:String>&quot;4&quot;:{&quot;text&quot;:&quot;Насос - УНБ-950&quot;,&quot;type&quot;:&quot;triplex&quot;,&quot;value&quot;:&quot;УНБ-950&quot;}</uax:String>
+		<uax:String>&quot;5&quot;:{&quot;text&quot;:&quot;Насос - УНБ-1180&quot;,&quot;type&quot;:&quot;triplex&quot;,&quot;value&quot;:&quot;УНБ-1180&quot;}</uax:String>
+		<uax:String>&quot;6&quot;:{&quot;text&quot;:&quot;Насос - НБТ-475&quot;,&quot;type&quot;:&quot;triplex&quot;,&quot;value&quot;:&quot;НБТ-475&quot;}</uax:String>
+		<uax:String>&quot;7&quot;:{&quot;text&quot;:&quot;Насос - НБТ-235&quot;,&quot;type&quot;:&quot;triplex&quot;,&quot;value&quot;:&quot;НБТ-235&quot;}</uax:String>
+	</uax:ListOfString>
+</Value>

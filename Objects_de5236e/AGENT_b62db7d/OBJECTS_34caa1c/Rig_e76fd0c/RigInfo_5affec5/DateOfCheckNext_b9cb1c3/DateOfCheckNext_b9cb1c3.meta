@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Rig.RigInfo.DateOfCheckNext
+NodeClass: Variable
+BrowseName: 1:DateOfCheckNext
+DisplayName: en|DateOfCheckNext
+Description: en|DateOfCheckNext
+DataType: DateTime
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

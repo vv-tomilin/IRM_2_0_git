@@ -1,0 +1,369 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="900" version="1.2" width="1750" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:parameter behavior="optional" defaultvalue="" name="chartTitle" valuetype="string"/>
+  <atv:parameter behavior="optional" name="factAddress" valuetype="address"/>
+  <atv:parameter behavior="optional" name="planAddress" valuetype="address"/>
+  <atv:gridconfig enabled="true" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <g atv:insensitive="true" atv:refpx="0" atv:refpy="0" id="id_0" transform="matrix(0.9459,0,0,0.8867,0,0)">
+  <rect atv:refpx="925" atv:refpy="507.5" fill="#1f1f1f" height="1015.00" id="id_1" width="1850.00" x="0" y="0"/>
+ </g>
+ <foreignObject height="721.504" id="id_2" width="1750" x="0.678" y="1.356">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <script src="../../highcharts/highcharts.js"/>
+   <script src="../../highcharts/series-label.js"/>
+   <script src="../../highcharts/accessibility.js"/>
+   <div id="HalChart_container"/>
+  </div>
+ </foreignObject>
+ <foreignObject height="175.847" id="id_5" width="1750" x="0" y="724.153">
+  <div style="width:100%;height:100%display:flex;justify-content:center;align-items:center;" xmlns="http://www.w3.org/1999/xhtml">
+   <style>
+.buttonList {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	gap: 1rem;
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	box-sizing: border-box;
+}
+.label {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 0;
+	padding: .5rem .2rem;
+	box-sizing: border-box;
+	border-bottom: 1px solid transparent;
+}
+.label-text {
+	margin: 0;
+	padding: 0;
+	color: rgba(255, 255, 255, 0.85);
+}
+.checkbox-label {
+	width: 1rem;
+	height: 1rem;
+}
+</style>
+   <div class="buttonList" id="buttonList">
+    <div id="buttonList_0"/>
+    <div id="buttonList_1"/>
+    <div id="buttonList_2"/>
+    <div id="buttonList_3"/>
+   </div>
+  </div>
+ </foreignObject>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[webMI.data.read("AGENT.OBJECTS.Depth_day_data.start_date", function(start_date) {
+var label = webMI.query["chartTitle"];
+var fPath = webMI.query["factAddress"];
+var pPath = webMI.query["planAddress"];
+
+var chartMenu = [];
+
+var yAxis = [{
+  title: {
+	text: "Глубина (м)",
+	style:{
+		color:'#fff',
+		fontSize:'18px'
+	},
+	enabled:true
+  },
+  reversed:true,
+  min: 0,
+  gridLineColor:'#6e6f70'
+}];
+
+var xAxis = [{
+  type: 'linear',
+  min: 0,
+  title: {
+	text: 'Глубина',
+	margin:0,
+	style:{
+		color:'#fff',
+		fontSize:'18px'
+	},
+	enabled:false
+  },
+  width: '20%',
+  margin: 100,
+  offset: 0,
+  gridLineWidth:'0',
+  gridLineColor:'transparent',
+  tickInterval:10,
+  //minorTickInterval:5
+},
+{
+  type: 'linear',
+  min: 0,
+  title: {
+	text: 'Глубина',
+	margin:0,
+	style:{
+		color:'#fff',
+		fontSize:'18px'
+	},
+	enabled:false
+  },
+  width: '20%',
+  left: '27.5%',
+  margin: 100,
+  offset: 0,
+  gridLineWidth:'0',
+  gridLineColor:'transparent',
+  tickInterval: 10,
+  //minorTickInterval: 5
+},
+{
+  type: 'linear',
+  min: 0,
+  title: {
+	text: 'Глубина',
+	margin:0,
+	style:{
+		color:'#fff',
+		fontSize:'18px'
+	},
+	enabled:false
+  },
+  width: '20%',
+  left: '52.5%',
+  margin: 100,
+  offset: 0,
+  gridLineWidth:'0',
+  gridLineColor:'transparent',
+  tickInterval:10,
+  //minorTickInterval:5
+},
+{
+  type: 'linear',
+  min: 0,
+  title: {
+	text: 'Глубина',
+	margin:0,
+	style:{
+		color:'#fff',
+		fontSize:'18px'
+	},
+	enabled:false
+  },
+  width: '20%',
+  left: '80%',
+  margin: 100,
+  offset: 0,
+  gridLineWidth:'0',
+  gridLineColor:'transparent',
+  tickInterval:10,
+  //minorTickInterval:5
+}
+];
+
+var hallData = {};
+var diffPressureChart;
+
+var mapUnits = {
+	pressure: "атм",
+	load: "кН*м",
+	depth: "м",
+	//density: "г/см3",
+	torque: "г/см3"
+}
+/*
+var namesMap = {
+	"г/см3": "load",
+	"атм": "pressure",
+	"кН*м": "torque",
+	"м": "depth",
+	"кН": "BigHotLoad"
+};
+
+var valueMap = {
+	"м": [],
+	"г/см3": [],
+	"атм": [],
+	"кН*м": [],
+	"кН": []
+};
+*/
+
+function renderMenu(prop) {
+	var buttonList = document.getElementById("buttonList");
+	buttonList.addEventListener("change", function(e) {
+		if (e.target.dataset.box) {
+			var id = e.target.dataset.box
+			if (e.target.checked) diffPressureChart.series[id].show()
+			else diffPressureChart.series[id].hide()
+		}
+	})
+	
+	function fillButtonList() {
+		chartMenu.map(function(item, index) {
+			var currentButtonList = document.getElementById("buttonList_" + item.gridId);
+			var button = parent.document.createElement("label");
+			var text = parent.document.createElement("p");
+			var input = parent.document.createElement("input");
+			
+			var checkbox = parent.document.createElement("div");
+			var arrow = parent.document.createElement("div");
+			
+			checkbox.style.backgroundColor = diffPressureChart.series[index].color;
+			//button.style.borderColor = diffPressureChart.series[index].color;
+			input.setAttribute("type", "checkbox");
+			input.setAttribute("checked", true);
+			input.dataset.box = item.boxId;
+			text.textContent = item.name;
+			
+			checkbox.classList.add("checkbox-label");
+			button.classList.add("active");
+			button.classList.add("label");
+			text.classList.add("label-text");
+			
+			checkbox.appendChild(arrow);
+			
+			button.appendChild(checkbox);
+			button.appendChild(input);
+			button.appendChild(text);
+			
+			currentButtonList.appendChild(button);
+		})
+	}
+	fillButtonList();
+}
+
+function createChart(series) {
+	diffPressureChart = Highcharts.chart(document.getElementById('HalChart_container'), {
+		title: {
+			text: label,
+			margin:0,
+			style: {
+				color:'#FFF'
+			}
+		},
+		chart: {
+		  type: 'spline',
+		  backgroundColor:'rgba(0,0,0,0)',
+		  width: 1750,
+		  height: 650,
+		  plotBackgroundColor:'#101010',
+		  styledMode:false
+		},
+		subtitle: {
+			text: 'График'
+		},
+		yAxis: createYAxis(yAxis),
+		xAxis: xAxis,
+		legend:{
+			enabled:false
+		},
+		plotOptions: {
+		  series: {
+			marker: {
+			  enabled: false
+			},
+			label:{
+				enabled:false
+			}
+	
+		  }
+		},
+		credits: {
+			enabled: false
+		},
+		tooltip: {
+			pointFormat: "{series.name}: {point.x} <br /> Глубина: {point.y}",
+			//valueSuffix: " " + mapUnits[webMI.query["base"]]
+		},
+		//colors: ['#FFF', '#F00', '#FF0'],
+		series: series,
+		responsive: {
+			rules: [{
+				condition: {
+					maxWidth: 1000
+				},
+				chartOptions: {
+					legend: {
+						layout: 'horizontal',
+						align: 'center',
+						verticalAlign: 'bottom'
+					}
+				}
+			}]
+		}
+	});
+	webMI.gfx.setScaledEvents(document.getElementById('HalChart_container'), true);
+}
+
+function getFactData() {
+	var filter = {};
+	filter.type = ["v:1"];
+	filter.address = ["g:" + fPath];
+	filter.timestamp = ["n:>=" + start_date + "<" + Date.now()];
+	webMI.data.queryFilter(filter, function(res) {
+		var result = [];
+		res.result.map(function(item) {
+			result.push({ x: item.value, y: 1300 , name: "321" })
+		})
+		//diffPressureChart.series[2].update({ data: result });
+	});
+}
+getFactData();
+
+webMI.trigger.connect("setHallData", function(res) {
+	var dataArray = Object.keys(res.value[webMI.query["base"]]);
+	var dataObj = res.value[webMI.query["base"]];
+	var chartData = [];
+	
+	hallData = res.value;
+	
+	console.log(dataArray, dataObj);
+	dataArray.map(function(item, index) {
+		var aID = sortAxis(index);	
+	
+		chartMenu.push({
+			name: res.value.transcription[item],
+			boxId: index,
+			gridId: aID
+		})
+		
+		chartData.push({
+			name: res.value.transcription[item],
+			data: dataObj[item],
+			xAxis: aID
+			//xAxis: 0
+		})
+		console.log(dataObj[item])
+			
+		return
+	})
+	console.log(chartData);
+	createChart(chartData);
+	renderMenu(dataArray);
+})
+
+function createYAxis(arr) {
+	var result = arr;
+	
+	return result
+}
+
+var counter = 0;
+function sortAxis(id) {
+	var result = counter;
+	console.log(result)
+	if (counter >= 3) {
+		counter = 0;
+	}
+	else {
+		counter++;
+	}
+	
+	return result
+}
+})]]></script>
+</svg>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.AutoHistory.resetTimerOper
+NodeClass: Variable
+BrowseName: 1:resetTimerOper
+DisplayName: en|resetTimerOper
+Description: en|resetTimerOper
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.HeatingElement
+NodeClass: Variable
+BrowseName: 1:HeatingElement
+DisplayName: en|HeatingElement
+Description: en|HeatingElement
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

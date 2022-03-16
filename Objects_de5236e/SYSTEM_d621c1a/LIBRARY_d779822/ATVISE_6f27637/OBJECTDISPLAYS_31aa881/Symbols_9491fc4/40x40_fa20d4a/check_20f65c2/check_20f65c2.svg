@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg id="Yes_check" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg" version="1.0" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40">
+ <defs id="defs1373">
+  <linearGradient id="linearGradient2250">
+   <stop stop-opacity="1" offset="0" stop-color="#008700"/>
+   <stop stop-opacity="1" offset="1" stop-color="#006f00"/>
+  </linearGradient>
+ </defs>
+ <metadata>
+  <atv:parameter valuetype="color" behavior="optional" substitute="$SYMBOLCOLOR$" defaultvalue="#000000" name="symbolColor" desc="symbol color"/>
+  <atv:gridconfig gridstyle="lines" enabled="false" width="20" height="20"/>
+  <atv:snapconfig enabled="false" width="10" height="10"/>
+ </metadata>
+ <polygon stroke="none" stroke-width="1" id="id_3" points="4.962,20.013 2.115,22.942 15.702,39.214 38.643,2.196 35.797,0.244 14.563,26.522" atv:refpx="20.379" atv:refpy="19.729" fill="$SYMBOLCOLOR$"/>
+</svg>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AutoInformer.Procent
+NodeClass: Variable
+BrowseName: 1:Procent
+DisplayName: en|Procent
+Description: en|Procent
+DataType: UInt16
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

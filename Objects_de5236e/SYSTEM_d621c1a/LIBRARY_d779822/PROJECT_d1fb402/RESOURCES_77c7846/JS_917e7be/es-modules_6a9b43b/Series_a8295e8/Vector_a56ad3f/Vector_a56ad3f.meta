@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/Vector
+NodeClass: Object
+BrowseName: 1:Vector
+DisplayName: en|Vector
+Description: en|Vector
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

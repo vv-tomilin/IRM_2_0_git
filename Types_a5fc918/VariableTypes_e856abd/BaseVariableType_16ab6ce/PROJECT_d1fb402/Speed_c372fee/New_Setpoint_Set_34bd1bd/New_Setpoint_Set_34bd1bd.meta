@@ -1,0 +1,10 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed".New_Setpoint_Set
+NodeClass: Variable
+BrowseName: 1:New_Setpoint_Set
+DisplayName: en|New_Setpoint_Set
+Description: en|New_Setpoint_Set
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseDataVariableType

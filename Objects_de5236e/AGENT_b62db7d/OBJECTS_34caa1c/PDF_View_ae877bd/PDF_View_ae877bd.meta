@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.PDF_View
+NodeClass: Object
+BrowseName: 1:PDF_View
+DisplayName: en|PDF_View
+Description: en|PDF_View
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

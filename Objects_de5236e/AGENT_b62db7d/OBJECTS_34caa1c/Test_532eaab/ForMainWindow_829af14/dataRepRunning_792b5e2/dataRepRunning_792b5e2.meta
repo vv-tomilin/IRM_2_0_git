@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.ForMainWindow.dataRepRunning
+NodeClass: Variable
+BrowseName: 1:dataRepRunning
+DisplayName: en|dataRepRunning
+Description: en|dataRepRunning
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

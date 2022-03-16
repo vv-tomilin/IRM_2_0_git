@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.Platforma.IR-manager.Регион.Ханты-Мансийский АО.Месторождения
+NodeClass: Object
+BrowseName: 1:Месторождения
+DisplayName: en|Месторождения
+Description: en|Месторождения
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

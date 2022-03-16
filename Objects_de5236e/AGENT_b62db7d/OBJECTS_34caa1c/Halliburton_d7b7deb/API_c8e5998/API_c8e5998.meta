@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Halliburton.API
+NodeClass: Object
+BrowseName: 1:API
+DisplayName: en|API
+Description: en|API
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.Auto.calcWeightOnHook
+NodeClass: Variable
+BrowseName: 1:calcWeightOnHook
+DisplayName: en|calcWeightOnHook
+Description: en|calcWeightOnHook
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

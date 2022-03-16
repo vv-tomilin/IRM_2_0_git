@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Platforma.RigBoard.PassPlan
+NodeClass: Variable
+BrowseName: 1:PassPlan
+DisplayName: en|PassPlan
+Description: en|PassPlan
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

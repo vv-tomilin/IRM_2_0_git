@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" version="1.2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" width="30" xmlns="http://www.w3.org/2000/svg" height="30" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="false" gridstyle="lines" width="20" height="20"/>
+  <atv:snapconfig enabled="false" width="10" height="10"/>
+ </metadata>
+ <g id="id_2" atv:insensitive="true" atv:refpx="0" atv:refpy="0" transform="matrix(1,0,0,1,0,0)">
+  <rect id="id_3" y="0" fill="#0000ff" fill-opacity="0" atv:refpx="15" atv:refpy="15" x="0" width="30.00" height="30.00"/>
+ </g>
+ <g id="id_1" atv:refpx="15" atv:refpy="15">
+  <g id="layer1" atv:refpx="15" atv:refpy="15" transform="translate(-29.36875,-49.779464)">
+   <g id="shape" atv:refpx="44.369" atv:refpy="64.779" transform="matrix(0.51724138,0,0,0.51724138,29.36875,49.779464)">
+    <path id="path43" fill="#c78163" atv:refpx="29" atv:refpy="29" d="M34,58L0,58L0,42L34,42C38.411,42 42,38.411 42,34L42,0L58,0L58,34C58,47.234 47.234,58 34,58"/>
+   </g>
+   <path id="path46" fill="#947365" atv:refpx="44.11" atv:refpy="64.521" d="M46.954,79.262L29.368,79.262L29.368,72.02L46.954,72.02C49.521,72.02 51.61,69.932 51.61,67.365L51.61,49.779L58.851,49.779L58.851,67.365C58.851,73.925 53.514,79.262 46.954,79.262" stroke-width="0.517241"/>
+   <g id="light" atv:refpx="43.593" atv:refpy="64.004" transform="matrix(0.51724138,0,0,0.51724138,29.36875,49.779464)">
+    <path id="path49" fill="#de9c5f" atv:refpx="27.5" atv:refpy="27.5" d="M34,55L0,55L0,45L34,45C40.065,45 45,40.065 45,34L45,0L55,0L55,34C55,45.58 45.58,55 34,55"/>
+   </g>
+   <g id="hlight" atv:refpx="43.205" atv:refpy="63.616" transform="matrix(0.51724138,0,0,0.51724138,29.36875,49.779464)">
+    <path id="path52" fill="#fbbc5a" atv:refpx="26.75" atv:refpy="26.75" d="M34,53.5L0,53.5L0,46.5L34,46.5C40.893,46.5 46.5,40.893 46.5,34L46.5,0L53.5,0L53.5,34C53.5,44.752 44.752,53.5 34,53.5"/>
+   </g>
+  </g>
+ </g>
+</svg>

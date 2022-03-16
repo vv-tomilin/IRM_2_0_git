@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.APD1.ModeReg
+NodeClass: Variable
+BrowseName: 1:ModeReg
+DisplayName: en|ModeReg
+Description: en|ModeReg
+DataType: Int16
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

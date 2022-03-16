@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <code><![CDATA[/**
+ * Code for the date_display object display
+ * ----------------------------------------
+ * This control displays the current date.
+ */
+
+
+/**
+ * DECLARATION SECTION
+ */
+
+var base = (webMI.query["base"] == undefined) ? "" : webMI.query["base"];
+
+/**
+ * RUNTIME SECTION
+ */
+
+if (base != "") {
+
+	rightsHandlingProperties = {
+		right: null,
+		checkBaseNodeWriteRight: false,
+		isActivationNodeSet: null,
+		notifierConfiguration: {"id":"bg_rect", "node_1": webMI.query["base"], "right_1": "read"},
+		setActiveTrigger: false,
+		handleStatus: true
+	};
+
+	if (typeof rightsHandling === "function") rightsHandling(rightsHandlingProperties);
+
+	webMI.data.subscribe(base, function(e) {
+		setDate(e.value);
+	});
+} else {
+	setDate();
+	var updateInterval = setInterval(function() { setDate(); }, 3000);
+}
+
+/**
+ * FUNCTION SECTION
+ */
+
+function setDate(date) {
+	var displayedDate = (date == undefined) ? new Date() : new Date(date);
+
+	var y = displayedDate.getFullYear();
+	var m = displayedDate.getMonth()+1;
+	var d = displayedDate.getDate();
+
+	webMI.gfx.setText("y", webMI.sprintf("%04d", y));
+	webMI.gfx.setText("m", webMI.sprintf("%02d", m));
+	webMI.gfx.setText("d", webMI.sprintf("%02d", d));
+}]]></code>
+</script>

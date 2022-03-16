@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" width="30" version="1.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" height="30">
+ <defs/>
+ <metadata>
+  <atv:gridconfig gridstyle="lines" width="20" enabled="false" height="20"/>
+  <atv:snapconfig width="10" enabled="false" height="10"/>
+ </metadata>
+ <!--
+ <svg atv:refpx="15" width="80" y="0" atv:refpy="15" id="btn_toggle_bound" transform="matrix(0.375,0,0,1,0,0)" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" height="30">
+  <atv:argument value="" name="label"/>
+  <atv:argument value="hidden" name="visibilityLabel"/>
+  <atv:argument value="inherit" name="visibilitySymbol"/>
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.forward" name="symbol"/>
+ </svg>
+ <svg atv:refpx="15" width="80" y="0" id="btn_y_axis_adapted" transform="matrix(0.375,0,0,1,0,0)" atv:refpy="15" x="0" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" height="30">
+  <atv:argument value="T{Start}" name="label"/>
+  <atv:argument value="hidden" name="visibilityLabel"/>
+  <atv:argument value="inherit" name="visibilitySymbol"/>
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.y_axis_adapted" name="symbol"/>
+  <atv:argument value="1" name="tabIndex"/>
+  <atv:overwrite width="24.5" id="id_2" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="29.5" id="id_0" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="28" id="id_6" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite id="button_symbol" transform="matrix(2.6667,0,0,1,0,0)" x="5"/>
+  <atv:overwrite id="button_label" transform="matrix(2.6667,0,0,1,0,0)" x="15"/>
+  <atv:overwrite width="26" id="button_stroke" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="28" id="button_bg" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="30" id="outer_frame" transform="matrix(2.6667,0,0,1,0,0)"/>
+ </svg>
+-->
+ <svg atv:refpx="15" width="80" y="0" id="btn_y_axis_const" transform="matrix(0.375,0,0,1,0,0)" atv:refpy="15" x="0" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" height="30">
+  <atv:argument value="T{Start}" name="label"/>
+  <atv:argument value="hidden" name="visibilityLabel"/>
+  <atv:argument value="inherit" name="visibilitySymbol"/>
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.y_axis_const" name="symbol"/>
+  <atv:argument value="1" name="tabIndex"/>
+  <atv:overwrite width="24.5" id="id_2" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="29.5" id="id_0" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="28" id="id_6" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite id="button_symbol" transform="matrix(2.6667,0,0,1,0,0)" x="5"/>
+  <atv:overwrite id="button_label" transform="matrix(2.6667,0,0,1,0,0)" x="15"/>
+  <atv:overwrite width="26" id="button_stroke" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="28" id="button_bg" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="30" id="outer_frame" transform="matrix(2.6667,0,0,1,0,0)"/>
+ </svg>
+ <svg atv:refpx="15" width="80" y="0" id="btn_y_axis_adapted" transform="matrix(0.375,0,0,1,0,0)" atv:refpy="15" x="0" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" height="30">
+  <atv:argument value="T{Stop}" name="label"/>
+  <atv:argument value="hidden" name="visibilityLabel"/>
+  <atv:argument value="inherit" name="visibilitySymbol"/>
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.y_axis_adapted" name="symbol"/>
+  <atv:argument value="1" name="tabIndex"/>
+  <atv:overwrite width="24.5" id="id_2" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="29.5" id="id_0" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="28" id="id_6" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite id="button_symbol" transform="matrix(2.6667,0,0,1,0,0)" x="5"/>
+  <atv:overwrite id="button_label" transform="matrix(2.6667,0,0,1,0,0)" x="15"/>
+  <atv:overwrite width="26" id="button_stroke" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="28" id="button_bg" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="30" id="outer_frame" transform="matrix(2.6667,0,0,1,0,0)"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[var activeAxis = webMI.query["xAxisIndex"];
+
+function checkChart() {
+	
+	var allcharts = webMI.trendFactory.getAllTrends();
+	if(allcharts.length == 0){
+		setTimeout(function() {checkChart()}, 500);
+	}	
+	
+	allcharts.forEach(function(chart, i, arr) {
+//		chart.yAxesAdapted = false;
+		for(var j=0;j<chart.chart.yAxis.length;j++){
+			chart.chart.userOptions.yAxis[j].saveMin = chart.chart.yAxis[j].min;
+			chart.chart.userOptions.yAxis[j].saveMax = chart.chart.yAxis[j].max;
+		}			
+//			chart.control.updated();	
+	});
+}
+
+webMI.addOnload(function() {
+	webMI.gfx.setVisible("btn_y_axis_adapted",true)
+	webMI.gfx.setVisible("btn_y_axis_const",false)
+	checkChart();
+});
+
+
+
+webMI.trigger.connect("clicked", function(e) {
+	console.log("btn_y_axis_const clicked");
+	webMI.gfx.setVisible("btn_y_axis_adapted",true);
+	webMI.gfx.setVisible("btn_y_axis_const",false);
+//	webMI.trigger.fire("stopCharts",'');	
+	setTimeout(function() {
+		var allcharts = webMI.trendFactory.getAllTrends();
+		console.log("allcharts.length = "+allcharts.length);
+		allcharts.forEach(function(chart, i, arr) {			
+//			if(i!=0){
+//				console.log("chartnum = "+ i);
+				for(var j=0;j<chart.chart.yAxis.length;j++){
+					var mmin = chart.chart.userOptions.yAxis[j].saveMin;
+					var mmax = chart.chart.userOptions.yAxis[j].saveMax;
+					chart.chart.yAxis[j].update({					
+						min: mmin,
+						max: mmax				
+					},false);
+				}
+/*				if(!chart.yAxesAdapted){
+					chart.yAxesAdapted = true;
+					for(var j=0;j<chart.chart.yAxis.length;j++){
+						chart.chart.yAxis[j].update({					
+							min: null,
+							max: null				
+						},false);
+					}
+				} else {
+					chart.yAxesAdapted = false;
+					for(var j=0;j<chart.chart.yAxis.length;j++){
+						var mmin = chart.chart.userOptions.yAxis[j].saveMin;
+						var mmax = chart.chart.userOptions.yAxis[j].saveMax;
+						chart.chart.yAxis[j].update({					
+							min: mmin,
+							max: mmax				
+						},false);
+					}
+				}										
+*/				
+//			}	
+			chart.control.updated();
+		});	
+	} ,100);
+}, "btn_y_axis_const");
+
+webMI.trigger.connect("clicked", function(e) {
+	console.log("btn_toggle_bound clicked");
+	webMI.gfx.setVisible("btn_y_axis_adapted",false);
+	webMI.gfx.setVisible("btn_y_axis_const",true);
+//	webMI.trigger.fire("stopCharts",'');	
+	setTimeout(function() {
+		var allcharts = webMI.trendFactory.getAllTrends();
+		console.log("allcharts.length = "+allcharts.length);
+		allcharts.forEach(function(chart, i, arr) {			
+//			if(i!=0){
+//				console.log("chartnum = "+ i);
+				for(var j=0;j<chart.chart.yAxis.length;j++){
+					chart.chart.yAxis[j].update({					
+						min: null,
+						max: null				
+					},false);
+				}				
+/*				
+				if(!chart.yAxesAdapted){
+					chart.yAxesAdapted = true;
+					for(var j=0;j<chart.chart.yAxis.length;j++){
+						chart.chart.yAxis[j].update({					
+							min: null,
+							max: null				
+						},false);
+					}
+				} else {
+					chart.yAxesAdapted = false;
+					for(var j=0;j<chart.chart.yAxis.length;j++){
+						var mmin = chart.chart.userOptions.yAxis[j].saveMin;
+						var mmax = chart.chart.userOptions.yAxis[j].saveMax;
+						chart.chart.yAxis[j].update({					
+							min: mmin,
+							max: mmax				
+						},false);
+					}
+				}										
+*/				
+//			}				
+			chart.control.updated();
+		});	
+	} ,100);
+}, "btn_y_axis_adapted");
+]]></script>
+</svg>

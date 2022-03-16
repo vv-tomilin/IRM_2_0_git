@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Stock/Indicators/Aroon
+NodeClass: Object
+BrowseName: 1:Aroon
+DisplayName: en|Aroon
+Description: en|Aroon
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

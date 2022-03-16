@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Well1.Depth
+NodeClass: Object
+BrowseName: 1:Depth
+DisplayName: en|Depth
+Description: en|Depth
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

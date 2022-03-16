@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.DrillPumps.DrillPump2.PistonDiameter
+NodeClass: Variable
+BrowseName: 1:PistonDiameter
+DisplayName: en|PistonDiameter
+Description: en|Диаметр поршня (диаметр втулки) -измеряется непосредственно диаметр поршня (плунжера) или диаметр втулки в которой двигается поршень
+DataType: Int64
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

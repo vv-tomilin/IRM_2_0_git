@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.PumpBlock1.Discrete.PumpPlungerLubrication.CalcRunHours
+NodeClass: Variable
+BrowseName: 1:CalcRunHours
+DisplayName: en|CalcRunHours
+Description: en|CalcRunHours
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

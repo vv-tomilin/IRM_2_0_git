@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.GtiChartsReal
+NodeClass: Object
+BrowseName: 1:GtiChartsReal
+DisplayName: en|GtiChartsReal
+Description: en|GtiChartsReal
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

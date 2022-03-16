@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Beschreibung</h1>
+<p>&Uuml;ber die Combobox k&ouml;nnen Sie Elemente aus einer Liste ausw&auml;hlen.</p>
+<p>Je nach Einstellung des Parameters "Modus" kann sie in den nachstehenden Modi verwendet werden:</p>
+<ol>
+  <li>Text: Sowie dieser Modus ausgew&auml;hlt wird, m&uuml;ssen die Elemente in der Gruppe "Textmodus" konfiguriert werden. Jedes Element der Combobox besteht aus einem "Textelement" und einem "Wertelement". Das "Textelement" wird als Element in der Combobox angezeigt, w&auml;hrend das "Wertelement" in "base" oder "Alternative Ausgabeadresse" geschrieben wird, wenn das zugeh&ouml;rige "Textelement" ausgew&auml;hlt wird. In diesem Modus k&ouml;nnen bis zu f&uuml;nf Elemente konfiguriert werden. Wenn Sie mehr als f&uuml;nf Elemente konfigurieren wollen, m&uuml;ssen Sie den Modus "Enum Liste" oder "Script" verwenden.</li>
+</ol>
+<ol start="2">
+  <li>Boolean: In der Combobox werden die beiden Elemente "true" und "false" angezeigt. Die "base" wird entsprechend dem ausgew&auml;hlten Element gesetzt und muss daher vom Typ "Boolean" sein.</li>
+</ol>
+<ol start="3">
+  <li>Enum Liste: Sowie dieser Modus ausgew&auml;hlt wird, m&uuml;ssen die Elemente in der Gruppe "Enum List Modus" konfiguriert werden.&nbsp;Jedes Element in der Combobox besteht gem&auml;&szlig; der definierten enum Liste aus einem "Text" und einem "Wert". Der "Text" wird als Element in der Combobox angezeigt, w&auml;hrend der "Wert" in "base" oder "Alternative Ausgabeadresse" geschrieben wird, wenn der zugeh&ouml;rige "Text" ausgew&auml;hlt wird.</li>
+</ol>
+<ol start="4">
+  <li>Script: Dieser Modus erm&ouml;glicht die Behandlung der Elemente der Combobox mit den folgenden Triggern in einem JavaScript:</li>
+</ol>
+<ul>
+  <li>setItems: Dient dem Definieren (Initialisieren)&nbsp;der&nbsp;Combobox mit dem vordefinierten Objekt, das alle Elemente (Paare aus Text und Wert) enth&auml;lt.</li>
+  <li>setSelectedItem: Dient dem Definieren eines Elements&nbsp;(nur Text) in der&nbsp;Combobox als ausgew&auml;hlt.&nbsp;</li>
+  <li>addItem: Die in dem Hinzuf&uuml;gen eines Elements (Paar aus Text und Wert) zur Combobox.</li>
+  <li>getSelectedItem: Aktiviert den Trigger "selectedItem", wenn der Parameter vom Typ String ist, oder ruft die callback function mit dem Wert des derzeit in der&nbsp;Combobox ausgew&auml;hlten Elements auf.</li>
+  <li>getItems: Aktiviert den Trigger "items" mit einem Array, das alle Elemente (Paare von Text und Wert) der Combobox enth&auml;lt. </li>
+</ul>
+<div style="margin-left: 40px;">Ein Beispiel finden Sie im nachstehenden Abschnitt "Beispiele". </div>
+<ol start="4">
+</ol>
+<p>Mit Hilfe einer Statusanzeige in Form eines zus&auml;tzlichen Rahmens kann zudem auch ein negativer Status des aktuellen Wertes und ein zus&auml;tzlich definierter Alarm dargestellt werden. Die Farben und Blinkintervalle werden in globalen Listen definiert.</p>
+<h1>Parameter</h1>
+<p>Dieses Steuerelement hat die folgenden allgemeinen Parameter:</p>
+<ul>
+  <li><span class="parameter">base</span>: Je nachdem, welcher der oben beschriebenen Modi ausgew&auml;hlt ist, wird die "base" auf den entsprechenden Wert des ausgew&auml;hlten Elements in der Combobox gesetzt.</li>
+  <li><span class="parameter">Modus</span>: W&auml;hlen Sie einen der oben beschriebenen vier Modi aus (Standard: Text).</li>
+  <li><span class="parameter">alternative Ausgabeadresse</span>: Sowie diese Adresse konfiguriert ist, wird der Wert in sie und nicht in die "base" geschrieben.</li>
+  <li><span class="parameter">Alarmadresse</span>: Optional zus&auml;tzliche Adresse eines Alarms, welcher angezeigt werden soll.</li>
+  <li><span class="parameter">Status&uuml;berwachung aktivieren</span>: Schaltet die Anzeige des aktuellen Wertestatus ein oder aus.</li>
+  <li><span class="parameter">Statustrigger feuern</span>: Statt der Statusanzeige kann auch ein hier definierter Trigger global gefeuert werden.</li>
+</ul>
+Textmodus:<br>
+<ul>
+  <li><span class="parameter">Text Element 1</span>: erstes in der Combobox anzuzeigendes Textelement</li>
+  <li><span class="parameter">Wert Element 1</span>: mit dem ersten Textelement verkn&uuml;pfter Wert</li>
+  <li><span class="parameter">Text Element 2</span>: zweites in der Combobox anzuzeigendes Textelement</li>
+  <li><span class="parameter">Wert Element 2</span>: mit dem zweiten Textelement verkn&uuml;pfter Wert</li>
+  <li><span class="parameter">Text Element 3</span>: drittes in der Combobox anzuzeigendes Textelement</li>
+  <li><span class="parameter">Wert Element 3</span>: mit dem dritten Textelement verkn&uuml;pfter Wert</li>
+  <li><span class="parameter">Text Element 4</span>: viertes in der Combobox anzuzeigendes Textelement</li>
+  <li><span class="parameter">Wert Element 4</span>: mit dem vierten Textelement verkn&uuml;pfter Wert</li>
+  <li><span class="parameter">Text Element 5</span>: f&uuml;nftes in der Combobox anzuzeigendes Textelement</li>
+  <li><span class="parameter">Wert Element 5</span>: mit dem f&uuml;nften Textelement verkn&uuml;pfter Wert</li>
+  </ul>
+Enum List Modus:<br>
+<ul>
+  <li><span class="parameter">enum Liste</span>: Globale Liste, die die Paare (Text + Wert) f&uuml;r die Combobox definiert, siehe Modus 3 oben.</li> </ul>
+Schrift:<br>
+<ul>
+  <li><span class="parameter">Schriftart</span>: Schriftart, die auf den Wert angewendet wird (Standard: Arial)</li>
+  <li><span class="parameter">Gr&ouml;&szlig;e</span>: Schriftgr&ouml;&szlig;e, die auf den Wert angewendet wird (Standard: 12)</li>
+  <li><span class="parameter">Farbe</span>:Farbe, die auf den Wert angewendet wird (Standard: schwarz)</li> </ul>
+Darstellung:<br>
+<ul>
+  <li><span class="parameter">F&uuml;llfarbe</span>: F&uuml;llfarbe der Combobox (Standard: grau)</li>
+  <li><span class="parameter">F&uuml;llfarbe Schaltfl&auml;che</span>: F&uuml;llfarbe des Drop-Down Buttons (Standard: wei&szlig;)</li>
+  <li><span class="parameter">F&uuml;llfarbe wenn inaktiv</span>: F&uuml;llfarbe, wenn nicht aktiv (Standard: dunkelgrau)</li>
+  <li><span class="parameter">Symbolfarbe</span>: Farbe des Symbols</li>
+  <li><span class="parameter">Konturfarbe gedr&uuml;ckt</span>: Farbe der Kontur, die beim Klicken in die Combobox eingestellt wird (Standard: wei&szlig;)</li>
+  <li><span class="parameter">Fokus Konturfarbe</span>: Farbe der Kontur, die beim Fokus der Schaltfl&auml;che eingestellt wird (Standard: wei&szlig;)</li>
+  <li><span class="parameter">Statushinweis</span>: Spezifiziert die Darstellung des Status &uuml;ber eine definierte globale Liste (Standard: Globaler Parameter <i>atvStatusIndication</i>)</li>
+  <li><span class="parameter">Alarmhinweis</span>: Spezifiziert die Darstellung des Alarms &uuml;berber eine definierte globale Liste (Standard: Globaler Parameter <i>atvAlarmIndication</i>)</li>
+</ul>
+Sicherheit:
+<ul>
+  <li><span class="parameter">Ben&ouml;tigtes Recht</span>: Der Benutzer muss &uuml;ber dieses Recht verf&uuml;gen, um diese Combobox aktivieren zu k&ouml;nnen.</li>
+  <li><span class="parameter">Aktivierungsadresse</span>: Stimmt der Wert dieser Adresse mit dem "Aktivierungswert" &uuml;berein, ist die Combobox aktiv, so dass auf sie geklickt werden kann.</li>
+  <li><span class="parameter">Aktivierungswert</span>: Wert, von dem die Combobox aktiviert wird</li> </ul>
+<div style="margin-left: 40px;">HINWEIS: Die Aktivierung der Combobox kann nur &uuml;ber das ben&ouml;tigte Recht konfiguriert werden oder nur &uuml;ber die Aktivierungsadresse und den Aktivierungswert oder &uuml;ber beide. Werden beide Einstellungen vorgenommen, muss der Benutzer das ben&ouml;tigte Recht besitzen und der Wert der "Aktivierungsadresse" muss mit dem "Aktivierungswert" identisch sein, andernfalls wird die Combobox nicht aktiviert.</div>
+<br>
+ Optionen:<br>
+<ul>
+  <li><span class="parameter">Maximal angezeigte Elemente (0 = alle)</span>: H&ouml;chstzahl der Elemente, die beim Bl&auml;ttern einer Seite angezeigt werden (0 = Bl&auml;ttern aus, Standard: 0)</li>
+  <li><span class="parameter">Konsistenzgruppe</span>: Name der Konsistenzgruppe</li>
+  <li><span class="parameter">Tab-Index</span>: Bestimmt die Reihenfolge, in der mit der Tabulatortaste zwischen den einzelnen Object Displays gewechselt werden kann</li>
+  <li><span class="parameter">Tooltip</span>: Zeigt eine Tooltip Box mit dem eingegebenen Text an (Standard HTML-Elemente k&ouml;nnen auch eingegeben werden)</li>
+  </ul>
+<h1>Beispiele</h1>
+<p>Die folgenden Code-Elemente zeigen, wie die Combobox mit den Triggern bearbeitet wird:</p>
+<p>setItems<br>
+var entries = [<br>
+&nbsp; { text: "Entry 1", value: "1" },<br>
+&nbsp; { text: "Entry 2", value: "2" },<br>
+&nbsp; { text: "Entry 3", value: "3" }<br>
+];<br>
+webMI.trigger.fire("setItems", entries, "myCombobox");<br>
+<br>
+setSelectedItem<br>
+webMI.trigger.fire("setSelectedItem", "Entry 1", "myCombobox");<br>
+<br>
+addItem<br>
+webMI.trigger.fire("addItem", { text: "Entry 4", value: "4" }, "myCombobox");<br>
+<br>
+getSelectedItem (aktiviert den Trigger "selectedItem")<br>
+webMI.trigger.fire("getSelectedItem", function(e){alert(e.text+" "+e.value);},"myCombobox");<br>
+<br>oder<br><br>
+webMI.trigger.connect("selectedItem", function(e) { alert(e.value); }, "myCombobox");<br>
+webMI.trigger.fire("getSelectedItem", "", "myCombobox");<br>
+<br>
+getItems (aktiviert den Trigger "items")<br>
+webMI.trigger.connect("items", function(e) { alert(e.value); }, "myCombobox");<br>
+webMI.trigger.fire("getItems", "", "myCombobox");<br>
+</p>
+</body>
+</html>

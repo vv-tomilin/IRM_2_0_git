@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.AKB
+NodeClass: Object
+BrowseName: 1:AKB
+DisplayName: en|AKB
+Description: en|AKB
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

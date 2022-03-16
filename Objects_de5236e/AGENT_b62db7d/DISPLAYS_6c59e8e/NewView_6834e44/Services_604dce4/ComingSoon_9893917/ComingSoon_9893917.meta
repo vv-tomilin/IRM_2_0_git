@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.Services.ComingSoon
+NodeClass: Variable
+BrowseName: 1:ComingSoon
+DisplayName: en|ComingSoon
+Description: en|ComingSoon
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

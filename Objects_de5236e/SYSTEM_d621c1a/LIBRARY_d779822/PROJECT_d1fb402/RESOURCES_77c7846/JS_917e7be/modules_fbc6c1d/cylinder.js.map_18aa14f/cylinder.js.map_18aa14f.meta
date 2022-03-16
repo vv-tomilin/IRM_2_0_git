@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/cylinder.js.map
+NodeClass: Variable
+BrowseName: 1:cylinder.js.map
+DisplayName: en|cylinder.js.map
+Description: en|cylinder.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

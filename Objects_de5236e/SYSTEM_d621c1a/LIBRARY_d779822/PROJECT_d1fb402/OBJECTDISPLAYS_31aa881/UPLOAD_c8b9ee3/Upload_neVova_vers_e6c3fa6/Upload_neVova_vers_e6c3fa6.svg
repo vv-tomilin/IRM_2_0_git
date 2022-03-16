@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="137" version="1.2" width="163.73" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.Pdf.PDF_Selection_View" name="display" valuetype="display"/>
+  <atv:parameter behavior="optional" defaultvalue="id_16" name="frame" valuetype="string"/>
+  <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <svg atv:refpx="279.27" atv:refpy="-83.775" height="30" id="select" transform="matrix(2,0,0,1.3333,0,0)" width="80" x="-0.003" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" y="-0.223">
+  <atv:argument name="label" value="T{Выберите файл}"/>
+  <atv:argument name="focusStrokeColor" value="SYSTEM.GLOBALS.Colors.ButtonStroke"/>
+  <atv:argument name="fontColor" value="SYSTEM.GLOBALS.textColorWhite"/>
+  <atv:argument name="fontSize" value="16"/>
+  <atv:argument name="borderColor" value="SYSTEM.GLOBALS.plan.BlueColor"/>
+  <atv:argument name="strokePressed" value="#177ddc"/>
+  <atv:argument name="fillColor" value="SYSTEM.GLOBALS.plan.BlueColor"/>
+  <atv:overwrite height="37.999" id="id_6" transform="matrix(0.5,0,0,0.75,0,0)" width="158"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.5,0,0,0.75,0,0)" x="70" y="9.999"/>
+  <atv:overwrite id="button_label_2" transform="matrix(0.5,0,0,0.75,0,0)" x="80" y="31.499"/>
+  <atv:overwrite id="button_label_1" transform="matrix(0.5,0,0,0.75,0,0)" x="80" y="16.499"/>
+  <atv:overwrite id="button_label" transform="matrix(0.5,0,0,0.75,0,0)" x="80" y="24.499"/>
+  <atv:overwrite height="35.999" id="button_stroke" transform="matrix(0.5,0,0,0.75,0,0)" width="156"/>
+  <atv:overwrite height="37.999" id="button_bg" transform="matrix(0.5,0,0,0.75,0,0)" width="158"/>
+  <atv:overwrite height="39.999" id="outer_frame" transform="matrix(0.5,0,0,0.75,0,0)" width="160"/>
+ </svg>
+ <text atv:refpx="61.883" atv:refpy="118.778" fill="#ffffff" font-family="Arial" font-size="16" id="saveMessage" visibility="hidden" x="15.499" y="123.278">T{saveMessage}</text>
+ <svg atv:refpx="138.601" atv:refpy="96.919" height="30" id="write" transform="matrix(2,0,0,1.3333,0,0)" width="80" x="0" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" y="72.746">
+  <atv:argument name="label" value="T{Загрузить}"/>
+  <atv:argument name="focusStrokeColor" value="SYSTEM.GLOBALS.Colors.ButtonStroke"/>
+  <atv:argument name="fontColor" value="SYSTEM.GLOBALS.plan.ColorGreen"/>
+  <atv:argument name="fontSize" value="16"/>
+  <atv:argument name="strokePressed" value="#177ddc"/>
+  <atv:argument name="borderColor" value="SYSTEM.GLOBALS.plan.BlueColor"/>
+  <atv:argument name="fillColor" value="SYSTEM.GLOBALS.plan.BlueColor"/>
+  <atv:overwrite height="38" id="id_6" transform="matrix(0.5,0,0,0.75,0,0)" width="158"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.5,0,0,0.75,0,0)" x="70" y="10"/>
+  <atv:overwrite id="button_label_2" transform="matrix(0.5,0,0,0.75,0,0)" x="80" y="31.5"/>
+  <atv:overwrite id="button_label_1" transform="matrix(0.5,0,0,0.75,0,0)" x="80" y="16.5"/>
+  <atv:overwrite id="button_label" transform="matrix(0.5,0,0,0.75,0,0)" x="80" y="24.5"/>
+  <atv:overwrite height="36" id="button_stroke" transform="matrix(0.5,0,0,0.75,0,0)" width="156"/>
+  <atv:overwrite height="38" id="button_bg" transform="matrix(0.5,0,0,0.75,0,0)" width="158"/>
+  <atv:overwrite height="40" id="outer_frame" transform="matrix(0.5,0,0,0.75,0,0)" width="160"/>
+ </svg>
+ <text atv:refpx="14.97" atv:refpy="72.071" fill="#ffffff" font-family="Arial" font-size="10" id="selectFileSize" text-anchor="start" visibility="visible" x="5.082" y="76.571">T{0kB}</text>
+ <foreignObject height="38" id="id_1" width="20" x="143.728" y="58.13">
+  <body xmlns="http://www.w3.org/1999/xhtml">
+   <form>
+    <input id="file" style="visibility: hidden;" type="file"/>
+   </form>
+  </body>
+ </foreignObject>
+ <text atv:refpx="59.401" atv:refpy="51.849" fill="#ffffff" font-family="Arial" font-size="10" id="selectMessage" text-anchor="start" visibility="visible" x="5.192" y="56.349">T{No File Selected}</text>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var dataString = "";
+var dataArr = [];
+var fileName = "";
+var currentService;
+var currentCol;
+console.log(webMI.query["isCsvMain"])
+
+webMI.trigger.connect("colClickTrigger", function(e) {
+	currentCol = e.value;
+});
+
+webMI.trigger.connect("changeServiceTrigger", function(e) {
+	currentService = e.value;
+});
+
+webMI.gfx.setText("selectMessage", "Файл не выбран");
+
+var fileInput = document.getElementById("file"),
+  readFile = function () {
+    if (fileInput.files.length != 0) {
+      var reader = new FileReader();
+      reader.fileName = fileInput.files[0].name;
+      reader.onload = function (fileLoadedEvent) {
+        var pdfSize = fileLoadedEvent.target.result.length / 1000;
+        if (pdfSize <= Infinity) {
+          fileName = reader.fileName;
+          dataString = fileLoadedEvent.target.result;
+          webMI.gfx.setText("selectMessage", fileLoadedEvent.target.fileName);
+          webMI.gfx.setText("selectFileSize", pdfSize + "kB");
+        } else {
+          alert(
+            "Размер файла " +
+              pdfSize +
+              "kB, only files smaller than Infinity are allowed. Please try again"
+          );
+          return;
+        }
+      };
+      reader.readAsBinaryString(fileInput.files[0]);
+    }
+  };
+fileInput.addEventListener("change", readFile);
+
+webMI.addEvent("select", "click", function (e) { 
+    document.getElementById("file").click();
+});
+
+webMI.addEvent("write", "click", function (e) {
+  var value = true;
+  return (function (value) {
+    if (dataString != "" && fileName != "") {
+      function getChunks(binaryString) {
+        var fileSize = binaryString.length;
+        var chunkSize = 128 * 1024;
+        var offset = 0;
+        var chunks = [];
+
+        var chunkCount = Math.ceil(fileSize / chunkSize);
+
+        for (offset = 0; offset <= chunkCount; offset++) {
+          var byteOffset = offset * chunkSize;
+          var chunk = binaryString.slice(byteOffset, byteOffset + chunkSize);
+
+          if (chunk) {
+            chunks.push(chunk);
+          }
+        }
+
+        return chunks;
+      }
+
+      var dataChunks = getChunks(dataString);
+      var uid = Number(new Date());
+      var requestIndex = 0;
+      makeRequest(dataChunks, uid);
+     
+
+      function makeRequest(dataChunks, uid) {
+        if (requestIndex === dataChunks.length) {
+          return;
+        }
+        var httpRequest = new XMLHttpRequest();
+        var data = dataChunks[requestIndex];
+        var lastChunk = requestIndex === dataChunks.length - 1;
+        
+
+        if (!httpRequest) {
+          alert("Cannot create an XMLHTTP instance");
+          return false;
+        }
+
+        httpRequest.onreadystatechange = execFollowUpRequest;
+        httpRequest.open("POST", "../../scripts/uploadfile2");
+        
+			
+		console.log(fileName)
+		var mainFileName = fileName.substring(0,fileName.length-4)
+			
+			httpRequest.setRequestHeader("Content-Type", "multipart/form-data");
+			var requestParams=""
+			
+				console.log("her1")
+				requestParams =
+				"data=" +
+				encodeURIComponent(encodeURI(data)) +
+				"&path=PDFs\\" + currentService + "\\" + currentCol + "\\" +
+				mainFileName +".pdf"+
+				"&uid=" +
+				uid +
+				"&index=" +
+				requestIndex +
+				"&lastchunk=" +
+				lastChunk;
+			
+			//var path = "Concrete/"
+			//httpRequest.send(JSON.stringify({ requestParams: requestParams, path: path }));
+			httpRequest.send(requestParams)
+        function execFollowUpRequest() {
+          if (httpRequest.readyState === XMLHttpRequest.DONE) {
+            if (httpRequest.status === 200) {
+              requestIndex++;
+           
+              if (requestIndex === dataChunks.length) {
+                setTimeout(function () {
+                  /*webMI.data.call("ProcessPlanData", {
+                    start: document.getElementById("datepicker").value,
+                  });*/
+                  alert("Файл успешно загружен");
+					console.log('opens')
+					webMI.display.openDisplay("AGENT.DISPLAYS.NewView.Services.LoadPDFServices", { service: currentService, col: currentCol } ,"main_frame");
+                  //webMI.display.closeWindow();
+                }, 300);
+              }
+
+              makeRequest(dataChunks, uid);
+            } else {
+              alert("Ошибка отправки запроса");
+            }
+          }
+        }
+      }
+    } else {
+      alert("Пожалуйста, сначала выберите файл");
+    }
+  })(value);
+});
+]]></script>
+</svg>

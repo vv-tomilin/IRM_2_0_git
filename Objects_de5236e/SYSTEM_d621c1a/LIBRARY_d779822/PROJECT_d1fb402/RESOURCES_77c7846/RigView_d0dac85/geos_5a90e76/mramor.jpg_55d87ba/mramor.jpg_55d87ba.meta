@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/RigView/geos/mramor.jpg
+NodeClass: Variable
+BrowseName: 1:mramor.jpg
+DisplayName: en|mramor.jpg
+Description: en|mramor.jpg
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Jpeg

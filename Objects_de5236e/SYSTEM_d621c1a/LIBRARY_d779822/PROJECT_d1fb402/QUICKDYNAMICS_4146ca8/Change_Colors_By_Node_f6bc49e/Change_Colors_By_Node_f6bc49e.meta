@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.QUICKDYNAMICS.Change Colors By Node
+NodeClass: Variable
+BrowseName: 1:Change Colors By Node
+DisplayName: en|Change Colors By Node
+Description: en|Change Colors By Node
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.QuickDynamic

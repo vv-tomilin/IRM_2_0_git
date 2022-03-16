@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="200" height="400" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:parameter defaultvalue="" behavior="optional" desc="target frame" valuetype="string" name="targetFrame"/>
+  <atv:parameter defaultvalue="com.atvise.filterNavigationTree" behavior="optional" desc="filter trigger" valuetype="string" name="filterTrigger"/>
+  <atv:parameter defaultvalue="false" behavior="optional" desc="object navigator" valuetype="bool" name="isObjectNavigator"/>
+  <atv:parameter defaultvalue="" behavior="optional" desc="display config (insert object type node id's, seperated with a semicolon)" valuetype="string" name="displayConfig"/>
+  <atv:parameter defaultvalue="AGENT.DISPLAYS" behavior="optional" desc="Start address in display mode" valuetype="display" name="displayStartAddress"/>
+  <atv:parameter defaultvalue="AGENT.OBJECTS" behavior="optional" desc="Start address in object mode" valuetype="address" name="objectDisplayStartAddress"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvFontSize" behavior="optional" desc="Font size" valuetype="global" name="fontSize"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvFontColor" behavior="optional" desc="Font color" valuetype="global" name="fontColor"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvFillColor" behavior="optional" desc="Background color" valuetype="global" name="bgColor"/>
+  <atv:parameter defaultvalue="/treeView/icons_navigator/folder.svg" behavior="optional" desc="Folder icon" valuetype="string" name="iconFolder"/>
+  <atv:parameter defaultvalue="/treeView/icons_navigator/display.svg" behavior="optional" desc="Display icon" valuetype="string" name="iconDisplay"/>
+  <atv:parameter defaultvalue="/treeView/icons_navigator/leafCollapsed.svg" behavior="optional" desc="Icon for collapsed elements" valuetype="string" name="iconCollapsed"/>
+  <atv:parameter defaultvalue="/treeView/icons_navigator/leafExpanded.svg" behavior="optional" desc="Icon for expanded elements" valuetype="address" name="iconExpanded"/>
+  <atv:gridconfig width="20" enabled="false" height="20" gridstyle="lines"/>
+  <atv:snapconfig width="10" enabled="false" height="10"/>
+ </metadata>
+ <foreignObject id="fo_display_navigator" width="200" height="400" x="0" y="0">
+  <div id="display_navigator" style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml"/>
+ </foreignObject>
+ <rect id="border" width="198" fill="#ffffff" stroke="#000000" atv:bindbr="1,1" atv:refpy="200" height="400" atv:refpx="100" stroke-width="1" x="1" y="0" atv:bindtl="0,0"/>
+ <text id="label" font-size="20" fill="#575757" atv:bindbr="0.5,0.5" atv:refpy="199.999" atv:refpx="99.5" font-family="Arial" x="100" y="207.5" atv:bindtl="0.5,0.5" text-anchor="middle">Display navigator</text>
+ <script type="text/ecmascript"><![CDATA[webMI.addOnload (function () {
+	var treeView;
+	var queryParams = webMI.query;
+	var displayNavigator = document.getElementById("display_navigator");
+	var parameters = {};
+	var targetFrame = queryParams.targetFrame || "";
+	var filterTrigger = queryParams.filterTrigger;
+	var isObjectNavigator = queryParams.isObjectNavigator
+	var displayConfig = queryParams.displayConfig;
+
+	var navigator = document.getElementById("display_navigator");
+
+	var iconFolder = queryParams.iconFolder;
+	var iconDisplay = queryParams.iconDisplay;
+	var iconCollapsed = queryParams.iconCollapsed;
+	var iconExpanded = queryParams.iconExpanded;
+
+	var bgColor = queryParams.bgColor;
+	var fontColor = queryParams.fontColor;
+	var treeFontSize = queryParams.fontSize;
+
+	var displayStartAddress = queryParams.displayStartAddress;
+	var objectDisplayStartAddress = queryParams.objectDisplayStartAddress;
+	var navigationDepth = queryParams.navigationDepth;
+
+	function createNavigator() {
+		webMI.gfx.setVisible("border", false);
+		webMI.gfx.setVisible("label", false);
+	
+		//Initiate treeview for address selection
+		treeView = webMI.callExtension("SYSTEM.LIBRARY.PROJECT.QUICKDYNAMICS.TreeView", parameters);
+	
+		treeView.on("ready", function(e){
+			webMI.trigger.connect(filterTrigger, function (triggerObj) {
+				var searchString = triggerObj.value;
+				treeView.filter(searchString);
+			}, "");
+	
+			treeView.on("select", function(triggerObj) {
+				var address = triggerObj.data.address;
+				var parent = triggerObj.data.parent;
+				var parameters = webMI.query;
+
+				if (parent) {
+					parameters = {base: parent};
+				}
+
+
+				if (address) {
+					webMI.display.openDisplay(address, parameters, targetFrame);
+				} else {
+					console.error("display_navigator#treeView on select: Address is missing");
+				}
+			});
+		});
+	}
+
+	navigator.style.backgroundColor = bgColor;
+
+	parameters.busyIndicatorTolerance = 100;
+	parameters.expandOffset = 3;
+	parameters.fontSize = treeFontSize;
+
+	parameters.fontColor = fontColor;
+	parameters.id = "fo_display_navigator";
+	parameters.imagePaths = "{\"baseVariableImage\":\"/treeView/icons/baseVariable.svg\",\"folderImage\":\"" + iconFolder + "\",\"displayImage\":\"" + iconDisplay + "\",\"aggregateFunctionImage\":\"/treeView/icons/aggregateFunction.svg\",\"collapsedLeafImage\":\"" + iconCollapsed + "\",\"expandedLeafImage\":\"" + iconExpanded + "\"}";
+	parameters.leafIndentation = 15;
+	parameters.leafPadding = 2;
+	parameters.renderTo = displayNavigator.id;
+	parameters.selectableTypes = "[\"baseVariable\", \"aggregateFunction\"]";
+	parameters.startAddress = displayStartAddress;
+	parameters.filter = ["AGENT.DISPLAYS.Default"];
+	parameters.navigationDepth = navigationDepth;
+
+	if(isObjectNavigator === "true") {
+		parameters.startAddress = objectDisplayStartAddress;
+		parameters.displayConfig = displayConfig.split(";");
+
+		if (parameters.displayConfig.length > 0) {
+			createNavigator();
+		} else {
+			console.warn("Display navigator#init: display config types are missing!");
+		}
+	} else {
+		createNavigator();
+	}
+});
+
+]]></script>
+</svg>

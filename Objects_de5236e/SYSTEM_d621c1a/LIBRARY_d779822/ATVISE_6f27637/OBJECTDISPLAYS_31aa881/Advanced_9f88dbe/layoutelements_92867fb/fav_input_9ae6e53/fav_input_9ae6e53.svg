@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="165" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="540" version="1.2">
+ <defs/>
+ <desc>For naming favorite links.</desc>
+ <title>Favorites name input</title>
+ <metadata>
+  <atv:parameter config="Arial;Courier;Tahoma;Verdana" group="Font" valuetype="enum" behavior="optional" desc="font family" name="fontFamily" substitute="$FONTFAMILY$" defaultvalue="Arial"/>
+  <atv:parameter group="Font" valuetype="number" behavior="optional" desc="font size" name="fontSize" substitute="$FONTSIZE$" defaultvalue="14"/>
+  <atv:parameter group="Font" valuetype="string" behavior="optional" desc="font color" name="fontColor" substitute="$FONTCOLOR$" defaultvalue="SYSTEM.GLOBALS.atvFontColor"/>
+  <atv:parameter behavior="optional" valuetype="global" desc="background color" substitute="$FILLCOLOR$" name="fillColor" defaultvalue="SYSTEM.GLOBALS.atvFillColor2"/>
+  <atv:gridconfig height="20" enabled="false" width="20" gridstyle="lines"/>
+  <atv:snapconfig height="10" enabled="false" width="10"/>
+ </metadata>
+ <rect atv:refpy="112.75" x="0" height="165" stroke="none" y="0" id="background" fill="$FILLCOLOR$" width="540" atv:refpx="257.143" stroke-width="0"/>
+ <text atv:refpy="21.5" x="15.5" font-size="$FONTSIZE$" y="26" id="display_address_label" font-weight="bold" fill="$FONTCOLOR$" atv:refpx="45.5" font-family="$FONTFAMILY$">T{Display}:</text>
+ <text atv:refpy="42.5" x="15.5" font-size="$FONTSIZE$" y="47" id="display_address_1" fill="$FONTCOLOR$" atv:refpx="35.5" font-family="$FONTFAMILY$">Display</text>
+ <svg atv:refpy="96" transform="matrix(2.4625,0,0,1,0,0)" x="6.092" height="30" y="100" id="fav_name" width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.in_out_value" atv:refpx="212.001">
+  <atv:argument value="1" name="tabIndex"/>
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="14" name="fontSize"/>
+  <atv:argument value="true" name="selectTextOnFocus"/>
+  <atv:overwrite transform="matrix(0.4061,0,0,1,0,0)" x="386.055" id="input_label"/>
+  <atv:overwrite transform="matrix(0.4061,0,0,1,0,0)" id="blinking_frame" width="386"/>
+  <atv:overwrite transform="matrix(0.4061,0,0,1,0,0)" id="focus_frame" width="390"/>
+  <atv:overwrite transform="matrix(0.4061,0,0,1,0,0)" id="input_bg" width="386"/>
+  <atv:overwrite transform="matrix(0.4061,0,0,1,0,0)" id="id_1" width="392"/>
+  <atv:overwrite transform="matrix(0.4061,0,0,1,0,0)" id="id_0" width="394"/>
+ </svg>
+ <text atv:refpy="86.5" x="15.5" font-size="$FONTSIZE$" y="91" id="fav_name_label" font-weight="bold" fill="$FONTCOLOR$" atv:refpx="54.5" font-family="$FONTFAMILY$">T{Name}:</text>
+ <svg atv:refpy="96" transform="matrix(1.35,0,0,1,0,0)" x="307.408" height="30" y="100" id="button" width="80" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" atv:refpx="471.488">
+  <atv:argument value="2" name="tabIndex"/>
+  <atv:argument value="T{Add}" name="label"/>
+  <atv:argument value="14" name="fontSize"/>
+  <atv:overwrite transform="matrix(0.7407,0,0,1,0,0)" id="id_6" width="106"/>
+  <atv:overwrite transform="matrix(-0.2963,0,0,1,0,0)" x="-145" id="button_symbol"/>
+  <atv:overwrite transform="matrix(0.7407,0,0,1,0,0)" x="54" id="button_label_2"/>
+  <atv:overwrite transform="matrix(0.7407,0,0,1,0,0)" x="54" id="button_label_1"/>
+  <atv:overwrite transform="matrix(0.7407,0,0,1,0,0)" x="54" id="button_label"/>
+  <atv:overwrite transform="matrix(0.7407,0,0,1,0,0)" id="button_stroke" width="104"/>
+  <atv:overwrite transform="matrix(0.7407,0,0,1,0,0)" id="button_bg" width="106"/>
+  <atv:overwrite transform="matrix(0.7407,0,0,1,0,0)" id="outer_frame" width="108"/>
+ </svg>
+ <text atv:refpy="148.739" x="17.5" font-size="$FONTSIZE$" y="153.239" id="error" fill="#ff0000" visibility="hidden" atv:refpx="39.5" font-family="$FONTFAMILY$">T{Error}:</text>
+ <text atv:refpy="60.978" x="15.731" font-size="$FONTSIZE$" y="65.478" id="display_address_2" fill="$FONTCOLOR$" atv:refpx="35.731" font-family="$FONTFAMILY$">Display</text>
+ <script type="text/ecmascript"><![CDATA[var displayAddress = decodeURIComponent(webMI.query["displayAddress"]);
+var fav_name;
+
+webMI.gfx.setFill("background", webMI.query["fillColor"]);
+webMI.gfx.setFill("display_address_label", webMI.query["fontColor"]);
+webMI.gfx.setFill("display_address_1", webMI.query["fontColor"]);
+webMI.gfx.setFill("display_address_2", webMI.query["fontColor"]);
+webMI.gfx.setFill("fav_name_label", webMI.query["fontColor"]);
+
+webMI.addOnload(function () {
+	webMI.trigger.fire("setValue", displayAddress.replace("AGENT.OBJECTS.","").replace("AGENT.DISPLAYS.","").replace("SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.",""), "fav_name");
+	// This code line can be uncommented again, if it's effect is liked (re-discuss!) and issue AT-D-11590 is fixed
+	// webMI.trigger.fire("com.atvise.switchToInputMode", "fav_name");
+	if (webMI.query["isLoggedIn"] == "false") {
+		webMI.gfx.setText("error", "T{Warning}: T{Not logged in. Favorites data will be overwritten at login!}");
+		webMI.gfx.setVisible("error", true);
+	}
+});
+
+var addressArray = displayAddress.split(".");
+
+// Write address line 1
+var addressLine1 = addressArray.slice(0,6).join(".");
+if (addressArray.length > 6) addressLine1 = addressLine1 + ".";
+webMI.gfx.setText("display_address_1", addressLine1);
+
+// Write address line 2
+webMI.gfx.setText("display_address_2", addressArray.slice(6).join("."));
+
+function onButtonClick() {
+	if (fav_name == "") {
+		webMI.gfx.setText("error", "T{Error}: T{Please enter a favorite name!}");
+		webMI.gfx.setVisible("error", true);
+	} else {
+		webMI.trigger.fire("com.atvise.favorites.add", true, {favName: fav_name, displayAddress: displayAddress, id: webMI.query["id"], query: webMI.query["query"]});
+		webMI.display.closeWindow();
+	}
+}
+
+webMI.trigger.connect("valuechanged", function(e) {
+	webMI.gfx.setVisible("error", false);
+	fav_name = e.value;
+}, "fav_name");
+
+webMI.trigger.connect("clicked", function(e) {
+	onButtonClick();
+}, "button");
+]]></script>
+</svg>

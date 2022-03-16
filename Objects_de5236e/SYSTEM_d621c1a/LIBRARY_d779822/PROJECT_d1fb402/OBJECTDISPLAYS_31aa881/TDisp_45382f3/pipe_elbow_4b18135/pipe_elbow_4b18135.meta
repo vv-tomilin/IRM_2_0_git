@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.TDisp.pipe_elbow
+NodeClass: Variable
+BrowseName: 1:pipe_elbow
+DisplayName: en|pipe_elbow
+Description: en|pipe_elbow
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

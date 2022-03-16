@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="40" x="0px" version="1.1" y="0px" xmlns="http://www.w3.org/2000/svg" height="40" xmlns:xlink="http://www.w3.org/1999/xlink" id="Ebene_1" enable-background="new 0 0 16 16" xml:space="preserve" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs>
+  <linearGradient id="SVGID_1_" y1="0.136603" x1="-0.290145" y2="0.639639" gradientUnits="objectBoundingBox" x2="0.792871">
+   <stop offset="0" style="stop-color:#9D9D9C"/>
+   <stop offset="1" style="stop-color:#3C3C3B"/>
+  </linearGradient>
+  <linearGradient id="SVGID_2_" y1="0.0373166" x1="0.0373956" y2="1.06773" gradientUnits="objectBoundingBox" x2="0.933879">
+   <stop offset="0" style="stop-color:#9D9D9C"/>
+   <stop offset="1" style="stop-color:#3C3C3B"/>
+  </linearGradient>
+ </defs>
+ <metadata>
+  <atv:parameter desc="symbol color" valuetype="color" substitute="$SYMBOLCOLOR$" behavior="optional" name="symbolColor" defaultvalue="#000000"/>
+  <atv:parameter desc="symbol color 2" valuetype="color" substitute="$SYMBOLCOLOR2$" behavior="optional" name="symbolColor2" defaultvalue="#FFFFFF"/>
+ </metadata>
+ <path fill="$SYMBOLCOLOR$" id="id_0" atv:refpx="35.589" atv:refpy="25.101" stroke-width="1.117" d="M32.041,17.411L32.016,32.787L32.135,32.787L39.138,17.674C39.204,17.529 39.097,17.415 38.902,17.415"/>
+ <path fill="$SYMBOLCOLOR$" id="id_1" atv:refpx="15.77" atv:refpy="20.003" stroke-width="1.117" d="M30.302,10.61L14.373,10.61L14.373,7.401C14.373,7.195 14.206,7.03 13.998,7.03L3.095,7.03C2.89,7.03 2.723,7.195 2.723,7.401L2.723,10.61L1.232,10.61C1.026,10.61 0.861,10.777 0.861,10.982L0.861,32.596C0.861,32.804 1.026,32.969 1.232,32.969L30.302,32.969C30.512,32.969 30.677,32.804 30.677,32.596L30.677,10.982C30.677,10.777 30.512,10.61 30.302,10.61"/>
+ <rect width="12.261" x="10.111" y="13.564" fill="none" height="9.549" stroke="$SYMBOLCOLOR2$" id="id_2" atv:refpx="16.242" stroke-width="1" atv:refpy="18.336"/>
+ <rect width="19.885" x="6.298" y="25.423" fill="$SYMBOLCOLOR2$" height="5.366" stroke="none" id="id_3" atv:refpx="16.242" stroke-width="1" atv:refpy="28.107"/>
+ <rect width="7.876" x="17.313" y="26.886" fill="$SYMBOLCOLOR$" height="0.536" stroke="none" id="id_4" atv:refpx="21.252" stroke-width="1" atv:refpy="27.154"/>
+ <circle fill="$SYMBOLCOLOR$" cx="23.238" cy="28.698" stroke="none" r="0.632" id="id_5" atv:refpx="23.238" stroke-width="1" atv:refpy="28.698"/>
+</svg>

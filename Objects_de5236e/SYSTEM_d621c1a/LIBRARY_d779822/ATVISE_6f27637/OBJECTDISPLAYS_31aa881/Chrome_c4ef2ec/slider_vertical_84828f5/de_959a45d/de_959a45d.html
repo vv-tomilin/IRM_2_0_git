@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Beschreibung</h1>
+<p>Der Schieberegler dient der grafischen Darstellung des Werts einer Adresse; er kann nicht als Eingabeelement verwendet werden.</p>
+<p>F&uuml;r jeden Schieberegler k&ouml;nnen 0 bis 4 Limits (von "Unteres Limit unterschritten" bis "Oberes Limit &uuml;berschritten") festgelegt werden. Diese Limits unterteilen den durch "min." und "max." definierten Bereich in 1 bis 5 Intervalle. Je nachdem, in welchem Intervall der Wert der "base"-Adresse liegt, wird die Textfarbe des Werts gem&auml;&szlig; der f&uuml;r jedes Limit definierten Farbe ge&auml;ndert - siehe unten unter "Darstellung". Liegt ein Limit unter "min." oder &uuml;ber "max.", wird es nicht explizit gezeichnet, obwohl die Textfarbe entsprechend ge&auml;ndert wird. (Beispiel: "max." = 100 und "Oberes Limit &uuml;berschritten" = 120: Obwohl der Schieberegler nicht &uuml;ber "max." hinausgeht, wird die Textfarbe gem&auml;&szlig; "Farbe f&uuml;r Oberes Limit &uuml;berschritten" ge&auml;ndert, sobald der Wert "Oberes Limit &uuml;berschritten" erreicht.)</p>
+Die Limits sind wie folgt definiert:<br>
+<ul>
+  <li>Unteres Limit unterschritten &gt;= Wert: Textfarbe gem&auml;&szlig; "Farbe f&uuml;r Unteres Limit unterschritten"</li>
+  <li>Unteres Limit unterschritten &lt; Wert &lt;= Unteres Limit erreicht: Textfarbe gem&auml;&szlig; "Farbe f&uuml;r Unteres Limit erreicht"</li>
+  <li>Unteres Limit erreicht &lt; Wert &lt; Oberes Limit erreicht: Textfarbe gem&auml;&szlig; "Farbe"</li>
+  <li>Oberes Limit erreicht &lt;= Wert &lt; Oberes Limit &uuml;berschritten: Textfarbe gem&auml;&szlig; "Farbe f&uuml;r Oberes Limit erreicht"</li>
+  <li>Oberes Limit &uuml;berschritten &lt;=&nbsp;Wert: Textfarbe gem&auml;&szlig; "Farbe f&uuml;r Oberes Limit &uuml;berschritten"</li>
+</ul>
+<p>Mit Hilfe einer Statusanzeige in Form eines zus&auml;tzlichen Rahmens kann zudem auch ein negativer Status des aktuellen Wertes und ein zus&auml;tzlich definierter Alarm dargestellt werden. Die Farben und Blinkintervalle werden in globalen Listen definiert.</p>
+<h1>Parameter</h1>
+<p>Der Schieberegler hat die folgenden allgemeinen Parameter:</p>
+<ul>
+  <li><span class="parameter">base</span>: Adresse des Datenpunkts, dessen Wert f&uuml;r die grafische Darstellung verwendet wird</li>
+  <li><span class="parameter">Alarmadresse</span>: Optional zus&auml;tzliche Adresse eines Alarms, welcher angezeigt werden soll.</li>
+  <li><span class="parameter">Beschriftung</span>: Beschriftung des Schiebereglers</li>
+  <li><span class="parameter">Einheit</span>: Einheit des Werts</li>
+  <li><span class="parameter">Minimum</span>: untere Grenze des Werts (Standard: 0)</li>
+  <li><span class="parameter">Maximum</span>: obere Grenze des Werts (Standard: 100)</li>
+  <li><span class="parameter">Status&uuml;berwachung aktivieren</span>: Schaltet die Anzeige des aktuellen Wertestatus ein oder aus.</li>
+  <li><span class="parameter">Statustrigger feuern</span>: Statt der Statusanzeige kann auch ein hier definierter Trigger global gefeuert werden.</li>
+</ul>
+<p>Schrift:</p>
+<ul>
+  <li><span class="parameter">Schriftart</span>: Schriftart, die auf&nbsp;Wert, Einheit und Beschriftung angewendet wird</li>
+  <li><span class="parameter">Textfarbe</span>: Farbe, die auf Wert, Einheit und Beschriftung angewendet wird</li>
+  <li><span class="parameter">Textf&uuml;llfarbe</span>: Farbe, die auf den Hintergrund von Wert, Einheit und Beschriftung angewendet wird</li>
+  <li><span class="parameter">Gr&ouml;&szlig;e des Werts</span>: auf den Wert angewendete Schriftgr&ouml;&szlig;e</li>
+  <li><span class="parameter">Gr&ouml;&szlig;e der Beschriftung</span>: auf die Beschriftung angewendete Schriftgr&ouml;&szlig;e</li>
+  <li><span class="parameter">Gr&ouml;&szlig;e der Einheit</span>: auf die Einheit angewendete Schriftgr&ouml;&szlig;e</li> </ul>
+<p>Darstellung:</p>
+<ul>
+  <li><span class="parameter">Nachkommastellen</span>: Anzahl der Nachkommastellen f&uuml;r den anzuzeigenden Wert</li>
+  <li><span class="parameter">F&uuml;llfarbe</span>: F&uuml;llfarbe von Hintergrundfl&auml;chen</li>
+  <li><span class="parameter">F&uuml;llfarbe nicht editierbar</span>: F&uuml;llfarbe von Hintergrundfl&auml;chen, wenn Element nicht editierbar</li>
+  <li><span class="parameter">F&uuml;llfarbe inaktiv</span>: F&uuml;llfarbe von Hintergrundfl&auml;chen, wenn Element inaktiv</li>
+  <li><span class="parameter">Unteres Limit unterschritten (off=kein Limit)</span>: Wert f&uuml;r Unteres Limit unterschritten&nbsp;(Standard: off, d.&nbsp;h. kein Limit) </li>
+  <li><span class="parameter">Unteres Limit erreicht (off=kein Limit)</span>: Wert f&uuml;r Unteres Limit erreicht&nbsp;(Standard: off, d.&nbsp;h. kein Limit)</li>
+  <li><span class="parameter">Oberes Limit erreicht (off=kein Limit)</span>:Wert f&uuml;r Oberes Limit erreicht&nbsp;(Standard: off, d.&nbsp;h. kein Limit)</li>
+  <li><span class="parameter">Oberes Limit &uuml;berschritten (off=kein Limit)</span>: Wert f&uuml;r Oberes Limit &uuml;berschritten&nbsp;(Standard: off, d.&nbsp;h. kein Limit)</li>
+  <li><span class="parameter">Farbe f&uuml;r Unteres Limit unterschritten</span>: Farbe des Textes, wenn "Unteres Limit unterschritten" &gt;=&nbsp;Wert (Standard: rot)</li>
+  <li><span class="parameter">Farbe f&uuml;r Unteres Limit erreicht</span>: Farbe des Textes, wenn &quot;Unteres Limit erreicht&quot; &lt;&nbsp;Wert &lt;= &quot;Unteres Limit erreicht&quot; (Standard: gelb)</li>
+  <li><span class="parameter">Farbe f&uuml;r Oberes Limit erreicht</span>: Farbe des Textes, wenn &quot;Oberes Limit erreicht&quot; &lt;=&nbsp;Wert &lt; &quot;Oberes Limit &uuml;berschritten&quot; (Standard: gelb)</li>
+  <li><span class="parameter">Farbe f&uuml;r Oberes Limit &uuml;berschritten</span>: Farbe des Textes, wenn &quot;Oberes Limit &uuml;berschritten&quot; &lt;=&nbsp;Wert (Standard: rot)</li>
+  <li><span class="parameter">angezeigte Skala</span>: zu verwendende Skala; weitere Skalen k&ouml;nnen ausgew&auml;hlt werden aus "Object Displays (ATVISE)/Symbols/scales (Standard: scale_20_slider)</li>
+  <li><span class="parameter">Skalenfarbe</span>: Farbe der zu verwendenden Skala&nbsp; (Standard: wei&szlig;)</li>
+  <li><span class="parameter">Statushinweis</span>: Spezifiziert die Darstellung des Status &uuml;ber eine definierte globale Liste (Standard: Globaler Parameter <i>atvStatusIndication</i>)</li>
+  <li><span class="parameter">Alarmhinweis</span>: Spezifiziert die Darstellung des Alarms &uuml;berber eine definierte globale Liste (Standard: Globaler Parameter <i>atvAlarmIndication</i>)</li>
+</ul>
+Optionen:
+<ul>
+  <li><span class="parameter">Adresse f&uuml;r Minimum</span>: Adresse, der das Minimum entnommen wird; setzt den Parameter "Minimum" au&szlig;er Kraft</li>
+  <li><span class="parameter">Adresse f&uuml;r Maximum</span>: Adresse, der das Maximum entnommen wird; setzt den Parameter "Maximum" au&szlig;er Kraft</li>
+  <li><span class="parameter">Adresse f&uuml;r Unteres Limit unterschritten</span>: Adresse, der "Unteres Limit unterschritten" entnommen wird; setzt den Parameter "Unteres Limit unterschritten" au&szlig;er Kraft</li>
+  <li><span class="parameter">Adresse f&uuml;r Unteres Limit erreicht</span>: Adresse, der "Unteres Limit erreicht" entnommen wird; setzt den Parameter "Unteres Limit erreicht" au&szlig;er Kraft</li>
+  <li><span class="parameter">Adresse f&uuml;r Oberes Limit erreicht</span>: Adresse, der "Oberes Limit erreicht" entnommen wird; setzt den Parameter "Oberes Limit erreicht" au&szlig;er Kraft</li>
+  <li><span class="parameter">Adresse f&uuml;r Oberes Limit &uuml;berschritten</span>: Adresse, der "Oberes Limit &uuml;berschritten" entnommen wird; setzt den Parameter "Oberes Limit &uuml;berschritten" au&szlig;er Kraft</li>
+</ul>
+<h1></h1>
+<br>
+</body>
+</html>

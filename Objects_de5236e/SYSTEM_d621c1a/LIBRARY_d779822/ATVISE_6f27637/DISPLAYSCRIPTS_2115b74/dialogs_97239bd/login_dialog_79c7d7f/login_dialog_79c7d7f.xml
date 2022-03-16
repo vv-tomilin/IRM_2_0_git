@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+	<metadata>
+		<priority>0</priority>
+	</metadata>
+	<code><![CDATA[/**
+ * Code for the login dialog object display
+ * ----------------------------------------
+ * This Script supports the the display for handling user logins
+ */
+
+
+/**
+ * DECLARATION SECTION
+ */
+var password = "";
+var username = "";
+var keyboard = webMI.query["keyboard"];
+var trigger_username = "com.atvise.login.username";
+var trigger_password = "com.atvise.login.password";
+
+
+/**
+ * RUNTIME SECTION
+ * Runtime code has to be executed after onload to take care all other resources are ready
+ */
+webMI.addOnload(function (e) {
+	webMI.trigger.fire("setValue", "", "username_input");
+	webMI.trigger.fire("setValue", "", "password_input");
+});
+
+
+/**
+ * TRIGGER SECTION
+ */
+webMI.trigger.connect("valuechanged", function (e) {
+	username = e.value;
+}, "username_input");
+
+webMI.trigger.connect("valuechanged", function (e) {
+	password = e.value;
+}, "password_input");
+
+webMI.trigger.connect(trigger_password, function (e) {
+	password = e.value;
+	webMI.trigger.fire("setValue", e.value, "password_input");
+});
+
+webMI.trigger.connect(trigger_username, function (e) {
+	username = e.value;
+	webMI.trigger.fire("setValue", e.value, "username_input");
+});
+
+webMI.trigger.connect("clicked", function (e) {
+	webMI.display.closeWindow();
+}, "cancel_button");
+
+webMI.trigger.connect("clicked", function (e) {
+	//put webMI login to the end of the callstack to receive correct data from triggers before
+	setTimeout(function () {
+		webMI.data.login(username, password, function (e) {
+			if (e[""].hasOwnProperty("username") && e[""].username) {
+				webMI.gfx.setText("status_message", "");
+				webMI.gfx.setVisible("status_symbol", false);
+				webMI.display.closeWindow();
+			} else if (e[""].hasOwnProperty("username")) {
+				webMI.gfx.setText("status_message", "T{Login failed! Username/password wrong.}");
+				webMI.gfx.setVisible("status_symbol", null);
+			} else if (e[""].hasOwnProperty("error")) {
+				webMI.gfx.setText("status_message", "T{Login failed! Username/password wrong.}");
+				webMI.gfx.setVisible("status_symbol", null);
+			} else {
+				webMI.display.closeWindow();
+			}
+		});
+	}, 0);
+}, "ok_button");
+
+webMI.trigger.connect("clicked", function (e) {
+	webMI.query.trigger = trigger_username;
+	webMI.query.password = "No";
+	webMI.query.value = "";
+	webMI.display.openWindow({
+		display: keyboard,
+		extern: false,
+		height: 300,
+		menubar: false,
+		modal: true,
+		movable: true,
+		resizable: false,
+		scrollbars: false,
+		status: false,
+		title: "T{Keyboard}",
+		toolbar: false,
+		width: 700,
+		query: webMI.query
+	});
+}, "username_keyboard");
+
+webMI.trigger.connect("clicked", function (e) {
+	webMI.query.trigger = trigger_password;
+	webMI.query.password = "Yes";
+	webMI.query.value = "";
+	webMI.display.openWindow({
+		display: keyboard,
+		extern: false,
+		height: 300,
+		menubar: false,
+		modal: true,
+		movable: true,
+		resizable: false,
+		scrollbars: false,
+		status: false,
+		title: "T{Keyboard}",
+		toolbar: false,
+		width: 700,
+		query: webMI.query
+	});
+}, "password_keyboard");]]></code>
+</script>

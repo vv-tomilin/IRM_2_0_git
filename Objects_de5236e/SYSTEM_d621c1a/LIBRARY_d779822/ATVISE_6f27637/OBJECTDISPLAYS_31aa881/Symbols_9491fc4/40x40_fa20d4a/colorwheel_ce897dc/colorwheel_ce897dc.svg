@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" version="1.2" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" xmlns="http://www.w3.org/2000/svg" height="40">
+ <defs/>
+ <metadata>
+  <atv:parameter behavior="optional" defaultvalue="#000000" valuetype="color" name="symbolColor" desc="symbol color" substitute="$SYMBOLCOLOR$"/>
+  <atv:parameter behavior="optional" defaultvalue="#ffffff" valuetype="address" name="symbolColor2" desc="symbol color 2" substitute="$SYMBOLCOLOR2$"/>
+  <atv:gridconfig width="20" height="20" enabled="false" gridstyle="lines"/>
+  <atv:snapconfig width="10" height="10" enabled="false"/>
+ </metadata>
+ <g transform="matrix(0.1434,0,0,0.1434,1.637,1.637)" atv:refpy="20" atv:refpx="20" id="id_1">
+  <circle cx="128.062" atv:refpy="128.062" r="128.062" atv:refpx="128.062" stroke="none" stroke-width="4" cy="128.062" id="id_32" fill="$SYMBOLCOLOR$"/>
+  <path atv:dynamic="true" atv:refpy="314.998" atv:refpx="85.969" stroke="$SYMBOLCOLOR$" stroke-width="1" d="M97.356,244.585C75.99,238.861 59.108,229.113 43.466,213.472L128.469,128.469Z" id="id_0" fill-opacity="1" style="fill-rule:evenodd" fill="$SYMBOLCOLOR$"/>
+  <path atv:dynamic="true" atv:refpy="317.144" atv:refpx="128.47" stroke="$SYMBOLCOLOR$" stroke-width="1" d="M159.582,244.585C138.218,250.311 118.721,250.311 97.356,244.585L128.469,128.469Z" id="id_3" fill-opacity="1" style="fill-rule:evenodd" fill="$SYMBOLCOLOR$"/>
+  <path atv:dynamic="true" atv:refpy="186.529" atv:refpx="299.442" stroke="$SYMBOLCOLOR$" stroke-width="1" d="M213.473,213.472C197.831,229.113 180.947,238.861 159.582,244.585L128.469,128.469Z" id="id_16" fill-opacity="1" style="fill-rule:evenodd" fill="$SYMBOLCOLOR$"/>
+  <path atv:dynamic="true" atv:refpy="170.972" atv:refpx="314.999" stroke="$SYMBOLCOLOR$" stroke-width="1" d="M244.586,159.583C238.861,180.948 229.113,197.832 213.473,213.472L128.469,128.469Z" id="id_20" fill-opacity="1" style="fill-rule:evenodd" fill="$SYMBOLCOLOR$"/>
+  <path atv:dynamic="true" atv:refpy="128.47" atv:refpx="317.145" stroke="$SYMBOLCOLOR$" stroke-width="1" d="M244.586,97.357C250.31,118.722 250.31,138.218 244.586,159.583L128.469,128.469Z" id="id_21" fill-opacity="1" style="fill-rule:evenodd" fill="$SYMBOLCOLOR$"/>
+  <path atv:dynamic="true" atv:refpy="85.969" atv:refpx="314.999" stroke="$SYMBOLCOLOR$" stroke-width="1" d="M213.473,43.467C229.113,59.107 238.861,75.991 244.586,97.357L128.469,128.469Z" id="id_22" fill-opacity="1" style="fill-rule:evenodd" fill="$SYMBOLCOLOR$"/>
+  <path atv:dynamic="true" atv:refpy="70.412" atv:refpx="299.442" stroke="$SYMBOLCOLOR$" stroke-width="1" d="M159.582,12.354C180.947,18.078 197.831,27.827 213.473,43.467L128.469,128.469Z" id="id_23" fill-opacity="1" style="fill-rule:evenodd" fill="$SYMBOLCOLOR$"/>
+  <path atv:dynamic="true" atv:refpy="68.266" atv:refpx="225.826" stroke="$SYMBOLCOLOR$" stroke-width="1" d="M97.356,12.352C118.721,6.629 138.218,6.629 159.582,12.352L128.469,128.469Z" id="id_24" fill-opacity="1" style="fill-rule:evenodd" fill="$SYMBOLCOLOR$"/>
+  <path atv:dynamic="true" atv:refpy="299.441" atv:refpx="70.412" stroke="$SYMBOLCOLOR$" stroke-width="1" d="M43.466,213.472C27.827,197.832 18.078,180.948 12.353,159.583L128.469,128.469Z" id="id_25" fill-opacity="1" style="fill-rule:evenodd" fill="$SYMBOLCOLOR$"/>
+  <path atv:dynamic="true" atv:refpy="225.827" atv:refpx="68.266" stroke="$SYMBOLCOLOR$" stroke-width="1" d="M12.353,159.583C6.627,138.218 6.627,118.722 12.353,97.357L128.469,128.469Z" id="id_26" fill-opacity="1" style="fill-rule:evenodd" fill="$SYMBOLCOLOR$"/>
+  <path atv:dynamic="true" atv:refpy="70.412" atv:refpx="129.436" stroke="$SYMBOLCOLOR$" stroke-width="1" d="M43.466,43.467C59.108,27.827 75.99,18.078 97.356,12.354L128.469,128.469Z" id="id_27" fill-opacity="1" style="fill-rule:evenodd" fill="$SYMBOLCOLOR$"/>
+  <path atv:dynamic="true" atv:refpy="129.436" atv:refpx="70.412" stroke="$SYMBOLCOLOR$" stroke-width="1" d="M12.353,97.357C18.078,75.991 27.827,59.107 43.466,43.467L128.469,128.469Z" id="id_28" fill-opacity="1" style="fill-rule:evenodd" fill="$SYMBOLCOLOR$"/>
+  <path atv:refpy="32.988" atv:refpx="-61.53" stroke="#000000" stroke-width="2" d="M202.421,128.467C202.421,169.292 169.291,202.422 128.469,202.422C87.647,202.422 54.518,169.292 54.518,128.467C54.518,87.646 87.647,54.518 128.469,54.518C169.291,54.518 202.421,87.646 202.421,128.467" id="id_29" style="fill-rule:evenodd" fill="#000000"/>
+  <path atv:refpy="182.988" atv:refpx="128.47" stroke="$SYMBOLCOLOR$" stroke-width="2" d="M202.421,128.469C202.421,169.292 169.291,202.422 128.469,202.422C87.647,202.422 54.518,169.292 54.518,128.469C54.518,87.648 87.647,54.518 128.469,54.518C169.291,54.518 202.421,87.648 202.421,128.469" id="preview" style="fill-rule:evenodd" fill="$SYMBOLCOLOR2$"/>
+ </g>
+</svg>

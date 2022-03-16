@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Set_var.SetVarValues
+NodeClass: Variable
+BrowseName: 1:SetVarValues
+DisplayName: en|SetVarValues
+Description: en|SetVarValues
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

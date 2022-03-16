@@ -1,0 +1,11 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.MSE.Inputs.MSE_DIF.MirrorInput
+NodeClass: Variable
+BrowseName: 1:MirrorInput
+DisplayName: en|MirrorInput
+Description: en|MirrorInput
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Mirror.Input
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

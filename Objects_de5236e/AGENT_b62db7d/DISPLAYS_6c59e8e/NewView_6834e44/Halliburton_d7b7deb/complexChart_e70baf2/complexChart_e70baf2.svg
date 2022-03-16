@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="550" version="1.2" width="1400" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:parameter behavior="optional" defaultvalue="" name="chartTitle" valuetype="string"/>
+  <atv:parameter behavior="optional" name="factAddress" valuetype="address"/>
+  <atv:parameter behavior="optional" name="planAddress" valuetype="address"/>
+  <atv:gridconfig enabled="true" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <g atv:insensitive="true" atv:refpx="0" atv:refpy="0" id="id_0" transform="matrix(0.7567,0,0,0.5419,0,0)">
+  <rect atv:refpx="925" atv:refpy="507.5" fill="#1f1f1f" height="1015.00" id="id_1" width="1850.00" x="0" y="0"/>
+ </g>
+ <foreignObject height="550" id="id_2" width="1400" x="0.678" y="1.356">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <script src="../../highcharts/highcharts.js"/>
+   <script src="../../highcharts/series-label.js"/>
+   <script src="../../highcharts/accessibility.js"/>
+   <div id="HalChart_container"/>
+  </div>
+ </foreignObject>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[webMI.data.read("AGENT.OBJECTS.Depth_day_data.start_date", function(start_date) {
+
+var hallData = {};
+var complexChart;
+
+function createChart(series) {
+	complexChart = Highcharts.chart(document.getElementById('HalChart_container'), {
+		title: {
+			text: "Значение",
+			margin:0,
+			style: {
+				color:'#FFF'
+			}
+		},
+		chart: {
+		  type: 'spline',
+		  backgroundColor:'rgba(0,0,0,0)',
+		  width:1400,
+		  height:520,
+		  plotBackgroundColor:'#101010',
+		  styledMode:false
+		},
+		subtitle: {
+			text: 'График'
+		},
+		yAxis: [{
+		  title: {
+			text: "Глубина",
+			style:{
+				color:'#fff',
+				fontSize:'18px'
+			}
+		  },
+		  reversed:true,
+		  min: 0,
+		  gridLineColor:'#6e6f70'
+		},
+		{
+			title:{
+				enabled:false
+			},
+			reversed:true,
+			min: 0,
+			opposite: true,
+			gridLineColor:'#6e6f70'
+		}],
+		xAxis: {
+		  type: 'linear',
+		  min: 0,
+		  title: {
+			text: 'Глубина',
+			margin:0,
+			style:{
+				color:'#fff',
+				fontSize:'18px'
+			},
+			enabled:false
+		  },
+		  gridLineWidth:'1px',
+		  gridLineColor:'#6e6f70',
+		},
+		legend:{
+			enabled:false
+		},
+		plotOptions: {
+		  series: {
+			marker: {
+			  enabled: false
+			},
+			label:{
+				enabled:false
+			}
+	
+		  }
+		},
+		credits: {
+			enabled: false
+		},
+		tooltip: {
+			pointFormat: "{series.name}: {point.x}",
+			valueSuffix: " "
+		},
+		series: series,
+		responsive: {
+			rules: [{
+				condition: {
+					maxWidth: 1000
+				},
+				chartOptions: {
+					legend: {
+						layout: 'horizontal',
+						align: 'center',
+						verticalAlign: 'bottom'
+					}
+				}
+			}]
+		}
+	});
+	webMI.gfx.setScaledEvents(document.getElementById('HalChart_container'), true);
+}
+function colorize() {
+	var seriesArr = complexChart.series;
+	var targetSerie = seriesArr[seriesArr.length - 1];
+	
+	webMI.trigger.fire("setColor", { name: targetSerie.name, color: targetSerie.color });
+}
+webMI.trigger.connect("setChartData", function(res) {
+	createChart(res.value)
+	
+	colorize();
+});
+webMI.trigger.connect("addChartData", function(res) {
+	if (!complexChart) {
+		createChart([res.value]);
+		colorize();
+		
+		return
+	}
+	complexChart.addSeries(res.value);
+	colorize();
+});
+webMI.trigger.connect("removeChartData", function(res) {
+	complexChart.series.map(function(serie) {
+		if (serie.name == res.value) {
+			serie.remove();
+			//webMI.trigger.fire("removeColor", res.value)
+		} 
+	})
+});
+webMI.trigger.connect("clearChart", function(res) {
+	if (complexChart) {
+		while (complexChart.series.length) {
+			complexChart.series[0].remove();
+		}
+	}
+});
+})]]></script>
+</svg>

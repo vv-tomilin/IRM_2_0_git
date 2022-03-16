@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.GLOBALS.ColorStatus.statusNormal
+NodeClass: Variable
+BrowseName: 1:statusNormal
+DisplayName: en|statusNormal
+Description: en|statusNormal
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.GlobalVariable

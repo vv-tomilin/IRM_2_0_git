@@ -1,0 +1,11 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.APD1.Diff_Pressure.Reg.Setpoint
+NodeClass: Variable
+BrowseName: 1:Setpoint
+DisplayName: en|Setpoint
+Description: en|Setpoint
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

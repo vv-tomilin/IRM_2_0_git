@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="trigger" type="timer" trigger="true" relative="false" value="" starttime="00:00:00" repeat="00:00:05"/>
+  <parameter name="activeVar" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.opc.isActive1500"/>
+  <parameter name="opcName" type="string" trigger="false" relative="false" value="s1500"/>
+  <code><![CDATA[var res = call("Methods.DataSource.Browse", {
+   datasource: opcName,
+   address: [""]
+});
+var node = new UaNode(activeVar);
+node.value = !res.error]]></code>
+</script>

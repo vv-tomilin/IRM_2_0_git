@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nodeStr" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="countSec" type="number" trigger="false" relative="false" value="30"/>
+  <code><![CDATA[var nodeProc = new UaNode(nodeStr);
+
+var timeend = new Date();
+var timestart = new Date(timeend.valueOf() - countSec * 1000);
+
+var retObj = {
+	'angle': 0,   
+	'startVal': nodeProc.value,
+	'stopVal': nodeProc.value, 
+	'avrVal': nodeProc.value,
+	'diffVal': 0,
+	'speedVal': 0
+};
+var resultRaw = nodeProc.datahistory({starttime: timestart, endtime: timeend});
+if(resultRaw.status < 0x40000000){
+	if(resultRaw.values.length==0 || resultRaw.values.length==1){
+		return retObj;
+	} else {
+//		console.log('length = ', resultRaw.values.length);
+		var curs = resultRaw.values.length-1;
+		var curd = new Date(resultRaw.values[curs].sourcetime);
+		var curv = Number(resultRaw.values[curs].value);
+		
+		var arrSec = [];
+
+		//var curds = Math.floor(curd/1000);
+		var curds = Math.floor(+timeend/1000);		
+//console.log(resultRaw.values);
+		var j=0;
+//		for(var i = curds; i > curds-countSec; i--){
+		for(var i = curds; i > curds-countSec; i--){
+			if(curs > 0){			
+				if(i<=Math.floor(resultRaw.values[curs].sourcetime/1000)){
+					curs--;		
+				}
+			}
+			if(curs >=0){
+//				arrSec.push(Math.floor(resultRaw.values[curs].value * 100) / 100);
+				arrSec.push(resultRaw.values[curs].value);
+			}			
+		}
+//console.log('arrSec.length = ',arrSec.length);
+		
+		arrSec.reverse();
+		
+		if((countSec-1)%2 > 0){
+			var arrObj = [];
+			var pos = Math.floor((arrSec.length-1)/2);
+			//console.log('pos = ', pos);
+			for(var i = pos, j = 0; i<arrSec.length-1; i++, j++){
+				var myObj = {};
+				myObj.factor = j;
+				myObj.value = arrSec[i];
+				arrObj[i] = myObj;				
+			}
+			for(var i = pos-1, j = -1; i>=0; i--, j--){
+				var myObj = {};
+				myObj.factor = j;
+				myObj.value = arrSec[i];
+				arrObj[i] = myObj;				
+			}			
+
+			var sumVal = 0;
+			var sumQuad = 0;
+			var sumMult = 0;
+			
+	
+			arrObj.forEach(function(item, i, arrObj){			
+				sumVal+= +item.value;
+				var quad = Math.pow(+item.factor,2);
+				var mult = Number(item.factor) * Number(item.value);
+				
+				arrObj[i].quad = quad;
+				sumQuad += quad;
+				arrObj[i].mult = mult;
+				sumMult += Number(mult); 
+			})
+	
+				
+			var factorA = sumMult/sumQuad;
+			var factorB = sumVal/arrObj.length;	
+				
+//console.log('arrObj.length = ', arrObj.length, ', sumMult = ', sumMult, ', factorA = ',factorA, ', factorB = ',factorB);
+			
+			var angleRad = Math.atan(factorA);
+			
+			function radToDeg(rad)
+			{
+				return (rad * 180) / Math.PI;
+			}
+			var angleDeg = Math.floor(radToDeg(angleRad) * 100) / 100;
+//			console.log("Угол = ", angleDeg, ' град.');
+			
+			arrObj.forEach(function(item, i, arrObj){
+//				arrObj[i].even = factorB + factorA*item.value;
+				arrObj[i].even = factorB + factorA*item.factor;
+//console.log('item.value = ', item.value, ', item.factor = ', item.factor, ', item.even = ', item.even, ', item.mult = ', item.mult );				 
+			})
+			
+			var startVal = arrObj[0].even;
+			var stopVal = arrObj[arrObj.length-1].even;
+			
+			//console.log('startVal = ', startVal);
+			//console.log('stopVal = ', stopVal);
+			//var averageVal = (startVal+stopVal)/2;
+			var diffVal = (stopVal-startVal);
+			
+//arrSec.push(Math.floor(startVal * 100) / 100);			
+//			console.log('diffVal = ',Math.floor(diffVal * 100) / 100, ', startVal = ', Math.floor(startVal * 100) / 100, ', stopVal = ',Math.floor(stopVal * 100) / 100);
+//			console.log('diffVal = ',Math.floor(diffVal * 100) / 100,', averageVal = ',Math.floor(averageVal * 100) / 100, ', startVal = ', Math.floor(startVal * 100) / 100, ', stopVal = ',Math.floor(stopVal * 100) / 100);
+//			console.log('startVal = ', startVal, ', stopVal = ',stopVal, ', averageVal = ',averageVal, ', diffVal = ',diffVal);
+//			console.log('arrObj = ', arrObj);
+/*	
+			var retObj = {
+				'angle': angleDeg,   
+				'startVal': startVal,
+				'stopVal': stopVal, 
+				'avrVal': factorB,
+				'diffVal': diffVal
+			};
+*/			
+			retObj.angle = angleDeg; 
+			retObj.startVal = startVal;
+			retObj.stopVal = stopVal;
+			retObj.avrVal = factorB;
+			retObj.diffVal = diffVal;
+			retObj.speedVal = diffVal/countSec;
+			
+//			return retObj;			
+		}		
+//		return retObj;
+	} 
+}
+return retObj;]]></code>
+</script>

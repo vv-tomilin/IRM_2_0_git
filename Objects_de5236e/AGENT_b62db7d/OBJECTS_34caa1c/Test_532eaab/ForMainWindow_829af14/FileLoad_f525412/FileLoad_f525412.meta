@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.ForMainWindow.FileLoad
+NodeClass: Variable
+BrowseName: 1:FileLoad
+DisplayName: en|FileLoad
+Description: en|FileLoad
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

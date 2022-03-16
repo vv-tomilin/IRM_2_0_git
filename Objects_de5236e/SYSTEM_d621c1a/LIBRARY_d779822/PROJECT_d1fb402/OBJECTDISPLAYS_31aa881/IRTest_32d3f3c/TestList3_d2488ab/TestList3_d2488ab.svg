@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" height="65" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg" width="115" version="1.2">
+ <defs>
+  <linearGradient x1="0" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_0" x2="1">
+   <stop stop-color="#ffffff" offset="0"/>
+   <stop stop-color="#00c800" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_2" x2="1">
+   <stop stop-color="#ffffff" offset="0"/>
+   <stop stop-color="#00c800" offset="1"/>
+  </linearGradient>
+ </defs>
+ <metadata>
+  <atv:parameter desc="Name" behavior="mandatory" substitute="#NAME#" name="Name" valuetype="string" defaultvalue="Name"/>
+  <atv:parameter desc="Label1" behavior="mandatory" substitute="#LABEL1#" name="Label1" valuetype="string" defaultvalue="Состояние"/>
+  <atv:parameter desc="Value1" behavior="mandatory" name="Value1" valuetype="address"/>
+  <atv:parameter desc="Unit1" behavior="optional" substitute="#UN1#" name="Unit1" valuetype="string" defaultvalue=""/>
+  <atv:parameter desc="Label2" behavior="mandatory" substitute="#LABEL2#" name="Label2" valuetype="string" defaultvalue="Наработка"/>
+  <atv:parameter desc="Value2" behavior="mandatory" name="Value2" valuetype="address" defaultvalue=""/>
+  <atv:parameter desc="Unit2" behavior="optional" substitute="#UN2#" name="Unit2" valuetype="string" defaultvalue="ч"/>
+  <atv:parameter desc="Label3" behavior="mandatory" substitute="#LABEL3#" name="Label3" valuetype="string" defaultvalue="Дата поверки"/>
+  <atv:parameter desc="Value3" behavior="mandatory" substitute="#VALUE3#" name="Value3" valuetype="string" defaultvalue="20-12-20"/>
+  <atv:parameter desc="Unit3" behavior="optional" substitute="#UN3#" name="Unit3" valuetype="string" defaultvalue=""/>
+  <atv:parameter behavior="optional" name="Low1" valuetype="address" defaultvalue=""/>
+  <atv:parameter behavior="optional" name="High1" valuetype="address" defaultvalue=""/>
+  <atv:parameter behavior="optional" name="LowLow1" valuetype="address" defaultvalue=""/>
+  <atv:parameter behavior="optional" name="HighHigh1" valuetype="address" defaultvalue=""/>
+  <atv:parameter behavior="optional" name="Low2" valuetype="address" defaultvalue=""/>
+  <atv:parameter behavior="optional" name="High2" valuetype="address" defaultvalue=""/>
+  <atv:parameter behavior="optional" name="LowLow2" valuetype="address" defaultvalue=""/>
+  <atv:parameter behavior="optional" name="HighHigh2" valuetype="address" defaultvalue=""/>
+  <atv:parameter behavior="optional" name="Low3" valuetype="address" defaultvalue=""/>
+  <atv:parameter behavior="optional" name="High3" valuetype="address" defaultvalue=""/>
+  <atv:parameter behavior="optional" name="LowLow3" valuetype="address" defaultvalue=""/>
+  <atv:parameter behavior="optional" name="HighHigh3" valuetype="address" defaultvalue=""/>
+  <atv:parameter behavior="mandatory" group="Status" valuetype="global" defaultvalue="SYSTEM.GLOBALS.ColorStatus.statusNormal"/>
+  <atv:parameter behavior="mandatory" group="Status" valuetype="global" defaultvalue="SYSTEM.GLOBALS.ColorStatus.statusUncertain"/>
+  <atv:parameter behavior="mandatory" group="Status" valuetype="global" defaultvalue="SYSTEM.GLOBALS.ColorStatus.statusBad"/>
+  <atv:parameter behavior="mandatory" group="Status" valuetype="global" defaultvalue="SYSTEM.GLOBALS.ColorStatus.statusUnknown"/>
+  <atv:gridconfig gridstyle="lines" height="2" width="2" enabled="true"/>
+  <atv:snapconfig height="2" width="2" enabled="true"/>
+ </metadata>
+ <g atv:refpy="0" atv:insensitive="true" id="id_0" atv:refpx="0" transform="matrix(0.697,0,0,0.9285,0,0)">
+  <rect atv:refpy="35" fill="#ffffff" height="70.00" id="id_1" y="0" atv:refpx="82.5" width="165.00" fill-opacity="0" x="0"/>
+ </g>
+ <rect stroke-width="0" atv:refpy="32.5" fill="#09222e" stroke-opacity="0.784314" rx="0" height="65" stroke="#8a8a8a" id="id_4" y="0" atv:refpx="57.5" width="115" fill-opacity="0.784314" x="0" ry="0"/>
+ <rect stroke-width="0" atv:refpy="11.602" fill="none" stroke-linejoin="round" height="22" stroke="#e1e1e1" id="id_26" y="0.602" atv:refpx="82.5" width="163" x="1"/>
+ <rect stroke-width="0" atv:refpy="32.102" fill="none" stroke-linejoin="round" height="15" stroke="#e1e1e1" id="id_27" y="23.602" atv:refpx="50.999" width="100" x="1"/>
+ <rect stroke-width="0" atv:refpy="30.102" fill="none" height="15" stroke="#e1e1e1" id="id_28" y="22.602" atv:refpx="118.499" width="37" x="100"/>
+ <rect stroke-width="0" atv:refpy="0.061" fill="none" stroke-linejoin="round" height="15" stroke="#e1e1e1" id="id_29" y="22.602" atv:refpx="-11.703" width="27" x="137"/>
+ <text atv:refpy="10.398" fill="#c8c803" id="id_30" y="14.5" font-size="12" atv:refpx="58.856" fill-opacity="0.784314" font-weight="bold" x="58.5" text-anchor="middle" font-family="Arial">#NAME#</text>
+ <text atv:refpy="2" fill="#cdcdcd" id="id_31" y="29" font-size="10" atv:refpx="-2" x="1.5" text-anchor="start" font-family="Arial">#LABEL1#</text>
+ <rect stroke-width="0" atv:refpy="44.752" fill="none" stroke-linejoin="round" height="15" stroke="#e1e1e1" id="id_70" y="36.253" atv:refpx="50.999" width="100" x="1"/>
+ <rect stroke-width="0" atv:refpy="44.752" fill="none" height="15" stroke="#e1e1e1" id="id_71" y="37.253" atv:refpx="118.499" width="37" x="100"/>
+ <rect stroke-width="0" atv:refpy="14.712" fill="none" stroke-linejoin="round" height="15" stroke="#e1e1e1" id="id_72" y="37.253" atv:refpx="-11.703" width="27" x="137"/>
+ <text atv:refpy="40.5" fill="#cdcdcd" id="id_73" y="44" font-size="10" atv:refpx="27.5" x="1.5" text-anchor="start" font-family="Arial">#LABEL2#</text>
+ <text atv:refpy="40.5" fill="#cdcdcd" id="id_74" y="44" font-size="12" atv:refpx="76.045" x="70.5" text-anchor="start" font-family="Arial">1000</text>
+ <text atv:refpy="41.047" fill="#cdcdcd" id="id_75" y="46" font-size="10" atv:refpx="105.604" transform="matrix(0.8613,0,0,0.8225,13.87,5.68)" x="104.5" text-anchor="start" font-family="Arial">#UN2#</text>
+ <rect stroke-width="0" atv:refpy="63.752" fill="none" stroke-linejoin="round" height="15" stroke="#e1e1e1" id="id_76" y="55.253" atv:refpx="50.999" width="100" x="1"/>
+ <rect stroke-width="0" atv:refpy="63.752" fill="none" height="15" stroke="#e1e1e1" id="id_77" y="56.253" atv:refpx="118.499" width="37" x="100"/>
+ <rect stroke-width="0" atv:refpy="29.712" fill="none" stroke-linejoin="round" height="15" stroke="#e1e1e1" id="id_78" y="52.253" atv:refpx="-11.703" width="27" x="137"/>
+ <text atv:refpy="55.5" fill="#cdcdcd" id="id_79" y="59" font-size="10" atv:refpx="34.5" x="1.5" text-anchor="start" font-family="Arial">#LABEL3#</text>
+ <text atv:refpy="55.5" fill="#cdcdcd" id="id_80" y="59" font-size="10" atv:refpx="93" x="72.5" text-anchor="start" font-family="Arial">#VALUE3#</text>
+ <circle stroke-width="0" atv:refpy="26" fill="url(#linear_2)" stroke="#00c800" r="6" id="id_2" atv:refpx="96" cy="25" cx="96"/>
+ <script type="text/ecmascript"><![CDATA[
+
+webMI.data.subscribe(webMI.query["Value2"], function(e) {
+var id = "id_74";
+var value = e.value;
+webMI.gfx.setText(id, webMI.sprintf("%.0f", value));
+
+});
+
+webMI.data.subscribe(webMI.query["Value3"], function(e) {
+var id = "id_80";
+var value = e.value;
+webMI.gfx.setText(id, value);
+
+});
+
+
+
+
+webMI.data.subscribe(webMI.query["Value1"], function(e) {
+var id = "id_2";
+var value = e.value;
+if (value == true)
+	webMI.gfx.setFill(id, "#009600");
+if (value == false)
+	webMI.gfx.setFill(id, "#ff5500");
+
+});
+
+
+webMI.data.subscribe(webMI.query["Value1"], function(e) {
+	var id = "id_4";
+	
+	var status = e.status;
+	
+	var nodeColorStatusArray = ["SYSTEM.GLOBALS.ColorStatus.statusNormal", "SYSTEM.GLOBALS.ColorStatus.statusUncertain", "SYSTEM.GLOBALS.ColorStatus.statusBad", "SYSTEM.GLOBALS.ColorStatus.statusUnknown" ];
+	webMI.data.read(nodeColorStatusArray, function(a) {
+		var ColorNormal = a[0].value;
+		var ColorUncertain = a[1].value;
+		var ColorBad = a[2].value;
+		var ColorUnknown = a[3].value;
+		
+		if (status == 0 || (status & 0xC0000000).toString(16) == 0)	//Good value state
+			webMI.gfx.setFill(id, ColorNormal);
+		else if ((status & 0x80000000).toString(16) != 0)			//Bad value state
+			webMI.gfx.setFill(id, ColorBad);
+		else if ((status & 0xC0000000).toString(16) == 40000000)	//Uncertain value state
+			webMI.gfx.setFill(id, ColorUncertain);
+		else														//Unknown value state
+			webMI.gfx.setFill(id, ColorUnknown);
+		
+	});
+});
+]]></script>
+</svg>

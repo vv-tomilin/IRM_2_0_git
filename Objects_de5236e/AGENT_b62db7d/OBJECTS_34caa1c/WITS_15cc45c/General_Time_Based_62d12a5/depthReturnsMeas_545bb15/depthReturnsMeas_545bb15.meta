@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.General_Time_Based.depthReturnsMeas
+NodeClass: Variable
+BrowseName: 1:depthReturnsMeas
+DisplayName: en|depthReturnsMeas
+Description: en|depthReturnsMeas
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,11 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed".Drill.Limit_Exit.Step
+NodeClass: Variable
+BrowseName: 1:Step
+DisplayName: en|Step
+Description: en|Step
+DataType: Int16
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseDataVariableType
+Reference: forward HasComponent ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed"."Drill"."Limit_Exit".Step.RelMirrorInput

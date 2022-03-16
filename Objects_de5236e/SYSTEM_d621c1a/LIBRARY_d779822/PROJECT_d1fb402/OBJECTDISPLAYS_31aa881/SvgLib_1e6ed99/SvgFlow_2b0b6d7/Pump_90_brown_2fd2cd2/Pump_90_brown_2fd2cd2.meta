@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.SvgFlow.Pump_90_brown
+NodeClass: Variable
+BrowseName: 1:Pump_90_brown
+DisplayName: en|Pump_90_brown
+Description: en|Pump_90_brown
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

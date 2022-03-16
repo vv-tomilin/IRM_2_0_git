@@ -1,0 +1,8 @@
+NodeId: ns=1;s=AGENT.HISTORY.Plot_test
+NodeClass: Object
+BrowseName: 1:Plot_test
+DisplayName: en|Plot_test
+Description: en|Plot_test
+EventNotifier: 0
+Reference: forward HasModellingRule Shared
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.ArchiveGroup.Data

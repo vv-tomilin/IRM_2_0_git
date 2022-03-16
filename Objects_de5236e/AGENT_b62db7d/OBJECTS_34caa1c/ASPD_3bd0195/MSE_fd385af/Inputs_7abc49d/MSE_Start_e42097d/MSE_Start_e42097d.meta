@@ -1,0 +1,11 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.MSE.Inputs.MSE_Start
+NodeClass: Variable
+BrowseName: 1:MSE_Start
+DisplayName: en|MSE_Start
+Description: en|MSE_Start
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

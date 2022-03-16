@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.MAIN.Vid
+NodeClass: Variable
+BrowseName: 1:Vid
+DisplayName: en|Vid
+Description: en|Vid
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

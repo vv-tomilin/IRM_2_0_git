@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.TDS.Discrete.KShCClosed
+NodeClass: Variable
+BrowseName: 1:KShCClosed
+DisplayName: en|KShCClosed
+Description: en|KShCClosed
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

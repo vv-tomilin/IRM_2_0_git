@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.APD.MaxN1Pressure
+NodeClass: Variable
+BrowseName: 1:MaxN1Pressure
+DisplayName: en|MaxN1Pressure
+Description: en|MaxN1Pressure
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

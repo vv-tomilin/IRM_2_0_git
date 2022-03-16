@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AKB.PipeDim
+NodeClass: Variable
+BrowseName: 1:PipeDim
+DisplayName: en|PipeDim
+Description: en|PipeDim
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

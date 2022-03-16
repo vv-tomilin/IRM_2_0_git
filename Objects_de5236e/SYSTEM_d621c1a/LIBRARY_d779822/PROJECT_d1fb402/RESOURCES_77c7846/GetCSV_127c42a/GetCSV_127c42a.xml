@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="request" type="http.request" trigger="false" relative="false" value=""/>
+  <parameter name="response" type="http.response" trigger="false" relative="false" value=""/>
+  <code><![CDATA[//load csv file project directory and send to browser
+/*
+var ifs = new InputFileStream(request.getvalues.name, "binary");
+ifs.open();
+response.setHeader("Content-Type", "text/csv");
+//response.setHeader("Content-Transfer-Encoding", "binary");
+response.setHeader("Content-Disposition","attachment; filename=\"" + request.getvalues.name+ "\"");//fileName);
+response.write(ifs.read(0), "binary");
+ifs.close();
+*/
+
+var fullname = request.postvalues.fullreportname;
+var filename = request.postvalues.reportname;
+//console.log("request.postvalues.fullreportname = " + request.postvalues.fullreportname);
+
+var ifs = new InputFileStream(fullname, "binary");
+ifs.open();
+response.setHeader("Content-Type", "text/csv");
+//response.setHeader("Content-Transfer-Encoding", "binary");
+response.setHeader("Content-Disposition","attachment; filename=\"" + filename+ "\"");//fileName);
+response.write(ifs.read(0), "binary");
+ifs.close();
+]]></code>
+</script>

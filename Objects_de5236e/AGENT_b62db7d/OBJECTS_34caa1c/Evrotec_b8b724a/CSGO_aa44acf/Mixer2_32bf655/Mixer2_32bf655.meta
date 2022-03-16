@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.CSGO.Mixer2
+NodeClass: Variable
+BrowseName: 1:Mixer2
+DisplayName: en|Mixer2
+Description: en|Mixer2
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

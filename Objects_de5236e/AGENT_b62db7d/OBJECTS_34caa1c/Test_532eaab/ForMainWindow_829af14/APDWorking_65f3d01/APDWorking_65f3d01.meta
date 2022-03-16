@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.ForMainWindow.APDWorking
+NodeClass: Variable
+BrowseName: 1:APDWorking
+DisplayName: en|APDWorking
+Description: en|APDWorking
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

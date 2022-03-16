@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.DrillPumps.SumDrillPumpsConsumption.sumDrillPumpsConsumption
+NodeClass: Variable
+BrowseName: 1:sumDrillPumpsConsumption
+DisplayName: en|sumDrillPumpsConsumption
+Description: en|sumDrillPumpsConsumption
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

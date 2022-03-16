@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext" height="500" xmlns="http://www.w3.org/2000/svg" version="1.2" width="800">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <foreignObject y="0" atv:bindtl="0,0" id="highchartsForeignObject" atv:bindbr="1,1" x="0" height="500" width="800">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <div style="width:100%; height:100%;" id="highcharts_container"/>
+  </div>
+ </foreignObject>
+ <script type="text/ecmascript"><![CDATA[var highchartConfig = {
+
+    title: {
+        text: 'Момент свинчивания АКБ'
+    },
+
+    subtitle: {
+        text: 'Rigintel'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Момент кН.м'
+        }
+    },
+    xAxis: {
+        title: {
+            text: 'Обороты'
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+            //pointStart: 0.1        
+        }
+    },
+
+    series: [{
+        name: 'Максимальный',
+        data: [[0, 4.5], [0.4, 4.5], [0.8, 4.5], [1.2, 4.5], [1.6, 4.5], [2.0, 4.5], [2.4, 4.5], [2.8, 4.5], [2.9, 4.5], [3.2, 4.5]]
+        //data: [4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5, 4.5]
+    }, {
+        name: 'Минимальный',
+		data: [[0, 2.5], [0.4, 2.5], [0.8, 2.5], [1.2, 2.5], [1.6, 2.5], [2.0, 2.5], [2.4, 2.5], [2.8, 2.5], [2.9, 2.5], [3.2, 2.5]]                
+        //data: [2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5, 2.5]
+    }, {
+        name: 'Оптимальный',
+        data: [[0, 3.5], [0.4, 3.5], [0.8, 3.5], [1.2, 3.5], [1.6, 3.5], [2.0, 3.5], [2.4, 3.5], [2.8, 3.5], [2.9, 3.5], [3.2, 3.5]]
+//        data: [3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5, 3.5]
+    },
+     {
+        name: 'Момент',
+        data: [[0, 0.1], [0.4, 0.1], [0.8, 0.2], [1.2, 0.2], [1.6, 0.5], [2.0, 1.0], [2.4, 2.0], [2.8, 3.5], [2.9, 0], [3.2, 0]],
+        lineWidth: 4
+        //data: [0.1, 0.1, 0.2, 0.2, 0.5, 1.0, 2.0, 3.5, 3.5, 0]
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+};
+
+webMI.addOnload(function(e) {
+var id = "highchartsForeignObject";
+var value = true;
+return function(value) {
+	var topWindow = parent;
+	if (topWindow.Highcharts == undefined){
+		webMI.data.loadScript("/highcharts/highcharts.js",function(url, alreadyLoaded){
+			webMI.data.loadScript("/highcharts/modules/exporting.js",function(url, alreadyLoaded){
+				webMI.data.loadScript("/highcharts/themes/dark-blue.js",function(){
+					initChart();
+				});
+			});	
+		});	
+	} else {
+		initChart();
+	}
+
+	function initChart(){
+		topWindow.Highcharts.setOptions({
+			global: {
+				useUTC: false
+			}
+		});
+
+		var element = document.getElementById('highcharts_container');
+		myChart = topWindow.Highcharts.chart(element, highchartConfig);
+
+	}
+} (value);
+});
+
+]]></script>
+</svg>

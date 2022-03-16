@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.GtiChartsReal.GtiChart3
+NodeClass: Variable
+BrowseName: 1:GtiChart3
+DisplayName: en|GtiChart3
+Description: en|GtiChart3
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

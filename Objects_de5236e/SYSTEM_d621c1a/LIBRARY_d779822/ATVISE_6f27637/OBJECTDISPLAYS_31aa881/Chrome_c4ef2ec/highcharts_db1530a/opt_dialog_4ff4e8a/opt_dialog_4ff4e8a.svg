@@ -1,0 +1,415 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="1200" height="580" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linear_2" y1="-7.18755e-05" y2="1.10539" x1="-0.0150911" gradientUnits="objectBoundingBox" x2="-0.0150911">
+   <stop offset="0.462882096069869" stop-color="#cfcfcf"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+ </defs>
+ <title>Configuration - Top display</title>
+ <rect id="filters_bg" ry="0" width="1200" stroke="#000000" fill="url(#linear_2)" atv:refpy="0" atv:refpx="600" height="50" stroke-width="0" y="0" x="0" rx="0"/>
+ <metadata>
+  <atv:parameter substitute="$CHARTNAME$" defaultvalue="" desc="chart name" behavior="optional" valuetype="string" name="chartname"/>
+  <atv:parameter defaultvalue="true" group="Appearance" desc="show &quot;Preview&quot; button (popup mode only)" behavior="optional" valuetype="bool" name="showPreviewBtn"/>
+  <atv:parameter defaultvalue="false" group="Appearance" desc="show &quot;Back&quot; button" behavior="optional" valuetype="bool" name="showBackBtn"/>
+  <atv:parameter defaultvalue="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.highcharts.main_display" group="Options" desc="&quot;Back&quot; button URL" behavior="optional" valuetype="display" name="backURL"/>
+  <atv:parameter defaultvalue="chartframe" group="Options" desc="frame for &quot;Back&quot; button" behavior="optional" valuetype="address" name="backFrame"/>
+  <atv:parameter config="SYSTEM.SECURITY.RIGHTS" defaultvalue="" group="Security" desc="necessary right to load config" behavior="optional" valuetype="address" name="load_right"/>
+  <atv:parameter group="Security" desc="activation address" behavior="optional" valuetype="address" name="load_activeNode"/>
+  <atv:parameter group="Security" desc="activation value" behavior="optional" valuetype="string" name="load_activeValue"/>
+  <atv:parameter config="SYSTEM.SECURITY.RIGHTS" defaultvalue="" group="Security" desc="necessary right to save config" behavior="optional" valuetype="address" name="save_right"/>
+  <atv:parameter defaultvalue="" group="Security" desc="activation address" behavior="optional" valuetype="address" name="save_activeNode"/>
+  <atv:parameter defaultvalue="" group="Security" desc="activation value" behavior="optional" valuetype="string" name="save_activeValue"/>
+  <atv:parameter desc="change compression" group="Security" valuetype="bool" name="save_changecompression" behavior="optional" defaultvalue="false"/>
+  <atv:gridconfig width="20" enabled="true" height="20" gridstyle="lines"/>
+  <atv:snapconfig width="5" enabled="true" height="5"/>
+ </metadata>
+ <svg id="config_frame" width="800" transform="matrix(1.5,0,0,0.8833,0,0)" atv:refpy="315.002" atv:refpx="600" height="600" y="56.606" x="0" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.hmi.iframe">
+  <atv:argument value="config_frame" name="frameName"/>
+  <atv:argument prefix="" value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.highcharts.opt_start" name="display"/>
+  <atv:argument prefix="base" name="base"/>
+ </svg>
+ <svg id="btn_general" width="80" transform="matrix(1.125,0,0,1,0,0)" atv:refpy="25" atv:refpx="565" height="30" y="10" x="462.223" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.button">
+  <atv:argument value="T{General}" name="label"/>
+  <atv:argument value="5" name="tabIndex"/>
+  <atv:overwrite id="button_stroke" width="82" transform="matrix(0.8889,0,0,1,0,0)"/>
+  <atv:overwrite id="button_label" transform="matrix(0.8889,0,0,1,0,0)" x="45"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.8889,0,0,1,0,0)" x="35"/>
+  <atv:overwrite id="button_bg" width="82" transform="matrix(0.8889,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="84.5" transform="matrix(0.8889,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="89.5" transform="matrix(0.8889,0,0,1,0,0)"/>
+ </svg>
+ <svg id="btn_series" width="80" transform="matrix(1.125,0,0,1,0,0)" atv:refpy="25" atv:refpx="372" height="30" y="10" x="208.889" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.button">
+  <atv:argument value="T{Data}" name="label"/>
+  <atv:argument value="2" name="tabIndex"/>
+  <atv:overwrite id="button_stroke" width="82" transform="matrix(0.8889,0,0,1,0,0)"/>
+  <atv:overwrite id="button_label" transform="matrix(0.8889,0,0,1,0,0)" x="45"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.8889,0,0,1,0,0)" x="35"/>
+  <atv:overwrite id="button_bg" width="82" transform="matrix(0.8889,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="84.5" transform="matrix(0.8889,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="89.5" transform="matrix(0.8889,0,0,1,0,0)"/>
+ </svg>
+ <svg id="btn_xaxis" width="80" transform="matrix(1.125,0,0,1,0,0)" atv:refpy="25" atv:refpx="467.001" height="30" y="10" x="293.334" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.button">
+  <atv:argument value="T{X-Axis}" name="label"/>
+  <atv:argument value="3" name="tabIndex"/>
+  <atv:overwrite id="button_stroke" width="82" transform="matrix(0.8889,0,0,1,0,0)"/>
+  <atv:overwrite id="button_label" transform="matrix(0.8889,0,0,1,0,0)" x="45"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.8889,0,0,1,0,0)" x="35"/>
+  <atv:overwrite id="button_bg" width="82" transform="matrix(0.8889,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="84.5" transform="matrix(0.8889,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="89.5" transform="matrix(0.8889,0,0,1,0,0)"/>
+ </svg>
+ <svg id="btn_yaxis" width="80" transform="matrix(1.125,0,0,1,0,0)" atv:refpy="25" atv:refpx="564" height="30" y="10" x="377.778" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.button">
+  <atv:argument value="T{Y-Axis}" name="label"/>
+  <atv:argument value="4" name="tabIndex"/>
+  <atv:overwrite id="button_stroke" width="82" transform="matrix(0.8889,0,0,1,0,0)"/>
+  <atv:overwrite id="button_label" transform="matrix(0.8889,0,0,1,0,0)" x="45"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.8889,0,0,1,0,0)" x="35"/>
+  <atv:overwrite id="button_bg" width="82" transform="matrix(0.8889,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="84.5" transform="matrix(0.8889,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="89.5" transform="matrix(0.8889,0,0,1,0,0)"/>
+ </svg>
+ <svg id="btn_save_load" width="80" transform="matrix(1.5,0,0,1,0,0)" atv:refpy="25" atv:refpx="1125.363" height="30" y="10" x="643.333" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.button">
+  <atv:argument value="T{Load / Save}" name="label"/>
+  <atv:argument value="6" name="tabIndex"/>
+  <atv:argument prefix="load_right" name="right"/>
+  <atv:argument prefix="load_activeNode" name="activeNode"/>
+  <atv:argument prefix="load_activeValue" name="activeValue"/>
+  <atv:overwrite id="button_stroke" width="112" transform="matrix(0.6667,0,0,1,0,0)"/>
+  <atv:overwrite id="button_label" transform="matrix(0.6667,0,0,1,0,0)" x="60"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.6667,0,0,1,0,0)" x="50"/>
+  <atv:overwrite id="button_bg" width="112" transform="matrix(0.6667,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="114.5" transform="matrix(0.6667,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="119.5" transform="matrix(0.6667,0,0,1,0,0)"/>
+ </svg>
+ <svg id="btn_preview" width="80" transform="matrix(1.25,0,0,1,0,0)" atv:refpy="25" atv:refpx="1012.222" height="30" y="10" x="688" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.button">
+  <atv:argument value="T{Preview (F2)}" name="label"/>
+  <atv:argument value="10" name="tabIndex"/>
+  <atv:argument value="#074800" name="fillColor"/>
+  <atv:overwrite id="button_stroke" width="92" transform="matrix(0.8,0,0,1,0,0)"/>
+  <atv:overwrite id="button_label" transform="matrix(0.8,0,0,1,0,0)" x="50"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.8,0,0,1,0,0)" x="40"/>
+  <atv:overwrite id="button_bg" width="92" transform="matrix(0.8,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="94.5" transform="matrix(0.8,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="99.5" transform="matrix(0.8,0,0,1,0,0)"/>
+ </svg>
+ <svg id="chartselector" width="160" transform="matrix(1.3749,0,0,1,0,0)" atv:refpy="25" atv:refpx="120.022" height="30" y="10" x="7.273" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.combobox">
+  <atv:argument value="20" name="tabIndex"/>
+  <atv:argument value="T{Choose chart to configure}" name="text1"/>
+  <atv:argument value="none" name="text1value"/>
+  <atv:argument value="10" name="itemsCount"/>
+  <atv:overwrite id="id_3" transform="matrix(0.7273,0,0,1,0,0)" x="194.742"/>
+  <atv:overwrite id="button_bg" transform="matrix(0.7273,0,0,1,0,0)" x="193.492"/>
+  <atv:overwrite id="button_stroke" transform="matrix(0.7273,0,0,1,0,0)" x="193.492"/>
+  <atv:overwrite id="id_5" transform="matrix(0.7273,0,0,1,0,0)" x="192.492"/>
+  <atv:overwrite id="combobox_label" transform="matrix(0.7273,0,0,1,0,0)" x="185.492"/>
+  <atv:overwrite id="combobox_bg" width="185.992" transform="matrix(0.7273,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="187.992" transform="matrix(0.7273,0,0,1,0,0)"/>
+  <atv:overwrite id="combobox_stroke" width="219.492" transform="matrix(0.7273,0,0,1,0,0)"/>
+ </svg>
+ <svg id="btn_quicksave" width="80" transform="matrix(1.25,0,0,1,0,0)" atv:refpy="25" atv:refpx="1140" height="30" y="10" x="872" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.button">
+  <atv:argument value="T{Quicksave}" name="label"/>
+  <atv:argument prefix="save_right" name="right"/>
+  <atv:argument prefix="save_activeNode" name="activeNode"/>
+  <atv:argument prefix="save_activeValue" name="activeValue"/>
+  <atv:overwrite id="button_stroke" width="92" transform="matrix(0.8,0,0,1,0,0)"/>
+  <atv:overwrite id="button_label" transform="matrix(0.8,0,0,1,0,0)" x="50"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.8,0,0,1,0,0)" x="40"/>
+  <atv:overwrite id="button_bg" width="92" transform="matrix(0.8,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="94.5" transform="matrix(0.8,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="99.5" transform="matrix(0.8,0,0,1,0,0)"/>
+ </svg>
+ <text id="label_config" font-size="12" fill="#000000" atv:refpy="16.5" atv:refpx="736.5" font-family="Arial" x="736.5" y="21" text-anchor="middle">T{Actual configuration}:</text>
+ <text id="label_configname" font-size="12" fill="#000000" atv:refpy="32.5" atv:refpx="732.5" font-family="Arial" x="732.5" y="37" text-anchor="middle">-</text>
+ <script type="text/ecmascript"><![CDATA[var activeDisplay = "series";
+var hasSaveRight = false;
+var chart, chartUpdate, lastChart, configNode, configName;
+var configurator;
+var quickSaveActive = false;
+
+//Set start state
+webMI.addOnload(function() {
+
+	// submit current state of quickSave
+	webMI.trigger.connect("com.atvise.highcharts.getQuickSave", function (e) {
+		if(e.value == "getState"){
+	        webMI.trigger.fire("com.atvise.highcharts.sendQuickSave", quickSaveActive);
+		}
+    });
+
+	webMI.data.loadScript("highcharts/helpers/confighandler.js", function () {
+		configurator = new webMI.rootWindow.ConfigHandler();
+
+        //Button triggers
+        webMI.trigger.connect("clicked", function (e) {
+            setActiveDisplay("general");
+        }, "btn_general");
+        webMI.trigger.connect("clicked", function (e) {
+            setActiveDisplay("series");
+        }, "btn_series");
+        webMI.trigger.connect("clicked", function (e) {
+            setActiveDisplay("xaxis");
+        }, "btn_xaxis");
+        webMI.trigger.connect("clicked", function (e) {
+            setActiveDisplay("yaxis");
+        }, "btn_yaxis");
+        webMI.trigger.connect("clicked", function (e) {
+            setActiveDisplay("save_load");
+        }, "btn_save_load");
+
+        webMI.trigger.connect("clicked", function (e) {
+            if (!chart || !chart.chart.options.atviseOptions)
+                return;
+
+            configNode = chart.chart.options.atviseOptions.configNode;
+            configFile = chart.chart.options.atviseOptions.configFile;
+            configName = chart.chart.options.atviseOptions.configName;
+            var configNodeText = configNode.split(".");
+
+			if(chart.chart.options.atviseOptions.saveMethod == "filesystem") {
+				webMI.gfx.setText("label_configname", configFile + ": " + configName);
+			} else {
+				webMI.gfx.setText("label_configname", configNodeText[configNodeText.length - 1] + ": " + configName);
+			}
+
+            if (typeof configNode == "undefined" || typeof configName == "undefined")
+                return;
+
+            if (!hasSaveRight)
+                return;
+
+            configurator.saveConfigOrImport({"configNode" : configNode, "configName" : configName},
+              chart,
+              function () {
+				chart.control.updated(function () {
+					quickSaveActive = false;
+					webMI.gfx.setText("btn_quicksave_button_label", "T{Quicksave}");
+				});
+            });
+        }, "btn_quicksave");
+
+        // Disable buttons if no chart is selected
+        webMI.trigger.connect("valuechanged", function (e) {
+            var active = true;
+            if (e.value == "none")
+                active = false;
+            else
+                changeChart(e.value);
+
+            buttonsState(active);
+        }, "chartselector");
+	});
+
+	webMI.addEvent(webMI.data, "clientvariableschange", function(e) {
+		var right = webMI.query.save_right;
+
+		if (right == "") {
+			hasSaveRight = true;
+		} else {
+			if (right.search(/SYSTEM\.SECURITY\.RIGHTS\./) != -1)
+				right = right.substring(23,right.length); //remove "prefix" SYSTEM.SECURITY.RIGHTS.
+
+			if (("username" in e) && (e.username != ""))
+				hasSaveRight = webMI.hasRight(right);
+		}
+	});
+
+	var chartname = webMI.query.chartname;
+	if (chartname && chartname != "") {
+		webMI.trigger.fire("setSelectedItem", chartname, "chartselector");
+		webMI.trigger.fire("com.atvise.setActive", false, "chartselector");
+		changeChart(chartname);
+	} else {
+		function findCharts() {
+			var highcharts = webMI.trendFactory.getAllTrends();
+		
+			if (highcharts.length > 0) {
+				webMI.trigger.fire("setItems", {}, "chartselector");
+				for (var i = 0; i < highcharts.length; i++) {
+					webMI.trigger.fire("addItem", { text: highcharts[i].name, value: highcharts[i].name }, "chartselector");
+					if (i == 0) {
+						buttonsState(true);
+						webMI.trigger.fire("setSelectedItem", highcharts[i].name, "chartselector");
+						changeChart(highcharts[i].name);
+					}
+				}
+			} else {
+				buttonsState(false);
+				webMI.trigger.fire("addItem", "T{Choose chart to configure}", "chartselector");
+			}
+		}
+		findCharts();
+	}
+
+
+});
+
+webMI.addOnunload(function() {
+    chart.control.updated(null);
+	if (lastChart)
+		if (lastChart && lastChart.control) lastChart.control.unregisterOnUpdatedCallback(chartUpdate);
+});
+
+//Change selected chart
+//Reset updated callback
+//Autosave on update
+function changeChart(chartname) {
+	if (lastChart)
+		if (lastChart && lastChart.control) lastChart.control.unregisterOnUpdatedCallback(chartUpdate);
+
+	webMI.query.chartname = chartname;
+	chart = webMI.trendFactory.getTrendByName(chartname);
+	
+	if (!chart)
+		return;
+
+    configNode = chart.chart.options.atviseOptions.configNode;
+    configFile = chart.chart.options.atviseOptions.configFile;
+    configName = chart.chart.options.atviseOptions.configName;
+    var configNodeText = configNode.split(".");
+
+	if(chart.chart.options.atviseOptions.saveMethod == "filesystem") {
+		webMI.gfx.setText("label_configname", configFile + ": " + configName);
+	} else {
+		webMI.gfx.setText("label_configname", configNodeText[configNodeText.length - 1] + ": " + configName);
+	}
+
+	chartUpdate = chart.control.registerOnUpdatedCallback(function() {
+		if (!chart || !chart.chart)
+			return;
+
+        configNode = chart.chart.options.atviseOptions.configNode;
+        configFile = chart.chart.options.atviseOptions.configFile;
+        configName = chart.chart.options.atviseOptions.configName;
+        var configNodeText = configNode.split(".");
+
+		if(chart.chart.options.atviseOptions.saveMethod == "filesystem") {
+			webMI.gfx.setText("label_configname", configFile + ": " + configName);
+		} else {
+			webMI.gfx.setText("label_configname", configNodeText[configNodeText.length - 1] + ": " + configName);
+		}
+
+		autosave();
+		quickSaveActive = true;
+		webMI.gfx.setText("btn_quicksave_button_label", "T{Quicksave}*");
+	});
+
+	//webMI.display.openDisplay("SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.highcharts.opt_" + activeDisplay, webMI.query, "config_frame");
+	setActiveDisplay(activeDisplay);
+}
+
+var autosaveEnabled = true;
+function autosave() {
+	if (typeof configNode == "undefined" || typeof configurator == "undefined")
+		return;
+
+	if (!autosaveEnabled || !hasSaveRight)
+		return;
+
+	autosaveEnabled = false;
+	configurator.saveConfigOrImport({"configNode" : configNode, "configName" : "autosave"},
+	  chart,
+	  function(chartConfig) {
+		setTimeout(function() { autosaveEnabled = true }, 3000);
+	});
+}
+
+function buttonsState(active) {
+	webMI.trigger.fire("com.atvise.setActive", active, "btn_general");
+	webMI.trigger.fire("com.atvise.setActive", active, "btn_series");
+	webMI.trigger.fire("com.atvise.setActive", active, "btn_xaxis");
+	webMI.trigger.fire("com.atvise.setActive", active, "btn_yaxis");
+	webMI.trigger.fire("com.atvise.setActive", active, "btn_save_load");
+	webMI.gfx.setFill("btn_" + activeDisplay + "_button_bg", "#595959");
+
+	if (!active)
+		webMI.display.openDisplay("SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.highcharts.opt_start", webMI.query, "config_frame");
+}
+
+//Switch configuration tab
+function setActiveDisplay(display) {
+	activeDisplay = display;
+
+    var fillColor = "#000000";
+	webMI.gfx.setFill("btn_general_button_bg", fillColor);
+	webMI.gfx.setFill("btn_series_button_bg", fillColor);
+	webMI.gfx.setFill("btn_xaxis_button_bg", fillColor);
+	webMI.gfx.setFill("btn_yaxis_button_bg", fillColor);
+	if (webMI.gfx.getFill("btn_save_load_button_bg") == "#595959")
+		webMI.gfx.setFill("btn_save_load_button_bg", fillColor);
+
+	webMI.gfx.setFill("btn_" + display + "_button_bg", "#595959");
+
+	switch(display) {
+		case "general":
+			webMI.display.openDisplay("SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.highcharts.opt_general", webMI.query, "config_frame");
+			break;
+		case "xaxis":
+			webMI.display.openDisplay("SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.highcharts.opt_xaxis", webMI.query, "config_frame");
+			break;
+		case "yaxis":
+			webMI.display.openDisplay("SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.highcharts.opt_yaxis", webMI.query, "config_frame");
+			break;
+		case "series":
+			webMI.display.openDisplay("SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.highcharts.opt_series", webMI.query, "config_frame");
+			break;
+		case "start":
+			webMI.display.openDisplay("SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.highcharts.opt_start", webMI.query, "config_frame");
+			break;
+		case "save_load":
+			webMI.display.openDisplay("SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.highcharts.opt_save_load", webMI.query, "config_frame");
+			break;
+	}
+}
+
+//Preview functions
+function preview(body, header) {
+	if (webMI.keys.isDown(113))
+		return;
+	var visibility = body ? 'hidden': 'inherit';
+	webMI.gfx.setVisible("btn_general", !body);
+	webMI.gfx.setVisible("btn_series", !body);
+	webMI.gfx.setVisible("btn_xaxis", !body);
+	webMI.gfx.setVisible("btn_yaxis", !body);
+	webMI.gfx.setVisible("btn_save_load", !body);
+	webMI.gfx.setVisible("btn_quicksave", !body);
+	webMI.gfx.setVisible("chartselector", !body);
+	webMI.gfx.setVisible("filters_bg", !body);
+	webMI.gfx.setVisible("label_config", !body);
+	webMI.gfx.setVisible("label_configname", !body);
+	parent.window.document.getElementById("popup_bgdiv").style.visibility = visibility;
+	parent.window.document.getElementById("popup_bgiframe").style.visibility = visibility;
+	parent.window.document.getElementById("config_frame_myframe").style.visibility = visibility;
+	if(parent.window.document.getElementById("type_configuration_myframe") != null)
+		parent.window.document.getElementById("type_configuration_myframe").style.visibility = visibility;
+	if(parent.window.document.getElementById("address_treeview") != null)
+		parent.window.document.getElementById("address_treeview").style.visibility = visibility;
+	if(parent.window.document.getElementById("highchartsLoadSaveFileInput") != null)
+		parent.window.document.getElementById("highchartsLoadSaveFileInput").style.visibility = visibility;
+
+	visibility = header ? 'hidden': 'inherit';
+	parent.window.document.getElementById("popupcontent").style.visibility = visibility;
+	parent.window.document.getElementById("popup_main").style.visibility = visibility;
+}
+
+var popupElement = parent ? parent.window.document.getElementById("popupcontent") : null;
+
+if (popupElement == null && webMI.query.showBackBtn == "true") {
+	webMI.gfx.setText("btn_preview_button_label", "Back");
+	webMI.trigger.connect("clicked", function(e) {
+			webMI.display.openDisplay(webMI.query.backURL, webMI.query, webMI.query.backFrame);
+	 }, "btn_preview");
+} else if (popupElement != null && webMI.query.showPreviewBtn == "true") {
+	webMI.addEvent("btn_preview", ["mousedown","touchstart"], function(e) { preview(true, false); });
+	webMI.addEvent("btn_preview", ["mouseup","mouseout","touchend","touchcancel"], function(e) { preview(false, false); });
+	webMI.keys.addDownListener(function(e) { preview(true, true); }, 113); //Press and hold F2 for preview
+	webMI.keys.addUpListener(function(e) { preview(false, false); }, 113);
+} else {
+	webMI.gfx.setVisible("btn_preview", false);
+	webMI.gfx.setVisible("line_preview", false);
+}
+
+
+
+]]></script>
+</svg>

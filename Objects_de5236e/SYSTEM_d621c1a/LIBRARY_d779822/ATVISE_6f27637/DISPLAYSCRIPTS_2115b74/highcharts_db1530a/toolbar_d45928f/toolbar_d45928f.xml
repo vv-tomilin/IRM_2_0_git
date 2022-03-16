@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+	<metadata>
+		<priority>0</priority>
+	</metadata>
+	<code><![CDATA[/**
+ * Code for the layout advanced fixed 1920x1080 object display
+ * ----------------------------------------
+ * This script supports the display to provides controls for the highcharts.
+ * It enables or disables live mode, shows or hide measurement markers and opens the configuration dialog.
+ */
+
+
+/**
+ * DECLARATION SECTION
+ */
+var queryParameter = webMI.query;
+
+var chart, chartUpdate;
+var chartname = queryParameter.chartname;
+
+// Check button visibility and position
+var xCorr = 0;
+
+// Options button
+var conf = false;
+var display = queryParameter["dialog_options"];
+var openConfig;
+
+if(typeof webMI.getClientInfo == "function" && !webMI.getClientInfo().isDesktop){
+	display = queryParameter["dialog_options_small"];
+}
+
+if (queryParameter.showLiveBtn != "true") {
+	webMI.gfx.setVisible("btn_live", false)
+	webMI.gfx.setVisible("btn_stop", false)
+	webMI.gfx.setVisible("line1", false)
+	xCorr += 40;
+	webMI.gfx.setMoveX("btn_marker1", -xCorr)
+	webMI.gfx.setMoveX("btn_marker2", -xCorr)
+	webMI.gfx.setMoveX("line2", -xCorr)
+	webMI.gfx.setMoveX("btn_options", -xCorr)
+}
+
+if (queryParameter.showMarker1 != "true") {
+	webMI.gfx.setVisible("btn_marker1", false)
+	xCorr += 31;
+	webMI.gfx.setMoveX("btn_marker2", -xCorr)
+	webMI.gfx.setMoveX("line2", -xCorr)
+	webMI.gfx.setMoveX("btn_options", -xCorr)
+}
+
+if (queryParameter.showMarker2 != "true") {
+	webMI.gfx.setVisible("btn_marker2", false)
+	xCorr += 31;
+	webMI.gfx.setMoveX("line2", -xCorr)
+	webMI.gfx.setMoveX("btn_options", -xCorr)
+}
+
+if (queryParameter.showMarker1 != "true" && queryParameter.showMarker2 != "true") {
+	webMI.gfx.setVisible("line1", false)
+	xCorr += 8;
+	webMI.gfx.setMoveX("line2", -xCorr)
+	webMI.gfx.setMoveX("btn_options", -xCorr)
+}
+
+if (queryParameter.showOptionsBtn != "true") {
+	webMI.gfx.setVisible("btn_options", false)
+	webMI.gfx.setVisible("line2", false)
+}
+
+
+/**
+ * RUNTIME SECTION
+ * Runtime code has to be executed after onload to take care all other resources are ready
+ */
+webMI.addOnload(function () {
+	checkChart();
+});
+
+webMI.addOnunload(function () {
+	if (chart && chart.control) chart.control.unregisterOnUpdatedCallback(chartUpdate);
+});
+
+
+/**
+ * FUNCTION SECTION
+ */
+function setLiveStopButton() {
+	if (chart.control.isLiveModeRunning()) {
+		webMI.gfx.setVisible("btn_live", false)
+		webMI.gfx.setMoveX("btn_stop", 0);
+		webMI.gfx.setVisible("btn_stop", true)
+	} else {
+		webMI.gfx.setVisible("btn_live", true)
+		webMI.gfx.setVisible("btn_stop", false)
+		webMI.gfx.setMoveX("btn_stop", -30);
+	}
+}
+
+function checkChart() {
+	chart = webMI.trendFactory.getTrendByName(chartname);
+
+	if (!chart) {
+		setTimeout(function () {
+			checkChart()
+		}, 500);
+		return;
+	}
+
+	setLiveStopButton();
+
+	chartUpdate = chart.control.registerOnUpdatedCallback(function () {
+		setTimeout(function () {
+			setLiveStopButton();
+		}, 100);
+	});
+}
+
+
+/**
+ * TRIGGER SECTION
+ */
+// Live/Stop button
+webMI.trigger.connect("clicked", function (e) {
+	if (!chart)
+		return;
+
+	if (chart.chart.options.atviseOptions.mode == "history")
+		chart.chart.options.atviseOptions.mode = "mixed";
+
+	chart.control.startLiveMode();
+}, "btn_live");
+
+webMI.trigger.connect("clicked", function (e) {
+	if (!chart)
+		return;
+
+	chart.control.stopLiveMode();
+}, "btn_stop");
+
+// Marker buttons
+webMI.trigger.connect("clicked", function (e) {
+	var chart = webMI.trendFactory.getTrendByName(chartname);
+	if (!chart.control.isMeasuringCursor1Visible())
+		chart.control.showMeasuringCursor1();
+	else
+		chart.control.hideMeasuringCursor1();
+}, "btn_marker1");
+
+webMI.trigger.connect("clicked", function (e) {
+	var chart = webMI.trendFactory.getTrendByName(chartname);
+	if (!chart.control.isMeasuringCursor2Visible())
+		chart.control.showMeasuringCursor2();
+	else
+		chart.control.hideMeasuringCursor2();
+}, "btn_marker2");
+
+webMI.trigger.connect("clicked", function (e) {
+	if (queryParameter.optionsBtnMode == "trigger") {
+		conf = !conf;
+		webMI.trigger.fire(queryParameter.triggerName, conf);
+	} else if (queryParameter.optionsBtnMode == "frame") {
+		webMI.display.openDisplay(display, queryParameter, queryParameter.targetframe);
+	} else {
+		if (!openConfig || openConfig.closed)
+			openConfig = webMI.display.openWindow({
+				display: display,
+				extern: false,
+				height: 600,
+				menubar: false,
+				modal: false,
+				movable: true,
+				resizable: true,
+				scrollbars: false,
+				status: false,
+				title: " T{Chart Configuration}",
+				toolbar: false,
+				width: 1200,
+				query: queryParameter
+			});
+	}
+}, "btn_options");
+]]></code>
+</script>

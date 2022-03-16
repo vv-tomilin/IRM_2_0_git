@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook.previous
+NodeClass: Variable
+BrowseName: 1:previous
+DisplayName: en|previous
+Description: en|previous
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

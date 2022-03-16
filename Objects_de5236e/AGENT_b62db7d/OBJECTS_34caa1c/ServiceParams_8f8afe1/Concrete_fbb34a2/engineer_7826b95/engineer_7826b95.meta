@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ServiceParams.Concrete.engineer
+NodeClass: Variable
+BrowseName: 1:engineer
+DisplayName: en|engineer
+Description: en|engineer
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

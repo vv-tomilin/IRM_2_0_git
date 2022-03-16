@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/indicators/cmf.js.map
+NodeClass: Variable
+BrowseName: 1:cmf.js.map
+DisplayName: en|cmf.js.map
+Description: en|cmf.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

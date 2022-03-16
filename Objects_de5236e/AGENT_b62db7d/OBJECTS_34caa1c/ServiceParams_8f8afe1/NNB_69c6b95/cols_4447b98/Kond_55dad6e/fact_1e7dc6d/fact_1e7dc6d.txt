@@ -1,0 +1,1 @@
+{"rows":[{"number":"14","element":"\"СБТ 127x9,19 \"\"S-135\"\" ","affiliation":"НФ АО\"ССК\"","serialNumber":"C127s-2-08 17(Р)","DiamOut":"127,00","DiamIn":"108,62","DiamMax":"177,80","connectingThread":"3-147 3-147","connectingType":"Н.М","length":"2255,20","sumLength":"2851,00","weightTotalweight":"77578,88 3440","sumWeight":"104138,10"}]}

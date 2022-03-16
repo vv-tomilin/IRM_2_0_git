@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="500" version="1.2" width="510" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:parameter behavior="optional" defaultvalue="мг/см³" desc="единицы плотности" name="Ro" substitute="$RO$" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="°C" desc="единицы температуры" name="Gradus" substitute="$GRADUS$" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Загазованность" name="gaz" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Макс. загазованность" name="maxGaz" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Плотность вход" name="RoREnt" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Макс. плотность вход" name="MaxRoREnt" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Плотность выход" name="RoRExt" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Макс. плотность выход" name="MaxRoRExt" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Температура" name="gradus" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Макс. температура" name="Maxgradus" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Сероводород(слева)" name="LeftSulfur" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Макс. сероводород (слева)" name="MaxLeftSulfur" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Сероводород(справа)" name="RightSulfur" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Макс. сероводород (справа)" name="MaxRightSulfur" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="мг/м³" desc="единицы сероводорода" name="Sulfur" substitute="$SULFUR$" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Максисимум правого ограничения" name="MaxBarRight" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Минимум правого ограничения" name="MinBarRight" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Максимум левого ограничения" name="MaxBarLeft" valuetype="address"/>
+  <atv:parameter behavior="mandatory" defaultvalue="" desc="Минимум левого ограничения" name="MinBarLeft" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="true" desc="Видимость левого ограничения" name="VisabilityLeft" valuetype="bool"/>
+  <atv:parameter behavior="optional" defaultvalue="true" desc="Видимость правого ограничения " name="VisabilityRight" valuetype="bool"/>
+  <atv:gridconfig enabled="true" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="true" height="10" width="10"/>
+ </metadata>
+ <rect atv:refpx="255" atv:refpy="250" fill="#1f1f1f" height="500" id="id_3" stroke="#0000ff" stroke-width="0" width="510" x="0" y="0"/>
+ <rect atv:refpx="255" atv:refpy="200" fill="#1f1f1f" height="400" id="id_0" stroke="#0000ff" stroke-width="0" width="410" x="50" y="0"/>
+ <svg atv:refpx="194.888" atv:refpy="363" height="100" id="id_5" width="100" x="149.888" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Test.smol" y="316">
+  <atv:argument name="base" prefix="LeftSulfur"/>
+  <atv:argument name="MaxValue" prefix="MaxLeftSulfur"/>
+ </svg>
+ <svg atv:refpx="150" atv:refpy="200" height="400" id="id_1" width="200" x="50" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Test.test_bar" y="0">
+  <atv:argument name="base" prefix="RoREnt"/>
+  <atv:argument name="MaxValue" prefix="MaxRoREnt"/>
+  <atv:argument name="MaxBar" prefix="MaxBarLeft" value=""/>
+  <atv:argument name="MinBar" prefix="MinBarLeft" value=""/>
+  <atv:argument name="Visability" prefix="VisabilityLeft" value=""/>
+ </svg>
+ <svg atv:refpx="311.248" atv:refpy="363" height="100" id="id_22" transform="matrix(-1,0,0,1,0,0)" width="100" x="-360.248" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Test.smol" y="316">
+  <atv:argument name="base" prefix="RightSulfur"/>
+  <atv:argument name="MaxValue" prefix="MaxRightSulfur"/>
+ </svg>
+ <svg atv:refpx="360" atv:refpy="200" height="400" id="id_2" transform="matrix(-1,0,0,1,0,0)" width="200" x="-460" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Test.test_bar" y="0">
+  <atv:argument name="base" prefix="RoRExt"/>
+  <atv:argument name="MaxValue" prefix="MaxRoRExt"/>
+  <atv:argument name="MaxBar" prefix="MaxBarRight" value=""/>
+  <atv:argument name="MinBar" prefix="MinBarRight" value=""/>
+  <atv:argument name="Visability" prefix="VisabilityRight" value=""/>
+ </svg>
+ <circle atv:refpx="255" atv:refpy="200.366" cx="255" cy="205.375" fill="#1f1f1f" id="id_19" r="190" stroke="#0000ff" stroke-width="0" transform="matrix(1,0,0,0.9756,0,0)"/>
+ <svg atv:refpx="255" atv:refpy="289" height="200" id="id_17" transform="matrix(0.95,0,0,0.95,0,0)" width="400" x="68.421" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Test.test_bar_2" y="204.211">
+  <atv:argument name="base" prefix="gradus"/>
+  <atv:argument name="MaxValue" prefix="Maxgradus"/>
+ </svg>
+ <circle atv:refpx="255" atv:refpy="190" cx="255" cy="190" fill="#1f1f1f" id="id_21" r="175" stroke="#0000ff" stroke-width="0"/>
+ <svg atv:refpx="254.5" atv:refpy="36.25" height="50" id="id_13" transform="matrix(0.95,0,0,-0.95,0,0)" width="100" x="217.895" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Test.small_bar" y="-63.158">
+  <atv:argument name="base" prefix="gaz"/>
+  <atv:argument name="maxValue" prefix="maxGaz"/>
+ </svg>
+ <ellipse atv:refpx="254.344" atv:refpy="48.98" cx="254.344" cy="48.98" fill="#1f1f1f" id="id_16" rx="76.892" ry="25.806" stroke="#0000ff" stroke-width="0"/>
+ <text atv:refpx="602" atv:refpy="29.264" fill="#ffffff" font-family="Arial" font-size="12" id="id_23" x="554.045" y="35.386">Сероводород</text>
+ <text atv:refpx="595.963" atv:refpy="29.264" fill="#ffffff" font-family="Arial" font-size="12" id="id_25" text-anchor="middle" x="591.277" y="35.386">($SULFUR$)</text>
+ <text atv:refpx="588.776" atv:refpy="436.886" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" id="id_26" x="571.276" y="441.386">00000</text>
+ <text atv:refpx="921.139" atv:refpy="399.264" fill="#ffffff" font-family="Arial" font-size="12" id="id_27" x="873.183" y="405.386">Сероводород</text>
+ <text atv:refpx="915.102" atv:refpy="414.264" fill="#ffffff" font-family="Arial" font-size="12" id="id_28" text-anchor="middle" x="910.415" y="420.386">($SULFUR$)</text>
+ <text atv:refpx="907.915" atv:refpy="436.886" fill="#ffffff" font-family="Arial" font-size="14" font-weight="bold" id="id_29" x="890.415" y="441.386">00000</text>
+ <foreignObject height="22.468" id="id_24" width="98.966" x="204.038" y="59.134">
+  <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8; text-align:center" xmlns="http://www.w3.org/1999/xhtml">
+   <p style="margin:0">Содержание</p>
+   <p style="margin:0">газа</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="30.493" id="id_30" width="66.334" x="235.662" y="34.03">
+  <div style="width:100%;height:100%;color:white; font-size:1rem" xmlns="http://www.w3.org/1999/xhtml">
+   <p id="first" style="margin:0">0000</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="30.493" id="id_31" width="66.334" x="233.39" y="338.904">
+  <div style="width:100%;height:100%;color:white; font-size:1rem" xmlns="http://www.w3.org/1999/xhtml">
+   <p id="temp" style="margin:0">0000</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="29.61" id="id_32" width="101.007" x="208.704" y="322.376">
+  <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8" xmlns="http://www.w3.org/1999/xhtml">
+   <p style="margin:0">Температура(℃)</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="61.776" id="id_33" width="165.482" x="290" y="98.224">
+  <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.75;text-align:center" xmlns="http://www.w3.org/1999/xhtml">
+   <p style="margin:0">Плотность</p>
+   <br/>
+   <p style="margin:0">Раствора</p>
+   <br/>
+   <p style="margin:0">на выходе (г/см³)</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="25.076" id="id_34" width="48.48" x="360" y="160">
+  <div style="width:100%;height:100%;color:white; font-size:1rem" xmlns="http://www.w3.org/1999/xhtml">
+   <p id="left" style="margin:0">0000</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="59.86" id="id_35" width="167.563" x="52.437" y="100.14">
+  <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.75;text-align:center" xmlns="http://www.w3.org/1999/xhtml">
+   <p style="margin:0">Плотность</p>
+   <br/>
+   <p style="margin:0">Раствора</p>
+   <br/>
+   <p style="margin:0">на входе (г/см³)</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="32.443" id="id_36" width="69.529" x="100" y="160">
+  <div style="width:100%;height:100%;color:white; font-size:1rem" xmlns="http://www.w3.org/1999/xhtml">
+   <p id="right" style="margin:0">0000</p>
+  </div>
+ </foreignObject>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[
+
+
+
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"1", "id":"id_26", "nodeId":webMI.query["LeftSulfur"]});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"1", "id":"id_29", "nodeId":webMI.query["RightSulfur"]});
+
+webMI.data.subscribe(webMI.query["gaz"], function(e) {
+document.getElementById('first').innerHTML = e.value.toFixed(1)
+//document.getElementById('temp').innerHTML = "----"
+});
+webMI.data.subscribe(webMI.query["gradus"], function(e) {
+document.getElementById('temp').innerHTML = e.value.toFixed(1)
+//document.getElementById('temp').innerHTML = "----"
+});
+webMI.data.subscribe(webMI.query["RoRExt"], function(e) {
+document.getElementById('left').innerHTML = e.value.toFixed(2)
+//document.getElementById('left').innerHTML = "----"
+});
+webMI.data.subscribe(webMI.query["RoREnt"], function(e) {
+document.getElementById('right').innerHTML = e.value.toFixed(2)
+//document.getElementById('left').innerHTML = "----"
+});
+/*
+webMI.data.read("AGENT.OBJECTS.ServiceParams.Mud.cols.Direct.fact", function(e){
+	console.log(Object.values(JSON.parse(e.value).rows[0])[2])
+})*/]]></script>
+</svg>

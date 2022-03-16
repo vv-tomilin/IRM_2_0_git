@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Settings_param.Graph.graphListSensors
+NodeClass: Variable
+BrowseName: 1:graphListSensors
+DisplayName: en|graphListSensors
+Description: en|graphListSensors
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

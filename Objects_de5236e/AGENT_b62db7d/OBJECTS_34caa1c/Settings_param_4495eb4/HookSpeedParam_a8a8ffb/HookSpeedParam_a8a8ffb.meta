@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Settings_param.HookSpeedParam
+NodeClass: Object
+BrowseName: 1:HookSpeedParam
+DisplayName: en|HookSpeedParam
+Description: en|HookSpeedParam
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

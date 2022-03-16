@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.FlowInputRangeMax
+NodeClass: Variable
+BrowseName: 1:FlowInputRangeMax
+DisplayName: en|FlowInputRangeMax
+Description: en|FlowInputRangeMax
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

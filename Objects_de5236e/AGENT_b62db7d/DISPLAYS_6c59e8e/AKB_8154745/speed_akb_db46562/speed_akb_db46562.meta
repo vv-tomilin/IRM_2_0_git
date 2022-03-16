@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.AKB.speed_akb
+NodeClass: Variable
+BrowseName: 1:speed_akb
+DisplayName: en|speed_akb
+Description: en|speed_akb
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/RigView/3.png
+NodeClass: Variable
+BrowseName: 1:3.png
+DisplayName: en|3.png
+Description: en|3.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

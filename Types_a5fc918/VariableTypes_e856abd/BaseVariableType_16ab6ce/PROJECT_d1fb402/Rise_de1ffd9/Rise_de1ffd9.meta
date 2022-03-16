@@ -1,0 +1,9 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed"."Rise"
+NodeClass: VariableType
+BrowseName: 1:Rise
+DisplayName: en|Rise
+Description: en|Rise
+IsAbstract: false
+DataType: BaseDataType
+ValueRank: -1
+ValueType: i=0

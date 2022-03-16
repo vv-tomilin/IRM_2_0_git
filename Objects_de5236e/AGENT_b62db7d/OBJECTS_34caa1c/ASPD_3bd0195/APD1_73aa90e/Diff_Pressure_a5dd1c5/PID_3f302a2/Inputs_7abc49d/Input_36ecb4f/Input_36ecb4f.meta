@@ -1,0 +1,11 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.APD1.Diff_Pressure.PID.Inputs.Input
+NodeClass: Variable
+BrowseName: 1:Input
+DisplayName: en|Input
+Description: en|Input
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

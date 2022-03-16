@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.General_Time_Based.pumpStrokeRate3
+NodeClass: Variable
+BrowseName: 1:pumpStrokeRate3
+DisplayName: en|pumpStrokeRate3
+Description: en|pumpStrokeRate3
+DataType: Int64
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType

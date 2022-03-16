@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Drawworks.HookBlock.Weight.Value.DeadbandAbs
+NodeClass: Variable
+BrowseName: 1:DeadbandAbs
+DisplayName: en|DeadbandAbs
+Description: en|DeadbandAbs
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Smoothing.Deadband.Absolute
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

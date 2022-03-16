@@ -1,0 +1,1 @@
+{"npt":"ПВ","group":"СПО СПУСК","oper":"СПО","suboper":"подведение к забою","opertime":0,"operclr":"#B58F76","suboperclr":"#8F7171","timestartgroup":1647422900035}

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/RigView/geos/greizen.jpg
+NodeClass: Variable
+BrowseName: 1:greizen.jpg
+DisplayName: en|greizen.jpg
+Description: en|greizen.jpg
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Jpeg

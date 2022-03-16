@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Variables.CalcDrilling.AverageLoadOnBitBound
+NodeClass: Variable
+BrowseName: 1:AverageLoadOnBitBound
+DisplayName: en|AverageLoadOnBitBound
+Description: en|AverageLoadOnBitBound
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

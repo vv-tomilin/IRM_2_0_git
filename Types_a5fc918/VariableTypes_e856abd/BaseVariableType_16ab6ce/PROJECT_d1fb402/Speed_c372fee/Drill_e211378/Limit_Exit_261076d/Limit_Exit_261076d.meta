@@ -1,0 +1,11 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed".Drill.Limit_Exit
+NodeClass: Variable
+BrowseName: 1:Limit_Exit
+DisplayName: en|Limit_Exit
+Description: en|Limit_Exit
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed"."Drill"."Limit_Exit"
+Reference: forward HasComponent ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed"."Drill".Limit_Exit.RelMirrorInput

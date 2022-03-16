@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="interval" type="interval" trigger="true" relative="false" value="" offset="16:27:00"/>
+  <parameter name="rig_name" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Rig.General.RigName"/>
+  <parameter name="field_name" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Rig.General.FieldName"/>
+  <parameter name="bush_name" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Rig.General.BushName"/>
+  <parameter name="well_name" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Rig.General.WellName"/>
+  <parameter name="brigade_name" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Rig.Brigade.BrigadeName"/>
+  <parameter name="rig_work_status" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Rig.WorkStatus"/>
+  <parameter name="well_depth" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Well.WellDepth"/>
+  <parameter name="report_date" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.report_date"/>
+  <code><![CDATA[//console.log ("ODBC MySQL Open");
+//console.log (strlog);
+function Sec2Date(sec){
+	var min = sec / 60;
+	var hour = min / 60;
+//	var day =
+//    'Дней: ' + Math.floor(hour / 24) +
+//    ', часов: ' + Math.floor(hour % 24) +
+//    ', минут: ' + Math.floor(min % 60) +
+//    ', секунд: ' + Math.floor(sec % 60);
+	return  Math.floor(hour)+":"+Math.floor(min % 60)+":"+ Math.floor(sec % 60);
+}
+
+function SecondsFromWinTicks(wt){
+	return wt/10000000 - 11644473600;
+}
+function WinTicksFromSeconds(us){
+	return (Number(us)/1000+11644473600)*10000000;
+}
+
+longToByteArray = function(/*long*/llong) {
+    // we want to represent the input as a 8-bytes array
+    var byteArray = [0, 0, 0, 0, 0, 0, 0, 0];
+
+    for ( var index = 0; index < byteArray.length; index ++ ) {
+        var bbyte = llong & 0xff;
+        byteArray [ index ] = bbyte;
+        llong = (llong - bbyte) / 256 ;
+    }
+    return byteArray;
+};
+
+byteArrayToLong = function(/*byte[]*/byteArray) {
+    var value = 0;
+    for ( var i = byteArray.length - 1; i >= 0; i--) {
+        value = (value * 256) + byteArray[i];
+    }
+    return value;
+};
+
+hexStringToByteArray = function(hexstring){
+	var bytes = new Uint8Array(Math.ceil(hexstring.length / 2));
+	for (var i = 0; i < bytes.length; i++) 
+		bytes[i] = parseInt(hexstring.substr(i * 2, 2), 16);
+	return bytes;	
+}
+
+byteArrayToFloat = function(byteArray) {
+	// Create a buffer
+	var buf = new ArrayBuffer(4);
+	// Create a data view of it
+	var view = new DataView(buf);
+	
+	// set bytes
+	var rev = byteArray.reverse();
+	rev.forEach(function (b, i) {
+//		console.log("b = "+ b);
+		view.setUint8(i, b);
+	});	
+
+	// Read the bits as a float; note that by doing this, we're implicitly
+	// converting it from a 32-bit float into JavaScript's native 64-bit double
+	var num = view.getFloat32(0);
+	return num;
+};
+
+
+/*
+var hexstring = 'bada55';
+var bytes = new Uint8Array(Math.ceil(hexstring.length / 2));
+for (var i = 0; i < bytes.length; i++) bytes[i] = parseInt(hexstring.substr(i * 2, 2), 16);
+console.log(bytes);
+
+var convertedBack = '';
+for (var i = 0; i < bytes.length; i++) {
+  if (bytes[i] < 16) convertedBack += '0';
+  convertedBack += bytes[i].toString(16);
+}
+console.log(convertedBack);
+*/
+var filename = '';
+
+var odbcClient = new ODBCClient();
+
+
+//------------details via http://www.connectionstrings.com/ .----------------------------------------------
+//odbcClient.source = "Driver={Microsoft ODBC for Oracle}; Server=127.0.0.1; Uid=NameOfUid; Pwd=password;";
+//odbcClient.source = "DSN=ODBC_Name; User Id=NameOfUid; Password=password; Integrated Security=no;";
+//odbcClient.source = "DSN=ODBC_Name; Integrated Security=yes;";
+//odbcClient.source = "DSN=ODBC_Name; Uid=NameOfUid; Pwd=password;";
+
+
+odbcClient.source = "DSN=SQLite3 Datasource;";
+//odbcClient.source = "DSN=MySQL_ODBC_64; Uid=Serg; Pwd=rkjylfqr;";
+//odbcClient.source = "Driver={MySQL ODBC 8.0 ANSI Driver}; Server=127.0.0.1; Database=rigintel; Uid=Serg; Pwd=rkjylfqr;";
+
+try {
+if (odbcClient.open()) {	
+	console.log ("ODBC SQLite report Opend:", odbcClient.info());			//.info -> information of connected datasource	
+	
+	try	{
+//		var node_rig_name = new UaNode("AGENT.OBJECTS.Rig.General.RigName");		
+		//var node_field_name = new UaNode("AGENT.OBJECTS.Rig.General.FieldName");
+		//var node_bush_name = new UaNode("AGENT.OBJECTS.Rig.General.BushName");
+		//var node_well_name = new UaNode("AGENT.OBJECTS.Rig.General.WellName");
+		//var node_brigade_name = new UaNode("AGENT.OBJECTS.Rig.Brigade.BrigadeName");
+		var node_rig_name = new UaNode(rig_name);
+		var node_field_name = new UaNode(field_name);
+		var node_bush_name = new UaNode(bush_name);
+		var node_well_name = new UaNode(well_name);
+		var node_brigade_name = new UaNode(brigade_name);	
+	
+		var date = new Date(report_date);
+//		console.log("date = "+date+", "+Number(date));	
+//		var y=date.getYear()+1900;
+		var y = date.getFullYear();
+		var m=date.getMonth()+1;
+		var d=date.getDate();
+		
+		var hour = date.getHours();
+		var min = date.getMinutes();
+		var sec = date.getSeconds();
+		
+		if(String(m).length < 2)
+			m = '0' + String(m);
+		if(String(d).length < 2)
+			d = '0' + String(d);	
+				
+	 	if(String(hour).length < 2)
+			hour = '0' + String(d);
+		if(String(min).length < 2)
+			min = '0' + String(d);
+		if(String(sec).length < 2)
+			sec = '0' + String(d);		
+	 		
+		var start_depth = 0;
+		var stop_depth = 0;
+		var reportfolder = "rigdata/reports/";
+		filename = "report_" + y + "_" + m + "_" + d + ".csv";
+
+//		var ofs = new OutputFileStream(filename,'utf8','append');
+		var ofs = new OutputFileStream(reportfolder+filename,'utf8');
+		ofs.open();
+		
+		var strTitle = "\ufeffСуточный отчет по бурению скважин"+";Буровая: "+node_rig_name.value+";Бригада: "+node_brigade_name.value+";;;;;;;ООО RIGINTEL";
+		ofs.writeLine(strTitle);
+		ofs.writeLine(";;;;;;;;;");
+		
+		var strRig = "Месторождение: "+node_field_name.value+";Куст: "+node_bush_name.value+";Скважина: "+node_well_name.value+";;;;;;;";
+		ofs.writeLine(strRig);
+		ofs.writeLine(";;;;;;;;;");
+		var strDate = "Дата: "+d+"-"+m+"-"+y+" "+hour+":"+min+":"+sec+";;;;;;;;;";
+		ofs.writeLine(strDate);		
+		ofs.writeLine(";;;;;;;;;");
+		ofs.writeLine("Работы:;;;;;;;;;");
+		var strNaming = "ПВ/НПВ;Осн. работа;Работа;Начало;Окончание;Время работы в сек;Время работы;Забой в начале;Забой в конце;Проходка";		 
+		ofs.writeLine(strNaming);
+				
+		var arrobjstatus =[];
+//		var arrtime =[];
+//		var arrval = [];
+		var callback = {
+			onData : function (rowIdx, row) { 
+//				console.log("OnData: ", rowIdx, " ", row);
+				var obj = {};
+				obj.timestart = row[1];
+				obj.status = byteArrayToLong(hexStringToByteArray(row[2].slice(4,8)));
+				obj.depthstart = byteArrayToFloat(hexStringToByteArray(row[3].slice(4,12)));
+				arrobjstatus[rowIdx] = obj; 												
+			},
+//			onHead : function(columns) { console.log("OnHead: ", columns); },
+//			onReady : function(num, msg) { console.log("OnReady: ", num, " ", msg); },
+			onError : function(msg) { console.log("OnError: ", msg); }
+		};
+
+		var wt=WinTicksFromSeconds(date);
+		var wty = wt-1*86400*10000000;
+		
+		var strquery = "SELECT nid.identifier, d.servertime, d.value, \
+		(SELECT dd.value FROM data dd, nodeids nnid WHERE dd.nodeid=nnid.id AND nnid.identifier LIKE '%"+well_depth+"' AND dd.servertime <= d.servertime ORDER BY dd.servertime DESC LIMIT 1) AS well_depth \
+		FROM data d, nodeids nid \
+		WHERE d.nodeid=nid.id AND nid.identifier LIKE '%"+rig_work_status+"' AND d.servertime <= " + wt + " AND d.servertime > " + wty +" ORDER BY d.rowid;";
+			
+	    //console.log("strquery = "+strquery);
+	    
+	    
+		var query = odbcClient.query(strquery,callback);
+		
+//		arrobjstatus.forEach(function(item,indx,arrobjstatus){
+//			console.log(call("ConvertWorkStatusToString",{value:item.status}) + " depth = "+ item.depth);
+//		});
+		
+				
+		//calculate time to work
+		for(var i=0;i<arrobjstatus.length;++i){
+			if(i>0){
+				arrobjstatus[i-1].timestop = arrobjstatus[i].timestart;
+				arrobjstatus[i-1].timework = arrobjstatus[i-1].timestop - arrobjstatus[i-1].timestart;
+				arrobjstatus[i-1].depthstop = arrobjstatus[i].depthstart;
+				arrobjstatus[i-1].penetration = arrobjstatus[i-1].depthstop - arrobjstatus[i-1].depthstart; 
+			}
+		}
+		var nodeDepth = new UaNode(well_depth);
+		var stop_depth = nodeDepth.value;
+		
+		if(!!arrobjstatus[i-1]){		
+			arrobjstatus[i-1].timestop = wt;
+			arrobjstatus[i-1].timework = wt - arrobjstatus[i-1].timestart; 
+
+			arrobjstatus[i-1].depthstop = stop_depth;
+			arrobjstatus[i-1].penetration = stop_depth - arrobjstatus[i-1].depthstart;
+		}
+		var isFirstDepth = true;
+		arrobjstatus.forEach(function(item,indx,arrobjstatus){
+//			console.log(call("ConvertWorkStatusToString",{value:item.status}) + " timestart = "+ item.timestart+" timestop = "+item.timestop+" timework = "+ item.timework+ " depthstart = "+ item.depthstart+" depthstop = "+item.depthstop+" penetration = "+ item.penetration);
+			if(isFirstDepth){
+				start_depth = item.depthstart;
+				isFirstDepth = false;
+			}
+			//ПВ/НПВ;Осн. работа;Работа;Начало;Окончание;Время работы в сек;Время работы;Забой в начале;Забой в конце;Проходка
+			var objWork = call("ConvertWorkStatusToObject",{value:item.status});
+			var ss = objWork.status;
+			if(!!objWork.substatus){
+				ss=objWork.substatus;
+			}
+			var datestart = new Date(SecondsFromWinTicks(item.timestart)*1000);
+			var datestop = new Date(SecondsFromWinTicks(item.timestop)*1000);
+			var strdatestart = datestart.getHours()+":"+datestart.getMinutes()+":"+datestart.getSeconds();
+			var strdatestop = datestop.getHours()+":"+datestop.getMinutes()+":"+datestop.getSeconds();
+			
+			var strToFile = objWork.prodtime+";"+ss+";"+objWork.status+";"+strdatestart+";"+strdatestop+";"+Math.floor(item.timework/10000000)+";"+Sec2Date(Math.floor(item.timework/10000000))+";"+item.depthstart+";"+item.depthstop+";"+item.penetration
+			ofs.writeLine(strToFile);
+		});
+//		console.log("-------------------------------------------------------------------------------------------");
+		
+		//calculate full time for ПВ, НПВ, each status
+		var timepv=0;
+		var timenpv=0;
+				
+		var mapall = new Map();				
+		arrobjstatus.forEach(function(val,indx,arrobjstatus){
+			if(mapall.has(val.status)){
+				var obj = mapall.get(val.status);
+				obj.timework+=val.timework;
+				obj.penetration+=val.penetration;				
+			} else {
+				mapall.set(val.status,val);
+			}			
+			var stobj = call("ConvertWorkStatusToObject",{value:val.status});
+//			console.log("stobj.status = " + stobj.status+" stobj.substatus = "+ stobj.substatus+" stobj.prodtime = "+stobj.prodtime);
+			if(stobj.prodtime =="ПВ"){
+				timepv+=val.timework;
+			} else if(stobj.prodtime =="НПВ"){
+				timenpv+=val.timework;	
+			}									
+		});	
+
+//		mapall.forEach(function(value, key, map){
+//			console.log(call("ConvertWorkStatusToString",{value:key}) + " timework = "+ value.timework + " penetration = "+value.penetration);
+//		});
+//		console.log("ПВ = "+ timepv);
+//		console.log("НПВ = "+ timenpv);
+					
+		ofs.writeLine(";;;;;;;;;");
+		ofs.writeLine("Всего:;ПВ: "+Sec2Date(Math.floor(timepv/10000000))+";НПВ: "+Sec2Date(Math.floor(timenpv/10000000))+";;;;;;");
+		ofs.writeLine("Забой:;На начало суток: "+start_depth+";На конец суток: "+stop_depth+"; Проходка: "+(stop_depth-start_depth)+";;;;;;");
+		
+		//ofs.close();
+		//console.log ("ofs close");
+//		odbcClient.close();
+
+/////////////////////////////////////////////////////////////////////////////////////////////////		
+//		return(query);
+
+	}
+	catch (exp)
+	{
+		console.log(exp);
+		if (exp.indexOf('No Data') > -1)
+			return 0; // ok
+
+		return undefined;
+	}
+	finally
+	{
+//		if (!!ofs && ofs.opened == true)
+		if (!!ofs){
+			ofs.close();
+//			console.log ("ofs close");
+		}
+//		if (!!odbcClient && odbcClient.opened == true)
+//			odbcClient.close();
+	}
+	
+}
+else {
+	console.log ("ODBC_report_sqlite Cannot open ODBC SQLite else");
+	return undefined;
+	}
+}
+catch(e){
+	console.log ("ODBC_report_sqlite Exception: Cannot open ODBC SQLite");
+} 
+finally
+	{
+		if (!!odbcClient){
+			odbcClient.close();
+//			console.log ("odbcClient close");
+		}
+		call("reqToNodeServer",{csvname:filename});
+//		if (!!odbcClient && odbcClient.opened == true){
+//			odbcClient.close();
+//			console.log ("odbcClient close");
+//		}
+	}]]></code>
+</script>

@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" height="15" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg" version="1.2" width="165">
+ <defs/>
+ <metadata>
+  <atv:parameter name="Name" substitute="#NAME#" behavior="mandatory" desc="Name" valuetype="string" defaultvalue="Name"/>
+  <atv:parameter name="Value" behavior="mandatory" desc="Value" valuetype="address" defaultvalue=""/>
+  <atv:parameter name="Unit" substitute="#UN#" behavior="optional" desc="Unit" valuetype="string" defaultvalue=""/>
+  <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <g id="id_6" atv:refpx="0" atv:insensitive="true" atv:refpy="0">
+  <rect y="0" fill="#09222e" id="id_7" x="0" height="15.00" atv:refpx="82.5" atv:refpy="7.5" fill-opacity="0" width="165.00"/>
+ </g>
+ <rect y="0" fill="#09222e" stroke="#0000ff" id="id_8" x="0" height="15" stroke-width="0" atv:refpx="82.5" atv:refpy="7.5" fill-opacity="0.784314" width="165"/>
+ <text y="11.066" font-family="Arial" fill="#000088" id="id_2" x="5.859" atv:refpx="5.859" atv:refpy="6.566" font-size="10"/>
+ <text y="11" font-family="Arial" fill="#cdcdcd" id="id_3" x="1.5" atv:refpx="22" atv:refpy="7.5" font-size="10">#NAME#</text>
+ <text y="11" font-family="Arial" fill="#cdcdcd" id="id_4" x="112.5" atv:refpx="130" atv:refpy="7.5" font-size="10">1111.00</text>
+ <text y="11" font-family="Arial" fill="#cdcdcd" id="id_5" x="143.5" atv:refpx="156" atv:refpy="7.5" font-size="10">#UN#</text>
+ <script type="text/ecmascript"><![CDATA[webMI.data.subscribe(webMI.query["Value"], function(e) {
+var id = "id_4";
+var value = e.value;
+webMI.gfx.setText(id, value);
+
+});
+
+webMI.data.subscribe(webMI.query["Value"], function(e) {
+	var id = "id_8";
+	
+	var status = e.status;
+	
+	var nodeColorStatusArray = ["SYSTEM.GLOBALS.ColorStatus.statusNormal", "SYSTEM.GLOBALS.ColorStatus.statusUncertain", "SYSTEM.GLOBALS.ColorStatus.statusBad", "SYSTEM.GLOBALS.ColorStatus.statusUnknown" ];
+	webMI.data.read(nodeColorStatusArray, function(a) {
+		var ColorNormal = a[0].value;
+		var ColorUncertain = a[1].value;
+		var ColorBad = a[2].value;
+		var ColorUnknown = a[3].value;
+		
+		if (status == 0 || (status & 0xC0000000).toString(16) == 0)	//Good value state
+			webMI.gfx.setFill(id, ColorNormal);
+		else if ((status & 0x80000000).toString(16) != 0)			//Bad value state
+			webMI.gfx.setFill(id, ColorBad);
+		else if ((status & 0xC0000000).toString(16) == 40000000)	//Uncertain value state
+			webMI.gfx.setFill(id, ColorUncertain);
+		else														//Unknown value state
+			webMI.gfx.setFill(id, ColorUnknown);
+		
+	});
+});
+]]></script>
+</svg>

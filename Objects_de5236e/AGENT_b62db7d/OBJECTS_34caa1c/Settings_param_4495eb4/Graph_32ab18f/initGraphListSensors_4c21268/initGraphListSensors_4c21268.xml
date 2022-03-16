@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="triggerStart" type="startup" trigger="true" relative="false" value=""/>
+  <parameter name="triggerUpdate" type="node.value" trigger="true" relative="false" value=".updateGraphListSensorsTrigger"/>
+  <parameter name="i1" type="interval" trigger="true" relative="false" value="" offset="00:00:00" interval="00:00:03"/>
+  <code><![CDATA[var sensorsAll_tag = 'SYSTEM.GLOBALS.rigintel.all_sensors'
+var sensorsAll_node = new UaNode(sensorsAll_tag); // переменная с полным перечнем данных о сигналах
+var sensorsAll_currValueArr = Object.values(sensorsAll_node.value); // 
+var sensorsAll_currValueAdapted = []; // 
+
+var graphListSensors_tag = "AGENT.OBJECTS.Settings_param.Graph.graphListSensors"
+var graphListSensors_node = new UaNode(graphListSensors_tag); // переменная - список сенсоров (ключ: имя сенсора, значение: тег сенсора)
+var graphListSensors_newValue = []
+
+var graphArrayTags_tag = "AGENT.OBJECTS.Settings_param.Graph.graphArraySensors"
+var graphArrayTags_node = new UaNode(graphArrayTags_tag); // переменная для хранения массива тегов сенсоров
+var graphArrayTags_NewValue = []
+
+const graphListSensorsAddition_tags = {
+    Operation: "AGENT.OBJECTS.Support.Auto.Operation",
+    WellDepth: "AGENT.OBJECTS.IVE50.Well.WellDepth"
+}
+globals.set("graph_listSensorsAddition", graphListSensorsAddition_tags);
+
+sensorsAll_currValueAdapted = sensorsAll_currValueArr.map(el => el)
+graphListSensors_newValue = getListSensorsFromAtviseStructure(sensorsAll_currValueAdapted) // получить список сенсоров (объект) (ключ: имя сенсора, значение: тег сенсора)
+graphListSensors_node.value = JSON.stringify(graphListSensors_newValue) // запишем данные в Atvise переменную
+globals.set("graph_listSensors", graphListSensors_newValue);
+
+graphArrayTags_NewValue = Object.values(graphListSensors_newValue).map(el => el) // получить теги сенсоров (массив)
+graphArrayTags_node.value = JSON.stringify(graphArrayTags_NewValue) // запишем данные в Atvise переменную
+globals.set("graph_arrTagSensors", graphArrayTags_NewValue);
+
+// initVarsAggrigateGraph(graphArrayTags_NewValue, "ag4min") // инициализация переменных для графика (теги, префиксы в конце тега)
+// initVarsAggrigateGraph(graphArrayTags_NewValue, "ag12min") // инициализация переменных для графика (теги, префиксы в конце тега)
+
+// function startAtvise() {
+//     if (!node.exists())
+//         node.create({
+//             nodeclass: UaNode.NODECLASS_VARIABLE,
+//             parent: "AGENT.OBJECTS.Settings_param.Graph",
+//             typedefinition: UaNode.BASEVARIABLETYPE,
+//             reference: UaNode.HASCOMPONENT,
+//             datatype: UaNode.STRING,
+//             valuerank: UaNode.VALUERANK_SCALAR,
+//             eventnotifier: UaNode.EVENTNOTIFIERS_HISTORYREAD,
+//             value: 'Hello!!!'
+//         }
+//         );
+// }
+// startAtvise()
+
+// function initVarsAggrigateGraph(tags, prefix) { // инициализация переменных для агригации графика
+//     function getFullTag(tag, prefix) { return (tag + '.' + prefix) }
+//     function createVar(node, tagParent) {
+//         node.create({
+//             nodeclass: UaNode.NODECLASS_VARIABLE,
+//             parent: tagParent,
+//             typedefinition: UaNode.BASEVARIABLETYPE,
+//             reference: UaNode.HASCOMPONENT,
+//             datatype: UaNode.FLOAT,
+//             valuerank: UaNode.VALUERANK_SCALAR,
+//             value: 0
+//         })
+//     }
+// browsename
+//     tags.forEach(tagParent => {
+//         // console.log("nodeSensorsAll--------------2-------------------: ");
+//         const node = new UaNode(getFullTag(tagParent, prefix));
+//         if (!node.exists()) {
+//             createVar(node, tagParent)
+//         }
+
+//     })
+// }
+
+function getListSensorsFromAtviseStructure(structure) { // получить список сенсоров (ключ: имя сенсора, значение: тег сенсора)
+    var result = {}
+    try {
+        structure.forEach(el => {
+            let posSplit = el.indexOf(":") + 1 // позиция символа ':'
+            let stringValueForParse = el.slice(posSplit, el.length)
+            let stringKeyForParse = el.slice(0, posSplit - 1)
+            let key = JSON.parse(stringKeyForParse)
+            let value = JSON.parse(stringValueForParse)
+            result[key] = value.address
+        })
+    } catch (error) {
+        result = "ERROR"
+    }
+    return result
+}]]></code>
+</script>

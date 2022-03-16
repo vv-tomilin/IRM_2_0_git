@@ -1,0 +1,1 @@
+{"rows":[{"Date":"","load":"","flowInput":"","maxLoad":"","diffPressure":"","minVmex":"","bitNumber":"7","descNumber":"","bitDiam":"","bitModel":"","serialNumber":"","mods":"","depthFromTo":"","drillDepth":"","drillTime":"","mPerHour":"","bitCondition":"","comment":""}]}

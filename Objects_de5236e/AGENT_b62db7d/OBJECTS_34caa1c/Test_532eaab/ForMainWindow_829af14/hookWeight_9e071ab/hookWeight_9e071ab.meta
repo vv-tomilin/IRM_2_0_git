@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.ForMainWindow.hookWeight
+NodeClass: Variable
+BrowseName: 1:hookWeight
+DisplayName: en|hookWeight
+Description: en|hookWeight
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

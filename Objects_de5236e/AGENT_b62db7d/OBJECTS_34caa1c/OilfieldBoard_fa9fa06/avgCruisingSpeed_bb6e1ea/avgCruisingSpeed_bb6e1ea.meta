@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.OilfieldBoard.avgCruisingSpeed
+NodeClass: Variable
+BrowseName: 1:avgCruisingSpeed
+DisplayName: en|avgCruisingSpeed
+Description: en|avgCruisingSpeed
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

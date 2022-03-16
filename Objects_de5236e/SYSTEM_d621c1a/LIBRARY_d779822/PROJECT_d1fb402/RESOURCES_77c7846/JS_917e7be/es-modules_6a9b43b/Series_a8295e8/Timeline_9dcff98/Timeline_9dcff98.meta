@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/Timeline
+NodeClass: Object
+BrowseName: 1:Timeline
+DisplayName: en|Timeline
+Description: en|Timeline
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="datasource" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="address" type="stringarray" trigger="false" relative="false" value=""/>
+  <code><![CDATA[/*
+atvise server wrapper for UA method "AGENT.MIRROR.METHODS.read"
+This script is a standard atvise resource and must not be modified.
+For a description including an example see the atvise documentation.
+*/
+
+var methodCall = new UaNode("AGENT.MIRROR.METHODS.read");
+var callResult = methodCall.call({
+	object: "AGENT.MIRROR.METHODS",
+	input: [
+		{type: UaNode.STRING, value: datasource},
+		{type: UaNode.STRING, value: address}
+	]
+});
+
+var result = {};
+
+if (callResult.error) {
+	result.error = callResult.error;
+	result.errorstring = methodCall.statusToString(result.error);
+	if (callResult.argumentError) {
+		var parameterNames = ["datasource", "address"];
+		for (var i = 0; i < callResult.argumentError.length; ++i)
+			if (callResult.argumentError[i])
+				result.errorstring += ", " + parameterNames[i] + ":" + methodCall.statusToString(callResult.argumentError[i]);
+	}
+}
+else if (callResult.result.length < 4) {
+	result.error = UaNode.BADUNEXPECTEDERROR;
+	result.errorstring = methodCall.statusToString(result.error);
+	result.errorstring += ", result.length < 4";
+}
+else if (callResult.result[0].length != address.length) {
+	result.error = UaNode.BADUNEXPECTEDERROR;
+	result.errorstring = methodCall.statusToString(result.error);
+	result.errorstring += ", InputArrayLength != ResultArrayLength";
+}
+else {
+	result.result = [];
+	for (var i = 0; i < callResult.result[0].length; ++i) {
+		result.result[i] = {};
+		result.result[i]["status"] = callResult.result[0][i];
+		result.result[i]["value"] = callResult.result[1][i];
+		result.result[i]["timestamp"] = callResult.result[2][i];
+		result.result[i]["servertimestamp"] = callResult.result[3][i];
+	}
+}
+
+return result;]]></code>
+</script>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.GLOBALS.plan.ColorGreen
+NodeClass: Variable
+BrowseName: 1:ColorGreen
+DisplayName: en|ColorGreen
+Description: en|ColorGreen
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.GlobalVariable

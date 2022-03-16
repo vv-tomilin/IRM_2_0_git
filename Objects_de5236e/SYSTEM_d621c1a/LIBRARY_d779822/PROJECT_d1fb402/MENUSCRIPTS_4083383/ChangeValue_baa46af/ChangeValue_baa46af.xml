@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nodes" type="array" trigger="true" relative="false" value=""/>
+  <parameter name="newval" type="number" trigger="false" relative="false" value=""/>
+  <code><![CDATA[console.log(nodes[0]);
+var nnode = new UaNode(nodes[0]);
+nnode.value = newval;]]></code>
+</script>

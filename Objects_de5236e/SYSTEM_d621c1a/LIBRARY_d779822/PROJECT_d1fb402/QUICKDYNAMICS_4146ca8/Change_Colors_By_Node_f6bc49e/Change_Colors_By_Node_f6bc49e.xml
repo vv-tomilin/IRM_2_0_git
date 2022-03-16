@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <icon type="image/png"></icon>
+    <visible>1</visible>
+    <title></title>
+    <description></description>
+  </metadata>
+  <parameter behavior="optional" desc="node triggering the change" name="nodeId" valuetype="address"/>
+  <parameter behavior="optional" name="lowLimit" valuetype="number"/>
+  <parameter behavior="optional" name="highLimit" valuetype="number"/>
+  <parameter behavior="optional" name="lowlowLimit" valuetype="number"/>
+  <parameter behavior="optional" name="highhighLimit" valuetype="number"/>
+  <parameter behavior="optional" defaultvalue="#d0d0d0" name="fillNormal" valuetype="color"/>
+  <parameter behavior="optional" defaultvalue="#ffff7f" name="fillWarning" valuetype="color"/>
+  <parameter behavior="optional" defaultvalue="#ec4b00" name="fillCritical" valuetype="color"/>
+  <code><![CDATA[// This Quick Dynamics changes the color and stroke of the applied graphical element depending whether or not the value of the node is within the defined range.
+// Parameters:
+//	nodeId:			this node (value within or out of the defined range) triggers this Quick Dynamic
+//	lowLimit:		lower bound of the warning range where the node's value should lie in
+//	highLimit:		upper bound of the warning range where the node's value should lie in; if not specified it will be set to "minRange", i.e. the quick dynamic will be triggered at a
+//					discrete value (minRange=maxRange=value) only and not for a range
+//  lowlowLimit:	lower bound of the critical range
+//  highhighLimit:	upper bound of the critical range
+//	fillNormal:		this fill color of the graphical element will be set when value of the node is within the Normal range
+//	strokeNormal:	this stroke color of the graphical element will be set when value of the node is within the Normal range
+//	fillWarning:	this fill color of the graphical element will be set when value of the node is within the Warning range
+//	strokeWarning:	this stroke color of the graphical element will be set when value of the node is within the Warning range
+//	fillCritical:	this fill color of the graphical element will be set when value of the node is out of the Critical range
+//	strokeCritical:	this stroke color of the graphical element will be set when value of the node is out of the Critical range
+
+var AggregateManager = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Aggregate Manager");
+webMI.addOnunload(function unloadAggregateManager() {
+	AggregateManager.destroy();
+	AggregateManager = null;
+});
+
+
+var nId =base.nodeId;
+
+var lowLim;
+var highLim;
+var lowlowLim;
+var highhighLim;
+
+function isAN(value) {
+  if(value instanceof Number)
+    value = value.valueOf(); // Если это объект числа, то берём значение, которое и будет числом
+  return(!isNaN(parseFloat(value)) && isFinite(value))
+//  return  isFinite(value) && value === parseInt(value, 10);
+}
+
+var nodes=new Array(0,0,0,0,0); //array for base, min, max, limitLowLow, limitLow, LimitHigh, LimitHighhigh
+var nodesToSubscribe= new Array();
+var i=0;
+// set array to remember which nodes are specified
+if (base.lowLimit != "" && !isAN(base.lowLimit)) {
+	nodes[0] = 1;
+	nodesToSubscribe[i]=base.lowLimit;
+	i++;
+}
+if (base.highLimit != "" && !isAN(base.highLimit)) {
+	nodes[1] = 1;
+	nodesToSubscribe[i]=base.highLimit;
+	i++;
+}
+if (base.lowlowLimit != "" && !isAN(base.lowlowLimit)) {
+	nodes[2] = 1;
+	nodesToSubscribe[i]=base.lowlowLimit;
+	i++;
+}
+if (base.highhighLimit != "" && !isAN(base.highhighLimit)) {
+	nodes[3] = 1;
+	nodesToSubscribe[i]=base.highhighLimit;
+	i++;
+}
+/////////////////////////
+AggregateManager.subscribeNodeOrAggregate(base.nodeId, handleResult);
+
+
+function handleResult(e) {
+	var value = e.value;
+
+	if(nodesToSubscribe.length > 0) {
+		webMI.data.subscribeBlock(nodesToSubscribe,[], function(e2){
+			e2["data"] = e;
+			manageSubcription(e2);
+		});
+	} else {
+		e["data"] = e;
+		manageSubcription(e);
+	}
+	function manageSubcription(e) {
+		i=0;
+		if (nodes[0] == 1) { // if node for limit LowLow is specified, set node value as limit LowLow else value from display parameter is taken
+			lowLim = parseFloat(e[i].value);
+			i++;
+		}
+		if (nodes[1] == 1) { // if node for limit Low is specified, set node value as limit Low else value from display parameter is taken
+			highLim = parseFloat(e[i].value);
+			i++;
+		}
+		if (nodes[2] == 1) { // if node for limit High is specified, set node value as limit High else value from display parameter taken
+			lowlowLim = parseFloat(e[i].value);
+			i++;
+		}
+		if (nodes[3] == 1) { // if node for limit HighHigh is specified, set node value as limit HighHigh else value from display parameter taken
+			highhighLim = parseFloat(e[i].value);
+			i++;
+		}
+
+		var flash250 = {0:true,1:false,2:true,3:false,4:true,5:false,6:true,7:false,8:true,9:false,10:true,11:false};
+		var flash500 = {0:true,2:false,4:true,6:false,8:true,10:false};
+		var flash750 = {0:true,3:false,6:true,9:false};
+		var flash1500 = {0:true,6:false};
+
+		if(isAN(lowLim) && isAN(highLim) && isAN(lowlowLim) && isAN(highhighLim)){
+			if(value > lowLim && value < highLim){
+				webMI.gfx.setFill(base.id, base.fillNormal);
+				//webMI.gfx.setStroke(base.id, base.strokeNormal);
+				webMI.gfx.setVisible(base.id,true);
+			} else if((value <= lowLim && value > lowlowLim) || (value >= highLim && value < highhighLim)){
+				webMI.gfx.setFill(base.id, base.fillWarning);
+				//webMI.gfx.setStroke(base.id, base.strokeWarning);
+				webMI.gfx.setVisible(base.id, flash250);
+			} else {
+				webMI.gfx.setFill(base.id, base.fillCritical);
+				//webMI.gfx.setStroke(base.id, base.strokeCritical);
+				webMI.gfx.setVisible(base.id, flash250);
+			}
+		} else if(isAN(lowLim) && isAN(highLim)){
+			if(value > lowLim && value < highLim){
+				webMI.gfx.setFill(base.id, base.fillNormal);
+				//webMI.gfx.setStroke(base.id, base.strokeNormal);
+				webMI.gfx.setVisible(base.id,true);
+			} else {
+				webMI.gfx.setFill(base.id, base.fillWarning);
+				//webMI.gfx.setStroke(base.id, base.strokeWarning);
+				webMI.gfx.setVisible(base.id, flash250);
+			}
+		} else if(isAN(lowlowLim) && isAN(highhighLim)){
+			if(value > lowlowLim && value < highhighLim){
+				webMI.gfx.setFill(base.id, base.fillNormal);
+				//webMI.gfx.setStroke(base.id, base.strokeNormal);
+				webMI.gfx.setVisible(base.id,true);
+			} else {
+				webMI.gfx.setFill(base.id, base.fillCritical);
+				//webMI.gfx.setStroke(base.id, base.strokeCritical);
+				webMI.gfx.setVisible(base.id, flash250);
+			}
+		} else {
+			webMI.gfx.setFill(base.id, base.fillNormal);
+			//webMI.gfx.setStroke(base.id, base.strokeNormal);
+			webMI.gfx.setVisible(base.id,true);
+		}
+	}	
+}
+
+
+/*
+function handleResult(e) {
+	var value = e.value;
+
+	if (String(base.maxRange) == "") {
+		var maxRange=base.minRange; // If no maxRange is specified, the color will only be changed at a discrete value (value = minRange = maxRange)
+	} else {
+		var maxRange = parseFloat(base.maxRange);
+	}
+	if (value >= base.minRange && value <= maxRange) {
+		webMI.gfx.setFill(base.id, base.fillInRange);
+		webMI.gfx.setStroke(base.id, base.strokeInRange);
+	}
+	else {
+		webMI.gfx.setFill(base.id, base.fillOutOfRange);
+		webMI.gfx.setStroke(base.id, base.strokeOutOfRange);
+	}
+}
+*/]]></code>
+</script>

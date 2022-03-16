@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.wellPadBoard.operationalWell
+NodeClass: Variable
+BrowseName: 1:operationalWell
+DisplayName: en|operationalWell
+Description: en|operationalWell
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

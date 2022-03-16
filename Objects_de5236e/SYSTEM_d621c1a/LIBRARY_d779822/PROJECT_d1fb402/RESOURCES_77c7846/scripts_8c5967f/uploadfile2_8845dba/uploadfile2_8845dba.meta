@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/scripts/uploadfile2
+NodeClass: Variable
+BrowseName: 1:uploadfile2
+DisplayName: en|uploadfile2
+Description: en|uploadfile2
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

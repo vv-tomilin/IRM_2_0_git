@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Variables.Hook.SetToDirTimeOutSec
+NodeClass: Variable
+BrowseName: 1:SetToDirTimeOutSec
+DisplayName: en|SetToDirTimeOutSec
+Description: en|SetToDirTimeOutSec
+DataType: UInt32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

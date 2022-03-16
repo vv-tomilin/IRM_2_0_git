@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="1015" version="1.2" width="1850" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:parameter behavior="optional" defaultvalue="" name="chartTitle" valuetype="string"/>
+  <atv:parameter behavior="optional" name="factAddress" valuetype="address"/>
+  <atv:parameter behavior="optional" name="planAddress" valuetype="address"/>
+  <atv:gridconfig enabled="true" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <g atv:insensitive="true" atv:refpx="0" atv:refpy="0" id="id_0">
+  <rect atv:refpx="925" atv:refpy="507.5" fill="#1f1f1f" height="1015.00" id="id_1" width="1850.00" x="0" y="0"/>
+ </g>
+ <svg atv:refpx="925" atv:refpy="507.5" height="900" id="id_17" width="1750" x="50" xlink:href="AGENT.DISPLAYS.NewView.Halliburton.Chart" y="57.5">
+  <atv:argument name="base" value="pressure"/>
+  <atv:argument name="chartTitle" value="Имя"/>
+ </svg>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var paths = [
+	"AGENT.OBJECTS.Halliburton.API.HookLoad",
+	"AGENT.OBJECTS.Halliburton.API.ECDVersusRunDepth",
+	"AGENT.OBJECTS.Halliburton.API.CirculatingPressureVersusRunDepth",
+	"AGENT.OBJECTS.Halliburton.API.PorePressureDepth",
+	"AGENT.OBJECTS.Halliburton.API.FracGradientDepth"
+];
+
+var namesMap = {
+	"г/см3": "load",
+	"атм": "pressure",
+	"кН*м": "torque",
+	"м": "depth",
+	"кН": "BigHotLoad"
+};
+
+var valueMap = {
+	"м": [],
+	"г/см3": [],
+	"атм": [],
+	"кН*м": [],
+	"кН": []
+};
+
+var payload = {
+	pressure: {},
+	load: {},
+	//density: {},
+	torque: {},
+	BigHotLoad: {},
+	//depth: {}
+	transcription: {}
+};
+
+function elemDepth(e) {
+
+	return e.run_depth || e.MD || e.Annulus_Depth || e.PoreDepth || e.FracDepth || 0
+}
+
+function getHalliburtonData() {
+	return new Promise(function(resolve, reject) {
+		webMI.data.read(paths, function(res) {
+			var calcedRes
+			
+			res = res.map(function(item) {
+				var result = JSON.parse(item.value);
+				
+				Object.entries(result.units).map(function(item) {
+					valueMap[item[1]].push(item[0]);
+					
+				})
+				
+				return result
+			})
+			var valuesArray = Object.keys(valueMap);
+			res.map(function(item) {
+				Object.assign(payload.transcription, item.transcription)
+				item.drag_chart_results.map(function(elem) {
+					Object.keys(elem).map(function(value) {
+						valuesArray.map(function(name, index) {
+							//console.log(valueMap[valuesArray[index]]);
+							if (valueMap[valuesArray[index]].includes(value) && valuesArray[index] != "м") {
+								if (!payload[namesMap[name]][value]) payload[namesMap[name]][value] = [];
+								//console.log(11, elem, value);
+								payload[namesMap[name]][value].push({ y: elemDepth(elem), x: Math.floor(elem[value] * 100) / 100, name: payload.transcription[value] });
+							}
+						})
+					}) 
+				})
+			})
+			console.log(res, payload)
+			webMI.trigger.fire("setHallData", payload);
+		})
+	}) 
+}
+
+getHalliburtonData();]]></script>
+</svg>

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.3D_WELL
+NodeClass: Object
+BrowseName: 1:3D_WELL
+DisplayName: en|3D_WELL
+Description: en|3D_WELL
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

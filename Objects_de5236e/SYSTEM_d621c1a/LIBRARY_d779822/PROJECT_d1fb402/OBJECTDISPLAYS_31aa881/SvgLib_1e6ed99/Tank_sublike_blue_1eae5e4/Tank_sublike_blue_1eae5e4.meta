@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Tank_sublike_blue
+NodeClass: Variable
+BrowseName: 1:Tank_sublike_blue
+DisplayName: en|Tank_sublike_blue
+Description: en|Tank_sublike_blue
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

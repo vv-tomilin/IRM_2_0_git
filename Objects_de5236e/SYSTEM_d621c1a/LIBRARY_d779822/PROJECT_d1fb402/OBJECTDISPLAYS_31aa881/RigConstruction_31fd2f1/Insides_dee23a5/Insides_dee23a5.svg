@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="534" version="1.2" width="150" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <image atv:refpx="23.003" atv:refpy="0" height="100" id="id_1" transform="matrix(1,0,0,5.34,0,0)" width="10" x="18" xlink:href="../../RigView/RigConstruction/hvost.png" y="0"/>
+ <image atv:refpx="22.989" atv:refpy="0" height="179" id="id_2" transform="matrix(1,0,0,2.9832,0,0)" width="15" x="15.506" xlink:href="../../RigView/RigConstruction/ekspl.png" y="0"/>
+ <image atv:refpx="23.006" atv:refpy="0" height="124" id="id_3" transform="matrix(1,0,0,4.3065,0,0)" width="19" x="13.507" xlink:href="../../RigView/RigConstruction/tehn.png" y="0"/>
+ <image atv:refpx="22.99" atv:refpy="0" height="116" id="id_4" transform="matrix(1,0,0,4.6034,0,0)" width="29" x="8.494" xlink:href="../../RigView/RigConstruction/kond.png" y="0"/>
+ <image atv:refpx="22.989" atv:refpy="0" height="22" id="id_6" transform="matrix(1,0,0,24.2727,0,0)" width="46" x="0" xlink:href="../../RigView/RigConstruction/napravl.png" y="0"/>
+ <foreignObject height="16.915" id="id_8" width="87.081" x="54" y="4.072">
+  <div id="Direct" style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8; text-align:left" xmlns="http://www.w3.org/1999/xhtml">
+   <p style="margin:0">Направление</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="16.915" id="id_9" width="87.081" x="54" y="77.292">
+  <div id="Kond" style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8; text-align:left" xmlns="http://www.w3.org/1999/xhtml">
+   <p style="margin:0">Кондуктор</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="29.763" id="id_10" width="87.081" x="54" y="198.324">
+  <div id="TechCol" style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8; text-align:left" xmlns="http://www.w3.org/1999/xhtml">
+   <p style="margin:0">Тех.</p>
+   <br/>
+   <p style="margin:0">колонна</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="61.527" id="id_11" width="96.257" x="54" y="350.961">
+  <div id="ExCol" style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8; text-align:left" xmlns="http://www.w3.org/1999/xhtml">
+   <p style="margin:0">Эксплуата-</p>
+   <br/>
+   <p style="margin:0">ционная</p>
+   <br/>
+   <p style="margin:0">колонна</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="16.915" id="id_12" width="87.081" x="54" y="485.458">
+  <div id="tail" style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8; text-align:left" xmlns="http://www.w3.org/1999/xhtml">
+   <p style="margin:0; width: 100%; height:3rem;">Хвостовик</p>
+  </div>
+ </foreignObject>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var tail=document.getElementById('id_1')
+var tlabel=document.getElementById('tail')
+var ExCol=document.getElementById('id_2')
+var elabel=document.getElementById('ExCol')
+var TechCol=document.getElementById('id_3')
+var tclabel=document.getElementById('TechCol')
+var Kond=document.getElementById('id_4')
+var klabel=document.getElementById('Kond')
+var Direct=document.getElementById('id_6')
+var dlabel=document.getElementById('Direct')
+
+//console.log(tail,ExCol,TechCol,Kond,Direct)
+//console.log(tlabel,elabel,tclabel,klabel,dlabel)
+
+
+////////////////////////////НАПРАВЛЕНИЕ
+
+webMI.data.subscribeBlock(['AGENT.OBJECTS.RigConstruction.direction','AGENT.OBJECTS.RigConstruction.direction.Show','AGENT.OBJECTS.RigConstruction.nowMax'],function(e){
+	webMI.data.read('AGENT.OBJECTS.RigConstruction.nowMax',function(f){
+		if(e[1].value){
+			Direct.style.display='block'
+			dlabel.style.display='block'
+			res = e[0].value
+			if(res == 0){res = 0.1}
+			webMI.gfx.setScaleY('id_6', webMI.translate(res, 0, f.value, 0, 1));
+		}else{
+			Direct.style.display='none'
+			dlabel.style.display='none'
+		}
+	})
+})
+
+////////////////////КОНДУКТОР
+
+webMI.data.subscribeBlock(['AGENT.OBJECTS.RigConstruction.conductor','AGENT.OBJECTS.RigConstruction.conductor.Show','AGENT.OBJECTS.RigConstruction.nowMax'],function(e){
+	webMI.data.read('AGENT.OBJECTS.RigConstruction.nowMax',function(f){
+		if(e[1].value){
+			klabel.style.display='block'
+			Kond.style.display='block'
+			res = e[0].value
+			if(res == 0){res = 0.1}
+			webMI.gfx.setScaleY('id_4', webMI.translate(res, 0, f.value, 0, 1));
+		}else{
+			Kond.style.display='none'
+			klabel.style.display='none'
+		}
+	})
+})
+
+////////////////////ТЕХКОЛОННА
+
+webMI.data.subscribeBlock(['AGENT.OBJECTS.RigConstruction.obsCol','AGENT.OBJECTS.RigConstruction.obsCol.Show','AGENT.OBJECTS.RigConstruction.nowMax'],function(e){
+	webMI.data.read('AGENT.OBJECTS.RigConstruction.nowMax',function(f){
+		if(e[1].value){
+			tclabel.style.display='block'
+			TechCol.style.display='block'
+			res = e[0].value
+			if(res == 0){res = 0.1}
+			webMI.gfx.setScaleY('id_3', webMI.translate(res, 0, f.value, 0, 1));
+		}else{
+			TechCol.style.display='none'
+			tclabel.style.display='none'
+		}
+	})
+})
+
+/////////////////ЭКСКОЛОННА
+
+webMI.data.subscribeBlock(['AGENT.OBJECTS.RigConstruction.EcsCol','AGENT.OBJECTS.RigConstruction.EcsCol.Show','AGENT.OBJECTS.RigConstruction.nowMax'],function(e){
+	webMI.data.read('AGENT.OBJECTS.RigConstruction.nowMax',function(f){
+		if(e[1].value){
+			elabel.style.display='block'
+			ExCol.style.display='block'
+			res = e[0].value
+			if(res == 0){res = 0.1}
+			webMI.gfx.setScaleY('id_2', webMI.translate(res, 0, f.value, 0, 1));
+		}else{
+			ExCol.style.display='none'
+			elabel.style.display='none'
+		}
+	})
+})
+
+////////////////////ХВОСТОВИК
+
+webMI.data.subscribeBlock(['AGENT.OBJECTS.RigConstruction.tail','AGENT.OBJECTS.RigConstruction.tail.Show','AGENT.OBJECTS.RigConstruction.nowMax'],function(e){
+	webMI.data.read('AGENT.OBJECTS.RigConstruction.nowMax',function(f){
+		if(e[1].value){
+			tlabel.style.display='block'
+			tail.style.display='block'
+			res = e[0].value
+			if(res < 2000){res = 2000}
+			webMI.gfx.setScaleY('id_1', webMI.translate(res, 0, f.value, 0, 1));
+		}else{
+			tail.style.display='none'
+			tlabel.style.display='none'
+		}
+	})
+})]]></script>
+</svg>

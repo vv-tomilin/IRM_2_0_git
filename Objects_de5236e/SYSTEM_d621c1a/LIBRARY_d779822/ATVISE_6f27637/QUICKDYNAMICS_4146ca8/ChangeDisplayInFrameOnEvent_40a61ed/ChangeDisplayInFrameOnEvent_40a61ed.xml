@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <icon type="image/png"></icon>
+    <visible>1</visible>
+    <title></title>
+    <description></description>
+  </metadata>
+  <parameter behavior="optional" name="display" valuetype="display"/>
+  <parameter behavior="optional" config="click;dblclick;mousedown;mouseup;mouseover;mousemove;mouseout" defaultvalue="click" name="onEvent" valuetype="enum"/>
+  <parameter behavior="optional" defaultvalue="main_frame" name="inFrame" valuetype="string"/>
+  <code><![CDATA[// This Quick Dynamic opens a new display depending on one of the events defined by "onEvent".
+// Parameters:
+//	display:	display which will be opened
+//	onEvent:	the event triggering this Quick Dynamic, which is one of the following:
+//		click:		mouse click
+//		dblclick:	double click of mouse button
+//		mousedown:	press down the mouse button
+//		mouseup:	release the mouse button
+//		muuseover:	move the mouse cursor over the applied graphical element
+//		mousemove:	move the mouse anywhere over the applied graphical element
+//		mouseout:	move the mouse cursor out of the applied graphical element
+
+webMI.addEvent(base.id, base.onEvent, function(e) {
+	webMI.display.openDisplay(base.display, {},base.inFrame);
+});]]></code>
+</script>

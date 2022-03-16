@@ -1,0 +1,613 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="1200" height="530" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linear_2" y1="0" y2="1.07843" x1="0" gradientUnits="objectBoundingBox" x2="0">
+   <stop offset="0" stop-color="#818181"/>
+   <stop offset="0.8475336322869955" stop-color="#464646"/>
+   <stop offset="0.9372197309417041" stop-color="#000000"/>
+  </linearGradient>
+ </defs>
+ <title>Configuration - Save/Load</title>
+ <metadata>
+  <atv:parameter config="SYSTEM.SECURITY.RIGHTS" defaultvalue="" behavior="optional" group="Security: load configuration" desc="necessary right" valuetype="address" name="load_right"/>
+  <atv:parameter behavior="optional" group="Security: load configuration" desc="activation address" valuetype="address" name="load_activeNode"/>
+  <atv:parameter behavior="optional" group="Security: load configuration" desc="activation value" valuetype="string" name="load_activeValue"/>
+  <atv:parameter config="SYSTEM.SECURITY.RIGHTS" defaultvalue="" behavior="optional" group="Security: save configuration" desc="necessary right" valuetype="address" name="save_right"/>
+  <atv:parameter behavior="optional" group="Security: save configuration" desc="activation address" valuetype="address" name="save_activeNode"/>
+  <atv:parameter behavior="optional" group="Security: save configuration" desc="activation value" valuetype="string" name="save_activeValue"/>
+  <atv:parameter desc="change compression" group="Security: save configuration" valuetype="bool" name="save_changecompression" behavior="optional" defaultvalue="false"/>
+  <atv:gridconfig width="20" enabled="true" height="20" gridstyle="lines"/>
+  <atv:snapconfig width="5" enabled="true" height="5"/>
+ </metadata>
+ <svg id="btn_save" width="80" atv:refpy="220" atv:refpx="600" height="30" x="560" y="205" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.button">
+  <atv:argument value="T{Save}" name="label"/>
+  <atv:argument value="22" name="tabIndex"/>
+  <atv:argument prefix="save_right" name="right"/>
+  <atv:argument prefix="save_activeNode" name="activeNode"/>
+  <atv:argument prefix="save_activeValue" name="activeValue"/>
+ </svg>
+ <svg id="btn_delete" width="80" atv:refpy="512" atv:refpx="600" height="30" x="560" y="377" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.button">
+  <atv:argument value="T{Delete}" name="label"/>
+  <atv:argument value="25" name="tabIndex"/>
+  <atv:argument prefix="save_right" name="right"/>
+  <atv:argument prefix="save_activeNode" name="activeNode"/>
+  <atv:argument prefix="save_activeValue" name="activeValue"/>
+ </svg>
+ <svg id="btn_load" width="80" atv:refpy="395" atv:refpx="360" height="30" x="320" y="377" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.button">
+  <atv:argument value="T{Load}" name="label"/>
+  <atv:argument value="23" name="tabIndex"/>
+  <atv:argument prefix="load_right" name="right"/>
+  <atv:argument prefix="load_activeNode" name="activeNode"/>
+  <atv:argument prefix="load_activeValue" name="activeValue"/>
+ </svg>
+ <svg id="json_download" width="80" transform="matrix(2,0,0,1,0,0)" atv:refpy="125" atv:refpx="820" height="30" x="370" y="113" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.button">
+  <atv:argument value="T{Download configuration}" name="label"/>
+  <atv:argument value="51" name="tabIndex"/>
+  <atv:argument prefix="save_right" name="right"/>
+  <atv:argument prefix="save_activeNode" name="activeNode"/>
+  <atv:argument prefix="save_activeValue" name="activeValue"/>
+  <atv:overwrite id="button_stroke" width="152" transform="matrix(0.5,0,0,1,0,0)"/>
+  <atv:overwrite id="button_label" transform="matrix(0.5,0,0,1,0,0)" x="80"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.5,0,0,1,0,0)" x="70"/>
+  <atv:overwrite id="button_bg" width="152" transform="matrix(0.5,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="154.5" transform="matrix(0.5,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="159.5" transform="matrix(0.5,0,0,1,0,0)"/>
+ </svg>
+ <text id="id_5" font-weight="bold" font-size="12" fill="#000000" atv:refpy="31.5" atv:refpx="283.264" font-family="Arial" x="204.5" y="36" text-anchor="start">T{Save / Load configuration}:</text>
+ <text id="id_6" font-weight="bold" font-size="12" fill="#000000" atv:refpy="31.5" atv:refpx="792.029" font-family="Arial" x="704.5" y="36" text-anchor="start">T{Export / Import configuration}:</text>
+ <line id="id_7" y1="20" stroke="#000000" atv:refpy="265" y2="510" atv:refpx="680" stroke-width="0.5" x1="680" x2="680"/>
+ <text id="id_8" font-size="12" fill="#000000" atv:refpy="181.5" atv:refpx="289" font-family="Arial" x="209.5" y="186" text-anchor="start">T{Save current configuration?}:</text>
+ <svg id="save_name" width="160" transform="matrix(1.4687,0,0,1,0,0)" atv:refpy="220" atv:refpx="437.496" height="30" x="217.879" y="205" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value">
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="21" name="tabIndex"/>
+  <atv:argument prefix="save_right" name="right"/>
+  <atv:argument prefix="load_activeNode" name="activeNode"/>
+  <atv:argument prefix="load_activeValue" value="" name="activeValue"/>
+  <atv:overwrite id="input_label" transform="matrix(0.6809,0,0,1,0,0)" x="226.492"/>
+  <atv:overwrite id="blinking_frame" width="226.992" transform="matrix(0.6809,0,0,1,0,0)"/>
+  <atv:overwrite id="input_bg" width="226.992" transform="matrix(0.6809,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="229.492" transform="matrix(0.6809,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="234.492" transform="matrix(0.6809,0,0,1,0,0)"/>
+ </svg>
+ <text id="id_10" font-size="12" fill="#000000" atv:refpy="220.5" atv:refpx="280" font-family="Arial" x="305.5" y="225" text-anchor="end">T{Name}:</text>
+ <text id="id_11" font-size="12" fill="#000000" atv:refpy="281.5" atv:refpx="346.5" font-family="Arial" x="209.5" y="286" text-anchor="start">T{Load or delete existing configuration from node}:</text>
+ <text id="id_12" font-size="12" fill="#000000" atv:refpy="89.5" atv:refpx="796" font-family="Arial" x="704.5" y="94" text-anchor="start">T{Export configuration as json-file}:</text>
+ <text id="id_13" font-size="12" fill="#000000" atv:refpy="181.5" atv:refpx="793" font-family="Arial" x="704.5" y="186" text-anchor="start">T{Import configuration file (.json)}:</text>
+ <text id="id_15" font-size="12" fill="#000000" atv:refpy="361.5" atv:refpx="478.5" font-family="Arial" x="478.5" y="366" text-anchor="middle">T{Attention: Unsaved changes will be lost!}</text>
+ <svg id="btn_refresh" width="80" atv:refpy="512" atv:refpx="480" height="30" x="440" y="377" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.button">
+  <atv:argument value="T{Refresh}" name="label"/>
+  <atv:argument value="24" name="tabIndex"/>
+  <atv:argument prefix="load_right" name="right"/>
+  <atv:argument prefix="load_activeNode" name="activeNode"/>
+  <atv:argument prefix="load_activeValue" name="activeValue"/>
+ </svg>
+ <text id="id_17" font-size="12" fill="#000000" atv:refpy="246.5" atv:refpx="931.5" font-family="Arial" x="744.5" y="251" text-anchor="start">(T{After the import you need to load the configuration on the left side})</text>
+ <rect id="filters_bg" ry="0" width="180" stroke="#000000" fill="url(#linear_2)" atv:refpy="35" atv:refpx="86.25" stroke-width="0" height="530" x="0" y="0" rx="0"/>
+ <svg id="cbb_configs" width="160" transform="matrix(2.0001,0,0,1,0,0)" atv:refpy="320" atv:refpx="479.996" height="30" x="159.992" y="305" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.combobox">
+  <atv:overwrite id="id_3" transform="matrix(0.5,0,0,1,0,0)" x="294.766"/>
+  <atv:overwrite id="button_bg" transform="matrix(0.5,0,0,1,0,0)" x="293.516"/>
+  <atv:overwrite id="button_stroke" transform="matrix(0.5,0,0,1,0,0)" x="293.516"/>
+  <atv:overwrite id="id_5" transform="matrix(0.5,0,0,1,0,0)" x="292.516"/>
+  <atv:overwrite id="combobox_label" transform="matrix(0.5,0,0,1,0,0)" x="285.516"/>
+  <atv:overwrite id="combobox_bg" width="286.016" transform="matrix(0.5,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="288.016" transform="matrix(0.5,0,0,1,0,0)"/>
+  <atv:overwrite id="combobox_stroke" width="319.516" transform="matrix(0.5,0,0,1,0,0)"/>
+ </svg>
+ <foreignObject id="id_1" width="405" height="40" x="743" y="206">
+  <div id="highchartsLoadSaveFileInput" style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <input id="fileInput" style="font-family:Arial,Helvetica;font-size:12px;" type="file"/>
+  </div>
+ </foreignObject>
+ <svg id="picker_config_address" width="160" transform="matrix(1.9999,0,0,1,0,0)" atv:refpy="135" atv:refpx="479.975" height="30" x="160.005" y="115" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.picker_address">
+  <atv:overwrite id="button_stroke" transform="matrix(0.5,0,0,1,0,0)" x="293.49"/>
+  <atv:overwrite id="id_1" transform="matrix(0.5,0,0,1,0,0)" x="294.74"/>
+  <atv:overwrite id="button_bg" transform="matrix(0.5,0,0,1,0,0)" x="293.49"/>
+  <atv:overwrite id="id_5" transform="matrix(0.5,0,0,1,0,0)" x="292.49"/>
+  <atv:overwrite id="input_label" transform="matrix(0.5,0,0,1,0,0)" x="285.99"/>
+  <atv:overwrite id="addresspicker_bg" width="285.99" transform="matrix(0.5,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="287.99" transform="matrix(0.5,0,0,1,0,0)"/>
+  <atv:overwrite id="addresspicker_stroke" width="319.49" transform="matrix(0.5,0,0,1,0,0)"/>
+ </svg>
+ <text id="id_9" font-size="12" fill="#000000" atv:refpy="91.5" atv:refpx="270.5" font-family="Arial" x="209.5" y="96" text-anchor="start">T{Configuration node}:</text>
+ <text id="id_4" font-size="12" fill="$FONTCOLOR$" atv:refpy="440.5" atv:refpx="286.5" font-family="Arial" x="209.5" y="445" text-anchor="start">T{Create new configuration}:</text>
+ <svg id="btn_create" width="80" atv:refpy="492" height="30" atv:refpx="605" x="560" y="459" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.button">
+  <atv:argument value="T{Create}" name="label"/>
+  <atv:argument value="22" name="tabIndex"/>
+  <atv:argument prefix="save_right" name="right"/>
+  <atv:argument prefix="save_activeNode" name="activeNode"/>
+  <atv:argument prefix="save_activeValue" name="activeValue"/>
+ </svg>
+ <svg id="new_name" width="160" transform="matrix(1.4687,0,0,1,0,0)" atv:refpy="492" height="30" atv:refpx="442.496" x="217.878" y="459" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value">
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="21" name="tabIndex"/>
+  <atv:argument prefix="save_right" name="right"/>
+  <atv:argument prefix="load_activeNode" name="activeNode"/>
+  <atv:argument prefix="load_activeValue" value="" name="activeValue"/>
+  <atv:overwrite id="focus_frame" width="230.992" transform="matrix(0.6809,0,0,1,0,0)"/>
+  <atv:overwrite id="id_1" width="226.992" transform="matrix(0.6809,0,0,1,0,0)"/>
+  <atv:overwrite id="id_6" d="M10.033,5C10.033,5 3.42,5 3.404,8.57C3.368,15.474 70.979,15.71 117.354,15.71C163.728,15.71 231.221,15.442 231.3,8.57C231.341,5 224.674,5 224.674,5C224.674,5 10.033,5 10.033,5" transform="matrix(0.6809,0,0,1,0,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(0.6809,0,0,1,0,0)" x="226.492"/>
+  <atv:overwrite id="blinking_frame" width="226.992" transform="matrix(0.6809,0,0,1,0,0)"/>
+  <atv:overwrite id="input_bg" width="226.992" transform="matrix(0.6809,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="229.492" transform="matrix(0.6809,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="234.492" transform="matrix(0.6809,0,0,1,0,0)"/>
+ </svg>
+ <text id="id_18" font-size="12" fill="$FONTCOLOR$" atv:refpy="474.5" atv:refpx="280" font-family="Arial" x="305.5" y="479" text-anchor="end">T{Name}:</text>
+ <text text-anchor="start" font-family="Arial" font-size="12" atv:refpx="45.5" font-weight="bold" atv:refpy="31.5" x="14.5" id="id_19" y="36" fill="#575757">T{Settings}:</text>
+ <text text-anchor="start" font-family="Arial" font-size="12" atv:refpx="45.5" font-weight="bold" atv:refpy="31.5" x="14.5" id="id_19" y="36" fill="#575757">T{Settings}:
+ </text>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.checkbox" atv:refpx="90" height="30" atv:refpy="90" x="14" id="check_compression" y="71">
+  <atv:argument name="label" value="T{Compression}"/>
+  <atv:argument name="outputValueOn" value="true"/>
+  <atv:argument name="outputValueOff" value="false"/>
+  <atv:argument name="valueOn" value="true"/>
+  <atv:argument name="tabIndex" value="1"/>
+ </svg>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" atv:refpx="480" height="30" atv:refpy="150" x="160" id="picker_config_file" y="116" transform="matrix(2,0,0,1,0,0)">
+  <atv:argument name="tabIndex" value="12"/>
+  <atv:argument name="validation" value="String"/>
+  <atv:overwrite x="312.055" id="input_label" transform="matrix(0.5,0,0,1,0,0)"/>
+  <atv:overwrite width="312" id="blinking_frame" transform="matrix(0.5,0,0,1,0,0)"/>
+  <atv:overwrite width="316" id="focus_frame" transform="matrix(0.5,0,0,1,0,0)"/>
+  <atv:overwrite width="312" id="input_bg" transform="matrix(0.5,0,0,1,0,0)"/>
+  <atv:overwrite width="318" id="id_1" transform="matrix(0.5,0,0,1,0,0)"/>
+  <atv:overwrite width="320" id="id_0" transform="matrix(0.5,0,0,1,0,0)"/>
+ </svg>
+ <text x="14.5" y="56" atv:refpx="48.5" text-anchor="start" id="text_method" fill="#575757" atv:refpy="51.5" font-size="12" font-family="Arial">T{Save in}: -</text>
+ <script type="text/ecmascript"><![CDATA[var newConfigName;
+var selectedConfigName;
+var createConfigName;
+var chartname = webMI.query.chartname;
+var chart = webMI.trendFactory.getTrendByName(chartname);
+var configNode = chart.chart.options.atviseOptions.configNode;
+var configFile = chart.chart.options.atviseOptions.configFile;
+var configName = chart.chart.options.atviseOptions.configName;
+var options = chart.chart.options;
+var configurator;
+
+//Falls neue Eingabe, neuer Aufruf der Auswahlfunktion
+document.getElementById('fileInput').addEventListener('change', uploadFile, false);
+
+webMI.addOnload(function () {
+	newConfigName = configName ? configName : "";
+
+	if (options.atviseOptions.saveMethod == "multiple") {
+		webMI.gfx.setText("text_method", "T{Save in}: T{Multiple nodes}");
+		webMI.gfx.setText("text_nodeOrFile", "T{Configuration node (sub-nodes will be created automatically)}:");
+		webMI.gfx.setVisible("picker_config_address", true);
+		webMI.gfx.setVisible("picker_config_file", false);
+	} else if (options.atviseOptions.saveMethod == "filesystem") {
+		webMI.gfx.setText("text_method", "T{Save in}: T{Filesystem}");
+		webMI.gfx.setText("text_nodeOrFile", "T{Configuration file (in filesystem)}:");
+		webMI.gfx.setVisible("picker_config_address", false);
+		webMI.gfx.setVisible("picker_config_file", true);
+	} else {
+		webMI.gfx.setText("text_method", "T{Save in}: T{Single node}");
+		webMI.gfx.setText("text_nodeOrFile", "T{Configuration node}:");
+		webMI.gfx.setVisible("picker_config_address", true);
+		webMI.gfx.setVisible("picker_config_file", false);
+	}
+
+	webMI.trigger.fire("setChecked", options.atviseOptions.saveCompressed, "check_compression");
+	webMI.gfx.setVisible("check_compression", (webMI.query.save_changecompression == "true") ? true : false);
+
+	webMI.trigger.connect("valuechanged", function (e) {
+		options.atviseOptions.saveCompressed = (e.value == "true") ? true : false;
+	}, "check_compression");
+
+	webMI.data.loadScript("highcharts/helpers/confighandler.js", function () {
+
+		configurator = new webMI.rootWindow.ConfigHandler();
+
+		webMI.trigger.connect("com.atvise.highcharts.save_confirm", function (e) {
+			saveConfig(configurator);
+			e.value.webMI.display.closeWindow();
+		});
+
+		webMI.trigger.connect("com.atvise.highcharts.create_confirm", function (e) {
+			createConfig(configurator);
+			e.value.webMI.display.closeWindow();
+		});
+
+		webMI.trigger.connect("com.atvise.highcharts.save_abort", function (e) {
+			e.value.webMI.display.closeWindow();
+		});
+
+		webMI.trigger.connect("clicked", function (e) {
+			var loadConfiguration = {
+				"saveName": chart.chart.options.atviseOptions.saveMethod == "filesystem" ? chart.chart.options.atviseOptions.configFile : chart.chart.options.atviseOptions.configNode,
+				"saveMethod": chart.chart.options.atviseOptions.saveMethod,
+			}
+			configurator.getConfigsFromNode(loadConfiguration.saveName, loadConfiguration.saveMethod, function (chartConfig) {
+				if (newConfigName != "" && newConfigName in chartConfig) {
+					webMI.display.openWindow({
+						display: "SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.dialogs.message_dialog",
+						height: 300,
+						width: 400,
+						modal: true,
+						resizable: false,
+						movable: true,
+						scrollbars: false,
+						menubar: false,
+						status: false,
+						toolbar: false,
+						query: {
+							headline: "T{Overwrite existing configuration?}",
+							msg1: "T{Actual configuration name already exist.}",
+							msg2: "T{Do you want to overwrite the configuration?}",
+							msg3: "",
+							btn1: "T{Overwrite}",
+							btn2: "T{Abort}",
+							action_btn1: "com.atvise.highcharts.save_confirm",
+							action_btn2: "com.atvise.highcharts.save_abort"
+						}
+					});
+				} else {
+					saveConfig(configurator);
+				}
+			});
+		}, "btn_save");
+
+		webMI.trigger.connect("clicked", function (e) {
+			var id = "btn_load";
+			var value = true;
+			return function (value) {
+				if (selectedConfigName == undefined || selectedConfigName == "")
+					return alert("T{Please select a configuration!}");
+
+				var loadConfiguration = {
+					"saveName": chart.chart.options.atviseOptions.saveMethod == "filesystem" ? chart.chart.options.atviseOptions.configFile : chart.chart.options.atviseOptions.configNode,
+					"saveMethod": chart.chart.options.atviseOptions.saveMethod,
+				}
+				configurator.loadConfig(loadConfiguration.saveName, loadConfiguration.saveMethod, selectedConfigName, function (chartConfig) {
+					/*reset chart*/
+					while (chart.chart.series.length > 0)
+						chart.chart.series[0].remove();
+					while (chart.chart.xAxis.length > 0)
+						chart.chart.xAxis[0].remove();
+					while (chart.chart.yAxis.length > 0)
+						chart.chart.yAxis[0].remove();
+
+					/*update chart*/
+					for (var i = 0; i < chartConfig.xAxis.length; i++)
+						chart.chart.addAxis(chartConfig.xAxis[i], true);
+					for (var i = 0; i < chartConfig.yAxis.length; i++)
+						chart.chart.addAxis(chartConfig.yAxis[i], false);
+					for (var i = 0; i < chartConfig.series.length; i++)
+						chart.chart.addSeries(chartConfig.series[i]);
+
+					chart.chart.options.atviseOptions = chartConfig.atviseOptions;
+
+					webMI.trigger.fire("setValue", chart.chart.options.atviseOptions.configName, "save_name");
+					webMI.trigger.fire("setChecked", chart.chart.options.atviseOptions.saveCompressed, "check_compression");
+
+					chart.chart.update(chartConfig);
+					chart.control.updated();
+				});
+			}(value);
+		}, "btn_load");
+
+		webMI.trigger.connect("clicked", function (e) {
+			if (createConfigName == undefined || createConfigName == "")
+				return alert("T{Please enter a configuration name!}");
+
+			var loadConfiguration = {
+				"saveName": chart.chart.options.atviseOptions.saveMethod == "filesystem" ? chart.chart.options.atviseOptions.configFile : chart.chart.options.atviseOptions.configNode,
+				"saveMethod": chart.chart.options.atviseOptions.saveMethod,
+			}
+			configurator.getConfigsFromNode(loadConfiguration.saveName, loadConfiguration.saveMethod, function (chartConfig) {
+				if (createConfigName in chartConfig) {
+					webMI.display.openWindow({
+						display: "SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.dialogs.message_dialog",
+						height: 300,
+						width: 400,
+						modal: true,
+						resizable: false,
+						movable: true,
+						scrollbars: false,
+						menubar: false,
+						status: false,
+						toolbar: false,
+						query: {
+							headline: "T{Overwrite existing configuration?}",
+							msg1: "T{Actual configuration name already exist.}",
+							msg2: "T{Do you want to overwrite the configuration?}",
+							msg3: "",
+							btn1: "T{Overwrite}",
+							btn2: "T{Abort}",
+							action_btn1: "com.atvise.highcharts.create_confirm",
+							action_btn2: "com.atvise.highcharts.save_abort"
+						}
+					});
+				} else {
+					webMI.trigger.fire("com.atvise.highcharts.getQuickSave", "getState");
+				}
+			});
+		}, "btn_create");
+
+		/* check for unsaved configs */
+		webMI.trigger.connect("com.atvise.highcharts.sendQuickSave", function (e) {
+			if(e.value){
+				webMI.display.openWindow({
+					display: "SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.dialogs.message_dialog",
+					height: 300,
+					width: 400,
+					modal: true,
+					resizable: false,
+					movable: true,
+					scrollbars: false,
+					menubar: false,
+					status: false,
+					toolbar: false,
+					query: {
+						headline: "T{Save current configuration?}",
+						msg1: "T{The current configuration is not saved yet!}",
+						msg2: "T{Do you still want to create the new configuration?}",
+						msg3: "",
+						btn1: "T{Yes}",
+						btn2: "T{Abort}",
+						action_btn1: "com.atvise.highcharts.create_confirm",
+						action_btn2: "com.atvise.highcharts.save_abort"
+					}
+				});
+			} else {
+				createConfig(configurator);
+			}
+		});
+
+
+		webMI.trigger.connect("clicked", function (e) {
+			loadConfigsForNode(configurator);
+		}, "btn_refresh");
+
+
+        webMI.trigger.connect("clicked", function (e) {
+            var id = "btn_delete";
+            var value = true;
+            return function (value) {
+                var menuObj = [];
+
+                if (configNode == undefined || configNode == "")
+                    return alert("T{Config node required!}");
+
+                if (selectedConfigName == undefined || selectedConfigName == "")
+                    return alert("T{Please select a configuration name!}");
+
+                configurator.deleteConfig(configNode, selectedConfigName, chart, function (chartConfig) {
+                    for (var i in chartConfig) {
+                        menuObj.push({text: i, value: i});
+                    }
+
+                    webMI.trigger.fire("setItems", menuObj, "cbb_configs");
+                    webMI.trigger.fire("setSelectedItem", name, "cbb_configs");
+                    //webMI.trigger.fire("setValue", name, "in_config");
+					chart.control.updated();
+                });
+            }(value);
+        }, "btn_delete");
+
+        webMI.trigger.connect("valuechanged", function (e) {
+            newConfigName = e.value;
+        }, "save_name");
+
+        webMI.trigger.connect("valuechanged", function (e) {
+            createConfigName = e.value;
+        }, "new_name");
+
+        webMI.trigger.connect("valuechanged", function (e) {
+            selectedConfigName = e.value;
+        }, "cbb_configs");
+
+        webMI.trigger.connect("valuechanged", function (e) {
+            configNode = e.value;
+            loadConfigsForNode(configurator);
+        }, "picker_config_address");
+
+        webMI.trigger.connect("valuechanged", function (e) {
+            configFile = e.value;
+            // chart.chart.options.atviseOptions.configFile = configFile;
+            loadConfigsForNode(configurator);
+        }, "picker_config_file");
+
+        webMI.trigger.connect("clicked", function (e) {
+            var id = "json_download";
+            var value = true;
+            return function (value) {
+                if (configNode == undefined)
+                    return alert("T{Config node required!}");
+
+				var loadConfiguration = {
+					"saveName": chart.chart.options.atviseOptions.saveMethod == "filesystem" ? chart.chart.options.atviseOptions.configFile : chart.chart.options.atviseOptions.configNode,
+					"saveMethod": chart.chart.options.atviseOptions.saveMethod,
+				}
+				configurator.getConfigsFromNode(loadConfiguration.saveName, loadConfiguration.saveMethod, function (chartConfig) {
+					chartConfig = JSON.stringify(chartConfig);
+                    webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Save As", {
+                        "content": chartConfig,
+                        "name": "highcharts-config.json",
+                        "type": "application/json"
+                    });
+                });
+
+            }(value);
+        }, "json_download");
+
+	});
+
+	webMI.trigger.fire("setValue", newConfigName, "save_name");
+	webMI.trigger.fire("setValue", configNode, "picker_config_address");
+	webMI.trigger.fire("setValue", configFile, "picker_config_file");
+});
+
+function loadConfigsForNode(configurator, configName) {
+	var loadConfiguration = {
+		"saveName": chart.chart.options.atviseOptions.saveMethod == "filesystem" ? chart.chart.options.atviseOptions.configFile : chart.chart.options.atviseOptions.configNode,
+		"saveMethod": chart.chart.options.atviseOptions.saveMethod,
+	}
+
+	if(chart.chart.options.atviseOptions.saveMethod == "filesystem") {
+		if(configFile != loadConfiguration.saveName){
+			loadConfiguration.saveName = configFile;
+			chart.chart.options.atviseOptions.configFile = configFile;
+		}
+	} else {
+		if(configNode != loadConfiguration.saveName){
+			loadConfiguration.saveName = configNode;
+			chart.chart.options.atviseOptions.configNode = configNode;
+		}
+	}
+
+	configurator.getConfigsFromNode(loadConfiguration.saveName, loadConfiguration.saveMethod, function (chartConfig) {
+		var comboItems = [];
+		for (var i in chartConfig) {
+			comboItems.push({text: i, value: i});
+		}
+
+		webMI.trigger.fire("setItems", comboItems, "cbb_configs");
+		if (configName && configName in chartConfig) {
+			webMI.trigger.fire("setSelectedItem", configName, "cbb_configs");
+		}
+	});
+}
+
+function saveConfig(configurator) {
+	var menuObj = [];
+
+	if(chart.chart.options.atviseOptions.saveMethod == "filesystem") {
+		if (configFile == undefined || configFile == "")
+			return alert("T{Config file required!}");
+	} else {
+		if (configNode == undefined || configNode == "")
+			return alert("T{Config node required!}");
+	}
+
+	if (newConfigName == undefined || newConfigName == "")
+		return alert("T{Please enter a valid configuration name!}");
+
+	configurator.saveConfigOrImport({"configNode" : configNode, "configName" : newConfigName},
+	  chart,
+	  function (chartConfig) {
+		chart.control.updated();
+		for (var i in chartConfig) {
+			menuObj.push({text: i, value: i});
+		}
+
+		webMI.trigger.fire("setItems", menuObj, "cbb_configs");
+		webMI.trigger.fire("setSelectedItem", name, "cbb_configs");
+		//webMI.trigger.fire("setValue", name, "in_config");
+
+		chart.chart.options.atviseOptions.configNode = configNode;
+		chart.chart.options.atviseOptions.configName = newConfigName;
+		chart.control.updated();
+	});
+}
+
+function createConfig(configurator) {
+	/*reset chart*/
+	while (chart.chart.series.length > 0)
+		chart.chart.series[0].remove();
+	while (chart.chart.xAxis.length > 1)
+		chart.chart.xAxis[1].remove();
+	while (chart.chart.yAxis.length > 0)
+		chart.chart.yAxis[0].remove();
+
+	var xAxisOptions = {
+		"title": {"text": ""},
+		"timeSpan": 60,
+		"timeSpanUnit": 1,
+		"tickInterval": 10000,
+		"lineWidth": 0,
+		"labels": {
+			"enabled": true,
+			"align": "center"
+		},
+		"crosshair": {
+			"width": 0,
+			"snap": true,
+			"color": "#FF0000",
+			"dashStyle": "Solid"
+		},
+		"type": "datetime",
+		"dateTimeLabelFormats": {
+			"format": "%H:%M:%S"
+		},
+		"gridLineWidth": 1,
+		"gridLineColor": "#888888",
+		"minorGridLineWidth": 1,
+		"minorGridLineColor": "#EEEEEE",
+		"minorTickInterval": 10000,
+		"opposite": false
+	};
+
+	chart.chart.xAxis[0].update(xAxisOptions);
+	chart.chart.addAxis({}, false);
+	chart.chart.addSeries();
+
+	chart.chart.options.atviseOptions.configName = createConfigName;
+
+	webMI.trigger.fire("setValue", chart.chart.options.atviseOptions.configName, "save_name");
+
+	if (webMI.rootWindow.atviseDefaults)
+		chart.chart.update(webMI.rootWindow.atviseDefaults);
+	chart.control.updated(function () {
+		saveConfig(configurator);
+	});
+}
+
+function uploadFile(evt) {
+	if (configNode == undefined)
+		return alert("T{Config node required!}");
+
+	if(configNode != chart.chart.options.atviseOptions.configNode){
+		chart.chart.options.atviseOptions.configNode = configNode;
+	}
+
+	var files = evt.target.files;
+	var uploadFile = files[0];
+
+	var reader = new FileReader();
+	reader.onload = function (fileData) {
+		var fileText = fileData.target.result;
+		// remove line breaks
+		fileText = fileText.replace(/(\r\n|\n|\r)/gm, "");
+		// remove multiple spaces
+		fileText = fileText.replace(/\s\s+/g, ' ');
+		// remove Tabs
+		fileText = fileText.replace('\t', '')
+
+		var configImport = JSON.parse(fileText);
+		var keyList = Object.keys(configImport);
+
+		if(keyList.indexOf("default") > -1)
+            configName = "default";
+		else
+		    configName = keyList[0];
+
+		saveImport(keyList, configNode, JSON.parse(fileText), function callback() {
+			loadConfigsForNode(configurator, configName);
+		})
+	}
+
+	reader.readAsText(uploadFile);
+}
+
+function saveImport(keyList, configNode, configImport, callback){
+
+	if(keyList.length > 0){
+		var key = keyList.shift();
+		if(key != "autosave") {
+			var current = JSON.parse(JSON.stringify(configImport[key]));
+			var configOptions = {"configNode": configNode, "configName": key, "configImport" : current};
+		    configurator.saveConfigOrImport(configOptions, chart, function(){
+			    saveImport(keyList, configNode, configImport, callback);
+		    });
+		} else {
+			saveImport(keyList, configNode, configImport, callback);
+		}
+	} else {
+		callback();
+	}
+}
+
+]]></script>
+</svg>

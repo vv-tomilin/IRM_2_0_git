@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.top_1024_dashboard.de
+NodeClass: Variable
+BrowseName: 1:de
+DisplayName: en|de
+Description: en|de
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.HtmlHelp

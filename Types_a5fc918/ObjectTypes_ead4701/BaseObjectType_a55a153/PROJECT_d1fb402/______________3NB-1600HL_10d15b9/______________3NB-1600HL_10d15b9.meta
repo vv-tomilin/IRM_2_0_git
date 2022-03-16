@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Буровой насос 3NB-1600HL
+NodeClass: ObjectType
+BrowseName: 1:Буровой насос 3NB-1600HL
+DisplayName: en|Буровой насос 3NB-1600HL
+Description: en|Буровой насос 3NB-1600HL
+IsAbstract: false

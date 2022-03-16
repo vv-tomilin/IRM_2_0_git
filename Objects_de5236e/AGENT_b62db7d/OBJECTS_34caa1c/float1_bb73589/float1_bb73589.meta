@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.float1
+NodeClass: Variable
+BrowseName: 1:float1
+DisplayName: en|float1
+Description: en|float1
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

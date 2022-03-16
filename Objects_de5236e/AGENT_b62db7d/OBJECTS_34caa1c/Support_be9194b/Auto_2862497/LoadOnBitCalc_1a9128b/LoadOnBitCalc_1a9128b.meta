@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.LoadOnBitCalc
+NodeClass: Variable
+BrowseName: 1:LoadOnBitCalc
+DisplayName: en|LoadOnBitCalc
+Description: en|LoadOnBitCalc
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

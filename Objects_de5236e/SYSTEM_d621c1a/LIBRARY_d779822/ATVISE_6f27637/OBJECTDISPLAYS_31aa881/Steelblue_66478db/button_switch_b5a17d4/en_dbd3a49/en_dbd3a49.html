@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Description</h1>
+<p>This button switches between two values and can be used in the following modes:</p>
+<ul>
+</ul>
+<ol>
+  <li>only "base" is specified: in this
+case additionally the "on value", "value On to be set" and "value Off
+to be set" have to be set (NOTE: &ldquo;on value&rdquo; must be equal
+to &ldquo;value On to be set&rdquo;)</li>
+</ol>
+<div style="margin-left: 40px;">With this configuration, on each
+click, the button switches between 2 values for the address "base". It will be in&nbsp;On state if the value of the "base"&nbsp;equals the&nbsp;"value On"; otherwise it will be&nbsp;Off.</div>
+<ol start="2">
+  <li>only "address to set" is specified:</li>
+</ol>
+<div style="margin-left: 40px;">With this configuration, on each
+click, the button switches between 2 values for the address "address to set". It will be in&nbsp;On state if the value of the "base"&nbsp;equals the&nbsp;"value On"; otherwise it will be&nbsp;Off.</div>
+<ol start="3">
+  <li>"base" and "address to set" are specified:</li>
+</ol>
+<div style="margin-left: 40px;">With this configuration, on each
+click, the following happens:<br>
+<ul>
+  <li>The button will be in&nbsp;On state if the value of the "base"&nbsp;equals the&nbsp;"value On"; otherwise it will be&nbsp;Off.</li>
+  <li>Depending whether the button is On or
+Off,&nbsp; on click "address to set" will be set "value Off to be set"
+or "value On to be set".</li>
+  <li>The button itself will change the state only when the "base" is changed (feedback channel).</li>
+</ul>
+</div>
+<ol start="4">
+  <li>neither
+"base" nor &ldquo;address to set&rdquo; are specified:</li>
+</ol>
+<div style="margin-left: 40px;">In this case, the trigger "valuechanged" with the value from "value Off to be set" or "value On to be set" will be fired. These
+triggers can be used to add a Simple Dynamic to this button which reacts
+on the triggers and fires a new trigger. This new trigger can then be
+used by other elements. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+<p>An additional border indicates the current value's negative state or an additionally defined alarm. The colors and blinking intervals are defined in global lists.</p>
+<h1>Parameters</h1>
+<p>This control has&nbsp;the following generic parameters:</p>
+<ul>
+  <li><span class="parameter">base</span>: depending whether or not "address to set" is specified, the behavior&nbsp;is according to mode 1 and 3 above</li>
+  <li><span class="parameter">alarm address</span>:  optional additional address of an alarm to be shown.</li>
+  <li><span class="parameter">label for on state</span>: label which will be show if button is in On state (e.g. switched on)</li>
+  <li><span class="parameter">label for off state</span>: label which will be show if button is in Off state (e.g. switched off)</li>
+  <li><span class="parameter">on value</span>: value which defines the On state of the button (default: 1)</li>
+  <li><span class="parameter">value On to be set</span>: depending on the configuration, "base" or "address to set" will be set to this value when switching from Off
+state to On state (default: 1)</li>
+  <li><span class="parameter">value Off to be set</span>: depending on the configuration, "base" or "address to set" will be set to this value when switching from On state to Off state (default: 0)</li>
+  <li><span class="parameter">enable status monitoring</span>:  switch monitoring of current value status on or off.</li>
+  <li><span class="parameter">fire status trigger</span>:  instead of the status display a here defined trigger can be fired globally.</li>
+</ul>
+Font:<br>
+<ul>
+  <li><span class="parameter">family</span>: font family which will be applied to label (default: Arial)</li>
+  <li><span class="parameter">size</span>: font size which will be applied to the label (default: 12)</li>
+  <li><span class="parameter">color</span>: color which will be applied to the label (default: grey)</li> </ul>
+Appearance:<br>
+<ul>
+  <li><span class="parameter">visibility label</span>: if set to visible, the text as specified by "label" will be
+displayed as label; if this is set to visible, "visibility symbol'" should be set
+to hidden. (default: visible)</li>
+  <li><span class="parameter">visibility symbol</span>: if set to visible, the symbol as specified by "symbol" will be displayed; if this is set to visible, "visibility label'" should be set to hidden.&nbsp;(default: hidden)</li>   <li><span class="parameter">symbol for on state</span>: symbol to be used if "visibility symbol" is set to visible; further symbols
+can be selected from "Object Displays (ATVISE)/Symbols/20x20 (default: lamp)</li>
+  <li><span class="parameter">symbol for off state</span>: symbol to be used if "visibility symbol" is set to visible; further symbols
+can be selected from "Object Displays (ATVISE)/Symbols/20x20 (default: lamp_off)</li>
+  <li><span class="parameter">symbol color</span>: color of the symbol to be used (default: grey)</li>
+  <li><span class="parameter">fill color for on state</span>: button's fill color if button shows On state (default: black)</li>
+  <li><span class="parameter">fill color for off state</span>: button's fill color if button shows Off state (default: black)</li>
+  <li><span class="parameter">fill color when inactive</span>: button's fill color if not active&nbsp;(default: dark grey)</li>
+  <li><span class="parameter">stroke color pressed</span>: the color of the stroke which will be set when the button is pressed (default: white)</li>
+  <li><span class="parameter">focus stroke color</span>: the color of the stroke which will be set when the button is focused (default: white)</li>
+  <li><span class="parameter">status indication</span>: specify the status' display through a defined global list (default: global parameter <i>atvStatusIndication</i>)</li>
+  <li><span class="parameter">alarm indication</span>: specify the alarm's display through a defined global list (default: global parameter <i>atvAlarmIndication</i>)</li>
+</ul>
+Options:<br>
+<ul>
+  <li><span class="parameter">address to set</span>: depending whether or not "base" is specified, the behavior&nbsp;is according to mode 2 and 3 above</li>
+  <li><span class="parameter">tab index</span>: defines the order for changing between the object displays by using the tab key</li>
+  <li><span class="parameter">tooltip</span>: displays a tooltip box with the entered text (standard HTML-Elements can be entered)</li>
+  </ul>
+Security:
+<ul>
+  <li><span class="parameter">necessary right</span>: the user must have this right to activate this button, i.e. to press the button</li>
+  <li><span class="parameter">activation address</span>: if the value of this address equals to "activation value", then the button will be active, i.e. can be pressed</li>
+  <li><span class="parameter">activation value</span>: value which activates the button</li>
+  </ul>
+<div style="margin-left: 40px;">NOTE: The activation of a button can be configured only by the necessary right, or only by the&nbsp;activation
+address and value or by both. In case both settings are made, the user
+must have the necessary right and the value of the "activation address"
+must equal the "activation value"; otherwise the button will not be activated.
+</div>
+<h1>Example</h1>
+For mode 3 as described above assume the following parameters:
+<ul>
+  <li>base: node_feedback</li>
+  <li>label for on state: switched on</li>
+  <li>label for off state: switched off</li>
+  <li>on value: 1</li>
+  <li>value On to be set: 1</li>
+  <li>value Off to be set: 0</li>
+  <li>address to set: node_set</li>
+</ul>
+Furthermore assume that the values of "base" and "address to set" are set to 0.<br>
+<ol>
+  <li>With these setting the button's label will show "switched off".</li>
+  <li>On click, "node_set" will be set to 1 (= "value On to be set"); the label will still show "switched off" (value of "base" is still different from "on value")</li>
+  <li>As soon as "base" is set to 1 (feedback channel from PLC), the label will change to "switched on"&nbsp;(value of "base" is now equal to "on value")</li>
+  <li>On click, "node_set" will be set to 0 (= "value Off to be set"); the label will still show "switched on"&nbsp;(value of "base" is still equal to "on value")</li>
+  <li>As soon as "base" is set to 0 (feedback channel from PLC), the label will change to "switched off"&nbsp;(value of "base" is now different from "on value")</li>
+</ol>
+</body>
+</html>

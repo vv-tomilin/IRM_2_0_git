@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib
+NodeClass: Object
+BrowseName: 1:SvgLib
+DisplayName: en|SvgLib
+Description: en|SvgLib
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

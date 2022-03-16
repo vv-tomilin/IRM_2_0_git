@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.RigState.TalWorking
+NodeClass: Variable
+BrowseName: 1:TalWorking
+DisplayName: en|TalWorking
+Description: en|TalWorking
+DataType: Int64
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

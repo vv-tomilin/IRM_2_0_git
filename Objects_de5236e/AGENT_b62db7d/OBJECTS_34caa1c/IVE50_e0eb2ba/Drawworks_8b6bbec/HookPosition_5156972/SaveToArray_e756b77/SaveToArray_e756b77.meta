@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Drawworks.HookPosition.SaveToArray
+NodeClass: Variable
+BrowseName: 1:SaveToArray
+DisplayName: en|SaveToArray
+Description: en|SaveToArray
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

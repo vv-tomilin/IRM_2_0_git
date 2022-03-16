@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Выпускной воздушный компенсатор
+NodeClass: ObjectType
+BrowseName: 1:Выпускной воздушный компенсатор
+DisplayName: en|Выпускной воздушный компенсатор
+Description: en|Выпускной воздушный компенсатор
+IsAbstract: false

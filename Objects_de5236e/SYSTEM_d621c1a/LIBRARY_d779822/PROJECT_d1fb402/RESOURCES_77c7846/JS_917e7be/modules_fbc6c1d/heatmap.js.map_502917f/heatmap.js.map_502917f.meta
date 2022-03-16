@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/heatmap.js.map
+NodeClass: Variable
+BrowseName: 1:heatmap.js.map
+DisplayName: en|heatmap.js.map
+Description: en|heatmap.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <code><![CDATA[var util = call("Csv.Util");
+
+// Logging
+var logger = new util.logger(1);
+
+function writeHeader(output, nodeValue, description, history, mirroring)
+{
+	output.write("<NodeName>;<DataType>;<TypeDefinition>");
+	if (nodeValue)
+		output.write(";<NodeValue>");
+	if (description)
+		output.write(";<Description>");
+	if (history)
+		output.write(";<HistoryGroups>");
+	if (mirroring)
+	{
+		for (var i = 0; i < util.mirrorFields.length; ++i)
+			output.write(";" + util.mirrorFields[i].name);
+		output.write(";<OnDemand>");
+	}
+}
+
+function verifyForExport(node)
+{
+    if (typeof node.nodeaddr.indexOf !== "function")
+        return false;
+
+	if (node.nodeaddr.indexOf("AGENT.OBJECTS") != 0)
+		return false;
+
+	// Do not export mirror nodes
+	if (util.trimNodeId(node.typedefinition).indexOf("VariableTypes.ATVISE.Mirror") == 0)
+		return false;
+
+
+	// Do not export on demand nodes
+	if (node.nodeaddr.indexOf(".OnDemand") > -1 && node.typedefinition == "i=68")
+		return false;
+
+	return true;
+}
+
+return function doExport(nodes, output, nodeValue, description, history, mirroring)
+{
+	logger.info("Csv Export started");
+	logger.trace("Nodes: " + nodes);
+
+	writeHeader(output, nodeValue, description, history, mirroring);
+
+	for (var i = 0; i < nodes.length; ++i)
+	{
+		var node = new UaNode(nodes[i]);
+
+		if (!verifyForExport(node))
+			logger.error("Cannot export node " + node.nodeaddr);
+		else
+		{
+		    if(node.nodeaddr != "AGENT.OBJECTS") {
+		      exportNode(node, output, nodeValue, description, history, mirroring);
+		    }
+
+			var children = node.browse({recursive:true});
+			logger.trace("Node " + node.nodeaddr + " has " + children.length + " children");
+
+			for (var j = 0; j < children.length; ++j)
+			{
+				exportNode(children[j].node, output, nodeValue, description, history, mirroring);
+			}
+		}
+	}
+	logger.info("Csv Export finished");
+}
+
+function exportNode(nodeToExport, output, nodeValue, description, history, mirroring) {
+	if (!verifyForExport(nodeToExport))
+		logger.trace("Not exporting node " + nodeToExport.nodeaddr);
+	else  // Node export
+	{
+		output.write("\n");
+		logger.trace("Exporting " + nodeToExport.nodeaddr);
+
+		// NodeName
+		output.write(nodeToExport.nodeaddr.substr("AGENT.OBJECTS.".length) + ";");
+
+		// DataType
+		if (nodeToExport.nodeclass == UaNode.NODECLASS_OBJECT)
+		{
+			if (util.trimNodeId(nodeToExport.typedefinition) == UaNode.FOLDERTYPE)
+				output.write("folder");
+			else
+				output.write("object");
+		}
+		else if (nodeToExport.nodeclass == UaNode.NODECLASS_VARIABLE)
+		{
+			var dataType = util.trimNodeId(nodeToExport.datatype);
+			var idx = -1;
+			for (var k = 0; k < util.dataTypeIds.length; ++k)
+			{
+				if (dataType == util.dataTypeIds[k])
+					idx = k;
+			}
+			if (idx > -1)
+				output.write(util.dataTypes[idx]);
+			else
+			{
+				logger.error("Variable " + nodeToExport.nodeaddr + " has unknown data type = " + nodeToExport.datatype);
+				return;
+			}
+		}
+		output.write(";");
+
+		// Typedefinition
+		var typeDefinition = util.trimNodeId(nodeToExport.typedefinition);
+		if (typeDefinition != UaNode.BASEVARIABLETYPE && typeDefinition != UaNode.FOLDERTYPE)
+			output.write(typeDefinition);
+
+		// Value
+		if (nodeValue)
+		{
+			output.write(";");
+			if (nodeToExport.nodeclass == UaNode.NODECLASS_VARIABLE)
+			{
+				if (nodeToExport.datatype == UaNode.DATETIME)
+					output.write(nodeToExport.value.getTime());
+				else {
+				   // escape double quotes and write value inside double quotes if value contains semicolon or double quote
+				   if(typeof nodeToExport.value == "string" && (nodeToExport.value.indexOf(";") > -1 || nodeToExport.value.indexOf("\"") > -1)) {
+					  var outValue = nodeToExport.value.replace(/\"/g, "\"\"");
+					  output.write("\"" + outValue + "\"");
+					} else
+					  output.write(nodeToExport.value);
+				}
+			}
+		}
+
+		// Description
+		if (description)
+		{
+			output.write(";");
+			output.write(nodeToExport.description);
+		}
+
+		// History
+		if (history)
+		{
+			output.write(";");
+			var existingGroups = nodeToExport.browse({ reference: UaNode.HASHISTORICALCONFIGURATION });
+			logger.trace("Node has " + existingGroups.length + " history groups set");
+			if (existingGroups.length > 0)
+			{
+				output.write("{");
+				for (var k = 0; k < existingGroups.length; ++k)
+				{
+					//if (existingGroups[k].node.nodeaddr.indexOf("AGENT.HISTORY.AGGREGATETEMPLATES") != 0){
+					if (k != 0) output.write(",");
+					output.write(existingGroups[k].node.browsename);
+					//}
+				}
+				output.write("}");
+			}
+		}
+
+		// Mirroring
+		if (mirroring)
+		{
+			var onDemandValue = null;
+
+			for (var k = 0; k < util.mirrorFields.length; ++k)
+			{
+				output.write(";");
+				var mirrorField = util.mirrorFields[k];
+				var mirrorNode = new UaNode(nodeToExport.nodeaddr + "." + mirrorField.suffix());
+				if (mirrorNode.exists())
+				{
+					var mirroringValue = '\"';
+					if (mirrorNode.value instanceof Array)
+					{
+						mirroringValue += '{';
+						for(var l = 0; l < mirrorNode.value.length; ++l)
+						{
+							mirroringValue += mirrorNode.value[l];
+							if (l < mirrorNode.value.length - 1)
+								mirroringValue += ',';
+						}
+						mirroringValue += '}';
+					}
+					else
+						mirroringValue += mirrorNode.value;
+					mirroringValue += '\"';
+					output.write(mirroringValue);
+					if (mirrorField.demandable)
+					{
+						var onDemandNode = new UaNode(mirrorNode.nodeaddr + ".OnDemand");
+						if (onDemandNode.exists())
+							onDemandValue = onDemandNode.value;
+					}
+				}
+			}
+
+			output.write(";");
+			if (onDemandValue != null)
+				output.write(onDemandValue);
+		}
+	}
+}]]></code>
+</script>

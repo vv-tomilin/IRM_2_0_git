@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.Tabletest.LoadingTo
+NodeClass: Variable
+BrowseName: 1:LoadingTo
+DisplayName: en|LoadingTo
+Description: en|LoadingTo
+DataType: Int16
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

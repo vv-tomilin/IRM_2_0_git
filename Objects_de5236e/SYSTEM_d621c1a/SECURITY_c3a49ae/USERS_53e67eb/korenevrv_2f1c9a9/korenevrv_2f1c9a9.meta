@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.SECURITY.USERS.korenevrv
+NodeClass: Object
+BrowseName: 1:korenevrv
+DisplayName: en|korenevrv
+Description: en|korenevrv
+EventNotifier: 0
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.User

@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="30" version="1.2" xmlns="http://www.w3.org/2000/svg" height="30" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <desc>This button increases the zoom level of the visualisation.</desc>
+ <defs>
+  <linearGradient id="linear_12" y1="0.0151344" x1="1.00116" y2="0.938184" gradientUnits="objectBoundingBox" x2="1.00116">
+   <stop offset="0" stop-color="#d2d2d6"/>
+   <stop offset="0.3318385650224215" stop-color="#ffffff"/>
+   <stop offset="0.3856502242152466" stop-color="#2c2c3c"/>
+   <stop offset="1" stop-color="#adadad"/>
+  </linearGradient>
+  <linearGradient id="linear_0" y1="0.0447761" x1="0.239739" y2="0.955818" gradientUnits="objectBoundingBox" x2="0.239739">
+   <stop offset="0" stop-color="#000000"/>
+   <stop offset="1" stop-color="#ffffff"/>
+  </linearGradient>
+  <linearGradient id="linear_2" y1="1" y2="-0.0183441" x1="1" x2="1" gradientUnits="objectBoundingBox">
+   <stop offset="0" stop-color="#ffffff" stop-opacity="0.2745098039215687"/>
+   <stop offset="0.5515695067264574" stop-color="#ffffff" stop-opacity="0"/>
+   <stop offset="0.7174887892376681" stop-color="#000000" stop-opacity="0"/>
+   <stop offset="1" stop-color="#000000" stop-opacity="0.4705882352941176"/>
+  </linearGradient>
+  <linearGradient id="linear_1" y1="1" x1="1.01755" y2="-0.136364" gradientUnits="objectBoundingBox" x2="1.0303">
+   <stop offset="0.6008771929824561" stop-color="#ffffff" stop-opacity="0"/>
+   <stop offset="1" stop-color="#ffffff"/>
+  </linearGradient>
+ </defs>
+ <title>Button Zoom-In</title>
+ <metadata>
+  <atv:gridconfig width="2" enabled="true" height="2" gridstyle="lines"/>
+  <atv:snapconfig width="2" enabled="true" height="2"/>
+  <atv:parameter desc="base" valuetype="address" behavior="hidden" name="base"/>
+  <atv:parameter desc="target frame name" valuetype="string" behavior="optional" name="frameName" defaultvalue="myframe"/>
+  <atv:parameter desc="symbol" config="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20" valuetype="display" substitute="$SYMBOL$" group="Appearance" behavior="optional" name="symbol" defaultvalue="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.zoom_in"/>
+  <atv:parameter desc="symbol pressed" config="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20" valuetype="display" substitute="$SYMBOLPRESSED$" group="Appearance" behavior="optional" name="symbolPressed" defaultvalue="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.zoom_in"/>
+  <atv:parameter desc="fill color" valuetype="color" substitute="$FILL$" group="Appearance" behavior="optional" name="fill" defaultvalue="#000000"/>
+  <atv:parameter desc="stroke color pressed" valuetype="color" group="Appearance" behavior="optional" name="strokePressed" defaultvalue="#FDFF0F"/>
+  <atv:parameter desc="symbol color" valuetype="color" group="Appearance" behavior="optional" name="symbolColor" defaultvalue="#ffffff"/>
+  <atv:parameter desc="symbol color pressed" valuetype="color" group="Appearance" behavior="optional" name="symbolColorPressed" defaultvalue="#FDFF0F"/>
+ </metadata>
+ <g id="button_clickarea">
+  <rect width="29.5" x="0.25" y="0.25" atv:bindtl="0,0" fill="url(#linear_12)" atv:dynamic="true" rx="3" height="29.5" ry="3" stroke="#646464" atv:bindbr="1,1" id="id_0" atv:refpx="15.093" stroke-width="0.5" atv:refpy="16.25"/>
+  <rect width="24.5" x="2.75" y="2.75" atv:bindtl="0,0" fill="url(#linear_0)" rx="3" height="24.5" ry="3" stroke="none" atv:bindbr="1,1" id="id_2" atv:refpx="15.904" stroke-width="0.5" atv:refpy="-91.25"/>
+  <rect width="22" x="4" y="4" atv:bindtl="0,0" fill="$FILL$" rx="3" height="22" ry="3" stroke="none" atv:bindbr="1,1" id="button_bg" atv:refpx="16.222" stroke-width="0.5" atv:refpy="35"/>
+  <svg width="20" x="5" visibility="hidden" y="5" atv:bindtl="0.5,0.5" height="20" atv:bindbr="0.5,0.5" xlink:href="$SYMBOLPRESSED$" id="button_symbol_pressed" atv:refpx="105" atv:refpy="25">
+   <atv:argument prefix="symbolColorPressed" name="symbolColor"/>
+  </svg>
+  <svg width="20" x="5" y="5" atv:bindtl="0.5,0.5" height="20" atv:bindbr="0.5,0.5" xlink:href="$SYMBOL$" id="button_symbol" atv:refpx="105" atv:refpy="25">
+   <atv:argument prefix="symbolColor" name="symbolColor"/>
+  </svg>
+  <rect width="22" x="4" y="4" atv:bindtl="0,0" fill="url(#linear_1)" rx="3" height="22" ry="3" stroke="none" atv:bindbr="1,1" id="button_stroke" atv:refpx="16.222" stroke-width="2" atv:refpy="35"/>
+ </g>
+ <script type="text/ecmascript"><![CDATA[var strokeNormal = "none";
+var strokePressed = webMI.query["strokePressed"];
+var display = webMI.query["display"];
+var active = true;
+var frameName = webMI.query["frameName"];
+
+function release() {
+	if (active) {
+		webMI.gfx.setFill("button_stroke", "url(#linear_1)");
+		webMI.gfx.setStroke("button_stroke", strokeNormal);
+		webMI.gfx.setStrokeWidth("button_stroke", "1");
+		webMI.gfx.setVisible("button_symbol", true);
+		webMI.gfx.setVisible("button_symbol_pressed", false);
+	}
+}
+
+webMI.addEvent("button_clickarea", "mousedown", function(e) {
+var id = "button_clickarea";
+var value = true;
+return function(value) {
+	if (active) {
+		webMI.gfx.setFill("button_stroke", "url(#linear_2)");
+		webMI.gfx.setStroke("button_stroke", strokePressed);
+		webMI.gfx.setStrokeWidth("button_stroke", "1");
+		webMI.gfx.setVisible("button_symbol", false);
+		webMI.gfx.setVisible("button_symbol_pressed", true);
+	}
+} (value);
+});
+
+webMI.addEvent("button_clickarea", "mouseup", function(e) {
+var id = "button_clickarea";
+var value = true;
+return function(value) {
+	release();
+} (value);
+});
+
+webMI.addEvent("button_clickarea", "mouseout", function(e) {
+var id = "button_clickarea";
+var value = true;
+return function(value) {
+	release();
+} (value);
+});
+
+
+webMI.addEvent("button_clickarea", "click", function(e) {
+	var id = "button_clickarea";
+	var value = true;
+	return function(value) {
+		webMI.trigger.fire("com.atvise.zoomIn_" + frameName, true);
+	} (value);
+});
+
+webMI.addEvent("button_clickarea", "dragstart", function(e) {
+	if (e.preventDefault) {
+		e.preventDefault();
+	}
+});
+]]></script>
+</svg>

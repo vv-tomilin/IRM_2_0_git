@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Шайба
+NodeClass: ObjectType
+BrowseName: 1:Шайба
+DisplayName: en|Шайба
+Description: en|Шайба
+IsAbstract: false

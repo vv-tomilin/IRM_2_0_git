@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="60" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext" version="1.2" xmlns="http://www.w3.org/2000/svg" height="60">
+ <defs/>
+ <metadata>
+  <atv:parameter desc="symbol color" defaultvalue="#000000" name="symbolColor" substitute="$SYMBOLCOLOR$" valuetype="color" behavior="optional"/>
+  <atv:gridconfig width="2" height="2" gridstyle="lines" enabled="true"/>
+  <atv:snapconfig width="1" height="1" enabled="false"/>
+ </metadata>
+ <circle cx="30" stroke-width="1.461" atv:refpy="33.72" fill="none" cy="33.72" stroke="$SYMBOLCOLOR$" id="id_0" atv:refpx="15.518" r="21.789"/>
+ <circle cx="30" stroke-width="1.461" atv:refpy="38.303" fill="$SYMBOLCOLOR$" cy="33.72" stroke="none" id="id_1" atv:refpx="30" r="5.447"/>
+ <path stroke-width="1.461" atv:refpy="-12.083" fill="$SYMBOLCOLOR$" stroke="none" id="id_2" atv:refpx="30" d="M27.276,11.932L27.276,9.207C27.276,9.207 27.276,6.484 24.552,6.484C21.829,6.481 21.829,6.484 21.829,6.484C21.829,6.484 21.829,3.76 21.829,3.76C21.829,3.76 38.17,3.76 38.17,3.76C38.17,3.76 38.17,6.484 38.17,6.484C38.17,6.484 35.446,6.484 35.446,6.484C35.446,6.484 32.723,6.484 32.723,9.207C32.723,11.932 32.723,11.932 32.723,11.932C32.723,11.932 27.276,11.932 27.276,11.932"/>
+ <ellipse cx="46.097" stroke-width="1.461" rx="5.447" atv:refpy="14.29" fill="$SYMBOLCOLOR$" cy="-10.115" stroke="none" id="id_4" transform="matrix(0.866,0.5,-0.5,0.866,0,0)" ry="2.723" atv:refpx="63.909"/>
+ <ellipse cx="5.862" stroke-width="1.461" rx="5.447" atv:refpy="14.291" fill="$SYMBOLCOLOR$" cy="-19.886" stroke="none" id="id_6" transform="matrix(0.866,-0.5,-0.5,-0.866,0,0)" ry="2.723" atv:refpx="3.992"/>
+ <rect width="1.73" stroke-width="0.731" atv:refpy="17.55" y="16.534" height="16.341" fill="$SYMBOLCOLOR$" stroke="none" id="id_10" x="29.137" atv:refpx="30"/>
+</svg>

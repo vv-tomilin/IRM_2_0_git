@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.SignalControl.ConfirmationWindow
+NodeClass: Variable
+BrowseName: 1:ConfirmationWindow
+DisplayName: en|ConfirmationWindow
+Description: en|ConfirmationWindow
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

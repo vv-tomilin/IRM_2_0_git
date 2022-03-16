@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AutoInformer.Modes.FreqTDS
+NodeClass: Variable
+BrowseName: 1:FreqTDS
+DisplayName: en|FreqTDS
+Description: en|FreqTDS
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

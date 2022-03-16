@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.AutoHistory.getToolPos
+NodeClass: Variable
+BrowseName: 1:getToolPos
+DisplayName: en|getToolPos
+Description: en|getToolPos
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

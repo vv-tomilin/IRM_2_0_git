@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.table.date.pickedDate
+NodeClass: Variable
+BrowseName: 1:pickedDate
+DisplayName: en|pickedDate
+Description: en|pickedDate
+DataType: DateTime
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

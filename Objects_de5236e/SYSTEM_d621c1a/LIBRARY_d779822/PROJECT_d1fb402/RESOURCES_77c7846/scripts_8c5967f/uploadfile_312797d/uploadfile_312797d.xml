@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="request" type="http.request" trigger="false" relative="false" value=""/>
+  <parameter name="response" type="http.response" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var objToWrite = request.postvalues;
+var fileData = decodeURI(objToWrite.data);
+
+var uid = objToWrite.uid;
+var originalFilePath = objToWrite.path;
+var filePath = objToWrite.path;
+var filePath = filePath + uid;
+var isLastChunk = objToWrite.lastchunk === "true" ? true : false;
+var arrFilePath = filePath.split("\\");
+
+var fs = new FileSystem();
+
+//Check if Path exists, if not create Path
+var directoryPath = "";
+for(var i=0; i<arrFilePath.length-1; i++){
+	if(i==0)directoryPath = arrFilePath[i];
+	if(i!=0)directoryPath = directoryPath + "\\" + arrFilePath[i];
+	if(!fs.isDirectory(arrFilePath[i])){
+		fs.createDirectory(directoryPath);//add directory if it doesn't exist
+	}
+}
+
+//Check if Files exists, if not create File
+if(!fs.isFile(filePath)) {
+	console.log("create file path " + filePath);
+	fs.createFile(filePath);
+} else {
+	console.log("file path " + filePath + " exists already");
+}
+
+var writeMode = "";
+
+if (objToWrite.index === "0") {
+	writeMode = "output";
+} else {
+	writeMode = "append";
+}
+
+// Write to File
+var ofs = new OutputFileStream(filePath, 'binary', writeMode);
+ofs.open();
+ofs.write(fileData);
+ofs.close();
+
+if (isLastChunk) {
+	response.write(originalFilePath + " Сохранен " + fileData.length + "kB");
+	fs.move(filePath, originalFilePath); // Remove uid from filename
+} else {
+	response.write(filePath + " Chunk saved");
+}]]></code>
+</script>

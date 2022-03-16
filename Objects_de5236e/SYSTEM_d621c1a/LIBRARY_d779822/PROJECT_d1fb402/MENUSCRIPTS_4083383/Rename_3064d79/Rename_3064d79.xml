@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="nodes" type="array" trigger="true" relative="false" value=""/>
+  <parameter name="newName" type="string" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var tmpAdd = nodes[0];
+var orgDisplay = new UaNode(tmpAdd);
+var orgDispValue = orgDisplay.value;
+
+
+var tmp = new UaNode(tmpAdd.substr(0, tmpAdd.lastIndexOf(".")) + "." + newName);
+tmp.create({
+	nodeclass:UaNode.NODECLASS_VARIABLE,
+	parent: tmpAdd.substr(0, tmpAdd.lastIndexOf(".")),
+	typedefinition: "VariableTypes.ATVISE.Display",
+	reference:UaNode.HASCOMPONENT,
+	datatype:UaNode.XMLELEMENT,
+	valuerank:UaNode.VALUERANK_SCALAR,
+	value: orgDispValue
+});
+
+orgDisplay.remove();]]></code>
+</script>

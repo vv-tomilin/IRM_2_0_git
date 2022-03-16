@@ -1,0 +1,533 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" version="1.2" height="300">
+ <defs>
+  <linearGradient x2="0" gradientUnits="objectBoundingBox" id="linear_2" y2="1.07843" y1="0" x1="0">
+   <stop offset="0" stop-color="#818181"/>
+   <stop offset="0.8475336322869955" stop-color="#464646"/>
+   <stop offset="0.9372197309417041" stop-color="#000000"/>
+  </linearGradient>
+ </defs>
+ <desc>Small display variant</desc>
+ <title>Configuration - X-Axis</title>
+ <metadata>
+  <atv:parameter name="fontColor" valuetype="global" desc="font color" defaultvalue="SYSTEM.GLOBALS.atvFontColor" substitute="$FONTCOLOR$" behavior="optional"/>
+  <atv:parameter name="fillColor" valuetype="global" desc="fill color" defaultvalue="SYSTEM.GLOBALS.atvFillColor" substitute="$FILLCOLOR$" behavior="optional"/>
+  <atv:gridconfig width="20" enabled="true" height="20" gridstyle="lines"/>
+  <atv:snapconfig width="5" enabled="true" height="5"/>
+ </metadata>
+ <rect x="0" fill="$FILLCOLOR$" ry="0" y="0" atv:refpy="0" stroke-width="0" width="180" atv:refpx="90" id="filters_bg" stroke="#000000" rx="0" height="300"/>
+ <line x2="530" atv:refpy="155" stroke-width="0.5" atv:refpx="510" id="id_0" y2="295" y1="15" stroke="#d7d7d7" x1="530"/>
+ <text x="24.5" font-weight="bold" font-family="Arial" fill="$FONTCOLOR$" y="36" atv:refpy="31.5" atv:refpx="83.548" id="id_2" font-size="12">T{X-Axis to configure}:</text>
+ <text x="200.5" font-weight="bold" font-family="Arial" fill="$FONTCOLOR$" y="36" atv:refpy="31.5" atv:refpx="257.212" id="id_1" font-size="12">T{Axis configuration}:</text>
+ <text x="544.5" font-weight="bold" font-family="Arial" fill="$FONTCOLOR$" y="36" atv:refpy="31.5" atv:refpx="570.84" id="id_3" font-size="12">T{Styling}:</text>
+ <text x="301.5" text-anchor="end" font-family="Arial" fill="$FONTCOLOR$" y="76" atv:refpy="71.5" atv:refpx="277.5" id="id_7" font-size="12">T{Label}:</text>
+ <text x="300.281" text-anchor="end" font-family="Arial" fill="$FONTCOLOR$" y="125" atv:refpy="120.5" atv:refpx="230.281" id="id_8" font-size="12">T{Time span}:</text>
+ <text x="301.281" text-anchor="end" font-family="Arial" fill="$FONTCOLOR$" y="159" atv:refpy="154.5" atv:refpx="245.281" id="id_9" font-size="12">T{Date/Time format}:</text>
+ <text x="300.39" text-anchor="end" font-family="Arial" fill="$FONTCOLOR$" y="208" atv:refpy="203.5" atv:refpx="245.39" id="id_10" font-size="12">T{Major tick interval}:</text>
+ <text x="300.39" text-anchor="end" font-family="Arial" fill="$FONTCOLOR$" y="242" atv:refpy="237.5" atv:refpx="245.39" id="id_11" font-size="12">T{Minor tick interval}:</text>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.in_out_value" x="292.304" y="55" atv:refpy="70" width="160" transform="matrix(1.1187,0,0,1,0,0)" atv:refpx="414.516" id="xAxis_title_text" height="30">
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="21" name="tabIndex"/>
+  <atv:overwrite x="171.047" transform="matrix(0.8939,0,0,1,0,0)" id="input_label"/>
+  <atv:overwrite transform="matrix(0.8939,0,0,1,0,0)" width="170.992" id="blinking_frame"/>
+  <atv:overwrite transform="matrix(0.8939,0,0,1,0,0)" width="174.992" id="focus_frame"/>
+  <atv:overwrite transform="matrix(0.8939,0,0,1,0,0)" width="170.992" id="input_bg"/>
+  <atv:overwrite transform="matrix(0.8939,0,0,1,0,0)" width="176.992" id="id_1"/>
+  <atv:overwrite transform="matrix(0.8939,0,0,1,0,0)" width="178.992" id="id_0"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.in_out_value" x="291.118" y="140" atv:refpy="210" width="160" transform="matrix(1.1194,0,0,1,0,0)" atv:refpx="450.445" id="xAxis_labels_format" height="30">
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="23" name="tabIndex"/>
+  <atv:overwrite x="171.159" transform="matrix(0.8933,0,0,1,0,0)" id="input_label"/>
+  <atv:overwrite transform="matrix(0.8933,0,0,1,0,0)" width="171.104" id="blinking_frame"/>
+  <atv:overwrite transform="matrix(0.8933,0,0,1,0,0)" width="175.104" id="focus_frame"/>
+  <atv:overwrite transform="matrix(0.8933,0,0,1,0,0)" width="171.104" id="input_bg"/>
+  <atv:overwrite transform="matrix(0.8933,0,0,1,0,0)" width="177.104" id="id_1"/>
+  <atv:overwrite transform="matrix(0.8933,0,0,1,0,0)" width="179.104" id="id_0"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" x="884.081" y="105" atv:refpy="175" width="160" transform="matrix(0.3688,0,0,1,0,0)" atv:refpx="390.131" id="xAxis_timeSpan" height="30">
+  <atv:argument value="22" name="tabIndex"/>
+  <atv:argument value="1" name="min"/>
+  <atv:overwrite transform="matrix(2.7115,0,0,1,0,0)" width="55.008" id="focus_frame"/>
+  <atv:overwrite transform="matrix(2.7115,0,0,1,-273.8395,0)" id="clickarea_dec"/>
+  <atv:overwrite transform="matrix(2.7115,0,0,1,-273.8395,0)" id="clickarea_inc"/>
+  <atv:overwrite x="24.508" transform="matrix(2.7115,0,0,1,0,0)" id="input_label"/>
+  <atv:overwrite transform="matrix(2.7115,0,0,1,0,0)" width="27.008" id="blinking_frame"/>
+  <atv:overwrite transform="matrix(2.7115,0,0,1,0,0)" width="27.008" id="input_bg"/>
+  <atv:overwrite transform="matrix(2.7115,0,0,1,0,0)" width="57.008" id="id_0"/>
+  <atv:overwrite transform="matrix(2.7115,0,0,1,0,0)" width="59.008" id="id_2"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.rocker_switch_horizontal" x="291.118" y="188" atv:refpy="258" width="160" transform="matrix(1.1194,0,0,1,0,0)" atv:refpx="450.445" id="xAxis_tickInterval" height="30">
+  <atv:argument value="24" name="tabIndex"/>
+  <atv:argument value="0" name="min"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.rocker_switch_horizontal" x="291.118" y="223" atv:refpy="293" width="160" transform="matrix(1.1194,0,0,1,0,0)" atv:refpx="450.445" id="xAxis_minorTickInterval" height="30">
+  <atv:argument value="25" name="tabIndex"/>
+  <atv:argument value="0" name="min"/>
+ </svg>
+ <text x="661.5" text-anchor="end" font-family="Arial" fill="$FONTCOLOR$" y="74" atv:refpy="69.5" atv:refpx="607" id="id_23" font-size="12">T{Position of x-axis}:</text>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.radiobutton" x="680" y="55" atv:refpy="70" width="160" atv:refpx="730" id="xAxis_opposite-false" height="30">
+  <atv:argument value="xAxis_opposite" name="radiogroupId"/>
+  <atv:argument value="T{bottom}" name="label"/>
+  <atv:argument value="false" name="value"/>
+  <atv:argument value="51" name="tabIndex"/>
+  <atv:overwrite transform="matrix(1.6,0,0,1,0,0)" id="radiobutton_bg2"/>
+  <atv:overwrite width="68" transform="matrix(1.6,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="99.5" transform="matrix(1.6,0,0,1,0,0)" id="id_0"/>
+  <atv:overwrite width="66" id="radiobutton_bg"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.radiobutton" x="680" y="90" atv:refpy="105" width="160" atv:refpx="730" id="xAxis_opposite-true" height="30">
+  <atv:argument value="xAxis_opposite" name="radiogroupId"/>
+  <atv:argument value="T{top}" name="label"/>
+  <atv:argument value="true" name="value"/>
+  <atv:argument value="52" name="tabIndex"/>
+  <atv:overwrite transform="matrix(1.6,0,0,1,0,0)" id="radiobutton_bg2"/>
+  <atv:overwrite width="68" transform="matrix(1.6,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="99.5" transform="matrix(1.6,0,0,1,0,0)" id="id_0"/>
+  <atv:overwrite width="66" id="radiobutton_bg"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.radiobutton" x="679" y="135" atv:refpy="150" width="160" atv:refpx="729" id="xAxis_labels_align-left" height="30">
+  <atv:argument value="xAxis_labels_align" name="radiogroupId"/>
+  <atv:argument value="T{left}" name="label"/>
+  <atv:argument value="left" name="value"/>
+  <atv:argument value="53" name="tabIndex"/>
+  <atv:overwrite transform="matrix(1.6,0,0,1,0,0)" id="radiobutton_bg2"/>
+  <atv:overwrite width="68" transform="matrix(1.6,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="99.5" transform="matrix(1.6,0,0,1,0,0)" id="id_0"/>
+  <atv:overwrite width="66" id="radiobutton_bg"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.radiobutton" x="679" y="170" atv:refpy="185" width="160" atv:refpx="729" id="xAxis_labels_align-center" height="30">
+  <atv:argument value="xAxis_labels_align" name="radiogroupId"/>
+  <atv:argument value="T{center}" name="label"/>
+  <atv:argument value="center" name="value"/>
+  <atv:argument value="54" name="tabIndex"/>
+  <atv:overwrite transform="matrix(1.6,0,0,1,0,0)" id="radiobutton_bg2"/>
+  <atv:overwrite width="68" transform="matrix(1.6,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="99.5" transform="matrix(1.6,0,0,1,0,0)" id="id_0"/>
+  <atv:overwrite width="66" id="radiobutton_bg"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.radiobutton" x="679" y="205" atv:refpy="220" width="160" atv:refpx="729" id="xAxis_labels_align-right" height="30">
+  <atv:argument value="xAxis_labels_align" name="radiogroupId"/>
+  <atv:argument value="T{right}" name="label"/>
+  <atv:argument value="right" name="value"/>
+  <atv:argument value="55" name="tabIndex"/>
+  <atv:overwrite transform="matrix(1.6,0,0,1,0,0)" id="radiobutton_bg2"/>
+  <atv:overwrite width="68" transform="matrix(1.6,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="99.5" transform="matrix(1.6,0,0,1,0,0)" id="id_0"/>
+  <atv:overwrite width="66" id="radiobutton_bg"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.radiobutton" x="20" y="90" atv:refpy="105" width="160" transform="" atv:refpx="90.5" id="axisSelector0" height="30">
+  <atv:argument value="T{X-Axis}" name="label"/>
+  <atv:argument value="0" name="value"/>
+  <atv:argument value="10" name="tabIndex"/>
+  <atv:argument value="g0" name="radiogroupId"/>
+  <atv:argument value="true" name="preselected"/>
+  <atv:overwrite transform="matrix(1.151,0,0,1,0,0)" id="radiobutton_bg2"/>
+  <atv:overwrite width="107.008" transform="matrix(1.151,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="138.508" transform="matrix(1.151,0,0,1,0,0)" id="id_0"/>
+  <atv:overwrite width="105.008" id="radiobutton_bg"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.radiobutton" x="20" visibility="hidden" y="160" atv:refpy="175" width="160" transform="" atv:refpx="90" id="axisSelector2" height="30">
+  <atv:argument value="T{X-Axis}" name="label"/>
+  <atv:argument value="g0" name="radiogroupId"/>
+  <atv:argument value="2" name="value"/>
+  <atv:argument value="12" name="tabIndex"/>
+  <atv:overwrite transform="matrix(1.1429,0,0,1,0,0)" id="radiobutton_bg2"/>
+  <atv:overwrite width="108" transform="matrix(1.1429,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="139.5" transform="matrix(1.1429,0,0,1,0,0)" id="id_0"/>
+  <atv:overwrite width="106" id="radiobutton_bg"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.radiobutton" x="20" visibility="hidden" y="195" atv:refpy="210" width="160" transform="" atv:refpx="90" id="axisSelector3" height="30">
+  <atv:argument value="T{X-Axis}" name="label"/>
+  <atv:argument value="g0" name="radiogroupId"/>
+  <atv:argument value="3" name="value"/>
+  <atv:argument value="13" name="tabIndex"/>
+  <atv:overwrite transform="matrix(1.1429,0,0,1,0,0)" id="radiobutton_bg2"/>
+  <atv:overwrite width="108" transform="matrix(1.1429,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="139.5" transform="matrix(1.1429,0,0,1,0,0)" id="id_0"/>
+  <atv:overwrite width="106" id="radiobutton_bg"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.radiobutton" x="20" visibility="hidden" y="125" atv:refpy="140" width="160" transform="" atv:refpx="90" id="axisSelector1" height="30">
+  <atv:argument value="T{X-Axis}" name="label"/>
+  <atv:argument value="g0" name="radiogroupId"/>
+  <atv:argument value="1" name="value"/>
+  <atv:argument value="11" name="tabIndex"/>
+  <atv:overwrite transform="matrix(1.1429,0,0,1,0,0)" id="radiobutton_bg2"/>
+  <atv:overwrite width="108" transform="matrix(1.1429,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="139.5" transform="matrix(1.1429,0,0,1,0,0)" id="id_0"/>
+  <atv:overwrite width="106" id="radiobutton_bg"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" x="11.429" y="55" atv:refpy="70" width="80" transform="matrix(1.75,0,0,1,0,0)" atv:refpx="90.001" id="btn_add" height="30">
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.plus" name="symbol"/>
+  <atv:argument value="T{Add}" name="label"/>
+  <atv:argument value="1" name="tabIndex"/>
+  <atv:overwrite width="134.5" transform="matrix(0.5714,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="139.5" transform="matrix(0.5714,0,0,1,0,0)" id="id_0"/>
+  <atv:argument value="#ffffff" name="extraBorderColor"/>
+  <atv:overwrite transform="matrix(0.5714,0,0,1,0,0)" width="138" id="id_6"/>
+  <atv:overwrite x="60" transform="matrix(0.5714,0,0,1,0,0)" id="button_symbol"/>
+  <atv:overwrite x="70" transform="matrix(0.5714,0,0,1,0,0)" id="button_label"/>
+  <atv:overwrite transform="matrix(0.5714,0,0,1,0,0)" width="136" id="button_stroke"/>
+  <atv:overwrite transform="matrix(0.5714,0,0,1,0,0)" width="138" id="button_bg"/>
+  <atv:overwrite transform="matrix(0.5714,0,0,1,0,0)" width="140" id="outer_frame"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" x="11.429" y="258" atv:refpy="275" width="80" transform="matrix(1.75,0,0,1,0,0)" atv:refpx="90" id="btn_delete" height="30">
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.plus" name="symbol"/>
+  <atv:argument value="T{Delete selected}" name="label"/>
+  <atv:argument value="20" name="tabIndex"/>
+  <atv:overwrite width="134.5" transform="matrix(0.5714,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="139.5" transform="matrix(0.5714,0,0,1,0,0)" id="id_0"/>
+  <atv:argument value="#ffffff" name="extraBorderColor"/>
+  <atv:overwrite transform="matrix(0.5714,0,0,1,0,0)" width="138" id="id_6"/>
+  <atv:overwrite x="60" transform="matrix(0.5714,0,0,1,0,0)" id="button_symbol"/>
+  <atv:overwrite x="70" transform="matrix(0.5714,0,0,1,0,0)" id="button_label"/>
+  <atv:overwrite transform="matrix(0.5714,0,0,1,0,0)" width="136" id="button_stroke"/>
+  <atv:overwrite transform="matrix(0.5714,0,0,1,0,0)" width="138" id="button_bg"/>
+  <atv:overwrite transform="matrix(0.5714,0,0,1,0,0)" width="140" id="outer_frame"/>
+ </svg>
+ <!--
+ <svg id="xAxis_max" width="160" transform="matrix(1.1187,0,0,1,0,0)" atv:refpy="140" height="30" atv:refpx="449.381" x="322.682" y="139" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_date">
+  <atv:argument value="xAxis_max" name="name"/>
+  <atv:overwrite id="button_stroke" transform="matrix(0.8939,0,0,1,0,0)" x="154.5"/>
+  <atv:overwrite id="id_1" transform="matrix(0.8045,0,0,0.9,0,0)" x="172.778"/>
+  <atv:overwrite id="button_bg" transform="matrix(0.8939,0,0,1,0,0)" x="154.5"/>
+  <atv:overwrite id="datepicker_label" transform="matrix(0.8939,0,0,1,0,0)" x="144.5"/>
+  <atv:overwrite id="focus_frame" width="175" transform="matrix(0.8939,0,0,1,0,0)"/>
+  <atv:overwrite id="blinking_frame" width="147" transform="matrix(0.8939,0,0,1,0,0)"/>
+  <atv:overwrite id="input_bg" width="147" transform="matrix(0.8939,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="179" transform="matrix(0.8939,0,0,1,0,0)"/>
+ </svg>
+ <svg id="xAxis_min" width="160" transform="matrix(1.1187,0,0,1,0,0)" atv:refpy="105" height="30" atv:refpx="449.381" x="322.682" y="104" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_date">
+  <atv:argument value="xAxis_min" name="name"/>
+  <atv:overwrite id="button_stroke" transform="matrix(0.8939,0,0,1,0,0)" x="154.5"/>
+  <atv:overwrite id="id_1" transform="matrix(0.8045,0,0,0.9,0,0)" x="172.778"/>
+  <atv:overwrite id="button_bg" transform="matrix(0.8939,0,0,1,0,0)" x="154.5"/>
+  <atv:overwrite id="datepicker_label" transform="matrix(0.8939,0,0,1,0,0)" x="144.5"/>
+  <atv:overwrite id="focus_frame" width="175" transform="matrix(0.8939,0,0,1,0,0)"/>
+  <atv:overwrite id="blinking_frame" width="147" transform="matrix(0.8939,0,0,1,0,0)"/>
+  <atv:overwrite id="input_bg" width="147" transform="matrix(0.8939,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="179" transform="matrix(0.8939,0,0,1,0,0)"/>
+ </svg>
+ <text id="id_14" font-size="12" fill="$FONTCOLOR$" atv:refpy="153.5" atv:refpx="302.172" font-family="Arial" x="335.172" y="158" text-anchor="end">T{End time}:</text>
+ <text id="id_15" font-size="12" fill="$FONTCOLOR$" atv:refpy="119.5" atv:refpx="300.672" font-family="Arial" x="335.172" y="124" text-anchor="end">T{Start time}:</text>
+ -->
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.combobox" x="574.791" y="105" atv:refpy="198.973" width="160" transform="matrix(0.6873,0,0,1,0,0)" atv:refpx="498.723" id="xAxis_timeSpanUnit" height="30">
+  <atv:argument value="MS Trebuchet,ITC Avant Garde Gothic,MS Arial,MS Verdana,Univers,Futura,ITC Stone Sans,Gill Sans,Akzidenz Grotesk,Helvetica,sans-serif" name="fontFamily"/>
+  <atv:argument value="23" name="tabIndex"/>
+  <atv:overwrite x="81.742" transform="matrix(1.4954,0,0,1,0,0)" id="id_3"/>
+  <atv:overwrite x="79.492" id="id_5"/>
+  <atv:overwrite id="id_2"/>
+  <atv:overwrite width="106.492" transform="matrix(1.4954,0,0,1,0,0)" id="combobox_stroke"/>
+  <atv:overwrite transform="matrix(1.455,0,0,1,0,0)" width="105.968" id="focus_frame"/>
+  <atv:overwrite x="84.968" transform="matrix(1.455,0,0,1,0,0)" id="button_stroke"/>
+  <atv:overwrite x="84.968" transform="matrix(1.455,0,0,1,0,0)" id="id_7"/>
+  <atv:overwrite x="84.968" transform="matrix(1.455,0,0,1,0,0)" id="button_bg"/>
+  <atv:overwrite x="75.468" transform="matrix(1.455,0,0,1,0,0)" id="combobox_label"/>
+  <atv:overwrite transform="matrix(1.455,0,0,1,0,0)" width="77.968" id="blinking_frame"/>
+  <atv:overwrite transform="matrix(1.455,0,0,1,0,0)" width="77.968" id="combobox_bg"/>
+  <atv:overwrite transform="matrix(1.455,0,0,1,0,0)" width="107.968" id="id_1"/>
+  <atv:overwrite transform="matrix(1.455,0,0,1,0,0)" width="109.968" id="id_0"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[var inputDefaults = {
+	"xAxis_title_text": "T{X-Axis}",
+	"xAxis_min": 0,
+	"xAxis_max": 0,
+	"xAxis_timeSpan": 60,
+	"xAxis_timeSpanUnit": "1",
+	//"xAxis_dateTimeLabelFormats": '{"millisecond": "%H:%M:%S.%L", "second": "%H:%M:%S", "minute": "%H:%M", "hour": "%H:%M", "day": "%e. %b", "week": "%e. %b", "month": "%b \'%y", "year": "%Y"}',
+	"xAxis_tickInterval": 10000,
+	"xAxis_minorTickInterval": 10000,
+	"xAxis_crosshair_width": 0,
+	"xAxis_crosshair_snap": true,
+	"xAxis_opposite-true": "T{top}",
+	"xAxis_opposite-false": "T{bottom}",
+	"xAxis_labels_align-left": "T{left}",
+	"xAxis_labels_align-right": "T{right}",
+	"xAxis_labels_align-center": "T{center}",
+	"xAxis_labels_format": "{value:%H:%M:%S}",
+	"xAxis_lineColor": "#000000",
+	"xAxis_crosshair_color": "#FF0000",
+	"xAxis_gridLineColor": "#888888",
+	"xAxis_minorGridLineColor": "#EEEEEE",
+	"xAxis_gridLineWidth": 1,
+	"xAxis_minorGridLineWidth": 1,
+	"xAxis_crosshair_dashStyle-Dash": "T{dashed}",
+	"xAxis_crosshair_dashStyle-Dot": "T{dotted}",
+	"xAxis_crosshair_dashStyle-Solid": "T{solid}"
+};
+
+var timeSpanUnits = [
+	{text: "T{second(s)}", value: "1"},
+	{text: "T{minute(s)}", value: "60"},
+	{text: "T{hour(s)}", value: "3600"},
+	{text: "T{day(s)}", value: "86400"},
+	{text: "T{week(s)}", value: "604800"},
+	{text: "T{month(s)}", value: "2592000"},
+];
+webMI.trigger.fire("setItems", timeSpanUnits, "xAxis_timeSpanUnit");
+
+var numAxis = 4;
+var activeAxis = 0;
+var xAxis = [];
+var triggerEnabled = true;
+var updateEnabled = true;
+
+var chartname = webMI.query.chartname;
+var chart = webMI.trendFactory.getTrendByName(chartname);
+var options = chart.chart.options;
+var configHandler = new webMI.rootWindow.ConfigHandler;
+
+//Deactivated multiple x-axis feature
+webMI.trigger.fire("com.atvise.setActive", false, "btn_add");
+webMI.trigger.fire("com.atvise.setActive", false, "btn_delete");
+
+var errors = [];
+errors[1] = "More then "+ numAxis + " x-axis are not supported."
+errors[2] = "More then "+ numAxis + " x-axis are found in configuration."
+
+//Axis functions
+function addAxis(options) {
+	if (xAxis.length > numAxis) {
+		console.warn(errors[1]);
+		return;
+	}
+
+	if (typeof options == "undefined")
+		options = {};
+
+	chart.chart.addAxis(options, true);
+
+	updateEnabled = false;
+	chart.control.updated(function() {
+		updateEnabled = true;
+	});
+
+	activeAxis = xAxis.length;
+	webMI.trigger.fire("radioClicked_g0", {name: webMI.gfx.getText("axisSelector" + activeAxis + "_radiobutton_label"), value: activeAxis} );
+}
+
+function removeAxis() {
+	if (xAxis.length == 1)
+		return;
+
+	if (options.xAxis[activeAxis]) {
+		var index = options.xAxis[activeAxis].index;
+		chart.chart.xAxis[index].remove();
+
+		updateEnabled = false;
+		chart.control.updated(function() {
+			updateEnabled = true;
+		});
+	}
+
+	--activeAxis;
+	webMI.trigger.fire("radioClicked_g0", {name: webMI.gfx.getText("axisSelector" + activeAxis + "_radiobutton_label"), value: activeAxis} );
+}
+
+function axisManager(xAxis) {
+	//Deactivated multiple x-axis feature
+	/*for (var i = 0; i < 6; i++) {
+		if (typeof xAxis[i] != "undefined")
+			webMI.gfx.setVisible("axisSelector" + i, true);
+		else
+			webMI.gfx.setVisible("axisSelector" + i, false);
+	}*/
+
+	for (var i = 0; i < xAxis.length; i++) {
+		if (i < numAxis) {
+			var name = (xAxis[i] != "") ? xAxis[i] : "T{X-Axis}";
+			webMI.gfx.setText("axisSelector" + i + "_radiobutton_label", name + " [" + i + "]");
+		} else {
+			console.warn(errors[2]);
+		}
+	}
+}
+
+//Read options
+function readOptions() {
+	triggerEnabled = false;
+
+	/*
+	var liveMode = chart.chart.options.atviseOptions.mode != "history";
+	webMI.trigger.fire("com.atvise.setActive", liveMode, "xAxis_timeSpan");
+	webMI.trigger.fire("com.atvise.setActive", liveMode, "xAxis_timeSpanUnit");
+	webMI.trigger.fire("com.atvise.setActive", !liveMode, "xAxis_min");
+	webMI.trigger.fire("com.atvise.setActive", !liveMode, "xAxis_max");
+	*/
+
+	var mappedOptions = configHandler.mapToAtviseId(options);
+	xAxis = [];
+
+	//Search configured x-axis
+	var i = 0;
+	while (typeof options.xAxis[i] != "undefined") {
+		if (options.xAxis[i]["title"] && options.xAxis[i]["title"]["text"])
+			xAxis.push(options.xAxis[i]["title"]["text"]);
+		else
+			xAxis.push("");
+		i++;
+	}
+
+	var extremes = chart.chart.xAxis[activeAxis].getExtremes();
+
+	//Set values for current active axis
+	for (var key in inputDefaults) {
+		var value = inputDefaults[key];
+
+		//build radio button group key
+		var isRadio = false;
+		var keyValue = key.split("-");
+		if (keyValue.length == 2) {
+			isRadio = true;
+			key = keyValue[0];
+			keyValue = keyValue[1];
+		}
+
+		var optionsKey = "xAxis" + activeAxis + "_" + key;
+
+		if (isRadio) {
+			if (typeof mappedOptions[optionsKey] != "undefined")
+				value = inputDefaults[key + "-" + mappedOptions[optionsKey]];
+			else
+				setOptions(key, keyValue, activeAxis);
+			webMI.trigger.fire("radioClicked_" + key, {name: value});
+			continue;
+		}
+
+		if (key == "xAxis_dateTimeLabelFormats")
+			mappedOptions[optionsKey] = JSON.stringify(options.xAxis[activeAxis]["dateTimeLabelFormats"]);
+
+		if (typeof mappedOptions[optionsKey] != "undefined")
+			value = mappedOptions[optionsKey];
+		else if (key != "xAxis_min" && key != "xAxis_max")
+			setOptions(key, value, activeAxis);
+
+		if (key == "xAxis_min")
+			webMI.trigger.fire("com.atvise.datepicker_" + key, extremes.min);
+		else if (key == "xAxis_max")
+			webMI.trigger.fire("com.atvise.datepicker_" + key, extremes.max);
+		else if (key == "xAxis_crosshair_width" || key == "xAxis_crosshair_snap")
+			webMI.trigger.fire("setChecked", value, key);
+		else if (key.search(/color/ig) > -1)
+			webMI.trigger.fire("valuechanged_" + key, {hex: value})
+		else if(key == "xAxis_timeSpanUnit") {
+    		// new highchart init with empty value
+		    if(typeof value == "undefined" || value == "")
+				value = 1;
+			var type = 0;
+			while (value != timeSpanUnits[type].value)
+				type++;
+			webMI.trigger.fire("setSelectedItem", timeSpanUnits[type].text, key)
+		}
+		else
+			webMI.trigger.fire("setValue", value, key);
+	}
+
+	axisManager(xAxis);
+	triggerEnabled = true;
+}
+
+//Write options
+function setOptions(key, value, identifier) {
+	if (value == "true") value = true;
+	else if (value == "false") value = false;
+
+	if (key == "xAxis_dateTimeLabelFormats") {
+		try {
+			value = JSON.parse(value);
+		} catch(ex) { console.warn("date / time format error: " + ex) };
+	}
+
+	if (options.xAxis[identifier]) {
+		var optionsObj = configHandler.createConfigObject(key.slice(6, key.length), value);
+		var index = options.xAxis[identifier].index;
+		chart.chart.xAxis[index].update(optionsObj);
+
+		var extremes = chart.chart.xAxis[activeAxis].getExtremes();
+		if (key == "xAxis_min")
+			chart.chart.xAxis[activeAxis].setExtremes(value, extremes.max);
+		else if (key == "xAxis_max") {
+			chart.chart.xAxis[activeAxis].setExtremes(extremes.min, value);
+		} else if (key == "xAxis_timeSpan" || key == "xAxis_timeSpanUnit") {
+			if(chart.chart["_downsamplingEnabled"]) {
+				chart.control.stopLiveMode(function() {
+					updateTimeSpan();
+					chart.control.startLiveMode();
+				});
+			} else {
+				updateTimeSpan();
+			}
+			function updateTimeSpan() {
+				var min = extremes.max - options.xAxis[activeAxis].timeSpan * options.xAxis[activeAxis].timeSpanUnit * 1000;
+				chart.chart.xAxis[activeAxis].setExtremes(min, extremes.max);
+				optionsObj = configHandler.createConfigObject("min", min);
+				chart.chart.xAxis[index].update(optionsObj);
+			}
+		}
+		updateEnabled = false;
+		if (key != "xAxis_min" && key != "xAxis_max") {
+			chart.control.updated(function() {
+				updateEnabled = true;
+			});
+		}
+	}
+}
+
+//Triggers for every input element
+webMI.addOnload(function() {
+	for (var key in inputDefaults)
+		webMI.trigger.connect("valuechanged", function(e){ processInput(e.context, e.value, activeAxis) }, key);
+	
+	for (var i = 0; i < numAxis; i++)
+		webMI.trigger.connect("valuechanged", function(e){ activeAxis = e.value; readOptions(); }, "axisSelector" + i);
+
+	readOptions();
+
+	var updateCb = chart.control.registerOnUpdatedCallback(function() {
+		if (!updateEnabled)
+			return;
+
+		readOptions();
+	});
+	webMI.addOnunload(function() {
+		if (chart && chart.control) chart.control.unregisterOnUpdatedCallback(updateCb);
+	});
+});
+
+function processInput(key, value, identifier) {
+	if (typeof key == "undefined" || typeof value == "undefined")
+		return;
+
+	if (key == "xAxis_timeSpan") {
+		//var value = options.xAxis[identifier].max - value;
+		//webMI.trigger.fire("setValue", value, "xAxis_min");
+	} else if (key == "xAxis_min") {
+		//webMI.trigger.fire("setValue", (options.xAxis[identifier].max - value), "xAxis_timespan");
+	} else if (key == "xAxis_max") {
+		//webMI.trigger.fire("setValue", (options.xAxis[identifier].min + value), "xAxis_timespan");
+	} else if (key == "xAxis_title_text") {
+		webMI.gfx.setText("axisSelector" + activeAxis + "_radiobutton_label", value + " [" + identifier + "]");
+	} else if (key == "xAxis_crosshair_width") {
+		if (value == "true") {
+			webMI.gfx.setVisible("label_snapping", true);
+			webMI.gfx.setVisible("xAxis_crosshair_snap", true);
+		} else {
+			webMI.gfx.setVisible("label_snapping", false);
+			webMI.gfx.setVisible("xAxis_crosshair_snap", false);
+		}
+	}
+
+	if (!triggerEnabled)
+		return;
+
+	setOptions(key, value, identifier);
+}
+
+//Triggers to add and remove x-axis
+webMI.trigger.connect("clicked", function(e) { addAxis() }, "btn_add");
+webMI.trigger.connect("clicked", function(e) { removeAxis() }, "btn_delete");
+
+]]></script>
+ <text x="658" text-anchor="end" font-family="Arial" fill="$FONTCOLOR$" y="145" atv:refpy="140.5" atv:refpx="635" id="id_26" font-size="12">T{Label}</text>
+ <text x="661.5" text-anchor="end" font-family="Arial" fill="$FONTCOLOR$" y="163" atv:refpy="158.5" atv:refpx="625.5" id="id_4" font-size="12">T{alignment}:</text>
+</svg>

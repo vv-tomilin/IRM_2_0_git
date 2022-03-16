@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="120" xmlns="http://www.w3.org/2000/svg" version="1.2" height="605" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_11">
+   <stop stop-color="#ffffff" offset="0"/>
+   <stop stop-color="#c80000" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_2">
+   <stop stop-color="#ffffff" offset="0"/>
+   <stop stop-color="#00c800" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_3">
+   <stop stop-color="#ffffff" offset="0"/>
+   <stop stop-color="#00c800" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_4">
+   <stop stop-color="#ffffff" offset="0"/>
+   <stop stop-color="#c80000" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_9">
+   <stop stop-color="#ffffff" offset="0"/>
+   <stop stop-color="#00c800" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="backgroundGradient">
+   <stop stop-color="#0000ff" offset="0"/>
+   <stop stop-color="#0000ff" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_0">
+   <stop stop-color="#2f2f5f" offset="0"/>
+   <stop stop-color="#2f2f5f" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_1">
+   <stop stop-color="#2f2f5f" offset="0"/>
+   <stop stop-color="#2f2f5f" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <radialGradient r="0.5" cx="0.5" fy="0.5" cy="0.5" fx="0.5" gradientUnits="objectBoundingBox" id="radial_5">
+   <stop stop-color="#ffffff" offset="0"/>
+   <stop stop-color="#000000" offset="1"/>
+  </radialGradient>
+  <linearGradient x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_6">
+   <stop stop-color="#ffffff" offset="0"/>
+   <stop stop-color="#000000" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_7">
+   <stop stop-color="#ffffff" offset="0"/>
+   <stop stop-color="#00c800" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_8">
+   <stop stop-color="#ffffff" offset="0"/>
+   <stop stop-color="#00c800" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_10">
+   <stop stop-color="#00c800" offset="0"/>
+   <stop stop-color="#00c800" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_13">
+   <stop stop-color="#2f2f5f" offset="0"/>
+   <stop stop-color="#2f2f5f" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_14">
+   <stop stop-color="#2f2f60" offset="0"/>
+   <stop stop-color="#2f2f60" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_12">
+   <stop stop-color="#000000" offset="0"/>
+   <stop stop-color="#000000" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_15">
+   <stop stop-color="#ffffff" offset="0"/>
+   <stop stop-color="#00c800" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_16">
+   <stop stop-color="#ffffff" offset="0"/>
+   <stop stop-color="#c80000" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_17">
+   <stop stop-color="#ffffff" offset="0"/>
+   <stop stop-color="#00c800" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_18">
+   <stop stop-color="#ffffff" offset="0"/>
+   <stop stop-color="#000000" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_19">
+   <stop stop-color="#ffffff" offset="0"/>
+   <stop stop-color="#000000" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_21">
+   <stop stop-color="#a5a5a5" offset="0"/>
+   <stop stop-color="#a5a5a5" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_22">
+   <stop stop-color="#5d5d5d" offset="0"/>
+   <stop stop-color="#5d5d5d" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_23">
+   <stop stop-color="#c7c7c7" offset="0"/>
+   <stop stop-color="#c7c7c7" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_24">
+   <stop stop-color="#d9d9d9" offset="0"/>
+   <stop stop-color="#d9d9d9" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_20">
+   <stop stop-color="#ffffff" offset="0"/>
+   <stop stop-color="#00c800" offset="1"/>
+  </linearGradient>
+  <linearGradient x1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" y1="0" id="linear_25">
+   <stop stop-color="#ffffff" offset="0"/>
+   <stop stop-color="#00c800" offset="1"/>
+  </linearGradient>
+ </defs>
+ <metadata>
+  <atv:gridconfig width="10" enabled="true" height="10" gridstyle="lines"/>
+  <atv:snapconfig width="5" enabled="true" height="5"/>
+ </metadata>
+ <g atv:refpy="0" id="id_2" atv:refpx="0" atv:insensitive="true">
+  <rect x="0" atv:refpy="302.5" width="120.00" y="0" height="605.00" fill="#010101" id="id_3" atv:refpx="60"/>
+ </g>
+ <rect x="0" atv:refpy="302.5" stroke="#3cc0c2" width="120" stroke-width="4" y="0" height="605" fill="none" id="id_9" atv:refpx="60"/>
+ <script type="text/ecmascript"><![CDATA[/*
+webMI.addEvent("id_5", "click", function(e) {
+    alert("APD was clicked.");
+});
+webMI.addEvent("id_6", "click", function(e) {
+    alert("АПД");
+});
+webMI.addEvent("id_4", "click", function(e) {
+    alert("Буровая лебедка");
+	webMI.data.customRequest("POST", "/webMI/?info", function(e) {
+		console.log(e);
+		//alert(e);
+	});
+});
+
+webMI.addEvent("id_7", "click", function(e) {
+    //alert("Буровая лебедка");
+	webMI.data.customRequest("POST", "/webMI/?read", "", "address[]=AGENT.OBJECTS.TemperatureInput", function(e) {
+		console.log(e);
+	});
+});
+
+webMI.addEvent("id_8", "click", function(e) {
+    webMI.display.openWindow({
+		//url: "ru/xhtml/AGENT.DISPLAYS.MAIN.Dashboard", //works
+		//url: "ru/xhtml/AGENT.DISPLAYS.Metran-55",
+		//url: "ru/xhtml/AGENT.DISPLAYS.metran",
+		//url: "ru/xhtml/SYSTEM.LIBRARY.PROJECT.RESOURCES/metran-55.pdf",
+		url: "ru/xhtml/AGENT.DISPLAYS.Schema",
+		x: 0, y: 0, height: 600, width: 800,
+		modal: true, resizable: false, movable: true,
+		scrollbars: true, menubar: false, status: false, toolbar: false
+	});
+});
+*/]]></script>
+ <svg x="20" atv:refpy="60" width="80" y="20" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.StatusCompare" height="80" id="id_1" atv:refpx="60">
+  <atv:argument name="Label" value="СВП"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.IVE50.TDS.TDSTorque"/>
+ </svg>
+ <svg x="20" atv:refpy="160" width="80" y="120" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.StatusCompare" height="80" id="id_4" atv:refpx="60">
+  <atv:argument name="Label" value="Насос 1"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Evrotec.PumpBlock1.Analog.ThreePhaseNetwork.IA"/>
+ </svg>
+ <svg x="20" atv:refpy="260" width="80" y="220" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.StatusCompare" height="80" id="id_5" atv:refpx="60">
+  <atv:argument name="Label" value="Насос 2"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Evrotec.PumpBlock2.Analog.ThreePhaseNetwork.IA"/>
+ </svg>
+</svg>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.LAYOUTS.Chrome_1280x800
+NodeClass: Variable
+BrowseName: 1:Chrome_1280x800
+DisplayName: en|Chrome_1280x800
+Description: en|Chrome_1280x800
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.RigConstruction.EcsCol
+NodeClass: Variable
+BrowseName: 1:EcsCol
+DisplayName: en|EcsCol
+Description: en|EcsCol
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+	<metadata>
+		<priority>0</priority>
+	</metadata>
+	<code><![CDATA[/**
+ * Code for the highcharts opt yaxis object display
+ * ----------------------------------------
+ * This script supports the display to show and edit y-axis options for the chart.
+ */
+
+
+/**
+ * DECLARATION SECTION
+ */
+var activeAxis = 0;
+var activeOffset = 0;
+var chart = webMI.trendFactory.getTrendByName(webMI.query.chartname);
+var chartname = webMI.query.chartname;
+var configHandler = new webMI.rootWindow.ConfigHandler;
+var errors = [];
+errors[1] = "More then 10 y-axis are not supported."
+errors[2] = "More then 10 y-axis are found in configuration."
+var inputDefaults = {
+	"yAxis_title_text": "T{Y-Axis}",
+	"yAxis_min": -10,
+	"yAxis_max": 10,
+	"yAxis_labels_format": "{value}",
+	"yAxis_autoscale": true,
+	"yAxis_visible": true,
+	"yAxis_type-logarithmic": "T{logarithmic}",
+	"yAxis_type-linear": "T{linear}",
+	"yAxis_tickInterval": 1,
+	"yAxis_minorTickInterval": 0,
+	"yAxis_crosshair_width": 0,
+	"yAxis_crosshair_snap": true,
+	"yAxis_opposite-true": "T{right}",
+	"yAxis_opposite-false": "T{left}",
+	"yAxis_labels_align-left": "T{left}",
+	"yAxis_labels_align-right": "T{right}",
+	"yAxis_labels_align-center": "T{center}",
+	"yAxis_lineColor": "#000000",
+	"yAxis_crosshair_color": "#ff0000",
+	"yAxis_gridLineColor": "#888888",
+	"yAxis_minorGridLineColor": "#eeeeee",
+	"yAxis_gridLineWidth": 1,
+	"yAxis_minorGridLineWidth": 1,
+	"yAxis_crosshair_dashStyle-Dash": "T{dashed}",
+	"yAxis_crosshair_dashStyle-Dot": "T{dotted}",
+	"yAxis_crosshair_dashStyle-Solid": "T{solid}"
+};
+var minMaxStep = parseInt(webMI.query["minMaxStep"]);
+var numAxis = 10;
+var options = chart.chart.options;
+var subdisplay = {};
+    subdisplay.display_message = webMI.query.display_message;
+    subdisplay.display_alert = webMI.query.display_message + "_small";
+var triggerEnabled = true;
+var updateEnabled = true;
+var yAxis = [];
+
+
+/**
+ * RUNTIME SECTION
+ * Runtime code has to be executed after onload to take care all other resources are ready
+ * Triggers for every input element
+ */
+webMI.addOnload(function () {
+	for (var key in inputDefaults)
+		webMI.trigger.connect("valuechanged", function (e) {
+			processInput(e.context, e.value, activeAxis)
+		}, key);
+
+	for (var i = 0; i < numAxis; i++) {
+		webMI.trigger.connect("valuechanged", function (e) {
+			if (!triggerEnabled)
+				return;
+
+			activeAxis = parseInt(e.value) + activeOffset;
+			readOptions();
+		}, "axisSelector" + i);
+	}
+
+	readOptions();
+
+	var updateCb = chart.control.registerOnUpdatedCallback(function () {
+		if (!updateEnabled)
+			return;
+
+		readOptions();
+	});
+	webMI.addOnunload(function () {
+		if (chart && chart.control) chart.control.unregisterOnUpdatedCallback(updateCb);
+	});
+});
+
+
+/**
+ * FUNCTION SECTION
+ */
+
+/**
+ * Axis functions
+ * @param options
+ */
+function alertInfo(headline, message) {
+    webMI.display.openWindow({
+        display: subdisplay.display_alert,
+        height: 160,
+        width: 400,
+        modal: true,
+        resizable: false,
+        movable: true,
+        scrollbars: false,
+        menubar: false,
+        status: false,
+        toolbar: false,
+        query: {
+            headline: headline,
+            message: message,
+            button: "T{OK}"
+        }
+    });
+}
+
+function addAxis(options) {
+	if ((yAxis.length) > 9) {
+		console.warn(errors[1]);
+		return;
+	}
+
+	if (typeof options == "undefined")
+		options = {};
+
+	if (typeof options["title"] == "undefined")
+		options["title"] = {};
+
+	if (typeof options["title"]["text"] == "undefined")
+		options["title"]["text"] = inputDefaults["yAxis_title_text"] + " " + yAxis.length;
+
+	yAxis.push(options["title"]["text"]);
+
+	chart.chart.addAxis(options, false);
+
+	updateEnabled = false;
+	chart.control.updated(function () {
+		updateEnabled = true;
+	});
+
+	if (yAxis.length > numAxis)
+		scrollButtons(true);
+
+	activeAxis = yAxis.length - 1;
+	activeOffset = Math.max(yAxis.length - numAxis, 0)
+	webMI.gfx.setVisible("axisSelector" + (activeAxis - activeOffset), true);
+	webMI.gfx.setText("axisSelector" + (activeAxis - activeOffset) + "_radiobutton_label", options["title"]["text"]);
+
+	webMI.trigger.fire("radioClicked_g0", {
+		name: webMI.gfx.getText("axisSelector" + (activeAxis - activeOffset) + "_radiobutton_label"),
+		value: (activeAxis - activeOffset)
+	});
+}
+
+function removeAxis() {
+	if (yAxis.length == 1)
+		return;
+
+	if (activeAxis == 0) {
+		alertInfo("T{Warning}", "T{First axis can not be deleted!}")
+		return;
+	}
+
+	if (options.yAxis[activeAxis]) {
+		chart.chart.yAxis[activeAxis].remove();
+
+		if (activeAxis > 0)
+			--activeAxis;
+
+		if (yAxis.length < numAxis)
+			scrollButtons(false);
+
+		if (activeAxis > (numAxis - 1))
+			scrollAxis("up");
+
+		webMI.trigger.fire("radioClicked_g0", {
+			name: webMI.gfx.getText("axisSelector" + (activeAxis - activeOffset) + "_radiobutton_label"),
+			value: (activeAxis - activeOffset)
+		});
+		activeOffset = Math.max(activeOffset - 1, 0)
+
+		updateEnabled = false;
+		chart.control.updated(function () {
+			updateEnabled = true;
+		});
+	}
+}
+
+function axisManager(yAxis) {
+	if (yAxis.length > numAxis)
+		scrollButtons(true);
+	else
+		scrollButtons(false);
+
+	for (var i = 0; i < numAxis; i++) {
+		var iOffset = i + activeOffset;
+		if (typeof yAxis[iOffset] != "undefined") {
+			webMI.gfx.setVisible("axisSelector" + i, true);
+
+			var name = (yAxis[iOffset] != "") ? yAxis[iOffset] : "Axis";
+			webMI.gfx.setText("axisSelector" + i + "_radiobutton_label", name + " [" + iOffset + "]");
+		} else {
+			webMI.gfx.setVisible("axisSelector" + i, false);
+		}
+	}
+
+	webMI.trigger.fire("radioClicked_g0", {
+		name: webMI.gfx.getText("axisSelector" + (activeAxis - activeOffset) + "_radiobutton_label"),
+		value: (activeAxis - activeOffset)
+	});
+}
+
+function scrollAxis(direction) {
+	if (direction == "up" && activeOffset > 0) {
+		--activeOffset;
+	} else if (direction == "down" && activeOffset < (yAxis.length - numAxis)) {
+		++activeOffset;
+	}
+	axisManager(yAxis);
+}
+
+function scrollButtons(active) {
+	webMI.trigger.fire("com.atvise.setActive", active, "btn_up");
+	webMI.trigger.fire("com.atvise.setActive", active, "btn_down");
+}
+
+/**
+ * Read options
+ */
+function readOptions() {
+	triggerEnabled = false;
+	var mappedOptions = configHandler.mapToAtviseId(options);
+	yAxis = [];
+
+	/* Search configured y-axis */
+	var i = 0;
+	while (typeof chart.chart.yAxis[i] != "undefined") {
+		if (chart.chart.yAxis[i].userOptions["title"] && chart.chart.yAxis[i].userOptions["title"]["text"])
+			yAxis.push(chart.chart.yAxis[i].userOptions["title"]["text"]);
+		else
+			yAxis.push(inputDefaults["yAxis_title_text"] + " " + i);
+		i++;
+	}
+
+	/* Avoid logarithmic y-axis on initialization (can cause errors) */
+	if (typeof mappedOptions["yAxis" + activeAxis + "_yAxis_type"] == "undefined") {
+		mappedOptions["yAxis" + activeAxis + "_yAxis_type"] = "linear";
+		setOptions("yAxis_type", "linear", activeAxis);
+	}
+
+	/* Fix for configs with emtpy autoscale value */
+	if (typeof mappedOptions["yAxis" + activeAxis + "_yAxis_autoscale"] === "undefined") {
+		mappedOptions["yAxis" + activeAxis + "_yAxis_autoscale"] = true;
+		if (mappedOptions["yAxis" + activeAxis + "_yAxis_min"] != mappedOptions["yAxis" + activeAxis + "_yAxis_max"]) {
+			mappedOptions["yAxis" + activeAxis + "_yAxis_autoscale"] = false;
+		}
+	}
+
+	if (mappedOptions["yAxis" + activeAxis + "_yAxis_autoscale"])
+		webMI.trigger.fire("setChecked", true, "yAxis_autoscale");
+	else
+		webMI.trigger.fire("setChecked", false, "yAxis_autoscale");
+
+	var extremes = chart.chart.yAxis[activeAxis].getExtremes();
+
+	/* Set values for current active axis */
+	for (var key in inputDefaults) {
+		var value = inputDefaults[key];
+
+		/* build radio button group key */
+		var isRadio = false;
+		var keyValue = key.split("-");
+		if (keyValue.length == 2) {
+			isRadio = true;
+			key = keyValue[0];
+			keyValue = keyValue[1];
+		}
+
+		var optionsKey = key;
+		if (key.search("yAxis") > -1)
+			optionsKey = "yAxis" + activeAxis + "_" + key;
+
+		if (isRadio) {
+			if (typeof mappedOptions[optionsKey] != "undefined")
+				value = inputDefaults[key + "-" + mappedOptions[optionsKey]];
+			else
+				setOptions(key, keyValue, activeAxis);
+			webMI.trigger.fire("radioClicked_" + key, {name: value});
+			continue;
+		}
+
+		if (key == "yAxis_autoscale") {
+			if (extremes.userMax == null && extremes.userMin == null)
+				mappedOptions[optionsKey] = true;
+			else
+				mappedOptions[optionsKey] = false;
+		}
+
+		if (typeof mappedOptions[optionsKey] != "undefined")
+			value = mappedOptions[optionsKey];
+		else if (key == "yAxis_title_text")
+			setOptions(key, inputDefaults["yAxis_title_text"] + " " + activeAxis, activeAxis);
+		else if (key != "yAxis_min" && key != "yAxis_max")
+			setOptions(key, value, activeAxis);
+
+		if (key == "yAxis_crosshair_width" || key == "yAxis_crosshair_snap" || key == "yAxis_visible")
+			webMI.trigger.fire("setChecked", value, key);
+		else if (key.search(/color/ig) > -1)
+			webMI.trigger.fire("valuechanged_" + key, {hex: value})
+		else if (key == "yAxis_min")
+			webMI.trigger.fire("setValue", isNaN(extremes.min) ? 0 : extremes.min, key);
+		else if (key == "yAxis_max")
+			webMI.trigger.fire("setValue", isNaN(extremes.max) ? 0 : extremes.max, key);
+		else
+			webMI.trigger.fire("setValue", value, key);
+	}
+
+	axisManager(yAxis);
+	triggerEnabled = true;
+}
+
+/**
+ * Write options
+ * @param key
+ * @param value
+ * @param identifier
+ */
+function setOptions(key, value, identifier) {
+
+	if (value == "true") value = true;
+	else if (value == "false") value = false;
+
+	if (options.yAxis[identifier]) {
+		if (options.yAxis[identifier].type == "logarithmic" && (key == "yAxis_min" || key == "yAxis_max") && value <= 0) return readOptions();
+
+		var optionsObj = configHandler.createConfigObject(key.slice(6, key.length), value);
+
+		/* Catch invalid logarithmic y-axis */
+		if (optionsObj["type"] == "logarithmic") {
+			try {
+				var min = chart.chart.yAxis[identifier].userMin ? chart.chart.yAxis[identifier].userMin : chart.chart.yAxis[identifier].min;
+				var max = chart.chart.yAxis[identifier].userMax ? chart.chart.yAxis[identifier].userMax : chart.chart.yAxis[identifier].max;
+				min = min <= 0 ? Math.pow(10, min) : min;
+				max = max <= 0 ? Math.pow(10, max) : max;
+				chart.chart.yAxis[identifier].update({"min": min, "max": max});
+				chart.chart.yAxis[identifier].setExtremes(min, max);
+				chart.chart.yAxis[identifier].update({type: "logarithmic"});
+				readOptions();
+				webMI.trigger.fire("setChecked", false, "yAxis_autoscale");
+			} catch (e) {
+				chart.chart.yAxis[identifier].update({type: "linear"});
+				console.warn("Can't plot zero or subzero values on a logarithmic axis: " + e);
+			}
+		} else if (typeof optionsObj["autoscale"] != "undefined" && optionsObj["autoscale"] == true) {
+			chart.chart.yAxis[identifier].update({"min": null, "max": null});
+			chart.chart.yAxis[identifier].setExtremes(null, null);
+			chart.chart.yAxis[identifier].update(optionsObj);
+			readOptions();
+		} else {
+			chart.chart.yAxis[identifier].update(optionsObj);
+		}
+
+		var extremes = chart.chart.yAxis[identifier].getExtremes();
+
+		if (key == "yAxis_min") {
+			var max = isNaN(extremes.max) ? 0 : extremes.max;
+			if (value >= max) {
+				if (value > max) max = max + Math.floor((value - max + minMaxStep) / minMaxStep) * minMaxStep;
+				else max = value + minMaxStep;
+				setOptions("yAxis_max", max, identifier);
+				webMI.trigger.fire("setValue", max, "yAxis_max");
+			}
+			chart.chart.yAxis[identifier].setExtremes(value, max);
+			webMI.trigger.fire("setChecked", false, "yAxis_autoscale");
+		} else if (key == "yAxis_max") {
+			var min = isNaN(extremes.min) ? 0 : extremes.min;
+			if (value <= min) {
+				if (value < min) min = min - Math.floor((min - value + minMaxStep) / minMaxStep) * minMaxStep;
+				else min = value - minMaxStep;
+				setOptions("yAxis_min", min, identifier);
+				webMI.trigger.fire("setValue", min, "yAxis_min");
+			}
+			chart.chart.yAxis[identifier].setExtremes(min, value);
+			webMI.trigger.fire("setChecked", false, "yAxis_autoscale");
+		}
+
+		updateEnabled = false;
+		chart.control.updated(function () {
+			updateEnabled = true;
+		});
+	}
+}
+
+function processInput(key, value, identifier) {
+	if (typeof key == "undefined" || typeof value == "undefined")
+		return;
+
+	if (key == "yAxis_crosshair_width") {
+		if (value == "true") {
+			webMI.gfx.setVisible("label_snapping", true);
+			webMI.gfx.setVisible("yAxis_crosshair_snap", true);
+		} else {
+			webMI.gfx.setVisible("label_snapping", false);
+			webMI.gfx.setVisible("yAxis_crosshair_snap", false);
+		}
+	}
+
+	if (!triggerEnabled)
+		return;
+
+	if (key == "yAxis_title_text") {
+		webMI.gfx.setText("axisSelector" + (activeAxis - activeOffset) + "_radiobutton_label", value + " [" + identifier + "]");
+	}
+
+	setOptions(key, value, identifier);
+}
+
+
+/**
+ * TRIGGER SECTION
+ */
+
+/* Triggers to add and remove y-axis */
+webMI.trigger.connect("clicked", function (e) {
+	addAxis()
+}, "btn_add");
+
+webMI.trigger.connect("clicked", function (e) {
+	removeAxis()
+}, "btn_delete");
+
+webMI.trigger.connect("clicked", function (e) {
+	scrollAxis("up")
+}, "btn_up");
+
+webMI.trigger.connect("clicked", function (e) {
+	scrollAxis("down")
+}, "btn_down");
+]]></code>
+</script>

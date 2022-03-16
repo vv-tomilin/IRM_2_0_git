@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.3D_WELL.fact.FactChartData
+NodeClass: Variable
+BrowseName: 1:FactChartData
+DisplayName: en|FactChartData
+Description: en|FactChartData
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Settings_param.PressureManifoldParam.pressure_manifold_param
+NodeClass: Variable
+BrowseName: 1:pressure_manifold_param
+DisplayName: en|pressure_manifold_param
+Description: en|pressure_manifold_param
+DataType: String
+ValueRank: 1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.RawData

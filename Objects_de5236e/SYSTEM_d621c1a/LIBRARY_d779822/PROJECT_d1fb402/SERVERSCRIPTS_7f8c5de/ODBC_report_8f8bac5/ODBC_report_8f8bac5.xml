@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="interval" type="interval" trigger="false" relative="false" value="" offset="08:33:00"/>
+  <code><![CDATA[//console.log ("ODBC MySQL Open");
+//console.log (strlog);
+
+var odbcClient = new ODBCClient();
+
+
+//------------details via http://www.connectionstrings.com/ .----------------------------------------------
+//odbcClient.source = "Driver={Microsoft ODBC for Oracle}; Server=127.0.0.1; Uid=NameOfUid; Pwd=password;";
+//odbcClient.source = "DSN=ODBC_Name; User Id=NameOfUid; Password=password; Integrated Security=no;";
+//odbcClient.source = "DSN=ODBC_Name; Integrated Security=yes;";
+//odbcClient.source = "DSN=ODBC_Name; Uid=NameOfUid; Pwd=password;";
+
+
+odbcClient.source = "DSN=MySQL_ODBC_64_sys;";
+//odbcClient.source = "DSN=MySQL_ODBC_64; Uid=Serg; Pwd=rkjylfqr;";
+//odbcClient.source = "Driver={MySQL ODBC 8.0 ANSI Driver}; Server=127.0.0.1; Database=rigintel; Uid=Serg; Pwd=rkjylfqr;";
+function Sec2Date(sec){
+	var min = sec / 60;
+	var hour = min / 60;
+//	var day =
+//    'Дней: ' + Math.floor(hour / 24) +
+//    ', часов: ' + Math.floor(hour % 24) +
+//    ', минут: ' + Math.floor(min % 60) +
+//    ', секунд: ' + Math.floor(sec % 60);
+	return  Math.floor(hour)+":"+Math.floor(min % 60)+":"+ Math.floor(sec % 60);
+}
+
+if (odbcClient.open()) {	
+	console.log ("ODBC MySQL report Opend:", odbcClient.info());			//.info -> information of connected datasource
+	try
+	{
+		var node_rig_name = new UaNode("AGENT.OBJECTS.Rig.General.RigName");
+		var node_field_name = new UaNode("AGENT.OBJECTS.Rig.General.FieldName");
+		var node_bush_name = new UaNode("AGENT.OBJECTS.Rig.General.BushName");
+		var node_well_name = new UaNode("AGENT.OBJECTS.Rig.General.WellName");
+		var node_brigade_name = new UaNode("AGENT.OBJECTS.Rig.Brigade.BrigadeName");	
+	
+		var date = new Date();
+//		var y=date.getYear()+1900;
+		var y = date.getFullYear();
+		var m=date.getMonth()+1;
+		var d=date.getDate();
+		
+		if(String(m).length < 2)
+			m = '0' + String(m);
+		if(String(d).length < 2)
+			d = '0' + String(d);	
+	 		
+		var pv = 0;
+		var npv = 0;
+		var start_depth = 0;
+		var stop_depth = 0;
+		var reportfolder = "rigdata/reports/";
+		var filename = "report_" + y + "_" + m + "_" + d + ".csv";
+
+//		var ofs = new OutputFileStream(filename,'utf8','append');
+		var ofs = new OutputFileStream(reportfolder+filename,'utf8');
+		ofs.open();
+		var strTitle = "\ufeffСуточный отчет по бурению скважин"+";Буровая: "+node_rig_name.value+";Бригада: "+node_brigade_name.value+";;;;;;ООО RIGINTEL";
+		ofs.writeLine(strTitle);
+		ofs.writeLine(";;;;;;;;");
+		
+		var strRig = "Месторождение: "+node_field_name.value+";Куст: "+node_bush_name.value+";Скважина: "+node_well_name.value+";;;;;;";
+		ofs.writeLine(strRig);
+		ofs.writeLine(";;;;;;;;");
+		var strDate = "Дата: "+d+"-"+m+"-"+y+";;;;;;;;";
+		ofs.writeLine(strDate);		
+		ofs.writeLine(";;;;;;;;");
+		ofs.writeLine("Работы:;;;;;;;;");
+		var strNaming = "ПВ/НПВ;Осн. работа;Работа;Начало;Окончание;Время работы в сек;Время работы;Забой в начале;Забой в конце";		 
+		ofs.writeLine(strNaming);	
+		var callback = {
+			onData : function (rowIdx, row) { 
+				//console.log("OnData: ", rowIdx, " ", row); 
+				console.log("Data: ", row.join(';')); 
+				ofs.writeLine(row.join(';'));
+				if(row[0]=="ПВ"){
+					pv+=Number(row[5]);
+				} else if(row[0]=="НПВ"){
+					npv+=Number(row[5]);
+				}
+				if(start_depth==0 && Number(row[7])!=0){
+					start_depth=Number(row[7]);
+				}
+				stop_depth = Number(row[8]);
+			},
+			onHead : function(columns) { console.log("OnHead: ", columns); },
+			onReady : function(num, msg) { console.log("OnReady: ", num, " ", msg); },
+			onError : function(msg) { console.log("OnError: ", msg); }
+		};
+		
+		var strquery = "SELECT E.name_production_status, D.name_group_status, C.name_work_status, A.datetime_create AS timestart, B.datetime_create AS timestop, TIMESTAMPDIFF(SECOND, A.datetime_create, B.datetime_create) AS timeinsec, SEC_TO_TIME(TIMESTAMPDIFF(SECOND, A.datetime_create, B.datetime_create)) AS timedifference \
+,(SELECT D.node_value AS well_depth from rigintel.node_analog_values D WHERE D.node_id LIKE '%AGENT.OBJECTS.Well.WellDepth' AND D.datetime_create <= A.datetime_create ORDER BY D.datetime_create DESC LIMIT 1) as well_depth_start \
+,(SELECT D.node_value AS well_depth from rigintel.node_analog_values D WHERE D.node_id LIKE '%AGENT.OBJECTS.Well.WellDepth' AND D.datetime_create <= B.datetime_create ORDER BY D.datetime_create DESC LIMIT 1) as well_depth_stop \
+FROM rigintel.node_integer_values A \
+INNER JOIN rigintel.node_integer_values B ON B.id = (A.id + 1) \
+INNER JOIN rigintel.work_statuses C ON C.id_work_status = A.node_value \
+INNER JOIN rigintel.group_statuses D ON D.id_group_status = C.id_group_status \
+INNER JOIN rigintel.production_statuses E ON E.id_production_status = D.id_production_status \
+WHERE A.node_id LIKE '%AGENT.OBJECTS.Rig.WorkStatus' \
+AND DATE(A.datetime_create) = curdate() - interval 1 day \
+ORDER BY A.id  ASC \
+LIMIT 0, 1000";
+		var query = odbcClient.query(strquery,callback);
+		ofs.writeLine(";;;;;;;;");
+		ofs.writeLine("Всего:;ПВ: "+Sec2Date(pv)+";НПВ: "+Sec2Date(npv)+";;;;;;");
+		ofs.writeLine("Забой:;На начало суток: "+start_depth+";На конец суток: "+stop_depth+"; Проходка: "+(stop_depth-start_depth)+";;;;;");
+		
+		ofs.close();
+		odbcClient.close();
+///////////////////////////////////////////////////////////////////////////////////////////////// 		
+		var mynode = new UaNode("AGENT.OBJECTS.Report.ReportFiles");
+		console.log("AGENT.OBJECTS.Report.ReportFiles = "+mynode.value);
+		
+		var newobj=[];
+		var counter = 0;
+		for (var key in mynode.value) {
+		  //console.log(key);
+		  //console.log(mynode.value[key]);
+		  newobj[key]=mynode.value[key];
+		  counter++;
+		}
+		newobj[counter]=filename;
+		//console.log("newobj = "+newobj);
+		
+//		for (var key in newobj) {
+//		  console.log(key);
+//		  console.log(newobj[key]);
+//		}
+		
+		var res = mynode.assign({value: newobj});
+		
+		
+		var anothernode = new UaNode("AGENT.OBJECTS.MyStringArray");
+		console.log("anothernode = "+ anothernode);
+		
+		if(res==0){
+			console.log("To node AGENT.OBJECTS.Report.ReportFiles was added new filename"+filename)	
+		}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////		
+		return(query);
+	}
+	catch (exp)
+	{
+		console.log(exp);
+		if (exp.indexOf('No Data') > -1)
+			return 0; // ok
+
+		return undefined;
+	}
+	finally
+	{
+		if (odbcClient && odbcClient.opened == true)
+			odbcClient.close();
+	}
+}
+else
+	return undefined;]]></code>
+</script>

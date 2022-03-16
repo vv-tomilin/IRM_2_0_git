@@ -1,0 +1,2746 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TS>
+  <context>
+    <message>
+      <source>#</source>
+      <translation>#</translation>
+    </message>
+    <message>
+      <source>(IN)ACTIVE!</source>
+      <translation>(IN)AKTIV!</translation>
+    </message>
+    <message>
+      <source>.</source>
+      <translation>.</translation>
+    </message>
+    <message>
+      <source>ACKNOWLEDGE</source>
+      <translation>QUITTIEREN</translation>
+    </message>
+    <message>
+      <source>Acknowledged</source>
+      <translation>Quittiert</translation>
+    </message>
+    <message>
+      <source>ACTIVE!</source>
+      <translation>AKTIV!</translation>
+    </message>
+    <message>
+      <source>Abbr.</source>
+      <translation>Abk.</translation>
+    </message>
+    <message>
+      <source>Ack./User</source>
+      <translation>Quitt./Benutzer</translation>
+    </message>
+    <message>
+      <source>Action</source>
+      <translation>Aktion</translation>
+    </message>
+    <message>
+      <source>Active</source>
+      <translation>Aktiv</translation>
+    </message>
+    <message>
+      <source>Add new / edit events</source>
+      <translation>Ereignis hinzufügen/bearbeiten</translation>
+    </message>
+    <message>
+      <source>Add node</source>
+      <translation>Hinzufügen</translation>
+    </message>
+    <message>
+      <source>Address</source>
+      <translation>Adresse</translation>
+    </message>
+    <message>
+      <source>Alarm</source>
+      <translation>Alarm</translation>
+    </message>
+    <message>
+      <source>Alarm list</source>
+      <translation>Alarmliste</translation>
+    </message>
+    <message>
+      <source>Alarmtext</source>
+      <translation>Alarmtext</translation>
+    </message>
+    <message>
+      <source>Apply</source>
+      <translation>Anwenden</translation>
+    </message>
+    <message>
+      <source>Apply filter</source>
+      <translation>Filtern</translation>
+    </message>
+    <message>
+      <source>Archive</source>
+      <translation>Archiv</translation>
+    </message>
+    <message>
+      <source>Area</source>
+      <translation>Bereich</translation>
+    </message>
+    <message>
+      <source>Audit</source>
+      <translation>Audit</translation>
+    </message>
+    <message>
+      <source>Axis</source>
+      <translation>Achse</translation>
+    </message>
+    <message>
+      <source>Bar</source>
+      <translation>Balken</translation>
+    </message>
+    <message>
+      <source>Basic</source>
+      <translation>Standard</translation>
+    </message>
+    <message>
+      <source>CSV</source>
+      <translation>CSV</translation>
+    </message>
+    <message>
+      <source>Cancel</source>
+      <translation>Abbrechen</translation>
+    </message>
+    <message>
+      <source>Checkbox</source>
+      <translation>Checkbox</translation>
+    </message>
+    <message>
+      <source>Color</source>
+      <translation>Farbe</translation>
+    </message>
+    <message>
+      <source>Confirmed</source>
+      <translation>Bestätigt</translation>
+    </message>
+    <message>
+      <source>Current Value</source>
+      <translation>Aktueller Wert</translation>
+    </message>
+    <message>
+      <source>DD</source>
+      <translation>TT</translation>
+    </message>
+    <message>
+      <source>Date</source>
+      <translation>Datum</translation>
+    </message>
+    <message>
+      <source>Del</source>
+      <translation>Entf</translation>
+    </message>
+    <message>
+      <source>Delete</source>
+      <translation>Entfernen</translation>
+    </message>
+    <message>
+      <source>Description</source>
+      <translation>Beschreibung</translation>
+    </message>
+    <message>
+      <source>Display</source>
+      <translation>Display</translation>
+    </message>
+    <message>
+      <source>Do you really want to set the value?</source>
+      <translation>Wollen Sie den Wert wirklich setzen?</translation>
+    </message>
+    <message>
+      <source>Duration (min)</source>
+      <translation>Dauer (min)</translation>
+    </message>
+    <message>
+      <source>End from</source>
+      <translation>Endzeitpunkt von</translation>
+    </message>
+    <message>
+      <source>End time</source>
+      <translation>Endzeit</translation>
+    </message>
+    <message>
+      <source>End to</source>
+      <translation>Endzeitpunkt bis</translation>
+    </message>
+    <message>
+      <source>Enter address:</source>
+      <translation>Adresse eingeben:</translation>
+    </message>
+    <message>
+      <source>Eventtext</source>
+      <translation>Ereignistext</translation>
+    </message>
+    <message>
+      <source>First occ.</source>
+      <translation>Erstes Vork.</translation>
+    </message>
+    <message>
+      <source>Friday</source>
+      <translation>Freitag</translation>
+    </message>
+    <message>
+      <source>From</source>
+      <translation>Von</translation>
+    </message>
+    <message>
+      <source>HH</source>
+      <translation>HH</translation>
+    </message>
+    <message>
+      <source>High</source>
+      <translation>High</translation>
+    </message>
+    <message>
+      <source>High active</source>
+      <translation>High aktiv</translation>
+    </message>
+    <message>
+      <source>High inactive</source>
+      <translation>High inaktiv</translation>
+    </message>
+    <message>
+      <source>HighHigh</source>
+      <translation>HighHigh</translation>
+    </message>
+    <message>
+      <source>HighHigh active</source>
+      <translation>HighHigh aktiv</translation>
+    </message>
+    <message>
+      <source>HighHigh inactive</source>
+      <translation>HighHigh inaktiv</translation>
+    </message>
+    <message>
+      <source>In Service</source>
+      <translation>In Betrieb</translation>
+    </message>
+    <message>
+      <source>INACTIVE!</source>
+      <translation>INAKTIV!</translation>
+    </message>
+    <message>
+      <source>Inactive</source>
+      <translation>Inaktiv</translation>
+    </message>
+    <message>
+      <source>Input value:</source>
+      <translation>Eingabewert:</translation>
+    </message>
+    <message>
+      <source>Invalid format!</source>
+      <translation>Falsches Format!</translation>
+    </message>
+    <message>
+      <source>Label</source>
+      <translation>Beschriftung</translation>
+    </message>
+    <message>
+      <source>Language</source>
+      <translation>Sprache</translation>
+    </message>
+    <message>
+      <source>Last occ.</source>
+      <translation>Letztes Vork.</translation>
+    </message>
+    <message>
+      <source>Latched</source>
+      <translation>Verriegelt</translation>
+    </message>
+    <message>
+      <source>Left Axis</source>
+      <translation>Linke Achse</translation>
+    </message>
+    <message>
+      <source>Line</source>
+      <translation>Linie</translation>
+    </message>
+    <message>
+      <source>Line Width</source>
+      <translation>Linienstärke</translation>
+    </message>
+    <message>
+      <source>List</source>
+      <translation>Liste</translation>
+    </message>
+    <message>
+      <source>Live</source>
+      <translation>Live</translation>
+    </message>
+    <message>
+      <source>Login</source>
+      <translation>Anmelden</translation>
+    </message>
+    <message>
+      <source>Login failed! Username/password wrong.</source>
+      <translation>Login fehlgeschlagen! Benutzername/Passwort falsch!</translation>
+    </message>
+    <message>
+      <source>Low</source>
+      <translation>Low</translation>
+    </message>
+    <message>
+      <source>Low active</source>
+      <translation>Low aktiv</translation>
+    </message>
+    <message>
+      <source>Low inactive</source>
+      <translation>Low inaktiv</translation>
+    </message>
+    <message>
+      <source>LowLow</source>
+      <translation>LowLow</translation>
+    </message>
+    <message>
+      <source>LowLow active</source>
+      <translation>LowLow aktiv</translation>
+    </message>
+    <message>
+      <source>LowLow inactive</source>
+      <translation>LowLow inaktiv</translation>
+    </message>
+    <message>
+      <source>MM</source>
+      <translation>MM</translation>
+    </message>
+    <message>
+      <source>Message/Value</source>
+      <translation>Nachricht/Wert</translation>
+    </message>
+    <message>
+      <source>Min. Severity</source>
+      <translation>Min. Prio.</translation>
+    </message>
+    <message>
+      <source>Monday</source>
+      <translation>Montag</translation>
+    </message>
+    <message>
+      <source>New Line Width</source>
+      <translation>Neue Linienstärke</translation>
+    </message>
+    <message>
+      <source>New Text</source>
+      <translation>Neuer Text</translation>
+    </message>
+    <message>
+      <source>No</source>
+      <translation>Nein</translation>
+    </message>
+    <message>
+      <source>Node</source>
+      <translation>Datenpunkt</translation>
+    </message>
+    <message>
+      <source>Node Configuration</source>
+      <translation>Datenpunktkonfiguration</translation>
+    </message>
+    <message>
+      <source>Node Text</source>
+      <translation>Datenpunkttext</translation>
+    </message>
+    <message>
+      <source>Node description</source>
+      <translation>Datenpunktbeschreibung</translation>
+    </message>
+    <message>
+      <source>Nonstop</source>
+      <translation>Nonstop</translation>
+    </message>
+    <message>
+      <source>Not Silenced</source>
+      <translation>Nicht Stumm</translation>
+    </message>
+    <message>
+      <source>OK</source>
+      <translation>OK</translation>
+    </message>
+    <message>
+      <source>Off Unacknowledged</source>
+      <translation>Geht unquittiert</translation>
+    </message>
+    <message>
+      <source>Ok</source>
+      <translation>Ok</translation>
+    </message>
+    <message>
+      <source>On Acknowledged</source>
+      <translation>Kommt quittiert</translation>
+    </message>
+    <message>
+      <source>On Off Unacknowledged</source>
+      <translation>Kommt Geht unquittiert</translation>
+    </message>
+    <message>
+      <source>On Unacknowledged</source>
+      <translation>Kommt unquittiert</translation>
+    </message>
+    <message>
+      <source>One Shot Shelved</source>
+      <translation>Einmalig zurückgestellt</translation>
+    </message>
+    <message>
+      <source>Out of Service</source>
+      <translation>Außer Betrieb</translation>
+    </message>
+    <message>
+      <source>Password</source>
+      <translation>Passwort</translation>
+    </message>
+    <message>
+      <source>Period</source>
+      <translation>Periode</translation>
+    </message>
+    <message>
+      <source>Please enter a valid configuration name!</source>
+      <translation>Bitte geben Sie einen gültigen Konfigurationsnamen ein!</translation>
+    </message>
+    <message>
+      <source>Please enter username and password.</source>
+      <translation>Bitte geben Sie Benutzernamen und Passwort ein.</translation>
+    </message>
+    <message>
+      <source>Radiobutton</source>
+      <translation>Radiobutton</translation>
+    </message>
+    <message>
+      <source>Recurring</source>
+      <translation>Periode</translation>
+    </message>
+    <message>
+      <source>Search</source>
+      <translation>Suchen</translation>
+    </message>
+    <message>
+      <source>Reset</source>
+      <translation>Zurücksetzen</translation>
+    </message>
+    <message>
+      <source>Reset filter</source>
+      <translation>Zurücksetzen</translation>
+    </message>
+    <message>
+      <source>Right Axis</source>
+      <translation>Rechte Achse</translation>
+    </message>
+    <message>
+      <source>SS</source>
+      <translation>SS</translation>
+    </message>
+    <message>
+      <source>Saturday</source>
+      <translation>Samstag</translation>
+    </message>
+    <message>
+      <source>Save</source>
+      <translation>Speichern</translation>
+    </message>
+    <message>
+      <source>Scatter</source>
+      <translation>Punkte</translation>
+    </message>
+    <message>
+      <source>Scheduler list</source>
+      <translation>Zeitschaltuhr Liste</translation>
+    </message>
+    <message>
+      <source>Set address</source>
+      <translation>Adresse setzen</translation>
+    </message>
+    <message>
+      <source>Sev.</source>
+      <translation>Prio.</translation>
+    </message>
+    <message>
+      <source>Silenced</source>
+      <translation>Stumm</translation>
+    </message>
+    <message>
+      <source>Source</source>
+      <translation>Quelle</translation>
+    </message>
+    <message>
+      <source>Stairs</source>
+      <translation>Stufen</translation>
+    </message>
+    <message>
+      <source>Start</source>
+      <translation>Start</translation>
+    </message>
+    <message>
+      <source>Start from</source>
+      <translation>Startzeitpunkt von</translation>
+    </message>
+    <message>
+      <source>Start time</source>
+      <translation>Startzeit</translation>
+    </message>
+    <message>
+      <source>Start to</source>
+      <translation>Startzeitpunkt bis</translation>
+    </message>
+    <message>
+      <source>Status</source>
+      <translation>Status</translation>
+    </message>
+    <message>
+      <source>Stop</source>
+      <translation>Stopp</translation>
+    </message>
+    <message>
+      <source>Style</source>
+      <translation>Stil</translation>
+    </message>
+    <message>
+      <source>Sunday</source>
+      <translation>Sonntag</translation>
+    </message>
+    <message>
+      <source>Suppressed</source>
+      <translation>Unterdrückt</translation>
+    </message>
+    <message>
+      <source>Switched off</source>
+      <translation>Ausgeschaltet</translation>
+    </message>
+    <message>
+      <source>Switched on</source>
+      <translation>Eingeschaltet</translation>
+    </message>
+    <message>
+      <source>Text</source>
+      <translation>Text</translation>
+    </message>
+    <message>
+      <source>Thursday</source>
+      <translation>Donnerstag</translation>
+    </message>
+    <message>
+      <source>Time</source>
+      <translation>Zeit</translation>
+    </message>
+    <message>
+      <source>Time Axis</source>
+      <translation>Zeitachse</translation>
+    </message>
+    <message>
+      <source>Time ack.</source>
+      <translation>Quitt. Zeit</translation>
+    </message>
+    <message>
+      <source>Time active</source>
+      <translation>Kam-Zeit</translation>
+    </message>
+    <message>
+      <source>Time inactive</source>
+      <translation>Ging-Zeit</translation>
+    </message>
+    <message>
+      <source>Timed Shelved</source>
+      <translation>Befristet zurückgestellt</translation>
+    </message>
+    <message>
+      <source>Timer Scheduler</source>
+      <translation>Zeitplaner</translation>
+    </message>
+    <message>
+      <source>Timestamp</source>
+      <translation>Zeitstempel</translation>
+    </message>
+    <message>
+      <source>To</source>
+      <translation>Bis</translation>
+    </message>
+    <message>
+      <source>Trend</source>
+      <translation>Trend</translation>
+    </message>
+    <message>
+      <source>Trend Configuration</source>
+      <translation>Trendkonfiguration</translation>
+    </message>
+    <message>
+      <source>Tuesday</source>
+      <translation>Dienstag</translation>
+    </message>
+    <message>
+      <source>Type</source>
+      <translation>Typ</translation>
+    </message>
+    <message>
+      <source>Unacknowledged</source>
+      <translation>Unquittiert</translation>
+    </message>
+    <message>
+      <source>Unconfirmed</source>
+      <translation>Unbestätigt</translation>
+    </message>
+    <message>
+      <source>Unknown</source>
+      <translation>Unbekannt</translation>
+    </message>
+    <message>
+      <source>Unlatched</source>
+      <translation>Entriegelt</translation>
+    </message>
+    <message>
+      <source>Unshelved</source>
+      <translation>Nicht zurückgestellt</translation>
+    </message>
+    <message>
+      <source>Unsuppressed</source>
+      <translation>Nicht unterdrückt</translation>
+    </message>
+    <message>
+      <source>User</source>
+      <translation>Benutzer</translation>
+    </message>
+    <message>
+      <source>Username</source>
+      <translation>Benutzername</translation>
+    </message>
+    <message>
+      <source>Value</source>
+      <translation>Wert</translation>
+    </message>
+    <message>
+      <source>Value off</source>
+      <translation>Endwert</translation>
+    </message>
+    <message>
+      <source>Value on</source>
+      <translation>Startwert</translation>
+    </message>
+    <message>
+      <source>Value too high</source>
+      <translation>Wert zu hoch</translation>
+    </message>
+    <message>
+      <source>Value too high!</source>
+      <translation>Wert zu hoch!</translation>
+    </message>
+    <message>
+      <source>Value too low</source>
+      <translation>Wert zu niedrig</translation>
+    </message>
+    <message>
+      <source>Value too low!</source>
+      <translation>Wert zu niedrig!</translation>
+    </message>
+    <message>
+      <source>Visible</source>
+      <translation>Sichtbar</translation>
+    </message>
+    <message>
+      <source>Wednesday</source>
+      <translation>Mittwoch</translation>
+    </message>
+    <message>
+      <source>Width</source>
+      <translation>Breite</translation>
+    </message>
+    <message>
+      <source>YYYY</source>
+      <translation>JJJJ</translation>
+    </message>
+    <message>
+      <source>Yes</source>
+      <translation>Ja</translation>
+    </message>
+    <message>
+      <source>[All]</source>
+      <translation>[Alle]</translation>
+    </message>
+    <message>
+      <source>[none]</source>
+      <translation>[kein(e)]</translation>
+    </message>
+    <message>
+      <source>active</source>
+      <translation>aktiv</translation>
+    </message>
+    <message>
+      <source>address</source>
+      <translation>Adresse</translation>
+    </message>
+    <message>
+      <source>addresses are missing in queryfilter</source>
+      <translation>Adressen fehlen in der Funktion queryfilter</translation>
+    </message>
+    <message>
+      <source>area description</source>
+      <translation>Bereich</translation>
+    </message>
+    <message>
+      <source>auto scale</source>
+      <translation>Auto-Skalieren</translation>
+    </message>
+    <message>
+      <source>back</source>
+      <translation>zurück</translation>
+    </message>
+    <message>
+      <source>day(s)</source>
+      <translation>Tag(e)</translation>
+    </message>
+    <message>
+      <source>forward</source>
+      <translation>vorwärts</translation>
+    </message>
+    <message>
+      <source>hour(s)</source>
+      <translation>Stunde(n)</translation>
+    </message>
+    <message>
+      <source>inactive</source>
+      <translation>inaktiv</translation>
+    </message>
+    <message>
+      <source>left</source>
+      <translation>links</translation>
+    </message>
+    <message>
+      <source>left axis</source>
+      <translation>linke Achse</translation>
+    </message>
+    <message>
+      <source>loading...</source>
+      <translation>lädt ...</translation>
+    </message>
+    <message>
+      <source>max</source>
+      <translation>max</translation>
+    </message>
+    <message>
+      <source>min</source>
+      <translation>min</translation>
+    </message>
+    <message>
+      <source>minute(s)</source>
+      <translation>Minute(n)</translation>
+    </message>
+    <message>
+      <source>mmm</source>
+      <translation>mmm</translation>
+    </message>
+    <message>
+      <source>month(s)</source>
+      <translation>Monat(e)</translation>
+    </message>
+    <message>
+      <source>non-stop</source>
+      <translation>non-stop</translation>
+    </message>
+    <message>
+      <source>nonstop</source>
+      <translation>nonstop</translation>
+    </message>
+    <message>
+      <source>now</source>
+      <translation>jetzt</translation>
+    </message>
+    <message>
+      <source>received historized data only from %d of %d nodes</source>
+      <translation>Historisierte Werte nur von %d von %d Datenpunkten erhalten</translation>
+    </message>
+    <message>
+      <source>received no historized data</source>
+      <translation>Keine historisierten Daten erhalten</translation>
+    </message>
+    <message>
+      <source>remove node</source>
+      <translation>Datenpunkt entfernen</translation>
+    </message>
+    <message>
+      <source>right</source>
+      <translation>rechts</translation>
+    </message>
+    <message>
+      <source>right axis</source>
+      <translation>rechte Achse</translation>
+    </message>
+    <message>
+      <source>stairs</source>
+      <translation>Stufen</translation>
+    </message>
+    <message>
+      <source>timestamp</source>
+      <translation>Zeitstempel</translation>
+    </message>
+    <message>
+      <source>truncated</source>
+      <translation>abgeschnitten</translation>
+    </message>
+    <message>
+      <source>value</source>
+      <translation>Wert</translation>
+    </message>
+    <message>
+      <source>week(s)</source>
+      <translation>Woche(n)</translation>
+    </message>
+    <message>
+      <source>January</source>
+      <translation>Jänner</translation>
+    </message>
+    <message>
+      <source>February</source>
+      <translation>Februar</translation>
+    </message>
+    <message>
+      <source>March</source>
+      <translation>März</translation>
+    </message>
+    <message>
+      <source>April</source>
+      <translation>April</translation>
+    </message>
+    <message>
+      <source>May</source>
+      <translation>Mai</translation>
+    </message>
+    <message>
+      <source>June</source>
+      <translation>Juni</translation>
+    </message>
+    <message>
+      <source>July</source>
+      <translation>Juli</translation>
+    </message>
+    <message>
+      <source>August</source>
+      <translation>August</translation>
+    </message>
+    <message>
+      <source>September</source>
+      <translation>September</translation>
+    </message>
+    <message>
+      <source>October</source>
+      <translation>Oktober</translation>
+    </message>
+    <message>
+      <source>November</source>
+      <translation>November</translation>
+    </message>
+    <message>
+      <source>December</source>
+      <translation>Dezember</translation>
+    </message>
+    <message>
+      <source>Jan</source>
+      <translation>Jan</translation>
+    </message>
+    <message>
+      <source>Feb</source>
+      <translation>Feb</translation>
+    </message>
+    <message>
+      <source>Mar</source>
+      <translation>Mär</translation>
+    </message>
+    <message>
+      <source>Apr</source>
+      <translation>Apr</translation>
+    </message>
+    <message>
+      <source>Jun</source>
+      <translation>Jun</translation>
+    </message>
+    <message>
+      <source>Jul</source>
+      <translation>Jul</translation>
+    </message>
+    <message>
+      <source>Aug</source>
+      <translation>Aug</translation>
+    </message>
+    <message>
+      <source>Sep</source>
+      <translation>Sep</translation>
+    </message>
+    <message>
+      <source>Oct</source>
+      <translation>Okt</translation>
+    </message>
+    <message>
+      <source>Nov</source>
+      <translation>Nov</translation>
+    </message>
+    <message>
+      <source>Dec</source>
+      <translation>Dez</translation>
+    </message>
+    <message>
+      <source>Sun</source>
+      <translation>So</translation>
+    </message>
+    <message>
+      <source>Mon</source>
+      <translation>Mo</translation>
+    </message>
+    <message>
+      <source>Tue</source>
+      <translation>Di</translation>
+    </message>
+    <message>
+      <source>Wed</source>
+      <translation>Mi</translation>
+    </message>
+    <message>
+      <source>Thu</source>
+      <translation>Do</translation>
+    </message>
+    <message>
+      <source>Fri</source>
+      <translation>Fr</translation>
+    </message>
+    <message>
+      <source>Sat</source>
+      <translation>Sa</translation>
+    </message>
+    <message>
+      <source>Today</source>
+      <translation>Heute</translation>
+    </message>
+    <message>
+      <source>Day</source>
+      <translation>Tag</translation>
+    </message>
+    <message>
+      <source>Week</source>
+      <translation>Woche</translation>
+    </message>
+    <message>
+      <source>Month</source>
+      <translation>Monat</translation>
+    </message>
+    <message>
+      <source>Event</source>
+      <translation>Ereignis</translation>
+    </message>
+    <message>
+      <source>Details</source>
+      <translation>Details</translation>
+    </message>
+    <message>
+      <source>Edit</source>
+      <translation>Ändern</translation>
+    </message>
+    <message>
+      <source>Your changes will be lost, are your sure?</source>
+      <translation>Änderungen werden verworfen, sind sie sicher?</translation>
+    </message>
+    <message>
+      <source>Event will be deleted permanently, are you sure?</source>
+      <translation>Der Eintrag wird gelöscht, sind sie sicher?</translation>
+    </message>
+    <message>
+      <source>Time period</source>
+      <translation>Zeitspanne</translation>
+    </message>
+    <message>
+      <source>Full day</source>
+      <translation>Ganzer Tag</translation>
+    </message>
+    <message>
+      <source>Repeat event</source>
+      <translation>Wiederholung</translation>
+    </message>
+    <message>
+      <source>Disabled</source>
+      <translation>Ausgeschaltet</translation>
+    </message>
+    <message>
+      <source>Enabled</source>
+      <translation>Eingeschaltet</translation>
+    </message>
+    <message>
+      <source>Agenda</source>
+      <translation>Agenda</translation>
+    </message>
+    <message>
+      <source>Year</source>
+      <translation>Jahr</translation>
+    </message>
+    <message>
+      <source>Variable</source>
+      <translation>Variable</translation>
+    </message>
+    <message>
+      <source>Start date</source>
+      <translation>Startdatum</translation>
+    </message>
+    <message>
+      <source>End date</source>
+      <translation>Enddatum</translation>
+    </message>
+    <message>
+      <source>Starting date</source>
+      <translation>Beginndatum</translation>
+    </message>
+    <message>
+      <source>Starting time</source>
+      <translation>Beginnzeit</translation>
+    </message>
+    <message>
+      <source>Ending time</source>
+      <translation>Endzeit</translation>
+    </message>
+    <message>
+      <source>Duration (in min.)</source>
+      <translation>Dauer (in min.)</translation>
+    </message>
+    <message>
+      <source>Daily</source>
+      <translation>Täglich</translation>
+    </message>
+    <message>
+      <source>Weekly</source>
+      <translation>Wöchentlich</translation>
+    </message>
+    <message>
+      <source>Monthly</source>
+      <translation>Monatlich</translation>
+    </message>
+    <message>
+      <source>Yearly</source>
+      <translation>Jährlich</translation>
+    </message>
+    <message>
+      <source>workday</source>
+      <translation>Werktag</translation>
+    </message>
+    <message>
+      <source>Every</source>
+      <translation>Jeden</translation>
+    </message>
+    <message>
+      <source>every</source>
+      <translation>jedes</translation>
+    </message>
+    <message>
+      <source>Repeat</source>
+      <translation>Wiederholt</translation>
+    </message>
+    <message>
+      <source>Repeat at</source>
+      <translation>Wiederholung am</translation>
+    </message>
+    <message>
+      <source>Repeat every week at following days</source>
+      <translation>Wiederholung jede Woche an folgenden Tagen</translation>
+    </message>
+    <message>
+      <source>week next days</source>
+      <translation>Woche nächsten Tagen</translation>
+    </message>
+    <message>
+      <source>month</source>
+      <translation>Monat</translation>
+    </message>
+    <message>
+      <source>On</source>
+      <translation>Auf</translation>
+    </message>
+    <message>
+      <source>No end date</source>
+      <translation>Ohne Enddatum</translation>
+    </message>
+    <message>
+      <source>After</source>
+      <translation>Nach</translation>
+    </message>
+    <message>
+      <source>occurrences</source>
+      <translation>Vorkommnisse</translation>
+    </message>
+    <message>
+      <source>End by</source>
+      <translation>Endet am</translation>
+    </message>
+    <message>
+      <source>day</source>
+      <translation>Tag</translation>
+    </message>
+    <message>
+      <source>day at month</source>
+      <translation>Tag im Monat</translation>
+    </message>
+    <message>
+      <source>readonly</source>
+      <translation>schreibgeschützt</translation>
+    </message>
+    <message>
+      <source>Once</source>
+      <translation>Einmalig</translation>
+    </message>
+    <message>
+      <source>Combobox</source>
+      <translation>Combobox</translation>
+    </message>
+    <message>
+      <source>In/Out Value</source>
+      <translation>Ein-/Ausgabeelement</translation>
+    </message>
+    <message>
+      <source>Picker Address</source>
+      <translation>Eingabeelement Adresse</translation>
+    </message>
+    <message>
+      <source>Picker Date</source>
+      <translation>Eingabeelement Datum</translation>
+    </message>
+    <message>
+      <source>Picker Value</source>
+      <translation>Eingabeelement Zahl</translation>
+    </message>
+    <message>
+      <source>Keyboard</source>
+      <translation>Tastatur</translation>
+    </message>
+    <message>
+      <source>All</source>
+      <translation>Alle</translation>
+    </message>
+    <message>
+      <source>Time active/inactive</source>
+      <translation>Kam-/Ging-Zeit</translation>
+    </message>
+    <message>
+      <source>Time format</source>
+      <translation>Zeitformat</translation>
+    </message>
+    <message>
+      <source>Severity</source>
+      <translation>Priorität</translation>
+    </message>
+    <message>
+      <source>active ack.</source>
+      <translation>aktiv quitt.</translation>
+    </message>
+    <message>
+      <source>inactive ack.</source>
+      <translation>inaktiv quitt.</translation>
+    </message>
+    <message>
+      <source>A</source>
+      <translation>A</translation>
+    </message>
+    <message>
+      <source>E</source>
+      <translation>E</translation>
+    </message>
+    <message>
+      <source>INACTIV!</source>
+      <translation>INAKTIV!</translation>
+    </message>
+    <message>
+      <source>Time acknowledged</source>
+      <translation>Quittierzeit</translation>
+    </message>
+    <message>
+      <source>U</source>
+      <translation>U</translation>
+    </message>
+    <message>
+      <source>V</source>
+      <translation>W</translation>
+    </message>
+    <message>
+      <source>Value/Alarmtext</source>
+      <translation>Wert/Alarmtext</translation>
+    </message>
+    <message>
+      <source>activ ack.</source>
+      <translation>aktiv quitt.</translation>
+    </message>
+    <message>
+      <source>inactiv ack.</source>
+      <translation>inaktiv quitt.</translation>
+    </message>
+    <message>
+      <source>Bad</source>
+      <translation>Schlecht</translation>
+    </message>
+    <message>
+      <source>Good</source>
+      <translation>Gut</translation>
+    </message>
+    <message>
+      <source>Uncertain</source>
+      <translation>Unbekannt</translation>
+    </message>
+    <message>
+      <source>Alarm value</source>
+      <translation>Alarmwert</translation>
+    </message>
+    <message>
+      <source>Called Script</source>
+      <translation>Scriptaufruf</translation>
+    </message>
+    <message>
+      <source>Invalid username and/or password: username</source>
+      <translation>Ungültiger Benutzername und/oder Passwort: Benutzername</translation>
+    </message>
+    <message>
+      <source>User logged in</source>
+      <translation>User eingeloggt</translation>
+    </message>
+    <message>
+      <source>User logged out</source>
+      <translation>User ausgeloggt</translation>
+    </message>
+    <message>
+      <source>Value written</source>
+      <translation>Wert geschrieben</translation>
+    </message>
+    <message>
+      <source>Connect to</source>
+      <translation>Verbunden zu</translation>
+    </message>
+    <message>
+      <source>PREFERRED</source>
+      <translation>VORZUGSLAGE</translation>
+    </message>
+    <message>
+      <source>Primary</source>
+      <translation>Primary</translation>
+    </message>
+    <message>
+      <source>REPLICATION</source>
+      <translation>ABGLEICH</translation>
+    </message>
+    <message>
+      <source>STATUS</source>
+      <translation>STATUS</translation>
+    </message>
+    <message>
+      <source>Secondary</source>
+      <translation>Secondary</translation>
+    </message>
+    <message>
+      <source>Switchover</source>
+      <translation>Umschaltung</translation>
+    </message>
+    <message>
+      <source>Vitality table</source>
+      <translation>Vitalstatustabelle</translation>
+    </message>
+    <message>
+      <source>WARNING</source>
+      <translation>WARNUNG</translation>
+    </message>
+    <message>
+      <source>Alternative 1</source>
+      <translation>Alternative 1</translation>
+    </message>
+    <message>
+      <source>Alternative 2</source>
+      <translation>Alternative 2</translation>
+    </message>
+    <message>
+      <source>Alternative 3</source>
+      <translation>Alternative 3</translation>
+    </message>
+    <message>
+      <source>Behaviour of alternative URLs</source>
+      <translation>Verhalten der alternativen URLs</translation>
+    </message>
+    <message>
+      <source>CONNECTION</source>
+      <translation>VERBINDUNG</translation>
+    </message>
+    <message>
+      <source>DATASOURCE BEHAVIOUR</source>
+      <translation>DATENQUELLENVERHALTEN</translation>
+    </message>
+    <message>
+      <source>Passive</source>
+      <translation>Passiv</translation>
+    </message>
+    <message>
+      <source>Source URL</source>
+      <translation>Quell-URL</translation>
+    </message>
+    <message>
+      <source>Switching Mode</source>
+      <translation>Umschaltmodus</translation>
+    </message>
+    <message>
+      <source>SERVER DOWN</source>
+      <translation>SERVER DOWN</translation>
+    </message>
+    <message>
+      <source>Split</source>
+      <translation>Split</translation>
+    </message>
+    <message>
+      <source>Switch</source>
+      <translation>Umschalten</translation>
+    </message>
+    <message>
+      <source>Switch preferred</source>
+      <translation>Schalte Vorzugslage um</translation>
+    </message>
+    <message>
+      <source>Visualization</source>
+      <translation>Visualisierung</translation>
+    </message>
+    <message>
+      <source>Weight</source>
+      <translation>Gewichtung</translation>
+    </message>
+    <message>
+      <source>Go to SOP server</source>
+      <translation>Weiter zum SOP Server</translation>
+    </message>
+    <message>
+      <source>Redirect</source>
+      <translation>Weiterleiten</translation>
+    </message>
+    <message>
+      <source>Reload</source>
+      <translation>Neu laden</translation>
+    </message>
+    <message>
+      <source>Warning</source>
+      <translation>Warnung</translation>
+    </message>
+    <message>
+      <source>Redundancy status has changed. You are now connected to the active</source>
+      <translation>Redundanzstatus wurde geändert. Sie wurden zum aktiven Rechner weiter-</translation>
+    </message>
+    <message>
+      <source>server. (This reload can be avoided by setting up a DNS server.)</source>
+      <translation>geleitet. (Dies kann durch einen DNS Server vermieden werden.)</translation>
+    </message>
+    <message>
+      <source>Redundancy status has changed. Reload page to apply potential changes.</source>
+      <translation>Redundanzstatus wurde geändert. Neu laden um Änderungen anzuzeigen.</translation>
+    </message>
+    <message>
+      <source>Redundancy status has changed. You are now connected to SNOP.</source>
+      <translation>Redundanzstatus wurde geändert. Sie sind mit dem SNOP verbunden.</translation>
+    </message>
+    <message>
+      <source>Attention: Changes will probably not be synchronized.</source>
+      <translation>Achtung: Änderungen werden möglicherweise nicht synchronisiert.</translation>
+    </message>
+    <message>
+      <source>OPERATING MODE</source>
+      <translation>BETRIEBSMODUS</translation>
+    </message>
+    <message>
+      <source>Redundancy mode</source>
+      <translation>Redundanz-Betrieb</translation>
+    </message>
+    <message>
+      <source>Split mode</source>
+      <translation>Split-Betrieb</translation>
+    </message>
+    <message>
+      <source>CPU</source>
+      <translation>PROZESSOR</translation>
+    </message>
+    <message>
+      <source>MEMORY</source>
+      <translation>SPEICHER</translation>
+    </message>
+    <message>
+      <source>SNOP</source>
+      <translation>SNOP</translation>
+    </message>
+    <message>
+      <source>SOP</source>
+      <translation>SOP</translation>
+    </message>
+    <message>
+      <source>VITALITY</source>
+      <translation>VITALITÄT</translation>
+    </message>
+    <message>
+      <source>Completed</source>
+      <translation>Abgeschlossen</translation>
+    </message>
+    <message>
+      <source>Resigned</source>
+      <translation>Storniert</translation>
+    </message>
+    <message>
+      <source>Replication Requested</source>
+      <translation>Abgleich angefordert</translation>
+    </message>
+    <message>
+      <source>History Replication Requested</source>
+      <translation>History Abgleich angefordert</translation>
+    </message>
+    <message>
+      <source>Replicating S-&gt;P</source>
+      <translation>Abgleich S-&gt;P</translation>
+    </message>
+    <message>
+      <source>Replicating History P-&gt;S</source>
+      <translation>Abgleich History P-&gt;S</translation>
+    </message>
+    <message>
+      <source>Replicating ?-&gt;?</source>
+      <translation>Abgleich ?-&gt;?</translation>
+    </message>
+    <message>
+      <source>Replicating P-&gt;S</source>
+      <translation>Abgleich P-&gt;S</translation>
+    </message>
+    <message>
+      <source>Replicating History S-&gt;P</source>
+      <translation>Abgleich History S-&gt;P</translation>
+    </message>
+    <message>
+      <source>Undefined</source>
+      <translation>Undefiniert</translation>
+    </message>
+    <message>
+      <source>Abort</source>
+      <translation>abbrechen</translation>
+    </message>
+    <message>
+      <source>Aborting</source>
+      <translation>abbrechen aktiv</translation>
+    </message>
+    <message>
+      <source>Ready</source>
+      <translation>Bereit</translation>
+    </message>
+    <message>
+      <source>Aborted</source>
+      <translation>Abgebrochen</translation>
+    </message>
+    <message>
+      <source>Complete</source>
+      <translation>abschließen</translation>
+    </message>
+    <message>
+      <source>Initialize</source>
+      <translation>Initialisieren</translation>
+    </message>
+    <message>
+      <source>Listen</source>
+      <translation>Warten</translation>
+    </message>
+    <message>
+      <source>Prepare</source>
+      <translation>vorbereiten</translation>
+    </message>
+    <message>
+      <source>Prepared</source>
+      <translation>Vorbereitet</translation>
+    </message>
+    <message>
+      <source>Switched</source>
+      <translation>Umgeschaltet</translation>
+    </message>
+    <message>
+      <source>Timeout</source>
+      <translation>Timeout</translation>
+    </message>
+    <message>
+      <source>Total / Conn.</source>
+      <translation>Gesamt / Verb.</translation>
+    </message>
+    <message>
+      <source>Data Source(s)</source>
+      <translation>Datenquelle(n)</translation>
+    </message>
+    <message>
+      <source>NotConnected</source>
+      <translation>Nicht verbunden</translation>
+    </message>
+    <message>
+      <source>Connected</source>
+      <translation>Verbunden</translation>
+    </message>
+    <message>
+      <source>LostConnection</source>
+      <translation>Verbindung verloren</translation>
+    </message>
+    <message>
+      <source>SubscriptionPending</source>
+      <translation>Warten auf Verbindung</translation>
+    </message>
+    <message>
+      <source>InputOutput</source>
+      <translation>EingangAusgang</translation>
+    </message>
+    <message>
+      <source>Input</source>
+      <translation>Eingang</translation>
+    </message>
+    <message>
+      <source>Output</source>
+      <translation>Ausgang</translation>
+    </message>
+    <message>
+      <source>Monitored</source>
+      <translation>Überwacht</translation>
+    </message>
+    <message>
+      <source>Resigned History</source>
+      <translation>History storniert</translation>
+    </message>
+    <message>
+      <source>Message</source>
+      <translation>Nachricht</translation>
+    </message>
+    <message>
+      <source>TIME DELTA</source>
+      <translation>ZEIT DELTA</translation>
+    </message>
+    <message>
+      <source>The server you want to switch is not available to you. You won't have access</source>
+      <translation>Der Server ist von diesem Clienten nicht erreichbar, der Visu-Zugriff wird</translation>
+    </message>
+    <message>
+      <source>Server is not available.</source>
+      <translation>Server ist nicht verfügbar.</translation>
+    </message>
+    <message>
+      <source>Yes, I know the risk</source>
+      <translation>Ja, das Risiko ist bekannt</translation>
+    </message>
+    <message>
+      <source>to the visualization anymore. Do you really want to perform a Switch-Over?</source>
+      <translation>verloren gehen. Wollen Sie wirklich eine Umschaltung durchführen?</translation>
+    </message>
+    <message>
+      <source>Advanced filters</source>
+      <translation>Erweiterte Filter</translation>
+    </message>
+    <message>
+      <source>Aggregate</source>
+      <translation>Aggregat</translation>
+    </message>
+    <message>
+      <source>Custom</source>
+      <translation>Benutzerdefiniert</translation>
+    </message>
+    <message>
+      <source>Custom interval</source>
+      <translation>Definiertes Intervall</translation>
+    </message>
+    <message>
+      <source>sec.</source>
+      <translation>Sek.</translation>
+    </message>
+    <message>
+      <source>Value, Event, Alarm</source>
+      <translation>Wert, Ereignis, Alarm</translation>
+    </message>
+    <message>
+      <source>History</source>
+      <translation>Historische</translation>
+    </message>
+    <message>
+      <source>min.</source>
+      <translation>Min.</translation>
+    </message>
+    <message>
+      <source>Hide advanced</source>
+      <translation>Filter ausblenden</translation>
+    </message>
+    <message>
+      <source>All other aggregates</source>
+      <translation>Sonstige Aggregate</translation>
+    </message>
+    <message>
+      <source>Configured aggregates</source>
+      <translation>Konfigurierte Aggregate</translation>
+    </message>
+    <message>
+      <source>Servers are not linked</source>
+      <translation>Server sind nicht verbunden</translation>
+    </message>
+    <message>
+      <source>Replication in progress</source>
+      <translation>Abgleich läuft</translation>
+    </message>
+    <message>
+      <source>In failover (vitality insufficient)</source>
+      <translation>Vitalstatus unzureichend</translation>
+    </message>
+    <message>
+      <source>Waiting for timeout</source>
+      <translation>Warte auf Timeout</translation>
+    </message>
+    <message>
+      <source>Switching in progress</source>
+      <translation>Umschaltung läuft</translation>
+    </message>
+    <message>
+      <source>No aggregate selected</source>
+      <translation>Kein Aggregat ausgewählt</translation>
+    </message>
+    <message>
+      <source>Add</source>
+      <translation>Hinzufügen</translation>
+    </message>
+    <message>
+      <source>After the import you need to load the configuration on the left side</source>
+      <translation>Nach dem Import muss die Konfiguration links geladen werden.</translation>
+    </message>
+    <message>
+      <source>Selected aggregate</source>
+      <translation>Ausgewähltes Aggregat</translation>
+    </message>
+    <message>
+      <source>Attention: Unsaved changes will be lost!</source>
+      <translation>Achtung: Nicht gespeicherte Änderungen gehen verloren!</translation>
+    </message>
+    <message>
+      <source>Axis configuration</source>
+      <translation>Achsenkonfiguration</translation>
+    </message>
+    <message>
+      <source>Border color</source>
+      <translation>Rahmenfarbe</translation>
+    </message>
+    <message>
+      <source>Border line width</source>
+      <translation>Rahmenstärke</translation>
+    </message>
+    <message>
+      <source>Chart Configuration</source>
+      <translation>Diagrammkonfiguration</translation>
+    </message>
+    <message>
+      <source>Chart theme</source>
+      <translation>Diagramm-Theme</translation>
+    </message>
+    <message>
+      <source>Chart title</source>
+      <translation>Diagrammtitel</translation>
+    </message>
+    <message>
+      <source>Choose chart to configure</source>
+      <translation>Zum Konfigurieren bitte ein Diagramm wählen</translation>
+    </message>
+    <message>
+      <source>Column</source>
+      <translation>Spalte</translation>
+    </message>
+    <message>
+      <source>Column area</source>
+      <translation>Bereich mit Balken</translation>
+    </message>
+    <message>
+      <source>Config node required!</source>
+      <translation>Konfigurationsnode benötigt!</translation>
+    </message>
+    <message>
+      <source>Configuration node</source>
+      <translation>Konfigurationsnode</translation>
+    </message>
+    <message>
+      <source>Configuration file (in filesystem)</source>
+      <translation>Konfigurationsfile (im Dateisystem)</translation>
+    </message>
+    <message>
+      <source>Crosshair color</source>
+      <translation>Farbe Fadenkreuz</translation>
+    </message>
+    <message>
+      <source>Data</source>
+      <translation>Daten</translation>
+    </message>
+    <message>
+      <source>Data mode</source>
+      <translation>Datenmodus</translation>
+    </message>
+    <message>
+      <source>Data set configuration</source>
+      <translation>Datensatzkonfiguration</translation>
+    </message>
+    <message>
+      <source>Data set to configure</source>
+      <translation>Datensatz</translation>
+    </message>
+    <message>
+      <source>Data source</source>
+      <translation>Datenquelle</translation>
+    </message>
+    <message>
+      <source>Date/Time format</source>
+      <translation>Datum-Zeitformat</translation>
+    </message>
+    <message>
+      <source>Delete selected</source>
+      <translation>Element löschen</translation>
+    </message>
+    <message>
+      <source>Download configuration</source>
+      <translation>Download Konfiguration</translation>
+    </message>
+    <message>
+      <source>Downsampling</source>
+      <translation>Downsampling</translation>
+    </message>
+    <message>
+      <source>Export / Import configuration</source>
+      <translation>Export / Import Konfiguration</translation>
+    </message>
+    <message>
+      <source>Export configuration as json-file</source>
+      <translation>Exportiere Konfiguration als json-Datei</translation>
+    </message>
+    <message>
+      <source>Export menu</source>
+      <translation>Exportmenü</translation>
+    </message>
+    <message>
+      <source>Fill color</source>
+      <translation>Füllfarbe</translation>
+    </message>
+    <message>
+      <source>General</source>
+      <translation>Allgemein</translation>
+    </message>
+    <message>
+      <source>General configuration</source>
+      <translation>Allgemeine Konfiguration</translation>
+    </message>
+    <message>
+      <source>Ignore</source>
+      <translation>Ignorieren</translation>
+    </message>
+    <message>
+      <source>Import configuration file (.json)</source>
+      <translation>Importiere Konfigurationsdatei (.json)</translation>
+    </message>
+    <message>
+      <source>Interpolation</source>
+      <translation>Interpolation</translation>
+    </message>
+    <message>
+      <source>Interval</source>
+      <translation>Intervall</translation>
+    </message>
+    <message>
+      <source>Label alignment</source>
+      <translation>Ausrichtung Beschriftung</translation>
+    </message>
+    <message>
+      <source>Label distance</source>
+      <translation>Abstand Beschriftung</translation>
+    </message>
+    <message>
+      <source>Label format</source>
+      <translation>Format Beschriftung</translation>
+    </message>
+    <message>
+      <source>Labels</source>
+      <translation>Beschriftungen</translation>
+    </message>
+    <message>
+      <source>Line color</source>
+      <translation>Linienfarbe</translation>
+    </message>
+    <message>
+      <source>Line type</source>
+      <translation>Linientyp</translation>
+    </message>
+    <message>
+      <source>Line width</source>
+      <translation>Linienstärke</translation>
+    </message>
+    <message>
+      <source>Load</source>
+      <translation>Laden</translation>
+    </message>
+    <message>
+      <source>Load / Save</source>
+      <translation>Laden / Speichern</translation>
+    </message>
+    <message>
+      <source>Load or delete existing configuration from node</source>
+      <translation>Lade oder lösche vorhandene Konfiguration</translation>
+    </message>
+    <message>
+      <source>Lower value address</source>
+      <translation>Adresse unterer Wert</translation>
+    </message>
+    <message>
+      <source>Major grid color</source>
+      <translation>Farbe Hauptgitter</translation>
+    </message>
+    <message>
+      <source>Major grid width</source>
+      <translation>Stärke Hauptgitter</translation>
+    </message>
+    <message>
+      <source>Major tick interval</source>
+      <translation>Intervall Hauptgitter</translation>
+    </message>
+    <message>
+      <source>Marker 1</source>
+      <translation>Marker 1</translation>
+    </message>
+    <message>
+      <source>Marker 2</source>
+      <translation>Marker 2</translation>
+    </message>
+    <message>
+      <source>Maximum</source>
+      <translation>Maximum</translation>
+    </message>
+    <message>
+      <source>Minimum</source>
+      <translation>Minimum</translation>
+    </message>
+    <message>
+      <source>Minor grid color</source>
+      <translation>Farbe Hilfsgitter</translation>
+    </message>
+    <message>
+      <source>Minor grid width</source>
+      <translation>Stärke Hilfsgitter</translation>
+    </message>
+    <message>
+      <source>Minor tick interval</source>
+      <translation>Intervall Hilfsgitter</translation>
+    </message>
+    <message>
+      <source>Missing data</source>
+      <translation>Fehlende Daten</translation>
+    </message>
+    <message>
+      <source>Mouse cursor</source>
+      <translation>Mauszeiger</translation>
+    </message>
+    <message>
+      <source>Mouse cursor line type</source>
+      <translation>Lininentyp des Mauszeigers</translation>
+    </message>
+    <message>
+      <source>Name</source>
+      <translation>Name</translation>
+    </message>
+    <message>
+      <source>Node Address</source>
+      <translation>Nodeadresse</translation>
+    </message>
+    <message>
+      <source>Non-stop</source>
+      <translation>Non-stop</translation>
+    </message>
+    <message>
+      <source>Pie</source>
+      <translation>Kuchen</translation>
+    </message>
+    <message>
+      <source>Please select a configuration name!</source>
+      <translation>Bitte wählen Sie einen Konfigurationsnamen!</translation>
+    </message>
+    <message>
+      <source>Please select a configuration!</source>
+      <translation>Bitte wählen Sie eine Konfiguration!</translation>
+    </message>
+    <message>
+      <source>Position of x-axis</source>
+      <translation>Position der x-Achse</translation>
+    </message>
+    <message>
+      <source>Position of y-axis</source>
+      <translation>Position der y-Achse</translation>
+    </message>
+    <message>
+      <source>Preview (F2)</source>
+      <translation>Vorschau (F2)</translation>
+    </message>
+    <message>
+      <source>Quicksave</source>
+      <translation>Quicksave</translation>
+    </message>
+    <message>
+      <source>Refresh</source>
+      <translation>Neu laden</translation>
+    </message>
+    <message>
+      <source>Related x/y-axis</source>
+      <translation>Bezugsachsen x/y</translation>
+    </message>
+    <message>
+      <source>Save / Load configuration</source>
+      <translation>Konfiguration speichern / laden</translation>
+    </message>
+    <message>
+      <source>Save current configuration?</source>
+      <translation>Konfiguration speichern?</translation>
+    </message>
+    <message>
+      <source>The current configuration is not saved yet!</source>
+      <translation>Die aktuelle Konfiguration ist noch nicht gespeichert!</translation>
+    </message>
+    <message>
+      <source>Do you still want to create the new configuration?</source>
+      <translation>Möchten Sie die neue Konfiguration dennoch erstellen?</translation>
+    </message>
+    <message>
+      <source>Scale type</source>
+      <translation>Skalierungstyp</translation>
+    </message>
+    <message>
+      <source>Search node by name</source>
+      <translation>Suche Node nach Name</translation>
+    </message>
+    <message>
+      <source>Settings</source>
+      <translation>Einstellungen</translation>
+    </message>
+    <message>
+      <source>Snapping</source>
+      <translation>Einrasten</translation>
+    </message>
+    <message>
+      <source>Source address</source>
+      <translation>Quelladresse</translation>
+    </message>
+    <message>
+      <source>Spline</source>
+      <translation>Spline</translation>
+    </message>
+    <message>
+      <source>Styling</source>
+      <translation>Styling</translation>
+    </message>
+    <message>
+      <source>Temporary removement of datapoints which are not visible to the user</source>
+      <translation>Ausblenden von Datenpunkten, welche der User bei der vorhandenen</translation>
+    </message>
+    <message>
+      <source>Time span</source>
+      <translation>Zeitspanne</translation>
+    </message>
+    <message>
+      <source>Tooltip decimals</source>
+      <translation>Tooltip Dezimalstellen</translation>
+    </message>
+    <message>
+      <source>Tooltip prefix</source>
+      <translation>Tooltip Prefix</translation>
+    </message>
+    <message>
+      <source>Tooltip suffix</source>
+      <translation>Tooltip Suffix</translation>
+    </message>
+    <message>
+      <source>Tooltips</source>
+      <translation>Tooltips</translation>
+    </message>
+    <message>
+      <source>Two-line area</source>
+      <translation>Bereich mit zwei Linien</translation>
+    </message>
+    <message>
+      <source>Type configuration</source>
+      <translation>Typkonfiguration</translation>
+    </message>
+    <message>
+      <source>UTC</source>
+      <translation>UTC</translation>
+    </message>
+    <message>
+      <source>Unit</source>
+      <translation>Einheit</translation>
+    </message>
+    <message>
+      <source>Upper value address</source>
+      <translation>Adresse oberer Wert</translation>
+    </message>
+    <message>
+      <source>Visibility</source>
+      <translation>Sichtbarkeit</translation>
+    </message>
+    <message>
+      <source>X-Axis</source>
+      <translation>X-Achse</translation>
+    </message>
+    <message>
+      <source>X-Axis to configure</source>
+      <translation>X-Achse wählen</translation>
+    </message>
+    <message>
+      <source>Y-Axis</source>
+      <translation>Y-Achse</translation>
+    </message>
+    <message>
+      <source>Y-Axis to configure</source>
+      <translation>Y-Achse wählen</translation>
+    </message>
+    <message>
+      <source>archive only</source>
+      <translation>nur Archive</translation>
+    </message>
+    <message>
+      <source>at the given resolution of the screen/chart</source>
+      <translation>Auflösung des Diagramms nicht wahrnehmen kann.</translation>
+    </message>
+    <message>
+      <source>bottom</source>
+      <translation>unten</translation>
+    </message>
+    <message>
+      <source>center</source>
+      <translation>zentriert</translation>
+    </message>
+    <message>
+      <source>dashed</source>
+      <translation>gestrichelt</translation>
+    </message>
+    <message>
+      <source>dotted</source>
+      <translation>gepunktet</translation>
+    </message>
+    <message>
+      <source>enabled</source>
+      <translation>aktiviert</translation>
+    </message>
+    <message>
+      <source>line</source>
+      <translation>Linie</translation>
+    </message>
+    <message>
+      <source>linear</source>
+      <translation>linear</translation>
+    </message>
+    <message>
+      <source>live only</source>
+      <translation>nur Live</translation>
+    </message>
+    <message>
+      <source>local</source>
+      <translation>lokal</translation>
+    </message>
+    <message>
+      <source>logarithmic</source>
+      <translation>logarithmisch</translation>
+    </message>
+    <message>
+      <source>mixed</source>
+      <translation>Gesamt</translation>
+    </message>
+    <message>
+      <source>ms</source>
+      <translation>ms</translation>
+    </message>
+    <message>
+      <source>px</source>
+      <translation>px</translation>
+    </message>
+    <message>
+      <source>sec</source>
+      <translation>sek</translation>
+    </message>
+    <message>
+      <source>second(s)</source>
+      <translation>Sekunde(n)</translation>
+    </message>
+    <message>
+      <source>solid</source>
+      <translation>solid</translation>
+    </message>
+    <message>
+      <source>spline</source>
+      <translation>spline</translation>
+    </message>
+    <message>
+      <source>splines</source>
+      <translation>Splines</translation>
+    </message>
+    <message>
+      <source>step</source>
+      <translation>abgestuft</translation>
+    </message>
+    <message>
+      <source>top</source>
+      <translation>oben</translation>
+    </message>
+    <message>
+      <source>visible</source>
+      <translation>sichtbar</translation>
+    </message>
+    <message>
+      <source>with</source>
+      <translation>mit</translation>
+    </message>
+    <message>
+      <source>z-index</source>
+      <translation>z-index</translation>
+    </message>
+    <message>
+      <source>Series</source>
+      <translation>Serie</translation>
+    </message>
+    <message>
+      <source>Options</source>
+      <translation>Einstellungen</translation>
+    </message>
+    <message>
+      <source>Measurement marker</source>
+      <translation>Messzeiger</translation>
+    </message>
+    <message>
+      <source>Marker 1 X-Value</source>
+      <translation>Marker 1 X-Wert</translation>
+    </message>
+    <message>
+      <source>Marker 1 Y-Value</source>
+      <translation>Marker 1 Y-Wert</translation>
+    </message>
+    <message>
+      <source>Marker 2 X-Value</source>
+      <translation>Marker 2 X-Wert</translation>
+    </message>
+    <message>
+      <source>Marker 2 Y-Value</source>
+      <translation>Marker 2 Y-Wert</translation>
+    </message>
+    <message>
+      <source>Marker X-Delta</source>
+      <translation>Marker X-Delta</translation>
+    </message>
+    <message>
+      <source>Marker Y-Delta</source>
+      <translation>Marker Y-Delta</translation>
+    </message>
+    <message>
+      <source>Auto scale</source>
+      <translation>Auto. Skalierung</translation>
+    </message>
+    <message>
+      <source>Configuration</source>
+      <translation>Konfiguration</translation>
+    </message>
+    <message>
+      <source>Create</source>
+      <translation>Erstellen</translation>
+    </message>
+    <message>
+      <source>Create new configuration</source>
+      <translation>Neue Konfiguration erstellen</translation>
+    </message>
+    <message>
+      <source>Actual configuration</source>
+      <translation>Aktuelle Konfiguration</translation>
+    </message>
+    <message>
+      <source>Actual configuration name already exist.</source>
+      <translation>Aktueller Konfigurationsname exisitiert bereits.</translation>
+    </message>
+    <message>
+      <source>Auto Scale</source>
+      <translation>Auto Scale</translation>
+    </message>
+    <message>
+      <source>Do you want to overwrite the configuration?</source>
+      <translation>Wollen Sie die Konfiguration überschreiben?</translation>
+    </message>
+    <message>
+      <source>First axis can not be deleted!</source>
+      <translation>Erste Achse kann nicht gelöscht werden!</translation>
+    </message>
+    <message>
+      <source>Marker</source>
+      <translation>Datenpunkte</translation>
+    </message>
+    <message>
+      <source>Overwrite</source>
+      <translation>Überschreiben</translation>
+    </message>
+    <message>
+      <source>Overwrite existing configuration?</source>
+      <translation>Exisitierende Konfiguration überschreiben?</translation>
+    </message>
+    <message>
+      <source>Please enter a configuration name!</source>
+      <translation>Bitte Konfigurationsnamen eingeben!</translation>
+    </message>
+    <message>
+      <source>Scroll list down</source>
+      <translation>Liste nach unten scrollen</translation>
+    </message>
+    <message>
+      <source>Scroll list up</source>
+      <translation>Liste nach oben scrollen</translation>
+    </message>
+    <message>
+      <source>Update interval</source>
+      <translation>Aktualisierungsintervall</translation>
+    </message>
+    <message>
+      <source>milliseconds</source>
+      <translation>Millisekunden</translation>
+    </message>
+    <message>
+      <source>Alarm condition</source>
+      <translation>Alarmbedingung</translation>
+    </message>
+    <message>
+      <source>Alarm source</source>
+      <translation>Alarmquelle</translation>
+    </message>
+    <message>
+      <source>seconds</source>
+      <translation></translation>
+    </message>
+    <message>
+      <source>Comment</source>
+      <translation>Kommentar</translation>
+    </message>
+    <message>
+      <source>Group</source>
+      <translation>Gruppe</translation>
+    </message>
+    <message>
+      <source>Condition address</source>
+      <translation>Adresse der Alarmbedingung</translation>
+    </message>
+    <message>
+      <source>Shelve</source>
+      <translation>Zurückstellen</translation>
+    </message>
+    <message>
+      <source>Shelve time</source>
+      <translation>Beginn des Zurückstellens</translation>
+    </message>
+    <message>
+      <source>Timed shelve</source>
+      <translation>Befristetes Zurückstellen</translation>
+    </message>
+    <message>
+      <source>Shelving duration</source>
+      <translation>Dauer des Zurückstellens</translation>
+    </message>
+    <message>
+      <source>Acknowledge</source>
+      <translation>Quittieren</translation>
+    </message>
+    <message>
+      <source>Alarm ID</source>
+      <translation>Alarm-ID</translation>
+    </message>
+    <message>
+      <source>Alarm state</source>
+      <translation>Alarmstatus</translation>
+    </message>
+    <message>
+      <source>Event text</source>
+      <translation>Ereignistext</translation>
+    </message>
+    <message>
+      <source>Shelved</source>
+      <translation>Zurückgestellt</translation>
+    </message>
+    <message>
+      <source>Alarms</source>
+      <translation>Alarme</translation>
+    </message>
+    <message>
+      <source>One Shot Shelve</source>
+      <translation>Einmalig zurückstellen</translation>
+    </message>
+    <message>
+      <source>Timed Shelve</source>
+      <translation>Befristet zurückstellen</translation>
+    </message>
+    <message>
+      <source>Suppress</source>
+      <translation>Unterdrücken</translation>
+    </message>
+    <message>
+      <source>Confirm</source>
+      <translation>Bestätigen</translation>
+    </message>
+    <message>
+      <source>Alarm comment</source>
+      <translation>Alarmkommentar</translation>
+    </message>
+    <message>
+      <source>Unshelve</source>
+      <translation>Nicht zurückstellen</translation>
+    </message>
+    <message>
+      <source>Unsuppress</source>
+      <translation>Nicht unterdrücken</translation>
+    </message>
+    <message>
+      <source>Acknowledge with comment</source>
+      <translation>Mit Kommentar quittieren</translation>
+    </message>
+    <message>
+      <source>Confirm with comment</source>
+      <translation>Mit Kommentar bestätigen</translation>
+    </message>
+    <message>
+      <source>Enable</source>
+      <translation>Einschalten</translation>
+    </message>
+    <message>
+      <source>Disable</source>
+      <translation>Ausschalten</translation>
+    </message>
+    <message>
+      <source>Max. time is</source>
+      <translation>Maximale Zeit ist</translation>
+    </message>
+    <message>
+      <source>Error</source>
+      <translation>Fehler</translation>
+    </message>
+    <message>
+      <source>Entered value is not a number</source>
+      <translation>Eingegebener Wert ist keine Zahl</translation>
+    </message>
+    <message>
+      <source>Alarm or condition</source>
+      <translation>Alarm od. Alarmbedingung</translation>
+    </message>
+    <message>
+      <source>Please enter a comment</source>
+      <translation>Bitte geben Sie einen Kommentar ein</translation>
+    </message>
+    <message>
+      <source>Flashtime ack.</source>
+      <translation>Blinkzeit Quitt.</translation>
+    </message>
+    <message>
+      <source>Input node</source>
+      <translation>Datenpunkt</translation>
+    </message>
+    <message>
+      <source>Ackn. / Conf.</source>
+      <translation>Quitt. / Best.</translation>
+    </message>
+    <message>
+      <source>with comment</source>
+      <translation>mit Kommentar</translation>
+    </message>
+    <message>
+      <source>Confirmed state</source>
+      <translation>Bestätigt Status</translation>
+    </message>
+    <message>
+      <source>Enabled state</source>
+      <translation>Eingeschaltet Status</translation>
+    </message>
+    <message>
+      <source>Enabled state ID</source>
+      <translation>Eingeschaltet Status ID</translation>
+    </message>
+    <message>
+      <source>Shelving state</source>
+      <translation>Zurückgestellt Status</translation>
+    </message>
+    <message>
+      <source>Suppressed state</source>
+      <translation>Unterdrückt Status</translation>
+    </message>
+    <message>
+      <source>Confirmed state ID</source>
+      <translation>Bestätigt Status ID</translation>
+    </message>
+    <message>
+      <source>State</source>
+      <translation>Status</translation>
+    </message>
+    <message>
+      <source>Confirmed state icon</source>
+      <translation>Bestätigt Status Symbol</translation>
+    </message>
+    <message>
+      <source>Enabled state icon</source>
+      <translation>Eingeschaltet Status Symbol</translation>
+    </message>
+    <message>
+      <source>Suppressed state icon</source>
+      <translation>Unterdrückt Status Symbol</translation>
+    </message>
+    <message>
+      <source>Min. priority</source>
+      <translation>Min. Prio.</translation>
+    </message>
+    <message>
+      <source>Advanced</source>
+      <translation>Erweitert</translation>
+    </message>
+    <message>
+      <source>Alarming</source>
+      <translation>Alarming</translation>
+    </message>
+    <message>
+      <source>All rows with all columns</source>
+      <translation>Alle Zeilen mit allen Spalten</translation>
+    </message>
+    <message>
+      <source>All rows with displayed columns</source>
+      <translation>Alle Zeilen mit angezeigten Spalten</translation>
+    </message>
+    <message>
+      <source>Export</source>
+      <translation>Export</translation>
+    </message>
+    <message>
+      <source>Export CSV</source>
+      <translation>Export CSV</translation>
+    </message>
+    <message>
+      <source>Filter</source>
+      <translation>Filter</translation>
+    </message>
+    <message>
+      <source>From - Number of rows</source>
+      <translation>Von / Zeilenanzahl</translation>
+    </message>
+    <message>
+      <source>From - To</source>
+      <translation>Zeitraum Von - Bis</translation>
+    </message>
+    <message>
+      <source>Marked rows with all columns</source>
+      <translation>Markierte Zeilen mit allen Spalten</translation>
+    </message>
+    <message>
+      <source>Marked rows with displayed columns</source>
+      <translation>Markierte Zeilen mit angezeigten Spalten</translation>
+    </message>
+    <message>
+      <source>Number of rows</source>
+      <translation>Zeilenanzahl</translation>
+    </message>
+    <message>
+      <source>OneShotShelved</source>
+      <translation>Einmalig zurückgestellt</translation>
+    </message>
+    <message>
+      <source>Ouf-Of-Service</source>
+      <translation>Ouf-Of-Service</translation>
+    </message>
+    <message>
+      <source>Page</source>
+      <translation>Seite</translation>
+    </message>
+    <message>
+      <source>Range filters</source>
+      <translation>Bereichsfilter</translation>
+    </message>
+    <message>
+      <source>Received</source>
+      <translation>Empfangen</translation>
+    </message>
+    <message>
+      <source>Filtered</source>
+      <translation>Gefiltert</translation>
+    </message>
+    <message>
+      <source>Reset sorting</source>
+      <translation>Sortierung zurücksetzen</translation>
+    </message>
+    <message>
+      <source>Show or hide filter</source>
+      <translation>Zeige / Verstecke Filter</translation>
+    </message>
+    <message>
+      <source>TimeShelved</source>
+      <translation>Befristet zurückgestellt</translation>
+    </message>
+    <message>
+      <source>Number of rows - To</source>
+      <translation>Zeilenanzahl / Bis</translation>
+    </message>
+    <message>
+      <source>active conf.</source>
+      <translation>aktiv best.</translation>
+    </message>
+    <message>
+      <source>days</source>
+      <translation>Tage</translation>
+    </message>
+    <message>
+      <source>hours</source>
+      <translation>Stunden</translation>
+    </message>
+    <message>
+      <source>items</source>
+      <translation>Elementen</translation>
+    </message>
+    <message>
+      <source>minutes</source>
+      <translation>Minuten</translation>
+    </message>
+    <message>
+      <source>months</source>
+      <translation>Monate</translation>
+    </message>
+    <message>
+      <source>multiple selection</source>
+      <translation>Mehrfachselektion</translation>
+    </message>
+    <message>
+      <source>settings</source>
+      <translation>Einstellungen</translation>
+    </message>
+    <message>
+      <source>update</source>
+      <translation>Update</translation>
+    </message>
+    <message>
+      <source>Columns</source>
+      <translation>Spalten</translation>
+    </message>
+    <message>
+      <source>Alarms and conditions</source>
+      <translation>Alarme und Konfigurationen</translation>
+    </message>
+    <message>
+      <source>(IN)ACTIVE! latched</source>
+      <translation>(IN)AKTIV! verriegelt</translation>
+    </message>
+    <message>
+      <source>(IN)ACTIVE! unconf.</source>
+      <translation>(IN)AKTIV! unbest.</translation>
+    </message>
+    <message>
+      <source>ACTIVE! latched</source>
+      <translation>AKTIV! verriegelt</translation>
+    </message>
+    <message>
+      <source>ACTIVE! unconf.</source>
+      <translation>AKTIV! unbest.</translation>
+    </message>
+    <message>
+      <source>INACTIVE! latched</source>
+      <translation>INAKTIV! verriegelt</translation>
+    </message>
+    <message>
+      <source>INACTIVE! unconf.</source>
+      <translation>INAKTIV! unbest.</translation>
+    </message>
+    <message>
+      <source>Parameter</source>
+      <translation>Parameter</translation>
+    </message>
+    <message>
+      <source>list</source>
+      <translation>Liste</translation>
+    </message>
+    <message>
+      <source>of</source>
+      <translation>von</translation>
+    </message>
+    <message>
+      <source>more</source>
+      <translation>mehr</translation>
+    </message>
+    <message>
+      <source>Unshelve time</source>
+      <translation>Ende des Zurückstellens</translation>
+    </message>
+    <message>
+      <source>View sum alarm members</source>
+      <translation>Unteralarme anzeigen</translation>
+    </message>
+    <message>
+      <source>Sum alarm members of</source>
+      <translation>Unteralarme von</translation>
+    </message>
+    <message>
+      <source>Is sum alarm</source>
+      <translation>Ist Summenalarm</translation>
+    </message>
+    <message>
+      <source>Sum alarm members list</source>
+      <translation>Liste der Unteralarme</translation>
+    </message>
+    <message>
+      <source>Time value change</source>
+      <translation>Zeit Wertänderung</translation>
+    </message>
+    <message>
+      <source>false</source>
+      <translation>nein</translation>
+    </message>
+    <message>
+      <source>true</source>
+      <translation>ja</translation>
+    </message>
+    <message>
+      <source>for node</source>
+      <translation>für Datenpunkt</translation>
+    </message>
+    <message>
+      <source>Compression</source>
+      <translation>Kompression</translation>
+    </message>
+    <message>
+      <source>Shelving state icon</source>
+      <translation>Zurückgestellt Status Symbol</translation>
+    </message>
+    <message>
+      <source>Save in</source>
+      <translation>Speichern in</translation>
+    </message>
+    <message>
+      <source>Time received</source>
+      <translation>Empfangszeit</translation>
+    </message>
+    <message>
+      <source>Multiple nodes</source>
+      <translation>Datenpunkten</translation>
+    </message>
+    <message>
+      <source>Single node</source>
+      <translation>Datenpunkt</translation>
+    </message>
+    <message>
+      <source>Filesystem</source>
+      <translation>Dateisystem</translation>
+    </message>
+    <message>
+      <source>Configuration node (sub-nodes will be created automatically)</source>
+      <translation>Konfigurationsnode (Unterknoten werden automatisch erstellt)</translation>
+    </message>
+    <message>
+      <source>Time unshelve</source>
+      <translation>Ende d. Zurückstellens</translation>
+    </message>
+    <message>
+      <source>No longer available in data source.</source>
+      <translation>Nicht mehr in der Datenquelle verfügbar.</translation>
+    </message>
+    <message>
+      <source>Data source not connected.</source>
+      <translation>Datenquelle nicht verbunden.</translation>
+    </message>
+    <message>
+      <source>Condition removed.</source>
+      <translation>Bedingung entfernt.</translation>
+    </message>
+    <message>
+      <source>Source variable removed.</source>
+      <translation>Quell-Variable entfernt.</translation>
+    </message>
+    <message>
+      <source>Limit variable removed.</source>
+      <translation>Grenzwert-Variable entfernt.</translation>
+    </message>
+    <message>
+      <source>Match variable removed.</source>
+      <translation>Übereinstimmungs-Variable entfernt.</translation>
+    </message>
+    <message>
+      <source>Condition enabled.</source>
+      <translation>Bedingung eingeschaltet.</translation>
+    </message>
+    <message>
+      <source>Condition disabled.</source>
+      <translation>Bedingung ausgeschaltet.</translation>
+    </message>
+    <message>
+      <source>Groups</source>
+      <translation>Gruppen</translation>
+    </message>
+    <message>
+      <source>acknowledge</source>
+      <translation>quittieren</translation>
+    </message>
+    <message>
+      <source>confirm</source>
+      <translation>bestätigen</translation>
+    </message>
+    <message>
+      <source>Notification</source>
+      <translation>Notifikation</translation>
+    </message>
+    <message>
+      <source>Close</source>
+      <translation>Schließen</translation>
+    </message>
+    <message>
+      <source>Clear</source>
+      <translation>Löschen</translation>
+    </message>
+    <message>
+      <source>Continuation Point Invalid</source>
+      <translation>Fortsetzungspunkt ungültig</translation>
+    </message>
+    <message>
+      <source>No Continuation Points</source>
+      <translation>Keine Fortsetzungspunkte</translation>
+    </message>
+    <message>
+      <source>The filter result might be incomplete.</source>
+      <translation>Das Filterergebnis ist möglicherweise unvollständig.</translation>
+    </message>
+    <message>
+      <source>Note: May require reload of the chart to be applied correctly.</source>
+      <translation>Anmerkung: Das Diagramm muss für eine korrekte Anzeige eventuell neu geladen werden.
+			</translation>
+    </message>
+    <message>
+      <source>Append data off</source>
+      <translation>Fortlaufende Daten aus</translation>
+    </message>
+    <message>
+      <source>Append data on</source>
+      <translation>Fortlaufende Daten an</translation>
+    </message>
+    <message>
+      <source>Condition created.</source>
+      <translation>Bedingung erstellt.</translation>
+    </message>
+    <message>
+      <source>Triggerd by Boost-Modul</source>
+      <translation>Ausgelöst durch Boost-Modul</translation>
+    </message>
+    <message>
+      <source>Set/Cancel marks</source>
+      <translation>Markierung setzen/aufheben</translation>
+    </message>
+    <message>
+      <source>Details show/hide</source>
+      <translation>Details anzeigen/ausblenden</translation>
+    </message>
+    <message>
+      <source>Please select a chart or series to start configuration.</source>
+      <translation>Zum Konfigurieren bitte ein Diagramm/eine Serie markieren</translation>
+    </message>
+    <message>
+      <source>alignment</source>
+      <translation>Ausrichtung</translation>
+    </message>
+    <message>
+      <source>Please enter a favorite name!</source>
+      <translation>Bitte Favoritennamen eingeben!</translation>
+    </message>
+    <message>
+      <source>Not logged in. Favorites data will be overwritten at login!</source>
+      <translation>Nicht eingeloggt. Favoritendaten werden beim Einloggen überschrieben!</translation>
+    </message>
+    <message>
+      <source>Remove</source>
+      <translation>Entfernen</translation>
+    </message>
+    <message>
+      <source>Remove favorite</source>
+      <translation>Favorit entfernen</translation>
+    </message>
+    <message>
+      <source>The current display can not be added to the favorites, because the config node would exceed its size limit.</source>
+      <translation>Das Display kann nicht zu den Favoriten hinzugefügt werden, da sonst das Größenlimit des Konfigurations-Nodes überschritten wird.</translation>
+    </message>
+    <message>
+      <source>Size limit exceeded</source>
+      <translation>Größenlimit überschritten</translation>
+    </message>
+  </context>
+</TS>

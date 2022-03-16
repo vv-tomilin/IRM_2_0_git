@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Set_var.Drill_speed_limit.Drill_speed_limit_value
+NodeClass: Variable
+BrowseName: 1:Drill_speed_limit_value
+DisplayName: en|Drill_speed_limit_value
+Description: en|Drill_speed_limit_value
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

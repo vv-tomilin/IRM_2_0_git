@@ -1,0 +1,15 @@
+NodeId: ns=1;s=SYSTEM.SECURITY.GROUPS.Administrators
+NodeClass: Object
+BrowseName: 1:Administrators
+DisplayName: en|Administrators
+Description: en|Administrators
+EventNotifier: 0
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.RIGHTS.ENGINEERING.Login
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.RIGHTS.USER.AccessIRMaster
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.RIGHTS.USER.AccessReport
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.RIGHTS.USER.AccessSettings
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.RIGHTS.USER.Limitation
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.admin
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.khayrullin.iv
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.steward
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.Group

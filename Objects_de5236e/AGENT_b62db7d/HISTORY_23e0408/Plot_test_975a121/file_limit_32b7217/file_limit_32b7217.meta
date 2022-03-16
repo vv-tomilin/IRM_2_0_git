@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.HISTORY.Plot_test.file_limit
+NodeClass: Variable
+BrowseName: 1:file_limit
+DisplayName: en|file_limit
+Description: en|file_limit
+DataType: UInt32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

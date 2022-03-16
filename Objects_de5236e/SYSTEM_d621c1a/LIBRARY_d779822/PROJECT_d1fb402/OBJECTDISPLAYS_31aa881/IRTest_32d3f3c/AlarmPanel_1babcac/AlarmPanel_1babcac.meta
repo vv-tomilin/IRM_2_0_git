@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.AlarmPanel
+NodeClass: Variable
+BrowseName: 1:AlarmPanel
+DisplayName: en|AlarmPanel
+Description: en|AlarmPanel
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.VSP.MaxTDSTorque
+NodeClass: Variable
+BrowseName: 1:MaxTDSTorque
+DisplayName: en|MaxTDSTorque
+Description: en|MaxTDSTorque
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

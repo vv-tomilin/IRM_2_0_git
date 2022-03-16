@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/Pyramid
+NodeClass: Object
+BrowseName: 1:Pyramid
+DisplayName: en|Pyramid
+Description: en|Pyramid
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

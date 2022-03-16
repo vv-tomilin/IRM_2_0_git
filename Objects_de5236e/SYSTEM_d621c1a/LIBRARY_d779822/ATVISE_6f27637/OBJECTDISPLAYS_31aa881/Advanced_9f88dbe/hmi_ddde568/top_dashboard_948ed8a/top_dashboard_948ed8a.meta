@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.top_dashboard
+NodeClass: Variable
+BrowseName: 1:top_dashboard
+DisplayName: en|top_dashboard
+Description: en|top_dashboard
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

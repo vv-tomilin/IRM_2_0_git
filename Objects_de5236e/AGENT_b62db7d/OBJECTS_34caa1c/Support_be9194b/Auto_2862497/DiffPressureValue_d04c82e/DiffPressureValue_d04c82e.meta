@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.DiffPressureValue
+NodeClass: Variable
+BrowseName: 1:DiffPressureValue
+DisplayName: en|DiffPressureValue
+Description: en|DiffPressureValue
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

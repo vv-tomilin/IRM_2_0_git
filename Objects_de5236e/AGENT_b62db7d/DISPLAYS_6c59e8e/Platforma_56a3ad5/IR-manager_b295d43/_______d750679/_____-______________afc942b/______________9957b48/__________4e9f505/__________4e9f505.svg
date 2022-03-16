@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg" height="1000" width="580">
+ <defs/>
+ <metadata>
+  <atv:gridconfig gridstyle="lines" height="20" enabled="true" width="20"/>
+  <atv:snapconfig height="10" enabled="true" width="10"/>
+ </metadata>
+ <script type="text/ecmascript"><![CDATA[webMI.trigger.fire('zoomToOilfield', {parent : "140296", target : "1761431"})]]></script>
+ <text font-weight="bold" fill="#ffffff" id="id_2" font-size="40" x="163.5" font-family="Arial" atv:refpy="23" atv:refpx="290" y="35.5">Приобское</text>
+ <svg id="id_0" transform="matrix(1.6875,0,0,0.5,0,0)" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.show_value" x="11.852" height="160" atv:refpy="80.01" width="160" atv:refpx="155" y="100">
+  <atv:argument name="title" value="T{Кустовых площадок}"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.OilfieldBoard.numberOfBushes"/>
+  <atv:overwrite id="clickarea_display" transform="matrix(0.5926,0,0,2,0,0)" height="80" width="270"/>
+  <atv:overwrite id="sub_label" transform="matrix(0.5926,0,0,2,0,0)" x="135" y="69.2"/>
+  <atv:overwrite id="main_label" transform="matrix(0.5926,0,0,2,0,0)" x="135" y="50.5"/>
+  <atv:overwrite id="value_label" transform="matrix(0.5926,0,0,2,0,0)" x="135" y="54.5"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(0.5926,0,0,2,0,0)" height="50" width="260"/>
+  <atv:overwrite id="title" transform="matrix(0.5926,0,0,2,0,0)" x="135"/>
+  <atv:overwrite id="background" transform="matrix(0.5926,0,0,2,0,0)" height="78" width="268"/>
+ </svg>
+ <svg id="id_1" transform="matrix(1.6875,0,0,0.5,0,0)" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.show_value" x="171.852" height="160" atv:refpy="82.99" width="160" atv:refpx="424.999" y="100">
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.OilfieldBoard.numberOfRigs"/>
+  <atv:argument name="title" value="T{Кол-во бригад}"/>
+  <atv:overwrite id="clickarea_display" transform="matrix(0.5926,0,0,2,0,0)" height="80" width="270"/>
+  <atv:overwrite id="sub_label" transform="matrix(0.5926,0,0,2,0,0)" x="135" y="69.2"/>
+  <atv:overwrite id="main_label" transform="matrix(0.5926,0,0,2,0,0)" x="135" y="50.5"/>
+  <atv:overwrite id="value_label" transform="matrix(0.5926,0,0,2,0,0)" x="135" y="54.5"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(0.5926,0,0,2,0,0)" height="50" width="260"/>
+  <atv:overwrite id="title" transform="matrix(0.5926,0,0,2,0,0)" x="135"/>
+  <atv:overwrite id="background" transform="matrix(0.5926,0,0,2,0,0)" height="78" width="268"/>
+ </svg>
+ <svg id="id_3" transform="matrix(1.125,0,0,0.4688,0,0)" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.show_value" x="337.778" height="160" atv:refpy="408.053" width="160" atv:refpx="470" y="1243.602">
+  <atv:argument name="title" value="T{Сред. MSE}"/>
+  <atv:argument name="unit" value="T{ГДж/м³}"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.OilfieldBoard.avgMSE"/>
+  <atv:argument name="outputMode" value="number"/>
+  <atv:overwrite id="clickarea_display" transform="matrix(0.8889,0,0,2.1331,0,0)" height="75.008" width="180"/>
+  <atv:overwrite id="sub_label" transform="matrix(0.8889,0,0,2.1331,0,0)" x="90" y="66.704"/>
+  <atv:overwrite id="main_label" transform="matrix(0.8889,0,0,2.1331,0,0)" x="90" y="48.004"/>
+  <atv:overwrite id="value_label" transform="matrix(0.8889,0,0,2.1331,0,0)" x="90" y="52.004"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(0.8889,0,0,2.1331,0,0)" height="45.008" width="170"/>
+  <atv:overwrite id="title" transform="matrix(0.8889,0,0,2.1331,0,0)" x="90"/>
+  <atv:overwrite id="background" transform="matrix(0.8889,0,0,2.1331,0,0)" height="73.008" width="178"/>
+ </svg>
+ <svg id="id_18" transform="matrix(3.375,0,0,0.6875,0,0)" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.progress_bar" x="5.926" height="160" atv:refpy="199.112" width="160" atv:refpx="290.001" y="197.818">
+  <atv:argument name="title" value="T{Общая проходка}"/>
+  <atv:argument name="max" value="6500"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.OilfieldBoard.totalPass"/>
+  <atv:argument name="unit" value="T{м}"/>
+  <atv:argument name="barColor" value="#F1DB4B"/>
+  <atv:overwrite id="clickarea_display" transform="matrix(0.2963,0,0,1.4545,0,0)" height="110" width="540"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(0.2963,0,0,1.4545,0,0)" height="80" width="530"/>
+  <atv:overwrite id="sub_label" transform="matrix(0.2963,0,0,1.4545,0,0)" x="270" y="84.246"/>
+  <atv:overwrite id="main_label" transform="matrix(0.2963,0,0,1.4545,0,0)" x="270" y="65.5"/>
+  <atv:overwrite id="chart" transform="matrix(1.0469,0,0,0.8951,0,0)" x="1.415" y="40.625"/>
+  <atv:overwrite id="title" transform="matrix(0.2963,0,0,1.4545,0,0)" x="270"/>
+  <atv:overwrite id="background" transform="matrix(0.2963,0,0,1.4545,0,0)" height="108" width="538"/>
+ </svg>
+ <svg id="id_19" transform="matrix(3.375,0,0,0.6875,0,0)" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.progress_bar" x="5.926" height="160" atv:refpy="320.334" width="160" atv:refpx="290.001" y="359.273">
+  <atv:argument name="title" value="T{Отставание}"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.OilfieldBoard.delayInDays"/>
+  <atv:argument name="unit" value="T{%}"/>
+  <atv:argument name="barColor" value="#F4442E"/>
+  <atv:overwrite id="clickarea_display" transform="matrix(0.2963,0,0,1.4545,0,0)" height="110" width="540"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(0.2963,0,0,1.4545,0,0)" height="80" width="530"/>
+  <atv:overwrite id="sub_label" transform="matrix(0.2963,0,0,1.4545,0,0)" x="270" y="84.246"/>
+  <atv:overwrite id="main_label" transform="matrix(0.2963,0,0,1.4545,0,0)" x="270" y="65.5"/>
+  <atv:overwrite id="chart" transform="matrix(1.0469,0,0,0.8951,0,0)" x="1.415" y="40.625"/>
+  <atv:overwrite id="title" transform="matrix(0.2963,0,0,1.4545,0,0)" x="270"/>
+  <atv:overwrite id="background" transform="matrix(0.2963,0,0,1.4545,0,0)" height="108" width="538"/>
+ </svg>
+ <svg id="id_20" transform="matrix(1.75,0,0,1.4063,0,0)" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.donut_chart" x="11.429" height="160" atv:refpy="470.488" width="160" atv:refpx="160" y="254.569">
+  <atv:argument name="series1Address" value="AGENT.OBJECTS.Platforma.OilfieldBoard.PV"/>
+  <atv:argument name="series2Address" value="AGENT.OBJECTS.Platforma.OilfieldBoard.NPV"/>
+  <atv:argument name="series1Name" value="T{ПВ}"/>
+  <atv:argument name="series2Name" value="T{НПВ}"/>
+  <atv:argument name="title" value="T{НПВ / ПВ}"/>
+  <atv:argument name="series2Color" value="#F4442E"/>
+  <atv:overwrite id="clickarea_display" transform="matrix(0.5714,0,0,0.7111,0,0)" height="225.008" width="280"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(0.5714,0,0,0.7111,0,0)" height="195.008" width="270"/>
+  <atv:overwrite id="sub_label" transform="matrix(0.5714,0,0,0.7111,0,0)" x="140" y="141.75"/>
+  <atv:overwrite id="main_label" transform="matrix(0.5714,0,0,0.7111,0,0)" x="140" y="123.004"/>
+  <atv:overwrite id="chart" transform="matrix(1.0286,0,0,1.0667,0,0)" x="2.778" y="16.666"/>
+  <atv:overwrite id="title" transform="matrix(0.5714,0,0,0.7111,0,0)" x="140"/>
+  <atv:overwrite id="background" transform="matrix(0.5714,0,0,0.7111,0,0)" height="223.008" width="278"/>
+ </svg>
+ <svg id="id_21" transform="matrix(1.625,0,0,0.4687,0,0)" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.show_value" x="184.615" height="160" atv:refpy="192.5" width="160" atv:refpx="430.001" y="763.815">
+  <atv:argument name="title" value="T{Сред. механическая скорость проходки}"/>
+  <atv:argument name="unit" value="T{м/ч}"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.OilfieldBoard.avgROP"/>
+  <atv:overwrite id="clickarea_display" transform="matrix(0.6154,0,0,2.1336,0,0)" height="74.992" width="260"/>
+  <atv:overwrite id="sub_label" transform="matrix(0.6154,0,0,2.1336,0,0)" x="130" y="66.696"/>
+  <atv:overwrite id="main_label" transform="matrix(0.6154,0,0,2.1336,0,0)" x="130" y="47.996"/>
+  <atv:overwrite id="value_label" transform="matrix(0.6154,0,0,2.1336,0,0)" x="130" y="51.996"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(0.6154,0,0,2.1336,0,0)" height="44.992" width="250"/>
+  <atv:overwrite id="title" transform="matrix(0.6154,0,0,2.1336,0,0)" x="130"/>
+  <atv:overwrite id="background" transform="matrix(0.6154,0,0,2.1336,0,0)" height="72.992" width="258"/>
+ </svg>
+ <svg id="id_22" transform="matrix(1.625,0,0,0.4688,0,0)" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.show_value" x="184.616" height="160" atv:refpy="272.408" width="160" atv:refpx="430.001" y="923.635">
+  <atv:argument name="title" value="T{Средняя рейсовая скорость}"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.OilfieldBoard.avgCruisingSpeed"/>
+  <atv:argument name="unit" value="T{м/ч}"/>
+  <atv:overwrite id="clickarea_display" transform="matrix(0.6154,0,0,2.1331,0,0)" height="75.008" width="260"/>
+  <atv:overwrite id="sub_label" transform="matrix(0.6154,0,0,2.1331,0,0)" x="130" y="66.704"/>
+  <atv:overwrite id="main_label" transform="matrix(0.6154,0,0,2.1331,0,0)" x="130" y="48.004"/>
+  <atv:overwrite id="value_label" transform="matrix(0.6154,0,0,2.1331,0,0)" x="130" y="52.004"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(0.6154,0,0,2.1331,0,0)" height="45.008" width="250"/>
+  <atv:overwrite id="title" transform="matrix(0.6154,0,0,2.1331,0,0)" x="130"/>
+  <atv:overwrite id="background" transform="matrix(0.6154,0,0,2.1331,0,0)" height="73.008" width="258"/>
+ </svg>
+ <svg id="id_23" transform="matrix(1.125,0,0,1,0,0)" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.chart_gauge_tile" x="17.778" height="160" atv:refpy="706.445" width="160" atv:refpx="110" y="660">
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.OilfieldBoard.timeInWedges"/>
+  <atv:argument name="min" value="0"/>
+  <atv:argument name="max" value="100"/>
+  <atv:argument name="unit" value="T{%}"/>
+  <atv:argument name="title" value="T{Время в клиньях/общее время}"/>
+  <atv:argument name="barBackgroundColor" value="#7cb5ec"/>
+  <atv:argument name="barColor" value="#F4442E"/>
+  <atv:overwrite id="clickarea_display" transform="matrix(0.8889,0,0,1,0,0)" width="180"/>
+  <atv:overwrite id="clickarea_title" transform="matrix(0.8889,0,0,1,0,0)" width="180"/>
+  <atv:overwrite id="sub_label" transform="matrix(0.8889,0,0,1,0,0)" x="90"/>
+  <atv:overwrite id="main_label" transform="matrix(0.8889,0,0,1,0,0)" x="90"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(0.8889,0,0,1,0,0)" width="176"/>
+  <atv:overwrite id="content_frame" transform="matrix(0.8889,0,0,1,0,0)" width="170"/>
+  <atv:overwrite id="chart" transform="matrix(1.0074,0,0,1,0,0)" x="4.412"/>
+  <atv:overwrite id="title" transform="matrix(0.8889,0,0,1,0,0)" x="90"/>
+  <atv:overwrite id="background" transform="matrix(0.8889,0,0,1,0,0)" width="178"/>
+ </svg>
+ <svg id="id_24" transform="matrix(1.125,0,0,1,0,0)" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.chart_gauge_tile" x="177.779" height="160" atv:refpy="724.445" width="160" atv:refpx="290.001" y="659">
+  <atv:argument name="title" value="T{СПО/общее время}"/>
+  <atv:argument name="unit" value="T{%}"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.OilfieldBoard.SPO"/>
+  <atv:argument name="barBackgroundColor" value="#7cb5ec"/>
+  <atv:argument name="barColor" value="#F1DB4B"/>
+  <atv:argument name="min" value="0"/>
+  <atv:argument name="max" value="100"/>
+  <atv:overwrite id="clickarea_display" transform="matrix(0.8889,0,0,1,0,0)" width="180"/>
+  <atv:overwrite id="clickarea_title" transform="matrix(0.8889,0,0,1,0,0)" width="180"/>
+  <atv:overwrite id="sub_label" transform="matrix(0.8889,0,0,1,0,0)" x="90"/>
+  <atv:overwrite id="main_label" transform="matrix(0.8889,0,0,1,0,0)" x="90"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(0.8889,0,0,1,0,0)" width="176"/>
+  <atv:overwrite id="content_frame" transform="matrix(0.8889,0,0,1,0,0)" width="170"/>
+  <atv:overwrite id="chart" transform="matrix(1.0074,0,0,1,0,0)" x="4.412"/>
+  <atv:overwrite id="title" transform="matrix(0.8889,0,0,1,0,0)" x="90"/>
+  <atv:overwrite id="background" transform="matrix(0.8889,0,0,1,0,0)" width="178"/>
+ </svg>
+ <svg id="id_25" transform="matrix(1.125,0,0,1,0,0)" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.chart_gauge_tile" x="337.779" height="160" atv:refpy="714.334" width="160" atv:refpx="470.001" y="659">
+  <atv:argument name="title" value="T{Бурение/общее время}"/>
+  <atv:argument name="unit" value="T{%}"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.OilfieldBoard.rigTime"/>
+  <atv:argument name="min" value="0"/>
+  <atv:argument name="max" value="100"/>
+  <atv:argument name="barBackgroundColor" value="#7cb5ec"/>
+  <atv:argument name="barColor" value="#0CCA4A"/>
+  <atv:overwrite id="clickarea_display" transform="matrix(0.8889,0,0,1,0,0)" width="180"/>
+  <atv:overwrite id="clickarea_title" transform="matrix(0.8889,0,0,1,0,0)" width="180"/>
+  <atv:overwrite id="sub_label" transform="matrix(0.8889,0,0,1,0,0)" x="90"/>
+  <atv:overwrite id="main_label" transform="matrix(0.8889,0,0,1,0,0)" x="90"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(0.8889,0,0,1,0,0)" width="176"/>
+  <atv:overwrite id="content_frame" transform="matrix(0.8889,0,0,1,0,0)" width="170"/>
+  <atv:overwrite id="chart" transform="matrix(1.0074,0,0,1,0,0)" x="4.412"/>
+  <atv:overwrite id="title" transform="matrix(0.8889,0,0,1,0,0)" x="90"/>
+  <atv:overwrite id="background" transform="matrix(0.8889,0,0,1,0,0)" width="178"/>
+ </svg>
+ <svg id="id_26" transform="matrix(1.625,0,0,0.4688,0,0)" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.show_value" x="184.616" height="160" atv:refpy="332.393" width="160" atv:refpx="430.001" y="1083.618">
+  <atv:argument name="title" value="T{Проходка на долото}"/>
+  <atv:argument name="unit" value="T{м}"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.OilfieldBoard.dolotoPass"/>
+  <atv:overwrite id="clickarea_display" transform="matrix(0.6154,0,0,2.1331,0,0)" height="75.008" width="260"/>
+  <atv:overwrite id="sub_label" transform="matrix(0.6154,0,0,2.1331,0,0)" x="130" y="66.704"/>
+  <atv:overwrite id="main_label" transform="matrix(0.6154,0,0,2.1331,0,0)" x="130" y="48.004"/>
+  <atv:overwrite id="value_label" transform="matrix(0.6154,0,0,2.1331,0,0)" x="130" y="52.004"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(0.6154,0,0,2.1331,0,0)" height="45.008" width="250"/>
+  <atv:overwrite id="title" transform="matrix(0.6154,0,0,2.1331,0,0)" x="130"/>
+  <atv:overwrite id="background" transform="matrix(0.6154,0,0,2.1331,0,0)" height="73.008" width="258"/>
+ </svg>
+ <svg id="id_27" transform="matrix(1.125,0,0,0.4688,0,0)" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.show_value" x="17.779" height="160" atv:refpy="417.438" width="160" atv:refpx="110.001" y="1243.601">
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.OilfieldBoard.accidentRate"/>
+  <atv:argument name="title" value="T{Коэффицент аварийности}"/>
+  <atv:argument name="unit" value="T{%}"/>
+  <atv:overwrite id="clickarea_display" transform="matrix(0.8889,0,0,2.1331,0,0)" height="75.008" width="180"/>
+  <atv:overwrite id="sub_label" transform="matrix(0.8889,0,0,2.1331,0,0)" x="90" y="66.704"/>
+  <atv:overwrite id="main_label" transform="matrix(0.8889,0,0,2.1331,0,0)" x="90" y="48.004"/>
+  <atv:overwrite id="value_label" transform="matrix(0.8889,0,0,2.1331,0,0)" x="90" y="52.004"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(0.8889,0,0,2.1331,0,0)" height="45.008" width="170"/>
+  <atv:overwrite id="title" transform="matrix(0.8889,0,0,2.1331,0,0)" x="90"/>
+  <atv:overwrite id="background" transform="matrix(0.8889,0,0,2.1331,0,0)" height="73.008" width="178"/>
+ </svg>
+ <svg id="id_28" transform="matrix(1.125,0,0,0.4688,0,0)" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.show_value" x="177.778" height="160" atv:refpy="417.438" width="160" atv:refpx="290.001" y="1243.602">
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.OilfieldBoard.LTIF"/>
+  <atv:argument name="title" value="T{LTIF}"/>
+  <atv:argument name="unit" value="T{%}"/>
+  <atv:overwrite id="clickarea_display" transform="matrix(0.8889,0,0,2.1331,0,0)" height="75.008" width="180"/>
+  <atv:overwrite id="sub_label" transform="matrix(0.8889,0,0,2.1331,0,0)" x="90" y="66.704"/>
+  <atv:overwrite id="main_label" transform="matrix(0.8889,0,0,2.1331,0,0)" x="90" y="48.004"/>
+  <atv:overwrite id="value_label" transform="matrix(0.8889,0,0,2.1331,0,0)" x="90" y="52.004"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(0.8889,0,0,2.1331,0,0)" height="45.008" width="170"/>
+  <atv:overwrite id="title" transform="matrix(0.8889,0,0,2.1331,0,0)" x="90"/>
+  <atv:overwrite id="background" transform="matrix(0.8889,0,0,2.1331,0,0)" height="73.008" width="178"/>
+ </svg>
+ <svg id="id_29" transform="matrix(3.375,0,0,0.625,0,0)" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.show_value" x="5.926" height="160" atv:refpy="850" width="160" atv:refpx="290.001" y="1310.4">
+  <atv:argument name="title" value="T{Коэф. эффективности деятельности}"/>
+  <atv:argument name="unit" value="T{%}"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.OilfieldBoard.performanceRatio"/>
+  <atv:argument name="textColor" value="SYSTEM.GLOBALS.textColorGreen"/>
+  <atv:argument name="valueFontSizeValue" value="48"/>
+  <atv:overwrite id="clickarea_display" transform="matrix(0.2963,0,0,1.6,0,0)" height="100" width="540"/>
+  <atv:overwrite id="sub_label" transform="matrix(0.2963,0,0,1.6,0,0)" x="270" y="79.2"/>
+  <atv:overwrite id="main_label" transform="matrix(0.2963,0,0,1.6,0,0)" x="270" y="60.5"/>
+  <atv:overwrite id="value_label" transform="matrix(0.2963,0,0,1.6,0,0)" x="270" y="64.5"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(0.2963,0,0,1.6,0,0)" height="70" width="530"/>
+  <atv:overwrite id="title" transform="matrix(0.2963,0,0,1.6,0,0)" x="270"/>
+  <atv:overwrite id="background" transform="matrix(0.2963,0,0,1.6,0,0)" height="98" width="538"/>
+ </svg>
+ <svg id="id_30" transform="matrix(1.6875,0,0,0.5,0,0)" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.show_value" x="11.852" height="160" atv:refpy="940" width="160" atv:refpx="155.001" y="1838">
+  <atv:argument name="title" value="T{Технологическая эффективность}"/>
+  <atv:argument name="unit" value="T{%}"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.OilfieldBoard.technologEfficiency"/>
+  <atv:overwrite id="clickarea_display" transform="matrix(0.5926,0,0,2,0,0)" height="80" width="270"/>
+  <atv:overwrite id="sub_label" transform="matrix(0.5926,0,0,2,0,0)" x="135" y="69.2"/>
+  <atv:overwrite id="main_label" transform="matrix(0.5926,0,0,2,0,0)" x="135" y="50.5"/>
+  <atv:overwrite id="value_label" transform="matrix(0.5926,0,0,2,0,0)" x="135" y="54.5"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(0.5926,0,0,2,0,0)" height="50" width="260"/>
+  <atv:overwrite id="title" transform="matrix(0.5926,0,0,2,0,0)" x="135"/>
+  <atv:overwrite id="background" transform="matrix(0.5926,0,0,2,0,0)" height="78" width="268"/>
+ </svg>
+ <svg id="id_31" transform="matrix(1.6875,0,0,0.5,0,0)" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.show_value" x="171.852" height="160" atv:refpy="940" width="160" atv:refpx="425.001" y="1838">
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.OilfieldBoard.industrialSafety"/>
+  <atv:argument name="title" value="T{Промышленная безопасность}"/>
+  <atv:argument name="unit" value="T{%}"/>
+  <atv:overwrite id="clickarea_display" transform="matrix(0.5926,0,0,2,0,0)" height="80" width="270"/>
+  <atv:overwrite id="sub_label" transform="matrix(0.5926,0,0,2,0,0)" x="135" y="69.2"/>
+  <atv:overwrite id="main_label" transform="matrix(0.5926,0,0,2,0,0)" x="135" y="50.5"/>
+  <atv:overwrite id="value_label" transform="matrix(0.5926,0,0,2,0,0)" x="135" y="54.5"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(0.5926,0,0,2,0,0)" height="50" width="260"/>
+  <atv:overwrite id="title" transform="matrix(0.5926,0,0,2,0,0)" x="135"/>
+  <atv:overwrite id="background" transform="matrix(0.5926,0,0,2,0,0)" height="78" width="268"/>
+ </svg>
+</svg>

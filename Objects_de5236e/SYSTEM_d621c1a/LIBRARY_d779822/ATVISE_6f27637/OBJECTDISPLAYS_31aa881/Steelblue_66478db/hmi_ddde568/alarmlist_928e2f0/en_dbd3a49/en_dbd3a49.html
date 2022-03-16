@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+	<title>alarmlist - help EN</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Description</h1>
+	<p>
+		The alarmlist is an advanced control that displays the current active alarms of the system and defined alarm conditions in form of a table (including filter possibilities).
+	</p>
+<h2>Views</h2>
+	<p>
+		There are several views which can be preset through display parameters:
+	</p>
+	<p>
+		<ul>
+			<li><span class="parameter">alarms</span>: All triggered alarms are listed here.
+			<li><span class="parameter">all</span>: Alle triggered alarms and all defined alarm conditions are listed here.
+			<li><span class="parameter">shelved</span>: All shelved alarms and alarm conditions are listed here.
+			<li><span class="parameter">suppressed</span>: All suppressed alarms and alarm conditions are listed here.
+			<li><span class="parameter">disabled</span>: All disabled alarms and alarm conditions are listed here.
+		</ul>
+	</p>
+	<p>
+		The views can be selected in the head of the atvise standard visualisation or through the "Open alarm list" button.
+	</p>
+<h1>Filter</h1>
+	<p>
+		On top of the alarm list display you can find a set of filter elements. After changing the input elements and clicking the &quot;Apply filter&quot; button, the new filter is applied to the alarmlist.
+	</p>
+	<ul>
+		<li><span class="parameter">Min. Priority</span>: "Greater equal" filter by severity (defined at the alarm category).</li>
+		<li><span class="parameter">Display</span>: Filter by the attribute "display" that can be defined in the alarm configuration.</li>
+		<li><span class="parameter">Group</span>: Filter for alarms of one or more &quot;alarm groups&quot;. Multiple alarm groups can be entered comma- or semicolon-seperated.</li>
+		<li><span class="parameter">Alarm source</span>: Filter by the data source of alarms.</li>
+		<li><span class="parameter">Alarm condition</span>: Filter by the node of the alarm condition.</li>
+		<li><span class="parameter">Ackn. state</span>: Filter by ALL or one of the alarm states:
+			<ul>
+				<li>ACTIVE!</li>
+				<li>ACTIVE! unconf.</li>
+				<!--<li>ACTIVE! latched</li>-->
+				<li>active ack.</li>
+				<li>active conf.</li>
+				<li>INACTIVE!</li>
+				<li>INACTIVE! conf.</li>
+				<!--<li>INACTIVE! latched</li>-->
+				<li>(IN)ACTIVE!</li>
+				<li>(IN)ACTIVE! conf.</li>
+				<!--<li>(IN)ACTIVE! latched</li>-->
+			</ul>
+		</li>
+		<li><span class="parameter">User</span>: Filter by username for already acknowledged alarms.</li>
+		<li><span class="parameter">Event text</span>: Filter by the alarm text that has to be defined in the alarm configuration.</li>
+		<li><span class="parameter">Comment</span>: Filter by the comment of the alarm.</li>
+		<li><span class="parameter">Alarm or condition</span>: Filter by triggered alarms, alarm conditions or both.</li>
+		<li><span class="parameter">State</span>: Filter by states of alarms and conditions. The options include triggered alarms, &quot;Suppressed&quot;, &quot;OneShotShelved&quot; and &quot;TimeShelved&quot; status. This filter field is only available in the &quot;All&quot; view.</li>
+	</ul>
+	<p>
+		By default two rows of filter fields are shown. By clicking the &quot;Advanced filters&quot; button the residual filter fields are displayed.
+	</p>
+	<p>
+		By clicking the button "Reset filter" you can unset all applied filters and display the default settings.
+	</p>
+	
+<h1>Alarms</h1>
+
+	<p>Each alarm can be acknowledged.</p>
+	<p>Confirmable alarms can be confirmed after acknowledging.</p>
+	<p>A link to the corresponding display will be avaiable if the display was specified in the configuration.</p>
+	<p>For retrigger-alarms each triggering state change causes an distinct alarm in the table.</p>
+	<p>The alarm category "Acknowledge active and inactive" with explicit acknowledgement is displayed as a pair of alarms with identical background color. The inactive alarm state is shown on top of the active alarm state. Before the inactive state can be acknowledged the acknowledgement of the active state is required.</p>
+	<p>For historized alarms please use the "history list" display.</p>
+
+<h2>Actions</h2>
+
+	<ul>
+		<li><span class="parameter">acknowledge</span>: An alarm is acknowledged.</li>
+		<li><span class="parameter">confirm</span>: An acknowledged alarm is confirmed.</li>
+		<li><span class="parameter">acknowledge with comment</span>: An alarm is acknowledged via a pop up dialog which allows to pass a comment.</li>
+		<li><span class="parameter">confirm with comment</span>: An acknowledged alarm is confirmed via a pop up dialog which allows to pass a comment.</li>
+		<li><span class="parameter">shelve</span>: Alarm or alarm condition is being shelved. The user cannot see alarms and conditions in the regular alarm list any longer.
+			<ul>
+				<li><span class="parameter">one shot shelve</span>: This action can only be applied to alarms and not to alarm conditions. The alarm is shelved until it is unshelved or the maximum shelving time set in the MaxTimeShelved variable is reached.</li>
+				<li><span class="parameter">timed shelve</span>: This action can be applied to alarms and alarm conditions. The alarm or alarm condition is shelved for a time period set by the user in a pop up dialog.</li>
+			</ul>
+		</li>
+		<li><span class="parameter">unsuppress</span>: Alarm or alarm condition is being unsuppressed. Suppressing happens internally on the server. Suppressed alarms are not shown in the regular alarm list.</li>
+		<li><span class="parameter">disable</span>: Alarm condition and associated active alarms are being disabled. No further alarms and events are generated.</li>
+	</ul>
+
+<h2>Detail table</h2>	
+
+<p>Further details of the alarms and conditions can be displayed in a foldable detail table.</p>
+<p>The fields shown in the detail table can be configured through a global list which's address can be selected in the display parameters.</p>
+<p>If new alarms appear in the alarm list, the rows of the shown alarms can jump to different positions unfavorably and display the detail table on a different position.
+To fix the detail table or certain rows, the favored rows can be marked using the checkboxes on the left. After that you can use the filter to view only the marked rows.</p>
+
+<h1>Parameters</h1>
+
+	<ul>
+		<p>
+			<ul>
+				<li><span class="parameter">table ID</span>: Unique ID of the table</li>
+				<li><span class="parameter">table header height</span>: Height of the table header</li>
+				<li><span class="parameter">table row height</span>: Height of a table row</li>
+				<li><span class="parameter">base for displays</span>: Replacement which is passed as base to the display set in the alarm configuration</li>
+				<li><span class="parameter">start view</span>: The displayed view on startup of the alarmlist. The available options are:
+						<ul>
+							<li><span class="parameter">all</span>: Displays all alarms and alarm conditions</li>
+							<li><span class="parameter">alarms</span>: Displays triggered alarms</li>
+							<li><span class="parameter">shelved</span>: Displays shelved alarms and alarm conditions</li>
+							<li><span class="parameter">suppressed</span>: Displays suppressed alarms and alarm conditions</li>
+							<li><span class="parameter">disabled</span>: Displays disabled alarm conditions</li>
+						</ul>
+				</li>
+			</ul>
+		</p>
+		<li><b>Columns</b>
+			<p>
+				The table's columns can be configured through a global list which's address can be selected here. The possiblee parameters in the global list are:
+			</p>
+			<p>
+				<ul>
+					<li><span class="parameter">alignmentMain</span>: Text alignment</li>
+					<li><span class="parameter">columnName</span>: Column name</li>
+					<li><span class="parameter">field</span>: Field name which is delivered to the table</li>
+					<li><span class="parameter">filter</span>: Activate filter for the column</li>
+					<li><span class="parameter">fontSizeDetail</span>: Font size of detail view</li>
+					<li><span class="parameter">fontSizeMain</span>: Font size of table</li>
+					<li><span class="parameter">orderDetail</span>: Order of fields in the detail view</li>
+					<li><span class="parameter">orderMain</span>: Order of table's columns</li>
+					<li><span class="parameter">sortable</span>: Columns is sortable</li>
+					<li><span class="parameter">textoption</span>: Appearance of the text. The available options are:
+						<ul>
+							<li>normal</li>
+							<li>italic</li>
+							<li>small-caps</li>
+							<li>bold</li>
+							<li>bold-italic</li>
+							<li>bold-small-caps</li>
+							<li>bolder</li>
+							<li>bolder-small-caps</li>
+							<li>lighter</li>
+							<li>lighter-italic</li>
+							<li>lighter-small-caps</li>
+						</ul>
+					<li><span class="parameter">type</span>: Type of column values. The available options are:
+						<ul>
+							<li><span class="parameter">datetime</span>: Date/time field. Add &quot;, ms&quot; to show milliseconds.</li>
+							<li><span class="parameter">number</span>: Number field. Add &quot;, [number]&quot; to show [number] decimals.</li>
+							<li><span class="parameter">string</span>: Text field</li>
+						</ul>
+					</li>
+					<li><span class="parameter">visibleDetail</span>: Visibility in detail view</li>
+					<li><span class="parameter">visibleMain</span>: Visibility of column in main table</li>
+					<li><span class="parameter">widthMain</span>: Width of column in main table</li>
+				</ul>
+			</p>
+		</li>
+		<li><b>Font</b></br>
+			<p>
+				<ul>
+					<li><span class="parameter">font family</span>: font family applied to the table</li>
+					<li><span class="parameter">font color</span>: color which will be applied to labels and values (default: global parameter <i>atvFontColor</i>)</li>
+					<li><span class="parameter">table header font size</span>: font size applied to the table header</li>
+					<li><span class="parameter">table row font size</span>: font size applied to the table rows</li>
+					<li><span class="parameter">table detail font size</span>: font size applied to the detail area</li>
+					<li><span class="parameter">table footer font size</span>: font size applied to the table footer</li>
+				</ul>
+			</p>
+		</li>
+		<li><b>Appearance</b>
+			<p>
+				<ul>
+					<li><span class="parameter">border color</span>: color of borders (default: global parameter <i>atvBorderColor</i>)</li>
+					<li><span class="parameter">fill color</span>: fill color of the top background area (default: global parameter <i>atvFillColor</i>)</li>
+					<li><span class="parameter">symbol color</span>: color of symbols (default: global parameter <i>atvSymbolColor</i>)</li>
+					<li><span class="parameter">global color config</span>: global color configuration (default: global list <i>atvObjectDisplays.Tables.ColorConfig</i>)</li>
+					<li><span class="parameter">alarm indication appearance</span>: appearance of alarm indication (default: global parameter <i>atvAlarmIndication</i>)</li>
+					<li><span class="parameter">custom theme</span>: Name of the cusom theme</li>
+					<li><span class="parameter">Shelve symbol</span>: symbol for shelving</li>
+					<li><span class="parameter">Shelve Once symbol</span>: symbol for shelve once</li>
+					<li><span class="parameter">Timed shelve symbol</span>: symbol for timed shelve</li>
+					<li><span class="parameter">Suppress symbol</span>: symbol for suppressing</li>
+					<li><span class="parameter">Enable symbol</span>: symbol for enabling</li>
+					<li><span class="parameter">Acknowledge symbol</span>: symbol for acknowledging</li>
+					<li><span class="parameter">Confirm symbol</span>: symbol for confirming</li>
+					<li><span class="parameter">Acknowledge with comment symbol</span>: symbol for acknowledging with comment</li>
+					<li><span class="parameter">Confirm with comment symbol</span>: symbol for confirming with comment</li>
+					<li><span class="parameter">Acknowledge inactive symbol</span>: inactive symbol for acknowledging</li>
+					<li><span class="parameter">Confirm inactive symbol</span>: inactive symbol for confirming</li>
+					<li><span class="parameter">Acknowledge with comment inactive symbol</span>: inactive symbol for acknowledging with comment</li>
+					<li><span class="parameter">Confirm with comment inactive symbol</span>: inactive symbol for confirming with comment</li>
+					<li><span class="parameter">Action button symbol</span>: symbol for the action button</li>
+				</ul>
+			</p>
+		</li>
+		<li><b>Options</b></br>
+			<p>
+				<ul>
+					<li><span class="parameter">paging</span>: Activate paging</li>
+					<li><span class="parameter">filter bar</span>: Show filter bar</li>
+					<li><span class="parameter">filter regular expressions</span>: Regular expressions can be used for the filter</li>
+					<li><span class="parameter">filter use placeholder</span>: Activation of the &quot;*&quot; placeholder in the search function</li>
+					<li><span class="parameter">filter case sensitive</span>: Filter works case sensitive</li>
+					<li><span class="parameter">cell linebreak</span>: Too long text will be broken to new lines. If there is no more space the text will be cut ending with "..."</li>
+					<li><span class="parameter">columns reorderable</span>: Columns can be reorderedy</li>
+				</ul>
+			</p>
+		</li>
+		<li><b>Menu options</b></br>
+			<p>
+				<ul>
+					<li><span class="parameter">show menu</span>: Display the menu</li>
+					<li><span class="parameter">custom menu title</span>: Title of the custom menu</li>
+					<li><span class="parameter">picker menu title</span>: Title of the picker menu</li>
+					<li><span class="parameter">show picker menu</span>: Display the picker menu</li>
+					<li><span class="parameter">menu width</span>: Width of the menu</li>
+					<li><span class="parameter">menu height</span>: Height of the menu</li>
+				</ul>
+			</p>
+		</li>
+		<li><b>Default filter</b></br>
+			<p>
+				Default filter values defining the start up filter.
+			</p>
+			<p>
+				<ul>
+					<li><span class="parameter">Min. Priority</span></li>
+					<li><span class="parameter">Display</span></li>
+					<li><span class="parameter">Group</span></li>
+					<li><span class="parameter">Alarm source</span></li>
+					<li><span class="parameter">Alarm condition</span></li>
+					<li><span class="parameter">Acknowledge status</span></li>
+					<li><span class="parameter">User</span></li>
+					<li><span class="parameter">Event text</span></li>
+					<li><span class="parameter">Comment</span></li>
+					<li><span class="parameter">Alarm or condition</span></li>
+					<li><span class="parameter">State</span></li>
+				</ul>
+			</p>
+		</li>
+		<li><b>Security</b>
+			<p>
+				<ul>
+					<li><span class="parameter">right for acknowledge</span>: if the right for acknowledge is being set, a user can only accept an alarm if he has the right for acknowledge. In the case that a user does not have the right for acknowledge, the according symbols and links will be inactive. If no right for acknowledge is specified, alarms can be accepted by any user.</li>
+					<li><span class="parameter">right for confirm</span>: if the right for confirm is being set, a user can only confirm an alarm if he has the right for confirm. In the case that a user does not have the right for confirm, the according symbols and links will be inactive. If no right for confirm is specified, alarms can be confirmed by any user.</li>
+					<li><span class="parameter">right for (un)shelve</span>: if the right for (un)shelve is being set, a user can only shelve or unshelve alarms and conditions if he has the right for (un)shelve. In the case that a user does not have the right for (un)shelve, the according symbols and links will be inactive. If no right for (un)shelve is specified, alarms or conditions can be shelved or unshelved by any user.</li>
+					<li><span class="parameter">right for unsuppress</span>: if the right for unsuppress is being set, a user can only unsuppress an alarm condition if he has the right for unsuppress. In the case that a user does not have the right for unsuppress, the according symbols and links will be inactive. If no right for unsuppress is specified, alarm conditions can be unsuppressed by any user.</li>
+					<li><span class="parameter">right for disable/enable</span>: if the right for disable/enable is being set, a user can only disable or enable alarm conditions if he has the right for disable/enable. In the case that a user does not have the right for disable/enable, the according symbols and links will be inactive. If no right for disable/enable is specified, alarm conditions can be enabled or disabled by any user.</li>
+					<li><span class="parameter">right for CSV export</span>: if the right for CSV export is being set, a user can only use the CSV export an alarm if he has the right for CSV export. In the case that a user does not have the right for CSV export, the according links will be inactive. If no right for CSV export is specified, CSV export can be carried out by any user.</li>
+				</ul>
+			</p>
+		</li>
+	</ul>
+</body>
+</html>

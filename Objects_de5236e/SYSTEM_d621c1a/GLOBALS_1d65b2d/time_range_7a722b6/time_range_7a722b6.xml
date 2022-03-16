@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Value xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd" xmlns:uax="http://opcfoundation.org/UA/2008/02/Types.xsd">
+	<uax:ListOfString>
+		<uax:String>&quot;1&quot;:{&quot;fill&quot;:&quot;&quot;,&quot;image&quot;:&quot;&quot;,&quot;stroke&quot;:&quot;&quot;,&quot;text&quot;:&quot;10 минут&quot;,&quot;value&quot;:&quot;0.17&quot;}</uax:String>
+		<uax:String>&quot;2&quot;:{&quot;fill&quot;:&quot;&quot;,&quot;image&quot;:&quot;&quot;,&quot;stroke&quot;:&quot;&quot;,&quot;text&quot;:&quot;30 минут&quot;,&quot;value&quot;:&quot;0.5&quot;}</uax:String>
+		<uax:String>&quot;3&quot;:{&quot;fill&quot;:&quot;&quot;,&quot;image&quot;:&quot;&quot;,&quot;stroke&quot;:&quot;&quot;,&quot;text&quot;:&quot;1 час&quot;,&quot;value&quot;:&quot;1&quot;}</uax:String>
+		<uax:String>&quot;4&quot;:{&quot;fill&quot;:&quot;&quot;,&quot;image&quot;:&quot;&quot;,&quot;stroke&quot;:&quot;&quot;,&quot;text&quot;:&quot;2 часа&quot;,&quot;value&quot;:&quot;2&quot;}</uax:String>
+		<uax:String>&quot;5&quot;:{&quot;fill&quot;:&quot;&quot;,&quot;image&quot;:&quot;&quot;,&quot;stroke&quot;:&quot;&quot;,&quot;text&quot;:&quot;4 часа&quot;,&quot;value&quot;:&quot;4&quot;}</uax:String>
+		<uax:String>&quot;6&quot;:{&quot;fill&quot;:&quot;&quot;,&quot;image&quot;:&quot;&quot;,&quot;stroke&quot;:&quot;&quot;,&quot;text&quot;:&quot;8 часов&quot;,&quot;value&quot;:&quot;8&quot;}</uax:String>
+		<uax:String>&quot;7&quot;:{&quot;fill&quot;:&quot;&quot;,&quot;image&quot;:&quot;&quot;,&quot;stroke&quot;:&quot;&quot;,&quot;text&quot;:&quot;12 часов&quot;,&quot;value&quot;:&quot;12&quot;}</uax:String>
+	</uax:ListOfString>
+</Value>

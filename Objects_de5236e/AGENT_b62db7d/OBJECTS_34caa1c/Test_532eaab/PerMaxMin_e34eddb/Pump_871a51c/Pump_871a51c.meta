@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.Pump
+NodeClass: Object
+BrowseName: 1:Pump
+DisplayName: en|Pump
+Description: en|Pump
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

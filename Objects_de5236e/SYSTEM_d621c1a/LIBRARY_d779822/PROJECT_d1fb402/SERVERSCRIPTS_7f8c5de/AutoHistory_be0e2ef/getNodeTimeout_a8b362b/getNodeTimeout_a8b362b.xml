@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nodestr" type="string" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var curtime = new Date();
+var nodeProc = new UaNode(nodestr);
+return (curtime-nodeProc.servertime)/1000;]]></code>
+</script>

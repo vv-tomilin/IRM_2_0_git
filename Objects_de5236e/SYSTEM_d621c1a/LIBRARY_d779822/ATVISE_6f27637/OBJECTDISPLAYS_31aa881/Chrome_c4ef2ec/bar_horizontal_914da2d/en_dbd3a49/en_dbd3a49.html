@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Description</h1>
+<p>The bar is used for the graphical representation of the value of an address.</p>
+<p>For each bar 0 to 4 limits (from &ldquo;limit low low&rdquo; up to &ldquo;limit high high&rdquo;) can be specified. These limits split the range defined by &ldquo;min&rdquo; and &ldquo;max&rdquo; in 1 to 5 intervals. Depending in what interval the value of the "base" address lies, the text color and bar color of the value will be changed according to the specified color for each limit &ndash; see below under &ldquo;Appearance&rdquo;. In case a limit lies below min or above max, it will not be explicitly drawn, though the text color and bar color will be changed accordingly. (e.g. max=100 and &ldquo;limit high high&rdquo;=120: although the&nbsp;bar will not go beyond &ldquo;max&rdquo;, the text color and bar color will change according to &ldquo;limit high high color&rdquo; as soon as the value reaches the &ldquo;limit high high&rdquo;)</p>
+The limits are defined as follows:<br>
+<ul>
+  <li>limit low low &gt;= value: text color and bar color according to "limit low low color"</li>
+  <li>limit low low &lt;  value &lt;= limit low: text color and bar color according to "limit low color"</li>
+  <li>limit low &lt;  value &lt; limit high: text color and bar color according to "bar color"</li>
+  <li>limit high &lt;=  value &lt; limit high high: text color and bar color according to"limit high color"</li>
+  <li>limit high high  &lt;=  value: text color and bar color according to "limit high high&nbsp;color"</li>
+</ul>
+<p>An additional border indicates the current value's negative state or an additionally defined alarm. The colors and blinking intervals are defined in global lists.</p>
+<h1>Parameters</h1>
+<p>The bar has&nbsp;the following generic parameters:</p>
+<ul>
+  <li><span class="parameter">base</span>: address which value is used for the graphical representation</li>
+  <li><span class="parameter">alarm address</span>: optional additional address of an alarm to be shown.</li>
+  <li><span class="parameter">label</span>: label of the bar</li>
+  <li><span class="parameter">unit</span>: unit of the value<br>	 </li>
+  <li><span class="parameter">minimum</span>: lowest border of the value (default: 0)</li>
+  <li><span class="parameter">maximum</span>: highest border of the value (default: 100)</li>
+  <li><span class="parameter">enable status monitoring</span>: switch monitoring of current value status on or off.</li>
+  <li><span class="parameter">fire status trigger</span>: instead of the status display a here defined trigger can be fired globally.</li>
+</ul>
+<p>Font:</p>
+<ul>
+  <li><span class="parameter">family</span>: font family which will be applied to the&nbsp;value, unit and label</li>
+  <li><span class="parameter">text color</span>: color which will be applied to the value, unit and label</li>
+  <li><span class="parameter">text fill color</span>: color which will be applied to the background of the value, unit and label</li>
+  <li><span class="parameter">size for value</span>: font size which will be applied to the value</li>
+  <li><span class="parameter">size for label</span>: font size which will be applied to the label</li>
+  <li><span class="parameter">size for unit</span>: font size which will be applied to the unit</li>
+</ul>
+<p>Appearance:</p>
+<ul>
+  <li><span class="parameter">post decimal positions</span>: number of post decimal positions for the value to be displayed</li>
+  <li><span class="parameter">fill color</span>: fill color of background areas</li>
+  <li><span class="parameter">fill color when inactive</span>: fill color of background areas if element is inactive</li>
+  <li><span class="parameter">bar color</span>: color of the bar if &quot;limit low&quot; &lt;&nbsp;value &lt; &quot;limit high&quot; (default: green)</li>
+  <li><span class="parameter">limit low low (off=no limit)</span>: value for limit low low&nbsp;(default: off, which means no limit) </li>
+  <li><span class="parameter">limit low (off=no limit)</span>: value for limit low&nbsp;(default: off, which means no limit)</li>
+  <li><span class="parameter">limit high (off=no limit)</span>: value for limit high&nbsp;(default: off, which means no limit)</li>
+  <li><span class="parameter">limit high high (off=no limit)</span>: value for limit high high&nbsp;(default: off, which means no limit)</li>
+  <li><span class="parameter">limit low low color</span>: color of text and bar if "limit low low" &gt;= value (default: red)</li>
+  <li><span class="parameter">limit low color</span>: color of text and bar if &quot;limit low low&quot; &lt;&nbsp;value &lt;= &quot;limit low&quot; (default: yellow)</li>
+  <li><span class="parameter">limit high color</span>: color of text and bar if &quot;limit high&quot; &lt;=&nbsp;value &lt; &quot;limit high high&quot; (default: yellow)</li>
+  <li><span class="parameter">limit high high color</span>: color of text and bar if &quot;limit high high&quot;&nbsp;&lt;=&nbsp;value (default: red)</li>
+  <li><span class="parameter">displayed scale</span>: scale to be used; further scales can be selected from "Object Displays (ATVISE)/Symbols/scales (default: scale_20_bar)</li>
+  <li><span class="parameter">scale color</span>: color of the scale to be used&nbsp; (default: white)</li>
+  <li><span class="parameter">status indication</span>: specify the status' display through a defined global list (default: global parameter <i>atvStatusIndication</i>)</li>
+  <li><span class="parameter">alarm indication</span>: specify the alarm's display through a defined global list (default: global parameter <i>atvAlarmIndication</i>)</li>
+</ul>
+Options:
+<ul>
+  <li><span class="parameter">address for minimum</span>: address from which the minimum will be taken; this&nbsp;supersedes the parameter "minimum"</li>
+  <li><span class="parameter">address for maximum</span>: address from which the maximum will be taken; this&nbsp;supersedes the parameter "maximum"</li>
+  <li><span class="parameter">address for limit low low</span>: address from which the "limit low low" will be taken; this&nbsp;supersedes the parameter "limit low low"</li>
+  <li><span class="parameter">address for limit low</span>: address from which the "limit low" will be taken; this&nbsp;supersedes the parameter "limit low"</li>
+  <li><span class="parameter">address for limit high</span>: address from which the "limit high" will be taken; this&nbsp;supersedes the parameter "limit high"</li>
+  <li><span class="parameter">address for limit high high</span>: address from which the "limit high high" will be taken; this&nbsp;supersedes the parameter "limit high high"</li>
+</ul>
+<h1></h1>
+<br>
+</body>
+</html>

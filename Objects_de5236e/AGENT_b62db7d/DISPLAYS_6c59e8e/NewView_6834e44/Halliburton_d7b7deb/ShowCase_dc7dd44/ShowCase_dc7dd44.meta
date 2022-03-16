@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.Halliburton.ShowCase
+NodeClass: Variable
+BrowseName: 1:ShowCase
+DisplayName: en|ShowCase
+Description: en|ShowCase
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

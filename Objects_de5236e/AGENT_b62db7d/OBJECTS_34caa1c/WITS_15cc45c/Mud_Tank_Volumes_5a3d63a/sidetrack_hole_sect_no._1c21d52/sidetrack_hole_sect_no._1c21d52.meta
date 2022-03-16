@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.Mud_Tank_Volumes.sidetrack/hole_sect_no.
+NodeClass: Variable
+BrowseName: 1:sidetrack/hole_sect_no.
+DisplayName: en|sidetrack/hole_sect_no.
+Description: en|sidetrack/hole_sect_no.
+DataType: Int64
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType

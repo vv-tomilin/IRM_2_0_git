@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.APD1.Reg_Out_Limited
+NodeClass: Variable
+BrowseName: 1:Reg_Out_Limited
+DisplayName: en|Reg_Out_Limited
+Description: en|Reg_Out_Limited
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

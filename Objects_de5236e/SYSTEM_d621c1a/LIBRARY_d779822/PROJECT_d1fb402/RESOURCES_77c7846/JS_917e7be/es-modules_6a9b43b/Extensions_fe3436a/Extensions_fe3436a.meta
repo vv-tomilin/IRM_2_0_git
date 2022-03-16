@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Extensions
+NodeClass: Object
+BrowseName: 1:Extensions
+DisplayName: en|Extensions
+Description: en|Extensions
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

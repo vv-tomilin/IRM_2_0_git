@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="address" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="value" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="status" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="timestamp" type="timestamp" trigger="false" relative="false" value=""/>
+  <parameter name="user" type="string" trigger="false" relative="false" value=""/>
+  <code><![CDATA[/* write log history object */
+
+/* get valid data */
+var modValue = JSON.parse(value);
+var event = modValue.event[0];
+var logUser = _validate(user) ? user : "Anonymous";
+var logStatus = _validate(status) ? status : "undefined";
+
+/* get valid timestamp */
+var timestamp = parseFloat(parseFloat(timestamp) + 0.100);
+
+/* add new event to value */
+var newEvent = {
+	"occurance": Date.now(),
+	"user": logUser,
+	"status": logStatus,
+	"comment": ""
+};
+modValue.event.push(newEvent);
+value = JSON.stringify(modValue);
+
+var node = new UaNode(address);
+
+var historyObject = [{
+	node: node,
+	value: value,
+	status: 0,
+	servertime: timestamp,
+	sourcetime: timestamp
+}];
+
+var historyCallback = {
+	onError: function (dataIdx, status, msg) {
+		console.log("Error at ", dataIdx, " error: ", status, " ", msg);
+	},
+	onReady: function (dataIdx, status, msg) {
+		var logNode = new UaNode("AGENT.OBJECTS.ATVISE.Logger");
+		logNode.value = value;
+	}
+};
+
+var historyOptions = {
+	ignoreDuplicate: false,
+	hidden: true
+};
+
+history.write(historyObject, historyCallback, historyOptions);
+
+
+/**
+ * simple validation
+ * @param string
+ * @returns {string|*}
+ * @private
+ */
+function _validate(string) {
+	string = string ? string : "";
+	string = string != "" ? string : "";
+	string = string != "undefined" ? string : "";
+	return string;
+}
+
+/* end */
+    ]]></code>
+</script>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nodeWellDepthStr" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Well.WellDepth"/>
+  <parameter name="nodeToolPosStr" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Tool.ToolPosition"/>
+  <parameter name="timeToAnaliseSec" type="number" trigger="false" relative="false" value="60"/>
+  <code><![CDATA[var nodeWellDepth = new UaNode(nodeWellDepthStr); 
+var wellDepth = nodeWellDepth.value;
+var nodeToolPos = new UaNode(nodeToolPosStr);
+var toolPos = nodeToolPos.value;
+
+//console.log('забой = ',wellDepth);
+//console.log('tool  = ',toolPos);
+if((wellDepth - toolPos)<0.5){	// to check
+	var timeend = new Date();
+	//var timestart = new Date(timeend.valueOf() - countSec * 1000);
+	var numval = 2;	
+	var resultRaw = nodeWellDepth.datahistory({numvalues: numval, endtime: timeend});
+	if(resultRaw.status < 0x40000000){
+		if(resultRaw.values.length > 1){
+			var curs = resultRaw.values.length-1;
+			var curd = new Date(resultRaw.values[curs].sourcetime);
+			var curv = +resultRaw.values[curs].value;
+//			console.log('curvlast  = ',curv);
+			if(wellDepth > curv && (timeend - curd)< timeToAnaliseSec*1000){
+				return true;
+			}
+		}
+	}
+}
+return false;]]></code>
+</script>

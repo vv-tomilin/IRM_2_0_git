@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" inkscape:version="1.0beta1 (d07a077, 2019-11-03)" sodipodi:docname="Blower2_blue.svg" id="svg5127" xmlns="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" height="180.62601" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="206.65126" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <defs id="defs5121"/>
+ <sodipodi:namedview bordercolor="#666666" inkscape:window-x="234" inkscape:document-rotation="0" inkscape:pageopacity="0.0" borderopacity="1.0" inkscape:document-units="mm" inkscape:zoom="0.35" pagecolor="#ffffff" inkscape:cx="951.95065" inkscape:current-layer="layer1" inkscape:cy="369.91193" id="base" inkscape:pageshadow="2" showgrid="false" inkscape:window-height="951" inkscape:window-maximized="0" inkscape:window-width="1644" inkscape:window-y="23"/>
+ <metadata id="metadata5124">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+  <atv:gridconfig height="20" enabled="false" width="20" gridstyle="lines"/>
+  <atv:snapconfig height="10" enabled="false" width="10"/>
+ </metadata>
+ <g atv:refpx="103.326" inkscape:groupmode="layer" atv:refpy="90.313" id="layer1" transform="translate(146.03694,-50.294136)" inkscape:label="Слой 1">
+  <g atv:refpx="-42.711" atv:refpy="140.607" id="g5286" transform="matrix(2.1046703,0,0,2.1846133,-147.94588,31.377569)">
+   <g atv:refpx="50" atv:refpy="49.999" id="shape">
+    <path atv:refpx="50" atv:refpy="49.999" d="M99.093,8.659L42.249,8.659C19.415,8.659 0.907,27.168 0.907,49.999C0.907,72.832 19.414,91.34 42.249,91.34C65.081,91.34 83.59,72.831 83.59,49.999C83.59,49.423 83.57,48.849 83.546,48.277L99.094,48.277L99.094,8.659Z" id="path5217" inkscape:connector-curvature="0" fill="#77a3bf"/>
+   </g>
+   <g atv:refpx="42.679" atv:refpy="50" id="dark">
+    <polygon atv:refpx="73.238" atv:refpy="50" points="74.522,52.224 71.954,52.224 70.671,49.999 71.954,47.776 74.522,47.776 75.805,49.999 " id="polygon5220" fill="#61859c"/>
+    <polygon atv:refpx="12.12" atv:refpy="50" points="13.404,52.224 10.835,52.224 9.552,49.999 10.835,47.776 13.404,47.776 14.688,49.999 " id="polygon5222" fill="#61859c"/>
+    <polygon atv:refpx="64.285" atv:refpy="28.391" points="65.572,30.615 63.002,30.615 61.718,28.39 63.002,26.167 65.572,26.167 66.853,28.39 " id="polygon5224" fill="#61859c"/>
+    <polygon atv:refpx="21.069" atv:refpy="71.609" points="22.354,73.831 19.785,73.833 18.502,71.608 19.785,69.385 22.354,69.385 23.637,71.608 " id="polygon5226" fill="#61859c"/>
+    <polygon atv:refpx="42.678" atv:refpy="19.441" points="43.963,21.664 41.395,21.664 40.111,19.44 41.395,17.217 43.963,17.217 45.246,19.44 " id="polygon5228" fill="#61859c"/>
+    <polygon atv:refpx="42.678" atv:refpy="80.56" points="43.963,82.783 41.395,82.783 40.111,80.56 41.395,78.337 43.963,78.337 45.246,80.56 " id="polygon5230" fill="#61859c"/>
+    <polygon atv:refpx="21.07" atv:refpy="28.391" points="19.785,26.167 22.355,26.167 23.639,28.392 22.355,30.615 19.785,30.615 18.502,28.39 " id="polygon5232" fill="#61859c"/>
+    <polygon atv:refpx="64.287" atv:refpy="71.608" points="66.51,70.324 66.512,72.893 64.287,74.176 62.062,72.893 62.064,70.324 64.287,69.041 " id="polygon5234" fill="#61859c"/>
+   </g>
+   <g atv:refpx="42.248" atv:refpy="49.999" id="light">
+    <path atv:refpx="42.167" atv:refpy="34.581" d="M43.667,39.833L43.667,29.401C43.196,29.369 42.728,29.329 42.249,29.329C41.715,29.329 41.191,29.369 40.667,29.409L40.667,39.833Z" id="path5237" inkscape:connector-curvature="0" fill="#96c9eb"/>
+    <path atv:refpx="42.167" atv:refpy="65.418" d="M40.667,60.167L40.667,70.59C41.191,70.63 41.715,70.67 42.249,70.67C42.728,70.67 43.197,70.63 43.667,70.598L43.667,60.167Z" id="path5239" inkscape:connector-curvature="0" fill="#96c9eb"/>
+    <path atv:refpx="26.788" atv:refpy="50" d="M32,48.5L21.653,48.5C21.616,48.997 21.577,49.493 21.577,49.999C21.577,50.506 21.616,51.002 21.653,51.5L32,51.5Z" id="path5241" inkscape:connector-curvature="0" fill="#96c9eb"/>
+    <path atv:refpx="57.626" atv:refpy="50" d="M52.333,51.5L62.843,51.5C62.879,51.003 62.919,50.506 62.919,49.999C62.919,49.493 62.879,48.997 62.843,48.5L52.333,48.5Z" id="path5243" inkscape:connector-curvature="0" fill="#96c9eb"/>
+    <path atv:refpx="31.31" atv:refpy="39.141" d="M36.038,41.75L28.7,34.412C27.944,35.069 27.236,35.778 26.583,36.537L33.917,43.87Z" id="path5245" inkscape:connector-curvature="0" fill="#96c9eb"/>
+    <path atv:refpx="53.066" atv:refpy="60.897" d="M48.295,58.25L55.711,65.666C56.47,65.012 57.179,64.304 57.836,63.549L50.416,56.129Z" id="path5247" inkscape:connector-curvature="0" fill="#96c9eb"/>
+    <path atv:refpx="31.311" atv:refpy="60.858" d="M33.917,56.128L26.583,63.462C27.236,64.221 27.945,64.93 28.7,65.587L36.038,58.249Z" id="path5249" inkscape:connector-curvature="0" fill="#96c9eb"/>
+    <path atv:refpx="53.066" atv:refpy="39.103" d="M50.416,43.872L57.836,36.452C57.179,35.696 56.47,34.988 55.711,34.335L48.295,41.751Z" id="path5251" inkscape:connector-curvature="0" fill="#96c9eb"/>
+   </g>
+   <g atv:refpx="41.281" atv:refpy="52.28" id="shadow">
+    <path atv:refpx="46.352" atv:refpy="45.898" d="M68.696,49.39C68.696,35.121 57.131,23.553 42.858,23.553C35.411,23.553 28.721,26.721 24.006,31.76C28.625,27.438 34.813,24.773 41.639,24.773C55.911,24.773 67.476,36.341 67.476,50.61C67.476,57.435 64.811,63.623 60.489,68.244C65.527,63.527 68.695,56.836 68.696,49.39" id="path5254" inkscape:connector-curvature="0" fill="#547387"/>
+    <path atv:refpx="36.89" atv:refpy="55.359" d="M8.407,49.39C8.407,40.187 12.022,31.834 17.902,25.655C11.305,31.93 7.187,40.786 7.187,50.609C7.187,69.637 22.61,85.062 41.638,85.062C51.462,85.062 60.318,80.944 66.592,74.349C60.413,80.228 52.061,83.843 42.857,83.843C23.829,83.842 8.407,68.417 8.407,49.39" id="path5256" inkscape:connector-curvature="0" fill="#547387"/>
+    <polygon atv:refpx="72.808" atv:refpy="51.572" points="74.092,53.085 75.375,50.862 75.341,50.804 74.522,52.224 71.954,52.224 70.704,50.058 70.24,50.862 71.523,53.085 " id="polygon5258" fill="#547387"/>
+    <polygon atv:refpx="11.689" atv:refpy="51.571" points="12.973,53.085 14.256,50.862 14.223,50.804 13.404,52.224 10.835,52.224 9.585,50.057 9.121,50.862 10.405,53.085 " id="polygon5260" fill="#547387"/>
+    <polygon atv:refpx="63.856" atv:refpy="29.962" points="65.142,31.476 66.425,29.251 66.391,29.193 65.572,30.615 63.002,30.615 61.752,28.448 61.288,29.251 62.571,31.476 " id="polygon5262" fill="#547387"/>
+    <polygon atv:refpx="20.639" atv:refpy="73.179" points="21.923,74.693 23.207,72.469 23.173,72.411 22.354,73.831 19.785,73.833 18.535,71.665 18.071,72.469 19.355,74.693 " id="polygon5264" fill="#547387"/>
+    <polygon atv:refpx="42.248" atv:refpy="21.012" points="43.532,22.526 44.816,20.302 44.783,20.244 43.963,21.664 41.395,21.664 40.144,19.498 39.68,20.302 40.963,22.526 " id="polygon5266" fill="#547387"/>
+    <polygon atv:refpx="42.248" atv:refpy="82.132" points="43.532,83.646 44.816,81.421 44.783,81.363 43.963,82.783 41.395,82.783 40.144,80.617 39.68,81.421 40.963,83.646 " id="polygon5268" fill="#547387"/>
+    <polygon atv:refpx="20.639" atv:refpy="29.962" points="21.924,31.476 23.207,29.253 23.175,29.196 22.355,30.615 19.785,30.615 18.535,28.448 18.072,29.251 19.355,31.476 " id="polygon5270" fill="#547387"/>
+    <polygon atv:refpx="63.856" atv:refpy="72.987" points="63.856,75.037 66.081,73.754 66.081,73.141 64.287,74.176 62.062,72.893 62.063,70.936 61.631,71.185 61.631,73.754 " id="polygon5272" fill="#547387"/>
+    <path atv:refpx="42.248" atv:refpy="50" d="M52.333,48.5L62.843,48.5C62.436,42.841 59.761,37.82 55.711,34.335C56.47,34.988 57.178,35.696 57.836,36.452L50.416,43.872L48.294,41.751L55.711,34.334C52.43,31.512 48.256,29.714 43.667,29.401L43.667,39.834L40.667,39.834L40.667,29.409C36.101,29.756 31.956,31.58 28.7,34.412L36.038,41.75L33.917,43.871L26.583,36.537C27.236,35.778 27.944,35.07 28.699,34.413C24.697,37.895 22.058,42.882 21.653,48.5L32,48.5L32,51.5L21.653,51.5C22.058,57.118 24.698,62.106 28.7,65.587C27.944,64.93 27.236,64.222 26.583,63.462L33.917,56.128L36.038,58.249L28.7,65.588C31.956,68.42 36.1,70.244 40.666,70.591L40.666,60.167L43.666,60.167L43.666,70.599C43.666,70.599 43.666,70.599 43.665,70.599C53.92,69.902 62.104,61.745 62.842,51.501L52.332,51.501L52.332,48.5ZM57.836,63.548C57.179,64.304 56.47,65.012 55.711,65.665L48.295,58.249L50.416,56.128Z" id="path5274" inkscape:connector-curvature="0" fill="#547387"/>
+   </g>
+   <g atv:refpx="56.957" atv:refpy="45.291" id="hlight">
+    <path atv:refpx="38.144" atv:refpy="54.104" d="M17.019,49.39C17.019,42.566 19.683,36.378 24.006,31.759C18.967,36.474 15.8,43.164 15.8,50.609C15.8,64.879 27.367,76.449 41.638,76.449C49.084,76.449 55.774,73.282 60.489,68.243C55.87,72.565 49.683,75.229 42.858,75.229C28.586,75.229 17.019,63.659 17.019,49.39" id="path5277" inkscape:connector-curvature="0" fill="#b0dfff"/>
+    <path atv:refpx="47.605" atv:refpy="44.645" d="M77.308,49.39C77.308,30.365 61.887,14.939 42.858,14.939C33.033,14.939 24.177,19.058 17.901,25.654C24.081,19.775 32.434,16.159 41.638,16.159C60.667,16.159 76.088,31.584 76.088,50.61C76.088,59.815 72.472,68.169 66.592,74.349C73.19,68.072 77.308,59.215 77.308,49.39" id="path5279" inkscape:connector-curvature="0" fill="#b0dfff"/>
+    <path atv:refpx="76.053" atv:refpy="65.6" d="M82.388,49.278C82.412,49.85 82.432,50.424 82.432,51C82.432,63.306 77.05,74.35 68.518,81.923C77.721,74.341 83.589,62.856 83.589,50C83.589,49.759 83.576,49.519 83.57,49.278Z" id="path5281" inkscape:connector-curvature="0" fill="#b0dfff"/>
+    <path atv:refpx="56.957" atv:refpy="28.468" d="M42.249,8.659C31.721,8.659 22.119,12.6 14.821,19.078C21.963,13.194 31.114,9.659 41.092,9.659L97.937,9.659L97.937,48.277L99.094,48.277L99.094,8.659Z" id="path5283" inkscape:connector-curvature="0" fill="#b0dfff"/>
+   </g>
+  </g>
+ </g>
+</svg>

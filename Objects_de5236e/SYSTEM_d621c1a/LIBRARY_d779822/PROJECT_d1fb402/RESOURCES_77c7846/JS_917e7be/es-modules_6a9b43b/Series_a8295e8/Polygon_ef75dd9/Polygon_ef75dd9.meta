@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/Polygon
+NodeClass: Object
+BrowseName: 1:Polygon
+DisplayName: en|Polygon
+Description: en|Polygon
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

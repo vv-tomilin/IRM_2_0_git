@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.PressureLimit
+NodeClass: Variable
+BrowseName: 1:PressureLimit
+DisplayName: en|PressureLimit
+Description: en|PressureLimit
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

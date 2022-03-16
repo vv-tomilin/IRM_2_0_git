@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Well1
+NodeClass: Object
+BrowseName: 1:Well1
+DisplayName: en|Well1
+Description: en|Well1
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.DataForDayReport
+NodeClass: Object
+BrowseName: 1:DataForDayReport
+DisplayName: en|DataForDayReport
+Description: en|DataForDayReport
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ServiceParams.Bit
+NodeClass: Object
+BrowseName: 1:Bit
+DisplayName: en|Bit
+Description: en|Bit
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

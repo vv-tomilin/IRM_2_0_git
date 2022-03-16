@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.solarpanel
+NodeClass: Variable
+BrowseName: 1:solarpanel
+DisplayName: en|solarpanel
+Description: en|solarpanel
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

@@ -1,0 +1,375 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="73" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="232" version="1.2">
+ <defs/>
+ <desc>Customizable navigation button</desc>
+ <title>Custom button</title>
+ <metadata>
+  <atv:parameter group="Button 1" behavior="optional" valuetype="trstring" desc="label line 1" name="text1"/>
+  <atv:parameter group="Button 1" behavior="optional" valuetype="trstring" desc="label line 2" name="text1_2"/>
+  <atv:parameter group="Button 1" behavior="optional" valuetype="display" desc="symbol" name="symbol1" defaultvalue=""/>
+  <atv:parameter group="Button 1" behavior="optional" valuetype="number" desc="symbol scaling (%)" name="symbolScaling1" defaultvalue="200"/>
+  <atv:parameter group="Button 1" behavior="optional" valuetype="display" desc="target display" name="target1" defaultvalue=""/>
+  <atv:parameter group="Button 1" behavior="optional" valuetype="global" desc="context menu" name="contextmenu1" defaultvalue=""/>
+  <atv:parameter group="Button 1" valuetype="string" behavior="optional" desc="trigger" name="trigger1" defaultvalue=""/>
+  <atv:parameter config="6;7;8;9;10;11;12;14;16;18;20;22;24;26;28;36;48;72" group="Button 1" behavior="optional" valuetype="enum" desc="font size" name="fontSize1" defaultvalue="18"/>
+  <atv:parameter group="Button 1" behavior="optional" valuetype="global" desc="font color" name="fontColor1" defaultvalue="SYSTEM.GLOBALS.atvFontColor"/>
+  <atv:parameter config="SYSTEM.SECURITY.RIGHTS" group="Button 1" behavior="optional" valuetype="address" desc="necessary right" name="right1"/>
+  <atv:parameter group="Button 1" behavior="optional" valuetype="address" desc="activation address" name="activeNode1"/>
+  <atv:parameter group="Button 1" behavior="optional" valuetype="string" desc="activation value" name="activeValue1"/>
+  <atv:parameter group="Button 2" behavior="optional" valuetype="trstring" desc="label line 1" name="text2"/>
+  <atv:parameter group="Button 2" behavior="optional" valuetype="trstring" desc="label line 2" name="text2_2"/>
+  <atv:parameter group="Button 2" behavior="optional" valuetype="display" desc="symbol" name="symbol2" defaultvalue=""/>
+  <atv:parameter group="Button 2" behavior="optional" valuetype="number" desc="symbol scaling (%)" name="symbolScaling2" defaultvalue="200"/>
+  <atv:parameter group="Button 2" behavior="optional" valuetype="display" desc="target display" name="target2" defaultvalue=""/>
+  <atv:parameter group="Button 2" behavior="optional" valuetype="global" desc="context menu" name="contextmenu2" defaultvalue=""/>
+  <atv:parameter group="Button 2" valuetype="string" behavior="optional" desc="trigger" name="trigger2" defaultvalue=""/>
+  <atv:parameter config="6;7;8;9;10;11;12;14;16;18;20;22;24;26;28;36;48;72" group="Button 2" behavior="optional" valuetype="enum" desc="font size" name="fontSize2" defaultvalue="18"/>
+  <atv:parameter group="Button 2" behavior="optional" valuetype="global" desc="font color" name="fontColor2" defaultvalue="SYSTEM.GLOBALS.atvFontColor"/>
+  <atv:parameter config="SYSTEM.SECURITY.RIGHTS" group="Button 2" behavior="optional" valuetype="address" desc="necessary right" name="right2"/>
+  <atv:parameter group="Button 2" behavior="optional" valuetype="address" desc="activation address" name="activeNode2"/>
+  <atv:parameter group="Button 2" behavior="optional" valuetype="string" desc="activation value" name="activeValue2"/>
+  <atv:parameter config="Arial;Courier;Tahoma;Verdana" group="Context menu" behavior="optional" valuetype="enum" desc="font family" name="context_menu_font_family" substitute="$CFONTFAMILY$" defaultvalue="Arial"/>
+  <atv:parameter group="Context menu" behavior="optional" valuetype="number" desc="font size" name="context_menu_font_size" substitute="$CFONTSIZE$" defaultvalue="18"/>
+  <atv:parameter group="Context menu" behavior="optional" valuetype="global" desc="font color" name="context_menu_font_color" substitute="$CFONTCOLOR$" defaultvalue="SYSTEM.GLOBALS.atvFontColor"/>
+  <atv:parameter group="Context menu" behavior="optional" valuetype="global" desc="background color" name="context_menu_fill_color" substitute="$CFILLCOLOR$" defaultvalue="SYSTEM.GLOBALS.atvFillColor"/>
+  <atv:parameter group="Context menu" behavior="optional" valuetype="global" desc="hover color" substitute="$CHOVERCOLOR$" name="context_menu_hover_color" defaultvalue="SYSTEM.GLOBALS.atvFillColor2"/>
+  <atv:parameter config="left;center;right" group="Context menu" behavior="optional" valuetype="enum" desc="text alignment" name="contextMenuTextAlignment" defaultvalue="center"/>
+  <atv:gridconfig height="20" enabled="false" width="20" gridstyle="lines"/>
+  <atv:snapconfig height="10" enabled="false" width="10"/>
+ </metadata>
+ <svg atv:refpy="42.174" atv:bindtr="1,1" transform="matrix(2.9,0,0,2.4333,0,0)" x="0" height="30" y="0" atv:bindtl="0,0" id="custom_button_1" width="80" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" atv:refpx="106.002">
+  <atv:argument prefix="symbol1" name="symbol"/>
+  <atv:argument prefix="text1" name="label"/>
+  <atv:argument prefix="text1_2" name="label2"/>
+  <atv:argument prefix="fontSize1" name="fontSize"/>
+  <atv:argument value="inherit" name="visibilitySymbol"/>
+  <atv:argument value="SYSTEM.GLOBALS.atvBorderColor2" name="borderColor"/>
+  <atv:argument value="200" name="symbolScale"/>
+  <atv:argument prefix="symbolScaling1" name="symbolScaling"/>
+  <atv:argument prefix="fontColor1" name="fontColor"/>
+  <atv:argument prefix="right1" name="right"/>
+  <atv:argument prefix="activeNode1" name="activeNode"/>
+  <atv:argument prefix="activeValue1" name="activeValue"/>
+  <atv:overwrite transform="matrix(0.3448,0,0,0.411,0,0)" height="71" id="id_6" width="230"/>
+  <atv:overwrite transform="matrix(0.3448,0,0,0.411,0,0)" x="106" y="26.5" id="button_symbol"/>
+  <atv:overwrite transform="matrix(0.3448,0,0,0.411,0,0)" x="116" y="48" id="button_label_2"/>
+  <atv:overwrite transform="matrix(0.3448,0,0,0.411,0,0)" x="116" y="33" id="button_label_1"/>
+  <atv:overwrite transform="matrix(0.3448,0,0,0.411,0,0)" x="116" y="41" id="button_label"/>
+  <atv:overwrite transform="matrix(0.3448,0,0,0.411,0,0)" height="69" id="button_stroke" width="228"/>
+  <atv:overwrite transform="matrix(0.3448,0,0,0.411,0,0)" height="71" id="button_bg" width="230"/>
+  <atv:overwrite transform="matrix(0.3448,0,0,0.411,0,0)" height="73" id="outer_frame" width="232"/>
+ </svg>
+ <polyline atv:refpy="13.985" stroke="#666666" id="context_menu_button" fill="#686868" visibility="hidden" points="2.999,2.844 2.999,23.226 24.499,2.844 2.999,2.844" atv:refpx="13.753" stroke-width="1"/>
+ <svg atv:refpy="42.174" atv:bindtr="1,1" transform="matrix(1.4125,0,0,2.4333,0,0)" x="0" height="30" y="0" atv:bindtl="0,0" id="custom_button_2" width="80" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" atv:refpx="51.63">
+  <atv:argument prefix="symbol1" name="symbol"/>
+  <atv:argument prefix="text1" name="label"/>
+  <atv:argument prefix="text1_2" name="label2"/>
+  <atv:argument prefix="fontSize1" name="fontSize"/>
+  <atv:argument value="inherit" name="visibilitySymbol"/>
+  <atv:argument value="SYSTEM.GLOBALS.atvBorderColor2" name="borderColor"/>
+  <atv:argument value="" name="symbolScale"/>
+  <atv:argument prefix="symbolScaling1" name="symbolScaling"/>
+  <atv:argument prefix="fontColor1" name="fontColor"/>
+  <atv:argument prefix="right1" name="right"/>
+  <atv:argument prefix="activeNode1" name="activeNode"/>
+  <atv:argument prefix="activeValue1" name="activeValue"/>
+  <atv:overwrite transform="matrix(0.708,0,0,0.411,0,0)" height="71" id="id_6" width="111"/>
+  <atv:overwrite transform="matrix(0.708,0,0,0.411,0,0)" x="46.5" y="26.5" id="button_symbol"/>
+  <atv:overwrite transform="matrix(0.708,0,0,0.411,0,0)" x="56.5" y="48" id="button_label_2"/>
+  <atv:overwrite transform="matrix(0.708,0,0,0.411,0,0)" x="56.5" y="33" id="button_label_1"/>
+  <atv:overwrite transform="matrix(0.708,0,0,0.411,0,0)" x="56.5" y="41" id="button_label"/>
+  <atv:overwrite transform="matrix(0.708,0,0,0.411,0,0)" height="69" id="button_stroke" width="109"/>
+  <atv:overwrite transform="matrix(0.708,0,0,0.411,0,0)" height="71" id="button_bg" width="111"/>
+  <atv:overwrite transform="matrix(0.708,0,0,0.411,0,0)" height="73" id="outer_frame" width="113"/>
+ </svg>
+ <svg atv:refpy="42.174" atv:bindtr="1,1" transform="matrix(1.4125,0,0,2.4333,0,0)" x="84.248" height="30" y="0" atv:bindtl="0,0" id="custom_button_3" width="80" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" atv:refpx="170.629">
+  <atv:argument prefix="symbol2" name="symbol"/>
+  <atv:argument prefix="text2" name="label"/>
+  <atv:argument prefix="text2_2" name="label2"/>
+  <atv:argument prefix="fontSize2" name="fontSize"/>
+  <atv:argument value="inherit" name="visibilitySymbol"/>
+  <atv:argument value="SYSTEM.GLOBALS.atvBorderColor2" name="borderColor"/>
+  <atv:argument value="200" name="symbolScale"/>
+  <atv:argument prefix="symbolScaling2" name="symbolScaling"/>
+  <atv:argument prefix="fontColor2" name="fontColor"/>
+  <atv:argument prefix="right2" name="right"/>
+  <atv:argument prefix="activeNode2" name="activeNode"/>
+  <atv:argument prefix="activeValue2" name="activeValue"/>
+  <atv:overwrite transform="matrix(0.708,0,0,0.411,0,0)" height="71" id="id_6" width="111"/>
+  <atv:overwrite transform="matrix(0.708,0,0,0.411,0,0)" x="46.5" y="26.5" id="button_symbol"/>
+  <atv:overwrite transform="matrix(0.708,0,0,0.411,0,0)" x="56.5" y="48" id="button_label_2"/>
+  <atv:overwrite transform="matrix(0.708,0,0,0.411,0,0)" x="56.5" y="33" id="button_label_1"/>
+  <atv:overwrite transform="matrix(0.708,0,0,0.411,0,0)" x="56.5" y="41" id="button_label"/>
+  <atv:overwrite transform="matrix(0.708,0,0,0.411,0,0)" height="69" id="button_stroke" width="109"/>
+  <atv:overwrite transform="matrix(0.708,0,0,0.411,0,0)" height="71" id="button_bg" width="111"/>
+  <atv:overwrite transform="matrix(0.708,0,0,0.411,0,0)" height="73" id="outer_frame" width="113"/>
+ </svg>
+ <polyline atv:refpy="13.12" stroke="#666666" id="context_menu_sign_1" fill="#686868" visibility="hidden" points="3.999,3.792 3.999,20.856 21.999,3.792 3.999,3.792" atv:refpx="13.003" stroke-width="1"/>
+ <polyline atv:refpy="13.12" stroke="#666666" id="context_menu_sign_2" fill="#686868" visibility="hidden" points="122.999,3.792 122.999,20.856 140.999,3.792 122.999,3.792" atv:refpx="132.003" stroke-width="1"/>
+ <script type="text/ecmascript"><![CDATA[var contextMenuStyle = {
+	itemHeight: 50,
+	itemFill: webMI.query["context_menu_fill_color"],
+	itemPadding: 10,
+	itemMargin: 5,
+	itemBorderRadius: 3,
+	itemBorder: "1px #d7d7d7 solid",
+	maxRows: 5,
+	fontFamily: webMI.query["context_menu_font_family"],
+	fontSize: webMI.query["context_menu_font_size"],
+	fontFill: webMI.query["context_menu_font_color"],
+	width: 140,
+	fill: 0,
+	stroke: "#565656",
+	strokeWidth: 0,
+	hoverFill: webMI.query["context_menu_hover_color"],
+	closeTime: 0,
+	zIndex: 100,
+	showType: "right",
+	alignment: "left"
+};
+
+var popUpX = 0;
+var popUpY = 59;
+var text1 = webMI.query["text1"];
+var text2 = webMI.query["text2"];
+var symbol1 = webMI.query["symbol1"];
+var symbol2 = webMI.query["symbol2"];
+var target1 = webMI.query["target1"];
+var target2 = webMI.query["target2"];
+var contextmenu1 = webMI.query["contextmenu1"];
+var contextmenu2 = webMI.query["contextmenu2"];
+var trigger1 = webMI.query["trigger1"];
+var trigger2 = webMI.query["trigger2"];
+var atviseDesktopDisplays = ["SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.alarmlist","SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.historylist","SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.highcharts.main_display"];
+var atviseMobileDisplays = ["SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.alarmlist_small","SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.historylist_small","SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.highcharts.main_display_small"];
+
+/* parse parameter for buttons */
+var query1 = {};
+var query2 = {};
+for(var key in webMI.query) {
+	if(key.indexOf("target1_") === 0){
+		query1[key.replace("target1_", "")] = webMI.query[key];
+	} else if(key.indexOf("target1_") === 0){
+		query2[key.replace("target2_", "")] = webMI.query[key];
+	}
+}
+
+webMI.gfx.setWidth("custom_button_1_button_bg", webMI.gfx.getWidth("custom_button_1_button_bg")-2);
+webMI.gfx.setHeight("custom_button_1_button_bg", webMI.gfx.getHeight("custom_button_1_button_bg")-2);
+webMI.gfx.setX("custom_button_1_button_bg", "2");
+webMI.gfx.setY("custom_button_1_button_bg", "2");
+webMI.gfx.setWidth("custom_button_2_button_bg", webMI.gfx.getWidth("custom_button_2_button_bg")-2);
+webMI.gfx.setHeight("custom_button_2_button_bg", webMI.gfx.getHeight("custom_button_2_button_bg")-2);
+webMI.gfx.setX("custom_button_2_button_bg", "2");
+webMI.gfx.setY("custom_button_2_button_bg", "2");
+webMI.gfx.setWidth("custom_button_3_button_bg", webMI.gfx.getWidth("custom_button_3_button_bg")-2);
+webMI.gfx.setHeight("custom_button_3_button_bg", webMI.gfx.getHeight("custom_button_3_button_bg")-2);
+webMI.gfx.setX("custom_button_3_button_bg", "2");
+webMI.gfx.setY("custom_button_3_button_bg", "2");
+
+if (!symbol1) {
+	webMI.gfx.setVisible("custom_button_1_button_symbol", false);
+	webMI.gfx.setVisible("custom_button_2_button_symbol", false);
+}
+
+if (!text1) {
+	webMI.gfx.setVisible("custom_button_1_button_label", false);
+	webMI.gfx.setVisible("custom_button_2_button_label", false);
+}
+
+if (!symbol2) {
+	webMI.gfx.setVisible("custom_button_3_button_symbol", false);
+}
+
+if (!text2) {
+	webMI.gfx.setVisible("custom_button_3_button_label", false);
+}
+
+if (!target2 && !contextmenu2 && !trigger2) {
+	webMI.gfx.setVisible("custom_button_2", false);
+	webMI.gfx.setVisible("custom_button_3", false);
+} else {
+	webMI.gfx.setVisible("custom_button_1", false);
+}
+
+var globalListContext = [];
+globalListContext[0] = contextmenu1;
+globalListContext[1] = contextmenu2;
+
+/* Manipulate atvise display addresses for mobile scaling and advanced alarm functions */
+if (webMI.getMethodSupport().indexOf("AlarmShelve") == -1) {
+	if (target1 == atviseDesktopDisplays[0] && typeof globalListContext[0] != "undefined")
+		globalListContext[0] = undefined;
+
+	if (target2 == atviseDesktopDisplays[0] && typeof globalListContext[1] != "undefined")
+		globalListContext[1] = undefined;
+}
+
+if (!webMI.getClientInfo().isDesktop) {
+	if (target1 == atviseDesktopDisplays[0] && typeof globalListContext[0] != "undefined") {
+		for (var i in globalListContext[0]) {
+			if (globalListContext[0][i].target.indexOf(atviseDesktopDisplays[0] > -1))
+				globalListContext[0][i].target = globalListContext[0][i].target.replace(atviseDesktopDisplays[0], atviseMobileDisplays[0]);
+		}
+	}
+
+	if (target2 == atviseDesktopDisplays[0] && typeof globalListContext[1] != "undefined") {
+		for (var i in globalListContext[1]) {
+			if (globalListContext[1][i].target.indexOf(atviseDesktopDisplays[0] > -1))
+				globalListContext[1][i].target = globalListContext[1][i].target.replace(atviseDesktopDisplays[0], atviseMobileDisplays[0]);
+		}
+	}
+
+	var target1_index = atviseDesktopDisplays.indexOf(target1);
+	if (target1_index > -1)
+		target1 = target1.replace(atviseDesktopDisplays[target1_index], atviseMobileDisplays[target1_index]);
+
+	var target2_index = atviseDesktopDisplays.indexOf(target2);
+	if (target2_index > -1)
+		target2 = target2.replace(atviseDesktopDisplays[target2_index], atviseMobileDisplays[target2_index]);
+}
+/* End of atvise display address manipulation */
+
+var menuObjects = [];
+
+for (var i = 0;i <= 1; i++) {
+	if (globalListContext[i]) {
+		webMI.gfx.setVisible("context_menu_sign_" + (i+1), true);
+		var menuObj = {};
+		var globalListContextArray = Object.keys(globalListContext[i]).map(function(e) {
+		    return globalListContext[i][e]
+		})
+		globalListContextArray.sort(columnCompareFunction);
+		for (var j=0; j<globalListContextArray.length; j++) {
+
+			var query = "{}";
+			var fullAddress = globalListContextArray[j].target;
+			var trigger = globalListContextArray[j].trigger;
+			var address = fullAddress.substring(0, fullAddress.lastIndexOf("?"));
+			if (!address) {
+				address = fullAddress;
+			} else {
+				var decoded = decodeURI(fullAddress.substring(fullAddress.lastIndexOf("?") + 1).replace(/&/g, "\",\"").replace(/=/g,"\":\""));
+				query = '{"' + decoded + '"}';
+			}
+			eval("menuObj[" + j + "] = { text: globalListContextArray[j].text, value: function(){" + (address ? "webMI.display.openDisplay('" + address + "', " + query + ", 'content');" : "") + (trigger ? "webMI.trigger.fire('" + trigger + "', true);" : "") + "}, textAlign: webMI.query['contextMenuTextAlignment'] };");
+			if (globalListContextArray[j].iconClass) {
+				iconProperty = {};
+				iconProperty.fav = "<i class='" + globalListContextArray[j].iconClass + "'></i>";
+				if(globalListContextArray[j].iconAlignment) iconProperty.align = globalListContextArray[j].iconAlignment;
+				menuObj[j].icon = iconProperty;
+			}
+
+		}
+		menuObjects[i] = menuObj;
+	}
+}
+
+if (!target2 && !globalListContext[1] &&!trigger2) {
+	if (globalListContext[0]){
+		webMI.trigger.connect("clicked", function(e) {
+			webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Context Menu", {
+				"id": "custom_button_1",
+				onEvent: "immediately",
+				menuObj: menuObj,
+				active: function() {
+					return true;
+				},
+				"x": popUpX,
+				"y": popUpY,
+				"itemsCount": globalListContextArray.length,
+				"elementHeight": webMI.gfx.getHeight("custom_button_1") / webMI.gfx.getScreenCTM().d * webMI.gfx.getScreenCTM("custom_button_1").d,
+				"minWidth": webMI.gfx.getWidth("custom_button_1") / webMI.gfx.getScreenCTM().a * webMI.gfx.getScreenCTM("custom_button_1").a,
+				"style": contextMenuStyle
+			});
+		}, "custom_button_1");
+	} else if (target1) {
+		// Click event (open target display)
+		webMI.trigger.connect("clicked", function(e) {
+			webMI.display.openDisplay(target1, query1, "content");
+			if (trigger1)
+				webMI.trigger.fire(trigger1, true);
+		}, "custom_button_1");
+	} else if (trigger1) {
+		webMI.trigger.connect("clicked", function(e) {
+			webMI.trigger.fire(trigger1, true);
+		}, "custom_button_1");
+	} else {
+		webMI.trigger.fire("com.atvise.setActive", false, "custom_button_1");
+	}
+} else {
+	if (globalListContext[0]){
+		webMI.trigger.connect("clicked", function(e) {
+			webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Context Menu", {
+				"id": "custom_button_2",
+				onEvent: "immediately",
+				menuObj: menuObj,
+				active: function() {
+					return true;
+				},
+				"x": popUpX,
+				"y": popUpY,
+				"itemsCount": globalListContextArray.length,
+				"elementHeight": webMI.gfx.getHeight("custom_button_1") / webMI.gfx.getScreenCTM().d * webMI.gfx.getScreenCTM("custom_button_1").d,
+				"minWidth": webMI.gfx.getWidth("custom_button_1") / webMI.gfx.getScreenCTM().a * webMI.gfx.getScreenCTM("custom_button_1").a,
+				"style": contextMenuStyle
+			});
+		}, "custom_button_2");
+	} else if (target1) {
+		// Click event (open target display)
+		webMI.trigger.connect("clicked", function(e) {
+			webMI.display.openDisplay(target1, query1, "content");
+			if (trigger1)
+				webMI.trigger.fire(trigger1, true);
+		}, "custom_button_2");
+	} else if (trigger1) {
+		webMI.trigger.connect("clicked", function(e) {
+			webMI.trigger.fire(trigger1, true);
+		}, "custom_button_2");
+	} else {
+		webMI.trigger.fire("com.atvise.setActive", false, "custom_button_2");
+	}
+	if (globalListContext[1]){
+		webMI.trigger.connect("clicked", function(e) {
+			webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Context Menu", {
+				"id": "custom_button_3",
+				onEvent: "immediately",
+				menuObj: menuObj,
+				active: function() {
+					return true;
+				},
+				"x": popUpX + 119,
+				"y": popUpY,
+				"itemsCount": globalListContextArray.length,
+				"elementHeight": webMI.gfx.getHeight("custom_button_1") / webMI.gfx.getScreenCTM().d * webMI.gfx.getScreenCTM("custom_button_1").d,
+				"minWidth": webMI.gfx.getWidth("custom_button_1") / webMI.gfx.getScreenCTM().a * webMI.gfx.getScreenCTM("custom_button_1").a,
+				"style": contextMenuStyle
+			});
+		}, "custom_button_3");
+	} else if (target2) {
+		// Click event (open target display)		
+		webMI.trigger.connect("clicked", function(e) {
+			webMI.display.openDisplay(target2, query2, "content");
+			if (trigger2)
+				webMI.trigger.fire(trigger2, true);
+		}, "custom_button_3");
+	} else if (trigger2) {
+		webMI.trigger.connect("clicked", function(e) {
+			webMI.trigger.fire(trigger2, true);
+		}, "custom_button_3");
+	} 
+}
+
+//Custom compare function for Array.sort
+function columnCompareFunction(a, b) {
+    //The table colums are sorted by "order" and, if two ore more colums have the same "order", by "name".
+    if (a.order < b.order) return -1;
+    if (a.order > b.order) return 1;
+    //if a.order == b.order sort by name:
+    if (a.text.toUpperCase() < b.text.toUpperCase()) return -1;
+    if (a.text.toUpperCase() > b.text.toUpperCase()) return 1;
+    //if a.name.toUpperCase() == b.name.toUpperCase() return 0:
+    return 0;
+}
+]]></script>
+</svg>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.DataForDayReport.DateNeed
+NodeClass: Variable
+BrowseName: 1:DateNeed
+DisplayName: en|DateNeed
+Description: en|DateNeed
+DataType: DateTime
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DATASOURCES.IVE50_Evrotec.client_certificate
+NodeClass: Variable
+BrowseName: 1:client_certificate
+DisplayName: en|client_certificate
+Description: en|client_certificate
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

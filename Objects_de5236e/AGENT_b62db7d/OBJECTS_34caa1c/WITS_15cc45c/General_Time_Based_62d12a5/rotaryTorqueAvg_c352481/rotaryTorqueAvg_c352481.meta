@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.General_Time_Based.rotaryTorqueAvg
+NodeClass: Variable
+BrowseName: 1:rotaryTorqueAvg
+DisplayName: en|rotaryTorqueAvg
+Description: en|rotaryTorqueAvg
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

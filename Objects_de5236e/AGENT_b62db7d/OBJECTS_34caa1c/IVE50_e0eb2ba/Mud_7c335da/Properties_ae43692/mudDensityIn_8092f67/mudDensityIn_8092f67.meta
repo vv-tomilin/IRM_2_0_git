@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.Properties.mudDensityIn
+NodeClass: Variable
+BrowseName: 1:mudDensityIn
+DisplayName: en|mudDensityIn
+Description: en|mudDensityIn
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

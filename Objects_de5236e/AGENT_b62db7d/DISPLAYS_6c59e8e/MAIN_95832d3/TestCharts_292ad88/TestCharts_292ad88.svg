@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext" version="1.2" width="1280" height="680" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient x1="0" gradientUnits="objectBoundingBox" y1="0" x2="1" y2="1" id="backgroundGradient">
+   <stop stop-color="#2f2f60" offset="0"/>
+   <stop stop-color="#2f2f60" offset="1" stop-opacity="0"/>
+  </linearGradient>
+ </defs>
+ <desc>Main display with chart container, toolbar and legend</desc>
+ <title>Main Display</title>
+ <metadata>
+  <atv:parameter name="chartname" desc="chart name" defaultvalue="trend1" behavior="mandatory" valuetype="string"/>
+  <atv:parameter name="chartgroup" desc="chart group" defaultvalue="group1" behavior="mandatory" valuetype="string"/>
+  <atv:parameter name="skipDefaultModules" desc="skip default modules" defaultvalue="false" substitute="" behavior="optional" valuetype="bool"/>
+  <atv:parameter name="additionalModules" desc="additional modules" defaultvalue="" substitute="" behavior="optional" valuetype="string"/>
+  <atv:parameter name="configNode" desc="configuration node" defaultvalue="AGENT.OBJECTS.TrendCfg" behavior="mandatory" valuetype="address"/>
+  <atv:parameter name="configFile" desc="configuration file (in filesystem)" defaultvalue="" behavior="optional" valuetype="string"/>
+  <atv:parameter name="configName" desc="config name" defaultvalue="default" behavior="mandatory" valuetype="string"/>
+  <atv:parameter name="saveMethod" desc="saving method" defaultvalue="Multiple nodes" behavior="optional" valuetype="enum" config="Multiple nodes;Single node;File system"/>
+  <atv:parameter name="saveCompressed" desc="compression" defaultvalue="true" behavior="optional" valuetype="bool"/>
+  <atv:parameter name="datasource" desc="datasource" defaultvalue="opcUA" behavior="optional" valuetype="string"/>
+  <atv:parameter name="stepPercent" desc="back/fwd step in percent" defaultvalue="100" behavior="optional" valuetype="string"/>
+  <atv:parameter name="options_right" desc="necessary right" defaultvalue="" behavior="optional" group="Security: options menu" valuetype="address" config="SYSTEM.SECURITY.RIGHTS"/>
+  <atv:parameter name="options_activeNode" desc="activation address" behavior="optional" group="Security: options menu" valuetype="address"/>
+  <atv:parameter name="options_activeValue" desc="activation value" behavior="optional" group="Security: options menu" valuetype="string"/>
+  <atv:parameter name="load_right" desc="necessary right" defaultvalue="" behavior="optional" group="Security: load configuration" valuetype="address" config="SYSTEM.SECURITY.RIGHTS"/>
+  <atv:parameter name="load_activeNode" desc="activation address" behavior="optional" group="Security: load configuration" valuetype="address"/>
+  <atv:parameter name="load_activeValue" desc="activation value" behavior="optional" group="Security: load configuration" valuetype="string"/>
+  <atv:parameter name="save_right" desc="necessary right" defaultvalue="" behavior="optional" group="Security: save configuration" valuetype="address" config="SYSTEM.SECURITY.RIGHTS"/>
+  <atv:parameter name="save_activeNode" desc="activation address" behavior="optional" group="Security: save configuration" valuetype="address"/>
+  <atv:parameter name="save_activeValue" desc="activation value" behavior="optional" group="Security: save configuration" valuetype="string"/>
+  <atv:parameter name="save_changecompression" desc="change compression" defaultvalue="false" behavior="optional" group="Security: save configuration" valuetype="bool"/>
+  <atv:parameter name="export_right" desc="necessary right for export" defaultvalue="" behavior="optional" group="Security: export menu" valuetype="address" config="SYSTEM.SECURITY.RIGHTS"/>
+  <atv:parameter name="export_activeNode" desc="activation address" behavior="optional" group="Security: export menu" valuetype="address"/>
+  <atv:parameter name="export_activeValue" desc="activation value" behavior="optional" group="Security: export menu" valuetype="string"/>
+  <atv:gridconfig enabled="true" width="128" height="20" gridstyle="lines"/>
+  <atv:snapconfig enabled="true" width="5" height="5"/>
+ </metadata>
+ <g atv:refpx="0" atv:insensitive="true" atv:refpy="0" id="id_0">
+  <rect atv:refpx="640" fill-opacity="0.00392156862745098" y="0" fill="#0000ff" width="1280.00" height="680.00" atv:refpy="340" x="0" id="id_1"/>
+ </g>
+ <script type="text/ecmascript"><![CDATA[webMI.trigger.connect("com.atvise.highchart_options", function(e) {
+	webMI.gfx.setVisible("highcharts", !e.value);
+	webMI.gfx.setVisible("configuration", e.value);
+}, "toolbar");]]></script>
+ <svg atv:refpx="640" y="0" width="1280" height="680" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.highcharts.main_display" atv:refpy="340" x="0" id="id_2">
+  <atv:argument name="configNode" value="AGENT.OBJECTS.GtiTrendCfgs.GtiTrendCfg1"/>
+ </svg>
+</svg>

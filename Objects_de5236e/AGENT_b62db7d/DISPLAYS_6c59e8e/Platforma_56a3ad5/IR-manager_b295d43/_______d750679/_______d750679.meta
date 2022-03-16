@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.Platforma.IR-manager.Регион
+NodeClass: Object
+BrowseName: 1:Регион
+DisplayName: en|Регион
+Description: en|Регион
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

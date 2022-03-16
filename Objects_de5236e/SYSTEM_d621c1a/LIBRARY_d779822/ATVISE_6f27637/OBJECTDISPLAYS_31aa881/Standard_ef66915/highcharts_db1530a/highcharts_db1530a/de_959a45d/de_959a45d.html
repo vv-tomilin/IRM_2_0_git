@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Beschreibung</h1>
+<p>Das Chart Display dient der Anzeige von Werten in Form eines Diagramms.</p>
+<p> Es zeigt ein Diagramm mit den Rohwerten oder Aggregatwerten eines Datenpunkts an. Die Datenpunkte
+werden entweder &uuml;ber Display Parameter (siehe Parameter "Serie [1..10]") oder &uuml;ber den Konfigurationsdialog der Toolbar hinzugef&uuml;gt.
+Das Display kann allein oder in Verbindung mit dem Toolbar-Display und/oder dem Legenden-Display verwendet werden.<br><br>
+<b>Zoomen und Verschieben:</b><br>
+Mit Hilfe der linken Maustaste l&auml;sst sich ein Bereich der gezoomt werden soll makieren. Bei Touchger&auml;ten erfolgt das Zoomen mit Hilfe von zwei Fingern (Pinch-Geste).
+Das Zur&uuml;cksetzen des Zooms erfolgt mit Hilfe der Schaltfl&auml;che "Reset zoom" rechts oben.
+W&auml;hrend des Zooms l&auml;sst sich die Diagrammfl&auml;che mit Shift + linker Maustaste bzw. &uuml;ber Touchgesten &uuml;ber die Zeitachse verschieben.<br><br>
+<b>Messzeiger:</b><br>
+Es k&ouml;nnen bis zu zwei Messzeiger &uuml;ber die Toolbar oder &uuml;ber die Displayparameter aktiviert werden. F&uuml;r die Anzeige der Messwerte ist die Legende erforderlich.<br><br>
+<b>Benachrichtigungen:</b><br>
+Wenn Fehler und Warnungen auftreten (z.B. Datenquelle nicht vorhanden) wird in der oberen rechten Ecke ein entsprechendes Symbol dargestellt. Wird das Symbol angeklickt, wird ein entsprechendes Hinweisfenster mit Details angezeigt.
+</p>
+<p><b>Anmerkung:</b><br>
+  Aggregate werden einmalig vom Archiv gelesen und es erfolgt keine Aktualisierung der Werte.
+  Wurde die Option "non-stop" bzw. "durchgehend" aktiviert, wird jedenfalls der letzte Wert angezeigt.
+</p>
+<h1>Parameter</h1>
+
+<p>Die nachstehenden allgemeinen Parameter sind verf&uuml;gbar:</p>
+<ul>
+  <li><span class="parameter">Diagrammname</span>: Eindeutiger Name zur Identifizierung der Diagramminstanz.</li>
+  <li><span class="parameter">Diagrammgruppe</span>: Dient dem Hinzuf&uuml;gen unterschiedlicher Chartinstanzen zu einer Gruppe.</li>
+  <li><span class="parameter">Diagrammmodus</span>: Definiert den Datenmodus, m&ouml;gliche Werte: mixed (Standard), live und history.</li>
+  <li><span class="parameter">Standardmodule &uuml;berspringen</span>: Bestimmt, ob die Standardmodule f&uuml;r Highcharts geladen werden sollen.</li>
+  <li><span class="parameter">Zusatzmodule laden</span>: Definiert welche Module zus&auml;tzlich geladen werden sollen. (Beispiel: "highcharts/modules/exporting.js,highcharts/datasource/opcua.js,highcharts/atviseModules/datahandler.js,highcharts/atviseModules/measuringcursor.js,highcharts/atviseModules/utils.js,highcharts/atviseModules/downsample.js")</li>
+  <li><span class="parameter">Konfigurationsadresse</span>: Node (Adresse) welche eine vordefinierte Konfiguration enth&auml;lt, wenn Speichern in Node(s)) eingestellt ist.</li>
+  <li><span class="parameter">Konfigurationsdatei</span>: Datei welche eine vordefinierte Konfiguration neu h&auml;lt, wenn Speichern im Dateisystem eingestellt ist.</li>
+  <li><span class="parameter">Konfigurationsname</span>: Name der vordefinierten Konfiguration.</li>
+  <li><span class="parameter">Speichermethode</span>: Legt fest, ob Konfigurationen in Node(s) oder dem Dateisystem gespeichert werden.</li>
+  <li><span class="parameter">Komprimierung</span>: Legt fest, ob die Konfigurationsdaten beim Speichern komprimiert werden.</li>
+  <li><span class="parameter">Datenquelle</span>: Definiert den Typ der Datenquelle, welche &uuml;ber ein entsprechendes Javascript-Modul geladen wird.</li>
+  <li><span class="parameter">Diagrammtitel</span>: &Uuml;berschrift des Diagramms.</li>
+  <li><span class="parameter">Animationen</span>: Schaltet Animationen aus (Standard) oder ein.</li>
+  <li><span class="parameter">Messzeiger 1</span>: De-/Aktiviert den Messzeiger 1.</li>
+  <li><span class="parameter">Messzeiger 2</span>: De-/Aktiviert den Messzeiger 2.</li>
+  <li><span class="parameter">Tooltips</span>: Schaltet die Tooltips ein bzw. aus.</li>
+  <li><span class="parameter">Exportmen&uuml;</span>: Schaltet die Anzeige der Exportschaltfl&auml;che ein bzw. aus.</li>
+  <li><span class="parameter">Ben&ouml;tigtes Recht f&uuml;r Export</span>: Das ben&ouml;tigte Recht, um exportieren zu k&ouml;nnen.</li>
+  <li><span class="parameter">Lokalzeit</span>: Gibt an ob das Diagramm mit UTC oder Lokalzeit arbeiten soll.</li>
+  <li><span class="parameter">Downsampling ausschalten</span>: Deaktiviert bzw. aktiviert die Downsampling-Funktion.</li>
+</ul>
+<p><span class="parameter">Y-Achse *</span></p>
+F&uuml;r die Y-Achsen k&ouml;nnen die folgenden Parameter individuell festgelegt werden:
+<ul>
+	<li><span class="parameter">Id</span>: ID der Achse.</li>
+	<li><span class="parameter">Titel</span>: Beschriftung der Achse.</li>
+	<li><span class="parameter">Sichtbarkeit</span>: Definiert die Sichtbarkeit der Achse.</li>
+	<li><span class="parameter">Minimum</span>: Unterer Schwellenwert ab dem die Anzeige der Daten erfolgt.</li>
+	<li><span class="parameter">Maximum</span>: Oberer Schwellenwert bis zu dem die Anzeige der Daten erfolgt.</li>
+	<li><span class="parameter">Linienst&auml;rke der Achse</span>: Dargestellte Linienst&auml;rke der Achse (in Pixel).</li>
+	<li><span class="parameter">Achsenfarbe</span>: Dargestellte Farbe der Achse (Hex-Code).</li>
+	<li><span class="parameter">Achsenposition</span>: Position der Achse (left/right).</li>
+	<li><span class="parameter">Achsentitel</span>: Anzeige des Achstitels (true/false).</li>
+	<li><span class="parameter">Achsentitel Ausrichtung</span>: Horizontale Ausrichtung des Achsen-Titels (left, center oder right).</li>
+	<li><span class="parameter">Format der Beschriftung</span>: Format String zur formatierung der Achsenbeschriftung (siehe highcharts API reference).</li>
+	<li><span class="parameter">Aktivierung Fadenkreuz</span>: Aktivierung der Anzeige des Fadenkreuzes (true, false).</li>
+	<li><span class="parameter">Einrasten Fadenkreuz</span>: Einrasten des Fadenkreuzes aktivieren.</li>
+	<li><span class="parameter">Linienst&auml;rke Fadenkreuz</span>: Linienst&auml;rke des Fadenkreuzes (in Pixel).</li>
+	<li><span class="parameter">Farbe Fadenkreuz</span>: Farbe des Fadenkreuzes (Hex-Code).</li>
+	<li><span class="parameter">Fadenkreuz-Typ</span>: Verwendeter Linien-Typ des Fadenkreuzes.</li>
+	<li><span class="parameter">Intervall Hauptgitter</span>: Intervall des Haupthilfsgitters zur Orientierungshilfe.</li>
+	<li><span class="parameter">Intervall Hilfsgitter</span>: Intervall des Hilfsgitters zur Orientierungshilfe.</li>
+	<li><span class="parameter">Linienst&auml;rke Hauptgitter</span>: Linienst&auml;rke der Hauptgitterlinien (in Pixel).</li>
+	<li><span class="parameter">Farbe Hauptgitter</span>: Farbe der Hauptgitterlinien (Hex-Code).</li>
+	<li><span class="parameter">Linienst&auml;rke Hilfsgitter</span>: Linienst&auml;rke der Hilfsgitterlinien (in Pixel).</li>
+	<li><span class="parameter">Farbe Hilfsgitter</span>: Farbe der Hilfsgitterlinien (Hex-Code).</li>
+</ul>
+<p><span class="parameter">X-Achse</span></p>
+F&uuml;r die X-Achse k&ouml;nnen die folgenden Parameter festgelegt werden:
+<ul>
+	<li><span class="parameter">Titel</span>: Beschriftung der Achse.</li>
+	<li><span class="parameter">Zeitspanne</span>: Wert der anzuzeigenden Zeitspanne (ohne Einheit).</li>
+	<li><span class="parameter">Zeitspanne Einheit</span>: Einheit der anzuzeigenden Zeitspanne.</li>
+	<li><span class="parameter">Linienst&auml;rke der Achse</span>: Dargestellte Linienst&auml;rke der Achse (in Pixel).</li>
+	<li><span class="parameter">Achsenfarbe</span>: Dargestellte Farbe der Achse (Hex-Code).</li>
+	<li><span class="parameter">Achsenposition</span>: Position der Achse (unten/oben).</li>
+	<li><span class="parameter">Achsentitel</span>: Anzeige des Achstitels (true/false).</li>
+	<li><span class="parameter">Achsentitel Ausrichtung</span>: Horizontale Ausrichtung des Achs-Titels (left, center oder right).</li>
+	<li><span class="parameter">Aktivierung Fadenkreuz</span>: Aktivierung der Anzeige des Fadenkreuzes (true, false).</li>
+	<li><span class="parameter">Einrasten Fadenkreuz</span>: Einrasten des Fadenkreuzes aktivieren.</li>
+	<li><span class="parameter">Linienst&auml;rke Fadenkreuz</span>: Linienst&auml;rke des Fadenkreuzes (in Pixel).</li>
+	<li><span class="parameter">Farbe Fadenkreuz</span>: Farbe des Fadenkreuzes (Hex-Code).</li>
+	<li><span class="parameter">Fadenkreuz-Typ</span>: Verwendeter Linien-Typ des Fadenkreuzes.</li>
+	<li><span class="parameter">X-Achse Typ</span>: Type der Achsenskalierung (Standard: "datetime").</li>
+	<li><span class="parameter">Format Datum-Zeit</span>: Format der Datumsausgabe (Standard: "%H:%M:%S").</li>
+	<li><span class="parameter">Intervall Hauptgitter</span>: Intervall des Haupthilfsgitters zur Orientierungshilfe.</li>
+	<li><span class="parameter">Intervall Hilfsgitter</span>: Intervall des Hilfsgitters zur Orientierungshilfe.</li>
+	<li><span class="parameter">Linienst&auml;rke Hauptgitter</span>: Linienst&auml;rke der Hauptgitterlinien (in Pixel).</li>
+	<li><span class="parameter">Farbe Hauptgitter</span>: Farbe der Hauptgitterlinien (Hex-Code).</li>
+	<li><span class="parameter">Linienst&auml;rke Hilfsgitter</span>: Linienst&auml;rke der Hilfsgitterlinien (in Pixel).</li>
+	<li><span class="parameter">Farbe Hilfsgitter</span>: Farbe der Hilfsgitterlinien (Hex-Code).</li>
+</ul>
+<p><span class="parameter">Serie * (Datensatz)</span></p>
+F&uuml;r jede Serie (Datensatz) k&ouml;nnen die folgenden Parameter individuell gesetzt werden:
+<ul>
+	<li><span class="parameter">Adresse</span>: Node Adresse der darzustellenden Werte.</li>
+	<li><span class="parameter">Interpolation</span>: Interpolation der Werte (linie, spline, step).</li>
+	<li><span class="parameter">Name</span>: Name der Serie.</li>
+	<li>
+		<span class="parameter">Datenarchiv</span>: Name des Archivs, das f&uuml;r die Anzeige historischer Werte verwendet wird. (Standard ist "")
+		<br>Dieser Parameter ist optional und vor allem f&uuml;r Portal-User und eigene WebMI-Implementierungen, die mehr als ein Datenarchiv verwenden, relevant.
+	</li>
+	<li><span class="parameter">Linienst&auml;rke</span>: Linienst&auml;rke f&uuml;r die Darstellung der Werte (in Pixel).</li>
+	<li><span class="parameter">Farbe</span>: Farbe f&uuml;r die Darstellung der Werte  (Hex-Code).</li>
+	<li><span class="parameter">Linientyp</span>: Linientyp f&uuml;r die Darstellung der Werte.</li>
+	<li><span class="parameter">Markierungen</span>: Aktiviert die Datenpunktmarkierungen.</li>
+	<li><span class="parameter">Sichtbarkeit</span>: Sichtbarkeit der Darstellung bei der initialisierung des Charts.</li>
+	<li><span class="parameter">Durchgehend</span>: Durchgehende Darstellung bei fehlenden Werten.</li>
+	<li><span class="parameter">Aggregat</span>: Filter f&uuml;r Aggregate der angegebenen Adresse.</li>
+	<li><span class="parameter">Aggregat Intervall</span>: Intervall des Aggregates.</li>
+	<li><span class="parameter">Aggregat Einheit</span>: Einheit des Aggregates.</li>
+	<li><span class="parameter">X-Achse</span>: ID der zugewiesenen X-Achse</li>
+	<li><span class="parameter">Y-Achse</span>: ID der zugewiesenen Y-Achse</li>
+</ul>
+<h1>Beispiele</h1>
+<p>Erstellen Sie ein leeres Display und f&uuml;gen Sie dieses Chartdisplay
+durch Ziehen und Ablegen hinzu. Definieren Sie die gew&uuml;nschten
+Adressen, die im Diagramm angezeigt werden sollen.</p>
+<p>Da dieses Display allein mit den vorgegebenen Parametern oder
+zusammen mit der Toolbar und/oder der Legende verwendet
+werden kann, muss der Parameter &bdquo;Chartname&bdquo; eindeutig und
+f&uuml;r alle verwendeten Trend-Displays identisch sein.</p>
+</body>
+</html>

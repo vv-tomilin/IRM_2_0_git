@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AKB.Speed
+NodeClass: Variable
+BrowseName: 1:Speed
+DisplayName: en|Speed
+Description: en|Speed
+DataType: UInt16
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Зубчатый вал в сборе
+NodeClass: ObjectType
+BrowseName: 1:Зубчатый вал в сборе
+DisplayName: en|Зубчатый вал в сборе
+Description: en|Зубчатый вал в сборе
+IsAbstract: false

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Rig.Reports
+NodeClass: Object
+BrowseName: 1:Reports
+DisplayName: en|Reports
+Description: en|Reports
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

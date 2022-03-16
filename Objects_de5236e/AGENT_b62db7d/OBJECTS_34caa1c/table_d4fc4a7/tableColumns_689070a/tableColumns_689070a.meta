@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.table.tableColumns
+NodeClass: Variable
+BrowseName: 1:tableColumns
+DisplayName: en|tableColumns
+Description: en|tableColumns
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

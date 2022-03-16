@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.woh
+NodeClass: Variable
+BrowseName: 1:woh
+DisplayName: en|woh
+Description: en|woh
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

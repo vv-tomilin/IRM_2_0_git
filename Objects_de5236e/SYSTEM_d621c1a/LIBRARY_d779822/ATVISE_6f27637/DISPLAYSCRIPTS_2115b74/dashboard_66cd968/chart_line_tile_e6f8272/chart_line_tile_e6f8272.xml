@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <code><![CDATA[/**
+ * Code for the chart line tile object display
+ * ----------------------------------------
+ * This script supports the functions of the chart dashboard tile.
+ */
+
+
+/**
+ * DECLARATION SECTION
+ */
+var BACKGROUND_ID = "background";
+var BLINKING_FRAME_ID = "blinking_frame";
+var CHART_ID = "chart";
+var CLICKAREA_ID = "clickarea_display";
+var HIGHCHARTS_CONTAINER_SUFFIX = "_highcharts_container";
+var MAIN_LABEL_ID = "main_label";
+var TITLEAREA_ID = "clickarea_title";
+var SUB_LABEL_ID = "sub_label";
+var backgroundColor = webMI.query["backgroundColor"];
+
+
+/**
+ * BASE SETUP
+ */
+var BLINKING_FRAME_COLOR_ACTIVE = "#ffffff";
+var BLINKING_FRAME_COLOR_INACTIVE = webMI.query["backgroundColor"];
+webMI.gfx.setStroke(BLINKING_FRAME_ID, BLINKING_FRAME_COLOR_INACTIVE);
+
+
+/**
+ * RUNTIME SECTION
+ * Runtime code has to be executed after onload to take care all other resources are ready
+ */
+webMI.addOnload(function () {
+	// Query parameters
+	var queryParams = webMI.query;
+	var enableClick = queryParams["enableClick"] == "true" ? true : false;
+	var enableClickContent = queryParams["enableClickContent"] == "true" ? true : false;
+	var display = queryParams["display"];
+	var tooltip = queryParams["tooltip"];
+
+	var colorInactive = queryParams["colorInactive"];
+	var backgroundColor = queryParams["backgroundColor"];
+	var trendName = queryParams["trendName"];
+
+	var right = queryParams["right"] || "";
+	var activeNode = queryParams["activeNode"] || "";
+	var activeValue = queryParams["activeValue"] || "";
+	var colorInactive = queryParams["colorInactive"];
+	var backgroundColor = queryParams["backgroundColor"];
+
+	var linkedElementID = queryParams["linkedElementID"];
+	var oneLine = queryParams["oneLine"] == "true" ? true : false;
+
+	var alarmAddress = queryParams["alarm"];
+	var alarmIndication = queryParams["alarmIndication"];
+	var isActivationNodeSet = activeNode != "" && String(activeValue) != "";
+
+	var chartDiv = document.getElementById(CHART_ID + HIGHCHARTS_CONTAINER_SUFFIX);
+
+	var rightsHandlingProperties = {
+		right: right,
+		checkBaseNodeWriteRight: false,
+		isActivationNodeSet: isActivationNodeSet,
+		notifierConfiguration: {"id":"clickarea_title", "node_1": webMI.query["base"], "right_1": "read", "node_2": webMI.query["alarm"], "right_2": "readEvent"},
+		setActiveTrigger: true,
+		handleStatus: false
+	};
+	
+	if (typeof rightsHandling === "function") rightsHandling(rightsHandlingProperties);
+
+	chartDiv.style.visibility = "hidden";
+
+	webMI.trendFactory.getTrendByName(trendName, function (e) {
+
+		if (alarmAddress) {
+			initAlarm(alarmAddress);
+		}
+
+		// Click to open Display
+		if (display && enableClick) {
+			webMI.addEvent(TITLEAREA_ID, ["click", "touchend"], function (e) {
+				if (active) {
+					webMI.display.openDisplay(display);
+				}
+			});
+			if (enableClickContent) {
+				webMI.addEvent(CLICKAREA_ID, ["click", "touchend"], function (e) {
+					if (active) {
+						webMI.display.openDisplay(display);
+					}
+				});
+			}
+
+			/* link to a customer object */
+			if (linkedElementID) {
+				var element = window.document.getElementById(linkedElementID);
+				webMI.addEvent(element, ["click", "touchend"], function (e) {
+					if (active) {
+						webMI.display.openDisplay(display);
+					}
+				});
+			}
+		}
+
+		setActivation();
+		chartDiv.style.visibility = "visible";
+
+		if (tooltip) {
+			webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tooltip", {
+				"auto": "true",
+				"id": TITLEAREA_ID,
+				"text": tooltip
+			});
+		}
+	});
+});
+
+
+/**
+ * FUNCTIONS
+ */
+
+/**
+ * Activate display
+ */
+function setActiveLayout() {
+	webMI.gfx.setVisible(MAIN_LABEL_ID, false);
+	webMI.gfx.setVisible(SUB_LABEL_ID, false);
+	webMI.gfx.setVisible(CHART_ID, null);
+	webMI.gfx.setStroke(BLINKING_FRAME_ID, null);
+	webMI.gfx.setFill(BACKGROUND_ID, backgroundColor);
+	webMI.gfx.setFill(BLINKING_FRAME_ID, BLINKING_FRAME_COLOR_ACTIVE);
+	setIndicator();
+}
+
+/**
+ * Deactivate display
+ */
+function setInactiveLayout() {
+	webMI.gfx.setText(SUB_LABEL_ID, "T{Tile inactive}");
+	webMI.gfx.setVisible(MAIN_LABEL_ID, null);
+	webMI.gfx.setVisible(SUB_LABEL_ID, null);
+	webMI.gfx.setVisible(CHART_ID, false);
+	webMI.gfx.setFill(BACKGROUND_ID, colorInactive);
+	webMI.gfx.setFill(BLINKING_FRAME_ID, colorInactive);
+	webMI.gfx.setStroke(BLINKING_FRAME_ID, BLINKING_FRAME_COLOR_INACTIVE);
+}]]></code>
+</script>

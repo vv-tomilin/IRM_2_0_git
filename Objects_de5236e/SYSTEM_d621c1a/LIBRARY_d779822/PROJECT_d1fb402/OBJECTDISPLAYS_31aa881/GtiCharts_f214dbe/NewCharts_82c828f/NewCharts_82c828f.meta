@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewCharts
+NodeClass: Object
+BrowseName: 1:NewCharts
+DisplayName: en|NewCharts
+Description: en|NewCharts
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.Pdf.FileName
+NodeClass: Variable
+BrowseName: 1:FileName
+DisplayName: en|FileName
+Description: en|FileName
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

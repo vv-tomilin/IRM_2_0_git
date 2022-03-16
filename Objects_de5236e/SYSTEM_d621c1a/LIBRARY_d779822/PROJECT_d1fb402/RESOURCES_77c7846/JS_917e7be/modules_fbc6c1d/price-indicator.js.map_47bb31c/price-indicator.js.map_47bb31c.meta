@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/price-indicator.js.map
+NodeClass: Variable
+BrowseName: 1:price-indicator.js.map
+DisplayName: en|price-indicator.js.map
+Description: en|price-indicator.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

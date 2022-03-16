@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="wd" type="node.value" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.IVE50.Well.WellDepth"/>
+  <parameter name="markedWD" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Halliburton.markedWD"/>
+  <code><![CDATA[var cringe = "AGENT.OBJECTS."
+var sendingAvailable = new UaNode(cringe + "Halliburton.isSendingAvailable");
+var hookNode = new UaNode(cringe + "Halliburton.API.HookLoad");
+var hookLoad = JSON.parse(hookNode.value).drag_chart_results;
+
+var circusNode = new UaNode(cringe + "Halliburton.API.CirculatingPressureVersusRunDepth");
+var circus = JSON.parse(circusNode.value).drag_chart_results;
+
+var marked = new UaNode(cringe + "Halliburton.markedWD");
+
+function findItem() {
+	hookLoad.reduce(function(prev, current, index) {
+		if (prev.run_depth < wd && current.run_depth > wd) {
+			compare(index - 1)
+		}
+		return current
+	})
+}
+findItem();
+
+function compare(i) {
+	var maxPressure = new UaNode(cringe + "Halliburton.marks.MaxPressure");
+	var maxTorque = new UaNode(cringe + "Halliburton.marks.MaxTorque");
+	var maxLoad = new UaNode(cringe + "Halliburton.marks.MaxLoad");
+	var maxSpeed = new UaNode(cringe + "Halliburton.marks.MaxSpeed")	
+	
+	var maxPress = circus[i].Total_System_Pressure_Loss.toFixed(3);
+	var maxTorq = hookLoad[i].maximum_torque.toFixed(3);
+	var maxLd = hookLoad[i].minmwt_buckle_sliding.toFixed(3);
+	var maxSpd = new UaNode(cringe + "ASPD.APD1.Speed.Drill.Limit");
+		
+	if (maxPressure.value.toFixed(3) != maxPress || maxTorque.value.toFixed(3) != maxTorq || maxLoad.value.toFixed(3) != maxLd) {
+		//console.log(maxPress, ' ', maxTorq)
+		//console.log(maxPressure.value, ' ', maxTorque.value)
+		var diffPressureLimit = new UaNode(cringe + "Set_var.Diff_pressure_limit");
+		var TDSTorqueLimit = new UaNode(cringe + "Set_var.TDS_torque_limit");
+		var loadOnBit = new UaNode(cringe + "Set_var.Load_on_bit_limit");
+		var speedLimit = new UaNode(cringe + "Set_var.Drill_speed_limit");
+		var setVarValues = new UaNode(cringe + "Set_var.SetVarValues");
+		
+		diffPressureLimit.assign({value: maxPress});
+		TDSTorqueLimit.assign({value: maxTorq});
+		loadOnBit.assign({value: maxLd});
+		//temp, check this carefully if you are trying to change anything
+		speedLimit.assign({value: maxSpd.value});
+		maxSpeed.assign({value: maxSpd.value});		
+
+		maxPressure.assign({value: maxPress});
+		maxTorque.assign({value: maxTorq});
+		maxLoad.assign({value: maxLd});
+		
+		//console.log("write");
+		if (sendingAvailable.value) {
+			setVarValues.assign({value: true});
+		} else return
+		
+	} 
+//	else {
+//		console.log("duplicate");	
+//	}
+}]]></code>
+</script>

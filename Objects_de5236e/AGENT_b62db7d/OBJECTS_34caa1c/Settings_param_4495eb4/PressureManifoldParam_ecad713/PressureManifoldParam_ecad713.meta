@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Settings_param.PressureManifoldParam
+NodeClass: Object
+BrowseName: 1:PressureManifoldParam
+DisplayName: en|PressureManifoldParam
+Description: en|PressureManifoldParam
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

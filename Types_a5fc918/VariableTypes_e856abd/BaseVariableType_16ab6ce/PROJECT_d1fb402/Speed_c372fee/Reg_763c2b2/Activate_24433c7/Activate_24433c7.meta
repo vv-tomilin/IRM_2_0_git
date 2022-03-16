@@ -1,0 +1,11 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed".Reg.Activate
+NodeClass: Variable
+BrowseName: 1:Activate
+DisplayName: en|Activate
+Description: en|Activate
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseDataVariableType
+Reference: forward HasComponent ns=1;s=VariableTypes.PROJECT.VT_"Reg_Direct".Activate.RelMirrorInput

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.Mud_Tank_Volumes.tank_volume_(total)
+NodeClass: Variable
+BrowseName: 1:tank_volume_(total)
+DisplayName: en|tank_volume_(total)
+Description: en|tank_volume_(total)
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

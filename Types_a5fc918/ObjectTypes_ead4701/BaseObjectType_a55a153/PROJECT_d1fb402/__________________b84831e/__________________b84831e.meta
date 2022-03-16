@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Главный подшипник
+NodeClass: ObjectType
+BrowseName: 1:Главный подшипник
+DisplayName: en|Главный подшипник
+Description: en|Главный подшипник
+IsAbstract: false

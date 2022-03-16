@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/RigView/geos/dunit.jpg
+NodeClass: Variable
+BrowseName: 1:dunit.jpg
+DisplayName: en|dunit.jpg
+Description: en|dunit.jpg
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Jpeg

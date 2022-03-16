@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/indicators/slow-stochastic.js.map
+NodeClass: Variable
+BrowseName: 1:slow-stochastic.js.map
+DisplayName: en|slow-stochastic.js.map
+Description: en|slow-stochastic.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

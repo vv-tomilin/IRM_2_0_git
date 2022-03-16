@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+  <title>Alarmliste - Hilfe DE</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Beschreibung</h1>
+	<p>
+		Bei der Alarmliste handelt es sich um ein erweitertes Steuerelement, das die derzeit aktiven Systemalarme und/oder definierte Alarmbedingungen
+		in Tabellenform anzeigt und Filterm&ouml;glichkeiten bietet.
+	</p>
+<h2>Ansichten</h2>
+	<p>
+		Es gibt verschiedenen Ansichten, die &uuml;ber Displayparameter voreingestellt werden k&ouml;nnen:
+	</p>
+	<p>
+		<ul>
+			<li><span class="parameter">Alarme</span>: Hier werden alle ausgel&ouml;sten Alarme dargestellt.
+			<li><span class="parameter">Alle</span>: Alle ausgel&ouml;sten Alarme und alle definierten Alarmbedingungen werden dargestellt.
+			<li><span class="parameter">Zur&uuml;ckgestellt</span>: Alle zur&uuml;ckgestellten Alarme und Alarmbedingungen werden dargestellt.
+			<li><span class="parameter">Unterdr&uuml;ckt</span>: Alle unterdr&uuml;ckten Alarme und Alarmbedingungen werden dargestellt.
+			<li><span class="parameter">Ausgeschaltet</span>: Alle augeschalteten Alarmbedingungen werden dargestellt.
+		</ul>
+	</p>
+	<p>
+		Die Ansichten k&ouml;nnen in der Kopfzeile der atvise Standardvisu auch &uuml;ber die <span class="parameter">"Alarmliste &Ouml;ffnen"</span> Schaltfl&auml;che ausgew&auml;hlt werden.
+	</p>
+	<p>
+<h2>Filter</h2>
+	<p>
+		&Uuml;ber Filterelemente im Kopf der Alarmliste kann eine verfeinerte Auswahl an Alarmen oder Alarmbedingungen getroffen werden. Nach der &Auml;nderung der Eingabeelemente l&ouml;st das Bet&auml;tigen der <span class="parameter">&quot;Filtern&quot;</span>-Schaltfl&auml;che eine neue Filterung aus.
+	</p>
+	<ul>
+		<li><span class="parameter">Min. Prio.</span>: &quot;Gr&ouml;&szlig;er gleich&quot;-Filterung nach Priorit&auml;t (definiert in der Alarmkategorie)</li>
+		<li><span class="parameter">Display</span>: Filterung nach dem Attribut &quot;Display&quot;, das in der Alarmkonfiguration definiert werden kann</li>
+		<li><span class="parameter">Gruppe</span>: Filterung nach den Alarmen einer oder mehrerer &quot;Alarmgruppen&quot;. Mehrere Alarmgruppen k&ouml;nnen durch Beistrich oder Strichpunkt getrennt eingegeben werden.</li>
+		<li><span class="parameter">Alarmquelle</span>: Filterung nach der Datenquelle des Alarms</li>
+		<li><span class="parameter">Alarmbedingung</span>: Filterung nach einer bestimmten Alarmbedingungsadresse</li>
+		<li><span class="parameter">Quitt.-Status</span>: Filterung nach ALLEN oder einem der Alarmzust&auml;nde:
+			<ul>
+				<li>AKTIV!</li>
+				<li>AKTIV! unbest.</li>
+				<!--<li>AKTIV! verriegelt</li>-->
+				<li>aktiv quitt.</li>
+				<li>aktiv unbest.</li>
+				<li>INAKTIV!</li>
+				<li>INAKTIV! unbest.</li>
+				<!--<li>INAKTIV! verriegelt</li>-->
+				<li>(IN)AKTIV!</li>
+				<li>(IN)AKTIV! unbest.</li>
+				<!--<li>(IN)AKTIV! verriegelt</li>-->
+			</ul>
+		</li>
+		<li><span class="parameter">Benutzer</span>: Filterung nach Benutzername f&uuml;r bereits quittierte Alarme</li>
+		<li><span class="parameter">Ereignistext</span>: Filterung nach dem Alarmtext, der in der Alarmkonfiguration definiert sein muss</li>
+		<li><span class="parameter">Kommentar</span>: Filterung nach Kommentaren von Alarmen</li>
+		<li><span class="parameter">Alarm od. Alarmbedingung</span>: Filterung nach ausgel&ouml;sten Alarmen, Alarmbedingungen oder beidem</li>
+		<li><span class="parameter">Status</span>: Filterung nach Zust&auml;nden von Alarmen und Bedingungen. Zur Auswahl stehen ausgel&ouml;ste Alarme, &quot;Unterdr&uuml;ckt&quot;-, &quot;OneShotShelved&quot;- und &quot;TimeShelved&quot;-Status. Dieses Filterfeld steht nur in der &quot;Alle&quot;-Ansicht zur Verf&uuml;gung.</li>
+	</ul>
+	<p>
+		Standardm&auml;&szlig; werden zwei Zeilen mit Filterfeldern angezeigt. &Uuml;ber die Schaltfl&auml;che <span class="parameter">&quot;Erweiterte Filter&quot;</span> k&ouml;nnen die restlichen Filterfelder eingeblendet werden.
+	</p>
+	<p>
+		Mit der Schaltfl&auml;che <span class="parameter">&quot;Filter zur&uuml;cksetzen&quot;</span> k&ouml;nnen Sie alle angewandten Filter deaktivieren und die Alarmliste auf die Standardparameter setzen.
+	</p>
+
+<h2>Alarme</h2>
+
+	<p>Jeder Alarm kann quittiert werden.</p>
+	<p>Best&auml;tigbare Alarme k&ouml;nnen nach dem Quittieren best&auml;tigt werden.</p>
+	<p>Sofern ein Display in der Konfiguration definiert wurde, wird ein Link f&uuml;r die Navigation zu dem entsprechenden Display angezeigt.</p>
+	<p>Bei Retrigger-Alarmen wird f&uuml;r jede neue Ausl&ouml;sung ein eigener Alarm dargestellt.</p>
+	<p>Die Alarmkategorie &quot;Kam und Ging quittierpflichtig&quot; wird als ein aufeinanderfolgendes Alarmpaar in der Tabelle dargestellt. Der Ging-Alarm wird chronologisch immer vor dem Kam-Alarm angezeigt und es muss immer der KAM-Teil zuerst quittiert werden.</p>
+	<p>Auf historische Alarme k&ouml;nnen Sie &uuml;ber das Display &quot;Historische Liste&quot; zugreifen.</p>
+
+<h2>Aktionen</h2>
+
+	<ul>
+		<li><span class="parameter">Quittieren</span>: Ein Alarm wird quittiert.</li>
+		<li><span class="parameter">Best&auml;tigen</span>: Ein quittierter Alarm wird best&auml;tigt.</li>
+		<li><span class="parameter">Quittieren mit Kommentar</span>: Ein Alarm wird &uuml;ber einen Popup-Dialog quittiert, in dem auch ein Kommentar mitgegeben werden kann.</li>
+		<li><span class="parameter">Best&auml;tigen mit Kommentar</span>: Ein quittierter Alarm wird &uuml;ber einen Popup-Dialog best&auml;tigt, in dem auch ein Kommentar mitgegeben werden kann.</li>
+		<li><span class="parameter">Zur&uuml;ckstellen</span>: Alarm oder Alarmbedingung wird zur&uuml;ckgestellt. Der Benutzer kann Alarme dieser Bedingung nicht mehr in der normalen Alarmliste sehen.
+			<ul>
+				<li><span class="parameter">Einmalig zur&uuml;ckstellen</span>: Diese Aktion kann nur auf Alarme und nicht auf Alarmbedingungen angewandt werden. Der Alarm wird zur&uuml;ckstellt bis das Zur&uuml;ckstellen durch den Benutzer beendet wird oder die in der MaxTimeShelved-Variable festgelegte maximale Zur&uuml;ckstelldauer erreicht wurde.</li>
+				<li><span class="parameter">Befristet zur&uuml;ckstellen</span>: Diese Aktion kann auf Alarme und Alarmbedingungen angewandt werden. Der Alarm bzw. die Alarmbedingung wird f&uuml;r eine vom Benutzer in einem PopUp-Dialog festgelegte Zeit zur&uuml;ckgestellt.</li>
+			</ul>
+		</li>
+		<li><span class="parameter">Unterdr&uuml;cken r&uuml;ckg&auml;ngig machen</span>: Alarm oder Alarmbedingung wird unterdr&uuml;ckt. Zur&uuml;ckstellen erfolgt nur intern am Server. Unterdr&uuml;ckte Alarme werden in der normalen Alarmliste nicht angezeigt.</li>
+		<li><span class="parameter">Ausschalten</span>: Alarmbedingung und dazugeh&ouml;rige aktive Alarme werden ausgeschalten. Es werden keine Alarme und Events mehr erzeugt.</li>
+	</ul>
+
+<h2>Detailbereich</h2>	
+
+<p>Weitere Details der Alarme und Alarmbedingungen k&ouml;nnen &uuml;ber einen ausklappbaren Detailbereich angezeigt werden.</p>
+<p>&Uuml;ber eine globale Liste, die &uuml;ber die Displayparameter ausgew&auml;hlt werden kann, k&ouml;nnen die im Detailbereich angezeigten Daten konfiguriert werden.</p>
+<p>Erscheinen neue Alarme in der Alarmliste, so kann ein unvorteilhaftes Springen der angezeigten Alarme auftreten,
+das den Detailbereich an einer anderen Stelle erscheinen l&auml;sst.
+M&ouml;chte man den Detailbereich oder bestimmte Zeilen fixieren, so geschieht dies am besten dadurch,
+dass man die gew&uuml;nschten Zeilen markiert und eine Filterung auf markierte Zeilen durchf&uuml;hrt.</p>
+
+<h1>Parameter</h1>
+
+	<ul>
+		<p>
+			<ul>
+				<li><span class="parameter">Tabellen-ID</span>: Die eindeutige Bezeichnung der Tabelle</li>
+				<li><span class="parameter">Tabellenkopf H&ouml;he</span>: H&ouml;he des Tabellenkopfs</li>
+				<li><span class="parameter">Tabellenzeile H&ouml;he</span>: H&ouml;he einer Tabellenzeile</li>
+				<li><span class="parameter">Base f&uuml;r Displays</span>: Beiwert, welcher dem in der Alarmkonfiguration definierten Display als Base mitgegeben wird</li>
+				<li><span class="parameter">Startansicht</span>: Die beim Starten der Alarmliste aufzuschaltende Ansicht. Die verf&uuml;gbaren Optionen sind:
+						<ul>
+							<li><span class="parameter">all</span>: Ansicht zur Anzeige aller Alarme und Alarmbedingungen</li>
+							<li><span class="parameter">alarms</span>: Ansicht zur Anzeige von aktiven Alarmen</li>
+							<li><span class="parameter">shelved</span>: Ansicht zur Anzeige zur&uuml;ckgestellter Alarme und Alarmbedingungen</li>
+							<li><span class="parameter">suppressed</span>: Ansicht zur Anzeige unterdr&uuml;ckter Alarme und Alarmbedingungen</li>
+							<li><span class="parameter">disabled</span>: Ansicht zur Anzeige ausgeschalteter Alarmbedingungen</li>
+						</ul>
+				</li>
+			</ul>
+		</p>
+		<li><b>Spalten</b>
+			<p>
+				&Uuml;ber eine globale Liste, die hier ausgew&auml;hlt werden kann, k&ouml;nnen die Spalten der Tabelle konfiguriert werden. Die einstellbaren Parameter der globalen Liste sind:
+			</p>
+			<p>
+				<ul>
+					<li><span class="parameter">alignmentMain</span>: Ausrichtung des Textes</li>
+					<li><span class="parameter">columnName</span>: Name der Spalte</li>
+					<li><span class="parameter">field</span>: Feldname, der an die Tabelle geliefert wird</li>
+					<li><span class="parameter">filter</span>: Filter f&uuml;r die Spalte aktivieren</li>
+					<li><span class="parameter">fontSizeDetail</span>: Schriftgr&ouml;&szlig;e der Detailanzeige</li>
+					<li><span class="parameter">fontSizeMain</span>: Schriftgr&ouml;&szlig;e der Tabelle</li>
+					<li><span class="parameter">orderDetail</span>: Anzeigereihenfolge in der Detailanzeige</li>
+					<li><span class="parameter">orderMain</span>: Anzeigereihenfolge der Tabellenspalten</li>
+					<li><span class="parameter">sortable</span>: Spalte ist sortierbar</li>
+					<li><span class="parameter">textoption</span>: Darstellung des Textes. Die verf&uuml;gbaren Optionen sind:
+						<ul>
+							<li>normal</li>
+							<li>italic</li>
+							<li>small-caps</li>
+							<li>bold</li>
+							<li>bold-italic</li>
+							<li>bold-small-caps</li>
+							<li>bolder</li>
+							<li>bolder-small-caps</li>
+							<li>lighter</li>
+							<li>lighter-italic</li>
+							<li>lighter-small-caps</li>
+						</ul>
+					</li>
+					<li><span class="parameter">type</span>: Typ der Werte in der Spalte. Die verf&uuml;gbaren Optionen sind:
+						<ul>
+							<li><span class="parameter">datetime</span>: Datum/Zeit-Feld. Der Zusatz &quot;, ms&quot; stellt die Zeit in der Tabelle inklusive Millisekunden dar.</li>
+							<li><span class="parameter">number</span>: Zahlen-Feld. Der Zusatz &quot;, [Anzahl]&quot; stellt Zahlen mit [Anzahl] Kommastellen dar.</li>
+							<li><span class="parameter">string</span>: Text-Feld</li>
+						</ul>
+					</li>
+					<li><span class="parameter">visibleDetail</span>: Sichtbarkeit im Detailbereich</li>
+					<li><span class="parameter">visibleMain</span>: Sichtbarkeit als Spalte in der Haupttabelle</li>
+					<li><span class="parameter">widthMain</span>: Breite der Spalte in der Haupttabelle</li>
+				</ul>
+			</p>
+		</li>
+		<li><b>Schrift</b></br>
+			<p>
+				<ul>
+					<li><span class="parameter">Schriftart</span>: Die in der Tabelle verwendete Schriftart</li>
+					<li><span class="parameter">Schriftfarbe</span>: Farbe, die auf Beschriftungen angewendet wird (Standard: Globaler Parameter <i>atvFontColor</i>)</li>
+					<li><span class="parameter">Tabellenkopf Schriftgr&ouml;&szlig;e</span>: Die im Tabellenkopf angewandte Schriftart</li>
+					<li><span class="parameter">Tabellenzeile Schriftgr&ouml;&szlig;e</span>: Die in den Tabellenzeilen angewandte Schriftart</li>
+					<li><span class="parameter">Detailbereich Schriftgr&ouml;&szlig;e</span>: Die in der Detailansicht angewandte Schriftart</li>
+					<li><span class="parameter">Tabellenfu&szlig; Schriftgr&ouml;&szlig;e</span>: Die im Tabellenfu&szlig; angewandte Schriftart</li>
+				</ul>
+			</p>
+		</li>
+		<li><b>Darstellung</b>
+			<p>
+				<ul>
+					<li><span class="parameter">Rahmenfarbe</span>: Farbe von Rahmen (Standard: Globaler Parameter <i>atvBorderColor</i>)</li>
+					<li><span class="parameter">F&uuml;llfarbe</span>: F&uuml;llfarbe der oberen Hintergrundfl&auml;che (Standard: Globaler Parameter <i>atvFillColor</i>)</li>
+					<li><span class="parameter">Symbolfarbe</span>: Farbe von Symbolen (Standard: Globaler Parameter <i>atvSymbolColor</i>)</li>
+					<li><span class="parameter">Globale Farbkonfiguration</span>: In einer globalen Liste gespeicherte Farbkonfiguration (Standard: Globale Liste <i>atvObjectDisplays.Tables.ColorConfig</i>)</li>
+					<li><span class="parameter">Alarmhinweis</span>: Spezifiziert die Darstellung des Alarms &uuml;berber eine definierte globale Liste (Standard: Globaler Parameter <i>atvAlarmIndication</i>)</li>
+					<li><span class="parameter">Benutzerdefiniertes Theme</span>: Name des benutzerdefinierten Themes</li>
+					<li><span class="parameter">Symbol Zur&uuml;ckstellen</span>: Symbol f&uuml;r das Zur&uuml;ckstellen</li>
+					<li><span class="parameter">Symbol Einmal Zur&uuml;ckstellen</span>: Symbol f&uuml;r das Einmal Zur&uuml;ckstellen</li>
+					<li><span class="parameter">Symbol Befristet Zur&uuml;ckstellen</span>: Symbol f&uuml;r das Befristet Zur&uuml;ckstellen</li>
+					<li><span class="parameter">Symbol Unterdr&uuml;cken</span>: Symbol f&uuml;r das Unterdr&uuml;cken</li>
+					<li><span class="parameter">Symbol f&uuml;r Einschalten</span>: Symbol f&uuml;r das Einschalten</li>
+					<li><span class="parameter">Symbol Quittieren</span>: Symbol f&uuml;r das Quittieren</li>
+					<li><span class="parameter">Symbol Best&auml;tigen</span>: Symbol f&uuml;r das Best&auml;tigen</li>
+					<li><span class="parameter">Symbol Quittieren mit Kommentar</span>: Symbol f&uuml;r das Quittieren mit Kommentar</li>
+					<li><span class="parameter">Symbol Best&auml;tigen mit Kommentar</span>: Symbol f&uuml;r das Best&auml;tigen mit Kommentar</li>
+					<li><span class="parameter">Symbol Quittieren inaktiv</span>: Inaktives Symbol f&uuml;r das Quittieren</li>
+					<li><span class="parameter">Symbol Best&auml;tigen inaktiv</span>: Inaktives Symbol f&uuml;r das Best&auml;tigen</li>
+					<li><span class="parameter">Symbol Quittieren mit Kommentar inaktiv</span>: Inaktives Symbol f&uuml;r das Quittieren mit Kommentar</li>
+					<li><span class="parameter">Symbol Best&auml;tigen mit Kommentar inaktiv</span>: Inaktives Symbol f&uuml;r das Best&auml;tigen mit Kommentar</li>
+					<li><span class="parameter">Symbol Aktionenschaltfl&auml;che</span>: Symbol f&uuml;r Aktionenschaltfl&auml;che</li>
+				</ul>
+			</p>
+		</li>
+		<li><b>Optionen</b></br>
+			<p>
+				<ul>
+					<li><span class="parameter">Paging</span>: Aktivieren des Pagings</li>
+					<li><span class="parameter">Filterleiste</span>: Einblenden der Filterleiste</li>
+					<li><span class="parameter">Filter regul&auml;re Ausdr&uuml;cke</span>: Regul&auml;re Ausdr&uuml;cke f&uuml;r das Filtern verwenden</li>
+					<li><span class="parameter">Filter mit Platzhalter</span>: Aktivierung des Platzhalters &quot;*&quot; in der Suchfunktion</li>
+					<li><span class="parameter">Filter Gro&szlig;-/Kleinschreibung</span>: Gro&szlig;- und Kleinschreibung beim Filtern beachten</li>
+					<li><span class="parameter">Zeilenumbruch in Zelle</span>: Zu langer Text wird innerhalb der Zeile umgebrochen, bei zu wenig Platz mit &quot;...&quot; als Endung abgeschnitten.</li>
+					<li><span class="parameter">Spalten neu ordnen erm&ouml;glichen</span>: Das &Auml;ndern der Spaltenreihenfolge wird erm&ouml;glicht.</li>
+				</ul>
+			</p>
+		</li>
+		<li><b>Men&uuml;optionen</b></br>
+			<p>
+				<ul>
+					<li><span class="parameter">Men&uuml; anzeigen</span>: Das Men&uuml; wird angezeigt</li>
+					<li><span class="parameter">Titel benutzerdefiniertes Men&uuml;</span>: Der Titel des benutzerdefinierten Men&uuml;s</li>
+					<li><span class="parameter">Pickermmen&uuml; Titel</span>: Der Titel des Pickermen&uuml;s</li>
+					<li><span class="parameter">Pickermmen&uuml; anzeigen</span>: Das Pickermen&uuml; wird angezeigt</li>
+					<li><span class="parameter">Men&uuml;breite</span>: Die Breite des Men&uuml;s</li>
+					<li><span class="parameter">Men&uuml;h&ouml;he</span>: Die H&ouml;he des Men&uuml;s</li>
+				</ul>
+			</p>
+		</li>
+		<li><b>Standardfilter</b></br>
+			<p>
+				Hier ist es m&ouml;glich, Standardwerte f&uuml;r die Filterfelder zu definieren, die die Filterung beim Starten der Alarmliste festlegen.
+			</p>
+			<p>
+				<ul>
+					<li><span class="parameter">Min. Priorit&auml;t</span></li>
+					<li><span class="parameter">Display</span></li>
+					<li><span class="parameter">Gruppe</span></li>
+					<li><span class="parameter">Alarmquelle</span></li>
+					<li><span class="parameter">Alarmbedingung</span></li>
+					<li><span class="parameter">Quittierstatus</span></li>
+					<li><span class="parameter">Benutzer</span></li>
+					<li><span class="parameter">Ereignistext</span></li>
+					<li><span class="parameter">Kommentar</span></li>
+					<li><span class="parameter">Alarm od. Alarmbedingung</span></li>
+					<li><span class="parameter">Status</span></li>
+				</ul>
+			</p>
+		</li>
+		<li><b>Sicherheit</b>
+			<p>
+				<ul>
+					<li><span class="parameter">Ben&ouml;tigtes Recht f&uuml;r Quittieren</span>: Wird hier ein Recht ausgew&auml;hlt, so kann ein Benutzer einen Alarm nur dann quittieren, wenn er das angegebene Recht besitzt. Ansonsten sind Symbole und Links zum Quittieren inaktiv. Wenn kein Recht ausgew&auml;hlt wird, so kann jeder Benutzer Alarme quittieren.</li>
+					<li><span class="parameter">Ben&ouml;tigtes Recht f&uuml;r Best&auml;tigen</span>: Wird hier ein Recht ausgew&auml;hlt, so kann ein Benutzer einen Alarm nur dann best&auml;tigen, wenn er das angegebene Recht besitzt. Ansonsten sind Symbole und Links zum Best&auml;tigen inaktiv. Wenn kein Recht ausgew&auml;hlt wird, so kann jeder Benutzer Alarme best&auml;tigen.</li>
+					<li><span class="parameter">Ben&ouml;tigtes Recht f&uuml;r Zur&uuml;ckstellen</span>: Wird hier ein Recht ausgew&auml;hlt, so kann ein Benutzer Alarme und Alarmbedingungen nur dann zur&uuml;ckstellen, wenn er das angegebene Recht besitzt. Ansonsten sind Symbole und Links zum Zur&uuml;ckstellen inaktiv. Wenn kein Recht ausgew&auml;hlt wird, so kann jeder Benutzer Alarme und Alarmbedingungen zur&uuml;ckstellen.</li>
+					<li><span class="parameter">Ben&ouml;tigtes Recht f&uuml;r Unterdr&uuml;cken r&uuml;ckg.</span>: Wird hier ein Recht ausgew&auml;hlt, so kann ein Benutzer unterdr&uuml;ckte Alarmbedingungen nur dann wieder freigeben, wenn er das angegebene Recht besitzt. Ansonsten sind Symbole und Links zum Freigeben unterdr&uuml;ckter Alarmbedingungen inaktiv. Wenn kein Recht ausgew&auml;hlt wird, so kann jeder Benutzer unterdr&uuml;ckte Alarmbedingungen freigeben.</li>
+					<li><span class="parameter">Ben&ouml;tigtes Recht f&uuml;r Aus- und Einschalten</span>: Wird hier ein Recht ausgew&auml;hlt, so kann ein Benutzer Alarmbedingungen nur dann aus- oder einschalten, wenn er das angegebene Recht besitzt. Ansonsten sind Symbole und Links zum Aus- und Einschalten inaktiv. Wenn kein Recht ausgew&auml;hlt wird, so kann jeder Benutzer Alarmbedingungen aus- oder einschalten.</li>
+					<li><span class="parameter">Ben&ouml;tigtes Recht f&uuml;r CSV-Export</span>: Wird hier ein Recht ausgew&auml;hlt, so kann ein Benutzer CSV-Exporte durchf&uuml;hren, wenn er das angegebene Recht besitzt. Ansonsten sind Links zum Durchf&uuml;hren von CSV-Exporten inaktiv. Wenn kein Recht ausgew&auml;hlt wird, so kann jeder Benutzer CSV-Exporte durchf&uuml;hren.</li>
+				</ul>
+			</p>
+		</li>
+	</ul>
+</body>
+</html>

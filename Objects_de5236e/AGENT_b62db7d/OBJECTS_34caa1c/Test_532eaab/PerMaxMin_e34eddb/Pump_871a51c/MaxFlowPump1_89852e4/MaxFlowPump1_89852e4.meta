@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.Pump.MaxFlowPump1
+NodeClass: Variable
+BrowseName: 1:MaxFlowPump1
+DisplayName: en|MaxFlowPump1
+Description: en|MaxFlowPump1
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

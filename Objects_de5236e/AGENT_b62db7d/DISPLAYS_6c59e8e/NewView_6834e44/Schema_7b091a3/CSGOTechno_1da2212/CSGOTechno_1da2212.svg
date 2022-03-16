@@ -1,0 +1,451 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" version="1.2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" width="1740" xmlns="http://www.w3.org/2000/svg" height="1016" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="false" gridstyle="lines" width="20" height="20"/>
+  <atv:snapconfig enabled="false" width="10" height="10"/>
+ </metadata>
+ <rect id="id_29" y="128.853" fill="#010101" atv:refpx="101.211" atv:refpy="369.105" stroke="#dedede" x="716.464" width="248.494" height="777.608" stroke-width="3"/>
+ <rect id="id_445" y="129.853" ry="30.326" fill="#773084" atv:refpx="840.464" atv:refpy="348.353" stroke="#13a5c2" x="716.464" width="248" rx="30.326" height="437" stroke-width="4"/>
+ <rect id="id_32" y="129.601" fill="#010101" atv:refpx="100.964" atv:refpy="369.853" stroke="#dedede" x="1046.217" width="248.494" height="777.608" stroke-width="4"/>
+ <rect id="id_35" y="129.601" fill="#010101" atv:refpx="100.964" atv:refpy="369.853" stroke="#dedede" x="1376.217" width="248.494" height="777.608" stroke-width="4"/>
+ <rect id="id_0" y="129.853" fill="#010101" atv:refpx="101.211" atv:refpy="370.105" stroke="#dedede" x="56.464" width="248.494" height="777.608" stroke-width="4"/>
+ <rect id="id_347" y="129.853" ry="27.886" fill="#285ac4" atv:refpx="180.964" atv:refpy="346.853" stroke="#13a5c2" x="56.464" width="249" rx="27.886" height="434" stroke-width="4"/>
+ <svg id="id_52" y="54.502" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.TestList0_long" atv:refpx="134.208" atv:refpy="93.318" transform="matrix(1.5605,0,0,1.4468,0,0)" x="3.502" width="165" height="20">
+  <atv:argument name="Name" value="Блок хранения раствора"/>
+ </svg>
+ <svg id="id_251" y="88.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.TestList0_long" atv:refpx="390.472" atv:refpy="98.85" transform="matrix(1.1515,0,0,1,0,0)" x="256.588" width="165" height="20">
+  <atv:argument name="Name" value="Блок обраб. раствора (БОР)"/>
+ </svg>
+ <svg id="id_340" y="61.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.TestList0_long" atv:refpx="670.492" atv:refpy="71.851" transform="matrix(1.1515,0,0,1,0,0)" x="499.753" width="165" height="20">
+  <atv:argument name="Name" value="Блок пригот. раствора (БПР)"/>
+ </svg>
+ <svg id="id_345" y="88.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.TestList0_long" atv:refpx="1170.488" atv:refpy="98.852" transform="matrix(1.1515,0,0,1,0,0)" x="933.957" width="165" height="20">
+  <atv:argument name="Name" value="Блок тонкой очистки (БТО)"/>
+ </svg>
+ <svg id="id_358" y="88.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.TestList0_long" atv:refpx="1500.492" atv:refpy="98.851" transform="matrix(1.1515,0,0,1,0,0)" x="1220.535" width="165" height="20">
+  <atv:argument name="Name" value="Блок грубой очистки (БГО)"/>
+ </svg>
+ <rect id="id_166" y="739.853" fill="#010101" atv:refpx="101.122" atv:refpy="792.377" stroke="#dedede" x="56.464" width="248" height="170" stroke-width="4"/>
+ <rect id="id_168" y="568.853" ry="23.061" fill="#1d3f8c" atv:refpx="179.711" atv:refpy="654.353" stroke="#13a5c2" x="55.464" width="248.494" rx="22.926" height="171" stroke-width="4"/>
+ <rect id="id_26" y="133.853" fill="#010101" atv:refpx="92.619" atv:refpy="374.105" stroke="#dedede" x="382.464" width="252.494" height="777.608" stroke-width="4"/>
+ <rect id="id_290" y="132.853" ry="38.712" fill="#2b8e84" atv:refpx="508.964" atv:refpy="264.353" stroke="#14a5c2" x="382.464" width="253" rx="25.478" height="263" stroke-width="4"/>
+ <rect id="id_170" y="571.853" ry="24.581" fill="#19534c" atv:refpx="508.711" atv:refpy="655.353" stroke="#14a5c2" x="382.464" width="252.494" rx="25.426" height="167" stroke-width="4"/>
+ <rect id="id_172" y="908.853" fill="#010101" atv:refpx="508.464" atv:refpy="958.853" stroke="#dedede" x="382.464" width="252" height="100" stroke-width="4"/>
+ <rect id="id_173" y="738.853" fill="#010101" atv:refpx="760.211" atv:refpy="791.377" stroke="#dedede" x="715.464" width="248.494" height="170" stroke-width="4"/>
+ <rect id="id_174" y="568.853" ry="24.314" fill="#55225d" atv:refpx="761.122" atv:refpy="621.377" stroke="#13a5c2" x="716.464" width="248" rx="24.314" height="170" stroke-width="4"/>
+ <rect id="id_175" y="738.853" fill="#010101" atv:refpx="1090.211" atv:refpy="791.377" stroke="#dedede" x="1045.464" width="248.494" height="170" stroke-width="4"/>
+ <rect id="id_176" y="438.853" fill="#010101" atv:refpx="1090.211" atv:refpy="531.542" stroke="#dedede" x="1045.464" width="248.494" height="300" stroke-width="4"/>
+ <rect id="id_177" y="738.853" fill="#010101" atv:refpx="1420.211" atv:refpy="791.377" stroke="#dedede" x="1375.464" width="248.494" height="170" stroke-width="4"/>
+ <rect id="id_178" y="638.853" fill="#010101" atv:refpx="1420.211" atv:refpy="669.749" stroke="#dedede" x="1375.464" width="248.494" height="100" stroke-width="4"/>
+ <rect id="id_179" y="548.853" fill="#010101" atv:refpx="1420.211" atv:refpy="579.749" stroke="#dedede" x="1375.464" width="248.494" height="100" stroke-width="4"/>
+ <svg id="id_15" y="-999.75" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="425.464" atv:refpy="847.353" transform="matrix(0,0.2778,-0.4286,0,0,0)" width="54" x="3023.452" height="14"/>
+ <svg id="id_18" y="-571.285" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="425.464" atv:refpy="836.296" transform="matrix(0,0.1154,-0.75,0,0,0)" width="52" x="7217.986" height="8"/>
+ <svg id="id_19" y="-1072.083" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="456.464" atv:refpy="837.853" transform="matrix(0,0.6296,-0.4286,0,0,0)" width="54" x="1303.713" height="14"/>
+ <svg id="id_20" y="-612.618" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="456.464" atv:refpy="807.853" transform="matrix(0,0.4615,-0.75,0,0,0)" width="52" x="1724.359" height="8"/>
+ <rect id="id_255" y="400.853" ry="24.434" fill="#247770" atv:refpx="508.964" atv:refpy="483.853" stroke="#14a5c2" x="382.464" width="253" rx="25.478" height="166" stroke-width="4"/>
+ <svg id="id_24" y="-612.618" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="456.464" atv:refpy="656.359" transform="matrix(0,3.5961,-0.75,0,0,0)" width="52" x="156.517" height="8"/>
+ <svg id="id_37" y="1026.471" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="451.964" atv:refpy="772.853" transform="matrix(1.1346,0,0,0.75,0,0)" width="52" x="372.341" height="8"/>
+ <svg id="id_42" y="1026.47" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="517.441" atv:refpy="772.852" transform="matrix(0.7308,0,0,0.75,0,0)" width="52" x="682.081" height="8"/>
+ <svg id="id_45" y="824.27" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_elbow" atv:refpx="615.464" atv:refpy="816.853" transform="matrix(0,-0.7333,0.7333,0,0,0)" width="30" x="-1128.893" height="30"/>
+ <svg id="id_46" y="-1461.75" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="623.464" atv:refpy="845.853" transform="matrix(0,0.6296,-0.4286,0,0,0)" width="54" x="1316.476" height="14"/>
+ <svg id="id_47" y="-1461.75" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="623.464" atv:refpy="878.853" transform="matrix(0,0.6296,-0.4286,0,0,0)" width="54" x="1368.89" height="14"/>
+ <svg id="id_48" y="-1461.75" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="623.464" atv:refpy="911.853" transform="matrix(0,0.6296,-0.4286,0,0,0)" width="54" x="1421.304" height="14"/>
+ <svg id="id_49" y="-755.072" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pump_90" atv:refpx="566.464" atv:refpy="886.853" transform="matrix(0,0.7727,-0.7727,0,0,0)" width="44" x="1125.694" height="44"/>
+ <svg id="id_213" y="-1230.67" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="524.464" atv:refpy="847.353" transform="matrix(0,0.6481,-0.4286,0,0,0)" width="54" x="1280.405" height="14"/>
+ <svg id="id_54" y="-703.287" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="5.464" atv:refpy="8.853" transform="matrix(0,0.0962,-0.75,0,0,0)" width="52" x="8667.908" height="8"/>
+ <svg id="id_55" y="-1335.75" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="569.464" atv:refpy="830.355" transform="matrix(0,0.3519,-0.4286,0,0,0)" width="54" x="2332.927" height="14"/>
+ <svg id="id_56" y="-763.288" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="569.464" atv:refpy="807.854" transform="matrix(0,0.4615,-0.75,0,0,0)" width="52" x="1724.486" height="8"/>
+ <svg id="id_62" y="803.816" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_elbow" atv:refpx="600.464" atv:refpy="863.853" transform="matrix(0,-0.7333,0.7333,0,0,0)" width="30" x="-1192.984" height="30"/>
+ <svg id="id_63" y="-1426.75" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="608.464" atv:refpy="891.853" transform="matrix(0,0.6296,-0.4286,0,0,0)" width="54" x="1389.538" height="14"/>
+ <svg id="id_66" y="-691.285" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="515.464" atv:refpy="739.353" transform="matrix(0,0.25,-0.75,0,0,0)" width="52" x="2931.824" height="8"/>
+ <svg id="id_67" y="-691.285" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="515.464" atv:refpy="767.353" transform="matrix(0,0.0962,-0.75,0,0,0)" width="52" x="7954.16" height="8"/>
+ <svg id="id_43" y="1026.47" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="594.952" atv:refpy="772.852" transform="matrix(0.9423,0,0,0.75,0,0)" width="52" x="605.371" height="8"/>
+ <svg id="id_71" y="-763.285" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="569.464" atv:refpy="561.864" transform="matrix(0,7.0384,-0.75,0,0,0)" width="52" x="53.826" height="8"/>
+ <svg id="id_76" y="-608.837" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pump_90" atv:refpx="453.463" atv:refpy="886.852" transform="matrix(0,0.7727,-0.7727,0,0,0)" width="44" x="1125.694" height="44"/>
+ <svg id="id_77" y="-703.285" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="524.464" atv:refpy="858.844" transform="matrix(0,0.2692,-0.75,0,0,0)" width="52" x="3164.052" height="8"/>
+ <svg id="id_78" y="-763.285" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="569.464" atv:refpy="855.856" transform="matrix(0,0.5385,-0.75,0,0,0)" width="52" x="1563.432" height="8"/>
+ <svg id="id_61" y="1137.138" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="563.964" atv:refpy="855.853" transform="matrix(1.4423,0,0,0.75,0,0)" width="52" x="365.015" height="8"/>
+ <svg id="id_79" y="-612.618" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="456.464" atv:refpy="863.354" transform="matrix(0,0.2885,-0.75,0,0,0)" width="52" x="2966.928" height="8"/>
+ <svg id="id_14" y="-606.088" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_elbow" atv:refpx="433.464" atv:refpy="881.853" transform="matrix(0,0.7333,-0.7333,0,0,0)" width="30" x="1187.53" height="30"/>
+ <svg id="id_80" y="-571.286" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="425.464" atv:refpy="866.178" transform="matrix(0,0.3462,-0.75,0,0,0)" width="52" x="2472.133" height="8"/>
+ <svg id="id_81" y="-934.356" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="397.464" atv:refpy="840.853" transform="matrix(0,0.6296,-0.4286,0,0,0)" width="54" x="1308.534" height="14"/>
+ <svg id="id_82" y="-934.356" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="397.464" atv:refpy="873.853" transform="matrix(0,0.6296,-0.4286,0,0,0)" width="54" x="1360.948" height="14"/>
+ <svg id="id_83" y="-934.356" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="397.464" atv:refpy="906.853" transform="matrix(0,0.6296,-0.4286,0,0,0)" width="54" x="1413.363" height="14"/>
+ <svg id="id_86" y="1026.471" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="398.464" atv:refpy="772.853" transform="matrix(0.2692,0,0,0.75,0,0)" width="52" x="1454.014" height="8"/>
+ <svg id="id_90" y="1182.471" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="545.464" atv:refpy="889.853" transform="matrix(0.5,0,0,0.75,0,0)" width="52" x="1064.929" height="8"/>
+ <svg id="id_91" y="1561.706" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Gauge_num" atv:refpx="425.464" atv:refpy="792.353" transform="matrix(0.4762,0,0,0.5,0,0)" width="42" x="872.476" height="46"/>
+ <svg id="id_30" y="1074.471" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="517.964" atv:refpy="808.853" transform="matrix(3.4423,0,0,0.75,0,0)" width="52" x="124.471" height="8"/>
+ <svg id="id_96" y="1275.061" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.HydroFunnel" atv:refpx="517.464" atv:refpy="939.353" transform="matrix(0.7196,0,0,0.7214,0,0)" width="102.84" x="667.716" height="54.06"/>
+ <svg id="id_97" y="1334.701" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.HydroFunnel" atv:refpx="517.464" atv:refpy="982.353" transform="matrix(0.7196,0,0,0.7214,0,0)" width="102.84" x="667.683" height="54.06"/>
+ <svg id="id_98" y="1256.28" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_elbow" atv:refpx="600.064" atv:refpy="932.103" transform="matrix(0.733,0,0,0.733,0,0)" width="30" x="804.183" height="30"/>
+ <svg id="id_99" y="-1426.657" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="608.464" atv:refpy="902.853" transform="matrix(0,0.6296,-0.4286,0,0,0)" width="54" x="1407.009" height="14"/>
+ <svg id="id_100" y="1249.138" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="566.465" atv:refpy="939.853" transform="matrix(0.9615,0,0,0.75,0,0)" width="52" x="563.124" height="8"/>
+ <svg id="id_101" y="1314.943" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_elbow" atv:refpx="615.065" atv:refpy="975.103" transform="matrix(0.733,0,0,0.733,0,0)" width="30" x="824.647" height="30"/>
+ <svg id="id_102" y="1306.47" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="575.466" atv:refpy="982.853" transform="matrix(1.3077,0,0,0.75,0,0)" width="52" x="414.073" height="8"/>
+ <svg id="id_103" y="-1461.654" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="623.464" atv:refpy="944.853" transform="matrix(0,0.6296,-0.4286,0,0,0)" width="54" x="1473.718" height="14"/>
+ <svg id="id_106" y="1249.138" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="464.964" atv:refpy="939.853" transform="matrix(0.5962,0,0,0.75,0,0)" width="52" x="753.941" height="8"/>
+ <svg id="id_110" y="1249.138" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="420.464" atv:refpy="939.853" transform="matrix(0.4615,0,0,0.75,0,0)" width="52" x="885.007" height="8"/>
+ <svg id="id_117" y="1305.138" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="464.964" atv:refpy="981.853" transform="matrix(0.5962,0,0,0.75,0,0)" width="52" x="753.89" height="8"/>
+ <g id="id_161" atv:refpx="340.966" atv:refpy="772.853" transform="matrix(1,0,0,1,6.4648,8.8528)">
+  <svg id="id_87" y="-1789.548" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="365.565" atv:refpy="764.134" transform="matrix(-0.6667,0,0,-0.4286,0,0)" width="54" x="-574.474" height="14"/>
+  <svg id="id_139" y="-1789.548" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="331.565" atv:refpy="764.134" transform="matrix(-0.6667,0,0,-0.4286,0,0)" width="54" x="-523.477" height="14"/>
+  <svg id="id_150" y="-1789.548" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="300.566" atv:refpy="764.134" transform="matrix(-0.6667,0,0,-0.4286,0,0)" width="54" x="-482.979" height="14"/>
+ </g>
+ <svg id="id_119" y="1305.138" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="417.963" atv:refpy="981.853" transform="matrix(0.5577,0,0,0.75,0,0)" width="52" x="723.474" height="8"/>
+ <svg id="id_121" y="-726.088" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_elbow_strip" atv:refpx="526.964" atv:refpy="887.353" transform="matrix(0,0.7333,-0.7333,0,0,0)" width="15" x="1202.53" height="15"/>
+ <svg id="id_122" y="-533.952" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="397.464" atv:refpy="971.868" transform="matrix(0,0.1346,-0.75,0,0,0)" width="52" x="7189.816" height="8"/>
+ <svg id="id_132" y="969.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_T_strip" atv:refpx="396.964" atv:refpy="977.353" width="15" x="389.464" height="15"/>
+ <svg id="id_133" y="-409.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_T_strip" atv:refpx="401.964" atv:refpy="939.353" transform="matrix(0,1,-1,0,0,0)" width="15" x="931.853" height="15"/>
+ <svg id="id_134" y="-533.952" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="397.464" atv:refpy="928.656" transform="matrix(0,0.1538,-0.75,0,0,0)" width="52" x="6011.664" height="8"/>
+ <svg id="id_135" y="-533.952" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="397.464" atv:refpy="947.181" transform="matrix(0,0.1346,-0.75,0,0,0)" width="52" x="7013.777" height="8"/>
+ <svg id="id_137" y="-437.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_T_strip" atv:refpx="429.964" atv:refpy="808.353" transform="matrix(0,1,-1,0,0,0)" width="15" x="800.853" height="15"/>
+ <svg id="id_138" y="1305.138" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="384.964" atv:refpy="981.853" transform="matrix(0.2885,0,0,0.75,0,0)" width="52" x="1308.542" height="8"/>
+ <svg id="id_140" y="-531.111" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_elbow" atv:refpx="378.464" atv:refpy="973.853" transform="matrix(0,0.7333,-0.7333,0,0,0)" width="30" x="1313.04" height="30"/>
+ <svg id="id_141" y="-497.952" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="370.464" atv:refpy="950.355" transform="matrix(0,0.6539,-0.75,0,0,0)" width="52" x="1423.493" height="8"/>
+ <svg id="id_142" y="-871.36" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="370.464" atv:refpy="846.853" transform="matrix(0,0.6296,-0.4286,0,0,0)" width="54" x="1318.064" height="14"/>
+ <svg id="id_143" y="-871.36" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="370.464" atv:refpy="879.853" transform="matrix(0,0.6296,-0.4286,0,0,0)" width="54" x="1370.478" height="14"/>
+ <svg id="id_144" y="-871.36" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="370.464" atv:refpy="912.853" transform="matrix(0,0.6296,-0.4286,0,0,0)" width="54" x="1422.892" height="14"/>
+ <svg id="id_146" y="479.489" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_elbow" atv:refpx="362.313" atv:refpy="817.503" transform="matrix(0,-0.733,0.733,0,0,0)" width="30" x="-1130.754" height="30"/>
+ <svg id="id_147" y="-1896.531" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="309.03" atv:refpy="809.987" transform="matrix(-0.6667,0,0,-0.4286,0,0)" width="54" x="-489.676" height="14"/>
+ <svg id="id_149" y="1075.804" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="331.964" atv:refpy="809.853" transform="matrix(0.327,0,0,0.75,0,0)" width="52" x="989.27" height="8"/>
+ <svg id="id_152" y="-986.144" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_elbow" atv:refpx="405.743" atv:refpy="711.676" transform="matrix(-0.733,0,0,-0.733,0,0)" width="30" x="-568.153" height="30"/>
+ <svg id="id_153" y="934.471" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="530.466" atv:refpy="703.853" transform="matrix(3.4615,0,0,0.75,0,0)" width="52" x="127.246" height="8"/>
+ <svg id="id_157" y="421.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_T_strip" atv:refpx="428.964" atv:refpy="668.353" transform="matrix(0,-1,1,0,0,0)" width="15" x="-675.853" height="15"/>
+ <svg id="id_158" y="886.471" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="422.964" atv:refpy="667.853" transform="matrix(0.2116,0,0,0.75,0,0)" width="52" x="1973.038" height="8"/>
+ <svg id="id_159" y="886.471" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="396.964" atv:refpy="667.853" transform="matrix(0.1731,0,0,0.75,0,0)" width="52" x="2266.774" height="8"/>
+ <svg id="id_160" y="-581.952" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="433.464" atv:refpy="646.502" transform="matrix(0,0.6924,-0.75,0,0,0)" width="52" x="903.925" height="8"/>
+ <g id="id_162" atv:refpx="342.966" atv:refpy="667.853" transform="matrix(1,0,0,1,8.4645,-96.1471)">
+  <svg id="id_163" y="-1789.548" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="365.565" atv:refpy="764.134" transform="matrix(-0.6667,0,0,-0.4286,0,0)" width="54" x="-574.474" height="14"/>
+  <svg id="id_164" y="-1789.548" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="331.565" atv:refpy="764.134" transform="matrix(-0.6667,0,0,-0.4286,0,0)" width="54" x="-523.477" height="14"/>
+  <svg id="id_165" y="-1789.548" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="300.566" atv:refpy="764.134" transform="matrix(-0.6667,0,0,-0.4286,0,0)" width="54" x="-482.979" height="14"/>
+ </g>
+ <svg id="id_167" y="691.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_T_strip" atv:refpx="432.964" atv:refpy="699.353" width="15" x="425.464" height="15"/>
+ <svg id="id_169" y="934.471" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="421.464" atv:refpy="703.853" transform="matrix(0.3462,0,0,0.75,0,0)" width="52" x="1191.406" height="8"/>
+ <svg id="id_180" y="421.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_T_strip" atv:refpx="428.964" atv:refpy="634.353" transform="matrix(0,-1,1,0,0,0)" width="15" x="-641.853" height="15"/>
+ <svg id="id_183" y="841.137" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="421.964" atv:refpy="633.852" transform="matrix(0.2116,0,0,0.75,0,0)" width="52" x="1968.17" height="8"/>
+ <svg id="id_184" y="-581.953" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="433.464" atv:refpy="534.697" transform="matrix(0,5.1923,-0.75,0,0,0)" width="52" x="73.157" height="8"/>
+ <svg id="id_198" y="450.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="455.464" atv:refpy="560.353" transform="matrix(0,-1,1,0,0,0)" width="5" x="-562.853" height="10"/>
+ <svg id="id_199" y="509.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="514.464" atv:refpy="731.353" transform="matrix(0,-1,1,0,0,0)" width="5" x="-733.853" height="10"/>
+ <svg id="id_201" y="-778.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="392.964" atv:refpy="773.853" transform="matrix(-1,0,0,-1,0,0)" width="5" x="-395.464" height="10"/>
+ <svg id="id_84" y="-533.952" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="397.464" atv:refpy="778.354" transform="matrix(0,1.9616,-0.75,0,0,0)" width="52" x="366.976" height="8"/>
+ <rect id="id_202" y="768.853" fill="#999999" atv:refpx="387.964" atv:refpy="772.853" stroke="#dedede" x="386.464" width="3" height="8" stroke-width="0"/>
+ <svg id="id_203" y="796.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_T_strip" atv:refpx="523.964" atv:refpy="804.353" width="15" x="516.464" height="15"/>
+ <svg id="id_92" y="1559.706" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Gauge_num" atv:refpx="524.464" atv:refpy="791.353" transform="matrix(0.4762,0,0,0.5,0,0)" width="42" x="1080.355" height="46"/>
+ <svg id="id_204" y="-403.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="398.464" atv:refpy="820.353" transform="matrix(0,1,-1,0,0,0)" width="5" x="817.853" height="10"/>
+ <rect id="id_205" y="-401.464" fill="#999999" atv:refpx="397.464" atv:refpy="825.353" transform="matrix(0,1,-1,0,0,0)" stroke="#dedede" x="823.853" width="3" height="8" stroke-width="0"/>
+ <rect id="id_206" y="-374.464" fill="#999999" atv:refpx="370.464" atv:refpy="831.353" transform="matrix(0,1,-1,0,0,0)" stroke="#dedede" x="829.853" width="3" height="8" stroke-width="0"/>
+ <svg id="id_207" y="-376.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="371.464" atv:refpy="826.353" transform="matrix(0,1,-1,0,0,0)" width="5" x="823.853" height="10"/>
+ <svg id="id_208" y="364.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="369.464" atv:refpy="933.353" transform="matrix(0,-1,1,0,0,0)" width="5" x="-935.853" height="10"/>
+ <rect id="id_209" y="-374.464" fill="#999999" atv:refpx="370.464" atv:refpy="928.353" transform="matrix(0,1,-1,0,0,0)" stroke="#dedede" x="926.853" width="3" height="8" stroke-width="0"/>
+ <rect id="id_210" y="-401.464" fill="#999999" atv:refpx="397.464" atv:refpy="922.353" transform="matrix(0,1,-1,0,0,0)" stroke="#dedede" x="920.853" width="3" height="8" stroke-width="0"/>
+ <rect id="id_211" y="-460.464" fill="#999999" atv:refpx="456.464" atv:refpy="853.353" transform="matrix(0,1,-1,0,0,0)" stroke="#dedede" x="851.853" width="3" height="8" stroke-width="0"/>
+ <rect id="id_212" y="-460.464" fill="#999999" atv:refpx="456.464" atv:refpy="822.353" transform="matrix(0,1,-1,0,0,0)" stroke="#dedede" x="820.853" width="3" height="8" stroke-width="0"/>
+ <svg id="id_214" y="883.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="436.964" atv:refpy="888.853" width="5" x="434.464" height="10"/>
+ <svg id="id_215" y="-530.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="525.464" atv:refpy="836.353" transform="matrix(0,1,-1,0,0,0)" width="5" x="833.853" height="10"/>
+ <svg id="id_216" y="518.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="523.464" atv:refpy="850.353" transform="matrix(0,-1,1,0,0,0)" width="5" x="-852.853" height="10"/>
+ <rect id="id_217" y="-528.464" fill="#999999" atv:refpx="524.464" atv:refpy="841.353" transform="matrix(0,1,-1,0,0,0)" stroke="#dedede" x="839.853" width="3" height="8" stroke-width="0"/>
+ <g id="id_325" atv:refpx="237.465" atv:refpy="640.849" transform="matrix(1,0,0,1,-2.5352,1.8525)">
+  <svg id="id_181" y="848" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="232.5" atv:refpy="638.999" transform="matrix(0.1731,0,0,0.75,0,0)" width="52" x="1317.158" height="8"/>
+  <svg id="id_219" y="633" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="227.5" atv:refpy="638" transform="matrix(-1,0,0,1,0,0)" width="5" x="-230" height="10"/>
+  <svg id="id_248" y="-2307.113" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="245.497" atv:refpy="638.507" transform="matrix(-0.19,0,0,-0.28,0,0)" width="100" x="-1342.105" height="49.97"/>
+ </g>
+ <rect id="id_218" y="-528.464" fill="#999999" atv:refpx="524.464" atv:refpy="845.353" transform="matrix(0,1,-1,0,0,0)" stroke="#dedede" x="843.853" width="3" height="8" stroke-width="0"/>
+ <svg id="id_220" y="661.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="394.964" atv:refpy="666.853" transform="matrix(-1,0,0,1,0,0)" width="5" x="-397.464" height="10"/>
+ <rect id="id_221" y="663.853" fill="#999999" atv:refpx="389.964" atv:refpy="667.853" stroke="#dedede" x="388.464" width="3" height="8" stroke-width="0"/>
+ <svg id="id_230" y="-701.952" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="523.464" atv:refpy="571.754" transform="matrix(0,0.3655,-0.75,0,0,0)" width="52" x="1534.396" height="8"/>
+ <svg id="id_231" y="-701.952" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="5.464" atv:refpy="8.853" transform="matrix(0,0.3655,-0.75,0,0,0)" width="52" x="1632.977" height="8"/>
+ <svg id="id_232" y="2733.522" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="489.964" atv:refpy="772.853" transform="matrix(0.19,0,0,0.2802,0,0)" width="100" x="2528.761" height="49.97"/>
+ <svg id="id_233" y="2733.236" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="545.964" atv:refpy="772.853" transform="matrix(0.19,0,0,0.2802,0,0)" width="100" x="2823.498" height="49.97"/>
+ <svg id="id_238" y="2733.235" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="413.964" atv:refpy="772.853" transform="matrix(0.19,0,0,0.2802,0,0)" width="100" x="2128.762" height="49.97"/>
+ <svg id="id_239" y="-1544.487" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="424.971" atv:refpy="824.353" transform="matrix(0,0.19,-0.28,0,0,0)" width="100" x="4288.698" height="49.97"/>
+ <svg id="id_240" y="-1898.058" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="523.971" atv:refpy="872.353" transform="matrix(0,0.19,-0.28,0,0,0)" width="100" x="4541.33" height="49.97"/>
+ <svg id="id_241" y="-536.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_T_strip" atv:refpx="-810.036" atv:refpy="481.353" transform="matrix(0,1,-1,0,0,0)" width="15" x="847.853" height="15"/>
+ <svg id="id_242" y="883.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="549.964" atv:refpy="888.853" width="5" x="547.464" height="10"/>
+ <svg id="id_243" y="-1444.487" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="396.971" atv:refpy="959.353" transform="matrix(0,0.19,-0.28,0,0,0)" width="100" x="4999.225" height="49.97"/>
+ <svg id="id_244" y="-3381.587" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="439.961" atv:refpy="939.36" transform="matrix(-0.19,0,0,-0.28,0,0)" width="100" x="-2365.603" height="49.97"/>
+ <svg id="id_245" y="-3535.159" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="440.961" atv:refpy="982.36" transform="matrix(-0.19,0,0,-0.28,0,0)" width="100" x="-2370.866" height="49.97"/>
+ <svg id="id_246" y="-2917.302" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="346.961" atv:refpy="809.36" transform="matrix(-0.19,0,0,-0.28,0,0)" width="100" x="-1876.129" height="49.97"/>
+ <svg id="id_247" y="-2410.159" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="410.961" atv:refpy="667.36" transform="matrix(-0.19,0,0,-0.28,0,0)" width="100" x="-2212.972" height="49.97"/>
+ <svg id="id_249" y="-1573.058" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="432.971" atv:refpy="685.36" transform="matrix(0,0.19,-0.28,0,0,0)" width="100" x="3557.12" height="49.97"/>
+ <svg id="id_250" y="-1894.487" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="522.971" atv:refpy="588.36" transform="matrix(0,0.19,-0.28,0,0,0)" width="100" x="3046.594" height="49.97"/>
+ <svg id="id_253" y="517.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="522.464" atv:refpy="617.353" transform="matrix(0,1,1,0,0,0)" width="5" x="614.853" height="10"/>
+ <svg id="id_254" y="-529.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="524.464" atv:refpy="561.353" transform="matrix(0,-1,-1,0,0,0)" width="5" x="-563.853" height="10"/>
+ <svg id="id_276" y="-763.285" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="569.464" atv:refpy="352.353" transform="matrix(0,0.2885,-0.75,0,0,0)" width="52" x="1195.336" height="8"/>
+ <svg id="id_277" y="-2041.701" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="569.136" atv:refpy="369.603" transform="matrix(0,0.195,-0.2824,0,0,0)" width="100" x="1845.399" height="49.97"/>
+ <svg id="id_278" y="563.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="568.464" atv:refpy="342.353" transform="matrix(0,-1,1,0,0,0)" width="5" x="-344.853" height="10"/>
+ <svg id="id_283" y="-581.951" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="433.464" atv:refpy="353.754" transform="matrix(0,0.3655,-0.75,0,0,0)" width="52" x="938.039" height="8"/>
+ <svg id="id_284" y="-1573.058" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="432.971" atv:refpy="370.36" transform="matrix(0,0.19,-0.28,0,0,0)" width="100" x="1899.226" height="49.97"/>
+ <svg id="id_285" y="-439.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="434.464" atv:refpy="343.353" transform="matrix(0,-1,-1,0,0,0)" width="5" x="-345.853" height="10"/>
+ <svg id="id_286" y="1794.449" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Mixer" atv:refpx="507.964" atv:refpy="652.353" transform="matrix(0.4092,0,0,0.3493,0,0)" width="46.431" x="1218.108" height="145.993"/>
+ <svg id="id_287" y="1330.811" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Mixer" atv:refpx="503.964" atv:refpy="490.353" transform="matrix(0.4092,0,0,0.3493,0,0)" width="46.431" x="1208.37" height="145.993"/>
+ <svg id="id_288" y="867.026" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Mixer" atv:refpx="504.964" atv:refpy="328.353" transform="matrix(0.4092,0,0,0.3493,0,0)" width="46.431" x="1210.813" height="145.993"/>
+ <svg id="id_289" y="517.756" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Mixer" atv:refpx="504.964" atv:refpy="206.353" transform="matrix(0.4092,0,0,0.3493,0,0)" width="46.431" x="1210.813" height="145.993"/>
+ <g id="id_126" atv:refpx="509.461" atv:refpy="415.853" transform="matrix(1,0,0,1,-2.5352,1.8525)">
+  <svg id="id_266" y="-705.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="526" atv:refpy="396.045" transform="matrix(0,0.4038,-0.75,0,0,0)" width="52" x="950.876" height="8"/>
+  <svg id="id_267" y="-705.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="526" atv:refpy="432.618" transform="matrix(0,0.4231,-0.75,0,0,0)" width="52" x="992.72" height="8"/>
+  <svg id="id_268" y="-1903.542" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="525.507" atv:refpy="414.507" transform="matrix(0,0.19,-0.28,0,0,0)" width="100" x="2131.579" height="49.97"/>
+  <svg id="id_270" y="-532" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="527" atv:refpy="384.5" transform="matrix(0,-1,-1,0,0,0)" width="5" x="-387" height="10"/>
+  <svg id="id_272" y="-668" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="498.001" atv:refpy="397.046" transform="matrix(0,0.3846,-0.75,0,0,0)" width="52" x="1006.341" height="8"/>
+  <svg id="id_271" y="-1788.639" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="497.672" atv:refpy="415.75" transform="matrix(0,0.195,-0.2824,0,0,0)" width="100" x="2082.051" height="49.97"/>
+  <svg id="id_273" y="491.999" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="496.999" atv:refpy="384.5" transform="matrix(0,-1,1,0,0,0)" width="5" x="-387" height="10"/>
+  <svg id="id_274" y="-668" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="498" atv:refpy="434.951" transform="matrix(0,0.3462,-0.75,0,0,0)" width="52" x="1230.503" height="8"/>
+  <svg id="id_275" y="-504" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="498.5" atv:refpy="443.5" transform="matrix(0,1,-1,0,0,0)" width="5" x="441" height="10"/>
+  <svg id="id_34" y="-532" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="527" atv:refpy="443.5" transform="matrix(0,1,-1,0,0,0)" width="5" x="441" height="10"/>
+ </g>
+ <g id="id_352" atv:refpx="577.965" atv:refpy="364.353" transform="matrix(1,0,0,1,-2.5352,1.8525)">
+  <svg id="id_291" y="1541.907" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Valve" atv:refpx="612" atv:refpy="439" transform="matrix(0.18,0,0,0.2802,0,0)" width="100" x="3350.001" height="49.97"/>
+  <svg id="id_292" y="-598" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Pipe" atv:refpx="594" atv:refpy="311.5" transform="matrix(0,4.5577,-1,0,0,0)" width="52" x="42.346" height="8"/>
+  <svg id="id_299" y="-603" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Pipe_T_strip" atv:refpx="596.5" atv:refpy="439" transform="matrix(0,1,-1,0,0,0)" width="20" x="429" height="13"/>
+  <svg id="id_300" y="-598" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Pipe" atv:refpx="594" atv:refpy="512.5" transform="matrix(0,2.5192,-1,0,0,0)" width="52" x="177.435" height="8"/>
+  <svg id="id_301" y="-599" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Flange" atv:refpx="594" atv:refpy="607" transform="matrix(0,1,-1,0,0,0)" width="26" x="594" height="10"/>
+  <svg id="id_293" y="-2146.399" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Valve" atv:refpx="593.599" atv:refpy="587.5" transform="matrix(0,0.19,-0.28,0,0,0)" width="100" x="3042.106" height="49.97"/>
+  <svg id="id_302" y="433" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Flange_strip" atv:refpx="624.5" atv:refpy="439" width="7" x="621" height="12"/>
+  <svg id="id_306" y="-174" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Flange" atv:refpx="546" atv:refpy="169" transform="matrix(-1,0,0,-1,0,0)" width="26" x="-559" height="10"/>
+  <svg id="id_307" y="-2146.399" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Valve" atv:refpx="593.599" atv:refpy="114.5" transform="matrix(0,0.19,-0.28,0,0,0)" width="100" x="552.632" height="49.97"/>
+  <svg id="id_310" y="569" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Pipe_T" atv:refpx="583.51" atv:refpy="169.055" transform="matrix(0,-1,1,0,0,0)" width="50.11" x="-194.11" height="29.02"/>
+  <svg id="id_303" y="578.159" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Valve" atv:refpx="563" atv:refpy="169" transform="matrix(0.18,0,0,0.2802,0,0)" width="100" x="3077.778" height="49.97"/>
+ </g>
+ <svg id="id_308" y="-595.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Pipe" atv:refpx="591.464" atv:refpy="136.353" transform="matrix(0,0.4038,-1,0,0,0)" width="52" x="311.653" height="8"/>
+ <svg id="id_13" y="-661.952" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="493.465" atv:refpy="572.392" transform="matrix(0,0.3269,-0.75,0,0,0)" width="52" x="1724.775" height="8"/>
+ <svg id="id_16" y="-1772.579" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="493.136" atv:refpy="589.603" transform="matrix(0,0.195,-0.2824,0,0,0)" width="100" x="2973.602" height="49.97"/>
+ <svg id="id_17" y="487.463" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="492.463" atv:refpy="561.353" transform="matrix(0,-1,1,0,0,0)" width="5" x="-563.853" height="10"/>
+ <svg id="id_21" y="-661.953" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="493.464" atv:refpy="607.803" transform="matrix(0,0.3462,-0.75,0,0,0)" width="52" x="1729.994" height="8"/>
+ <svg id="id_22" y="-499.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="493.964" atv:refpy="618.353" transform="matrix(0,1,-1,0,0,0)" width="5" x="615.853" height="10"/>
+ <svg id="id_38" y="-703.286" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="524.464" atv:refpy="815.868" transform="matrix(0,0.1346,-0.75,0,0,0)" width="52" x="6030.92" height="8"/>
+ <svg id="id_36" y="-1898.058" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="523.971" atv:refpy="824.353" transform="matrix(0,0.19,-0.28,0,0,0)" width="100" x="4288.698" height="49.97"/>
+ <g id="id_73" atv:refpx="344.965" atv:refpy="611.854" transform="matrix(1,0,0,1,-2.5352,1.8525)">
+  <svg id="id_39" y="604" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="398.5" atv:refpy="609.5" width="5" x="396" height="10"/>
+  <svg id="id_40" y="809.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="388.057" atv:refpy="609.999" transform="matrix(0.3461,0,0,0.75,0,0)" width="52" x="1094.986" height="8"/>
+  <svg id="id_51" y="-1430.239" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="365.565" atv:refpy="764.134" transform="matrix(-0.6667,0,0,-0.4286,0,0)" width="54" x="-566.974" height="14"/>
+  <svg id="id_58" y="-616" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="297" atv:refpy="611" transform="matrix(-1,0,0,-1,0,0)" width="5" x="-299" height="10"/>
+  <svg id="id_60" y="809.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="335.039" atv:refpy="609.999" transform="matrix(0.2308,0,0,0.75,0,0)" width="52" x="1425.667" height="8"/>
+  <svg id="id_64" y="809.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="307.057" atv:refpy="609.999" transform="matrix(0.3461,0,0,0.75,0,0)" width="52" x="861.023" height="8"/>
+  <svg id="id_59" y="2152.034" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="323.5" atv:refpy="609.92" transform="matrix(0.19,0,0,0.2802,0,0)" width="100" x="1652.632" height="49.97"/>
+  <svg id="id_65" y="604" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="338.5" atv:refpy="609.5" width="5" x="336" height="10"/>
+  <rect id="id_68" y="606" fill="#999999" atv:refpx="343.5" atv:refpy="610" stroke="#dedede" x="342" width="3" height="8" stroke-width="0"/>
+  <svg id="id_70" y="-616" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="382" atv:refpy="611" transform="matrix(-1,0,0,-1,0,0)" width="5" x="-384" height="10"/>
+  <rect id="id_72" y="606" fill="#999999" atv:refpx="376.5" atv:refpy="610" stroke="#dedede" x="375" width="3" height="8" stroke-width="0"/>
+ </g>
+ <g id="id_74" atv:refpx="342.965" atv:refpy="438.854" transform="matrix(1,0,0,1,-4.5352,-171.1474)">
+  <svg id="id_75" y="604" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="398.5" atv:refpy="609.5" width="5" x="396" height="10"/>
+  <svg id="id_85" y="809.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="388.057" atv:refpy="609.999" transform="matrix(0.3461,0,0,0.75,0,0)" width="52" x="1094.986" height="8"/>
+  <svg id="id_88" y="-1430.239" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="365.565" atv:refpy="764.134" transform="matrix(-0.6667,0,0,-0.4286,0,0)" width="54" x="-566.974" height="14"/>
+  <svg id="id_89" y="-616" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="297" atv:refpy="611" transform="matrix(-1,0,0,-1,0,0)" width="5" x="-299" height="10"/>
+  <svg id="id_93" y="809.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="335.039" atv:refpy="609.999" transform="matrix(0.2308,0,0,0.75,0,0)" width="52" x="1425.667" height="8"/>
+  <svg id="id_94" y="809.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="307.057" atv:refpy="609.999" transform="matrix(0.3461,0,0,0.75,0,0)" width="52" x="861.023" height="8"/>
+  <svg id="id_95" y="2152.034" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="323.5" atv:refpy="609.92" transform="matrix(0.19,0,0,0.2802,0,0)" width="100" x="1652.632" height="49.97"/>
+  <svg id="id_104" y="604" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="338.5" atv:refpy="609.5" width="5" x="336" height="10"/>
+  <rect id="id_105" y="606" fill="#999999" atv:refpx="343.5" atv:refpy="610" stroke="#dedede" x="342" width="3" height="8" stroke-width="0"/>
+  <svg id="id_107" y="-616" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="382" atv:refpy="611" transform="matrix(-1,0,0,-1,0,0)" width="5" x="-384" height="10"/>
+  <rect id="id_108" y="606" fill="#999999" atv:refpx="376.5" atv:refpy="610" stroke="#dedede" x="375" width="3" height="8" stroke-width="0"/>
+ </g>
+ <g id="id_109" atv:refpx="343.965" atv:refpy="245.854" transform="matrix(1,0,0,1,-3.5352,-364.1474)">
+  <svg id="id_111" y="604" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="398.5" atv:refpy="609.5" width="5" x="396" height="10"/>
+  <svg id="id_112" y="809.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="388.057" atv:refpy="609.999" transform="matrix(0.3461,0,0,0.75,0,0)" width="52" x="1094.986" height="8"/>
+  <svg id="id_113" y="-1430.239" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="365.565" atv:refpy="764.134" transform="matrix(-0.6667,0,0,-0.4286,0,0)" width="54" x="-566.974" height="14"/>
+  <svg id="id_114" y="-616" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="297" atv:refpy="611" transform="matrix(-1,0,0,-1,0,0)" width="5" x="-299" height="10"/>
+  <svg id="id_115" y="809.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="335.039" atv:refpy="609.999" transform="matrix(0.2308,0,0,0.75,0,0)" width="52" x="1425.667" height="8"/>
+  <svg id="id_116" y="809.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="307.057" atv:refpy="609.999" transform="matrix(0.3461,0,0,0.75,0,0)" width="52" x="861.023" height="8"/>
+  <svg id="id_118" y="2152.034" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="323.5" atv:refpy="609.92" transform="matrix(0.19,0,0,0.2802,0,0)" width="100" x="1652.632" height="49.97"/>
+  <svg id="id_120" y="604" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="338.5" atv:refpy="609.5" width="5" x="336" height="10"/>
+  <rect id="id_123" y="606" fill="#999999" atv:refpx="343.5" atv:refpy="610" stroke="#dedede" x="342" width="3" height="8" stroke-width="0"/>
+  <svg id="id_124" y="-616" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="382" atv:refpy="611" transform="matrix(-1,0,0,-1,0,0)" width="5" x="-384" height="10"/>
+  <rect id="id_125" y="606" fill="#999999" atv:refpx="376.5" atv:refpy="610" stroke="#dedede" x="375" width="3" height="8" stroke-width="0"/>
+ </g>
+ <g id="id_127" atv:refpx="136.461" atv:refpy="583.853" transform="matrix(1,0,0,1,-375.5353,169.8525)">
+  <svg id="id_128" y="-705.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="526" atv:refpy="396.045" transform="matrix(0,0.4038,-0.75,0,0,0)" width="52" x="950.876" height="8"/>
+  <svg id="id_129" y="-705.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="526" atv:refpy="432.618" transform="matrix(0,0.4231,-0.75,0,0,0)" width="52" x="992.72" height="8"/>
+  <svg id="id_130" y="-1903.542" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="525.507" atv:refpy="414.507" transform="matrix(0,0.19,-0.28,0,0,0)" width="100" x="2131.579" height="49.97"/>
+  <svg id="id_131" y="-532" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="527" atv:refpy="384.5" transform="matrix(0,-1,-1,0,0,0)" width="5" x="-387" height="10"/>
+  <svg id="id_136" y="-668" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="498.001" atv:refpy="397.046" transform="matrix(0,0.3846,-0.75,0,0,0)" width="52" x="1006.341" height="8"/>
+  <svg id="id_145" y="-1788.639" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="497.672" atv:refpy="415.75" transform="matrix(0,0.195,-0.2824,0,0,0)" width="100" x="2082.051" height="49.97"/>
+  <svg id="id_148" y="491.999" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="496.999" atv:refpy="384.5" transform="matrix(0,-1,1,0,0,0)" width="5" x="-387" height="10"/>
+  <svg id="id_151" y="-668" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="498" atv:refpy="434.951" transform="matrix(0,0.3462,-0.75,0,0,0)" width="52" x="1230.503" height="8"/>
+  <svg id="id_155" y="-504" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="498.5" atv:refpy="443.5" transform="matrix(0,1,-1,0,0,0)" width="5" x="441" height="10"/>
+  <svg id="id_156" y="-532" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="527" atv:refpy="443.5" transform="matrix(0,1,-1,0,0,0)" width="5" x="441" height="10"/>
+ </g>
+ <svg id="id_186" y="1026.47" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="260.971" atv:refpy="772.852" transform="matrix(1.1346,0,0,0.75,0,0)" width="52" x="204.005" height="8"/>
+ <svg id="id_188" y="1026.47" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="202.966" atv:refpy="772.852" transform="matrix(0.4038,0,0,0.75,0,0)" width="52" x="476.598" height="8"/>
+ <svg id="id_185" y="2733.235" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="221.964" atv:refpy="772.853" transform="matrix(0.19,0,0,0.2802,0,0)" width="100" x="1118.236" height="49.97"/>
+ <svg id="id_194" y="760.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe_T_strip" atv:refpx="185.964" atv:refpy="768.353" width="15" x="178.464" height="15"/>
+ <svg id="id_195" y="1026.47" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="152.97" atv:refpy="772.852" transform="matrix(1.0192,0,0,0.75,0,0)" width="52" x="124.081" height="8"/>
+ <svg id="id_196" y="760.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe_T_strip" atv:refpx="119.964" atv:refpy="768.353" width="15" x="112.464" height="15"/>
+ <svg id="id_197" y="1026.47" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="104.466" atv:refpy="772.852" transform="matrix(0.3462,0,0,0.75,0,0)" width="52" x="275.785" height="8"/>
+ <svg id="id_187" y="2733.235" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="85.964" atv:refpy="772.853" transform="matrix(0.19,0,0,0.2802,0,0)" width="100" x="402.446" height="49.97"/>
+ <svg id="id_200" y="-778.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="65.964" atv:refpy="773.853" transform="matrix(-1,0,0,-1,0,0)" width="5" x="-68.464" height="10"/>
+ <svg id="id_222" y="1026.47" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="71.965" atv:refpy="772.852" transform="matrix(0.2115,0,0,0.75,0,0)" width="52" x="314.203" height="8"/>
+ <svg id="id_223" y="1075.803" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="227.051" atv:refpy="809.852" transform="matrix(1.1731,0,0,0.75,0,0)" width="52" x="167.478" height="8"/>
+ <svg id="id_226" y="797.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_T_strip" atv:refpx="146.964" atv:refpy="805.353" width="15" x="139.464" height="15"/>
+ <svg id="id_227" y="1075.803" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="166.003" atv:refpy="809.852" transform="matrix(0.5192,0,0,0.75,0,0)" width="52" x="293.637" height="8"/>
+ <svg id="id_224" y="-2917.301" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="186.961" atv:refpy="809.36" transform="matrix(-0.19,0,0,-0.28,0,0)" width="100" x="-1034.025" height="49.97"/>
+ <svg id="id_229" y="1075.803" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="72.463" atv:refpy="809.852" transform="matrix(0.1923,0,0,0.75,0,0)" width="52" x="350.817" height="8"/>
+ <svg id="id_225" y="-2917.301" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="85.961" atv:refpy="809.36" transform="matrix(-0.19,0,0,-0.28,0,0)" width="100" x="-502.446" height="49.97"/>
+ <svg id="id_252" y="803.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="66.964" atv:refpy="808.853" transform="matrix(-1,0,0,1,0,0)" width="5" x="-69.464" height="10"/>
+ <svg id="id_256" y="1557.705" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Gauge_num" atv:refpx="147.464" atv:refpy="790.353" transform="matrix(0.4762,0,0,0.5,0,0)" width="42" x="288.675" height="46"/>
+ <svg id="id_257" y="-200.619" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="147.464" atv:refpy="822.178" transform="matrix(0,0.3462,-0.75,0,0,0)" width="52" x="2345.039" height="8"/>
+ <svg id="id_258" y="-227.006" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_elbow" atv:refpx="155.483" atv:refpy="839.89" transform="matrix(0,0.7333,-0.7333,0,0,0)" width="30" x="1130.305" height="30"/>
+ <svg id="id_259" y="-1166.707" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pump_90" atv:refpx="227.154" atv:refpy="884.932" transform="matrix(0.773,0,0,-0.773,0,0)" width="44" x="272.271" height="44"/>
+ <svg id="id_260" y="288.493" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_elbow" atv:refpx="222.313" atv:refpy="855.503" transform="matrix(0,-0.733,0.733,0,0,0)" width="30" x="-1182.596" height="30"/>
+ <svg id="id_261" y="-1985.191" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="186.029" atv:refpy="847.987" transform="matrix(-0.6667,0,0,-0.4286,0,0)" width="54" x="-305.184" height="14"/>
+ <svg id="id_262" y="1126.47" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="213.464" atv:refpy="847.852" transform="matrix(0.3462,0,0,0.75,0,0)" width="52" x="590.597" height="8"/>
+ <svg id="id_263" y="1179.803" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="208.465" atv:refpy="887.852" transform="matrix(0.1538,0,0,0.75,0,0)" width="52" x="1329.161" height="8"/>
+ <svg id="id_264" y="-2078.518" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="186.029" atv:refpy="887.987" transform="matrix(-0.6667,0,0,-0.4286,0,0)" width="54" x="-305.184" height="14"/>
+ <svg id="id_269" y="1179.803" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="159.966" atv:refpy="887.852" transform="matrix(0.25,0,0,0.75,0,0)" width="52" x="613.967" height="8"/>
+ <svg id="id_279" y="1244.075" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe_elbow" atv:refpx="128.469" atv:refpy="881.353" transform="matrix(-0.7333,0,0,0.7,0,0)" width="30" x="-190.186" height="30"/>
+ <svg id="id_265" y="3143.656" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="146.964" atv:refpy="887.853" transform="matrix(0.19,0,0,0.2802,0,0)" width="100" x="723.499" height="49.97"/>
+ <svg id="id_280" y="-164.619" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="120.464" atv:refpy="822.853" transform="matrix(0,1.8846,-0.75,0,0,0)" width="52" x="410.616" height="8"/>
+ <svg id="id_228" y="1075.803" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="118.028" atv:refpy="809.852" transform="matrix(0.8654,0,0,0.75,0,0)" width="52" x="110.315" height="8"/>
+ <svg id="id_281" y="841.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="206.964" atv:refpy="846.853" transform="matrix(-1,0,0,1,0,0)" width="5" x="-209.464" height="10"/>
+ <svg id="id_282" y="-853.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="163.964" atv:refpy="848.853" transform="matrix(1,0,0,-1,0,0)" width="5" x="161.464" height="10"/>
+ <svg id="id_294" y="-893.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="206.964" atv:refpy="888.853" transform="matrix(-1,0,0,-1,0,0)" width="5" x="-209.464" height="10"/>
+ <svg id="id_295" y="881.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="163.964" atv:refpy="886.853" width="5" x="161.464" height="10"/>
+ <rect id="id_296" y="768.853" fill="#999999" atv:refpx="293.964" atv:refpy="772.853" stroke="#dedede" x="292.464" width="3" height="8" stroke-width="0"/>
+ <rect id="id_297" y="805.853" fill="#999999" atv:refpx="291.964" atv:refpy="809.853" stroke="#dedede" x="290.464" width="3" height="8" stroke-width="0"/>
+ <rect id="id_298" y="843.853" fill="#999999" atv:refpx="201.964" atv:refpy="847.853" stroke="#dedede" x="200.464" width="3" height="8" stroke-width="0"/>
+ <rect id="id_304" y="843.853" fill="#999999" atv:refpx="168.964" atv:refpy="847.853" stroke="#dedede" x="167.464" width="3" height="8" stroke-width="0"/>
+ <svg id="id_305" y="224.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="229.464" atv:refpy="864.353" transform="matrix(0,1,1,0,0,0)" width="5" x="861.853" height="10"/>
+ <rect id="id_309" y="883.853" fill="#999999" atv:refpx="201.964" atv:refpy="887.853" stroke="#dedede" x="200.464" width="3" height="8" stroke-width="0"/>
+ <rect id="id_311" y="883.853" fill="#999999" atv:refpx="168.964" atv:refpy="887.853" stroke="#dedede" x="167.464" width="3" height="8" stroke-width="0"/>
+ <svg id="id_312" y="-252.619" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="186.464" atv:refpy="651.354" transform="matrix(0,3.6731,-0.75,0,0,0)" width="52" x="151.333" height="8"/>
+ <svg id="id_182" y="-690.916" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="185.918" atv:refpy="755.353" transform="matrix(0,0.19,-0.28,0,0,0)" width="100" x="3925.54" height="49.97"/>
+ <svg id="id_313" y="-164.619" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="120.464" atv:refpy="738.853" transform="matrix(0,0.3461,-0.75,0,0,0)" width="52" x="2108.595" height="8"/>
+ <svg id="id_171" y="-455.201" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="119.918" atv:refpy="755.353" transform="matrix(0,0.19,-0.28,0,0,0)" width="100" x="3925.54" height="49.97"/>
+ <svg id="id_314" y="114.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="119.464" atv:refpy="728.353" transform="matrix(0,-1,1,0,0,0)" width="5" x="-730.853" height="10"/>
+ <svg id="id_315" y="180.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="185.464" atv:refpy="554.353" transform="matrix(0,-1,1,0,0,0)" width="5" x="-556.853" height="10"/>
+ <svg id="id_316" y="-356.619" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="264.464" atv:refpy="746.681" transform="matrix(0,2.4423,-0.75,0,0,0)" width="52" x="275.909" height="8"/>
+ <svg id="id_318" y="-276.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_T_strip" atv:refpx="268.964" atv:refpy="667.353" transform="matrix(0,1,-1,0,0,0)" width="15" x="659.853" height="15"/>
+ <svg id="id_319" y="886.47" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="283.963" atv:refpy="667.852" transform="matrix(0.3654,0,0,0.75,0,0)" width="52" x="751.167" height="8"/>
+ <svg id="id_320" y="797.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_T_strip" atv:refpx="263.964" atv:refpy="805.353" width="15" x="256.464" height="15"/>
+ <svg id="id_321" y="1075.803" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="278.963" atv:refpy="809.852" transform="matrix(0.3654,0,0,0.75,0,0)" width="52" x="737.482" height="8"/>
+ <svg id="id_322" y="-815.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="286.964" atv:refpy="810.853" transform="matrix(1,0,0,-1,0,0)" width="5" x="284.464" height="10"/>
+ <svg id="id_323" y="766.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="288.964" atv:refpy="771.853" width="5" x="286.464" height="10"/>
+ <svg id="id_324" y="252.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_T_strip" atv:refpx="259.964" atv:refpy="641.353" transform="matrix(0,-1,1,0,0,0)" width="15" x="-648.853" height="15"/>
+ <g id="id_326" atv:refpx="406.465" atv:refpy="633.849" transform="matrix(1,0,0,1,166.4648,-5.1475)">
+  <svg id="id_327" y="848" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="232.5" atv:refpy="638.999" transform="matrix(0.1731,0,0,0.75,0,0)" width="52" x="1317.158" height="8"/>
+  <svg id="id_328" y="633" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="227.5" atv:refpy="638" transform="matrix(-1,0,0,1,0,0)" width="5" x="-230" height="10"/>
+  <svg id="id_329" y="-2307.113" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="245.497" atv:refpy="638.507" transform="matrix(-0.19,0,0,-0.28,0,0)" width="100" x="-1342.105" height="49.97"/>
+ </g>
+ <g id="id_330" atv:refpx="406.465" atv:refpy="514.849" transform="matrix(1,0,0,1,166.4648,-124.1475)">
+  <svg id="id_331" y="848" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="232.5" atv:refpy="638.999" transform="matrix(0.1731,0,0,0.75,0,0)" width="52" x="1317.158" height="8"/>
+  <svg id="id_332" y="633" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="227.5" atv:refpy="638" transform="matrix(-1,0,0,1,0,0)" width="5" x="-230" height="10"/>
+  <svg id="id_333" y="-2307.113" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="245.497" atv:refpy="638.507" transform="matrix(-0.19,0,0,-0.28,0,0)" width="100" x="-1342.105" height="49.97"/>
+ </g>
+ <svg id="id_334" y="421.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_T_strip" atv:refpx="428.964" atv:refpy="515.353" transform="matrix(0,-1,1,0,0,0)" width="15" x="-522.853" height="15"/>
+ <svg id="id_335" y="421.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_T_strip" atv:refpx="428.964" atv:refpy="634.353" transform="matrix(0,-1,1,0,0,0)" width="15" x="-641.853" height="15"/>
+ <svg id="id_336" y="-356.619" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="264.464" atv:refpy="653.736" transform="matrix(0,0.3654,-0.75,0,0,0)" width="52" x="1759.378" height="8"/>
+ <svg id="id_337" y="-356.619" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="264.464" atv:refpy="603.008" transform="matrix(0,1.4808,-0.75,0,0,0)" width="52" x="377.407" height="8"/>
+ <svg id="id_339" y="-356.619" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="264.464" atv:refpy="536.457" transform="matrix(0,0.2885,-0.75,0,0,0)" width="52" x="1829.602" height="8"/>
+ <svg id="id_338" y="-969.487" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="263.971" atv:refpy="549.36" transform="matrix(0,0.19,-0.28,0,0,0)" width="100" x="2841.329" height="49.97"/>
+ <svg id="id_341" y="803.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="325.964" atv:refpy="808.853" transform="matrix(-1,0,0,1,0,0)" width="5" x="-328.464" height="10"/>
+ <rect id="id_342" y="805.853" fill="#999999" atv:refpx="320.964" atv:refpy="809.853" stroke="#dedede" x="319.464" width="3" height="8" stroke-width="0"/>
+ <svg id="id_343" y="258.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="263.464" atv:refpy="528.353" transform="matrix(0,-1,1,0,0,0)" width="5" x="-530.853" height="10"/>
+ <svg id="id_344" y="1834.676" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Mixer" atv:refpx="144.979" atv:refpy="666.404" transform="matrix(0.4092,0,0,0.3493,0,0)" width="46.431" x="331.048" height="145.993"/>
+ <svg id="id_348" y="529.208" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Mixer" atv:refpx="160.964" atv:refpy="210.353" transform="matrix(0.4092,0,0,0.3493,0,0)" width="46.431" x="370.149" height="145.993"/>
+ <svg id="id_349" y="763.963" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Mixer" atv:refpx="162.964" atv:refpy="292.353" transform="matrix(0.4092,0,0,0.3493,0,0)" width="46.431" x="375.036" height="145.993"/>
+ <svg id="id_350" y="1027.347" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Mixer" atv:refpx="162.964" atv:refpy="384.353" transform="matrix(0.4092,0,0,0.3493,0,0)" width="46.431" x="375.036" height="145.993"/>
+ <svg id="id_351" y="1293.594" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Mixer" atv:refpx="164.964" atv:refpy="477.353" transform="matrix(0.4092,0,0,0.3493,0,0)" width="46.431" x="379.924" height="145.993"/>
+ <svg id="id_355" y="-229.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Pipe" atv:refpx="506.464" atv:refpy="-77.198" transform="matrix(0,4.7308,-1,0,0,0)" width="52" x="38.863" height="8"/>
+ <svg id="id_357" y="-229.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Pipe" atv:refpx="506.464" atv:refpy="75.884" transform="matrix(0,2.9037,-1,0,0,0)" width="52" x="147.003" height="8"/>
+ <svg id="id_359" y="-230.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Flange" atv:refpx="506.464" atv:refpy="236.853" transform="matrix(0,1,-1,0,0,0)" width="26" x="593.853" height="10"/>
+ <svg id="id_360" y="-830.202" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Valve" atv:refpx="506.063" atv:refpy="217.353" transform="matrix(0,0.19,-0.28,0,0,0)" width="100" x="3041.33" height="49.97"/>
+ <svg id="id_362" y="-165.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Flange" atv:refpx="458.464" atv:refpy="-209.147" transform="matrix(-1,0,0,-1,0,0)" width="26" x="-190.464" height="10"/>
+ <svg id="id_364" y="200.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Pipe_T" atv:refpx="495.974" atv:refpy="-209.092" transform="matrix(0,-1,1,0,0,0)" width="50.11" x="-185.963" height="29.02"/>
+ <svg id="id_365" y="549.081" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Valve" atv:refpx="475.464" atv:refpy="-209.147" transform="matrix(0.18,0,0,0.2802,0,0)" width="100" x="1030.36" height="49.97"/>
+ <svg id="id_366" y="-229.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Pipe" atv:refpx="225.464" atv:refpy="131.361" transform="matrix(0,0.4423,-1,0,0,0)" width="52" x="270.987" height="8"/>
+ <svg id="id_363" y="-830.201" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Valve" atv:refpx="506.063" atv:refpy="-258.647" transform="matrix(0,0.19,-0.28,0,0,0)" width="100" x="536.066" height="49.97"/>
+ <svg id="id_367" y="-673.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="290.964" atv:refpy="668.853" transform="matrix(1,0,0,-1,0,0)" width="5" x="288.464" height="10"/>
+ <rect id="id_368" y="663.853" fill="#999999" atv:refpx="295.964" atv:refpy="667.853" stroke="#dedede" x="294.464" width="3" height="8" stroke-width="0"/>
+ <svg id="id_369" y="766.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="616.964" atv:refpy="771.853" width="5" x="614.464" height="10"/>
+ <g id="id_376" atv:refpx="675.965" atv:refpy="619.854" transform="matrix(1,0,0,1,328.4648,9.8526)">
+  <svg id="id_377" y="604" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="398.5" atv:refpy="609.5" width="5" x="396" height="10"/>
+  <svg id="id_378" y="809.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="388.057" atv:refpy="609.999" transform="matrix(0.3461,0,0,0.75,0,0)" width="52" x="1094.986" height="8"/>
+  <svg id="id_379" y="-1430.239" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="365.565" atv:refpy="764.134" transform="matrix(-0.6667,0,0,-0.4286,0,0)" width="54" x="-566.974" height="14"/>
+  <svg id="id_380" y="-616" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="297" atv:refpy="611" transform="matrix(-1,0,0,-1,0,0)" width="5" x="-299" height="10"/>
+  <svg id="id_381" y="809.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="335.039" atv:refpy="609.999" transform="matrix(0.2308,0,0,0.75,0,0)" width="52" x="1425.667" height="8"/>
+  <svg id="id_382" y="809.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="307.057" atv:refpy="609.999" transform="matrix(0.3461,0,0,0.75,0,0)" width="52" x="861.023" height="8"/>
+  <svg id="id_383" y="2152.034" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="323.5" atv:refpy="609.92" transform="matrix(0.19,0,0,0.2802,0,0)" width="100" x="1652.632" height="49.97"/>
+  <svg id="id_384" y="604" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="338.5" atv:refpy="609.5" width="5" x="336" height="10"/>
+  <rect id="id_385" y="606" fill="#999999" atv:refpx="343.5" atv:refpy="610" stroke="#dedede" x="342" width="3" height="8" stroke-width="0"/>
+  <svg id="id_386" y="-616" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="382" atv:refpy="611" transform="matrix(-1,0,0,-1,0,0)" width="5" x="-384" height="10"/>
+  <rect id="id_387" y="606" fill="#999999" atv:refpx="376.5" atv:refpy="610" stroke="#dedede" x="375" width="3" height="8" stroke-width="0"/>
+ </g>
+ <g id="id_388" atv:refpx="673.965" atv:refpy="486.854" transform="matrix(1,0,0,1,326.4648,-123.1474)">
+  <svg id="id_389" y="604" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="398.5" atv:refpy="609.5" width="5" x="396" height="10"/>
+  <svg id="id_390" y="809.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="388.057" atv:refpy="609.999" transform="matrix(0.3461,0,0,0.75,0,0)" width="52" x="1094.986" height="8"/>
+  <svg id="id_391" y="-1430.239" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="365.565" atv:refpy="764.134" transform="matrix(-0.6667,0,0,-0.4286,0,0)" width="54" x="-566.974" height="14"/>
+  <svg id="id_392" y="-616" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="297" atv:refpy="611" transform="matrix(-1,0,0,-1,0,0)" width="5" x="-299" height="10"/>
+  <svg id="id_393" y="809.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="335.039" atv:refpy="609.999" transform="matrix(0.2308,0,0,0.75,0,0)" width="52" x="1425.667" height="8"/>
+  <svg id="id_394" y="809.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="307.057" atv:refpy="609.999" transform="matrix(0.3461,0,0,0.75,0,0)" width="52" x="861.023" height="8"/>
+  <svg id="id_395" y="2152.034" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="323.5" atv:refpy="609.92" transform="matrix(0.19,0,0,0.2802,0,0)" width="100" x="1652.632" height="49.97"/>
+  <svg id="id_396" y="604" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="338.5" atv:refpy="609.5" width="5" x="336" height="10"/>
+  <rect id="id_397" y="606" fill="#999999" atv:refpx="343.5" atv:refpy="610" stroke="#dedede" x="342" width="3" height="8" stroke-width="0"/>
+  <svg id="id_398" y="-616" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="382" atv:refpy="611" transform="matrix(-1,0,0,-1,0,0)" width="5" x="-384" height="10"/>
+  <rect id="id_399" y="606" fill="#999999" atv:refpx="376.5" atv:refpy="610" stroke="#dedede" x="375" width="3" height="8" stroke-width="0"/>
+ </g>
+ <g id="id_400" atv:refpx="674.965" atv:refpy="223.854" transform="matrix(1,0,0,1,327.4648,-386.1474)">
+  <svg id="id_401" y="604" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="398.5" atv:refpy="609.5" width="5" x="396" height="10"/>
+  <svg id="id_402" y="809.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="388.057" atv:refpy="609.999" transform="matrix(0.3461,0,0,0.75,0,0)" width="52" x="1094.986" height="8"/>
+  <svg id="id_403" y="-1430.239" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="365.565" atv:refpy="764.134" transform="matrix(-0.6667,0,0,-0.4286,0,0)" width="54" x="-566.974" height="14"/>
+  <svg id="id_404" y="-616" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="297" atv:refpy="611" transform="matrix(-1,0,0,-1,0,0)" width="5" x="-299" height="10"/>
+  <svg id="id_405" y="809.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="335.039" atv:refpy="609.999" transform="matrix(0.2308,0,0,0.75,0,0)" width="52" x="1425.667" height="8"/>
+  <svg id="id_406" y="809.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="307.057" atv:refpy="609.999" transform="matrix(0.3461,0,0,0.75,0,0)" width="52" x="861.023" height="8"/>
+  <svg id="id_407" y="2152.034" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="323.5" atv:refpy="609.92" transform="matrix(0.19,0,0,0.2802,0,0)" width="100" x="1652.632" height="49.97"/>
+  <svg id="id_408" y="604" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="338.5" atv:refpy="609.5" width="5" x="336" height="10"/>
+  <rect id="id_409" y="606" fill="#999999" atv:refpx="343.5" atv:refpy="610" stroke="#dedede" x="342" width="3" height="8" stroke-width="0"/>
+  <svg id="id_410" y="-616" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="382" atv:refpy="611" transform="matrix(-1,0,0,-1,0,0)" width="5" x="-384" height="10"/>
+  <rect id="id_411" y="606" fill="#999999" atv:refpx="376.5" atv:refpy="610" stroke="#dedede" x="375" width="3" height="8" stroke-width="0"/>
+ </g>
+ <rect id="id_413" y="699.853" fill="#999999" atv:refpx="723.964" atv:refpy="703.853" stroke="#dedede" x="722.464" width="3" height="8" stroke-width="0"/>
+ <rect id="id_414" y="768.853" fill="#999999" atv:refpx="722.964" atv:refpy="772.853" stroke="#dedede" x="721.464" width="3" height="8" stroke-width="0"/>
+ <svg id="id_415" y="1026.47" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="729.963" atv:refpy="772.852" transform="matrix(0.1731,0,0,0.75,0,0)" width="52" x="4190.761" height="8"/>
+ <svg id="id_412" y="2733.235" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="742.964" atv:refpy="772.853" transform="matrix(0.19,0,0,0.2802,0,0)" width="100" x="3860.341" height="49.97"/>
+ <svg id="id_416" y="-778.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="727.964" atv:refpy="773.853" transform="matrix(-1,0,0,-1,0,0)" width="5" x="-730.464" height="10"/>
+ <svg id="id_417" y="760.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe_T_strip" atv:refpx="514.964" atv:refpy="768.353" width="15" x="507.464" height="15"/>
+ <svg id="id_41" y="-1850.482" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="515.136" atv:refpy="755.603" transform="matrix(0,0.195,-0.2824,0,0,0)" width="100" x="3824.886" height="49.97"/>
+ <svg id="id_419" y="760.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe_T_strip" atv:refpx="455.964" atv:refpy="768.353" width="15" x="448.464" height="15"/>
+ <svg id="id_23" y="-612.618" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="456.464" atv:refpy="778.849" transform="matrix(0,0.191,-0.75,0,0,0)" width="52" x="4051.399" height="8"/>
+ <svg id="id_236" y="-1655.201" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="455.918" atv:refpy="790.353" transform="matrix(0,0.19,-0.28,0,0,0)" width="100" x="4109.752" height="49.97"/>
+ <svg id="id_237" y="-1655.201" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="455.918" atv:refpy="755.353" transform="matrix(0,0.19,-0.28,0,0,0)" width="100" x="3925.541" height="49.97"/>
+ <svg id="id_420" y="1026.47" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="560.961" atv:refpy="772.852" transform="matrix(0.25,0,0,0.75,0,0)" width="52" x="2217.859" height="8"/>
+ <svg id="id_421" y="760.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe_T_strip" atv:refpx="568.964" atv:refpy="768.353" width="15" x="561.464" height="15"/>
+ <svg id="id_69" y="-763.286" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="569.464" atv:refpy="777.352" transform="matrix(0,0.1345,-0.75,0,0,0)" width="52" x="5752.038" height="8"/>
+ <svg id="id_235" y="-2058.773" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="568.918" atv:refpy="789.353" transform="matrix(0,0.19,-0.28,0,0,0)" width="100" x="4104.488" height="49.97"/>
+ <svg id="id_234" y="-2058.773" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="568.918" atv:refpy="754.353" transform="matrix(0,0.19,-0.28,0,0,0)" width="100" x="3920.278" height="49.97"/>
+ <svg id="id_422" y="1026.47" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="761.959" atv:refpy="772.852" transform="matrix(0.3654,0,0,0.75,0,0)" width="52" x="2059.377" height="8"/>
+ <svg id="id_425" y="760.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe_T_strip" atv:refpx="776.964" atv:refpy="768.353" width="15" x="769.464" height="15"/>
+ <svg id="id_423" y="-2778.245" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="777.136" atv:refpy="754.603" transform="matrix(0,0.195,-0.2824,0,0,0)" width="100" x="3819.756" height="49.97"/>
+ <svg id="id_426" y="2733.235" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="817.964" atv:refpy="772.853" transform="matrix(0.19,0,0,0.2802,0,0)" width="100" x="4255.078" height="49.97"/>
+ <svg id="id_427" y="1026.47" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="795.957" atv:refpy="772.852" transform="matrix(0.4808,0,0,0.75,0,0)" width="52" x="1629.606" height="8"/>
+ <svg id="id_428" y="1026.47" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="848.452" atv:refpy="772.852" transform="matrix(0.8077,0,0,0.75,0,0)" width="52" x="1024.48" height="8"/>
+ <svg id="id_429" y="760.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe_T_strip" atv:refpx="875.964" atv:refpy="768.353" width="15" x="868.464" height="15"/>
+ <svg id="id_424" y="-3128.811" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="876.136" atv:refpy="753.603" transform="matrix(0,0.195,-0.2824,0,0,0)" width="100" x="3814.628" height="49.97"/>
+ <svg id="id_430" y="-1040.619" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="777.465" atv:refpy="738.742" transform="matrix(0,0.2692,-0.75,0,0,0)" width="52" x="2718.336" height="8"/>
+ <svg id="id_431" y="771.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="776.464" atv:refpy="730.353" transform="matrix(0,-1,1,0,0,0)" width="5" x="-732.853" height="10"/>
+ <svg id="id_432" y="-1172.619" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="876.465" atv:refpy="649.898" transform="matrix(0,3.5577,-0.75,0,0,0)" width="52" x="157.083" height="8"/>
+ <svg id="id_433" y="870.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="875.464" atv:refpy="557.353" transform="matrix(0,-1,1,0,0,0)" width="5" x="-559.853" height="10"/>
+ <g id="id_434" atv:refpx="827.461" atv:refpy="587.853" transform="matrix(1,0,0,1,315.4647,173.8525)">
+  <svg id="id_435" y="-705.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="526" atv:refpy="396.045" transform="matrix(0,0.4038,-0.75,0,0,0)" width="52" x="950.876" height="8"/>
+  <svg id="id_436" y="-705.333" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="526" atv:refpy="432.618" transform="matrix(0,0.4231,-0.75,0,0,0)" width="52" x="992.72" height="8"/>
+  <svg id="id_437" y="-1903.542" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="525.507" atv:refpy="414.507" transform="matrix(0,0.19,-0.28,0,0,0)" width="100" x="2131.579" height="49.97"/>
+  <svg id="id_438" y="-532" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="527" atv:refpy="384.5" transform="matrix(0,-1,-1,0,0,0)" width="5" x="-387" height="10"/>
+  <svg id="id_439" y="-668" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="498.001" atv:refpy="397.046" transform="matrix(0,0.3846,-0.75,0,0,0)" width="52" x="1006.341" height="8"/>
+  <svg id="id_440" y="-1788.639" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Valve" atv:refpx="497.672" atv:refpy="415.75" transform="matrix(0,0.195,-0.2824,0,0,0)" width="100" x="2082.051" height="49.97"/>
+  <svg id="id_441" y="491.999" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="496.999" atv:refpy="384.5" transform="matrix(0,-1,1,0,0,0)" width="5" x="-387" height="10"/>
+  <svg id="id_442" y="-668" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe" atv:refpx="498" atv:refpy="434.951" transform="matrix(0,0.3462,-0.75,0,0,0)" width="52" x="1230.503" height="8"/>
+  <svg id="id_443" y="-504" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Flange_strip" atv:refpx="498.5" atv:refpy="443.5" transform="matrix(0,1,-1,0,0,0)" width="5" x="441" height="10"/>
+  <svg id="id_444" y="-532" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="527" atv:refpy="443.5" transform="matrix(0,1,-1,0,0,0)" width="5" x="441" height="10"/>
+ </g>
+ <svg id="id_447" y="934.47" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="-917.647" atv:refpy="640.852" transform="matrix(0.5385,0,0,0.75,0,0)" width="52" x="1354.723" height="8"/>
+ <svg id="id_448" y="697.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="194.964" atv:refpy="639.853" transform="matrix(-1,0,0,1,0,0)" width="5" x="-731.464" height="10"/>
+ <svg id="id_449" y="-2538.729" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="232.961" atv:refpy="640.36" transform="matrix(-0.19,0,0,-0.28,0,0)" width="100" x="-4086.657" height="49.97"/>
+ <svg id="id_450" y="691.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_T_strip" atv:refpx="745.964" atv:refpy="699.353" width="15" x="738.464" height="15"/>
+ <svg id="id_451" y="-758.464" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe_T_strip" atv:refpx="750.964" atv:refpy="642.353" transform="matrix(0,1,-1,0,0,0)" width="15" x="634.853" height="15"/>
+ <svg id="id_452" y="-999.286" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="228.464" atv:refpy="-776.462" transform="matrix(0,0.8847,-0.75,0,0,0)" width="52" x="731.131" height="8"/>
+ <svg id="id_454" y="853.137" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="839.965" atv:refpy="642.852" transform="matrix(3.2885,0,0,0.75,0,0)" width="52" x="229.428" height="8"/>
+ <svg id="id_456" y="853.137" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Pipe" atv:refpx="945.464" atv:refpy="642.852" transform="matrix(0.2308,0,0,0.75,0,0)" width="52" x="4071.011" height="8"/>
+ <svg id="id_455" y="-2320.872" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Valve" atv:refpx="931.961" atv:refpy="642.36" transform="matrix(-0.19,0,0,-0.28,0,0)" width="100" x="-4955.078" height="49.97"/>
+ <svg id="id_457" y="-648.853" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip" atv:refpx="950.964" atv:refpy="643.853" transform="matrix(1,0,0,-1,0,0)" width="5" x="948.464" height="10"/>
+ <svg id="id_458" y="-1506.89" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Rail" atv:refpx="974.028" atv:refpy="642.986" transform="matrix(-0.6667,0,0,-0.4286,0,0)" width="54" x="-1487.125" height="14"/>
+ <rect id="id_459" y="651.853" fill="#999999" atv:refpx="957.964" atv:refpy="655.853" stroke="#dedede" x="956.464" width="3" height="8" stroke-width="0"/>
+</svg>

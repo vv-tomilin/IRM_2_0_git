@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Крестовина в сборе
+NodeClass: ObjectType
+BrowseName: 1:Крестовина в сборе
+DisplayName: en|Крестовина в сборе
+Description: en|Крестовина в сборе
+IsAbstract: false

@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="1016" version="1.2" width="1790" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="true" height="10" width="10"/>
+ </metadata>
+ <svg atv:refpx="295" atv:refpy="492.5" height="965" id="id_2" width="330" x="130" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.GtiChart" y="10">
+  <atv:argument name="chartname" value="skpb1"/>
+  <atv:argument name="ChartBase1" value="AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook"/>
+  <atv:argument name="ChartBase2" value="AGENT.OBJECTS.IVE50.Drawworks.LoadOnBit"/>
+  <atv:argument name="ChartTitle1" value="Вес на крюке"/>
+  <atv:argument name="Unit1" value="тс"/>
+  <atv:argument name="ChartTitle2" value="Нагрузка на долото"/>
+  <atv:argument name="Unit2" value="тс"/>
+  <atv:argument name="MinVal1" value="0"/>
+  <atv:argument name="MaxVal1" value="200"/>
+  <atv:argument name="MinVal2" value="0"/>
+  <atv:argument name="MaxVal2" value="50"/>
+ </svg>
+ <svg atv:refpx="625" atv:refpy="492.5" height="965" id="id_3" width="330" x="460" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.GtiChart" y="10">
+  <atv:argument name="chartname" value="skpb2"/>
+  <atv:argument name="ChartBase1" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition"/>
+  <atv:argument name="ChartBase2" value="AGENT.OBJECTS.IVE50.Drawworks.HookSpeed"/>
+  <atv:argument name="ChartTitle1" value="Положение крюкоблока"/>
+  <atv:argument name="Unit1" value="м"/>
+  <atv:argument name="ChartTitle2" value="Скорость крюкоблока"/>
+  <atv:argument name="Unit2" value="м/с"/>
+  <atv:argument name="MinVal1" value="0"/>
+  <atv:argument name="MaxVal1" value="50"/>
+  <atv:argument name="MinVal2" value="0"/>
+  <atv:argument name="MaxVal2" value="100"/>
+  <atv:argument name="Color1" value="#55aaff"/>
+  <atv:argument name="Color2" value="#ffff7f"/>
+ </svg>
+ <svg atv:refpx="955" atv:refpy="492.5" height="965" id="id_4" width="330" x="790" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.GtiChart" y="10">
+  <atv:argument name="chartname" value="skpb3"/>
+  <atv:argument name="ChartBase1" value="AGENT.OBJECTS.IVE50.TDS.TDSTorque"/>
+  <atv:argument name="ChartBase2" value="AGENT.OBJECTS.IVE50.TDS.TDSSpeed"/>
+  <atv:argument name="ChartTitle1" value="Момент СВП"/>
+  <atv:argument name="Unit1" value="кН.м"/>
+  <atv:argument name="ChartTitle2" value="Обороты СВП"/>
+  <atv:argument name="Unit2" value="об/мин"/>
+  <atv:argument name="MinVal1" value="-5"/>
+  <atv:argument name="MaxVal1" value="20"/>
+  <atv:argument name="MinVal2" value="0"/>
+  <atv:argument name="MaxVal2" value="200"/>
+  <atv:argument name="Color1" value="#aaff00"/>
+  <atv:argument name="Color2" value="#ffaa7f"/>
+ </svg>
+ <svg atv:refpx="1285" atv:refpy="492.5" height="965" id="id_5" width="330" x="1120" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.GtiChart" y="10">
+  <atv:argument name="chartname" value="skpb4"/>
+  <atv:argument name="ChartBase1" value="AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold"/>
+  <atv:argument name="ChartBase2" value="AGENT.OBJECTS.IVE50.Well.DrillSpeed"/>
+  <atv:argument name="ChartTitle1" value="Давление в манифольде"/>
+  <atv:argument name="Unit1" value="атм"/>
+  <atv:argument name="ChartTitle2" value="Скорость проходки"/>
+  <atv:argument name="Unit2" value="м/ч"/>
+  <atv:argument name="MinVal1" value="0"/>
+  <atv:argument name="MaxVal1" value="40"/>
+  <atv:argument name="MinVal2" value="0"/>
+  <atv:argument name="MaxVal2" value="50"/>
+  <atv:argument name="Color1" value="#aaaaff"/>
+  <atv:argument name="Color2" value="#55ff7f"/>
+ </svg>
+ <svg atv:refpx="1615" atv:refpy="492.5" height="965" id="id_6" width="330" x="1450" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.GtiChart" y="10">
+  <atv:argument name="chartname" value="skpb5"/>
+  <atv:argument name="ChartBase1" value="AGENT.OBJECTS.IVE50.Mud.FlowInput"/>
+  <atv:argument name="ChartBase2" value="AGENT.OBJECTS.IVE50.Mud.FlowOutput"/>
+  <atv:argument name="ChartTitle1" value="Расход на входе"/>
+  <atv:argument name="Unit1" value="л/с"/>
+  <atv:argument name="ChartTitle2" value="Поток на выходе"/>
+  <atv:argument name="Unit2" value="л/с"/>
+  <atv:argument name="MinVal1" value="0"/>
+  <atv:argument name="MaxVal1" value="100"/>
+  <atv:argument name="MinVal2" value="0"/>
+  <atv:argument name="MaxVal2" value="100"/>
+  <atv:argument name="Color1" value="#ffaa7f"/>
+  <atv:argument name="Color2" value="#ff557f"/>
+ </svg>
+ <svg atv:refpx="680.5" atv:refpy="1000" height="30" id="id_7" width="141" x="610" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.tool.toolbar" y="985"/>
+ <svg atv:refpx="690" atv:refpy="1000" height="30" id="id_8" width="80" x="650" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.tool.button_back" y="985"/>
+ <svg atv:refpx="780" atv:refpy="1000" height="30" id="id_9" width="80" x="740" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.tool.button_forward" y="985"/>
+ <svg atv:refpx="910" atv:refpy="1000" height="30" id="id_11" width="160" x="830" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.tool.picker_date_start" y="985"/>
+ <svg atv:refpx="1080" atv:refpy="1000" height="30" id="id_12" width="160" x="1000" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.tool.set_range" y="985"/>
+ <svg atv:refpx="1185" atv:refpy="1000" height="30" id="id_10" width="30" x="1170" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.tool.toggle_bound" y="985"/>
+ <svg atv:refpx="70" atv:refpy="492.5" height="965" id="id_0" width="120" x="10" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.mAxis" y="10"/>
+</svg>

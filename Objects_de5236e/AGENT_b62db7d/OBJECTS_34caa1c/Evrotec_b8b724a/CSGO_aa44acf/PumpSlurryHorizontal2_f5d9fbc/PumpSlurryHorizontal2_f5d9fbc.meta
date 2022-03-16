@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.CSGO.PumpSlurryHorizontal2
+NodeClass: Variable
+BrowseName: 1:PumpSlurryHorizontal2
+DisplayName: en|PumpSlurryHorizontal2
+Description: en|PumpSlurryHorizontal2
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

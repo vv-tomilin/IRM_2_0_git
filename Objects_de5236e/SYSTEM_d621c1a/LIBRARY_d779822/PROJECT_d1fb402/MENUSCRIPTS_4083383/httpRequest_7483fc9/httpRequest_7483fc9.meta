@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.MENUSCRIPTS.httpRequest
+NodeClass: Variable
+BrowseName: 1:httpRequest
+DisplayName: en|httpRequest
+Description: en|httpRequest
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

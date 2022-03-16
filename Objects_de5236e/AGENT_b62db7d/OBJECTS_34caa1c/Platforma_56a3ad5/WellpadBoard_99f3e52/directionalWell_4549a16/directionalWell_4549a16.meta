@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Platforma.WellpadBoard.directionalWell
+NodeClass: Variable
+BrowseName: 1:directionalWell
+DisplayName: en|directionalWell
+Description: en|directionalWell
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

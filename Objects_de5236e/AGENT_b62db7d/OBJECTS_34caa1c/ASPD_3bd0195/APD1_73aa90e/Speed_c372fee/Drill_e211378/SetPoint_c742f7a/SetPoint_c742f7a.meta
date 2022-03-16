@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.APD1.Speed.Drill.SetPoint
+NodeClass: Variable
+BrowseName: 1:SetPoint
+DisplayName: en|SetPoint
+Description: en|SetPoint
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

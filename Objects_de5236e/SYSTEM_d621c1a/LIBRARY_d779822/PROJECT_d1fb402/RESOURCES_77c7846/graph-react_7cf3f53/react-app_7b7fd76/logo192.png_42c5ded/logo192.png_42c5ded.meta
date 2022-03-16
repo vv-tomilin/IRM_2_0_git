@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/graph-react/react-app/logo192.png
+NodeClass: Variable
+BrowseName: 1:logo192.png
+DisplayName: en|logo192.png
+Description: en|logo192.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

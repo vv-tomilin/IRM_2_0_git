@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.MaxMin.ValMin.RunVal
+NodeClass: Variable
+BrowseName: 1:RunVal
+DisplayName: en|RunVal
+Description: en|RunVal
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

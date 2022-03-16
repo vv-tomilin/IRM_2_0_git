@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" height="102" xmlns="http://www.w3.org/2000/svg" width="40">
+ <defs/>
+ <desc>Bar scale with 10 units.</desc>
+ <title>Bar scale - 10</title>
+ <metadata>
+  <atv:parameter desc="scale color" behavior="optional" defaultvalue="#ffffff" name="scaleColor" substitute="$SCALECOLOR$" valuetype="color"/>
+  <atv:gridconfig gridstyle="lines" height="20" enabled="false" width="20"/>
+  <atv:snapconfig height="10" enabled="true" width="10"/>
+ </metadata>
+ <rect fill="$SCALECOLOR$" stroke-width="1" stroke="none" atv:refpx="6.875" height="2" x="2.75" y="60" id="id_2" atv:refpy="179.8" width="8.25"/>
+ <rect fill="$SCALECOLOR$" stroke-width="2" stroke="none" atv:refpx="15.525" height="2" x="2.75" y="30" id="id_4" atv:refpy="-159" width="8.25"/>
+ <rect fill="$SCALECOLOR$" stroke-width="1" stroke="none" atv:refpx="-24.887" height="2" x="2.75" y="80" id="id_5" atv:refpy="-10.6" width="8.25"/>
+ <rect fill="$SCALECOLOR$" stroke-width="2" stroke="none" atv:refpx="-10.256" height="2" x="2.75" y="10" id="id_7" atv:refpy="-433" width="8.25"/>
+ <rect fill="$SCALECOLOR$" stroke-width="1" stroke="none" atv:refpx="-50.462" height="2" x="2.75" y="70" id="id_8" atv:refpy="-318.4" width="8.25"/>
+ <rect fill="$SCALECOLOR$" stroke-width="1" stroke="none" atv:refpx="-59.125" height="2" x="2.75" y="90" id="id_9" atv:refpy="-396.8" width="8.25"/>
+ <rect fill="$SCALECOLOR$" stroke-width="2" stroke="none" atv:refpx="-16.65" height="2" x="2.75" y="20" id="id_10" atv:refpy="-453" width="8.25"/>
+ <rect fill="$SCALECOLOR$" stroke-width="2" stroke="none" atv:refpx="-50.875" height="2" x="2.75" y="40" id="id_11" atv:refpy="-391.8" width="8.25"/>
+ <rect fill="$SCALECOLOR$" stroke-width="2" stroke="none" atv:refpx="-5.775" height="2" x="0" y="100" id="id_3" atv:refpy="57" width="11"/>
+ <rect fill="$SCALECOLOR$" stroke-width="2" stroke="none" atv:refpx="17.45" height="2" x="0" y="0" id="id_6" atv:refpy="-163" width="11"/>
+ <rect fill="$SCALECOLOR$" stroke-width="2" stroke="none" atv:refpx="-47.85" height="2" x="0" y="50" id="id_12" atv:refpy="-266" width="11"/>
+ <rect fill="$SCALECOLOR$" stroke-width="1" stroke="none" atv:refpx="33.125" height="2" x="29" y="60" id="id_21" atv:refpy="179.8" width="8.25"/>
+ <rect fill="$SCALECOLOR$" stroke-width="2" stroke="none" atv:refpx="41.775" height="2" x="29" y="30" id="id_22" atv:refpy="-159" width="8.25"/>
+ <rect fill="$SCALECOLOR$" stroke-width="1" stroke="none" atv:refpx="1.363" height="2" x="29" y="80" id="id_23" atv:refpy="-10.6" width="8.25"/>
+ <rect fill="$SCALECOLOR$" stroke-width="2" stroke="none" atv:refpx="15.994" height="2" x="29" y="10" id="id_24" atv:refpy="-433" width="8.25"/>
+ <rect fill="$SCALECOLOR$" stroke-width="1" stroke="none" atv:refpx="-24.212" height="2" x="29" y="70" id="id_25" atv:refpy="-318.4" width="8.25"/>
+ <rect fill="$SCALECOLOR$" stroke-width="1" stroke="none" atv:refpx="-32.875" height="2" x="29" y="90" id="id_26" atv:refpy="-396.8" width="8.25"/>
+ <rect fill="$SCALECOLOR$" stroke-width="2" stroke="none" atv:refpx="9.6" height="2" x="29" y="20" id="id_27" atv:refpy="-453" width="8.25"/>
+ <rect fill="$SCALECOLOR$" stroke-width="2" stroke="none" atv:refpx="-24.625" height="2" x="29" y="40" id="id_34" atv:refpy="-391.8" width="8.25"/>
+ <rect fill="$SCALECOLOR$" stroke-width="2" stroke="none" atv:refpx="23.225" height="2" x="29" y="100" id="id_35" atv:refpy="57" width="11"/>
+ <rect fill="$SCALECOLOR$" stroke-width="2" stroke="none" atv:refpx="46.45" height="2" x="29" y="0" id="id_36" atv:refpy="-163" width="11"/>
+ <rect fill="$SCALECOLOR$" stroke-width="2" stroke="none" atv:refpx="-18.85" height="2" x="29" y="50" id="id_37" atv:refpy="-266" width="11"/>
+</svg>

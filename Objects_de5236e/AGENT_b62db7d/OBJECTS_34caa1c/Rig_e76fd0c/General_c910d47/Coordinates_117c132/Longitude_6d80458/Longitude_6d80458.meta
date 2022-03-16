@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Rig.General.Coordinates.Longitude
+NodeClass: Variable
+BrowseName: 1:Longitude
+DisplayName: en|Longitude
+Description: en|Longitude
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

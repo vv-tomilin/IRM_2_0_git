@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nodeName" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="startT" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="endT" type="string" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var filter = {}
+filter.type=["v:1"]
+filter.timestamp = ["n:>=" + startT + "<" + endT];	
+filter.address=[nodeName]
+var NodeData = history.query(filter)
+NodeData=NodeData.result
+var result = NodeData.map(function(e){
+	var elem=[]
+	elem.push(e.servertimestamp)
+	elem.push(e.value)
+	return(elem)
+})
+return result]]></code>
+</script>

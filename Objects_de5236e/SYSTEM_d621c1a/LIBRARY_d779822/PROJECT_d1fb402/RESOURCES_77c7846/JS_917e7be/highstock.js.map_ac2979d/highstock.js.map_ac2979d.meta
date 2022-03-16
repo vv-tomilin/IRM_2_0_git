@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/highstock.js.map
+NodeClass: Variable
+BrowseName: 1:highstock.js.map
+DisplayName: en|highstock.js.map
+Description: en|highstock.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/indicators/accumulation-distribution.js.map
+NodeClass: Variable
+BrowseName: 1:accumulation-distribution.js.map
+DisplayName: en|accumulation-distribution.js.map
+Description: en|accumulation-distribution.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

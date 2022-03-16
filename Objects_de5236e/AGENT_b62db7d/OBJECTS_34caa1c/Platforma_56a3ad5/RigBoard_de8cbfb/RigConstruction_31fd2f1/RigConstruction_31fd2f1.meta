@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Platforma.RigBoard.RigConstruction
+NodeClass: Variable
+BrowseName: 1:RigConstruction
+DisplayName: en|RigConstruction
+Description: en|RigConstruction
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

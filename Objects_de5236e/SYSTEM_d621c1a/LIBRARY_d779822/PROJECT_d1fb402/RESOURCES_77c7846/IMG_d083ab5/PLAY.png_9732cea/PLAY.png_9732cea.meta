@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/IMG/PLAY.png
+NodeClass: Variable
+BrowseName: 1:PLAY.png
+DisplayName: en|PLAY.png
+Description: en|PLAY.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

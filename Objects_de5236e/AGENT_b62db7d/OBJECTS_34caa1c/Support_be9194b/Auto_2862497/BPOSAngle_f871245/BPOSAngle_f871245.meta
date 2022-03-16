@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.BPOSAngle
+NodeClass: Variable
+BrowseName: 1:BPOSAngle
+DisplayName: en|BPOSAngle
+Description: en|BPOSAngle
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.RawData

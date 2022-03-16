@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.AutoHistory.FixVarValue
+NodeClass: Variable
+BrowseName: 1:FixVarValue
+DisplayName: en|FixVarValue
+Description: en|FixVarValue
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

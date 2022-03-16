@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nodeWeightOnHook" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook"/>
+  <code><![CDATA[//var nodePress = new UaNode(nodePressureStr);
+console.log('WeightOnHook = ', new UaNode(nodeWeightOnHook).value);
+
+var retObj = call("AutoHistory.MinQuad", {nodeStr: nodeWeightOnHook, countSec: 40});
+			
+var nodeLoadOnBit = new UaNode("AGENT.OBJECTS.Support.Auto.LoadOnBitCalc"); 
+nodeLoadOnBit.assign({value: retObj.diffVal});
+
+console.log('LoadOnBit = ',retObj.diffVal);
+/*
+if(retObj.angle < -3 && retObj.diffVal > nodeDiffPressure.value){
+	return true;
+}
+
+return false;
+*/]]></code>
+</script>

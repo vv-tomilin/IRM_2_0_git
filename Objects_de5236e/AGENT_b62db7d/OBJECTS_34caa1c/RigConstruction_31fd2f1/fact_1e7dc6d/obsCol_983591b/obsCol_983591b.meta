@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.RigConstruction.fact.obsCol
+NodeClass: Variable
+BrowseName: 1:obsCol
+DisplayName: en|obsCol
+Description: en|obsCol
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

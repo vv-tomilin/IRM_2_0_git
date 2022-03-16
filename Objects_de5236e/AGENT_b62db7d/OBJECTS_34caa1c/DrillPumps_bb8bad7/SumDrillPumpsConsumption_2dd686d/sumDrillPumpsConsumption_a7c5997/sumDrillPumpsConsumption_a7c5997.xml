@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="drillPumpConsumption1" type="node.value" trigger="true" relative="false" value="AGENT.OBJECTS.DrillPumps.DrillPump1.DrillPumpConsumption"/>
+  <parameter name="drillPumpConsumption2" type="node.value" trigger="true" relative="false" value="AGENT.OBJECTS.DrillPumps.DrillPump2.DrillPumpConsumption"/>
+  <code><![CDATA[var node = new UaNode("AGENT.OBJECTS.DrillPumps.SumDrillPumpsConsumption");
+node.value = drillPumpConsumption1 + drillPumpConsumption2
+]]></code>
+</script>

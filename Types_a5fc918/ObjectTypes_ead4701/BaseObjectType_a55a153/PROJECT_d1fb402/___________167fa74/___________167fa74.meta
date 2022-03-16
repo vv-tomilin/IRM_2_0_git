@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Контргайка
+NodeClass: ObjectType
+BrowseName: 1:Контргайка
+DisplayName: en|Контргайка
+Description: en|Контргайка
+IsAbstract: false

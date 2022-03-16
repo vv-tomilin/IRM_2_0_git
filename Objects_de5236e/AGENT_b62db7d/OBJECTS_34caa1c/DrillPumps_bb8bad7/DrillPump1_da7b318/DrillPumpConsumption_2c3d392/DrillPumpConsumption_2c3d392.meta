@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.DrillPumps.DrillPump1.DrillPumpConsumption
+NodeClass: Variable
+BrowseName: 1:DrillPumpConsumption
+DisplayName: en|DrillPumpConsumption
+Description: en|Расход бурового насоса
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Rig.RigInfo
+NodeClass: Object
+BrowseName: 1:RigInfo
+DisplayName: en|RigInfo
+Description: en|RigInfo
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

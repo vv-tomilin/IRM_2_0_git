@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" version="1.2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" width="15" xmlns="http://www.w3.org/2000/svg" height="15" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="false" gridstyle="lines" width="20" height="20"/>
+  <atv:snapconfig enabled="false" width="10" height="10"/>
+ </metadata>
+ <g id="id_1" atv:refpx="7.987" atv:refpy="4.153" transform="matrix(0.7211,0,0,0.723,-10.7625,-6.6928)">
+  <g id="layer1" atv:refpx="26" atv:refpy="15" transform="translate(-32.883929,-45.24375)">
+   <g id="shape" atv:refpx="58.884" atv:refpy="60.244" transform="matrix(0.52,0,0,0.51724138,32.883929,45.24375)">
+    <polygon id="polygon43" points="58,42 58,0 42,0 42,42 0,42 0,58 100,58 100,42 " fill="#52a6f9" atv:refpx="50" atv:refpy="29"/>
+   </g>
+   <polygon id="polygon46" points="62.523,67.485 62.523,45.243 55.243,45.243 55.243,67.485 32.883,67.485 32.883,74.726 84.883,74.726 84.883,67.485" fill="#3185d8" atv:refpx="58.884" atv:refpy="59.985"/>
+   <g id="light" atv:refpx="58.884" atv:refpy="59.468" transform="matrix(0.52,0,0,0.51724138,32.883929,45.24375)">
+    <polygon id="polygon49" points="55,45 55,0 45,0 45,45 0,45 0,55 100,55 100,45 " fill="#6db6ff" atv:refpx="50" atv:refpy="27.5"/>
+   </g>
+   <g id="hlight" atv:refpx="58.884" atv:refpy="59.08" transform="matrix(0.52,0,0,0.51724138,32.883929,45.24375)">
+    <polygon id="polygon52" points="53.5,46.5 53.5,0 46.5,0 46.5,46.5 0,46.5 0,53.5 100,53.5 100,46.5 " fill="#a5d2ff" atv:refpx="50" atv:refpy="26.75"/>
+   </g>
+  </g>
+ </g>
+</svg>

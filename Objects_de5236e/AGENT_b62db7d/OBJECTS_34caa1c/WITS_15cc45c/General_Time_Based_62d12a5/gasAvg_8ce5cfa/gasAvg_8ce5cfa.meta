@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.General_Time_Based.gasAvg
+NodeClass: Variable
+BrowseName: 1:gasAvg
+DisplayName: en|gasAvg
+Description: en|gasAvg
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

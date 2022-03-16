@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="400" version="1.2" width="200" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient gradientUnits="objectBoundingBox" id="linear_1" x1="0.472727" x2="0.618182" y1="0.418182" y2="0.545455">
+   <stop offset="0" stop-color="#ff0004"/>
+   <stop offset="1" stop-color="#ff0004" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient gradientUnits="objectBoundingBox" id="linear_2" x1="0.52381" x2="0.542857" y1="0.571429" y2="0.571429">
+   <stop offset="0" stop-color="#ff0004"/>
+   <stop offset="1" stop-color="#ff0004" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient gradientUnits="objectBoundingBox" id="linear_3" x1="0.52381" x2="0.542857" y1="0.571429" y2="0.571429">
+   <stop offset="0" stop-color="#ff0004"/>
+   <stop offset="1" stop-color="#ff0004" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient gradientUnits="objectBoundingBox" id="linear_4" x1="0" x2="1" y1="0" y2="1">
+   <stop offset="0" stop-color="#36404a"/>
+   <stop offset="1" stop-color="#36404a" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient gradientUnits="objectBoundingBox" id="linear_0" x1="0.472727" x2="0.618182" y1="0.418182" y2="0.545455">
+   <stop offset="0" stop-color="#ff0004"/>
+   <stop offset="1" stop-color="#ff0004" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient gradientUnits="objectBoundingBox" id="linear_5" x1="0.479452" x2="0.520548" y1="0.506849" y2="0.506849">
+   <stop offset="0" stop-color="#00024a"/>
+   <stop offset="1" stop-color="#00024a" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient gradientUnits="objectBoundingBox" id="linear_6" x1="0.479452" x2="0.520548" y1="0.506849" y2="0.506849">
+   <stop offset="0" stop-color="#00024a"/>
+   <stop offset="1" stop-color="#00024a" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient gradientUnits="objectBoundingBox" id="linear_7" x1="0.479452" x2="0.520548" y1="0.506849" y2="0.506849">
+   <stop offset="0" stop-color="#00024a"/>
+   <stop offset="1" stop-color="#00024a" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient gradientUnits="objectBoundingBox" id="linear_9" x1="0.424658" x2="0.506849" y1="0.506849" y2="0.506849">
+   <stop offset="0" stop-color="#ff0c00"/>
+   <stop offset="1" stop-color="#ff0c00" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient gradientUnits="objectBoundingBox" id="linear_8" x1="0.421875" x2="0.53125" y1="0.453125" y2="0.453125">
+   <stop offset="0" stop-color="#fbff00"/>
+   <stop offset="1" stop-color="#fbff00" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient gradientUnits="objectBoundingBox" id="linear_10" x1="0.493151" x2="0.534247" y1="0.520548" y2="0.520548">
+   <stop offset="0" stop-color="#2977ff"/>
+   <stop offset="1" stop-color="#2977ff" stop-opacity="0"/>
+  </linearGradient>
+ </defs>
+ <metadata>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Max Value" name="MaxValue" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="180" desc="Need Angle" name="Angle" valuetype="number"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Максимальное ограничение " name="MaxBar" substitute="" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Минимальное ограничение " name="MinBar" substitute="" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="false" desc="Видимость ограничений" name="Visability" substitute="" valuetype="bool"/>
+  <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <circle atv:refpx="200" atv:refpy="200" cx="200" cy="200" fill="#36404a" id="id_2" r="199" stroke="#0000ff" stroke-width="2"/>
+ <circle atv:refpx="200" atv:refpy="200" cx="200" cy="200" fill="url(#linear_9)" id="id_5" r="199" stroke="#1f1f1f" stroke-width="2"/>
+ <circle atv:refpx="200" atv:refpy="200" cx="200" cy="200" fill="url(#linear_8)" id="id_4" r="199" stroke="#1f1f1f" stroke-width="2"/>
+ <circle atv:refpx="200" atv:refpy="200" cx="200" cy="200" fill="url(#linear_10)" id="id_3" r="199" stroke="#1f1f1f" stroke-width="2"/>
+ <rect atv:refpx="201" atv:refpy="200" fill="#fff524" height="400" id="id_0" stroke="#fff529" stroke-width="0" visibility="hidden" width="6" x="198" y="0"/>
+ <rect atv:refpx="201" atv:refpy="197.763" fill="#fff524" height="400" id="id_1" stroke="#fff529" stroke-width="0" visibility="hidden" width="6" x="198" y="-2.237"/>
+ <circle atv:refpx="202.237" atv:refpy="199.254" cx="200.237" cy="200.254" fill="#1f1f1f" id="id_6" r="190" stroke="#1f1f1f" stroke-width="1.99"/>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[//* FOR = SISTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Test.test_bar (03.03.22)
+
+var number = webMI.query["base"];
+//var max =webMI.query["MaxValue"].value;
+var need_angle = parseInt(webMI.query["Angle"]);
+var yellowBar = document.getElementById("id_0")
+var MinYellowBar = document.getElementById("id_1")
+var blue_circle = document.getElementById("id_3")
+var red_circle = document.getElementById("id_5")
+var yellow_circle = document.getElementById("id_4")
+red_circle.style.WebkitTransformOrigin = 'right center'
+red_circle.style.WebkitTransform = 'rotate(-180deg)'
+blue_circle.style.WebkitTransformOrigin = 'right center'
+blue_circle.style.WebkitTransform = 'rotate(-180deg)'
+yellow_circle.style.WebkitTransformOrigin = 'right center'
+yellow_circle.style.WebkitTransform = 'rotate(-180deg)'
+//////////////////////////Задание максимумов из настроек 
+
+//console.log('-----------------------',max)
+///////////////////////////
+
+//колонка с колонкой минимума
+/*
+var bool = webMI.query["Visability"];
+if(bool=='true'){
+MinYellowBar.style.visibility = "visible"
+yellowBar.style.visibility = "visible"
+}else if(bool=='false'){
+MinYellowBar.style.visibility = "hidden"
+yellowBar.style.visibility = "hidden"
+}
+
+*//*
+
+MinYellowBar.style.WebkitTransformOrigin = 'right center'
+
+var barMin = webMI.query["MinBar"];
+webMI.data.subscribe(barMin, function(e) {
+  var value = e.value;
+  MinYellowBar.style.transition = '0.5s ease'
+  var str="rotate(-"+(180 - value/max*need_angle)+"deg)"
+  MinYellowBar.style.WebkitTransform = str
+
+	
+});*/
+////////
+/////Участок с колоной максимумома 
+/*yellowBar.style.WebkitTransformOrigin = 'right center'
+
+var bar = webMI.query["MaxBar"].value;
+webMI.data.subscribe(bar, function(e) {
+  var value = e.value;
+  yellowBar.style.transition = '0.5s ease'
+  var str="rotate(-"+(180 - value/max*need_angle)+"deg)"
+  yellowBar.style.WebkitTransform = str
+
+	
+});*/
+///////
+
+webMI.data.subscribe(number, function (e) {
+
+  if (e.address == "AGENT.OBJECTS.IVE50.Well.DrillSpeed") {
+
+    webMI.data.read("AGENT.OBJECTS.ASPD.APD1.Running", function (apdRun) {
+      var isApdRunning = apdRun.value;
+
+      if (!isApdRunning) {
+        e.value = 0;
+      }
+    })
+  }
+
+  webMI.data.read(webMI.query['MaxValue'], function (f) {
+    var max = f.value
+    var min = 0;
+    //console.log('8=====D',max)
+    var restrict1 = max / 100 * 61;
+    var restrict3 = max / 100 * 81;
+    var value = e.value;
+    if (e.value > max) {
+      value = max;
+    }
+    if (e.value < min) {
+      value = min
+    }
+    red_circle.style.transition = '0.5s ease'
+    blue_circle.style.transition = '0.5s ease'
+    yellow_circle.style.transition = '0.5s ease'
+    var str = "rotate(-" + (180 - value / max * need_angle) + "deg)"
+    //blue_circle.style.WebkitTransform = str
+    if (value < restrict1) {
+      blue_circle.style.WebkitTransform = str
+      yellow_circle.style.WebkitTransform = str
+      red_circle.style.WebkitTransform = str
+    }
+    else if (value < restrict3) {
+      var bluestr = "rotate(-" + (180 - restrict1 / max * need_angle) + "deg)"
+      blue_circle.style.WebkitTransform = bluestr
+      yellow_circle.style.WebkitTransform = str
+      red_circle.style.WebkitTransform = str
+    }
+    else {
+      var bluestr = "rotate(-" + (180 - restrict1 / max * need_angle) + "deg)"
+      var yellowstr = "rotate(-" + (180 - restrict3 / max * need_angle) + "deg)"
+      blue_circle.style.WebkitTransform = bluestr
+      yellow_circle.style.WebkitTransform = yellowstr
+      red_circle.style.WebkitTransform = str
+    }
+  });
+});
+
+]]></script>
+</svg>

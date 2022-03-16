@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Variables.DragOverpull.DiffEventsTimeout
+NodeClass: Variable
+BrowseName: 1:DiffEventsTimeout
+DisplayName: en|DiffEventsTimeout
+Description: en|DiffEventsTimeout
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

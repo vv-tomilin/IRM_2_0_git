@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IRM_VERSION
+NodeClass: Variable
+BrowseName: 1:IRM_VERSION
+DisplayName: en|IRM_VERSION
+Description: en|IRM_VERSION
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

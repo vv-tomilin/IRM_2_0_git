@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.MENUSCRIPTS.exportDataObjects
+NodeClass: Variable
+BrowseName: 1:exportDataObjects
+DisplayName: en|exportDataObjects
+Description: en|exportDataObjects
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

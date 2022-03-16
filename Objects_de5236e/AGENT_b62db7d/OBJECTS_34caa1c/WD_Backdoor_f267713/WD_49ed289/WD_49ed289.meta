@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WD_Backdoor.WD
+NodeClass: Variable
+BrowseName: 1:WD
+DisplayName: en|WD
+Description: en|WD
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

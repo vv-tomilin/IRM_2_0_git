@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.FlowInLimit
+NodeClass: Variable
+BrowseName: 1:FlowInLimit
+DisplayName: en|FlowInLimit
+Description: en|FlowInLimit
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

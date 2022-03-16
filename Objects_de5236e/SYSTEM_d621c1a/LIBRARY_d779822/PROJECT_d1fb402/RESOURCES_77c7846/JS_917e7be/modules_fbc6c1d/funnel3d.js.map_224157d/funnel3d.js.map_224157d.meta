@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/funnel3d.js.map
+NodeClass: Variable
+BrowseName: 1:funnel3d.js.map
+DisplayName: en|funnel3d.js.map
+Description: en|funnel3d.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

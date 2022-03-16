@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WRITE_CSV
+NodeClass: Variable
+BrowseName: 1:WRITE_CSV
+DisplayName: en|WRITE_CSV
+Description: en|WRITE_CSV
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

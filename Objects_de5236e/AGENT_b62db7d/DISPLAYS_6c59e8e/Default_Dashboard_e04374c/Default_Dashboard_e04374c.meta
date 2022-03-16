@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.Default_Dashboard
+NodeClass: Variable
+BrowseName: 1:Default_Dashboard
+DisplayName: en|Default_Dashboard
+Description: en|Default_Dashboard
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

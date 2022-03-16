@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Platforma.OilfieldBoard.SPO
+NodeClass: Variable
+BrowseName: 1:SPO
+DisplayName: en|SPO
+Description: en|SPO
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

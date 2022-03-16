@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Settings_param.DiffPressureParam
+NodeClass: Object
+BrowseName: 1:DiffPressureParam
+DisplayName: en|DiffPressureParam
+Description: en|DiffPressureParam
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

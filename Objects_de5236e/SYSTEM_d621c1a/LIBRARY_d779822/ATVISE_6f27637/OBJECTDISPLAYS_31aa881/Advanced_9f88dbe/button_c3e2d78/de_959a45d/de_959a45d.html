@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Beschreibung</h1>
+<p>Dieses Steuerelement ist eine einfache Schaltfl&auml;che, die den Trigger "clicked" aktiviert. &Uuml;ber diesen Trigger kann ein Simple Dynamic zu dieser Schaltfl&auml;che hinzugef&uuml;gt
+werden, das auf den Trigger "clicked" reagiert und einen neuen Trigger aktiviert. Dieser neue Trigger kann dann von anderen Elementen verwendet werden.</p>
+<h1>Parameter</h1>
+<p>Dieses Steuerelement hat die folgenden allgemeinen Parameter:</p>
+<ul>
+  <li><span class="parameter">Beschriftung Zeile 1</span>: Text der ersten Zeile der Schaltfl&auml;che, wenn "Sichtbarkeit Beschriftung" auf "visible" eingestellt ist</li>
+  <li><span class="parameter">Beschriftung Zeile 2</span>: Text der zweiten Zeile der Schaltfl&auml;che, wenn "Sichtbarkeit Beschriftung" auf "visible" eingestellt ist. Ist dieser leer, so wird Beschriftung Zeile 1 horizontal zentriert angezeigt.</li>
+</ul>
+Schrift:<br>
+<ul>
+  <li><span class="parameter">Schriftart</span>: Schriftart, die auf die Beschriftung angewendet wird (Standard: Arial)</li>
+  <li><span class="parameter">Gr&ouml;&szlig;e</span>: Schriftgr&ouml;&szlig;e, die auf die Beschriftung angewendet wird (Standard: 12)</li>
+  <li><span class="parameter">Farbe</span>: Farbe, die auf die Beschriftung angewendet wird (Standard: Globaler Parameter <i>atvFontColor</i>)</li>
+</ul>
+Darstellung:<br>
+<ul>
+  <li><span class="parameter">Sichtbarkeit Beschriftung</span>: Bei Einstellung auf "visible" wird der &uuml;ber "Beschriftung" definierte Text angezeigt; bei Einstellung auf "visible" sollte "Sichtbarkeit Symbol" auf "hidden" eingestellt sein (Standard: visible).</li>
+  <li><span class="parameter">Sichtbarkeit Symbol</span>: Bei Einstellung auf "visible" wird das &uuml;ber "Symbol" definierte Symbol angezeigt; bei Einstellung auf "visible" sollte "Sichtbarkeit Beschriftung" auf "hidden" eingestellt sein (Standard: hidden).</li>
+  <li><span class="parameter">Symbol</span>: zu verwendendes Symbol, wenn "Sichtbarkeit Symbol" auf "visible" eingestellt ist; weitere Symbole k&ouml;nnen ausgew&auml;hlt werden aus "Object Displays (ATVISE)/Symbols/20x20 (Standard: pr&uuml;fen)</li>
+  <li><span class="parameter">Symbolfarbe</span>: Farbe des zu verwendenden Symbols (Standard: Globaler Parameter <i>atvSymbolColor</i>)</li>
+  <li><span class="parameter">Symbolskalierung</span>: Skalierung des Symbols in Prozent (Standard: 100)</li>
+  <li><span class="parameter">F&uuml;llfarbe</span>: F&uuml;llfarbe der Schaltfl&auml;che (Standard: Globaler Parameter <i>atvFillColor</i>)</li>
+  <li><span class="parameter">F&uuml;llfarbe wenn inaktiv</span>: F&uuml;llfarbe der nicht aktiven Schaltfl&auml;che&nbsp;(Standard: dunkelgrau)</li>
+  <li><span class="parameter">Konturfarbe gedr&uuml;ckt</span>: Farbe der Kontur, die bei Bet&auml;tigung der Schaltfl&auml;che eingestellt wird (Standard: wei&szlig;)</li>
+  <li><span class="parameter">Fokus Konturfarbe</span>: Farbe der Kontur, die beim Fokus der Schaltfl&auml;che eingestellt wird (Standard: wei&szlig;)</li>
+  <li><span class="parameter">Rahmenfarbe</span>: Farbe des Rahmens um die Schaltfl&auml;che (Standard: Globaler Parameter <i>atvBorderColor</i>)</li>
+  <li><span class="parameter">Farbe Zusatzrahmen</span>: Farbe des Zusatzrahmens innerhalb des Buttons (Standard: none)</li>
+</ul>
+Sicherheit:
+<ul>
+  <li><span class="parameter">Ben&ouml;tigtes Recht</span>: Der Benutzer muss &uuml;ber dieses Recht verf&uuml;gen, um diese Schaltfl&auml;che aktivieren, d.&nbsp;h. bet&auml;tigen zu k&ouml;nnen.</li>
+  <li><span class="parameter">Aktivierungsadresse</span>: Stimmt der Wert dieser Adresse mit dem "Aktivierungswert" &uuml;berein, ist die Schaltfl&auml;che aktiv, so dass sie bet&auml;tigt werden kann.</li>
+  <li><span class="parameter">Aktivierungswert</span>: Wert, von dem die Schaltfl&auml;che aktiviert wird</li>
+</ul>
+<div style="margin-left: 40px;">HINWEIS: Die Aktivierung einer Schaltfl&auml;che kann nur &uuml;ber das ben&ouml;tigte Recht konfiguriert werden oder nur &uuml;ber die Aktivierungsadresse und den Aktivierungswert oder &uuml;ber beide. Werden beide Einstellungen vorgenommen, muss der Benutzer das ben&ouml;tigte Recht besitzen und der Wert der "Aktivierungsadresse" muss mit dem "Aktivierungswert" identisch sein, andernfalls wird die Schaltfl&auml;che nicht aktiviert.</div>
+<br>
+Konsistenz:<br>
+<ul>
+  <li><span class="parameter">Gruppe</span>: Name der Konsistenzgruppe</li>
+  <li><span class="parameter">Funktion</span>: Funktion, die bei Klick ausgef&uuml;hrt werden soll, sofern eine Gruppe angegeben ist (Standard: write) </li>
+</ul>
+Optionen:<br>
+<ul>
+  <li><span class="parameter">Tab-Index</span>: Bestimmt die Reihenfolge, in der mit der Tabulatortaste zwischen den einzelnen Object Displays gewechselt werden kann</li>
+  <li><span class="parameter">Tooltip</span>: Zeigt eine Tooltip Box mit dem eingegebenen Text an (Standard HTML-Elemente k&ouml;nnen auch eingegeben werden)</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <code><![CDATA[/**
+ * This script is used for handling the user rights set by display paraemters and the server based access control rights.
+ * The in_out_value object display's right handling works slightly different and does not use this script.
+ */
+
+/**
+ * DECLARATION SECTION
+ */
+
+var right = null;
+var isActivationNodeSet = false;
+var nodeIsActive = false;
+var hasRight = false;
+var accessControlRights = {};
+accessControlRights["baseWrite"] = true;
+accessControlRights["activeNodeRead"] = true;
+
+/**
+ * FUNCTION SECTION
+ */
+
+function rightsHandling(rightsHandlingProperties) {
+
+	right = rightsHandlingProperties.right;
+	var checkBaseNodeWriteRight = rightsHandlingProperties.checkBaseNodeWriteRight;
+	isActivationNodeSet = rightsHandlingProperties.isActivationNodeSet;
+	var notifierConfiguration = rightsHandlingProperties.notifierConfiguration;
+	var setActiveTrigger = rightsHandlingProperties.setActiveTrigger;
+	var callHandleStatus = rightsHandlingProperties.handleStatus;
+	
+	if (right != null) {
+
+		if (right.search(/SYSTEM\.SECURITY\.RIGHTS\./) != -1) {
+			right = right.substring(23, right.length); //remove "prefix" SYSTEM.SECURITY.RIGHTS.
+		}
+	
+		if (right != "") {
+			webMI.addEvent(webMI.data, "clientvariableschange", function(e) {
+				hasRight = false;
+				if ("username" in e && e.username != "") {
+					hasRight = webMI.hasRight(right);
+				}
+				setActivation();
+			});
+		}
+
+	}
+
+	if (isActivationNodeSet) {
+		webMI.data.subscribe(activeNode, function(e) {
+			var nodeActiveValue = e.value;
+			if (typeof nodeActiveValue == "boolean") {
+				nodeIsActive = (String(nodeActiveValue) == activeValue);
+			} else if (typeof nodeActiveValue == "number") {
+				try {
+					var temp = parseFloat(activeValue);
+					nodeIsActive = (nodeActiveValue == temp);
+				} catch(e) {
+					nodeIsActive = false;
+				}
+			} else {
+				nodeIsActive = (nodeActiveValue == activeValue);
+			}
+			if (callHandleStatus && typeof e.status != "undefined" && typeof handleStatus === "function")
+				handleStatus(e.status);
+			setActivation();
+		});
+	} else {
+		setActivation();
+	}
+
+	if (setActiveTrigger) {	
+		webMI.trigger.connect("com.atvise.setActive", function(e) {
+			if (typeof isSetActive != "undefined") {
+				isSetActive = e.value;
+				setActivation();
+			} else if (e.value) {
+				setActivation();
+			} else {
+				setActivation(true);
+			}
+		});
+	}
+	
+	accessControlHandling(checkBaseNodeWriteRight, isActivationNodeSet, notifierConfiguration);
+
+}
+
+function accessControlHandling(checkBaseNodeWriteRight, isActivationNodeSet, notifierConfiguration) {
+	if (!webMI.getAccessControlSupport())
+		return false;
+
+	var accessControlManager;
+
+	if (checkBaseNodeWriteRight || isActivationNodeSet) accessControlManager = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Access Control Manager");
+
+	if (notifierConfiguration && notifierConfiguration.id)
+		webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Access Control Element Notifier", notifierConfiguration);
+
+	updateAccessControlRights();
+
+	function updateAccessControlRights() {
+		if (checkBaseNodeWriteRight) updateActiveNodeAndBaseRights();
+		else if (isActivationNodeSet) updateActiveNodeRightsOnly();
+	}
+	
+	function updateActiveNodeRightsOnly() {
+		accessControlManager.getRights(webMI.query["activeNode"],"read", function(e) {
+			accessControlRights["activeNodeRead"] = e.result;
+			setActivation();
+		});
+	}
+	
+	function updateActiveNodeAndBaseRights() {
+		accessControlManager.getRights(webMI.query["base"],"write", function(e) {
+			accessControlRights["baseWrite"] = e.result;
+			if (isActivationNodeSet && accessControlRights["baseWrite"] == true) {
+				accessControlManager.getRights(webMI.query["activeNode"],"read", function(e) {
+					accessControlRights["activeNodeRead"] = e.result;
+					setActivation();
+				});
+			} else {
+				setActivation();
+			}
+		});
+	}
+
+	webMI.trigger.connect("com.atvise.access_control_update", function(e) {
+		if (e.notification === null)
+			return;
+		updateAccessControlRights();
+	});
+}
+
+function hasReadRightFromDisplayParameters(forceDeActivate) {
+	if (typeof forceDeActivate !== "undefined" && forceDeActivate){
+		active = false;
+	} else if (right != "") {
+		if (isActivationNodeSet && accessControlRights["activeNodeRead"]) {
+			active = (nodeIsActive && hasRight);
+		} else {
+			active = hasRight;
+		}
+	} else {
+		if (isActivationNodeSet && accessControlRights["activeNodeRead"]) {
+			active = nodeIsActive;
+		} else {
+			active = true;
+		}
+	}
+	if (typeof isSetActive != "undefined") active = active && isSetActive;
+	return active;
+}
+
+function setActivation(forceDeActivate) {
+	if (hasReadRightFromDisplayParameters(forceDeActivate) && accessControlRights["baseWrite"]) {
+		setActiveLayout();
+	} else {
+		setInactiveLayout();
+	}
+}]]></code>
+</script>

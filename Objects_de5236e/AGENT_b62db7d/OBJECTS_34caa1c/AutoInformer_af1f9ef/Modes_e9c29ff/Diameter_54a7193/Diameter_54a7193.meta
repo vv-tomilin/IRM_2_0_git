@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AutoInformer.Modes.Diameter
+NodeClass: Variable
+BrowseName: 1:Diameter
+DisplayName: en|Diameter
+Description: en|Diameter
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.alarm_status
+NodeClass: Variable
+BrowseName: 1:alarm_status
+DisplayName: en|alarm_status
+Description: en|alarm_status
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

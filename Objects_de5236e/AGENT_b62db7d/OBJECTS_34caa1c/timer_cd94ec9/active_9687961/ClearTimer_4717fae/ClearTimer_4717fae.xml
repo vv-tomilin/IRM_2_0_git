@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="cl" type="startup" trigger="true" relative="false" value=""/>
+  <code><![CDATA[var tact = new UaNode('AGENT.OBJECTS.timer.active');
+if(tact.value == 1)
+	tact.assign({value:0});]]></code>
+</script>

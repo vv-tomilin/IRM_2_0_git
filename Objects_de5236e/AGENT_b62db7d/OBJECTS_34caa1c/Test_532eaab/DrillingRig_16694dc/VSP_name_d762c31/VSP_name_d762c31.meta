@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.DrillingRig.VSP_name
+NodeClass: Variable
+BrowseName: 1:VSP_name
+DisplayName: en|VSP_name
+Description: en|VSP_name
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

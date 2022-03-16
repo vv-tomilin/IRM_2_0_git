@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.ProfileComplications.Profile
+NodeClass: Variable
+BrowseName: 1:Profile
+DisplayName: en|Profile
+Description: en|Profile
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

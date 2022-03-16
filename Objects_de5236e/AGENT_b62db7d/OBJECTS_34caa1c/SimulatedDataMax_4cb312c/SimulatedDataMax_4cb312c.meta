@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.SimulatedDataMax
+NodeClass: Object
+BrowseName: 1:SimulatedDataMax
+DisplayName: en|SimulatedDataMax
+Description: en|SimulatedDataMax
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

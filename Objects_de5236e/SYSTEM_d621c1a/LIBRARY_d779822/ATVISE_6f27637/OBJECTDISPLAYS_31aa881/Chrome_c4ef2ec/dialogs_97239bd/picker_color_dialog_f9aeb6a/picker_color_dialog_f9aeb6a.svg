@@ -1,0 +1,372 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" version="1.2" height="360" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs>
+  <linearGradient y2="1.65455" gradientUnits="objectBoundingBox" id="linear_0" y1="0.181818" x2="1.50909" x1="0.581818">
+   <stop stop-color="#c2c2c2" offset="0"/>
+   <stop stop-color="#000000" offset="1" stop-opacity="0.9882352941176471"/>
+  </linearGradient>
+ </defs>
+ <desc>Simple display that can be used as dialog for choosing colors.</desc>
+ <title>Color picker dialog</title>
+ <metadata>
+  <atv:parameter desc="name" behavior="mandatory" name="name" valuetype="string"/>
+  <atv:parameter behavior="optional" name="color" valuetype="color"/>
+  <atv:gridconfig width="20" enabled="true" height="20" gridstyle="lines"/>
+  <atv:snapconfig width="10" enabled="true" height="10"/>
+ </metadata>
+ <text x="4.5" y="239.5" font-family="Arial" id="id_4" atv:refpx="9.5" atv:refpy="235" font-weight="bold" font-size="12" fill="#000000">H:</text>
+ <text x="4.5" y="269.5" font-family="Arial" id="id_5" atv:refpx="9.5" atv:refpy="265" font-weight="bold" font-size="12" fill="#000000">S:</text>
+ <text x="4.5" y="299.5" font-family="Arial" id="id_6" atv:refpx="9" atv:refpy="295" font-weight="bold" font-size="12" fill="#000000">V:</text>
+ <text x="104.5" y="239.5" font-family="Arial" id="id_10" atv:refpx="109.5" atv:refpy="235" font-weight="bold" font-size="12" fill="#000000">R:</text>
+ <text x="104.5" y="269.5" font-family="Arial" id="id_11" atv:refpx="109.5" atv:refpy="265" font-weight="bold" font-size="12" fill="#000000">G:</text>
+ <text x="104.5" y="299.5" font-family="Arial" id="id_12" atv:refpx="109.5" atv:refpy="295" font-weight="bold" font-size="12" fill="#000000">B:</text>
+ <circle r="69.882" stroke-width="4" cy="74.882" id="id_32" stroke="none" atv:refpx="100.882" atv:refpy="74.882" cx="100.882" fill="#000000"/>
+ <path fill-opacity="1" d="M84.125,138.467C72.467,135.343 63.254,130.023 54.719,121.489L101.104,75.103Z" stroke-width="1" id="id_0" stroke="#000000" atv:refpx="77.912" atv:refpy="106.786" atv:dynamic="true" fill="rgb(2, 71, 254)" style="fill-rule:evenodd"/>
+ <path fill-opacity="1" d="M118.082,138.467C106.423,141.591 95.784,141.591 84.125,138.467L101.104,75.103Z" stroke-width="1" id="id_3" stroke="#000000" atv:refpx="101.104" atv:refpy="107.957" atv:dynamic="true" fill="rgb(3, 145, 206)" style="fill-rule:evenodd"/>
+ <path fill-opacity="1" d="M147.489,121.489C138.953,130.023 129.74,135.343 118.082,138.467L101.104,75.103Z" stroke-width="1" id="id_16" stroke="#000000" atv:refpx="124.297" atv:refpy="106.786" atv:dynamic="true" fill="rgb(102, 176, 50)" style="fill-rule:evenodd"/>
+ <path fill-opacity="1" d="M164.467,92.082C161.343,103.74 156.023,112.954 147.489,121.489L101.104,75.103Z" stroke-width="1" id="id_20" stroke="#000000" atv:refpx="132.786" atv:refpy="98.297" atv:dynamic="true" fill="rgb(208, 234, 43)" style="fill-rule:evenodd"/>
+ <path fill-opacity="1" d="M164.467,58.126C167.591,69.784 167.591,80.423 164.467,92.082L101.104,75.103Z" stroke-width="1" id="id_21" stroke="#000000" atv:refpx="133.957" atv:refpy="75.104" atv:dynamic="true" fill="rgb(254, 254, 51)" style="fill-rule:evenodd"/>
+ <path fill-opacity="1" d="M147.489,28.719C156.023,37.253 161.343,46.467 164.467,58.126L101.104,75.103Z" stroke-width="1" id="id_22" stroke="#000000" atv:refpx="132.786" atv:refpy="51.912" atv:dynamic="true" fill="rgb(250, 188, 2)" style="fill-rule:evenodd"/>
+ <path fill-opacity="1" d="M118.082,11.741C129.74,14.865 138.953,20.184 147.489,28.719L101.104,75.103Z" stroke-width="1" id="id_23" stroke="#000000" atv:refpx="124.297" atv:refpy="43.423" atv:dynamic="true" fill="rgb(251, 153, 2)" style="fill-rule:evenodd"/>
+ <path fill-opacity="1" d="M84.125,11.74C95.784,8.617 106.423,8.617 118.082,11.74L101.104,75.103Z" stroke-width="1" id="id_24" stroke="#000000" atv:refpx="101.104" atv:refpy="42.252" atv:dynamic="true" fill="rgb(253, 83, 8)" style="fill-rule:evenodd"/>
+ <path fill-opacity="1" d="M54.719,121.489C46.184,112.954 40.864,103.74 37.741,92.082L101.104,75.103Z" stroke-width="1" id="id_25" stroke="#000000" atv:refpx="69.423" atv:refpy="98.297" atv:dynamic="true" fill="rgb(61, 1, 164)" style="fill-rule:evenodd"/>
+ <path fill-opacity="1" d="M37.741,92.082C34.616,80.423 34.616,69.784 37.741,58.126L101.104,75.103Z" stroke-width="1" id="id_26" stroke="#000000" atv:refpx="68.252" atv:refpy="75.104" atv:dynamic="true" fill="rgb(134, 1, 175)" style="fill-rule:evenodd"/>
+ <path fill-opacity="1" d="M54.719,28.719C63.254,20.184 72.467,14.865 84.125,11.741L101.104,75.103Z" stroke-width="1" id="id_27" stroke="#000000" atv:refpx="77.912" atv:refpy="43.423" atv:dynamic="true" fill="rgb(254, 39, 18)" style="fill-rule:evenodd"/>
+ <path fill-opacity="1" d="M37.741,58.126C40.864,46.467 46.184,37.253 54.719,28.719L101.104,75.103Z" stroke-width="1" id="id_28" stroke="#000000" atv:refpx="69.423" atv:refpy="51.912" atv:dynamic="true" fill="rgb(167, 25, 75)" style="fill-rule:evenodd"/>
+ <path d="M141.458,75.103C141.458,97.38 123.38,115.458 101.103,115.458C78.828,115.458 60.748,97.38 60.748,75.103C60.748,52.827 78.828,34.749 101.103,34.749C123.38,34.749 141.458,52.827 141.458,75.103" stroke-width="2" id="id_29" stroke="#000000" atv:refpx="-2.576" atv:refpy="-6.749" fill="#000000" style="fill-rule:evenodd"/>
+ <path d="M141.458,75.103C141.458,97.38 123.38,115.458 101.103,115.458C78.828,115.458 60.748,97.38 60.748,75.103C60.748,52.828 78.828,34.749 101.103,34.749C123.38,34.749 141.458,52.828 141.458,75.103" stroke-width="2" id="preview" stroke="#000000" atv:refpx="101.104" atv:refpy="75.104" fill="#ffffff" style="fill-rule:evenodd"/>
+ <svg x="70" y="320" id="id_18" width="80" atv:refpx="110" atv:refpy="335" height="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.button" atv:dynamic="true">
+  <atv:argument value="T{Ok}" name="label"/>
+  <atv:argument value="8" name="tabIndex"/>
+ </svg>
+ <text x="44.5" y="186.5" font-family="Arial" id="id_19" atv:refpx="-22.072" atv:refpy="164.308" font-weight="bold" font-size="12" fill="#000000">Hex:</text>
+ <svg x="142.222" y="167" id="hexvalue" width="160" atv:refpx="125" atv:refpy="182" height="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.in_out_value" transform="matrix(0.5625,0,0,1,0,0)">
+  <atv:overwrite x="81.5" id="vd_unit" transform="matrix(1.7778,0,0,1,0,0)"/>
+  <atv:argument value="set value" name="mode"/>
+  <atv:argument value="hexColor" name="sourceType"/>
+  <atv:argument value="hexChange" name="trigger"/>
+  <atv:argument value="#EFEFEF" name="initValue"/>
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="1" name="tabIndex"/>
+  <atv:overwrite x="81.5" id="input_label" transform="matrix(1.7778,0,0,1,0,0)"/>
+  <atv:overwrite id="input_bg" width="82" transform="matrix(1.7778,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="84.5" transform="matrix(1.7778,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="89.5" transform="matrix(1.7778,0,0,1,0,0)"/>
+ </svg>
+ <svg x="45.714" y="220" id="hvalue" width="160" atv:refpx="55" atv:refpy="235" height="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.picker_value" transform="matrix(0.4375,0,0,1,0,0)">
+  <atv:argument value="2" name="tabIndex"/>
+  <atv:argument value="0" name="min"/>
+  <atv:argument value="360" name="max"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(2.2857,0,0,1,-205.7143,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(2.2857,0,0,1,-205.7143,0)"/>
+  <atv:overwrite x="35.5" id="input_label" transform="matrix(2.2857,0,0,1,0,0)"/>
+  <atv:overwrite id="input_bg" width="36" transform="matrix(2.2857,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="38" transform="matrix(2.2857,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="69.5" transform="matrix(2.2857,0,0,1,0,0)"/>
+ </svg>
+ <svg x="45.714" y="250" id="svalue" width="160" atv:refpx="55" atv:refpy="265" height="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.picker_value" transform="matrix(0.4375,0,0,1,0,0)">
+  <atv:argument value="3" name="tabIndex"/>
+  <atv:argument value="0" name="min"/>
+  <atv:argument value="100" name="max"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(2.2857,0,0,1,-205.7143,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(2.2857,0,0,1,-205.7143,0)"/>
+  <atv:overwrite x="35.5" id="input_label" transform="matrix(2.2857,0,0,1,0,0)"/>
+  <atv:overwrite id="input_bg" width="36" transform="matrix(2.2857,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="38" transform="matrix(2.2857,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="69.5" transform="matrix(2.2857,0,0,1,0,0)"/>
+ </svg>
+ <svg x="45.714" y="280" id="vvalue" width="160" atv:refpx="55" atv:refpy="295" height="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.picker_value" transform="matrix(0.4375,0,0,1,0,0)">
+  <atv:argument value="4" name="tabIndex"/>
+  <atv:argument value="0" name="min"/>
+  <atv:argument value="100" name="max"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(2.2857,0,0,1,-205.7143,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(2.2857,0,0,1,-205.7143,0)"/>
+  <atv:overwrite x="35.5" id="input_label" transform="matrix(2.2857,0,0,1,0,0)"/>
+  <atv:overwrite id="input_bg" width="36" transform="matrix(2.2857,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="38" transform="matrix(2.2857,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="69.5" transform="matrix(2.2857,0,0,1,0,0)"/>
+ </svg>
+ <svg x="274.286" y="220" id="rvalue" width="160" atv:refpx="155" atv:refpy="235" height="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.picker_value" transform="matrix(0.4375,0,0,1,0,0)">
+  <atv:argument value="5" name="tabIndex"/>
+  <atv:argument value="0" name="min"/>
+  <atv:argument value="255" name="max"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(2.2857,0,0,1,-205.7143,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(2.2857,0,0,1,-205.7143,0)"/>
+  <atv:overwrite x="35.5" id="input_label" transform="matrix(2.2857,0,0,1,0,0)"/>
+  <atv:overwrite id="input_bg" width="36" transform="matrix(2.2857,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="38" transform="matrix(2.2857,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="69.5" transform="matrix(2.2857,0,0,1,0,0)"/>
+ </svg>
+ <svg x="274.286" y="250" id="gvalue" width="160" atv:refpx="155" atv:refpy="265" height="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.picker_value" transform="matrix(0.4375,0,0,1,0,0)">
+  <atv:argument value="6" name="tabIndex"/>
+  <atv:argument value="0" name="min"/>
+  <atv:argument value="255" name="max"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(2.2857,0,0,1,-205.7143,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(2.2857,0,0,1,-205.7143,0)"/>
+  <atv:overwrite x="35.5" id="input_label" transform="matrix(2.2857,0,0,1,0,0)"/>
+  <atv:overwrite id="input_bg" width="36" transform="matrix(2.2857,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="38" transform="matrix(2.2857,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="69.5" transform="matrix(2.2857,0,0,1,0,0)"/>
+ </svg>
+ <svg x="274.286" y="280" id="bvalue" width="160" atv:refpx="155" atv:refpy="295" height="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.picker_value" transform="matrix(0.4375,0,0,1,0,0)">
+  <atv:argument value="7" name="tabIndex"/>
+  <atv:argument value="0" name="min"/>
+  <atv:argument value="255" name="max"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(2.2857,0,0,1,-205.7143,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(2.2857,0,0,1,-205.7143,0)"/>
+  <atv:overwrite x="35.5" id="input_label" transform="matrix(2.2857,0,0,1,0,0)"/>
+  <atv:overwrite id="input_bg" width="36" transform="matrix(2.2857,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="38" transform="matrix(2.2857,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="69.5" transform="matrix(2.2857,0,0,1,0,0)"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[var rValue = 0;
+var gValue = 0;
+var bValue = 0;
+var hValue = 0;
+var sValue = 0;
+var vValue = 0;
+var aValue = 100;
+var hexColor = "#FFFFFF";
+var updateHexColor = true;
+
+function updateValues() {
+	webMI.gfx.setFill("preview", hexColor);
+	webMI.gfx.setFillOpacity("preview", aValue * 0.01);
+	updateHexColor = false;
+	webMI.trigger.fire("setValue", rValue, "rvalue");
+	webMI.trigger.fire("setValue", gValue, "gvalue");
+	webMI.trigger.fire("setValue", bValue, "bvalue");
+	webMI.trigger.fire("setValue", hValue, "hvalue");
+	webMI.trigger.fire("setValue", sValue, "svalue");
+	webMI.trigger.fire("setValue", vValue, "vvalue");
+	webMI.trigger.fire("setValue", aValue, "avalue");
+	updateHexColor = true;
+}
+
+function HSVobject (hue, saturation, value) {
+	// Object definition.
+	this.h = hue; this.s = saturation; this.v = value;
+	this.validate = function () {
+		if (this.h <= 0) {this.h = 0;}
+		if (this.s <= 0) {this.s = 0;}
+		if (this.v <= 0) {this.v = 0;}
+		if (this.h > 360) {this.h = 360;}
+		if (this.s > 100) {this.s = 100;}
+		if (this.v > 100) {this.v = 100;}
+	};
+}
+
+function RGBobject (red, green, blue) {
+	// Object definition.
+	this.r = red; this.g = green; this.b = blue;
+	this.validate = function () {
+		if (this.r <= 0) {this.r = 0;}
+		if (this.g <= 0) {this.g = 0;}
+		if (this.b <= 0) {this.b = 0;}
+		if (this.r > 255) {this.r = 255;}
+		if (this.g > 255) {this.g = 255;}
+		if (this.b > 255) {this.b = 255;}
+	};
+}
+
+function hexify(number) {
+	var digits = '0123456789ABCDEF';
+	var lsd = number % 16;
+	var msd = (number - lsd) / 16;
+	var hexified = digits.charAt(msd) + digits.charAt(lsd);
+	return hexified;
+}
+
+function decimalize(hexNumber) {
+	var digits = '0123456789ABCDEF';
+	return ((digits.indexOf(hexNumber.charAt(0).toUpperCase()) * 16) + digits.indexOf(hexNumber.charAt(1).toUpperCase()));
+}
+
+function hex2RGB (colorString, RGB) {
+	RGB.r = decimalize(colorString.substring(1,3));
+	RGB.g = decimalize(colorString.substring(3,5));
+	RGB.b = decimalize(colorString.substring(5,7));
+}
+
+function RGB2hex (RGB) {
+	var hex = "";
+	if (typeof RGB == "string" && RGB.indexOf(",") > -1) {
+		var parts = RGB.split(",");
+		if (parts.length == 3) {
+			var parsedRGB = {r: (parts[0].split("(")[1]).replace(" ", ""), g: parts[1].replace(" ", ""), b: (parts[2].split(")")[0]).replace(" ", "")};
+			return RGB2hex(parsedRGB);
+		}
+	} else {
+		hex = "#" + hexify(RGB.r) + hexify(RGB.g) + hexify(RGB.b);
+	}
+	return hex;
+}
+
+function rgbChange () {
+	var RGB = new RGBobject(rValue, gValue, bValue);
+	var HSV = new HSVobject(hValue, sValue, vValue);
+	RGB.validate();
+	RGB2HSV (RGB, HSV);
+	hexColor = RGB2hex(RGB);
+	webMI.trigger.fire("setValue", hexColor, "hexvalue");
+}
+
+function hsvChange () {
+	var RGB = new RGBobject(rValue, gValue, bValue);
+	var HSV = new HSVobject(hValue, sValue, vValue);
+	HSV.validate();
+	HSV2RGB (HSV, RGB);
+	hexColor = RGB2hex(RGB);
+	if(updateHexColor)
+	webMI.trigger.fire("setValue", hexColor, "hexvalue");
+}
+
+function hexChange () {
+	var colorString = hexColor;
+	var RGB = new RGBobject(0,0,0);
+	var HSV = new HSVobject(0,0,0);
+	hex2RGB(colorString, RGB);
+	RGB2HSV (RGB, HSV);
+	rValue = Math.round(RGB.r);
+	gValue = Math.round(RGB.g);
+	bValue = Math.round(RGB.b);
+	hValue = Math.round(HSV.h);
+	sValue = Math.round(HSV.s);
+	vValue = Math.round(HSV.v);
+	updateValues();
+}
+
+
+function RGB2HSV (RGB, HSV) {
+	r = RGB.r / 255; g = RGB.g / 255; b = RGB.b / 255; // Scale to unity.
+
+	var minVal = Math.min(r, g, b);
+	var maxVal = Math.max(r, g, b);
+	var delta = maxVal - minVal;
+
+	HSV.v = maxVal;
+
+	if (delta == 0) {
+		HSV.h = 0;
+		HSV.s = 0;
+	} else {
+		HSV.s = delta / maxVal;
+		var del_R = (((maxVal - r) / 6) + (delta / 2)) / delta;
+		var del_G = (((maxVal - g) / 6) + (delta / 2)) / delta;
+		var del_B = (((maxVal - b) / 6) + (delta / 2)) / delta;
+
+		if (r == maxVal) {HSV.h = del_B - del_G;}
+		else if (g == maxVal) {HSV.h = (1 / 3) + del_R - del_B;}
+		else if (b == maxVal) {HSV.h = (2 / 3) + del_G - del_R;}
+
+		if (HSV.h < 0) {HSV.h += 1;}
+		if (HSV.h > 1) {HSV.h -= 1;}
+	}
+	HSV.h *= 360;
+	HSV.s *= 100;
+	HSV.v *= 100;
+}
+
+function HSV2RGB (HSV, RGB) {
+	var h = HSV.h / 360; var s = HSV.s / 100; var v = HSV.v / 100;
+	if (s == 0) {
+		RGB.r = v * 255;
+		RGB.g = v * 255;
+		RGB.b = v * 255;
+	} else {
+		var_h = h * 6;
+		var_i = Math.floor(var_h);
+		var_1 = v * (1 - s);
+		var_2 = v * (1 - s * (var_h - var_i));
+		var_3 = v * (1 - s * (1 - (var_h - var_i)));
+
+		if (var_i == 0) {var_r = v; var_g = var_3; var_b = var_1}
+		else if (var_i == 1) {var_r = var_2; var_g = v; var_b = var_1}
+		else if (var_i == 2) {var_r = var_1; var_g = v; var_b = var_3}
+		else if (var_i == 3) {var_r = var_1; var_g = var_2; var_b = v}
+		else if (var_i == 4) {var_r = var_3; var_g = var_1; var_b = v}
+		else {var_r = v; var_g = var_1; var_b = var_2};
+
+		RGB.r = var_r * 255;
+		RGB.g = var_g * 255;
+		RGB.b = var_b * 255;
+	}
+}
+
+webMI.trigger.connect("valuechanged", function(e) {
+	rValue = e.value;
+	if(updateHexColor)
+		rgbChange();
+}, "rvalue");
+webMI.trigger.connect("valuechanged", function(e) {
+	gValue = e.value;
+	if(updateHexColor)
+		rgbChange();
+}, "gvalue");
+webMI.trigger.connect("valuechanged", function(e) {
+	bValue = e.value;
+	if(updateHexColor)
+		rgbChange();
+}, "bvalue");
+
+webMI.trigger.connect("valuechanged", function(e) {
+	hValue = e.value;
+	if(updateHexColor)
+		hsvChange();
+}, "hvalue");
+webMI.trigger.connect("valuechanged", function(e) {
+	sValue = e.value;
+	if(updateHexColor)
+		hsvChange();
+}, "svalue");
+webMI.trigger.connect("valuechanged", function(e) {
+	vValue = e.value;
+	if(updateHexColor)
+		hsvChange();
+}, "vvalue");
+
+webMI.trigger.connect("valuechanged", function(e) {
+	aValue = e.value;
+	updatePreview();
+}, "avalue");
+
+webMI.trigger.connect("valuechanged", function(e) {
+	if (e.value.indexOf("#") < 0) {
+		hexColor = "#" + e.value;
+	} else {
+		hexColor = e.value;
+	}
+	hexChange();
+}, "hexvalue");
+
+webMI.trigger.connect("clicked", function(e) {
+var id = "id_18";
+var value = true;
+return function(value) {
+	if ("name" in webMI.query) {
+		webMI.trigger.fire("valuechanged_" + webMI.query.name, { hex: hexColor, r: rValue, g: gValue, b: bValue, h: hValue, s: sValue, v: vValue, a: aValue });
+	}
+
+webMI.display.closeWindow();
+} (value);
+},"id_18");
+
+var colors = ["id_27", "id_24", "id_23", "id_22", "id_21", "id_20", "id_16", "id_3", "id_0", "id_25", "id_26", "id_28"];
+
+for (var i = 0; i < colors.length; ++i)
+	addEvent(colors[i]);
+
+function addEvent(id) {
+	webMI.addEvent(id, "click", function(e) {
+		hexColor = RGB2hex(webMI.gfx.getFill(id));
+		webMI.trigger.fire("setValue", hexColor, "hexvalue");
+	});
+};
+
+webMI.addOnload(function() {
+	if ("color" in webMI.query) {
+		hexColor = webMI.query.color;
+	}
+	webMI.trigger.fire("setValue", hexColor, "hexvalue");
+});]]></script>
+</svg>

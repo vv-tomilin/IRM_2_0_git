@@ -1,0 +1,10 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/indicators/wma.js
+NodeClass: Variable
+BrowseName: 1:wma.js
+DisplayName: en|wma.js
+Description: en|wma.js
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Javascript
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Javascript.Compress

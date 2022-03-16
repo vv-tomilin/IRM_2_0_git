@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.table.mud
+NodeClass: Variable
+BrowseName: 1:mud
+DisplayName: en|mud
+Description: en|mud
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

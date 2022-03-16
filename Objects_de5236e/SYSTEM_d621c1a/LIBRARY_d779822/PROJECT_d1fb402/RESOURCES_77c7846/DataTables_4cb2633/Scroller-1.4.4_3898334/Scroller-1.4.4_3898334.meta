@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/DataTables/Scroller-1.4.4
+NodeClass: Object
+BrowseName: 1:Scroller-1.4.4
+DisplayName: en|Scroller-1.4.4
+Description: en|Scroller-1.4.4
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

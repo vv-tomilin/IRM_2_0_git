@@ -1,0 +1,390 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="160" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linear_2" y1="0" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#ffffff" stop-opacity="0.35"/>
+   <stop offset="1" stop-color="#ffffff" stop-opacity="0.35"/>
+  </linearGradient>
+ </defs>
+ <desc>Opens a dialog to choose a color.</desc>
+ <title>Picker Color</title>
+ <metadata>
+  <atv:parameter desc="base" behavior="mandatory" valuetype="address" name="base"/>
+  <atv:parameter defaultvalue="pickerColor" desc="name" behavior="mandatory" valuetype="string" name="name"/>
+  <atv:parameter defaultvalue="" desc="alarm address" behavior="optional" valuetype="address" name="alarm"/>
+  <atv:parameter config="Yes;No" defaultvalue="Yes" desc="enable status monitoring" behavior="optional" valuetype="enum" name="statusEnabled"/>
+  <atv:parameter defaultvalue="" desc="fire status trigger" behavior="optional" valuetype="string" name="statusTrigger"/>
+  <atv:parameter defaultvalue="#ffffff" desc="initial value" behavior="optional" valuetype="color" name="initValue"/>
+  <atv:parameter config="Times New Roman=Times New Roman,Bodoni,Garamond,Minion Web,ITC Stone Serif,MS Georgia,Bitstream Cyberbit,serif;Arial=MS Trebuchet,ITC Avant Garde Gothic,MS Arial,MS Verdana,Univers,Futura,ITC Stone Sans,Gill Sans,Akzidenz Grotesk,Helvetica,sans-serif;Courier=Courier,MS Courier New,Prestige,Everson Mono,monospace;Zapf-Chancery=Caflisch Script,Adobe Poetica,Sanvito,Ex Ponto,Snell Roundhand,Zapf-Chancery,cursive;Alpha Geometrique=Alpha Geometrique,Critter,Cottonwood,FB Reactor,Studz,fantasy" substitute="$FONTFAMILY$" defaultvalue="Arial" group="Font" desc="family" behavior="optional" valuetype="enum" name="fontFamily"/>
+  <atv:parameter config="6;7;8;9;10;11;12;14;16;18;20;22;24;26;28;36;48;72" substitute="$FONTSIZE$" defaultvalue="12" group="Font" desc="size" behavior="optional" valuetype="enum" name="fontSize"/>
+  <atv:parameter substitute="$FONTCOLOR$" defaultvalue="SYSTEM.GLOBALS.atvFontColor" group="Font" desc="color" behavior="optional" valuetype="global" name="fontColor"/>
+  <atv:parameter substitute="$FILLCOLOR$" defaultvalue="SYSTEM.GLOBALS.atvFillColor" group="Appearance" desc="fill color" behavior="optional" valuetype="global" name="fillColor"/>
+  <atv:parameter substitute="$INPUTFILL$" defaultvalue="#FFFFFF" group="Appearance" desc="value field fill color" behavior="optional" valuetype="color" name="inputFill"/>
+  <atv:parameter defaultvalue="#b7b7b7" group="Appearance" desc="value field fill color inactive" behavior="optional" valuetype="color" name="inputFillInactive"/>
+  <atv:parameter substitute="$SYMBOLCOLOR$" defaultvalue="SYSTEM.GLOBALS.atvSymbolColor" group="Appearance" desc="symbol color" behavior="optional" valuetype="global" name="symbolColor"/>
+  <atv:parameter defaultvalue="#ffffff" group="Appearance" desc="button stroke color pressed" behavior="optional" valuetype="color" name="buttonStrokePressed"/>
+  <atv:parameter substitute="$BORDERCOLOR$" defaultvalue="SYSTEM.GLOBALS.atvBorderColor" group="Appearance" desc="border color" behavior="optional" valuetype="global" name="borderColor"/>
+  <atv:parameter defaultvalue="#FFFFFF" group="Appearance" desc="focus stroke color" behavior="optional" valuetype="color" name="focusStrokeColor"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvStatusIndication" group="Appearance" desc="status indication" behavior="optional" valuetype="global" name="statusIndication"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvAlarmIndication" group="Appearance" desc="alarm indication" behavior="optional" valuetype="global" name="alarmIndication"/>
+  <atv:parameter config="SYSTEM.SECURITY.RIGHTS" group="Security" desc="necessary right" behavior="optional" valuetype="address" name="right"/>
+  <atv:parameter group="Security" desc="activation address" behavior="optional" valuetype="address" name="activeNode"/>
+  <atv:parameter group="Security" desc="activation value" behavior="optional" valuetype="string" name="activeValue"/>
+  <atv:parameter group="Options" desc="consistency group" behavior="optional" valuetype="string" name="consistencyGroup"/>
+  <atv:parameter group="Options" desc="tab index" behavior="optional" valuetype="number" name="tabIndex"/>
+  <atv:parameter group="Options" desc="tooltip" behavior="optional" valuetype="trstring" name="tooltip"/>
+  <atv:parameter defaultvalue="true" behavior="optional" desc="open picker centered" group="Appearance" valuetype="bool" name="openCentered"/>
+  <atv:gridconfig width="2" enabled="true" height="2" gridstyle="lines"/>
+  <atv:snapconfig width="2" enabled="true" height="2"/>
+ </metadata>
+ <g id="colorpicker_clickarea" atv:refpy="15" atv:refpx="80">
+  <rect id="id_2" ry="3" width="160" atv:bindbr="1,1" fill="$BORDERCOLOR$" atv:refpy="16" height="30" atv:refpx="80" stroke-width="1" x="0" y="0" rx="3" atv:bindtl="0,0"/>
+  <rect id="id_0" ry="2.408" width="158" atv:bindbr="1,1" fill="$FILLCOLOR$" atv:refpy="-94.112" height="28" atv:refpx="164.164" stroke-width="1" x="1" y="1" rx="2.408" atv:bindtl="0,0"/>
+  <rect id="input_bg" ry="3" width="128" atv:bindbr="1,1" fill="$INPUTFILL$" stroke="none" atv:refpy="10" height="22" atv:refpx="214.155" stroke-width="2" x="4" y="4" rx="3" atv:bindtl="0,0"/>
+  <rect id="focus_frame" ry="2.1" width="156" atv:bindbr="1,1" fill="none" stroke="none" atv:refpy="40.844" height="26" atv:refpx="214.713" stroke-width="2" x="2" y="2" rx="2.1" atv:bindtl="0,0"/>
+  <rect id="blinking_frame" ry="3" width="128" atv:bindbr="1,1" fill="none" stroke="none" atv:refpy="10" height="22" atv:refpx="214.155" stroke-width="2" x="4" y="4" rx="3" atv:bindtl="0,0"/>
+  <text id="input_label" font-size="$FONTSIZE$" atv:bindbr="1,0.5" fill="$FONTCOLOR$" atv:refpy="18" atv:refpx="422.04" font-family="$FONTFAMILY$" x="123.5" y="19.25" atv:bindtl="1,0.5" text-anchor="end">#FFFFFF</text>
+  <rect id="button_bg" ry="2.755" width="20" atv:bindbr="1,0.5" fill="none" stroke="none" atv:refpy="-24.796" height="20" atv:refpx="533.75" stroke-width="1" x="135.5" y="5" rx="2.755" atv:bindtl="1,0.5"/>
+  <svg id="id_1" width="20" atv:bindbr="1,0.5" atv:refpy="15" height="20" atv:refpx="279.5" x="135.75" y="5" atv:bindtl="1,0.5" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.colorwheel">
+   <atv:argument prefix="symbolColor" name="symbolColor"/>
+  </svg>
+  <rect id="button_stroke" ry="2.755" width="20" atv:bindbr="1,0.5" fill="" stroke="none" atv:refpy="-24.796" height="20" atv:refpx="533.75" stroke-width="0.5" x="135.5" y="5" fill-opacity="0.001" rx="2.755" atv:bindtl="1,0.5"/>
+ </g>
+ <script type="text/ecmascript"><![CDATA[var base = (webMI.query["base"] == undefined) ? "" : webMI.query["base"];
+var initValue = webMI.query["initValue"];
+var fillColor = webMI.query["fillColor"];
+var inputFill = webMI.query["inputFill"];
+var inputFillInactive = webMI.query["inputFillInactive"];
+var buttonStrokePressed = webMI.query["buttonStrokePressed"];
+var focusStrokeColor = webMI.query["focusStrokeColor"];
+var arrowFill = webMI.query["arrowFill"];
+var consistencyGroup = webMI.query["consistencyGroup"];
+var consistencyHandler = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Consistency Handler");
+var tabHandler = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tab Handler");
+var tabIndex = (webMI.query["tabIndex"] == undefined) ? "" : webMI.query["tabIndex"];
+var alarmToSubscribe = webMI.query["alarm"];
+var alarmIndication = webMI.query["alarmIndication"];
+var statusEnabled = webMI.query["statusEnabled"];
+var statusTrigger = webMI.query["statusTrigger"];
+var statusIndication = webMI.query["statusIndication"];
+var activeIndicators = {};
+var tooltip = (webMI.query["tooltip"] == undefined) ? "" : webMI.query["tooltip"];
+var openCentered = webMI.query["openCentered"];
+
+var right = (webMI.query["right"] == undefined) ? "" : webMI.query["right"];
+if (right.search(/SYSTEM\.SECURITY\.RIGHTS\./) != -1) {
+	right = right.substring(23,right.length); //remove "prefix" SYSTEM.SECURITY.RIGHTS.
+}
+
+var active = false;
+var hasRight = false;
+
+if (right != "") {
+	webMI.addEvent(webMI.data, "clientvariableschange", function(e) {
+		hasRight=false;
+		if (("username" in e) && (e.username != "")) {
+				hasRight = webMI.hasRight(right);
+		}
+		deActivate();
+	});
+}
+
+var activeValue = (webMI.query["activeValue"] == undefined) ? "" :webMI.query["activeValue"];
+var activeNode = (webMI.query["activeNode"] == undefined) ? "" : webMI.query["activeNode"];
+var nodeIsActive = false;
+
+if ((activeNode != "") && (String(activeValue) != "")) {
+	webMI.data.subscribe(activeNode, function(e) {
+		var nodeActiveValue = e.value;
+		if (typeof nodeActiveValue == "boolean") {
+			nodeIsActive = (String(nodeActiveValue) == activeValue);
+		} else if (typeof nodeActiveValue == "number") {
+			try {
+				var temp = parseFloat(activeValue);
+				nodeIsActive = (nodeActiveValue == temp);
+			} catch(e) {
+				nodeIsActive = false;
+			}
+		} else {
+			nodeIsActive = (nodeActiveValue == activeValue);
+		}
+		if (typeof e.status != "undefined")
+			handleStatus(e.status);
+		deActivate();
+	});
+} else {
+	deActivate();
+}
+
+function deActivate() {
+	if (right != "") {
+		if ((String(activeValue) != "") && (activeNode != "")) {
+			active=(nodeIsActive && hasRight);
+		} else {
+			active=hasRight;
+		}
+	} else {
+		if ((String(activeValue) != "") && (activeNode != "")) {
+			active=nodeIsActive;
+		} else {
+			active=true;
+		}
+	}
+	if (active) {
+		webMI.gfx.setFill("input_bg", inputFill);
+		webMI.gfx.setFill("button_bg", fillColor);
+		webMI.gfx.setVisible("button_stroke", null);
+	} else {
+		webMI.gfx.setFill("input_bg", inputFillInactive);
+		webMI.gfx.setFill("button_bg", inputFillInactive);
+		webMI.gfx.setVisible("button_stroke", false);
+	}
+}
+
+function handleStatus(status) {
+	if (statusEnabled != "Yes")
+		return;
+
+	if (statusTrigger != "") {
+		webMI.trigger.fire(statusTrigger, status);
+	} else {
+		if (typeof statusIndication["ItemStatusBad"] == "undefined")
+			statusIndication = {"ItemStatusBad": {color: "#ffff00", interval: "250"}};
+
+		if (status == 0 || (status & 0xC0000000).toString(16) == 0)	//Good value state
+			delete activeIndicators["status"];
+		else if ((status & 0x80000000).toString(16) != 0)			//Bad value state
+			activeIndicators["status"] = {color: statusIndication["ItemStatusBad"].color, interval: parseInt(statusIndication["ItemStatusBad"].interval)};
+		else if ((status & 0xC0000000).toString(16) == 40000000)	//Uncertain value state
+			activeIndicators["status"] = {color: statusIndication["ItemStatusBad"].color, interval: parseInt(statusIndication["ItemStatusBad"].interval)};
+		else														//Unknown value state
+			activeIndicators["status"] = {color: statusIndication["ItemStatusBad"].color, interval: parseInt(statusIndication["ItemStatusBad"].interval)};
+
+		setIndicator();
+	}
+}
+
+function initAlarm(address) {
+	if (alarmIndication == "")
+		alarmIndication = {};
+
+	if (typeof alarmIndication["AlarmStatusOnUnacknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOnUnacknowledged"] = {color: "#ff0000", interval: "250"};
+
+	if (typeof alarmIndication["AlarmStatusOnAcknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOnAcknowledged"] = {color: "#ff0000", interval: "500"};
+
+	if (typeof alarmIndication["AlarmStatusOffUnacknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOffUnacknowledged"] = {color: "#ff0000", interval: "750"};
+
+	if (typeof alarmIndication["AlarmStatusOnOffUnacknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOnOffUnacknowledged"] = {color: "#ff0000", interval: "1500"};
+
+	webMI.alarm.subscribe(address, function(e) {
+		if (e.state == 1)
+			activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOnUnacknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOnUnacknowledged"].interval)};
+		else if (e.state == 2) {
+				activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOnAcknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOnAcknowledged"].interval)};
+		} else if (e.state == 3)
+			activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOffUnacknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOffUnacknowledged"].interval)};
+		else if (e.state == 5)
+			activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOnOffUnacknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOnOffUnacknowledged"].interval)};
+		else
+			delete activeIndicators["alarm"];
+
+		setIndicator();
+
+	});
+}
+
+if (alarmToSubscribe != "")
+	initAlarm(alarmToSubscribe);
+
+var currentIndicator = "";
+function setIndicator() {
+	if (currentIndicator != "")
+		return;
+
+	if (activeIndicators["trigger"]) {
+		currentIndicator = "trigger";
+	} else if (activeIndicators["status"]) {
+		currentIndicator = "status";
+	} else if (activeIndicators["alarm"]) {
+		currentIndicator = "alarm";
+	} else {
+		currentIndicator = "";
+		return;
+	}
+
+	indicationActive = true;
+
+	webMI.gfx.setStroke("blinking_frame", activeIndicators[currentIndicator].color);
+	webMI.gfx.setVisible("blinking_frame", null);
+
+	var interval = activeIndicators[currentIndicator].interval;
+	setTimeout(function() {
+		webMI.gfx.setVisible("blinking_frame", false);
+		setTimeout(function() {
+			currentIndicator = "";
+			setIndicator();
+		}, interval);
+	}, interval);
+}
+
+function focusTH(){
+	if (active) {
+		webMI.gfx.setStroke("focus_frame", focusStrokeColor);
+	}
+}
+
+function blurTH(){
+	if (active) {
+		webMI.gfx.setStroke("focus_frame", "none");
+	}
+}
+
+function applyTH(){
+	if (active){
+		webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Picker", {
+			"picker": "SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dialogs.picker_color_dialog",
+			"openCentered": openCentered,
+			"width": 220,
+			"height": 370,
+			"callingElementWidth": webMI.gfx.getWidth("id_0"),
+			"callingElementHeight": webMI.gfx.getHeight("id_0"),
+			"title": "",
+			"parameters": webMI.query
+		});
+	}
+}
+
+function backTH(){}
+
+function arrowTH(dir){}
+
+function keyHandler(keyTH,param2){
+	if (keyTH == "focus"){
+		focusTH();
+	} else if (keyTH == "blur"){
+		blurTH();
+	} else if (keyTH == "apply"){
+		applyTH();
+	} else if (keyTH == "space"){
+		applyTH();
+	} else if (keyTH == "back"){
+		backTH();
+	} else if (keyTH == "arrow"){
+		arrowTH(param2);
+	} else if (keyTH == "isActive"){
+		return active && param2(document.getElementById("colorpicker_clickarea").parentNode);
+	}
+}
+
+webMI.addOnload(function() {
+	if (initValue.indexOf("#")!=0)
+		initValue = "#"+initValue;
+	webMI.gfx.setText("input_label",initValue.toUpperCase());
+	webMI.query["color"] = initValue.toUpperCase();
+	var doc = document.getElementById("colorpicker_clickarea").ownerDocument;
+	tabHandler.register(tabIndex,keyHandler,doc);
+
+    if (base) {
+        if (consistencyGroup) {
+            consistencyHandler.register(consistencyGroup, base, update);
+        } else {
+            webMI.data.subscribe(base,function(e){
+                update(e.value);
+				if (typeof e.status != "undefined")
+					handleStatus(e.status);
+            });
+        }
+    }
+});
+
+webMI.addEvent("colorpicker_clickarea", "mousedown", function(e) {
+var id = "colorpicker_clickarea";
+var value = true;
+return function(value) {
+	if (active) {
+		webMI.gfx.setStroke("focus_frame", buttonStrokePressed);
+		webMI.gfx.setStroke("button_stroke", buttonStrokePressed);
+		webMI.gfx.setFill("button_bg", "url(#linear_2)");
+	}
+} (value);
+});
+
+webMI.addEvent("colorpicker_clickarea", ["mouseup","mouseout"], function(e) {
+var id = "colorpicker_clickarea";
+var value = true;
+return function(value) {
+	if (active) {
+		webMI.gfx.setStroke("focus_frame", "none");
+		webMI.gfx.setStroke("button_stroke", "none");
+		webMI.gfx.setFill("button_bg", "none");
+	}
+} (value);
+});
+
+webMI.addEvent("colorpicker_clickarea", "dragstart", function(e) {
+	if (e.preventDefault) {
+		e.preventDefault();
+	}
+});
+
+webMI.addEvent("colorpicker_clickarea", "click", function(e) {
+var id = "colorpicker_clickarea";
+var value = true;
+return function(value){
+	if (active){
+		tabHandler.setCurrentIndex(keyHandler);
+		webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Picker", {
+			"picker": "SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dialogs.picker_color_dialog",
+			"openCentered": openCentered,
+			"width": 220,
+			"height": 370,
+			"callingElementWidth": webMI.gfx.getWidth("id_0"),
+			"callingElementHeight": webMI.gfx.getHeight("id_0"),
+			"title": "",
+			"parameters": webMI.query
+		});
+	}
+} (value);
+});
+
+webMI.trigger.connect("valuechanged_" + webMI.query.name, function(e) {
+	var value = e.value;
+
+	if (base) {
+	    updateNodeValue(value.hex);
+	} else {
+	    update(value.hex);
+	}
+});
+
+webMI.trigger.connect("com.atvise.setBlinking", function(e){
+	if (e.value == "none"){
+		delete activeIndicators["trigger"];
+	} else {
+		activeIndicators["trigger"] = {color: e.value, interval: 500};
+	}	
+	setIndicator();
+});
+
+function updateNodeValue(value){
+	if (consistencyGroup) {
+    	consistencyHandler.set(consistencyGroup, base, value);
+		update(value);
+	} else {
+		webMI.data.write(base,value);
+	}
+}
+
+function update(value) {
+	webMI.gfx.setText("input_label", webMI.query["color"] = value);
+	webMI.trigger.fire("valuechanged", value, "");
+}
+
+if (tooltip != ""){
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tooltip", {"auto":"true", "id":"colorpicker_clickarea", "text":tooltip});
+}]]></script>
+</svg>

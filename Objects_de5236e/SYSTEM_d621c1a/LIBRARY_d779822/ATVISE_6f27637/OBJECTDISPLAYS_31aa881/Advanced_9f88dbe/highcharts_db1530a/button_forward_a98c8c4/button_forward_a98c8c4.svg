@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="80" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <desc>Steps forward on the x-axis</desc>
+ <title>Button forward</title>
+ <metadata>
+  <atv:parameter defaultvalue="trend1" behavior="mandatory" desc="chart name" valuetype="string" name="chartname"/>
+  <atv:parameter defaultvalue="0" behavior="optional" desc="x-axis index" valuetype="string" name="xAxisIndex"/>
+  <atv:parameter defaultvalue="100" behavior="optional" desc="step in percent" valuetype="string" name="stepPercent"/>
+  <atv:gridconfig width="20" enabled="false" height="20" gridstyle="lines"/>
+  <atv:snapconfig width="10" enabled="false" height="10"/>
+ </metadata>
+ <svg id="btn_forward" width="80" atv:bindbr="1,1" atv:refpy="15" atv:refpx="40" height="30" y="0" x="0" atv:bindtl="1,1" visibility="$BUTTONSVISIBLE$" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button">
+  <atv:argument value="" name="label"/>
+  <atv:argument value="hidden" name="visibilityLabel"/>
+  <atv:argument value="inherit" name="visibilitySymbol"/>
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.forward" name="symbol"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[var chartname = webMI.query.chartname;
+var chart;
+var activeAxis = webMI.query["xAxisIndex"];
+
+webMI.trigger.connect("clicked", function(e) {
+
+	var chart = webMI.trendFactory.getTrendByName(chartname);
+	if (!chart)
+		return;
+
+	var extremes = chart.chart.xAxis[activeAxis].getExtremes();
+	var difference = (extremes.max - extremes.min) * webMI.query["stepPercent"] / 100;
+	chart.chart.xAxis[activeAxis].setExtremes(extremes.min + difference, extremes.max + difference);
+	chart.chart.xAxis[activeAxis].options.min = extremes.min + difference;
+	chart.chart.xAxis[activeAxis].options.max = extremes.max + difference;
+
+	if (chart.control.isLiveModeRunning()) chart.control.stopLiveMode();
+	var oldMode = chart.chart.options.atviseOptions.mode;
+	chart.control.setMode("history");
+	chart.control.updated(function() {
+		chart.control.setMode(oldMode);
+	});
+}, "btn_forward");
+]]></script>
+</svg>

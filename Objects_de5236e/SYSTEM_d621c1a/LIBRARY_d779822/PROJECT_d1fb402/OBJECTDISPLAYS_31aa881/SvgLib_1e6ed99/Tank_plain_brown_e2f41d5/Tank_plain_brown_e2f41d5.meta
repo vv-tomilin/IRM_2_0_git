@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Tank_plain_brown
+NodeClass: Variable
+BrowseName: 1:Tank_plain_brown
+DisplayName: en|Tank_plain_brown
+Description: en|Tank_plain_brown
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

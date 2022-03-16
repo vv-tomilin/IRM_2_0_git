@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.DATASOURCES.arOPC
+NodeClass: Object
+BrowseName: 1:arOPC
+DisplayName: en|arOPC
+Description: en|arOPC
+EventNotifier: 0
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.Datasource.OpcCom

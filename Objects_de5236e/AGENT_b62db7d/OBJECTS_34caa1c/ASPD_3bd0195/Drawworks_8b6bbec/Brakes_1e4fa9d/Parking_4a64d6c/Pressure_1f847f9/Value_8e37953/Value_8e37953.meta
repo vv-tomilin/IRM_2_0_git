@@ -1,0 +1,11 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Drawworks.Brakes.Parking.Pressure.Value
+NodeClass: Variable
+BrowseName: 1:Value
+DisplayName: en|Value
+Description: en|Value
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

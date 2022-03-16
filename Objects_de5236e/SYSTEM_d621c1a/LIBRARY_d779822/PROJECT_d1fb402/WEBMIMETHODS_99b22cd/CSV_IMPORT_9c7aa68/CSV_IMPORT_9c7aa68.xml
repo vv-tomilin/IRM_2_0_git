@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="csvloaded" type="http.request" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var reader = new CSVReader({encoding: "UTF-8"});
+var address = csvloaded.postvalues["csvAddress"];
+var table = new Array();
+
+reader.load(address, {
+	onError: function(msg){
+		console.warn(msg);
+		table=-1;
+	},
+	onData:function(rowIdx, row){
+		if(row.length > 1){
+			table.push(row);
+		}
+	}
+});
+
+return table;]]></code>
+</script>

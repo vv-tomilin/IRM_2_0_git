@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DATASOURCES.WITS_GTI.disable
+NodeClass: Variable
+BrowseName: 1:disable
+DisplayName: en|disable
+Description: en|disable
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

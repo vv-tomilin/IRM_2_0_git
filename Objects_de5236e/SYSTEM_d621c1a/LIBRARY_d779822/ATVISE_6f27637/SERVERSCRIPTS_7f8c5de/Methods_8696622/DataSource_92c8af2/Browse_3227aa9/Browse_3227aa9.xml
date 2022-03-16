@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="datasource" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="address" type="stringarray" trigger="false" relative="false" value=""/>
+  <parameter name="continuationpoint" type="stringarray" trigger="false" relative="false" value=""/>
+  <parameter name="continuation" type="undefined" trigger="false" relative="false" value=""/>
+  <code><![CDATA[/*
+atvise server wrapper for UA method "AGENT.MIRROR.METHODS.browse"
+This script is a standard atvise resource and must not be modified.
+For a description including an example see the atvise documentation.
+*/
+
+var cpResult = "continuationpoint";
+
+if (continuation && !continuationpoint)
+{
+	// compatibility with atvise older than v3.3.0
+	continuationpoint = continuation;
+	cpResult = "continuation";
+}
+
+if (continuationpoint === null || continuationpoint === undefined)
+	continuationpoint = [];
+
+var methodCall = new UaNode("AGENT.MIRROR.METHODS.browse");
+var callResult = methodCall.call({
+	object: "AGENT.MIRROR.METHODS",
+	input: [
+		{type: UaNode.STRING, value: datasource},
+		{type: UaNode.STRING, value: address},
+		{type: UaNode.BYTESTRING, value: continuationpoint}
+	]
+});
+
+var result = {};
+
+if (callResult.error) {
+	result.error = callResult.error;
+	result.errorstring = methodCall.statusToString(result.error);
+	if (callResult.argumentError) {
+		var parameterNames = ["datasource", "address", "continuationpoint"];
+		for (var i = 0; i < callResult.argumentError.length; ++i)
+			if (callResult.argumentError[i])
+				result.errorstring += ", " + parameterNames[i] + ":" + methodCall.statusToString(callResult.argumentError[i]);
+	}
+}
+else if (callResult.result.length < 9) {
+	result.error = UaNode.BADUNEXPECTEDERROR;
+	result.errorstring = methodCall.statusToString(result.error);
+	result.errorstring += ", result.length < 9";
+}
+else if (callResult.result[0].length != address.length) {
+	result.error = UaNode.BADUNEXPECTEDERROR;
+	result.errorstring = methodCall.statusToString(result.error);
+	result.errorstring += ", InputArrayLength != ResultArrayLength";
+}
+else {
+	result.result = [];
+	result[cpResult] = callResult.result[6];
+	var browsedItemCount = callResult.result[0];
+	var i = 0;
+	for (var count = 0; count < browsedItemCount.length; ++count) {
+		result.result[count] = [];
+		for (var itemCount = 0; itemCount < browsedItemCount[count]; ++itemCount, ++i) {
+			result.result[count][itemCount] = {};
+			result.result[count][itemCount]["displayname"] = callResult.result[1][i];
+			result.result[count][itemCount]["browsename"] = callResult.result[2][i];
+			result.result[count][itemCount]["address"] = callResult.result[3][i];
+			result.result[count][itemCount]["datatype"] = callResult.result[4][i];
+			result.result[count][itemCount]["valuerank"] = callResult.result[5][i];
+			result.result[count][itemCount]["class"] = callResult.result[7][i];
+			result.result[count][itemCount]["type"] = callResult.result[8][i];
+		}
+	}
+}
+
+return result;]]></code>
+</script>

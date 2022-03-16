@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Drawworks.HookBlock.Position.Limit_High_Warning
+NodeClass: Variable
+BrowseName: 1:Limit_High_Warning
+DisplayName: en|Limit_High_Warning
+Description: en|Limit_High_Warning
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DATASOURCES.s1500.policy
+NodeClass: Variable
+BrowseName: 1:policy
+DisplayName: en|policy
+Description: en|policy
+DataType: Int16
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Направляющая плита
+NodeClass: ObjectType
+BrowseName: 1:Направляющая плита
+DisplayName: en|Направляющая плита
+Description: en|Направляющая плита
+IsAbstract: false

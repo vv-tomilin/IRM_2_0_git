@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+    <help/>
+  </metadata>
+  <code><![CDATA[/**
+ * Code for the highcharts opt series object display
+ * ----------------------------------------
+ * This script supports the display to show and edit series options of the chart configuration.
+ */
+
+
+/**
+ * DECLARATION SECTION
+ */
+var activeSeries = 0;
+webMI.query["activeSeries"] = activeSeries;
+
+var inputDefaults = {
+	"series_type": "T{line}",
+	"series_visible": true,
+	"series_name": "T{Data}",
+	"series_zIndex": 0,
+	"series_tooltip_valuePrefix": "",
+	"series_tooltip_valueSuffix": "",
+	"series_tooltip_valueDecimals": 2
+};
+
+var seriesTypes = [
+	{text: "T{Line}", value: "line"},
+	{text: "T{Spline}", value: "spline"},
+	{text: "T{Area}", value: "area"},
+	{text: "T{Area} T{with} T{splines}", value: "areaspline"},
+	{text: "T{Two-line area}", value: "arearange"},
+	{text: "T{Two-line area} T{with} T{splines}", value: "areasplinerange"},
+	{text: "T{Column}", value: "column"},
+];
+
+var activeOffset = 0;
+var addressIndex = 1;
+var addressIsAggregate = false;
+var buttonColor = {};
+buttonColor.color1 = webMI.query.btn_color_1;
+buttonColor.color2 = webMI.query.btn_color_2;
+var changedByTree = false;
+var chart = webMI.trendFactory.getTrendByName(webMI.query.chartname);
+var chartname = webMI.query.chartname;
+var configHandler = new webMI.rootWindow.ConfigHandler;
+var curAddress = "";
+var curAggregate = "";
+var curDataArchive = "";
+var errors = [];
+var filterUsed = false;
+var jumpToSeries = webMI.query.seriesId ? webMI.query.seriesId : 0;
+var lastSeries = 0;
+var numSeries = parseInt(webMI.query.num_series) > 10 ? 10 : parseInt(webMI.query.num_series);
+var oldAddressValue;
+var options = chart.chart.options;
+var series = [];
+var skipSelection = false;
+var smallLayout = webMI.query.small_layout == "true";
+var startAddress = webMI.query.startAddress ? webMI.query.startAddress : "AGENT.OBJECTS";
+var subdisplay = {}
+subdisplay.display_series_bar = webMI.query.display_series_bar;
+subdisplay.display_series_pie = webMI.query.display_series_pie;
+subdisplay.display_series_line = webMI.query.display_series_line;
+var treeViewReady = false;
+var triggerEnabled = true;
+var updateEnabled = true;
+
+
+/* Initiate treeview for address selection */
+var treeView = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.TreeView", {
+	"busyIndicatorTolerance": "100",
+	"expandoOffset": "3",
+	"fontSize": "12",
+	"id": "address_treeview",
+	"imagePaths": "{\"baseVariableImage\":\"/treeView/icons/baseVariable.svg\",\"folderImage\":\"/treeView/icons/folder.svg\",\"aggregateFunctionImage\":\"/treeView/icons/aggregateFunction.svg\",\"collapsedLeafImage\":\"/treeView/icons/leafCollapsed.svg\",\"expandedLeafImage\":\"/treeView/icons/leafExpanded.svg\"}",
+	"leafIndentation": "15",
+	"leafPadding": "2",
+	"renderTo": "address_treeview",
+	"selectableTypes": "[\"baseVariable\", \"aggregateFunction\"]",
+	"startAddress": startAddress
+});
+
+
+/**
+ * RUNTIME SECTION
+ * Runtime code has to be executed after onload to take care all other resources are ready
+ */
+
+/**
+ * Onload Function
+ * Adds triggers for every input element
+ * Registers on update callback from trend control
+ */
+webMI.addOnload(function () {
+	for (var key in inputDefaults)
+		webMI.trigger.connect("valuechanged", function (e) {
+			processInput(e.context, e.value, activeSeries)
+		}, key);
+
+	webMI.trigger.connect("clicked", function (e) {
+		addressIndex = 1;
+		readOptions();
+
+		webMI.gfx.setFill("btn_address1_button_bg", buttonColor.color1);
+		webMI.gfx.setFill("btn_address2_button_bg", buttonColor.color2);
+	}, "btn_address1");
+
+	webMI.trigger.connect("clicked", function (e) {
+		addressIndex = 2;
+		readOptions();
+
+		webMI.gfx.setFill("btn_address1_button_bg", buttonColor.color2);
+		webMI.gfx.setFill("btn_address2_button_bg", buttonColor.color1);
+	}, "btn_address2");
+
+	treeView.on("ready", function (e) {
+		treeViewReady = true;
+		if (curAddress != "") {
+			skipSelection = true;
+			treeView.selectNode(curAddress, curAggregate);
+			if (webMI.getMethodSupport().indexOf("BrowseDataArchives") == -1) {
+				webMI.gfx.setVisible("label_data_archive", false);
+				webMI.gfx.setVisible("data_archive", false);
+			} else {
+				setDataArchiveOptions(curAddress, addressIsAggregate);
+			}
+		}
+	});
+
+	treeView.on("notFound", function (e) {
+		activateAllRadios();
+	});
+
+	treeView.on("select", function (e) {
+
+		activateAllRadios();
+
+		if (skipSelection) {
+			skipSelection = false;
+			return;
+		}
+
+		if (!triggerEnabled)
+			return;
+
+		var readAddress = e.data.aggregateInfo ? e.data.aggregateInfo.relatedNodeAddress : e.data.address;
+		webMI.data.read(readAddress, function (e2) {
+
+			if (typeof e2.value != "string") {
+
+				var key = "series_address";
+				if (addressIndex > 1)
+					key = key + addressIndex;
+
+				var address = e.data.address;
+
+				if (e.data.aggregateInfo) {
+
+					var aggregatePath = address;
+					address = e.data.aggregateInfo.relatedNodeAddress;
+
+					webMI.trigger.fire("setSelectedItem", " ", "data_archive");
+
+					if (addressIndex == 1) {
+						processInput("series_aggregate_aggregate", e.data.aggregateInfo.aggregate, activeSeries);
+						processInput("series_aggregate_interval", e.data.aggregateInfo.interval_value, activeSeries);
+						processInput("series_aggregate_unit", e.data.aggregateInfo.interval_unit, activeSeries);
+						processInput("series_aggregate_address", aggregatePath, activeSeries);
+					} else {
+						processInput("series_aggregate2_aggregate", e.data.aggregateInfo.aggregate, activeSeries);
+						processInput("series_aggregate2_interval", e.data.aggregateInfo.interval_value, activeSeries);
+						processInput("series_aggregate2_unit", e.data.aggregateInfo.interval_unit, activeSeries);
+						processInput("series_aggregate2_address", aggregatePath, activeSeries);
+					}
+					webMI.gfx.setText("series_aggregate_type", e.data.aggregateInfo.aggregate);
+					webMI.gfx.setText("series_aggregate_interval", e.data.aggregateInfo.interval_value);
+					var unit = e.data.aggregateInfo.interval_unit;
+					unit = (unit == "s") ? "T{second(s)}" : ((unit == "m") ? "T{minute(s)}" : ((unit == "h") ? "T{hour(s)}" : ((unit == "d") ? "T{day(s)}" : "T{month(s)}")));
+					webMI.gfx.setText("series_aggregate_unit", unit);
+				} else {
+					if (addressIndex == 1)
+						processInput("series_aggregate", "", activeSeries);
+					else
+						processInput("series_aggregate2", "", activeSeries);
+					webMI.gfx.setText("series_aggregate_type", "-");
+					webMI.gfx.setText("series_aggregate_interval", "-");
+					webMI.gfx.setText("series_aggregate_unit", "-");
+				}
+
+				/* Mouseclick etc... */
+				if (e.event != null) {
+					changedByTree = true;
+					webMI.trigger.fire("setValue", address, "address_picker");
+					processInput(key, address, activeSeries);
+				}
+
+				if (webMI.getMethodSupport().indexOf("BrowseDataArchives") != -1) setDataArchiveOptions(address, e.data.aggregateInfo);
+
+				address = address.split(".");
+				webMI.trigger.fire("setValue", address[address.length - 1], "series_name");
+
+				if (chart.chart.series[activeSeries].options.marker && typeof chart.chart.series[activeSeries].options.marker.enabled == "undefined") chart.chart.series[activeSeries].options.marker.enabled = false;
+
+				updateEnabled = false;
+				chart.control.updated(function () {
+					updateEnabled = true;
+				});
+
+			}
+		});
+
+	});
+
+	for (var i = 0; i < numSeries; i++) {
+		webMI.trigger.connect("valuechanged", function (e) {
+			if (!triggerEnabled)
+				return;
+
+			activeSeries = parseInt(e.value) + activeOffset;
+			webMI.query["activeSeries"] = activeSeries;
+
+			if (lastSeries != activeSeries || (typeof e.value == "number" && e.value == 0)) {
+				lastSeries = parseInt(activeSeries);
+				readOptions();
+			}
+		}, "selector" + i);
+	}
+
+	readOptions();
+
+	var updateCb = chart.control.registerOnUpdatedCallback(function (e) {
+		if (!updateEnabled)
+			return;
+		readOptions("registerOnUpdatedCallback");
+	});
+
+	webMI.addOnunload(function () {
+		if (chart && chart.control) chart.control.unregisterOnUpdatedCallback(updateCb);
+	});
+});
+
+enableAreaInputs(false);
+enableAggregateInputs(false);
+
+
+/**
+ * FUNCTION SECTION
+ */
+
+/**
+ * Series functions
+ * @param options
+ */
+function addSeries(options) {
+	if (typeof options == "undefined")
+		options = {};
+
+	chart.chart.addSeries(options);
+
+	updateEnabled = false;
+	chart.control.updated(function () {
+		updateEnabled = true;
+	});
+
+	if (typeof options.name != "undefined") {
+		series.push(options.name);
+	} else {
+		var i = 0;
+		var name = "";
+		while (typeof chart.chart.series[i] != "undefined") {
+			name = chart.chart.series[i++]["name"];
+		}
+		series.push(name);
+	}
+
+	if (series.length > numSeries)
+		scrollButtons(true);
+
+	lastSeries = activeSeries;
+	activeSeries = series.length - 1;
+
+	webMI.trigger.fire("radioClicked_g0", {
+		name: webMI.gfx.getText("selector" + (activeSeries - activeOffset) + "_radiobutton_label"),
+		value: (activeSeries - activeOffset)
+	});
+}
+
+function removeSeries() {
+	if (series.length == 1 || !chart.chart.series[activeSeries])
+		return;
+
+	chart.chart.series[activeSeries].remove();
+
+	updateEnabled = false;
+	chart.control.updated(function () {
+		updateEnabled = true;
+	});
+
+    if (series.length > 10 || activeSeries > (numSeries - 1))
+		scrollSeries("up");
+
+    if (series.length - 1 < (numSeries + 1) && series.length < 10)
+		scrollButtons(false);
+
+	if (activeSeries > 0)
+		--activeSeries;
+
+	webMI.trigger.fire("radioClicked_g0", {
+		name: webMI.gfx.getText("selector" + (activeSeries - activeOffset) + "_radiobutton_label"),
+		value: (activeSeries - activeOffset)
+	});
+}
+
+function scrollSeries(direction) {
+	if (direction == "up" && activeOffset > 0) {
+		--activeOffset;
+	} else if (direction == "down" && activeOffset < (series.length - numSeries)) {
+		++activeOffset;
+	}
+	seriesManager(series);
+}
+
+function seriesManager(series) {
+	for (var i = 0; i < numSeries; i++) {
+		var iOffset = i + activeOffset;
+		if (typeof series[iOffset] != "undefined") {
+			webMI.gfx.setVisible("selector" + i, true);
+
+			var name = (series[iOffset] != "") ? series[iOffset] : "Series";
+			webMI.gfx.setText("selector" + i + "_radiobutton_label", name + " [" + iOffset + "]");
+		} else {
+			webMI.gfx.setVisible("selector" + i, false);
+		}
+	}
+
+	if (jumpToSeries != 0) {
+		var i = 0;
+		while (typeof chart.chart.series[i] != "undefined") {
+			if (chart.chart.series[i].options.id == jumpToSeries) {
+				activeSeries = i;
+				jumpToSeries = 0;
+				triggerEnabled = true;
+				break;
+			}
+			i++;
+		}
+		lastSeries = activeSeries;
+	}
+
+	webMI.trigger.fire("radioClicked_g0", {
+		name: webMI.gfx.getText("selector" + (activeSeries - activeOffset) + "_radiobutton_label"),
+		value: (activeSeries - activeOffset)
+	});
+}
+
+function deactivateAllRadiosButMe(me) {
+	for (var i = 0; i < 10; i++) {
+		if (i != me) webMI.trigger.fire("com.atvise.setActive", false, "selector" + i);
+	}
+}
+
+function activateAllRadios() {
+	for (var i = 0; i < 10; i++) {
+		webMI.trigger.fire("com.atvise.setActive", true, "selector" + i);
+	}
+}
+
+function scrollButtons(active) {
+	webMI.trigger.fire("com.atvise.setActive", active, "btn_up");
+	webMI.trigger.fire("com.atvise.setActive", active, "btn_down");
+}
+
+/**
+ * Read options
+ * @param action
+ */
+function readOptions(action) {
+
+	triggerEnabled = false;
+	series = [];
+	curAggregate = "";
+
+	/* Search configured series */
+	var i = 0;
+	while (typeof chart.chart.series[i] != "undefined") {
+		var name = chart.chart.series[i]["name"];
+		if (typeof name != "undefined")
+			series.push(name);
+		else
+			series.push("");
+		i++;
+	}
+
+	if (series.length == 0)
+		addSeries();
+
+	if (series.length < (numSeries + 1))
+		scrollButtons(false);
+
+	/* Set values for current active series */
+	var curSeries = chart.chart.series[activeSeries];
+
+	addressIsAggregate = (curSeries.options.aggregate || curSeries.options.aggregate2) ? true : false;
+
+	if (typeof curSeries == "undefined")
+		return;
+
+	if (!curSeries.tooltipOptions.valueDecimals)
+		setOptions("series_tooltip_valueDecimals", inputDefaults["series_tooltip_valueDecimals"], activeSeries);
+
+	var type = 0;
+	while (curSeries.type != seriesTypes[type].value)
+		type++;
+
+	webMI.trigger.fire("setSelectedItem", seriesTypes[type].text, "series_type");
+	webMI.trigger.fire("setChecked", curSeries.visible, "series_visible");
+
+	if (action != "registerOnUpdatedCallback") {
+		if (addressIndex == 1 && curSeries.options.aggregate) {
+			webMI.gfx.setText("series_aggregate_type", curSeries.options.aggregate.aggregate);
+			webMI.gfx.setText("series_aggregate_interval", curSeries.options.aggregate.interval);
+			var unit = curSeries.options.aggregate.unit;
+			unit = (unit == "s") ? "T{second(s)}" : ((unit == "m") ? "T{minute(s)}" : ((unit == "h") ? "T{hour(s)}" : ((unit == "d") ? "T{day(s)}" : "T{month(s)}")));
+			webMI.gfx.setText("series_aggregate_unit", unit);
+
+			if (smallLayout) {
+				var comb = curSeries.options.aggregate.aggregate + ", " + curSeries.options.aggregate.interval + " " + unit;
+				webMI.gfx.setText("series_aggregate", comb);
+			}
+
+			curAggregate = curSeries.options.aggregate.address;
+		} else if (addressIndex == 2 && curSeries.options.aggregate2) {
+			webMI.gfx.setText("series_aggregate_type", curSeries.options.aggregate2.aggregate);
+			webMI.gfx.setText("series_aggregate_interval", curSeries.options.aggregate2.interval);
+			var unit = curSeries.options.aggregate2.unit;
+			unit = (unit == "s") ? "T{second(s)}" : ((unit == "m") ? "T{minute(s)}" : ((unit == "h") ? "T{hour(s)}" : ((unit == "d") ? "T{day(s)}" : "T{month(s)}")));
+			webMI.gfx.setText("series_aggregate_unit", unit);
+			if (smallLayout) {
+				var comb = curSeries.options.aggregate2.aggregate + ", " + curSeries.options.aggregate2.interval + " " + unit;
+				webMI.gfx.setText("series_aggregate", comb);
+			}
+			curAggregate = curSeries.options.aggregate.address;
+		} else {
+			webMI.gfx.setText("series_aggregate_type", "-");
+			webMI.gfx.setText("series_aggregate_interval", "-");
+			webMI.gfx.setText("series_aggregate_unit", "-");
+			if (smallLayout) {
+				webMI.gfx.setText("series_aggregate", "-");
+			}
+		}
+	}
+
+	webMI.trigger.fire("setValue", curSeries.tooltipOptions.valuePrefix ? curSeries.tooltipOptions.valuePrefix : inputDefaults["series_tooltip_valuePrefix"], "series_tooltip_valuePrefix");
+	webMI.trigger.fire("setValue", curSeries.tooltipOptions.valueSuffix ? curSeries.tooltipOptions.valueSuffix : inputDefaults["series_tooltip_valueSuffix"], "series_tooltip_valueSuffix");
+	webMI.trigger.fire("setValue", curSeries.tooltipOptions.valueDecimals ? parseInt(curSeries.tooltipOptions.valueDecimals, 10) : inputDefaults["series_tooltip_valueDecimals"], "series_tooltip_valueDecimals");
+	webMI.trigger.fire("setValue", curSeries.options.zIndex ? curSeries.options.zIndex : 0, "series_zIndex");
+
+	if (action != "registerOnUpdatedCallback") {
+		var address = "";
+		var dataArchive = "";
+		if (addressIndex == 1 && curSeries.options.address) {
+			address = curSeries.options.address;
+			dataArchive = curSeries.options.dataArchive;
+		} else if (addressIndex == 2 && curSeries.options.address2) {
+			address = curSeries.options.address2;
+			dataArchive = curSeries.options.dataArchive2;
+		}
+
+		curAddress = address;
+		curDataArchive = dataArchive;
+
+		if (address != "")
+			skipSelection = true;
+		if (treeViewReady) {
+			if (address) deactivateAllRadiosButMe(activeSeries);
+			treeView.selectNode(address, curAggregate);
+		}
+
+		webMI.trigger.fire("setValue", address, "address_picker");
+	}
+
+	if (address != "") {
+		webMI.data.read(address, function (e) {
+			if (typeof e.value != "string") {
+				oldAddressValue = address;
+			}
+		});
+	}
+
+	webMI.trigger.fire("setValue", curSeries.name, "series_name");
+	if (webMI.getMethodSupport().indexOf("BrowseDataArchives") != -1 && address) setDataArchiveOptions(curAddress, addressIsAggregate);
+
+	seriesManager(series);
+	triggerEnabled = true;
+}
+
+/**
+ * Write options
+ * @param key
+ * @param value
+ * @param identifier
+ */
+function setOptions(key, value, identifier) {
+	if (value === "true" || value === true)
+		value = true;
+	if (value === "false" || value === false)
+		value = false
+
+	if (chart.chart.series[identifier]) {
+		if (key == "series_visible") {
+			if (chart.control.isLiveModeRunning())
+				chart.chart.series[identifier].setVisible(value, true);
+			else
+				chart.chart.series[identifier].setVisible(value, false);
+			return;
+		}
+
+		if (key == "series_aggregate_aggregate" && value == "T{[none]}")
+			value = "";
+
+		if (key == "series_dataArchive" && addressIndex == 2)
+			key = "series_dataArchive2";
+
+		if (key == "series_tooltip_valueDecimals")
+			value = value.toString();
+
+		updateEnabled = false;
+		var optionsObj = configHandler.createConfigObject(key.slice(7, key.length), value);
+		if (chart.control.isLiveModeRunning()) {
+			chart.control.stopLiveMode(function () {
+				chart.chart.series[identifier].update(optionsObj, false, chart.control.startLiveMode);
+			});
+		} else {
+			chart.chart.series[identifier].update(optionsObj);
+		}
+
+		chart.control.updated(function () {
+			updateEnabled = true;
+		});
+
+		if (key == "series_type")
+			readOptions();
+	}
+}
+
+function setDataArchiveOptions(node, isAggregate) {
+	/* Fetch data archives of node */
+	var dataArchives = webMI.data.call("BrowseDataArchives", {
+		node: node
+	}, function (e) {
+		var dataArchiveOptions = {};
+
+		/* dataArchive saved in options */
+		var savedArchive;
+
+		if (addressIndex == 2) savedArchive = chart.chart.series[activeSeries].options.dataArchive2;
+		else savedArchive = chart.chart.series[activeSeries].options.dataArchive;
+
+		savedArchiveInOptions = false;
+
+		/* create new options list */
+		dataArchiveOptions[0] = {text: " ", value: ""};
+		var i = 0;
+		for (var source in e) {
+			i++;
+			dataArchiveOptions[i] = {text: source, value: source};
+			if (savedArchive == source) savedArchiveInOptions = true;
+		}
+
+		updateEnabled = false;
+		webMI.trigger.fire("setItems", dataArchiveOptions, "data_archive");
+
+		webMI.gfx.setVisible("label_data_archive", true);
+		webMI.gfx.setVisible("data_archive", true);
+		if (i == 1) webMI.trigger.fire("com.atvise.setActive", false, "data_archive");
+		if (savedArchive && savedArchiveInOptions) {
+			webMI.trigger.fire("setSelectedItem", savedArchive, "data_archive");
+		} else {
+			if (i == 1 && !isAggregate) webMI.trigger.fire("setSelectedItem", dataArchiveOptions[1].value, "data_archive");
+			else webMI.trigger.fire("setSelectedItem", " ", "data_archive");
+		}
+		updateEnabled = true;
+	});
+}
+
+
+function processInput(key, value, identifier) {
+	if (typeof key == "undefined" || typeof value == "undefined")
+		return;
+
+	if (key == "series_name")
+		webMI.gfx.setText("selector" + (activeSeries - activeOffset) + "_radiobutton_label", value + " [" + identifier + "]");
+
+	if (!triggerEnabled)
+		return;
+
+	setOptions(key, value, identifier);
+}
+
+/**
+ * Enable/disable input fields
+ * @param e
+ */
+function enableAreaInputs(e) {
+	webMI.trigger.fire("com.atvise.setActive", e, "btn_address1");
+	webMI.trigger.fire("com.atvise.setActive", e, "btn_address2");
+	if (e) {
+		if (addressIndex == 1) {
+			webMI.gfx.setFill("btn_address1_button_bg", buttonColor.color1);
+			webMI.gfx.setFill("btn_address2_button_bg", buttonColor.color2);
+		} else {
+			webMI.gfx.setFill("btn_address1_button_bg", buttonColor.color2);
+			webMI.gfx.setFill("btn_address2_button_bg", buttonColor.color1);
+		}
+	} else {
+		addressIndex = 1;
+	}
+}
+
+function enableAggregateInputs(e) {
+	webMI.trigger.fire("com.atvise.setActive", e, "series_aggregate_type");
+}
+
+
+/**
+ * TRIGGER SECTION
+ */
+webMI.trigger.connect("valuechanged", function (e) {
+	if (typeof e == "undefined" || e.value != "" || filterUsed) {
+		treeView.filter(e.value);
+		filterUsed = true;
+	}
+}, "search_input");
+
+webMI.trigger.connect("valuechanged", function (e) {
+	if (!triggerEnabled)
+		return;
+
+	if (webMI.getMethodSupport().indexOf("CheckNodeExists") > -1) {
+		webMI.data.call("CheckNodeExists", {"address": e.value}, function (c) {
+			if (c.result) {
+				readAddress(e);
+			}
+		});
+	} else {
+		readAddress(e);
+	}
+
+	function readAddress(e) {
+		if (e.value != "") {
+			webMI.data.read(e.value, function (e2) {
+				if (typeof e2.value != "string") {
+					var curSeries = chart.chart.series[activeSeries];
+
+					if (typeof curSeries == "undefined")
+						return;
+
+					if (addressIndex == 1) {
+						processInput("series_address", e.value, activeSeries);
+					} else if (addressIndex == 2) {
+						processInput("series_address2", e.value, activeSeries);
+					}
+
+					oldAddressValue = e.value;
+					if (!changedByTree) {
+						if (treeViewReady) {
+							if (e.value) deactivateAllRadiosButMe(activeSeries);
+							treeView.selectNode(e.value);
+						}
+					} else {
+						changedByTree = false;
+					}
+				} else {
+					webMI.trigger.fire("setValue", oldAddressValue, "address_picker");
+				}
+			});
+		}
+	}
+}, "address_picker");
+
+webMI.trigger.connect("valuechanged", function (e) {
+
+	if (!triggerEnabled)
+		return;
+
+	processInput("series_dataArchive", e.value, activeSeries);
+
+}, "data_archive");
+
+/* Triggers to add, remove and scroll series */
+webMI.trigger.connect("clicked", function (e) {
+	addSeries()
+}, "btn_add");
+
+webMI.trigger.connect("clicked", function (e) {
+	removeSeries()
+}, "btn_delete");
+
+webMI.trigger.connect("clicked", function (e) {
+	scrollSeries("up")
+}, "btn_up");
+
+webMI.trigger.connect("clicked", function (e) {
+	scrollSeries("down")
+}, "btn_down");
+
+webMI.trigger.fire("setItems", seriesTypes, "series_type");
+
+webMI.trigger.connect("valuechanged", function (e) {
+	enableAggregateInputs(true);
+
+	if (e.value == "bar" || e.value == "column" || e.value == "columnrange") {
+		webMI.display.openDisplay(subdisplay.display_series_bar, webMI.query, "type_configuration");
+		enableAreaInputs(false);
+	} else if (e.value == "pie") {
+		webMI.display.openDisplay(subdisplay.display_series_pie, webMI.query, "type_configuration");
+		enableAggregateInputs(false);
+		enableAreaInputs(false);
+	} else if (e.value == "arearange" || e.value == "areasplinerange") {
+		/* prevent logarithmic y axes with areas */
+		var identifier = chart.chart.series[activeSeries].yAxis.userOptions.index;
+		chart.chart.yAxis[identifier].update({type: "linear"});
+		webMI.display.openDisplay(subdisplay.display_series_line, webMI.query, "type_configuration");
+		enableAreaInputs(true);
+	} else {
+		webMI.display.openDisplay(subdisplay.display_series_line, webMI.query, "type_configuration");
+		enableAreaInputs(false);
+	}
+}, "series_type");
+]]></code>
+</script>

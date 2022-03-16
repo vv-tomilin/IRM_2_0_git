@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta content="text/html; charset=windows-1252" http-equiv="content-type">
+	<title>Tile for line graphs Help</title>
+	<style> #parameter {
+		font-weight: bold;
+	} </style>
+</head>
+<body>
+<h1>Description</h1>
+<p>The display shows up to 10 process values in a line chart</p>
+<p>An additional border indicates the current value's negative state or an additionally defined alarm.
+	The colors and blinking intervals are defined in global lists.</p>
+
+<h1>Parameters</h1>
+<ul>
+	<li><span class="parameter">base</span>: Address used for ouput and status monitoring.</li>
+	<li><span class="parameter">alarm address</span>: Optional address used for alarm monitoring.</li>
+</ul>
+
+<p>View settings:</p>
+<ul>
+	<li><span class="parameter">title</span>: Title of the tile displayed.</li>
+	<li><span class="parameter">unit</span>: This unit is displayed in addition to the value.</li>
+	<li><span class="parameter">decimal</span>: Number of digits to the right of the decimal point (default: 0).</li>
+	<li><span class="parameter">font family title</span>: Font family which will be applied to the title</li>
+	<li><span class="parameter">font size title</span>: Font size which will be applied to the title (default: 12).</li>
+</ul>
+
+<p>Behavior on click:</p>
+<ul>
+	<li><span class="parameter">enable click event</span>: Activation of processing a click on the tile.</li>
+	<li><span class="parameter">enable click on content</span>: Additional recognization of a click on the tiles content.</li>
+	<li><span class="parameter">targetdisplay</span>: Display to be opened when recognizing a click.</li>
+	<li><span class="parameter">linked element</span>: Element to be monitored for external click events (ID of the element).</li>
+</ul>
+
+<p>Status:</p>
+<ul>
+	<li><span class="parameter">enable status monitoring</span>: Switch monitoring of current value status on or off.</li>
+	<li><span class="parameter">fire status trigger</span>: Instead of the status display a here defined trigger can be fired globally.</li>
+</ul>
+
+<p>Apperance:</p>
+<ul>
+	<li><span class="parameter">background color</span>: Background color (default: global parameter <i>atvFillColor</i>)</li>
+	<li><span class="parameter">text color</span>: Text color (default: global parameter <i>atvFontColor</i>)</li>
+	<li><span class="parameter">border color</span>: Border color (default: global parameter <i>atvBorderColor</i>)	</li>
+	<li><span class="parameter">deactivation color</span>: Deactivation color (default: global parameter <i>atvInactiveColor</i>) </li>
+	<li><span class="parameter">status indication</span>: Specify the status' display through a defined global list (default: global parameter <i>atvStatusIndication</i>)</li>
+	<li><span class="parameter">alarm indication</span>: Specify the alarm's display through a defined global list (default: global parameter <i>atvAlarmIndication</i>)</li>
+</ul>
+
+<p>Options:</p>
+<ul>
+	<li><span class="parameter">tooltip</span>: Displays a tooltip box with the entered text (standard HTML-Elements can be entered)</li>
+</ul>
+
+<p>Security:</p>
+<ul>
+	<li><span class="parameter">necessary right</span>: the user must have this right to activate this control, i.e. to enter values.</li>
+	<li><span class="parameter">activation address</span>: if the value of this address equals to "activation value", then the control will be active, i.e. can be used as input field.</li>
+	<li><span class="parameter">activation value</span>: value which activates the control.</li>
+</ul>
+
+<p>Chart settings</p>
+<ul>
+	<li><span class="parameter">chart name</span>: This is a unique name to identify the chart instance.</li>
+	<li><span class="parameter">chart group</span>: Multiple chart instances can be grouped.</li>
+	<li><span class="parameter">chart mode</span>: Defines the data mode, possible values: mixed (default), live and history.</li>
+	<li><span class="parameter">skip default modules</span>: De-/activates the loading of default highcharts modules.</li>
+	<li><span class="parameter">additional modules</span>: Defines additional modules to be loaded. (Example: "highcharts/modules/exporting.js,highcharts/datasource/opcua.js,highcharts/atviseModules/datahandler.js,highcharts/atviseModules/measuringcursor.js,highcharts/atviseModules/utils.js,highcharts/atviseModules/downsample.js")</li>
+	<li><span class="parameter">configuration node</span>: Node (address) which contains the predefined configuration.</li>
+	<li><span class="parameter">configuration filename</span>: File which updates a predefined configuration when saving is set in the file system.</li>
+	<li><span class="parameter">configuration name</span>: Name of the predefined configuration.</li>
+	<li><span class="parameter">saving method</span>: Determines whether configurations are stored in node(s) or the file system.</li>
+	<li><span class="parameter">compression</span>: Determines whether the configuration data is compressed when it is saved.</li>
+	<li><span class="parameter">data source</span>: Defines the datasource module which will be loaded for data handling (default: opcua).</li>
+	<li><span class="parameter">chart title</span>: Title of the chart.</li>
+	<li><span class="parameter">animations</span>: Turns animations off (default) or on..</li>
+	<li><span class="parameter">measurement cursor 1</span>: De-/activate measurement cursor 1.</li>
+	<li><span class="parameter">measurement cursor 2</span>: De-/activate measurement cursor 2.</li>
+	<li><span class="parameter">tooltips</span>: Enable or disable tooltips.</li>
+	<li><span class="parameter">export menu</span>: Enable or disable export menu button.</li>
+	<li><span class="parameter">necassary right for export</span>: The right needed for being able to export.</li>
+	<li><span class="parameter">local time</span>: If true the chart uses the local time, if false it uses UTC.</li>
+	<li><span class="parameter">disable downsampling</span>: Disable or enable downsampling.</li>
+</ul>
+
+<p>Y-Axis *</p>
+<ul>
+	<li><span class="parameter">title</span>: Labeling of the axis.</li>
+	<li><span class="parameter">visibility</span>: Defines the visibility of the axis.</li>
+	<li><span class="parameter">minimum</span>: Lower threshold at which the data is displayed.</li>
+	<li><span class="parameter">maximum</span>: Upper threshold to which the data is displayed.</li>
+	<li><span class="parameter">axis line width</span>: Represented line weight of the axis (in pixels).</li>
+	<li><span class="parameter">axis color</span>: Represented color of the axis (hex code).</li>
+	<li><span class="parameter">axis position</span>: Position of the axis (left / right).</li>
+	<li><span class="parameter">axis label</span>: Display of the axis title (true / false).</li>
+	<li><span class="parameter">axis label alignment</span>: Horizontal alignment of the axis title (left, center or right).</li>
+	<li><span class="parameter">label format</span>: Define a format string for the axis label (see highcharts API reference).</li>
+	<li><span class="parameter">crosshair enabled</span>: Enabling the display of the crosshair (true, false).</li>
+	<li><span class="parameter">crosshair snap</span>: Activate the snap of the crosshair.</li>
+	<li><span class="parameter">crosshair width</span>: Line width of the crosshairs (in pixels).</li>
+	<li><span class="parameter">crosshair color</span>: Color of the crosshair (hex code).</li>
+	<li><span class="parameter">crosshair type</span>: Used line type of crosshair.</li>
+	<li><span class="parameter">tick interval</span>: Interval of the main grid for orientation.</li>
+	<li><span class="parameter">minor tick interval</span>: Interval of the auxiliary grid for orientation aid.</li>
+	<li><span class="parameter">grid width</span>: Line weight of the main grid lines (in pixels).</li>
+	<li><span class="parameter">grid color</span>: Color of the main grid lines (hex code).</li>
+	<li><span class="parameter">minor grid width</span>: Line width of the auxiliary grid lines (in pixels).</li>
+	<li><span class="parameter">minor grid color</span>: Color of the auxiliary grid lines (hex code).</li>
+</ul>
+
+<p>X-Axis</p>
+<ul>
+	<li><span class="parameter">title</span>: Labeling of the axis.</li>
+	<li><span class="parameter">timespan</span>: Value of the time span to be displayed (without unit).</li>
+	<li><span class="parameter">timespan unit</span>: Unit of time to be displayed.</li>
+	<li><span class="parameter">axis line width</span>: Represented line weight of the axis (in pixels).</li>
+	<li><span class="parameter">axis color</span>: Represented color of the axis (hex code).</li>
+	<li><span class="parameter">axis position</span>: Position of the axis (left / right).</li>
+	<li><span class="parameter">axis label</span>: Display of the axis title (true / false).</li>
+	<li><span class="parameter">axis label alignment</span>: Horizontal alignment of the axis title (left, center or right).</li>
+	<li><span class="parameter">crosshair enabled</span>: Enabling the display of the crosshair (true, false).</li>
+	<li><span class="parameter">crosshair snap</span>: Activate the snap of the crosshair.</li>
+	<li><span class="parameter">crosshair width</span>: Line width of the crosshairs (in pixels).</li>
+	<li><span class="parameter">crosshair color</span>: Color of the crosshair (hex code).</li>
+	<li><span class="parameter">crosshair type</span>: Used line type of crosshair.</li>
+	<li><span class="parameter">xAxis type</span>: Type of axis scaling (default: datetime).</li>
+	<li><span class="parameter">date time format</span>: Format of the date output (default: "% H:% M:% S").</li>
+	<li><span class="parameter">tick interval</span>: Interval of the main grid for orientation.</li>
+	<li><span class="parameter">minor tick interval</span>: Interval of the auxiliary grid for orientation aid.</li>
+	<li><span class="parameter">grid line width</span>: Line weight of the main grid lines (in pixels).</li>
+	<li><span class="parameter">grid line color</span>: Color of the main grid lines (hex code).</li>
+	<li><span class="parameter">minor grid width</span>: Line width of the auxiliary grid lines (in pixels).</li>
+	<li><span class="parameter">minor grid color</span>: Color of the auxiliary grid lines (hex code).</li>
+</ul>
+
+<p>Series *:</p>
+<ul>
+	<li><span class="parameter">address</span>: Node address of the value to be displayed.</li>
+	<li><span class="parameter">interpolation</span>: Interpolation of values (line, spline, step).</li>
+	<li><span class="parameter">name</span>: Name of the series.</li>
+	<li><span class="parameter">** data archive</span>: Name of archive that will be used for displaying historical values (default: "").</li>
+	<li><span class="parameter">line width</span>: Line width for displaying the values (in pixels).</li>
+	<li><span class="parameter">color</span>: Color for the representation of the values (hex code).</li>
+	<li><span class="parameter">dash style</span>: Linetype for the representation of the values.</li>
+	<li><span class="parameter">marker</span>: Activate data point markers.</li>
+	<li><span class="parameter">visibility</span>: Visibility of the presentation at the initialization of the chart.</li>
+	<li><span class="parameter">nonstop</span>: Continuous presentation of missing values.</li>
+	<li><span class="parameter">aggregate</span>: Filter for aggregates of the specified address.</li>
+	<li><span class="parameter">aggregate interval</span>: Interval of the aggregate.</li>
+	<li><span class="parameter">aggregate unit</span>: Unit of aggregate.</li>
+	<li><span class="parameter">** x-axis</span>: ID of the assigned x-axis.</li>
+	<li><span class="parameter">y-axis</span> : ID of the assigned y-axis</li>
+</ul>
+
+<h1></h1>
+<br>
+</body>
+</html>

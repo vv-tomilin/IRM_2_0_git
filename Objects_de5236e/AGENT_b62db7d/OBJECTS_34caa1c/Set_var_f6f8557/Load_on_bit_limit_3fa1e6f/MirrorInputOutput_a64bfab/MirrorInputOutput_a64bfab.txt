@@ -1,0 +1,1 @@
+s1500/ns=3;s="OPC_Data_exchange"."OPC_Load_Drill_Limit"

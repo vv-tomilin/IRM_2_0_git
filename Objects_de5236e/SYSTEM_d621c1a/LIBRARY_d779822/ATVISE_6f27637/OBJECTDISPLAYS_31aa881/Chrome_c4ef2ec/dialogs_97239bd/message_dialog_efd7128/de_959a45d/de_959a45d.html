@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Beschreibung</h1>
+<p>Dieses Display zeigt einen definierbaren Dialog f&uuml;r Nachrichten, Informationen oder Warnungen an,
+welcher beispielsweise &uuml;ber die Funktion openWindow aufgerufen werden kann.
+Es k&ouml;nnen frei w&auml;hlbare Texte in der Kopfzeile, in bis zu drei Nachrichtenzeilen und f&uuml;r die Schaltfl&auml;chen verwendet werden.</br>
+Den beiden Schaltfl&auml;chen k&ouml;nnen zus&auml;tzlich Trigger-Funktionen &uuml;bergeben werden.
+Wenn keine Triggernamen &uuml;bergeben werden, wird als Standardfunktion f&uuml;r die beiden Schaltfl&auml;chen das Fenster geschlossen.</p>
+<h1>Parameter</h1>
+<p>Es gibt insgesamt neun Parameter:</p>
+<ul>
+  <li><span class="parameter">Symbol</span>: Adresse des anzuzeigenden Symbols.</li>
+  <li><span class="parameter">Kopfzeile</span>: Text in der Kopfzeile des Dialogs.</li>
+  <li><span class="parameter">Textzeile 1</span>: Anzuzeigender Text in Zeile 1.</li>
+  <li><span class="parameter">Textzeile 2</span>: Anzuzeigender Text in Zeile 2.</li>
+  <li><span class="parameter">Textzeile 3</span>: Anzuzeigender Text in Zeile 3.</li>
+  <li><span class="parameter">Text Schaltfl&auml;che 1</span>: Text der Schaltfl&auml;che 1</li>
+  <li><span class="parameter">Text Schaltfl&auml;che 2</span>: Text der Schaltfl&auml;che 2</li>
+  <li><span class="parameter">Aktion Schaltfl&auml;che 1</span>: Trigger-Funktion der Schaltfl&auml;che 1</li>
+  <li><span class="parameter">Aktion Schaltfl&auml;che 2</span>: Trigger-Funktion der Schaltfl&auml;che 2</li>
+</ul>
+<h1>Beispiel</h1>
+<p>Aufruf des Dialogs mit Hilfe der openWindow Funktion:</br></br>
+webMI.display.openWindow({display:"SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.dialogs.message_dialog", x:0, y:0, height:600, width:800, modal:true, resizable:false, movable:true, scrollbars:false, menubar:false, status:false, toolbar:false, query: {headline:"Meine &Uuml;berschrift", msg1:"Meine Nachricht in Zeile 1"}});
+</p>
+</body>
+</html>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.ORB.MaxDensityOutput
+NodeClass: Variable
+BrowseName: 1:MaxDensityOutput
+DisplayName: en|MaxDensityOutput
+Description: en|MaxDensityOutput
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

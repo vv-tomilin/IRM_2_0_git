@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.RigConstruction.fact.conductor
+NodeClass: Variable
+BrowseName: 1:conductor
+DisplayName: en|conductor
+Description: en|conductor
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

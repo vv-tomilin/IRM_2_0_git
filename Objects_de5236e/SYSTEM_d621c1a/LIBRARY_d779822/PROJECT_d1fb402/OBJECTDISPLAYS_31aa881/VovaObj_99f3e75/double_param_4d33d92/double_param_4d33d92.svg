@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="100" width="100" version="1.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg">
+ <defs/>
+ <metadata>
+  <atv:parameter behavior="optional" name="firstmax" defaultvalue="" valuetype="address"/>
+  <atv:parameter behavior="optional" name="secondmax" defaultvalue="" valuetype="address"/>
+  <atv:parameter behavior="optional" name="param_1" defaultvalue="" valuetype="address"/>
+  <atv:parameter behavior="optional" name="param_2" defaultvalue="" valuetype="address"/>
+  <atv:gridconfig height="20" enabled="false" width="20" gridstyle="lines"/>
+  <atv:snapconfig height="10" enabled="false" width="10"/>
+ </metadata>
+ <svg height="100" width="100" id="id_0" y="0" atv:refpx="50" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.graphparam" x="0" atv:refpy="50">
+  <atv:argument value="" name="max" prefix="firstmax"/>
+  <atv:argument name="base" prefix="param_1"/>
+ </svg>
+ <svg height="100" width="100" id="id_1" y="0" atv:refpx="-0.408" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.graphparam" transform="matrix(0.703,0.7112,-0.7112,0.703,0,0)" x="0" atv:refpy="70.71">
+  <atv:argument value="" name="max" prefix="secondmax"/>
+  <atv:argument name="base" prefix="param_2"/>
+ </svg>
+ <line id="id_2" stroke-width="2" x2="70.422" x1="0.422" y1="0.224" atv:refpx="35.422" y2="70.081" stroke="#1f1f1f" atv:refpy="35.152"/>
+ <rect height="2.02" width="99" id="id_3" stroke-width="0" y="0" atv:refpx="49.5" stroke="#1f1f1f" fill="#1f1f1f" x="0" atv:refpy="1.01"/>
+</svg>

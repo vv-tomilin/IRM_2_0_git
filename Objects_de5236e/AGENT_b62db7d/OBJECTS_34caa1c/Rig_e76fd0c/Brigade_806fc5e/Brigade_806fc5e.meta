@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Rig.Brigade
+NodeClass: Object
+BrowseName: 1:Brigade
+DisplayName: en|Brigade
+Description: en|Brigade
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

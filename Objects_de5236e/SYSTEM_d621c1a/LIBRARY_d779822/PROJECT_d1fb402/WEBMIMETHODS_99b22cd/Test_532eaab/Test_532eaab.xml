@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="StartData" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Test.ForMainWindow.StartReportDate"/>
+  <parameter name="FinishData" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Test.ForMainWindow.FinishReportDate"/>
+  <code><![CDATA[var start = new Date(StartData)
+console.log(start);
+var finish = new Date(FinishData)
+console.log(finish);
+console.log(["n:>=" + start.getTime() + "<" + finish.getTime()])
+var result = history.query({
+    type: ["v:1"], // data values
+    timestamp: ["n:>=" + start.getTime() + "<" + finish.getTime()],
+    address: ["g:AGENT.OBJECTS.IVE50.Drawworks.HookPosition"]
+});
+console.log("suck");
+console.log(result);]]></code>
+</script>

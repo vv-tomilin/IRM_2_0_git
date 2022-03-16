@@ -1,0 +1,229 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="630" height="300">
+ <defs/>
+ <metadata>
+  <atv:parameter behavior="optional" valuetype="string" defaultvalue="" name="fileName"/>
+  <atv:parameter behavior="optional" valuetype="address" defaultvalue="" name="csvCount"/>
+  <atv:parameter behavior="optional" valuetype="number" defaultvalue="1" name="isCsvMain"/>
+  <atv:gridconfig gridstyle="lines" width="20" height="20" enabled="false"/>
+  <atv:snapconfig width="10" height="10" enabled="false"/>
+ </metadata>
+ <foreignObject y="139" id="id_1" x="384" width="20" height="38">
+  <body xmlns="http://www.w3.org/1999/xhtml">
+   <form>
+    <input style="visibility: hidden;" type="file" id="file"/>
+   </form>
+  </body>
+ </foreignObject>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" y="96.446" atv:refpy="43.505" id="select" x="9.778" transform="matrix(2.0455,0,0,1.2857,0,0)" atv:refpx="305.633" width="80" height="30">
+  <atv:argument value="T{Выберите файл}" name="label"/>
+  <atv:argument value="SYSTEM.GLOBALS.Colors.ButtonStroke" name="focusStrokeColor"/>
+  <atv:argument value="SYSTEM.GLOBALS.textColorWhite" name="fontColor"/>
+  <atv:argument value="16" name="fontSize"/>
+  <atv:overwrite id="id_6" height="36.571" transform="matrix(0.4889,0,0,0.7778,0,0)" width="161.64"/>
+  <atv:overwrite y="9.286" id="button_symbol" x="71.82" transform="matrix(0.4889,0,0,0.7778,0,0)"/>
+  <atv:overwrite y="30.786" id="button_label_2" x="81.82" transform="matrix(0.4889,0,0,0.7778,0,0)"/>
+  <atv:overwrite y="15.786" id="button_label_1" x="81.82" transform="matrix(0.4889,0,0,0.7778,0,0)"/>
+  <atv:overwrite y="23.786" id="button_label" x="81.82" transform="matrix(0.4889,0,0,0.7778,0,0)"/>
+  <atv:overwrite id="button_stroke" height="34.571" transform="matrix(0.4889,0,0,0.7778,0,0)" width="159.64"/>
+  <atv:overwrite id="button_bg" height="36.571" transform="matrix(0.4889,0,0,0.7778,0,0)" width="161.64"/>
+  <atv:overwrite id="outer_frame" height="38.571" transform="matrix(0.4889,0,0,0.7778,0,0)" width="163.64"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" y="135.335" atv:refpy="173.927" id="write" x="9.778" transform="matrix(2.0455,0,0,1.2857,0,0)" atv:refpx="161.756" width="80" height="30">
+  <atv:argument value="T{Загрузить}" name="label"/>
+  <atv:argument value="SYSTEM.GLOBALS.Colors.ButtonStroke" name="focusStrokeColor"/>
+  <atv:argument value="SYSTEM.GLOBALS.textColorWhite" name="fontColor"/>
+  <atv:argument value="16" name="fontSize"/>
+  <atv:overwrite id="id_6" height="36.571" transform="matrix(0.4889,0,0,0.7778,0,0)" width="161.64"/>
+  <atv:overwrite y="9.286" id="button_symbol" x="71.82" transform="matrix(0.4889,0,0,0.7778,0,0)"/>
+  <atv:overwrite y="30.786" id="button_label_2" x="81.82" transform="matrix(0.4889,0,0,0.7778,0,0)"/>
+  <atv:overwrite y="15.786" id="button_label_1" x="81.82" transform="matrix(0.4889,0,0,0.7778,0,0)"/>
+  <atv:overwrite y="23.786" id="button_label" x="81.82" transform="matrix(0.4889,0,0,0.7778,0,0)"/>
+  <atv:overwrite id="button_stroke" height="34.571" transform="matrix(0.4889,0,0,0.7778,0,0)" width="159.64"/>
+  <atv:overwrite id="button_bg" height="36.571" transform="matrix(0.4889,0,0,0.7778,0,0)" width="161.64"/>
+  <atv:overwrite id="outer_frame" height="38.571" transform="matrix(0.4889,0,0,0.7778,0,0)" width="163.64"/>
+ </svg>
+ <text y="135.5" atv:refpy="131" font-size="16" id="selectMessage" fill="#ffffff" x="239" visibility="visible" atv:refpx="293.209" font-family="Arial">T{No File Selected}</text>
+ <text y="203.5" atv:refpy="199" font-size="16" id="saveMessage" fill="#ffffff" x="239" visibility="hidden" atv:refpx="285.384" font-family="Arial">T{saveMessage}</text>
+ <text y="158.5" atv:refpy="154" font-size="16" id="selectFileSize" fill="#ffffff" x="239" visibility="visible" atv:refpx="257.388" font-family="Arial">T{0kB}</text>
+ <rect y="239" stroke-width="1" atv:refpy="135" id="progressBarBG" fill="#f8f8f8" x="20" stroke="#1793ff" atv:refpx="315" width="590" height="20"/>
+ <rect y="240" stroke-width="2" atv:refpy="169.5" id="progress" fill="#1793ff" x="20" stroke="none" visibility="hidden" atv:refpx="19.397" width="589.5" height="19"/>
+ <script type="text/ecmascript"><![CDATA[var dataString = "";
+var dataArr = [];
+var fileName = "";
+console.log(webMI.query["isCsvMain"])
+function ProgressBar(chunkCount, atvId) {
+  var min = 0;
+  var max = chunkCount;
+  var atvId = atvId;
+
+  webMI.gfx.setScaleX(atvId, min);
+  webMI.gfx.setVisible(atvId, null);
+
+  this.set = function (value) {
+    var factor = webMI.translate(value, min, max, 0, 1);
+    webMI.gfx.setScaleX(atvId, factor);
+  };
+}
+
+webMI.gfx.setText("selectMessage", "Файл не выбран");
+
+var fileInput = document.getElementById("file"),
+  readFile = function () {
+    if (fileInput.files.length != 0) {
+      var reader = new FileReader();
+      reader.fileName = fileInput.files[0].name;
+      reader.onload = function (fileLoadedEvent) {
+        var pdfSize = fileLoadedEvent.target.result.length / 1000;
+        if (pdfSize <= Infinity) {
+          fileName = reader.fileName;
+          dataString = fileLoadedEvent.target.result;
+          webMI.gfx.setText("selectMessage", fileLoadedEvent.target.fileName);
+          webMI.gfx.setText("selectFileSize", pdfSize + "kB");
+        } else {
+          alert(
+            "Размер файла " +
+              pdfSize +
+              "kB, only files smaller than Infinity are allowed. Please try again"
+          );
+          return;
+        }
+      };
+      reader.readAsBinaryString(fileInput.files[0]);
+    }
+  };
+fileInput.addEventListener("change", readFile);
+
+webMI.addEvent("select", "click", function (e) { 
+    document.getElementById("file").click();
+});
+
+webMI.addEvent("write", "click", function (e) {
+  var value = true;
+  return (function (value) {
+    if (dataString != "" && fileName != "") {
+      function getChunks(binaryString) {
+        var fileSize = binaryString.length;
+        var chunkSize = 128 * 1024;
+        var offset = 0;
+        var chunks = [];
+
+        var chunkCount = Math.ceil(fileSize / chunkSize);
+
+        for (offset = 0; offset <= chunkCount; offset++) {
+          var byteOffset = offset * chunkSize;
+          var chunk = binaryString.slice(byteOffset, byteOffset + chunkSize);
+
+          if (chunk) {
+            chunks.push(chunk);
+          }
+        }
+
+        return chunks;
+      }
+
+      var dataChunks = getChunks(dataString);
+      var uid = Number(new Date());
+      var requestIndex = 0;
+      makeRequest(dataChunks, uid);
+      var progressBar = new ProgressBar(dataChunks.length, "progress");
+
+      function makeRequest(dataChunks, uid) {
+        if (requestIndex === dataChunks.length) {
+          return;
+        }
+
+        var httpRequest = new XMLHttpRequest();
+        var data = dataChunks[requestIndex];
+        var lastChunk = requestIndex === dataChunks.length - 1;
+
+        if (!httpRequest) {
+          alert("Cannot create an XMLHTTP instance");
+          return false;
+        }
+
+        httpRequest.onreadystatechange = execFollowUpRequest;
+        httpRequest.open("POST", "../../scripts/uploadfile");
+        
+        webMI.data.read(webMI.query["csvCount"],function(e){
+			
+			var fileNumber=e.value;
+			fileNumber=fileNumber+1
+			
+			httpRequest.setRequestHeader("Content-Type", "multipart/form-data");
+			var requestParams=""
+			console.log(webMI.query["isCsvMain"])
+			if(webMI.query["isCsvMain"]==1){
+				console.log("her1")
+				requestParams =
+				"data=" +
+				encodeURIComponent(encodeURI(data)) +
+				"&path=rigdata\\depthDay\\" +
+				+fileNumber+'.csv' +
+				"&uid=" +
+				uid +
+				"&index=" +
+				requestIndex +
+				"&lastchunk=" +
+				lastChunk;}
+			else if(webMI.query["isCsvMain"]==2){
+				console.log("her2")
+				requestParams =
+				"data=" +
+				encodeURIComponent(encodeURI(data)) +
+				"&path=rigdata\\rigProfile\\plan\\" +
+				+fileNumber+'.csv' +
+				"&uid=" +
+				uid +
+				"&index=" +
+				requestIndex +
+				"&lastchunk=" +
+				lastChunk;
+			}
+			else if(webMI.query["isCsvMain"]==3){
+			console.log("her3")
+				requestParams =
+				"data=" +
+				encodeURIComponent(encodeURI(data)) +
+				"&path=rigdata\\rigProfile\\fact\\" +
+				+fileNumber+'.csv' +
+				"&uid=" +
+				uid +
+				"&index=" +
+				requestIndex +
+				"&lastchunk=" +
+				lastChunk;
+			}
+			console.log(requestParams)
+			httpRequest.send(requestParams);
+			webMI.data.write(webMI.query["csvCount"],fileNumber)
+		})
+        function execFollowUpRequest() {
+          if (httpRequest.readyState === XMLHttpRequest.DONE) {
+            if (httpRequest.status === 200) {
+              requestIndex++;
+              progressBar.set(requestIndex);
+              if (requestIndex === dataChunks.length) {
+                setTimeout(function () {
+                  /*webMI.data.call("ProcessPlanData", {
+                    start: document.getElementById("datepicker").value,
+                  });*/
+                  alert("Файл успешно загружен");
+                  //webMI.display.closeWindow();
+                }, 300);
+              }
+
+              makeRequest(dataChunks, uid);
+            } else {
+              alert("Ошибка отправки запроса");
+            }
+          }
+        }
+      }
+    } else {
+      alert("Пожалуйста, сначала выберите файл");
+    }
+  })(value);
+});
+]]></script>
+</svg>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Settings_param.Graph.updateGraphListSensorsTrigger
+NodeClass: Variable
+BrowseName: 1:updateGraphListSensorsTrigger
+DisplayName: en|updateGraphListSensorsTrigger
+Description: en|updateGraphListSensorsTrigger
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

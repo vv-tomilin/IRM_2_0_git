@@ -1,0 +1,11 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Mud1.Circulation_Rate
+NodeClass: Variable
+BrowseName: 1:Circulation_Rate
+DisplayName: en|Circulation_Rate
+Description: en|Circulation_Rate
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

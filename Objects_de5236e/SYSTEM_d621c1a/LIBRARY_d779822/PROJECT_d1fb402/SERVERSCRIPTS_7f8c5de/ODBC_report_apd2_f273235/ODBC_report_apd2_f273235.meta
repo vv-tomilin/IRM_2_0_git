@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.ODBC_report_apd2
+NodeClass: Variable
+BrowseName: 1:ODBC_report_apd2
+DisplayName: en|ODBC_report_apd2
+Description: en|ODBC_report_apd2
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

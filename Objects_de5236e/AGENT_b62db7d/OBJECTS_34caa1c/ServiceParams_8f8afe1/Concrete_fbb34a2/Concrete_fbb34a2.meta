@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ServiceParams.Concrete
+NodeClass: Object
+BrowseName: 1:Concrete
+DisplayName: en|Concrete
+Description: en|Concrete
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

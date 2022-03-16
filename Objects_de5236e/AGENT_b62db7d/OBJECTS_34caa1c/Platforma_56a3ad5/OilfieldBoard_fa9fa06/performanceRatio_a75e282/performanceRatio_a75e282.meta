@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Platforma.OilfieldBoard.performanceRatio
+NodeClass: Variable
+BrowseName: 1:performanceRatio
+DisplayName: en|performanceRatio
+Description: en|performanceRatio
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

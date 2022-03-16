@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Platforma.RigBoard.distribution_buildup
+NodeClass: Variable
+BrowseName: 1:distribution_buildup
+DisplayName: en|distribution_buildup
+Description: en|distribution_buildup
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

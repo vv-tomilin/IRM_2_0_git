@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/histogram-bellcurve.js.map
+NodeClass: Variable
+BrowseName: 1:histogram-bellcurve.js.map
+DisplayName: en|histogram-bellcurve.js.map
+Description: en|histogram-bellcurve.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

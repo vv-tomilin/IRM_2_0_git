@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Drawworks.LoadOnBit.Low
+NodeClass: Variable
+BrowseName: 1:Low
+DisplayName: en|Low
+Description: en|Low
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

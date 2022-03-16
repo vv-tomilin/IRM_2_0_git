@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="interval" type="interval" trigger="false" relative="false" value="" offset="00:00:00" interval="00:00:10"/>
+  <parameter name="rig_name" type="node" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Rig.General.RigName"/>
+  <code><![CDATA[console.log("rig_name = "+rig_name);
+for(var key in rig_name){
+	console.log("key = "+key+", val = "+rig_name[key]);
+} 
+/*
+hexStringToByteArray = function(hexstring){
+	var bytes = new Uint8Array(Math.ceil(hexstring.length / 2));
+	for (var i = 0; i < bytes.length; i++) 
+		bytes[i] = parseInt(hexstring.substr(i * 2, 2), 16);
+	return bytes;	
+}
+byteArrayToFloat = function(byteArray) {
+	// Create a buffer
+	var buf = new ArrayBuffer(4);
+	// Create a data view of it
+	var view = new DataView(buf);
+	
+	// set bytes
+	var rev = byteArray.reverse();
+	rev.forEach(function (b, i) {
+		console.log("b = "+ b);
+		view.setUint8(i, b);
+	});
+
+//	for(var i=0;i<byteArray.length;++i){
+//		view.setUint8(i, byteArray[i]);
+//	}	
+
+	// Read the bits as a float; note that by doing this, we're implicitly
+	// converting it from a 32-bit float into JavaScript's native 64-bit double
+	var num = view.getFloat32(0);
+	return num;
+};
+var t = "X'0A00808944'";
+//var t = "X'0A44898000'";
+console.log("t.slice(4,12)" + t.slice(4,12));
+var depth = byteArrayToFloat(hexStringToByteArray(t.slice(4,12)));
+console.log("depth = "+depth);
+*/]]></code>
+</script>

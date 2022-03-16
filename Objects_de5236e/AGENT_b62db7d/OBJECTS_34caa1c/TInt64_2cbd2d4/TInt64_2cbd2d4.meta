@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.TInt64
+NodeClass: Variable
+BrowseName: 1:TInt64
+DisplayName: en|TInt64
+Description: en|TInt64
+DataType: Int64
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.MikAnd.EditableLabel_rig1
+NodeClass: Variable
+BrowseName: 1:EditableLabel_rig1
+DisplayName: en|EditableLabel
+Description: en|EditableLabel
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

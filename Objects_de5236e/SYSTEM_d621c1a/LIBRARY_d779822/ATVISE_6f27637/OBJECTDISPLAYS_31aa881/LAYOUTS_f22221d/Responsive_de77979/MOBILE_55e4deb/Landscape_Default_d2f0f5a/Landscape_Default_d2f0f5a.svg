@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg height="730" atv:contentwidth="1300" version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" atv:contentheight="610" width="1300">
+ <desc>1300 x 730</desc>
+ <title>Landscape mobile</title>
+ <defs/>
+ <metadata>
+  <atv:parameter name="Parent" valuetype="address" defaultvalue="" behavior="optional"/>
+  <atv:gridconfig height="20" gridstyle="lines" enabled="false" width="20"/>
+  <atv:snapconfig height="10" enabled="true" width="10"/>
+ </metadata>
+ <svg height="600" atv:refpx="650" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.hmi.iframe" transform="matrix(1.625,0,0,1.0167,0,0)" atv:refpy="425.004" y="118.037" id="id_4" x="0" width="800">
+  <atv:argument name="frameName" value="content"/>
+  <atv:argument name="isNavigationFrame" value="true"/>
+  <atv:overwrite transform="matrix(0.625,0,0,0.9231,0,0)" y="414.11" id="label2" x="415.5"/>
+  <atv:overwrite transform="matrix(0.625,0,0,0.9231,0,0)" y="344.5" id="label" x="549"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.MOBILE.Landscape.Main"/>
+ </svg>
+ <svg height="120" atv:refpx="650" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.hmi.top" transform="matrix(1.0156,0,0,1.0156,0,0)" atv:refpy="60.938" y="0" id="id_1" x="0" width="1280"/>
+</svg>

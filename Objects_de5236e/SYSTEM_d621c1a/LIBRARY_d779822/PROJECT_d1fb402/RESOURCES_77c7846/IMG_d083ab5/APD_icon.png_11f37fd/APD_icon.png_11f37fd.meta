@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/IMG/APD_icon.png
+NodeClass: Variable
+BrowseName: 1:APD_icon.png
+DisplayName: en|APD_icon.png
+Description: en|APD_icon.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.General_Time_Based.hookLoadAvg
+NodeClass: Variable
+BrowseName: 1:hookLoadAvg
+DisplayName: en|hookLoadAvg
+Description: en|hookLoadAvg
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

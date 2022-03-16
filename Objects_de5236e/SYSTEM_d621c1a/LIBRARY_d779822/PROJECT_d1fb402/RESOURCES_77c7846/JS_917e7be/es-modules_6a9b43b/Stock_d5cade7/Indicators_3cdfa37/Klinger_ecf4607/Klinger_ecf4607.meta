@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Stock/Indicators/Klinger
+NodeClass: Object
+BrowseName: 1:Klinger
+DisplayName: en|Klinger
+Description: en|Klinger
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

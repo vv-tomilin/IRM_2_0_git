@@ -1,0 +1,274 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="300" height="150" sodipodi:docname="Generator2.svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="svg2944" xmlns:dc="http://purl.org/dc/elements/1.1/" inkscape:version="1.0beta1 (d07a077, 2019-11-03)" xmlns:cc="http://creativecommons.org/ns#" xmlns="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:svg="http://www.w3.org/2000/svg">
+ <defs id="defs2938">
+  <linearGradient x1="37.1717" gradientUnits="userSpaceOnUse" id="Sk2lijh44c4" y2="50.122898" x2="41.616199" y1="50.122898">
+   <stop offset="0" stop-color="#96c9eb"/>
+   <stop offset="1" stop-color="#547387"/>
+  </linearGradient>
+  <linearGradient x1="43.596001" gradientUnits="userSpaceOnUse" id="Sk2lijh44c9" y2="54.1633" x2="45.373699" y1="54.1633">
+   <stop offset="0" stop-color="#96c9eb"/>
+   <stop offset="1" stop-color="#547387"/>
+  </linearGradient>
+  <linearGradient x1="41.818199" gradientUnits="userSpaceOnUse" id="Sk2lijh44ce" y2="50.729" x2="47.151501" y1="50.729">
+   <stop offset="0" stop-color="#96c9eb"/>
+   <stop offset="1" stop-color="#547387"/>
+  </linearGradient>
+  <linearGradient x1="37.1717" gradientUnits="userSpaceOnUse" id="Sk2lijh44np" y2="50.122898" x2="41.616199" y1="50.122898">
+   <stop offset="0" stop-color="#de9c5f"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient x1="43.596001" gradientUnits="userSpaceOnUse" id="Sk2lijh44ns" y2="54.1633" x2="45.373699" y1="54.1633">
+   <stop offset="0" stop-color="#de9c5f"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient x1="41.818199" gradientUnits="userSpaceOnUse" id="Sk2lijh44nv" y2="50.729" x2="47.151501" y1="50.729">
+   <stop offset="0" stop-color="#de9c5f"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient x1="37.1717" gradientUnits="userSpaceOnUse" id="Sk2lijh44ny" y2="50.122898" x2="41.616199" y1="50.122898">
+   <stop offset="0" stop-color="#f2a4a4"/>
+   <stop offset="1" stop-color="#d87d7d"/>
+  </linearGradient>
+  <linearGradient x1="43.596001" gradientUnits="userSpaceOnUse" id="Sk2lijh44o1" y2="54.1633" x2="45.373699" y1="54.1633">
+   <stop offset="0" stop-color="#f2a4a4"/>
+   <stop offset="1" stop-color="#d87d7d"/>
+  </linearGradient>
+  <linearGradient x1="41.818199" gradientUnits="userSpaceOnUse" id="Sk2lijh44o4" y2="50.729" x2="47.151501" y1="50.729">
+   <stop offset="0" stop-color="#f2a4a4"/>
+   <stop offset="1" stop-color="#d87d7d"/>
+  </linearGradient>
+  <linearGradient x1="-6.77318e-5" gradientUnits="objectBoundingBox" id="Sk2lijh44o7" y2="0.499901" x2="1.00004" y1="0.499901">
+   <stop offset="0" stop-color="#cccccc"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient x1="0" gradientUnits="objectBoundingBox" id="Sk2lijh44oa" y2="0.500124" x2="0.99983" y1="0.500124">
+   <stop offset="0" stop-color="#cccccc"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient x1="3.71273e-5" gradientUnits="objectBoundingBox" id="Sk2lijh44od" y2="0.499931" x2="1.00009" y1="0.499931">
+   <stop offset="0" stop-color="#cccccc"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient x1="37.1717" gradientUnits="userSpaceOnUse" id="SVGID_1_" y2="50.122898" x2="41.616199" class="linear" y1="50.122898">
+   <stop offset="0" stop-color="#FFFFFF"/>
+   <stop offset="1" stop-color="#808080"/>
+  </linearGradient>
+  <linearGradient x1="43.596001" gradientUnits="userSpaceOnUse" id="SVGID_2_" y2="54.1633" x2="45.373699" class="linear" y1="54.1633">
+   <stop offset="0" stop-color="#FFFFFF"/>
+   <stop offset="1" stop-color="#808080"/>
+  </linearGradient>
+  <linearGradient x1="41.818199" gradientUnits="userSpaceOnUse" id="SVGID_3_" y2="50.729" x2="47.151501" class="linear" y1="50.729">
+   <stop offset="0" stop-color="#FFFFFF"/>
+   <stop offset="1" stop-color="#808080"/>
+  </linearGradient>
+ </defs>
+ <sodipodi:namedview inkscape:document-rotation="0" inkscape:current-layer="layer1" borderopacity="1.0" inkscape:window-x="0" pagecolor="#ffffff" inkscape:document-units="mm" id="base" inkscape:cx="-101.42856" inkscape:cy="254.11643" inkscape:window-y="0" inkscape:pageshadow="2" inkscape:zoom="0.35" bordercolor="#666666" showgrid="false" inkscape:pageopacity="0.0" inkscape:window-maximized="0" inkscape:window-height="910" inkscape:window-width="1284"/>
+ <metadata id="metadata2941">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+  <atv:gridconfig width="20" height="20" gridstyle="lines" enabled="false"/>
+  <atv:snapconfig width="10" height="10" enabled="false"/>
+ </metadata>
+ <g inkscape:label="Слой 1" inkscape:groupmode="layer" id="layer1" atv:refpy="75" atv:refpx="150" transform="translate(-132.66964,-80.931695)">
+  <g id="g4407" atv:refpy="155.932" atv:refpx="282.67" transform="matrix(3,0,0,2.9359952,132.66964,-10.871003)">
+   <g id="shape" atv:refpy="56.813" atv:refpx="50">
+    <rect width="100" x="0" height="7.3740001" y="74.984001" fill="#999999" id="rect4048" atv:refpy="78.671" atv:refpx="50"/>
+    <polygon fill="#999999" id="polygon4050" atv:refpy="58.91" points="54.545,72.951 42.02,72.951 37.71,69.921 18.855,69.921 18.855,44.87 47.475,44.87 54.545,51.066 " atv:refpx="36.7"/>
+    <rect width="12.391" x="12.929" height="15.097" y="46.473999" fill="#999999" id="rect4052" atv:refpy="54.022" atv:refpx="19.125"/>
+    <rect width="12.391" x="48.754002" height="18.329" y="52.400002" fill="#999999" id="rect4054" atv:refpy="61.565" atv:refpx="54.95"/>
+    <rect width="14.545" x="10.774" height="6.4780002" y="50.783001" fill="#999999" id="rect4056" atv:refpy="54.022" atv:refpx="18.046"/>
+    <rect width="10.168" x="55.421001" height="21.818001" y="51.066002" fill="#999999" id="rect4058" atv:refpy="61.975" atv:refpx="60.505"/>
+    <rect width="32.727001" x="65.387001" height="18.419001" y="52.646" fill="#999999" id="rect4060" atv:refpy="61.856" atv:refpx="81.751"/>
+    <rect width="15.286" x="81.918999" height="5.8909998" y="46.756001" fill="#999999" id="rect4062" atv:refpy="49.702" atv:refpx="89.562"/>
+    <polygon fill="#999999" id="polygon4064" atv:refpy="39.281" points="99.226,33.086 97.205,45.476 81.919,45.476 81.919,33.086 " atv:refpx="90.572"/>
+    <circle r="6.0609999" cy="41.772999" fill="#999999" id="circle4066" atv:refpy="41.773" cx="54.140999" atv:refpx="54.141"/>
+    <rect width="7.4070001" x="2.694" height="4.848" y="71.537003" fill="#999999" id="rect4068" atv:refpy="73.961" atv:refpx="6.398"/>
+    <rect width="6.1950002" x="17.576" height="6.4650002" y="69.920998" fill="#999999" id="rect4070" atv:refpy="73.153" atv:refpx="20.674"/>
+    <rect width="6.1950002" x="49.562" height="6.4650002" y="69.920998" fill="#999999" id="rect4072" atv:refpy="73.153" atv:refpx="52.66"/>
+    <rect width="6.1950002" x="67.474998" height="6.4650002" y="69.920998" fill="#999999" id="rect4074" atv:refpy="73.153" atv:refpx="70.572"/>
+    <rect width="6.1950002" x="83.366997" height="6.4650002" y="69.920998" fill="#999999" id="rect4076" atv:refpy="73.153" atv:refpx="86.464"/>
+    <rect width="4.579" x="26.465" height="12.929" y="32.209999" fill="#999999" id="rect4078" atv:refpy="38.674" atv:refpx="28.755"/>
+    <rect width="6.3299999" x="25.589001" height="1.6160001" y="37.867001" fill="#999999" id="rect4080" atv:refpy="38.675" atv:refpx="28.754"/>
+    <path fill="#999999" id="path4082" d="M23.501,45.679L20.673,45.679L20.673,42.177C20.673,41.174 19.857,40.359 18.855,40.359L10.774,40.359L10.774,37.53L18.854,37.53C21.416,37.53 23.5,39.614 23.5,42.176Z" atv:refpy="41.605" inkscape:connector-curvature="0" atv:refpx="17.137"/>
+    <path fill="#999999" id="path4084" d="M44.579,49.113L41.751,49.113L41.751,45.611C41.751,43.047 43.835,40.964 46.397,40.964L55.286,40.964L55.286,43.793L46.397,43.793C45.395,43.793 44.579,44.608 44.579,45.611Z" atv:refpy="45.039" inkscape:connector-curvature="0" atv:refpx="48.519"/>
+    <polygon fill="#999999" id="polygon4086" atv:refpy="47.261" points="58.485,44.702 53.434,49.82 47.172,49.82 47.172,44.702 " atv:refpx="52.828"/>
+    <path fill="#999999" id="path4088" d="M36.162,45.409L33.333,45.409L33.333,42.311C33.333,39.823 35.418,37.799 37.98,37.799L53.872,37.799L53.872,40.627L37.98,40.627C36.977,40.627 36.162,41.382 36.162,42.311Z" atv:refpy="41.604" inkscape:connector-curvature="0" atv:refpx="43.603"/>
+    <path fill="#999999" id="path4090" d="M24.444,33.692C24.444,32.353 26.374,31.268 28.753,31.268C31.133,31.268 33.064,32.353 33.064,33.692" atv:refpy="32.48" inkscape:connector-curvature="0" atv:refpx="28.754"/>
+   </g>
+   <g id="light" atv:refpy="53.019" atv:refpx="49.663">
+    <rect width="32.727001" x="65.387001" height="6.0440001" y="52.646" fill="#cccccc" id="rect4093" atv:refpy="55.668" atv:refpx="81.751"/>
+    <rect width="4.579" x="26.465" height="5.6570001" y="39.483002" fill="#cccccc" id="rect4095" atv:refpy="42.312" atv:refpx="28.755"/>
+    <rect width="4.579" x="26.465" height="4.1750002" y="33.692001" fill="#cccccc" id="rect4097" atv:refpy="35.78" atv:refpx="28.755"/>
+    <rect width="10.505" x="1.212" height="38.283001" y="34.062" fill="#cccccc" id="rect4099" atv:refpy="53.204" atv:refpx="6.465"/>
+   </g>
+   <g id="linear" atv:refpy="51.234" atv:refpx="42.162">
+    <rect width="4.4439998" x="37.172001" height="6.0609999" y="47.092999" fill="url(#Sk2lijh44o7)" id="rect4107" atv:refpy="50.123" atv:refpx="39.394" class="linear"/>
+    <rect width="1.778" x="43.596001" height="2.424" y="52.951" fill="url(#Sk2lijh44oa)" id="rect4114" atv:refpy="54.163" atv:refpx="44.485" class="linear"/>
+    <rect width="5.3330002" x="41.818001" height="7.2729998" y="47.092999" fill="url(#Sk2lijh44od)" id="rect4121" atv:refpy="50.729" atv:refpx="44.485" class="linear"/>
+   </g>
+   <g id="dark" atv:refpy="61.055" atv:refpx="50.64">
+    <rect width="45.050999" x="51.716999" height="5.0760002" y="77.281998" fill="#4d4d4d" id="rect4124" atv:refpy="79.82" atv:refpx="74.242"/>
+    <rect width="45.050999" x="3.165" height="5.0760002" y="77.281998" fill="#4d4d4d" id="rect4126" atv:refpy="79.82" atv:refpx="25.69"/>
+    <polygon fill="#4d4d4d" id="polygon4128" atv:refpy="47.493" points="54.04,45.779 54.04,49.206 57.422,45.779 " atv:refpx="55.731"/>
+    <circle r="2.02" cy="41.772999" fill="#4d4d4d" id="circle4130" atv:refpy="41.773" cx="54.140999" atv:refpx="54.141"/>
+    <rect width="30.101" x="21.886" height="1.01" y="68.911003" fill="#4d4d4d" id="rect4132" atv:refpy="69.416" atv:refpx="36.936"/>
+    <polygon fill="#4d4d4d" id="polygon4134" atv:refpy="67.598" points="26.667,66.689 26.667,66.285 24.646,66.285 24.04,66.285 24.04,66.689 24.04,68.911 24.646,68.911 24.646,66.689 " atv:refpx="25.354"/>
+    <polygon fill="#4d4d4d" id="polygon4136" atv:refpy="67.598" points="30.741,66.689 30.741,66.285 28.721,66.285 28.114,66.285 28.114,66.689 28.114,68.911 28.721,68.911 28.721,66.689 " atv:refpx="29.428"/>
+    <polygon fill="#4d4d4d" id="polygon4138" atv:refpy="67.598" points="34.815,66.689 34.815,66.285 32.795,66.285 32.189,66.285 32.189,66.689 32.189,68.911 32.795,68.911 32.795,66.689 " atv:refpx="33.502"/>
+    <polygon fill="#4d4d4d" id="polygon4140" atv:refpy="67.598" points="38.889,66.689 38.889,66.285 36.869,66.285 36.263,66.285 36.263,66.689 36.263,68.911 36.869,68.911 36.869,66.689 " atv:refpx="37.576"/>
+    <polygon fill="#4d4d4d" id="polygon4142" atv:refpy="67.598" points="42.963,66.689 42.963,66.285 40.943,66.285 40.337,66.285 40.337,66.689 40.337,68.911 40.943,68.911 40.943,66.689 " atv:refpx="41.65"/>
+    <polygon fill="#4d4d4d" id="polygon4144" atv:refpy="67.598" points="47.037,66.689 47.037,66.285 45.017,66.285 44.411,66.285 44.411,66.689 44.411,68.911 45.017,68.911 45.017,66.689 " atv:refpx="45.724"/>
+    <polygon fill="#4d4d4d" id="polygon4146" atv:refpy="67.598" points="51.111,66.689 51.111,66.285 49.091,66.285 48.485,66.285 48.485,66.689 48.485,68.911 49.091,68.911 49.091,66.689 " atv:refpx="49.798"/>
+    <polygon fill="#4d4d4d" id="polygon4148" atv:refpy="67.598" points="26.667,66.689 26.667,66.285 24.646,66.285 24.04,66.285 24.04,66.689 24.04,68.911 24.646,68.911 24.646,66.689 " atv:refpx="25.354"/>
+    <polygon fill="#4d4d4d" id="polygon4150" atv:refpy="67.598" points="30.741,66.689 30.741,66.285 28.721,66.285 28.114,66.285 28.114,66.689 28.114,68.911 28.721,68.911 28.721,66.689 " atv:refpx="29.428"/>
+    <polygon fill="#4d4d4d" id="polygon4152" atv:refpy="67.598" points="34.815,66.689 34.815,66.285 32.795,66.285 32.189,66.285 32.189,66.689 32.189,68.911 32.795,68.911 32.795,66.689 " atv:refpx="33.502"/>
+    <polygon fill="#4d4d4d" id="polygon4154" atv:refpy="67.598" points="38.889,66.689 38.889,66.285 36.869,66.285 36.263,66.285 36.263,66.689 36.263,68.911 36.869,68.911 36.869,66.689 " atv:refpx="37.576"/>
+    <polygon fill="#4d4d4d" id="polygon4156" atv:refpy="67.598" points="42.963,66.689 42.963,66.285 40.943,66.285 40.337,66.285 40.337,66.689 40.337,68.911 40.943,68.911 40.943,66.689 " atv:refpx="41.65"/>
+    <polygon fill="#4d4d4d" id="polygon4158" atv:refpy="67.598" points="47.037,66.689 47.037,66.285 45.017,66.285 44.411,66.285 44.411,66.689 44.411,68.911 45.017,68.911 45.017,66.689 " atv:refpx="45.724"/>
+    <polygon fill="#4d4d4d" id="polygon4160" atv:refpy="67.598" points="51.111,66.689 51.111,66.285 49.091,66.285 48.485,66.285 48.485,66.689 48.485,68.911 49.091,68.911 49.091,66.689 " atv:refpx="49.798"/>
+    <polygon fill="#4d4d4d" id="polygon4162" atv:refpy="61.537" points="49.293,60.224 49.293,59.618 34.545,59.618 34.545,63.456 35.152,63.456 35.152,60.224 " atv:refpx="41.919"/>
+    <path fill="#4d4d4d" id="path4164" d="M28.485,62.85C27.432,62.85 26.552,62.116 26.323,61.133C26.285,61.295 26.263,61.464 26.263,61.638C26.263,62.865 27.258,63.86 28.485,63.86C29.712,63.86 30.707,62.865 30.707,61.638C30.707,61.464 30.685,61.295 30.647,61.133C30.418,62.117 29.538,62.85 28.485,62.85" atv:refpy="62.497" inkscape:connector-curvature="0" atv:refpx="28.485"/>
+    <rect width="4.4439998" x="51.111" height="6.869" y="55.981998" fill="#4d4d4d" id="rect4166" atv:refpy="59.416" atv:refpx="53.333"/>
+    <rect width="32.727001" x="65.387001" height="5.8590002" y="65.207001" fill="#4d4d4d" id="rect4168" atv:refpy="68.137" atv:refpx="81.751"/>
+    <rect width="5.9260001" x="12.929" height="1.347" y="60.223999" fill="#4d4d4d" id="rect4170" atv:refpy="60.897" atv:refpx="15.892"/>
+    <path fill="#4d4d4d" id="path4172" d="M28.485,55.577C27.432,55.577 26.552,54.843 26.323,53.86C26.285,54.022 26.263,54.191 26.263,54.365C26.263,55.592 27.258,56.587 28.485,56.587C29.712,56.587 30.707,55.592 30.707,54.365C30.707,54.191 30.685,54.022 30.647,53.86C30.418,54.844 29.538,55.577 28.485,55.577" atv:refpy="55.224" inkscape:connector-curvature="0" atv:refpx="28.485"/>
+    <path fill="#4d4d4d" id="path4174" d="M27.071,54.567C27.071,53.786 27.704,53.153 28.485,53.153C29.266,53.153 29.899,53.786 29.899,54.567L29.899,60.628C29.899,61.409 29.266,62.042 28.485,62.042C27.704,62.042 27.071,61.409 27.071,60.628Z" atv:refpy="57.597" inkscape:connector-curvature="0" atv:refpx="28.485"/>
+    <rect width="15.286" x="81.918999" height="0.5" y="47.515999" fill="#4d4d4d" id="rect4176" atv:refpy="47.766" atv:refpx="89.562"/>
+   </g>
+   <g id="shadow" atv:refpy="58.742" atv:refpx="49.614">
+    <rect width="0.58999997" x="56.926998" height="13.333" y="55.307999" fill="#000000" id="rect4179" atv:refpy="61.974" atv:refpx="57.222"/>
+    <rect width="0.58999997" x="57.835999" height="13.333" y="55.307999" fill="#000000" id="rect4181" atv:refpy="61.974" atv:refpx="58.131"/>
+    <rect width="0.58999997" x="58.744999" height="13.333" y="55.307999" fill="#000000" id="rect4183" atv:refpy="61.974" atv:refpx="59.04"/>
+    <rect width="0.58999997" x="59.654999" height="13.333" y="55.307999" fill="#000000" id="rect4185" atv:refpy="61.974" atv:refpx="59.95"/>
+    <rect width="0.58999997" x="60.563999" height="13.333" y="55.307999" fill="#000000" id="rect4187" atv:refpy="61.974" atv:refpx="60.859"/>
+    <rect width="0.58999997" x="61.473" height="13.333" y="55.307999" fill="#000000" id="rect4189" atv:refpy="61.974" atv:refpx="61.768"/>
+    <rect width="0.58999997" x="62.382" height="13.333" y="55.307999" fill="#000000" id="rect4191" atv:refpy="61.974" atv:refpx="62.677"/>
+    <rect width="0.58999997" x="63.291" height="13.333" y="55.307999" fill="#000000" id="rect4193" atv:refpy="61.974" atv:refpx="63.586"/>
+    <rect width="0.58999997" x="56.926998" height="13.333" y="55.307999" fill="#000000" id="rect4195" atv:refpy="61.974" atv:refpx="57.222"/>
+    <rect width="0.58999997" x="57.835999" height="13.333" y="55.307999" fill="#000000" id="rect4197" atv:refpy="61.974" atv:refpx="58.131"/>
+    <rect width="0.58999997" x="58.744999" height="13.333" y="55.307999" fill="#000000" id="rect4199" atv:refpy="61.974" atv:refpx="59.04"/>
+    <rect width="0.58999997" x="59.654999" height="13.333" y="55.307999" fill="#000000" id="rect4201" atv:refpy="61.974" atv:refpx="59.95"/>
+    <rect width="0.58999997" x="60.563999" height="13.333" y="55.307999" fill="#000000" id="rect4203" atv:refpy="61.974" atv:refpx="60.859"/>
+    <rect width="0.58999997" x="61.473" height="13.333" y="55.307999" fill="#000000" id="rect4205" atv:refpy="61.974" atv:refpx="61.768"/>
+    <rect width="0.58999997" x="62.382" height="13.333" y="55.307999" fill="#000000" id="rect4207" atv:refpy="61.974" atv:refpx="62.677"/>
+    <rect width="0.58999997" x="63.291" height="13.333" y="55.307999" fill="#000000" id="rect4209" atv:refpy="61.974" atv:refpx="63.586"/>
+    <path fill="#000000" id="path4211" d="M49.383,44.702C48.653,43.771 48.184,42.623 48.101,41.369C48.092,41.503 48.08,41.637 48.08,41.773C48.08,42.836 48.355,43.834 48.836,44.702Z" atv:refpy="43.035" inkscape:connector-curvature="0" atv:refpx="48.732"/>
+    <path fill="#000000" id="path4213" d="M60.182,41.369C60.035,43.585 58.699,45.472 56.806,46.404L55.568,47.657C58.225,47.014 60.202,44.627 60.202,41.772C60.202,41.635 60.19,41.502 60.182,41.369" atv:refpy="44.513" inkscape:connector-curvature="0" atv:refpx="57.885"/>
+    <path fill="#000000" id="path4215" d="M49.383,44.702C48.653,43.771 48.184,42.623 48.101,41.369C48.092,41.503 48.08,41.637 48.08,41.773C48.08,42.836 48.355,43.834 48.836,44.702Z" atv:refpy="43.035" inkscape:connector-curvature="0" atv:refpx="48.732"/>
+    <path fill="#000000" id="path4217" d="M60.182,41.369C60.035,43.585 58.699,45.472 56.806,46.404L55.568,47.657C58.225,47.014 60.202,44.627 60.202,41.772C60.202,41.635 60.19,41.502 60.182,41.369" atv:refpy="44.513" inkscape:connector-curvature="0" atv:refpx="57.885"/>
+    <path fill="#000000" id="path4219" d="M36.162,44.87L36.162,42.311C36.162,41.382 36.978,40.627 37.98,40.627L48.192,40.627C48.216,40.5 48.248,40.376 48.28,40.252L37.419,40.252C36.381,40.252 35.535,41.066 35.535,42.068L35.535,44.87Z" atv:refpy="42.561" inkscape:connector-curvature="0" atv:refpx="41.908"/>
+    <g id="g4245" atv:refpy="64.736" atv:refpx="82.154">
+     <g id="g4231" atv:refpy="64.736" atv:refpx="82.154">
+      <circle r="0.51999998" cy="64.736" fill="#000000" id="circle4221" atv:refpy="64.736" cx="68.388" atv:refpx="68.388"/>
+      <circle r="0.51999998" cy="64.736" fill="#000000" id="circle4223" atv:refpy="64.736" cx="75.272003" atv:refpx="75.272"/>
+      <circle r="0.51999998" cy="64.736" fill="#000000" id="circle4225" atv:refpy="64.736" cx="82.154999" atv:refpx="82.155"/>
+      <circle r="0.51999998" cy="64.736" fill="#000000" id="circle4227" atv:refpy="64.736" cx="89.038002" atv:refpx="89.038"/>
+      <circle r="0.51999998" cy="64.736" fill="#000000" id="circle4229" atv:refpy="64.736" cx="95.920998" atv:refpx="95.921"/>
+     </g>
+     <g id="g4243" atv:refpy="64.736" atv:refpx="82.154">
+      <circle r="0.51999998" cy="64.736" fill="#000000" id="circle4233" atv:refpy="64.736" cx="68.388" atv:refpx="68.388"/>
+      <circle r="0.51999998" cy="64.736" fill="#000000" id="circle4235" atv:refpy="64.736" cx="75.272003" atv:refpx="75.272"/>
+      <circle r="0.51999998" cy="64.736" fill="#000000" id="circle4237" atv:refpy="64.736" cx="82.154999" atv:refpx="82.155"/>
+      <circle r="0.51999998" cy="64.736" fill="#000000" id="circle4239" atv:refpy="64.736" cx="89.038002" atv:refpx="89.038"/>
+      <circle r="0.51999998" cy="64.736" fill="#000000" id="circle4241" atv:refpy="64.736" cx="95.920998" atv:refpx="95.921"/>
+     </g>
+    </g>
+    <g id="g4271" atv:refpy="59.988" atv:refpx="82.154">
+     <g id="g4257" atv:refpy="59.988" atv:refpx="82.154">
+      <circle r="0.51999998" cy="59.987999" fill="#000000" id="circle4247" atv:refpy="59.988" cx="68.388" atv:refpx="68.388"/>
+      <circle r="0.51999998" cy="59.987999" fill="#000000" id="circle4249" atv:refpy="59.988" cx="75.272003" atv:refpx="75.272"/>
+      <circle r="0.51999998" cy="59.987999" fill="#000000" id="circle4251" atv:refpy="59.988" cx="82.154999" atv:refpx="82.155"/>
+      <circle r="0.51999998" cy="59.987999" fill="#000000" id="circle4253" atv:refpy="59.988" cx="89.038002" atv:refpx="89.038"/>
+      <circle r="0.51999998" cy="59.987999" fill="#000000" id="circle4255" atv:refpy="59.988" cx="95.920998" atv:refpx="95.921"/>
+     </g>
+     <g id="g4269" atv:refpy="59.988" atv:refpx="82.154">
+      <circle r="0.51999998" cy="59.987999" fill="#000000" id="circle4259" atv:refpy="59.988" cx="68.388" atv:refpx="68.388"/>
+      <circle r="0.51999998" cy="59.987999" fill="#000000" id="circle4261" atv:refpy="59.988" cx="75.272003" atv:refpx="75.272"/>
+      <circle r="0.51999998" cy="59.987999" fill="#000000" id="circle4263" atv:refpy="59.988" cx="82.154999" atv:refpx="82.155"/>
+      <circle r="0.51999998" cy="59.987999" fill="#000000" id="circle4265" atv:refpy="59.988" cx="89.038002" atv:refpx="89.038"/>
+      <circle r="0.51999998" cy="59.987999" fill="#000000" id="circle4267" atv:refpy="59.988" cx="95.920998" atv:refpx="95.921"/>
+     </g>
+    </g>
+    <path fill="#000000" id="path4273" d="M29.899,60.628C29.899,61.409 29.266,62.042 28.485,62.042C27.704,62.042 27.07,61.409 27.07,60.628Z" atv:refpy="61.335" inkscape:connector-curvature="0" atv:refpx="28.485"/>
+    <polygon fill="#000000" id="polygon4275" atv:refpy="53.078" points="1.972,71.032 1.972,35.125 10.505,35.125 10.505,35.625 2.472,35.625 2.472,71.032 " atv:refpx="6.239"/>
+    <rect width="5.5029998" x="3.6359999" height="0.80800003" y="72.499001" fill="#000000" id="rect4277" atv:refpy="72.903" atv:refpx="6.387"/>
+    <polygon fill="#000000" id="polygon4279" atv:refpy="72.695" points="18.386,74.724 18.386,70.666 23.139,70.666 23.139,71.474 19,71.474 19,74.724 " atv:refpx="20.762"/>
+    <polygon fill="#000000" id="polygon4281" atv:refpy="72.695" points="50.136,74.724 50.136,70.666 54.889,70.666 54.889,71.474 50.75,71.474 50.75,74.724 " atv:refpx="52.513"/>
+    <polygon fill="#000000" id="polygon4283" atv:refpy="73.445" points="67.886,74.974 67.886,71.916 72.639,71.916 72.639,72.724 68.5,72.724 68.5,74.974 " atv:refpx="70.262"/>
+    <polygon fill="#000000" id="polygon4285" atv:refpy="73.445" points="84.136,74.974 84.136,71.916 88.889,71.916 88.889,72.724 84.75,72.724 84.75,74.974 " atv:refpx="86.512"/>
+    <g id="g4323" atv:refpy="56.412" atv:refpx="73.779">
+     <g id="g4303" atv:refpy="56.412" atv:refpx="73.779">
+      <rect width="0.58999997" x="70.302002" height="3.7079999" y="54.557999" fill="#000000" id="rect4287" atv:refpy="56.412" atv:refpx="70.597"/>
+      <rect width="0.58999997" x="71.210999" height="3.7079999" y="54.557999" fill="#000000" id="rect4289" atv:refpy="56.412" atv:refpx="71.506"/>
+      <rect width="0.58999997" x="72.120003" height="3.7079999" y="54.557999" fill="#000000" id="rect4291" atv:refpy="56.412" atv:refpx="72.415"/>
+      <rect width="0.58999997" x="73.029999" height="3.7079999" y="54.557999" fill="#000000" id="rect4293" atv:refpy="56.412" atv:refpx="73.325"/>
+      <rect width="0.58999997" x="73.939003" height="3.7079999" y="54.557999" fill="#000000" id="rect4295" atv:refpy="56.412" atv:refpx="74.234"/>
+      <rect width="0.58999997" x="74.848" height="3.7079999" y="54.557999" fill="#000000" id="rect4297" atv:refpy="56.412" atv:refpx="75.143"/>
+      <rect width="0.58999997" x="75.757004" height="3.7079999" y="54.557999" fill="#000000" id="rect4299" atv:refpy="56.412" atv:refpx="76.052"/>
+      <rect width="0.58999997" x="76.666" height="3.7079999" y="54.557999" fill="#000000" id="rect4301" atv:refpy="56.412" atv:refpx="76.961"/>
+     </g>
+     <g id="g4321" atv:refpy="56.412" atv:refpx="73.779">
+      <rect width="0.58999997" x="70.302002" height="3.7079999" y="54.557999" fill="#000000" id="rect4305" atv:refpy="56.412" atv:refpx="70.597"/>
+      <rect width="0.58999997" x="71.210999" height="3.7079999" y="54.557999" fill="#000000" id="rect4307" atv:refpy="56.412" atv:refpx="71.506"/>
+      <rect width="0.58999997" x="72.120003" height="3.7079999" y="54.557999" fill="#000000" id="rect4309" atv:refpy="56.412" atv:refpx="72.415"/>
+      <rect width="0.58999997" x="73.029999" height="3.7079999" y="54.557999" fill="#000000" id="rect4311" atv:refpy="56.412" atv:refpx="73.325"/>
+      <rect width="0.58999997" x="73.939003" height="3.7079999" y="54.557999" fill="#000000" id="rect4313" atv:refpy="56.412" atv:refpx="74.234"/>
+      <rect width="0.58999997" x="74.848" height="3.7079999" y="54.557999" fill="#000000" id="rect4315" atv:refpy="56.412" atv:refpx="75.143"/>
+      <rect width="0.58999997" x="75.757004" height="3.7079999" y="54.557999" fill="#000000" id="rect4317" atv:refpy="56.412" atv:refpx="76.052"/>
+      <rect width="0.58999997" x="76.666" height="3.7079999" y="54.557999" fill="#000000" id="rect4319" atv:refpy="56.412" atv:refpx="76.961"/>
+     </g>
+    </g>
+    <g id="g4361" atv:refpy="68.412" atv:refpx="93.779">
+     <g id="g4341" atv:refpy="68.412" atv:refpx="93.779">
+      <rect width="0.58999997" x="90.302002" height="3.7079999" y="66.557999" fill="#000000" id="rect4325" atv:refpy="68.412" atv:refpx="90.597"/>
+      <rect width="0.58999997" x="91.210999" height="3.7079999" y="66.557999" fill="#000000" id="rect4327" atv:refpy="68.412" atv:refpx="91.506"/>
+      <rect width="0.58999997" x="92.120003" height="3.7079999" y="66.557999" fill="#000000" id="rect4329" atv:refpy="68.412" atv:refpx="92.415"/>
+      <rect width="0.58999997" x="93.029999" height="3.7079999" y="66.557999" fill="#000000" id="rect4331" atv:refpy="68.412" atv:refpx="93.325"/>
+      <rect width="0.58999997" x="93.939003" height="3.7079999" y="66.557999" fill="#000000" id="rect4333" atv:refpy="68.412" atv:refpx="94.234"/>
+      <rect width="0.58999997" x="94.848" height="3.7079999" y="66.557999" fill="#000000" id="rect4335" atv:refpy="68.412" atv:refpx="95.143"/>
+      <rect width="0.58999997" x="95.757004" height="3.7079999" y="66.557999" fill="#000000" id="rect4337" atv:refpy="68.412" atv:refpx="96.052"/>
+      <rect width="0.58999997" x="96.666" height="3.7079999" y="66.557999" fill="#000000" id="rect4339" atv:refpy="68.412" atv:refpx="96.961"/>
+     </g>
+     <g id="g4359" atv:refpy="68.412" atv:refpx="93.779">
+      <rect width="0.58999997" x="90.302002" height="3.7079999" y="66.557999" fill="#000000" id="rect4343" atv:refpy="68.412" atv:refpx="90.597"/>
+      <rect width="0.58999997" x="91.210999" height="3.7079999" y="66.557999" fill="#000000" id="rect4345" atv:refpy="68.412" atv:refpx="91.506"/>
+      <rect width="0.58999997" x="92.120003" height="3.7079999" y="66.557999" fill="#000000" id="rect4347" atv:refpy="68.412" atv:refpx="92.415"/>
+      <rect width="0.58999997" x="93.029999" height="3.7079999" y="66.557999" fill="#000000" id="rect4349" atv:refpy="68.412" atv:refpx="93.325"/>
+      <rect width="0.58999997" x="93.939003" height="3.7079999" y="66.557999" fill="#000000" id="rect4351" atv:refpy="68.412" atv:refpx="94.234"/>
+      <rect width="0.58999997" x="94.848" height="3.7079999" y="66.557999" fill="#000000" id="rect4353" atv:refpy="68.412" atv:refpx="95.143"/>
+      <rect width="0.58999997" x="95.757004" height="3.7079999" y="66.557999" fill="#000000" id="rect4355" atv:refpy="68.412" atv:refpx="96.052"/>
+      <rect width="0.58999997" x="96.666" height="3.7079999" y="66.557999" fill="#000000" id="rect4357" atv:refpy="68.412" atv:refpx="96.961"/>
+     </g>
+    </g>
+    <rect width="9.8319998" x="55.757999" height="1.01" y="71.874001" fill="#000000" id="rect4363" atv:refpy="72.379" atv:refpx="60.674"/>
+    <polygon fill="#000000" id="polygon4365" atv:refpy="71.436" points="48.754,70.729 48.754,69.921 37.71,69.921 42.02,72.951 49.562,72.951 49.562,70.729 " atv:refpx="43.636"/>
+    <path fill="#000000" id="path4367" d="M32.726,45.369C32.726,45.094 32.501,44.869 32.226,44.869L32.11,44.869C31.836,44.869 31.61,44.644 31.61,44.369L31.61,44.339C31.61,44.064 31.385,43.839 31.11,43.839L30.5,43.839C30.225,43.839 30,44.064 30,44.339L30,44.369C30,44.644 29.847,44.869 29.659,44.869C29.471,44.869 29.317,44.644 29.317,44.369L29.317,44.339C29.317,44.064 29.092,43.839 28.817,43.839L27.214,43.839C26.939,43.839 26.714,44.064 26.714,44.339L26.714,44.369C26.714,44.644 26.489,44.869 26.214,44.869L25.974,44.869C25.7,44.869 25.474,44.644 25.474,44.369L25.474,44.339C25.474,44.064 25.249,43.839 24.974,43.839L23.371,43.839C23.096,43.839 22.871,44.064 22.871,44.339L22.871,44.369C22.871,44.644 22.646,44.869 22.371,44.869L22.317,44.869C22.043,44.869 21.817,45.094 21.817,45.369L21.817,48.384C21.817,48.659 22.043,48.884 22.317,48.884L22.371,48.884C22.646,48.884 22.871,49.109 22.871,49.384L22.871,49.414C22.871,49.689 23.096,49.914 23.371,49.914L24.974,49.914C25.249,49.914 25.474,49.689 25.474,49.414L25.474,49.384C25.474,49.109 25.7,48.884 25.974,48.884L26.214,48.884C26.489,48.884 26.714,49.109 26.714,49.384L26.714,49.414C26.714,49.689 26.939,49.914 27.214,49.914L28.817,49.914C29.092,49.914 29.317,49.689 29.317,49.414L29.317,49.384C29.317,49.109 29.47,48.884 29.659,48.884C29.846,48.884 30,49.109 30,49.384L30,49.414C30,49.689 30.225,49.914 30.5,49.914L31.112,49.914C31.386,49.914 31.612,49.689 31.612,49.414L31.612,49.384C31.612,49.109 31.837,48.884 32.111,48.884L32.227,48.884C32.502,48.884 32.727,48.659 32.727,48.384L32.727,45.369Z" atv:refpy="46.877" inkscape:connector-curvature="0" atv:refpx="27.273"/>
+    <path fill="#000000" id="path4369" d="M26.97,58.507L26.515,58.507C26.099,58.507 25.641,58.073 25.403,57.644L24.168,55.42C23.927,54.985 23.738,54.256 23.738,53.759L23.738,49.415L24.344,49.415L24.344,53.759C24.344,54.155 24.506,54.78 24.698,55.125L25.933,57.349C26.118,57.684 26.419,57.899 26.515,57.901L26.97,57.901Z" atv:refpy="53.961" inkscape:connector-curvature="0" atv:refpx="25.354"/>
+    <path fill="#000000" id="path4371" d="M38.99,56.082L32.727,56.082C32.115,56.082 31.616,55.584 31.616,54.972L31.616,52.194C31.616,51.916 31.389,51.689 31.111,51.689L29.545,51.689C29.013,51.689 28.389,51.466 28.093,51.17C27.798,50.875 27.575,50.359 27.575,49.972L27.575,49.416L28.181,49.416L28.181,49.972C28.181,50.197 28.343,50.564 28.521,50.743C28.682,50.903 29.153,51.084 29.544,51.084L31.11,51.084C31.723,51.084 32.221,51.582 32.221,52.194L32.221,54.972C32.221,55.25 32.447,55.477 32.725,55.477L38.988,55.477C39.266,55.477 39.493,55.25 39.493,54.972L39.493,53.154L40.099,53.154L40.099,54.972C40.101,55.584 39.603,56.082 38.99,56.082" atv:refpy="52.749" inkscape:connector-curvature="0" atv:refpx="33.837"/>
+    <path fill="#000000" id="path4373" d="M43.838,57.698L33.737,57.698C33.124,57.698 32.626,57.2 32.626,56.588L32.626,53.961C32.626,53.644 32.364,53.271 32.066,53.162C31.491,52.952 30.404,52.175 30.404,50.728L30.404,49.82L31.01,49.82L31.01,50.728C31.01,52.105 32.223,52.573 32.275,52.592C32.811,52.787 33.233,53.388 33.233,53.96L33.233,56.587C33.233,56.865 33.46,57.092 33.738,57.092L43.839,57.092C44.117,57.092 44.344,56.865 44.344,56.587L44.344,55.374L44.95,55.374L44.95,56.587C44.95,57.2 44.451,57.698 43.838,57.698" atv:refpy="53.759" inkscape:connector-curvature="0" atv:refpx="37.677"/>
+    <rect width="1.886" x="83.232002" height="1.323" y="45.450001" fill="#000000" id="rect4375" atv:refpy="46.112" atv:refpx="84.175"/>
+    <rect width="1.886" x="93.872002" height="1.323" y="45.450001" fill="#000000" id="rect4377" atv:refpy="46.112" atv:refpx="94.815"/>
+    <polygon fill="#000000" id="polygon4379" atv:refpy="62.093" points="56.465,69.416 56.465,69.012 64.343,69.012 64.343,54.77 64.748,54.77 64.748,69.416 " atv:refpx="60.607"/>
+    <path fill="#000000" id="path4381" d="M18.855,39.942L11.717,39.942L11.717,40.359L18.855,40.359C19.857,40.359 20.673,41.174 20.673,42.177C20.673,40.944 19.857,39.942 18.855,39.942" atv:refpy="41.059" inkscape:connector-curvature="0" atv:refpx="16.195"/>
+    <polygon fill="#000000" id="polygon4383" atv:refpy="79.82" points="48.215,78.292 48.215,77.282 3.165,77.282 3.165,82.358 4.175,82.358 4.175,78.292 " atv:refpx="25.69"/>
+    <polygon fill="#000000" id="polygon4385" atv:refpy="79.82" points="96.768,78.292 96.768,77.282 51.717,77.282 51.717,82.358 52.727,82.358 52.727,78.292 " atv:refpx="74.243"/>
+   </g>
+   <g id="hlight" atv:refpy="52.513" atv:refpx="38.653">
+    <path fill="#ffffff" id="path4388" d="M49.572,37.8L37.98,37.8C35.418,37.8 33.333,39.823 33.333,42.312C33.333,40.306 35.418,38.675 37.98,38.675L48.938,38.675C49.124,38.364 49.335,38.071 49.572,37.8" atv:refpy="40.056" inkscape:connector-curvature="0" atv:refpx="41.453"/>
+    <path fill="#ffffff" id="path4390" d="M28.485,52.648C29.538,52.648 30.418,53.382 30.647,54.365C30.685,54.203 30.706,54.034 30.706,53.86C30.706,52.633 29.711,51.638 28.484,51.638C27.257,51.638 26.262,52.632 26.262,53.86C26.262,54.034 26.284,54.203 26.322,54.365C26.55,53.382 27.431,52.648 28.485,52.648" atv:refpy="53.002" inkscape:connector-curvature="0" atv:refpx="28.485"/>
+    <polygon fill="#ffffff" id="polygon4392" atv:refpy="61.866" points="56.114,69.314 56.114,54.418 64.242,54.418 64.242,54.918 56.614,54.918 56.614,69.314 " atv:refpx="60.178"/>
+    <rect width="7.875" x="49.625" height="0.5" y="44.25" fill="#ffffff" id="rect4394" atv:refpy="44.5" atv:refpx="53.563"/>
+    <path fill="#ffffff" id="path4396" d="M54.141,36.52C57.352,36.52 59.972,39.019 60.181,42.177C60.19,42.043 60.201,41.909 60.201,41.773C60.201,38.426 57.488,35.712 54.14,35.712C50.793,35.712 48.079,38.425 48.079,41.773C48.079,41.909 48.091,42.043 48.099,42.177C48.31,39.019 50.931,36.52 54.141,36.52" atv:refpy="38.945" inkscape:connector-curvature="0" atv:refpx="54.14"/>
+    <rect width="5.9260001" x="12.929" height="1.347" y="46.473999" fill="#ffffff" id="rect4398" atv:refpy="47.147" atv:refpx="15.892"/>
+    <path fill="#ffffff" id="path4400" d="M27.534,54.205C27.534,53.68 27.959,53.254 28.485,53.254C29.009,53.254 29.436,53.68 29.436,54.205" atv:refpy="53.73" inkscape:connector-curvature="0" atv:refpx="28.485"/>
+    <path fill="#ffffff" id="path4402" d="M18.855,37.53L11.717,37.53L11.717,38.03L18.855,38.03C21.417,38.03 23.501,39.89 23.501,42.176C23.501,39.614 21.417,37.53 18.855,37.53" atv:refpy="39.853" inkscape:connector-curvature="0" atv:refpx="17.609"/>
+    <rect width="10.168" x="55.421001" height="1.01" y="51.066002" fill="#ffffff" id="rect4404" atv:refpy="51.571" atv:refpx="60.505"/>
+   </g>
+  </g>
+ </g>
+</svg>

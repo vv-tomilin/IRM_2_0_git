@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg atv:contentheight="680" xmlns:atv="http://webmi.atvise.com/2007/svgext" version="1.2" height="800" xmlns="http://www.w3.org/2000/svg" width="1280" xmlns:xlink="http://www.w3.org/1999/xlink" atv:contentwidth="1280">
+ <defs/>
+ <desc>1280 x 800 (16:10) - Overlay navigation</desc>
+ <title>Advanced</title>
+ <rect id="bg" x="1118" stroke-width="1" atv:refpy="767.618" height="55" fill="$FILLCOLOR$" atv:refpx="1157.333" width="78.667" stroke="" y="744"/>
+ <metadata>
+  <atv:parameter valuetype="string" name="targetFrame" behavior="optional" defaultvalue="content" desc="target frame"/>
+  <atv:parameter valuetype="global" name="fontColor" substitute="$FONTCOLOR$" group="Font" behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvFontColor" desc="color"/>
+  <atv:parameter valuetype="global" name="fillColor" substitute="$FILLCOLOR$" group="Font" behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvFillColor2" desc="fill color"/>
+  <atv:parameter valuetype="global" name="navFontColorActive" group="Navigation" behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvFontColor" desc="menu font color active" />
+  <atv:parameter valuetype="global" name="navFontColorInactive" group="Navigation" behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvFontColor" desc="menu font color inactive" />
+  <atv:parameter valuetype="global" name="navArrowBackground" group="Navigation" behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvFillColor2" desc="menu arrow background" />
+  <atv:parameter valuetype="global" name="navArrowColor" group="Navigation" behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvFontColor" desc="menu arrow font color" />
+  <atv:parameter valuetype="global" name="navHomeBackground" group="Navigation" behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvFillColor" desc="menu home background" />
+  <atv:parameter valuetype="global" name="navHomeColor" group="Navigation" behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvFontColor" desc="menu home font color" />
+  <atv:parameter valuetype="global" name="navItemBackgroundActive" group="Navigation" behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvAccent1" desc="menu item color ative" />
+  <atv:parameter valuetype="global" name="navItemBackgroundHover" group="Navigation" behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvFillColor2" desc="menu item color hover" />
+  <atv:parameter valuetype="global" name="navItemBackgroundInactive" group="Navigation" behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvFillColor" desc="menu item color inative" />
+  <atv:parameter valuetype="global" name="navItemBorderColor" group="Navigation" behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvBorderColor" desc="menu item border color" />
+  <atv:parameter valuetype="global" name="navPanelBorderColor" group="Navigation" behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvBorderColor" desc="menu panel frame color" />
+  <atv:gridconfig height="20" gridstyle="lines" enabled="true" width="20"/>
+  <atv:snapconfig height="5" enabled="true" width="5"/>
+ </metadata>
+ <svg id="content_iframe" x="0" transform="matrix(1.6,0,0,1.1333,0,0)" atv:refpy="403.333" height="600" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.iframe" atv:refpx="640.001" width="800" y="53.237">
+  <atv:argument name="display" value="%CONTENT%"/>
+  <atv:argument name="frameName" value="content"/>
+  <atv:argument name="isNavigationFrame" value="true"/>
+ </svg>
+ <rect id="id_43" x="1200.67" stroke-width="1" atv:refpy="767.618" height="55" fill="$FILLCOLOR$" atv:refpx="1240.337" width="79.333" stroke="" y="744"/>
+ <rect id="id_41" x="166" stroke-width="1" atv:refpy="769.522" height="55" fill="$FILLCOLOR$" atv:refpx="639.337" width="948.5" stroke="" y="744"/>
+ <rect id="id_76" x="810.667" stroke-width="0.997" atv:refpy="-63.336" height="55" fill="$FILLCOLOR$" atv:refpx="693.397" width="191.333" stroke="" y="0"/>
+ <rect id="id_21" x="1004.001" stroke-width="1" atv:refpy="25.781" height="55" fill="$FILLCOLOR$" atv:refpx="1144.263" width="276" stroke="" y="0"/>
+ <rect id="id_2" x="0.333" stroke-width="1" atv:refpy="28.19" height="55" fill="$FILLCOLOR$" atv:refpx="165.333" width="330" stroke="" y="0.333"/>
+ <g atv:refpx="71.48" atv:refpy="28.671" transform="matrix(0.6667,0,0,0.6667,0,0)" id="logo_clickarea">
+  <svg width="80" x="20.666" atv:refpx="50" atv:refpy="50" y="14" transform="matrix(0.75,0,0,0.75,0,0)" height="80" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.atvise_logo" id="id_1"/>
+  <svg width="48.94" x="36.763" atv:refpx="146.069" atv:refpy="44.728" y="11.516" transform="matrix(2.3446,0,0,2.3446,0,0)" height="12.99" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.atvise_R" id="id_3"/>
+  <rect stroke-width="0" fill="#000000" width="60" x="15.5" atv:refpx="212.5" fill-opacity="0.0001" y="10.5" atv:refpy="75" stroke="none" height="60" id="logo_click_1"/>
+  <rect stroke-width="0" fill="#000000" width="125" x="75.999" atv:refpx="212.5" fill-opacity="0.0001" atv:refpy="75" y="27.494" stroke="none" height="30" id="logo_click_2"/>
+ </g>
+ <rect id="menu_container" x="1119.33" stroke-width="0" atv:refpy="402.485" height="675" fill="$FILLCOLOR$" atv:refpx="1199.33" width="160" stroke="none" y="63"/>
+ <svg id="button1" x="169" transform="" atv:refpy="763.137" height="49" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.layoutelements.button_custom_small" atv:refpx="247.861" width="155" y="747">
+  <atv:argument name="target1" value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.alarmlist"/>
+  <atv:argument name="symbol1" value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.alarm"/>
+  <atv:argument name="contextmenu1" value="SYSTEM.GLOBALS.atvObjectDisplays.CustomButtonsMenu.LayoutButtonAlarms"/>
+  <atv:argument name="symbolScaling1" value="200"/>
+ </svg>
+ <svg id="button2" x="327" transform="" atv:refpy="763.137" height="49" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.layoutelements.button_custom_small" atv:refpx="401.826" width="155" y="747">
+  <atv:overwrite id="custom_button" x="-0.682" transform="matrix(2.9503,0,0,2.8477,0,0)" y="-1.48"/>
+  <atv:argument name="target1" value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.historylist"/>
+  <atv:argument name="symbol1" value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.history"/>
+ </svg>
+ <svg id="button3" x="484" transform="" atv:refpy="763.137" height="49" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.layoutelements.button_custom_small" atv:refpx="557.793" width="155" y="747">
+  <atv:argument name="target1" value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.highcharts.main_display"/>
+  <atv:argument name="symbol1" value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.chart"/>
+  <atv:argument name="target1_configName" value="Overview"/>
+  <atv:argument name="symbolScaling1" value="120"/>
+ </svg>
+ <svg id="button4" x="641" transform="" atv:refpy="763.137" height="49" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.layoutelements.button_custom_small" atv:refpx="715.741" width="155" y="747"/>
+ <rect id="id_7" x="0" stroke-width="1" atv:refpy="767.581" height="55" fill="$FILLCOLOR$" atv:refpx="84" width="162.667" stroke="" y="744"/>
+ <svg id="button6" x="956" transform="" atv:refpy="764.257" height="49" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.layoutelements.button_custom_small" atv:refpx="1021.717" width="155" y="747"/>
+ <svg id="id_14" x="5" transform="" atv:refpy="763.135" height="48" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.layoutelements.button_favorites_small" atv:refpx="84.006" width="153" y="747">
+  <atv:argument name="symbolScaling" value="100"/>
+ </svg>
+ <svg id="zoom_group" x="754.405" transform="matrix(1.0807,0,0,1.0807,0,0)" atv:refpy="26.651" height="45" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.button_group_zoom" atv:refpx="910.118" width="168" y="4.008"/>
+ <svg id="box_language" x="498" transform="matrix(0.6667,0,0,0.6395,0,0)" atv:refpy="25.58" height="86" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.layoutelements.box_language" atv:refpx="452.674" width="357" y="0">
+  <atv:argument name="font_size" value="22"/>
+ </svg>
+ <svg id="box_user" x="857" transform="matrix(0.6667,0,0,0.6395,0,0)" atv:refpy="25.286" height="86" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.layoutelements.box_user" atv:refpx="695.004" width="357" y="0">
+  <atv:argument name="font_size" value="22"/>
+ </svg>
+ <svg id="redu_info" x="1518" transform="matrix(0.6667,0,0,0.6667,0,0)" atv:refpy="29.5" height="62.5" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.layoutelements.redu_info" atv:refpx="1072.334" width="163" y="9"/>
+ <rect id="line_top" x="0" stroke-width="0" atv:refpy="59.666" height="3.333" fill="$FONTCOLOR$" atv:refpx="640" width="1280.001" stroke="none" y="55.667"/>
+ <svg id="id_5" x="799" transform="" atv:refpy="764.224" height="49" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.layoutelements.button_custom_small" atv:refpx="867.751" width="155" y="747"/>
+ <rect id="line_bottom" x="0" stroke-width="0" atv:refpy="738.667" height="3.333" fill="$FONTCOLOR$" atv:refpx="640" width="1280.001" stroke="none" y="741"/>
+ <svg id="id_4" x="1070" atv:refpy="45" height="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.layoutelements.date" atv:refpx="1171.5" width="203" y="26">
+  <atv:argument name="font_size" value="12"/>
+ </svg>
+ <svg id="id_8" x="1071" atv:refpy="11" height="52" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.layoutelements.time" atv:refpx="1171.5" width="203" y="-9">
+  <atv:argument name="font_size" value="25"/>
+ </svg>
+ <svg id="button_navigation" x="1377.143" transform="matrix(0.875,0,0,1.6333,0,0)" atv:refpy="771.5" height="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" atv:refpx="1240" width="80" y="457.347">
+  <atv:argument name="symbol" value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.table.burger"/>
+  <atv:argument name="visibilitySymbol" value="inherit"/>
+  <atv:argument name="visibilityLabel" value="hidden"/>
+  <atv:argument name="borderColor" value="SYSTEM.GLOBALS.atvBorderColor2"/>
+  <atv:overwrite id="id_6" transform="matrix(1.1429,0,0,0.6122,0,0)" height="47" width="68"/>
+  <atv:overwrite id="button_symbol" transform="matrix(1.1429,0,0,0.6122,0,0)" x="25" y="14.5"/>
+  <atv:overwrite id="button_label_2" transform="matrix(1.1429,0,0,0.6122,0,0)" x="35" y="36"/>
+  <atv:overwrite id="button_label_1" transform="matrix(1.1429,0,0,0.6122,0,0)" x="35" y="21"/>
+  <atv:overwrite id="button_label" transform="matrix(1.1429,0,0,0.6122,0,0)" x="35" y="29"/>
+  <atv:overwrite id="button_stroke" transform="matrix(1.1429,0,0,0.6122,0,0)" height="45" width="66"/>
+  <atv:overwrite id="button_bg" transform="matrix(1.1429,0,0,0.6122,0,0)" height="47" width="68"/>
+  <atv:overwrite id="outer_frame" transform="matrix(1.1429,0,0,0.6122,0,0)" height="49" width="70"/>
+ </svg>
+ <svg id="button_alarmlog" x="1122" atv:refpy="771.681" height="49" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.layoutelements.button_alarmlog_small" atv:refpx="1199.085" width="153" y="747">
+  <atv:overwrite id="context_menu_sign" x="2" transform="matrix(1,0,0,1,0,0)" y="0"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[var queryParams = webMI.query;
+
+var frameName = webMI.query["targetFrame"];
+
+webMI.gfx.setWidth("button_navigation_button_bg", webMI.gfx.getWidth("button_navigation_button_bg")-2);
+webMI.gfx.setHeight("button_navigation_button_bg", webMI.gfx.getHeight("button_navigation_button_bg")-2);
+webMI.gfx.setX("button_navigation_button_bg", "2");
+webMI.gfx.setY("button_navigation_button_bg", "2");
+
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Navigation", {
+	"id": "menu_container",
+	"animateTpye": "none",
+	"arrowBackground": webMI.query["navArrowBackground"],
+	"arrowColor": webMI.query["navArrowColor"],
+	"fontColorActive": webMI.query["navFontColorActive"],
+	"fontColorInactive": webMI.query["navFontColorInactive"],
+	"homeBackground": webMI.query["navHomeBackground"],
+	"homeColor": webMI.query["navHomeColor"],
+	"itemBackgroundActive": webMI.query["navItemBackgroundActive"],
+	"itemBackgroundHover": webMI.query["navItemBackgroundHover"],
+	"itemBackgroundInactive": webMI.query["navItemBackgroundInactive"],
+	"itemBorderColor": webMI.query["navItemBorderColor"],
+	"panelBorderColor": webMI.query["navPanelBorderColor"],
+	"visible": "false",
+	"removeKeyFromQuery": "nav*",
+});
+
+webMI.addEvent("button_navigation", "click", function(e) {
+	var toggle = "menu_container";
+	webMI.trigger.fire("com.atvise.menu_toggle", toggle);
+});
+
+var tabHandler = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tab Handler");
+
+webMI.addEvent("logo_clickarea", "click", function(e) {
+	var names = tabHandler.getParentIFrameNames();
+	for (var i=0;i<names.length;i++){
+		var NN;
+		webMI.trigger.fire("com.atvise.getDefaultDisplay_"+(NN=names[i]),function(display,url){
+			if (url != undefined)
+				webMI.display.openUrl(url, webMI.query,NN);
+			else if (display != undefined)
+				webMI.display.openDisplay(display, webMI.query,NN);
+		});
+	}
+});]]></script>
+</svg>

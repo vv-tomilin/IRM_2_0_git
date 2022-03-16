@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1790" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" version="1.2" height="1016">
+ <defs/>
+ <metadata>
+  <atv:gridconfig width="20" enabled="false" gridstyle="lines" height="20"/>
+  <atv:snapconfig width="5" enabled="true" height="5"/>
+ </metadata>
+ <g atv:refpy="0" id="id_4" atv:refpx="0" atv:insensitive="true">
+  <rect width="1790.00" atv:refpy="508" fill-opacity="0" id="id_5" x="0" atv:refpx="895" y="0" fill="#000406" height="1016.00"/>
+ </g>
+ <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.xAxis" width="60" atv:refpy="492.5" id="id_14" x="0" atv:refpx="40" y="10" height="965">
+  <atv:argument value="AGENT.OBJECTS.Test.TVal" name="base"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.tool.picker_date_start" width="160" atv:refpy="1000" id="id_10" x="830" atv:refpx="910" y="985" height="30"/>
+ <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.tool.set_range" width="160" atv:refpy="1000" id="id_11" x="1000" atv:refpx="1080" y="985" height="30"/>
+ <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.tool.toolbar" width="141" atv:refpy="1000" id="id_0" x="610" atv:refpx="680.5" y="985" height="30"/>
+ <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.tool.button_back" width="80" atv:refpy="1000" id="id_21" x="650" atv:refpx="690" y="985" height="30"/>
+ <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.tool.button_forward" width="80" atv:refpy="1000" id="id_22" x="740" atv:refpx="780" y="985" height="30"/>
+ <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.GtiChart" transform="matrix(1.0147,0,0,1,0,0)" width="340" atv:refpy="492.5" id="id_1" x="57.16" atv:refpx="230.501" y="10" height="965">
+  <atv:argument value="skpb1" name="chartname"/>
+  <atv:argument value="AGENT.OBJECTS.SimulatedData.double_1" name="ChartBase1"/>
+  <atv:argument value="AGENT.OBJECTS.SimulatedData.double_2" name="ChartBase2"/>
+  <atv:argument value="Давление в манифольде" name="ChartTitle1"/>
+  <atv:argument value="Расход на входе" name="ChartTitle2"/>
+  <atv:argument value="0" name="MinVal1"/>
+  <atv:argument value="10" name="MaxVal1"/>
+  <atv:argument value="0" name="MinVal2"/>
+  <atv:argument value="10" name="MaxVal2"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.GtiChart" transform="matrix(1.0147,0,0,1,0,0)" width="340" atv:refpy="492.5" id="id_2" x="396.174" atv:refpx="575.5" y="10" height="965">
+  <atv:argument value="skpb2" name="chartname"/>
+  <atv:argument value="AGENT.OBJECTS.SimulatedData.double_3" name="ChartBase1"/>
+  <atv:argument value="AGENT.OBJECTS.SimulatedData.double_4" name="ChartBase2"/>
+  <atv:argument value="Ходы насоса 1" name="ChartTitle1"/>
+  <atv:argument value="Ходы насоса 2" name="ChartTitle2"/>
+  <atv:argument value="#55aaff" name="Color1"/>
+  <atv:argument value="#ffff7f" name="Color2"/>
+  <atv:argument value="0" name="MinVal1"/>
+  <atv:argument value="100" name="MaxVal1"/>
+  <atv:argument value="0" name="MinVal2"/>
+  <atv:argument value="10" name="MaxVal2"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.GtiChart" transform="matrix(1.0147,0,0,1,0,0)" width="340" atv:refpy="492.5" id="id_3" x="735.188" atv:refpx="922.5" y="10" height="965">
+  <atv:argument value="skpb3" name="chartname"/>
+  <atv:argument value="#aaff00" name="Color1"/>
+  <atv:argument value="#ffaa7f" name="Color2"/>
+  <atv:argument value="AGENT.OBJECTS.SimulatedData.double_5" name="ChartBase1"/>
+  <atv:argument value="AGENT.OBJECTS.SimulatedData.double_6" name="ChartBase2"/>
+  <atv:argument value="double_5" name="ChartTitle1"/>
+  <atv:argument value="double_6" name="ChartTitle2"/>
+  <atv:argument value="-10" name="MinVal1"/>
+  <atv:argument value="10" name="MaxVal1"/>
+  <atv:argument value="-100" name="MinVal2"/>
+  <atv:argument value="100" name="MaxVal2"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.GtiChart" transform="matrix(1.0147,0,0,1,0,0)" width="340" atv:refpy="492.5" id="id_7" x="1074.203" atv:refpx="1247.5" y="10" height="965">
+  <atv:argument value="skpb4" name="chartname"/>
+  <atv:argument value="#aaaaff" name="Color1"/>
+  <atv:argument value="#55ff7f" name="Color2"/>
+  <atv:argument value="AGENT.OBJECTS.SimulatedData_2.double_1" name="ChartBase1"/>
+  <atv:argument value="AGENT.OBJECTS.SimulatedData_2.double_2" name="ChartBase2"/>
+  <atv:argument value="double_2_1" name="ChartTitle1"/>
+  <atv:argument value="double_2_2" name="ChartTitle2"/>
+  <atv:argument value="0" name="MinVal1"/>
+  <atv:argument value="100" name="MaxVal1"/>
+  <atv:argument value="0" name="MinVal2"/>
+  <atv:argument value="10" name="MaxVal2"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.GtiChart" transform="matrix(1.0147,0,0,1,0,0)" width="340" atv:refpy="492.5" id="id_8" x="1413.217" atv:refpx="1587.5" y="10" height="965">
+  <atv:argument value="skpb5" name="chartname"/>
+  <atv:argument value="#ffaa7f" name="Color1"/>
+  <atv:argument value="#ff557f" name="Color2"/>
+  <atv:argument value="AGENT.OBJECTS.SimulatedData.int_1" name="ChartBase1"/>
+  <atv:argument value="AGENT.OBJECTS.SimulatedData.int_2" name="ChartBase2"/>
+  <atv:argument value="int_1" name="ChartTitle1"/>
+  <atv:argument value="int_2" name="ChartTitle2"/>
+  <atv:argument value="0" name="MinVal1"/>
+  <atv:argument value="10" name="MaxVal1"/>
+  <atv:argument value="0" name="MinVal2"/>
+  <atv:argument value="100" name="MaxVal2"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[/*
+//checkCharts();
+function checkCharts(){
+	var allcharts = webMI.trendFactory.getAllTrends();
+	if(allcharts.length == 0){
+		setTimeout(function() {checkCharts()}, 500);
+	}
+	
+	allcharts.forEach(function(chart, i, arr) {
+		console.log("chart name = "+chart.name);
+		chart.chart.inverted = false;
+//		chart.control.stopLiveMode();
+//		//var oldMode = item.chart.options.atviseOptions.mode;
+//		chart.control.setMode("history");
+//		chart.control.updated();
+	});
+}
+*/
+webMI.addOnload(function() {
+	console.log("addOnload SKPBcharts"); 
+//	checkCharts();
+	var allcharts = webMI.trendFactory.getAllTrends();		
+	allcharts.forEach(function(chart, i, arr) {
+		if(chart.name[chart.name.length - 1] != '1'){
+			for(var i=0; i < chart.chart.xAxis.length; i++){				
+				chart.chart.xAxis[i].update({					
+					tickLength: 10,
+					labels: {enabled: false}				
+				},true);				
+			}								
+		}
+		//chart.control.updated();		
+	});
+});
+
+
+]]></script>
+</svg>

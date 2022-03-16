@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Beschreibung</h1>
+<p>&Uuml;ber die Schaltfl&auml;che &bdquo;Bildwechsler&quot; wird in Abh&auml;ngigkeit vom Wert einer Adresse zwischen Bildern gewechselt (unterst&uuml;tzt werden nur Rastergrafik-Bilder).</p>
+<p>Sie kann in folgenden Modi verwendet werden:</p>
+<ol>
+  <li>F&uuml;r jede Schaltfl&auml;che &quot;Bildwechsel&quot; k&ouml;nnen 0 bis 4 Limits (von &quot;Unteres Limit unterschritten&quot; bis &quot;Oberes Limit &uuml;berschritten&quot;) festgelegt werden, wodurch 1 bis 5 Intervalle entstehen. Je nachdem, in welchem Intervall der Wert der &quot;base&quot;-Adresse liegt, wird das zugeh&ouml;rige Bild (definiert durch &quot;Bild f&uuml;r Unteres Limit unterschritten&quot; - &quot;Bild f&uuml;r Oberes Limit &uuml;berschritten&quot;) angezeigt.</li>
+</ol>
+<div style="margin-left: 40px;">
+Die Limits sind wie folgt definiert:<br>
+</div>
+<ul>
+  <ul>
+	<li>Unteres Limit unterschritten &gt;= Wert: Bild gem&auml;&szlig; &quot;Bild f&uuml;r Unteres Limit unterschritten&quot;</li>
+	<li>Unteres Limit unterschritten &lt; Wert &lt;= Unteres Limit erreicht: Bild gem&auml;&szlig; &quot;Bild f&uuml;r Unteres Limit erreicht&quot;</li>
+	<li>Unteres Limit erreicht &lt; Wert &lt; Oberes Limit erreicht: Bild gem&auml;&szlig; &quot;Bild f&uuml;r Normalbereich&quot;</li>
+	<li>Oberes Limit erreicht &lt;= Wert &lt; Oberes Limit &uuml;berschritten: Bild gem&auml;&szlig; &quot;Bild f&uuml;r Oberes Limit erreicht&quot;</li>
+	<li>Oberes Limit &uuml;berschritten &lt;=&nbsp;Wert: Bild gem&auml;&szlig; &quot;Bild f&uuml;r Oberes Limit &uuml;berschritten&quot;</li>
+  </ul>
+</ul>
+<ol start="2">
+  <li>Sind keine Limits festgelegt, wird der Wert von &quot;base&quot; direkt f&uuml;r den Bildwechsel verwendet; d.&nbsp;h., wenn Wert=1, wird das Bild &quot;Bild f&uuml;r Unteres Limit unterschritten&quot; angezeigt, wenn Wert=2, das Bild &quot;Bild f&uuml;r Unteres Limit erreicht&quot; und so weiter. Ist der Wert gr&ouml;&szlig;er als das zuletzt konfigurierte Bild, wird dieses angezeigt.</li>
+  <li>Ist eine &quot;enum Liste&quot; definiert, wird der Bildwechsel durch den Wert der Spalte &quot;Schl&uuml;ssel&quot; der globalen Liste ausgel&ouml;st. Stimmt der Wert von &quot;base&quot; mit dem Wert der Spalte &quot;Schl&uuml;ssel&quot; &uuml;berein, wird das zugeh&ouml;rige Bild gem&auml;&szlig; der Definition in der globalen Liste angezeigt. Dieser Modus setzt die beiden vorgenannten Modi au&szlig;er Kraft.</li>
+</ol>
+<div style="margin-left: 40px;">Beispiel:<br>
+<ul>
+  <li>Hinzuf&uuml;gen einer globalen Liste (z.&nbsp;B. &quot;mylist&quot;) zu den globalen Parametern</li>
+  <li>Geben Sie &quot;10&quot; in die Spalte &quot;Schl&uuml;ssel&quot; in die erste Zeile und ein zugeh&ouml;riges Bild (z.&nbsp;B. image1.png) in die Spalte &quot;Bild&quot; der ersten Zeile ein. HINWEIS: Bevor Sie das Bild ausw&auml;hlen k&ouml;nnen, m&uuml;ssen Sie es zu &quot;Bibliothek-&gt;PROJEKT-&gt;Ressourcen&quot; hinzuf&uuml;gen.</li>
+  <li>Geben Sie &quot;20&quot; in die Spalte &quot;Schl&uuml;ssel&quot; der zweiten Zeile und ein zugeh&ouml;riges Bild (z.&nbsp;B. image2.png) in die Spalte &quot;Bild&quot; der zweiten Zeile ein usw.</li>
+  <li>W&auml;hlen Sie Ihre oben definierte globale Liste (z.&nbsp;B. &quot;mylist&quot;) als Wert des Parameters &bdquo;enum Liste&quot; aus.</li>
+  <li>Dadurch wird bewirkt, dass die Schaltfl&auml;che &quot;Bildwechsel&quot; zum Bild image1.png wechselt, wenn &quot;base&quot; = 10, zum Bild image2.png, wenn &quot;base&quot; = 20 usw.</li>
+</ul>
+</div>
+<ol start="4">
+  <li>Dar&uuml;ber hinaus kann eine zus&auml;tzliche Adresse zum &Auml;ndern der Kontur des Bildes definiert werden; dies funktioniert nur, wenn keine enum Liste definiert wurde, d.&nbsp;h. nur in Verbindung mit den vorstehend beschriebenen Modi 1 und 2.</li>
+</ol>
+<div style="margin-left: 40px;">Je nachdem, in welchem Intervall&nbsp;(definiert durch &quot;Unteres Limit unterschritten&quot; bis &quot;Oberes Limit &uuml;berschritten&quot;) der Wert des Parameters &quot;Adresse f&uuml;r Kontur&quot; liegt, wird die Kontur des Bildes gem&auml;&szlig; den Parametern &quot;Farbe f&uuml;r Unteres Limit unterschritten&quot; - &quot;Farbe f&uuml;r Oberes Limit &uuml;berschritten&quot; ge&auml;ndert.</div>
+<ol start="5">
+  <li>In jedem Fall kann die Schaltfl&auml;che &quot;Bildwechsel&quot; als normale Schaltfl&auml;che verwendet werden.</li>
+</ol>
+<div style="margin-left: 40px;">Zu n&auml;heren Einzelheiten siehe &quot;Optionen&quot; weiter unten.</div>
+<h1>Parameter</h1>
+<p>Dieses Steuerelement hat die folgenden allgemeinen Parameter:</p>
+<ul>
+  <li><span class="parameter">base</span>: Das Bild wird in Abh&auml;ngigkeit vom Wert dieser Adresse gewechselt.</li>
+  <li><span class="parameter">enum Liste</span>: Globale Liste, die die anzuzeigenden Bilder definiert, siehe Punkt 3 oben.</li>
+</ul>
+Darstellung:<br>
+<ul>
+  <li><span class="parameter">Unteres Limit unterschritten (off=kein Limit)</span>: Wert f&uuml;r Unteres Limit unterschritten&nbsp;(Standard: off, d.&nbsp;h. kein Limit) </li>
+  <li><span class="parameter">Unteres Limit erreicht (off=kein Limit)</span>: Wert f&uuml;r Unteres Limit erreicht&nbsp;(Standard: off, d.&nbsp;h. kein Limit)</li>
+  <li><span class="parameter">Oberes Limit erreicht (off=kein Limit)</span>:Wert f&uuml;r Oberes Limit erreicht&nbsp;(Standard: off, d.&nbsp;h. kein Limit)</li>
+  <li><span class="parameter">Oberes Limit &uuml;berschritten (off=kein Limit)</span>: Wert f&uuml;r Oberes Limit &uuml;berschritten&nbsp;(Standard: off, d.&nbsp;h. kein Limit)</li>
+  <li><span class="parameter">Farbe f&uuml;r Unteres Limit unterschritten</span>: Farbe der Kontur (siehe Punkt 4 oben), wenn &quot;Unteres Limit unterschritten&quot; &gt;=&nbsp;Wert (Standard: rot)</li>
+  <li><span class="parameter">Farbe f&uuml;r Unteres Limit erreicht</span>: Farbe der Kontur (siehe Punkt 4 oben), wenn &quot;Unteres Limit unterschritten&quot; &lt;&nbsp;Wert &lt;= &quot;Unteres Limit erreicht&quot; (Standard: gelb)</li>
+  <li><span class="parameter">Farbe f&uuml;r Oberes Limit erreicht</span>: Farbe der Kontur (siehe Punkt 4 oben), wenn &quot;Oberes Limit erreicht&quot; &lt;=&nbsp;Wert &lt; &quot;Oberes Limit &uuml;berschritten&quot; (Standard: gelb)</li>
+  <li><span class="parameter">Farbe f&uuml;r Oberes Limit &uuml;berschritten</span>: Farbe der Kontur (siehe Punkt 4 oben), wenn &quot;Oberes Limit &uuml;berschritten&quot; &lt;=&nbsp;Wert (Standard: rot)</li>
+  <li><span class="parameter">Bild f&uuml;r Unteres Limit unterschritten</span>: anzuzeigendes Bild - siehe Punkt 1 und 2 oben</li>
+  <li><span class="parameter">Bild f&uuml;r Unteres Limit erreicht</span>: anzuzeigendes Bild - siehe Punkt 1 und 2 oben</li>
+  <li><span class="parameter">Bild f&uuml;r Normalbereich</span>: anzuzeigendes Bild - siehe Punkt 1 und 2 oben</li>
+  <li><span class="parameter">Bild f&uuml;r Oberes Limit erreicht</span>: anzuzeigendes Bild - siehe Punkt 1 und 2 oben</li>
+  <li><span class="parameter">Bild f&uuml;r Oberes Limit &uuml;berschritten</span>: anzuzeigendes Bild - siehe Punkt 1 und 2 oben</li>
+  <li><span class="parameter">Konturfarbe</span>: Standard-Konturfarbe des Bildes</li>
+  <li><span class="parameter">F&uuml;llfarbe</span>: F&uuml;llfarbe des Bildes; wirkt sich nur auf ein transparentes Bild aus</li>
+  <li><span class="parameter">F&uuml;llfarbe wenn inaktiv</span>: F&uuml;llfarbe des Bildes, sofern es nicht aktiv ist (siehe auch &quot;Sicherheit&quot; unten); wirkt sich nur auf ein transparentes Bild aus</li>
+  <li><span class="parameter">Adresse f&uuml;r Kontur</span>: Die Kontur des Bildes &auml;ndert sich in Abh&auml;ngigkeit vom Wert dieser Adresse, siehe Punkt 4 oben.</li>
+  <li><span class="parameter">Fokus Konturfarbe</span>: Farbe der Kontur, die beim Fokus der Schaltfl&auml;che eingestellt wird (Standard: wei&szlig;)</li>
+ </ul>
+Optionen:
+<ul>
+  <li><span class="parameter">Zu setzende Adresse bei MouseClick</span>: Der Wert von &quot;Wert bei MouseClick&quot; wird bei einem Mausklick auf diese Adresse gesetzt.</li>
+  <li><span class="parameter">Wert bei MouseClick</span>: Bei&nbsp;MouseClick zu setzender Wert</li>
+  <li><span class="parameter">Zu setzende Adresse bei MouseDown</span>: Der Wert von &quot;Wert bei MouseDown&quot; wird auf diese Adresse gesetzt, wenn die Maustaste gedr&uuml;ckt wird.</li>
+  <li><span class="parameter">Wert bei MouseDown</span>: Bei&nbsp;MouseDown zu setzender Wert</li>
+  <li><span class="parameter">Zu setzende Adresse bei MouseUp</span>: Der Wert von &quot;Wert bei MouseUp&quot; wird auf diese Adresse gesetzt, wenn die Maustaste losgelassen wird.</li>
+  <li><span class="parameter">Wert bei MouseUp</span>: Bei&nbsp;MouseUp zu setzender Wert</li>
+  <li><span class="parameter">Tab-Index</span>: Bestimmt die Reihenfolge, in der mit der Tabulatortaste zwischen den einzelnen Object Displays gewechselt werden kann</li>
+  <li><span class="parameter">Tooltip</span>: Zeigt eine Tooltip Box mit dem eingegebenen Text an (Standard HTML-Elemente k&ouml;nnen auch eingegeben werden)</li>
+ </ul>
+Sicherheit:
+<ul>
+  <li><span class="parameter">Ben&ouml;tigtes Recht</span>: Der Benutzer muss &uuml;ber dieses Recht verf&uuml;gen, um diese Schaltfl&auml;che aktivieren, d.&nbsp;h. bet&auml;tigen zu k&ouml;nnen.</li>
+  <li><span class="parameter">Aktivierungsadresse</span>: Stimmt der Wert dieser Adresse mit dem &quot;Aktivierungswert&quot; &uuml;berein, ist die Schaltfl&auml;che aktiv, so dass sie bet&auml;tigt werden kann.</li>
+  <li><span class="parameter">Aktivierungswert</span>: Wert, von dem die Schaltfl&auml;che aktiviert wird</li> </ul>
+<div style="margin-left: 40px;">HINWEIS: Die Aktivierung einer Schaltfl&auml;che kann nur &uuml;ber das ben&ouml;tigte Recht konfiguriert werden oder nur &uuml;ber die Aktivierungsadresse und den Aktivierungswert oder &uuml;ber beide. Werden beide Einstellungen vorgenommen, muss der Benutzer das ben&ouml;tigte Recht besitzen und der Wert der &quot;Aktivierungsadresse&quot; muss mit dem &quot;Aktivierungswert&quot; identisch sein, andernfalls wird die Schaltfl&auml;che nicht aktiviert.<br>
+</div>
+</body>
+</html>

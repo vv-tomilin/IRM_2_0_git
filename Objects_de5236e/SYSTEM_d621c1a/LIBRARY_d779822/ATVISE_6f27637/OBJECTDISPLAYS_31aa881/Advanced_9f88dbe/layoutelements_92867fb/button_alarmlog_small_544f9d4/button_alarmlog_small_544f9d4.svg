@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns="http://www.w3.org/2000/svg" height="49" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="153" version="1.2" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <desc>Button for opening the alarmlog as table.</desc>
+ <title>Alarmlog button (small)</title>
+ <metadata>
+  <atv:parameter desc="display for alarmlog" name="alarmDisplay" behavior="optional" valuetype="display" defaultvalue="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.alarmlist_log"/>
+  <atv:parameter desc="color for alarms" group="" name="alarm_color" behavior="optional" valuetype="string" defaultvalue="#FF0000"/>
+  <atv:parameter desc="size" config="small;large" group="Button" name="buttonSize" behavior="optional" valuetype="enum" defaultvalue="small"/>
+  <atv:parameter desc="font size" config="6;7;8;9;10;11;12;14;16;18;20;22;24;26;28;36;48;72" group="Button" name="fontSize" behavior="optional" valuetype="enum" defaultvalue="16"/>
+  <atv:parameter desc="necessary right" config="SYSTEM.SECURITY.RIGHTS" group="Button" name="right" behavior="optional" valuetype="address"/>
+  <atv:parameter desc="activation address" group="Button" name="activeNode" behavior="optional" valuetype="address"/>
+  <atv:parameter desc="activation value" group="Button" name="activeValue" behavior="optional" valuetype="string"/>
+  <atv:parameter desc="popup width" group="PopUp" name="width" behavior="optional" valuetype="number" defaultvalue="772"/>
+  <atv:parameter desc="popup height" group="PopUp" name="height" behavior="optional" valuetype="number" defaultvalue="410"/>
+  <atv:parameter desc="popup position x" group="PopUp" name="x" behavior="optional" valuetype="number" defaultvalue="340"/>
+  <atv:parameter desc="popup position y" group="PopUp" name="y" behavior="optional" valuetype="number" defaultvalue="326"/>
+  <atv:gridconfig gridstyle="lines" height="20" width="20" enabled="false"/>
+  <atv:snapconfig height="10" width="10" enabled="false"/>
+ </metadata>
+ <svg transform="matrix(1.913,0,0,1.6333,0,0)" x="0" atv:bindtr="0.5,0.5" atv:refpx="76.521" id="button_alarmlog_2" height="30" atv:bindtl="0.5,0.5" width="80" atv:refpy="24.5" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" y="0">
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.alarmlist.enabled" name="symbol"/>
+  <atv:argument value="T{Alarmlog}" name="label"/>
+  <atv:argument value="18" name="fontSize"/>
+  <atv:argument value="SYSTEM.GLOBALS.atvBorderColor2" name="borderColor"/>
+  <atv:overwrite transform="matrix(0.5227,0,0,0.6122,0,0)" id="id_6" height="47" width="151.042"/>
+  <atv:overwrite transform="matrix(0.5227,0,0,0.6122,0,0)" x="66.521" id="button_symbol" y="14.5"/>
+  <atv:overwrite transform="matrix(0.5227,0,0,0.6122,0,0)" x="76.521" id="button_label_2" y="36"/>
+  <atv:overwrite transform="matrix(0.5227,0,0,0.6122,0,0)" x="76.521" id="button_label_1" y="21"/>
+  <atv:overwrite transform="matrix(0.5227,0,0,0.6122,0,0)" x="76.521" id="button_label" y="29"/>
+  <atv:overwrite transform="matrix(0.5227,0,0,0.6122,0,0)" id="button_stroke" height="45" width="149.042"/>
+  <atv:overwrite transform="matrix(0.5227,0,0,0.6122,0,0)" id="button_bg" height="47" width="151.042"/>
+  <atv:overwrite transform="matrix(0.5227,0,0,0.6122,0,0)" id="outer_frame" height="49" width="153.042"/>
+ </svg>
+ <svg transform="matrix(0.881,0,0,1.6333,0,0)" x="0" atv:bindtr="1,1" atv:refpx="35.24" id="button_alarmlog_1" height="30" atv:bindtl="0,0" width="80" atv:refpy="24.5" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" y="0">
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.alarmlist.enabled" name="symbol"/>
+  <atv:argument value="T{Alarmlog}" name="label"/>
+  <atv:argument prefix="fontSize" name="fontSize"/>
+  <atv:argument value="SYSTEM.GLOBALS.atvBorderColor2" name="borderColor"/>
+  <atv:argument prefix="right" name="right"/>
+  <atv:argument prefix="activeNode" name="activeNode"/>
+  <atv:argument prefix="activeValue" name="activeValue"/>
+  <atv:overwrite transform="matrix(1.1351,0,0,0.6122,0,0)" id="id_6" height="47" width="68.48"/>
+  <atv:overwrite transform="matrix(1.1351,0,0,0.6122,0,0)" x="25.24" id="button_symbol" y="14.5"/>
+  <atv:overwrite transform="matrix(1.1351,0,0,0.6122,0,0)" x="35.24" id="button_label_2" y="36"/>
+  <atv:overwrite transform="matrix(1.1351,0,0,0.6122,0,0)" x="35.24" id="button_label_1" y="21"/>
+  <atv:overwrite transform="matrix(1.1351,0,0,0.6122,0,0)" x="35.24" id="button_label" y="29"/>
+  <atv:overwrite transform="matrix(1.1351,0,0,0.6122,0,0)" id="button_stroke" height="45" width="66.48"/>
+  <atv:overwrite transform="matrix(1.1351,0,0,0.6122,0,0)" id="button_bg" height="47" width="68.48"/>
+  <atv:overwrite transform="matrix(1.1351,0,0,0.6122,0,0)" id="outer_frame" height="49" width="70.48"/>
+ </svg>
+ <polyline atv:refpx="8.056" id="context_menu_sign" stroke="#666666" atv:refpy="8.616" stroke-width="1" fill="#686868" points="2.013,2.012 2.013,14.094 14.096,2.012 2.013,2.012"/>
+ <script type="text/ecmascript"><![CDATA[webMI.gfx.setWidth("button_alarmlog_1_button_bg", webMI.gfx.getWidth("button_alarmlog_1_button_bg")-2);
+webMI.gfx.setHeight("button_alarmlog_1_button_bg", webMI.gfx.getHeight("button_alarmlog_1_button_bg")-2);
+webMI.gfx.setX("button_alarmlog_1_button_bg", "2");
+webMI.gfx.setY("button_alarmlog_1_button_bg", "2");
+webMI.gfx.setWidth("button_alarmlog_2_button_bg", webMI.gfx.getWidth("button_alarmlog_2_button_bg")-2);
+webMI.gfx.setHeight("button_alarmlog_2_button_bg", webMI.gfx.getHeight("button_alarmlog_2_button_bg")-2);
+webMI.gfx.setX("button_alarmlog_2_button_bg", "2");
+webMI.gfx.setY("button_alarmlog_2_button_bg", "2");
+
+var alarmlist = null;
+var isAlarm = false;
+var colorActive = webMI.query["alarm_color"];
+var colorInactive = webMI.gfx.getFill("button_alarmlog_1_outer_frame");
+
+var width = parseInt(webMI.query["width"]);
+var height = parseInt(webMI.query["height"]);
+var x = parseInt(webMI.query["x"]);
+var y = parseInt(webMI.query["y"]);
+
+/* Correct position of window for mobile device scaling */
+var contentMultiplicator = webMI.getClientInfo() ? webMI.getClientInfo().deviceScaling.window.content : 1;
+x = x - (width * contentMultiplicator - width);
+y = y - (height * contentMultiplicator - height);
+
+if (webMI.query["buttonSize"] == "large") {
+	webMI.gfx.setVisible("button_alarmlog_1", false);
+} else {
+	webMI.gfx.setVisible("button_alarmlog_2", false);
+}
+
+webMI.addOnload(function(e) {
+	webMI.rootWindow.webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Alarmmanagement", {"id": ""});
+	webMI.trigger.fire("com.atvise.alarms_exist", setActive);
+	webMI.trigger.connect("com.atvise.alarms_notify", function(e){
+		setActive(e.value);
+	});
+});
+
+function setActive(activate){
+	if (alarmlist == null) {
+		webMI.gfx.setFill("button_alarmlog_1_outer_frame", activate ? {
+			0: colorActive,
+			2: colorInactive,
+			4: colorActive,
+			6: colorInactive,
+			8: colorActive,
+			10: colorInactive
+		} : colorInactive);
+		webMI.gfx.setFill("button_alarmlog_2_outer_frame", activate ? {
+			0: colorActive,
+			2: colorInactive,
+			4: colorActive,
+			6: colorInactive,
+			8: colorActive,
+			10: colorInactive
+		} : colorInactive);
+	} else {
+		webMI.gfx.setFill("button_alarmlog_1_outer_frame", activate ? colorActive : colorInactive);
+		webMI.gfx.setFill("button_alarmlog_2_outer_frame", activate ? colorActive : colorInactive);
+	}
+	isAlarm = activate;
+}
+
+function handleAlarmlog() {
+	if (alarmlist == null) {
+		webMI.gfx.setFill("button_alarmlog_1_outer_frame", isAlarm ? colorActive : colorInactive);
+		webMI.gfx.setFill("button_alarmlog_2_outer_frame", isAlarm ? colorActive : colorInactive);
+
+		alarmlist = webMI.display.openWindow({
+			display: webMI.query["alarmDisplay"],
+			extern: false,
+			width: width,
+			height: height,
+			x: x,
+			y: y,
+			menubar: false,
+			modal: false,
+			movable: true,
+			resizable: true,
+			scrollbars: false,
+			status: false,
+			title: "T{Alarmlog}",
+			titlebar: false,
+			toolbar: false,
+			query: []
+		});
+		alarmlist.cuba = function () {
+			alarmlist = null;
+		}
+	} else {
+		alarmlist.close();
+		alarmlist = null;
+	}
+}
+
+webMI.trigger.connect("clicked", function(e) {
+	handleAlarmlog();
+}, "button_alarmlog_1");
+
+webMI.trigger.connect("clicked", function(e) {
+	handleAlarmlog();
+}, "button_alarmlog_2");
+
+
+
+]]></script>
+</svg>

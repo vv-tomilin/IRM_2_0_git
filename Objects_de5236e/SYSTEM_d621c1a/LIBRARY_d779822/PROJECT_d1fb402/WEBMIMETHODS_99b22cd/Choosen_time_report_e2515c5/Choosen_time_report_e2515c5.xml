@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="masAdress" type="http.request" trigger="false" relative="false" value=""/>
+  <parameter name="masName" type="http.request" trigger="false" relative="false" value=""/>
+  <parameter name="DateStart" type="http.request" trigger="false" relative="false" value=""/>
+  <parameter name="DateFinish" type="http.request" trigger="false" relative="false" value=""/>
+  <code><![CDATA[try{
+	var AdressArr=masAdress.postvalues["masAdress"]
+	var counters=AdressArr.map(function(e){return 0})
+	var NameArr = masName.postvalues["masName"]
+	var from = DateStart.postvalues["DateStart"]
+	var to = DateFinish.postvalues["DateFinish"]
+	var date=new Date()
+	date.setTime(parseInt(from))
+	
+	/////////////////////////ЧТЕНИЕ ДАННЫХ////////////////////////	
+	
+	var Datas=AdressArr.map(function(e){
+		return call("SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.Report.simplifier",{"nodeName":e,"startT":from,"endT":to})	
+	})
+	/////////////////////НАЗВАНИЕ ФАЙЛА//////////////////////
+	var y = date.getFullYear();
+	var m=date.getMonth()+1;
+	var d=date.getDate();
+	
+	var hour = date.getHours();
+	var min = date.getMinutes();
+	var sec = date.getSeconds();
+		
+	if(String(m).length < 2)
+		m = '0' + String(m);
+	if(String(d).length < 2)
+		d = '0' + String(d);	
+				
+	 if(String(hour).length < 2)
+		hour = '0' + String(hour);
+	if(String(min).length < 2)
+		min = '0' + String(min);
+	if(String(sec).length < 2)
+		sec = '0' + String(sec);
+	
+	
+	var reportfolder = "rigdata/reports/";  ///ПУТЬ ДО ФАЙЛА
+	var filename = "quick_SKPB_report_" + y + "_" + m + "_" + d +"_"+hour+","+min+","+sec+ ".csv"; //НАЗВАНИЕ
+	////////////////НАЧАЛО РАБОТЫ С ФАЙЛОМ////////////////////////////
+	
+	var ofs = new OutputFileStream(reportfolder+filename,'utf8'); //assign файла
+	ofs.open();/////////////////////////////////////////////////////открытие файла
+	var firststr="\ufeffВремя"/////////////////////////////////////начало первой строки (ufeff - указание, что это utf-8)
+	NameArr.forEach(function(e){firststr=firststr+";"+e})//////////добаление значений в строку
+	ofs.writeLine(firststr)
+	var resArr=[]
+	
+	AdressArr.forEach(function(e){resArr.push([])})
+	for(var i= parseInt(from);i<parseInt(to);i+=60000 )
+	{
+		Datas.forEach(function(e,cnt){
+			//console.log(e[counters[cnt+1]])
+			var temp=[]
+			var ok=true
+			if(e.length>0){
+			do{
+				temp.push(e[counters[cnt]][1])
+				counters[cnt]++;
+				if(counters[cnt]==e.length){counters[cnt]=counters[cnt]-1; ok=false}
+				
+			}while((counters[cnt]<e.length)&(e[counters[cnt]][0]<i)&(ok))
+			//console.log(temp)
+			//console.log(e)
+			//console.log(resArr[cnt])
+			if(temp.length==1){
+				resArr[cnt].push(temp[0])
+			}else if(temp.length>1){
+				var avrg=0;
+				temp.forEach(function(e){avrg+=e})
+				avrg=avrg/(temp.length)
+				resArr[cnt].push(avrg)
+			}else{
+				if(resArr[cnt].length==0){resArr[cnt].push(0)}
+				else{resArr[cnt].push(resArr[cnt][resArr[cnt].length-1])}
+			}}
+			else{resArr[cnt].push("no_data")}
+		})
+		
+	}
+	//console.log(resArr[0].length)
+	var cntr=0;
+	for(var i=parseInt(from);i<parseInt(to);i+=60000){
+		var dt=new Date()
+		dt.setTime(i)
+		var h = dt.getHours();
+		var m = dt.getMinutes();
+		var s = dt.getSeconds();
+		if(String(h).length < 2)
+			h = '0' + String(h);
+		if(String(m).length < 2)
+			m = '0' + String(m);
+		if(String(s).length < 2)
+			s = '0' + String(s);
+		
+		var str=h+":"+m+":"+s
+		resArr.forEach(function(e){str=str+";"+e[cntr]; str=str.replace('.',',')})
+		cntr++;
+		ofs.writeLine(str)
+	}
+	ofs.close();
+	//console.log(Datas)
+	return("ok")
+}catch(err){
+	console.log("+"+err)
+	return(err)
+	
+}]]></code>
+</script>

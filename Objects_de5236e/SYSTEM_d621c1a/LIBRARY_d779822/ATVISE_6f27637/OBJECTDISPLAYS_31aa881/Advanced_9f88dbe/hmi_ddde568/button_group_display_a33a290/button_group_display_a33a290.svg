@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="168" xmlns:atv="http://webmi.atvise.com/2007/svgext" height="45" xmlns="http://www.w3.org/2000/svg" version="1.2">
+ <defs>
+  <linearGradient id="linear_1" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" x1="1">
+   <stop stop-color="#ffffff" stop-opacity="0" offset="0"/>
+   <stop stop-color="#ffffff" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linear_2" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox" x1="1">
+   <stop stop-color="#ffffff" stop-opacity="0.35" offset="0"/>
+   <stop stop-color="#ffffff" stop-opacity="0.35" offset="1"/>
+  </linearGradient>
+ </defs>
+ <desc>Contains four buttons that show the main display structure on mouse over.</desc>
+ <title>Group Displaybuttons</title>
+ <metadata>
+  <atv:parameter defaultvalue="content" valuetype="string" behavior="optional" name="targetFrame" desc="target frame"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvFillColor" valuetype="global" group="Appearance" behavior="optional" name="fillColor" substitute="$FILLCOLOR$" desc="fill color"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvBorderColor" valuetype="global" group="Appearance" behavior="optional" name="borderColor" substitute="$BORDERCOLOR$" desc="border color"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvSymbolColor" valuetype="global" group="Appearance" behavior="optional" name="symbolColor" substitute="$SYMBOLCOLOR$" desc="symbol color"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvFontColor" valuetype="global" group="Appearance" behavior="optional" name="fontColor" substitute="$FONTCOLOR$" desc="font color"/>
+  <atv:gridconfig gridstyle="lines" width="20" height="20" enabled="false"/>
+  <atv:snapconfig width="10" height="10" enabled="false"/>
+ </metadata>
+ <rect id="id_6" y="0.25" ry="3" atv:bindbr="1,1" stroke-width="0.5" atv:refpy="23.254" x="0.25" rx="3.188" atv:bindtl="0,0" atv:dynamic="true" width="167.5" fill="$FILLCOLOR$" stroke="$BORDERCOLOR$" height="44.5" atv:refpx="85.001"/>
+ <!-- if id is changed, do also change in ATVISE.QUICKDYNAMICS.index function showPopup() -> closePopups() -> var isConcernedButton ... !! -->
+ <g id="clickarea_1" transform="matrix(1.074,0,0,1.074,-1.6171,-1.5903)" atv:refpy="22.574" atv:refpx="22.599">
+  <rect id="button_bg_1" y="5.274" ry="3" stroke-width="0.766" atv:refpy="23.617" x="5.299" rx="3" width="34.452" fill="$FILLCOLOR$" stroke="none" height="34.452" atv:refpx="34.866"/>
+  <rect id="button_overlay_1" y="5.274" ry="3" stroke-width="1" atv:refpy="12.133" x="5.299" rx="3" width="34.452" fill="$FILLCOLOR$" stroke="#ffffff" height="34.452" atv:refpx="34.866"/>
+  <svg id="id_1" y="4.694" transform="matrix(1.5312,0,0,1.5312,0,0)" atv:refpy="47.242" x="4.711" width="20" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.folder" height="20" atv:refpx="30.322">
+   <atv:argument prefix="symbolColor" name="symbolColor" value=""/>
+   <atv:argument prefix="fillColor" name="symbolColor2"/>
+  </svg>
+  <!-- mouscathingframes were inserted because mouse arrow turned to cursor sign when over empty gap in symbol drawing -->
+  <rect id="mousecathcingframe1" y="4.891" ry="3" atv:bindbr="1,1" atv:refpy="23.617" x="4.916" rx="3" atv:bindtl="0,0" width="35.218" fill="$FILLCOLOR$" stroke="none" height="35.218" fill-opacity="0.001" atv:refpx="34.866"/>
+ </g>
+ <!-- if id is changed, do also change in ATVISE.QUICKDYNAMICS.index function showPopup() -> closePopups() -> var isConcernedButton ... !! -->
+ <g id="clickarea_2" transform="matrix(1.074,0,0,1.074,0.0208,-1.5903)" atv:refpy="22.087" atv:refpx="61.616">
+  <rect id="button_bg_2" y="5.274" ry="3" stroke-width="0.766" atv:refpy="23.617" x="41.949" rx="3" width="34.452" fill="$FILLCOLOR$" stroke="none" height="34.452" atv:refpx="143.484"/>
+  <rect id="button_overlay_2" y="5.274" ry="4" stroke-width="1" atv:refpy="12.133" x="41.949" rx="3" width="34.452" fill="$FILLCOLOR$" stroke="#ffffff" height="34.452" atv:refpx="143.484"/>
+  <svg id="id_4" y="4.694" transform="matrix(1.5312,0,0,1.5312,0,0)" atv:refpy="30.156" x="28.646" width="20" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.folder_user" height="20" atv:refpx="232.808">
+   <atv:argument prefix="symbolColor" name="symbolColor" value=""/>
+   <atv:argument prefix="fillColor" name="symbolColor2"/>
+  </svg>
+  <rect id="mousecathcingframe2" y="4.891" ry="3" atv:bindbr="1,1" atv:refpy="23.617" x="41.566" rx="3" atv:bindtl="0,0" width="35.218" fill="$FILLCOLOR$" stroke="none" height="35.218" fill-opacity="0.001" atv:refpx="143.484"/>
+ </g>
+ <!-- if id is changed, do also change in ATVISE.QUICKDYNAMICS.index function showPopup() -> closePopups() -> var isConcernedButton ... !! -->
+ <g id="clickarea_3" transform="matrix(1.074,0,0,1.074,1.6576,-1.5903)" atv:refpy="22.336" atv:refpx="101.147">
+  <rect id="button_bg_3" y="5.274" ry="3" stroke-width="0.766" atv:refpy="39.316" x="78.6" rx="3" width="34.452" fill="$FILLCOLOR$" stroke="none" height="34.452" atv:refpx="385.596"/>
+  <rect id="button_overlay_3" y="5.274" ry="4" stroke-width="1" atv:refpy="12.133" x="78.6" rx="3" width="34.452" fill="$FILLCOLOR$" stroke="#ffffff" height="34.452" atv:refpx="385.596"/>
+  <svg id="id_5" y="4.694" transform="matrix(1.5312,0,0,1.5312,0,0)" atv:refpy="22.5" x="52.582" width="20" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.folder_system" height="20" atv:refpx="414.058">
+   <atv:argument prefix="symbolColor" name="symbolColor" value=""/>
+   <atv:argument prefix="fillColor" name="symbolColor2"/>
+  </svg>
+  <rect id="mousecathcingframe3" y="4.891" ry="3" atv:bindbr="1,1" stroke-width="0.766" atv:refpy="39.316" x="78.217" rx="3" atv:bindtl="0,0" width="35.218" fill="$FILLCOLOR$" stroke="none" height="35.218" fill-opacity="0.001" atv:refpx="385.596"/>
+ </g>
+ <!-- if id is changed, do also change in ATVISE.QUICKDYNAMICS.index function showPopup() -> closePopups() -> var isConcernedButton ... !! -->
+ <g id="clickarea_4" transform="matrix(1.074,0,0,1.074,3.2966,-1.5903)" atv:refpy="-0.165" atv:refpx="25.404">
+  <rect id="button_bg_4" y="5.274" ry="3" stroke-width="0.766" atv:refpy="37.353" x="115.249" rx="3" width="34.452" fill="$FILLCOLOR$" stroke="none" height="34.452" atv:refpx="377.678"/>
+  <rect id="button_overlay_4" y="5.274" ry="3" stroke-width="1" atv:refpy="12.133" x="115.249" rx="3" width="34.452" fill="$FILLCOLOR$" stroke="#ffffff" height="34.452" atv:refpx="366.718"/>
+  <svg id="00" y="4.694" transform="matrix(1.5312,0,0,1.5312,0,0)" atv:refpy="38.946" x="77.701" width="20" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.folder_report" height="20" atv:refpx="636.309">
+   <atv:argument prefix="symbolColor" name="symbolColor" value=""/>
+   <atv:argument prefix="fillColor" name="symbolColor2"/>
+  </svg>
+  <rect id="mousecathcingframe4" y="4.891" ry="3" atv:bindbr="1,1" stroke-width="0.766" atv:refpy="37.353" x="114.866" rx="3" atv:bindtl="0,0" width="35.218" fill="$FILLCOLOR$" stroke="none" height="35.218" fill-opacity="0.001" atv:refpx="377.678"/>
+ </g>
+ <script type="text/ecmascript"><![CDATA[var frameName = webMI.query["targetFrame"];
+var fontColor = webMI.query["fontColor"];
+var borderColor = webMI.query["borderColor"];
+var strokeNormal = "none";
+var strokePressed = webMI.query["strokePressed"];
+var offset1 = { x: 0, y: 43 };
+var offset2 = { x: 42, y: 43 };
+var offset3 = { x: 80, y: 43 };
+var offset4 = { x: 118, y: 43 };
+
+var mainMenuStyle = { maxRows: 10, fontFamily: "Arial", fontSize: 12, fontFill: fontColor, width: 140, fill: "#ffffff", stroke: borderColor, strokeWidth: 1, hoverFill: "#e5e5e5", closeTime: 0, zIndex: 100, showType: "right"};
+
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Main Menu", {"id":"clickarea_1", name: "MAIN", itemsCount: 0, "outputNode":null, "x":offset1.x, "y":offset1.y, onEvent: "mouseover", frameName: frameName, "style": mainMenuStyle});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Main Menu", {"id":"clickarea_1", name: "MAIN", itemsCount: 0, "outputNode":null, "x":offset1.x, "y":offset1.y, onEvent: "click", frameName: frameName, "style": mainMenuStyle});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Main Menu", {"id":"clickarea_2", name: "USER", itemsCount: 0, "outputNode":null, "x":offset2.x, "y":offset2.y, onEvent: "mouseover", frameName: frameName, "style": mainMenuStyle});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Main Menu", {"id":"clickarea_2", name: "USER", itemsCount: 0, "outputNode":null, "x":offset2.x, "y":offset2.y, onEvent: "click", frameName: frameName, "style": mainMenuStyle});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Main Menu", {"id":"clickarea_3", name: "SYSTEM", itemsCount: 0, "outputNode":null, "x":offset3.x, "y":offset3.y, onEvent: "mouseover", frameName: frameName, "style": mainMenuStyle});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Main Menu", {"id":"clickarea_3", name: "SYSTEM", itemsCount: 0, "outputNode":null, "x":offset3.x, "y":offset3.y, onEvent: "click", frameName: frameName, "style": mainMenuStyle});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Main Menu", {"id":"clickarea_4", name: "REPORT", itemsCount: 0, "outputNode":null, "x":offset4.x, "y":offset4.y, onEvent: "mouseover", frameName: frameName, "style": mainMenuStyle});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Main Menu", {"id":"clickarea_4", name: "REPORT", itemsCount: 0, "outputNode":null, "x":offset4.x, "y":offset4.y, onEvent: "click", frameName: frameName, "style": mainMenuStyle});
+
+webMI.addEvent("clickarea_1", "mousedown", function(e) {
+var id = "clickarea_1";
+var value = true;
+return function(value) {
+	webMI.gfx.setFill("button_overlay_1", "url(#linear_2)");
+} (value);
+});
+
+webMI.addEvent("clickarea_1", "mouseout", function(e) {
+var id = "clickarea_1";
+var value = true;
+return function(value) {
+	webMI.gfx.setFill("button_overlay_1", "url(#linear_1)");
+} (value);
+});
+
+webMI.addEvent("clickarea_2", "mousedown", function(e) {
+var id = "clickarea_2";
+var value = true;
+return function(value) {
+	webMI.gfx.setFill("button_overlay_2", "url(#linear_2)");
+} (value);
+});
+
+webMI.addEvent("clickarea_2", "mouseout", function(e) {
+var id = "clickarea_2";
+var value = true;
+return function(value) {
+	webMI.gfx.setFill("button_overlay_2", "url(#linear_1)");
+} (value);
+});
+
+webMI.addEvent("clickarea_3", "mousedown", function(e) {
+var id = "clickarea_3";
+var value = true;
+return function(value) {
+	webMI.gfx.setFill("button_overlay_3", "url(#linear_2)");
+} (value);
+});
+
+webMI.addEvent("clickarea_3", "mouseout", function(e) {
+var id = "clickarea_3";
+var value = true;
+return function(value) {
+	webMI.gfx.setFill("button_overlay_3", "url(#linear_1)");
+} (value);
+});
+
+
+webMI.addEvent("clickarea_4", "mousedown", function(e) {
+var id = "clickarea_4";
+var value = true;
+return function(value) {
+	webMI.gfx.setFill("button_overlay_4", "url(#linear_2)");
+} (value);
+});
+
+
+webMI.addEvent("clickarea_4", "mouseout", function(e) {
+var id = "clickarea_4";
+var value = true;
+return function(value) {
+	webMI.gfx.setFill("button_overlay_4", "url(#linear_1)");
+} (value);
+});]]></script>
+</svg>

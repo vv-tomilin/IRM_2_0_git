@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.SECURITY.RIGHTS.ENGINEERING
+NodeClass: Object
+BrowseName: 1:ENGINEERING
+DisplayName: en|ENGINEERING
+Description: en|ENGINEERING
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

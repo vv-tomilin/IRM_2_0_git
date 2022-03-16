@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.General_Time_Based.mudTemperatureOutAvg
+NodeClass: Variable
+BrowseName: 1:mudTemperatureOutAvg
+DisplayName: en|mudTemperatureOutAvg
+Description: en|mudTemperatureOutAvg
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

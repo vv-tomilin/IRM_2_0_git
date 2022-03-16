@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Rig.General.isCreateNewWell
+NodeClass: Variable
+BrowseName: 1:isCreateNewWell
+DisplayName: en|isCreateNewWell
+Description: en|isCreateNewWell
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

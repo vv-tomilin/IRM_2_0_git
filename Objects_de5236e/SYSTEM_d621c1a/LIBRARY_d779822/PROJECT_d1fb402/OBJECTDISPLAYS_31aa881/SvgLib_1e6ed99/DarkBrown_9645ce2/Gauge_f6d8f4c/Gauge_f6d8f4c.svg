@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" version="1.2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" width="42" xmlns="http://www.w3.org/2000/svg" height="46" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="false" gridstyle="lines" width="20" height="20"/>
+  <atv:snapconfig enabled="false" width="10" height="10"/>
+ </metadata>
+ <g id="id_2" atv:insensitive="true" atv:refpx="0" atv:refpy="0" transform="matrix(1,0,0,1,0,0)">
+  <rect id="id_3" y="0" fill="#0000ff" fill-opacity="0" atv:refpx="21" atv:refpy="23" x="0" width="42.00" height="46.00"/>
+ </g>
+ <g id="id_1" atv:refpx="21" atv:refpy="23" transform="matrix(1,0,0,1,0,0)">
+  <g id="layer1" atv:refpx="21" atv:refpy="23" transform="translate(-36.285714,-47.813987)">
+   <g id="shape" atv:refpx="57.286" atv:refpy="70.814" transform="matrix(0.525,0,0,0.51111109,31.035714,42.702876)">
+    <circle cy="50" id="circle49" fill="#993300" atv:refpx="50" atv:refpy="50" cx="50" r="40"/>
+    <rect id="rect51" y="74.022003" fill="#993300" atv:refpx="50" atv:refpy="87.011" x="43" width="14" height="25.978001"/>
+   </g>
+   <g id="dark" atv:refpx="57.286" atv:refpy="71.07" transform="matrix(0.525,0,0,0.51111109,31.035714,42.702876)">
+    <circle cy="50" id="circle54" fill="#702a00" atv:refpx="50" atv:refpy="50" cx="50" r="39"/>
+    <rect id="rect56" y="73.233002" fill="#702a00" atv:refpx="50" atv:refpy="86.617" x="44" width="12" height="26.767"/>
+   </g>
+   <g id="light" atv:refpx="57.286" atv:refpy="71.453" transform="matrix(0.525,0,0,0.51111109,31.035714,42.702876)">
+    <circle cy="50" id="circle59" fill="#bc4512" atv:refpx="50" atv:refpy="50" cx="50" r="37.5"/>
+    <rect id="rect61" y="69.591003" fill="#bc4512" atv:refpx="50" atv:refpy="84.796" x="45.5" width="9" height="30.409"/>
+   </g>
+   <g id="hlight" atv:refpx="57.286" atv:refpy="68.258" transform="matrix(0.525,0,0,0.51111109,31.035714,42.702876)">
+    <circle cy="50" id="circle64" fill="#eb9069" atv:refpx="50" atv:refpy="50" cx="50" r="36"/>
+   </g>
+  </g>
+ </g>
+</svg>

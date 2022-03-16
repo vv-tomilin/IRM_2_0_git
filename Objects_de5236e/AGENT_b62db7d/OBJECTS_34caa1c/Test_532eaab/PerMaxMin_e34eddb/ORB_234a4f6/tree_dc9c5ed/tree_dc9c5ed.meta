@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.ORB.tree
+NodeClass: Variable
+BrowseName: 1:tree
+DisplayName: en|tree
+Description: en|tree
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

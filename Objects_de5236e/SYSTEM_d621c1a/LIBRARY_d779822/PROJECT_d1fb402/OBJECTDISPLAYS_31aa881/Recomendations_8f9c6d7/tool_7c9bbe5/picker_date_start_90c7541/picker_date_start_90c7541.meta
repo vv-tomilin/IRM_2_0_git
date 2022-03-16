@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Recomendations.tool.picker_date_start
+NodeClass: Variable
+BrowseName: 1:picker_date_start
+DisplayName: en|picker_date_start
+Description: en|picker_date_start
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Внутренний лабиринт
+NodeClass: ObjectType
+BrowseName: 1:Внутренний лабиринт
+DisplayName: en|Внутренний лабиринт
+Description: en|Внутренний лабиринт
+IsAbstract: false

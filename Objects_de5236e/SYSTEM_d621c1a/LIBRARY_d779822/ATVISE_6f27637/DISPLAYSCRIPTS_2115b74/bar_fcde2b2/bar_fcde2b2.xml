@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <code><![CDATA[/**
+ * Code for the bar_horizontal and bar_vertical object displays
+ * ------------------------------------------------------------
+ * The bar is used for the graphical representation of the value of an address.
+ * For each bar 0 to 4 limits (from 'limit low low' up to 'limit high high') can be specified.
+ * These limits split the range defined by 'min' and 'max' in 1 to 5 intervals.
+ * Depending in what interval the value of the "base" address lies,
+ * the text color and bar color of the value will be changed according to the specified color for each limit.
+ * In case a limit lies below min or above max, it will not be explicitly drawn,
+ * though the text color and bar color will be changed accordingly. (e.g. max = 100 and limit high high = 120:
+ * although the bar will not go beyond 'max', the text color and bar color will change according to 'limit high high color'
+ * as soon as the value reaches the 'limit high high')
+ */
+
+
+/**
+ * DECLARATION SECTION
+ */
+ 
+var base = (webMI.query["base"] == undefined) ? "" : webMI.query["base"];
+var decimalPositions = webMI.query["decimalPositions"];
+var min = (webMI.query["min"] == undefined) ? "" : parseFloat(webMI.query["min"]);
+var max = (webMI.query["max"] == undefined) ? "" : parseFloat(webMI.query["max"]);
+var nodeMin = (webMI.query["nodeMin"] == undefined) ? "" : webMI.query["nodeMin"];
+var nodeMax = (webMI.query["nodeMax"] == undefined) ? "" : webMI.query["nodeMax"];
+var nodeLowLow = (webMI.query["nodeLowLow"] == undefined ? "" : webMI.query["nodeLowLow"]);
+var nodeLow = (webMI.query["nodeLow"] == undefined) ? "" : webMI.query["nodeLow"];
+var nodeHigh = (webMI.query["nodeHigh"] == undefined) ? "" : webMI.query["nodeHigh"];
+var nodeHighHigh = (webMI.query["nodeHighHigh"] == undefined) ? "" : webMI.query["nodeHighHigh"];
+var fontColor = webMI.query["fontColor"];
+var fillColor = webMI.query["fillColor"];
+var barColor = webMI.query["barColor"];
+var barColorInactive = webMI.query["barColorInactive"];
+var barColorLimitsOn = webMI.query["barColorLimitsOn"];
+var limitlowlowfill = webMI.query["limitLowLowFill"];
+var limitlowfill = webMI.query["limitLowFill"];
+var limithighfill = webMI.query["limitHighFill"];
+var limithighhighfill = webMI.query["limitHighHighFill"];
+var scaleColor = webMI.query["scaleColor"];
+var alarmToSubscribe = webMI.query["alarm"];
+var alarmIndication = webMI.query["alarmIndication"];
+var statusEnabled = webMI.query["statusEnabled"];
+var statusTrigger = webMI.query["statusTrigger"];
+var statusIndication = webMI.query["statusIndication"];
+var limitlowlow = (webMI.query["limitLowLow"] == undefined) ? "" : webMI.query["limitLowLow"];
+var limitlow = (webMI.query["limitLow"] == undefined) ? "" : webMI.query["limitLow"];
+var limithigh = (webMI.query["limitHigh"] == undefined) ? "" : webMI.query["limitHigh"];
+var limithighhigh = (webMI.query["limitHighHigh"] == undefined) ? "" : webMI.query["limitHighHigh"];
+var nodes=new Array(0,0,0,0,0,0,0); //array for base, min, max, limitLowLow, limitLow, LimitHigh, LimitHighhigh
+var nodesToSubscribe= new Array();
+var i=0;
+var AggregateManager = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Aggregate Manager");
+
+/**
+ * RUNTIME SECTION
+ */
+
+var rightsHandlingProperties = {
+	right: null,
+	checkBaseNodeWriteRight: null,
+	isActivationNodeSet: null,
+	notifierConfiguration: {"id": "bg_rect", "node_1": webMI.query["base"], "right_1": "read", "node_2": webMI.query["alarm"], "right_2": "readEvent"},
+	setActiveTrigger: false,
+	handleStatus: false
+};
+
+if (typeof rightsHandling === "function") rightsHandling(rightsHandlingProperties);
+
+if (limitlow != "") {
+	limitlow = (limitlow != "off") ? parseFloat(limitlow) : "";
+}
+if (limitlowlow != "") {
+	limitlowlow = (limitlowlow != "off") ? parseFloat(limitlowlow) : "";
+}
+if (limithigh != "") {
+	limithigh = (limithigh != "off") ? parseFloat(limithigh) : "";
+}
+if (limithighhigh != "") {
+	limithighhigh = (limithighhigh != "off") ? parseFloat(limithighhigh) : "";
+}
+
+if (webMI.getAccessControlSupport())
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Access Control Element Notifier", {"id":"bg_rect", "node_1": webMI.query["base"], "right_1": "read", "node_2": webMI.query["alarm"], "right_2": "readEvent"});
+
+webMI.addOnunload(function unloadAggregateManager() {
+	AggregateManager.destroy();
+	AggregateManager = null;
+});
+
+// set array to remember which nodes are specified
+if (nodeMin != "") {
+	nodes[0] = 1;
+	nodesToSubscribe[i]=nodeMin;
+	i++;
+}
+if (nodeMax != "") {
+	nodes[1] = 1;
+	nodesToSubscribe[i]=nodeMax;
+	i++;
+}
+if (nodeLowLow != "") {
+	nodes[2] = 1;
+	nodesToSubscribe[i]=nodeLowLow;
+	i++;
+}
+if (nodeLow != "") {
+	nodes[3] = 1;
+	nodesToSubscribe[i]=nodeLow;
+	i++;
+}
+if (nodeHigh != "") {
+	nodes[4] = 1;
+	nodesToSubscribe[i]=nodeHigh;
+	i++;
+}
+if (nodeHighHigh != "") {
+	nodes[5] = 1;
+	nodesToSubscribe[i]=nodeHighHigh;
+	i++;
+}
+
+if (base != "") { // base is specified
+	AggregateManager.subscribeNodeOrAggregate(base, manageNodeResult, manageAggregateResult);
+}
+
+if (alarmToSubscribe != "")
+	initAlarm(alarmToSubscribe);
+
+/**
+ * FUNCTION SECTION
+ */
+
+function manageAggregateResult(subscribeResult){
+	if(nodesToSubscribe.length > 0) {
+		webMI.data.subscribeBlock(nodesToSubscribe,[], function(subscribeBlockResult){
+			subscribeBlockResult["data"] = subscribeResult;
+			manageSubcription(subscribeBlockResult);
+		});
+	} else {
+		subscribeResult["data"] = subscribeResult;
+		manageSubcription(subscribeResult);
+	}
+}
+
+function manageNodeResult(subscribeResult){
+	if(nodesToSubscribe.length > 0) {
+		webMI.data.subscribeBlock(nodesToSubscribe,[], function(e2){
+			e2["data"] = subscribeResult;
+			manageSubcription(e2);
+		});
+	} else {
+		subscribeResult["data"] = subscribeResult;
+		manageSubcription(subscribeResult);
+	}
+}
+
+function manageSubcription(e) {
+	i=0;
+
+	if (nodes[0] == 1) { // if node for minimum is specified, set node value as minimum
+		min = parseFloat(e[i].value);
+		i++;
+	}
+	webMI.gfx.setText("min", min);
+	if (nodes[1] == 1) { // if node for maximum is specified, set node value as maximum
+		max = parseFloat(e[i].value);
+		i++;
+	}
+	webMI.gfx.setText("max", max);
+	if (nodes[2] == 1) { // if node for limit LowLow is specified, set node value as limit LowLow else value from display parameter is taken
+		limitlowlow = parseFloat(e[i].value);
+		i++;
+	}
+	if (nodes[3] == 1) { // if node for limit Low is specified, set node value as limit Low else value from display parameter is taken
+		limitlow = parseFloat(e[i].value);
+		i++;
+	}
+	if (nodes[4] == 1) { // if node for limit High is specified, set node value as limit High else value from display parameter taken
+		limithigh = parseFloat(e[i].value);
+		i++;
+	}
+	if (nodes[5] == 1) { // if node for limit HighHigh is specified, set node value as limit HighHigh else value from display parameter taken
+		limithighhigh = parseFloat(e[i].value);
+		i++;
+	}
+
+	var barWidth = parseInt(webMI.gfx.getWidth("bar"));
+	var barHeight = parseInt(webMI.gfx.getHeight("bar"));
+	var screenCTM = webMI.gfx.getScreenCTM("bar");
+	var isRotated90Degrees = screenCTM.b == -screenCTM.c && screenCTM.a == 0 && screenCTM.d == 0;
+	var isHorizontal = (barWidth > barHeight && !isRotated90Degrees) || (barWidth < barHeight && isRotated90Degrees);
+	
+	if (String(limitlowlow) == "" || (String(min) != "" && limitlowlow < min) || (String(max) != "" && limitlowlow > max)) {
+		webMI.gfx.setVisible("limit_low_low", false);
+	} else {
+		if (isHorizontal) webMI.gfx.setMoveX("limit_low_low", webMI.translate(limitlowlow, min, max, 0, barWidth));
+		else webMI.gfx.setMoveY("limit_low_low", webMI.translate(limitlowlow, min, max, 0, isRotated90Degrees ? -barWidth : -barHeight));
+		webMI.gfx.setVisible("limit_low_low", null);
+	}
+	if (String(limitlow) == "" || (String(min) != "" && limitlow < min) || (String(max) != "" && limitlow > max)) {
+		webMI.gfx.setVisible("limit_low", false);
+	} else {
+		if (isHorizontal) webMI.gfx.setMoveX("limit_low", webMI.translate(limitlow, min, max, 0, barWidth));
+		else webMI.gfx.setMoveY("limit_low", webMI.translate(limitlow, min, max, 0, isRotated90Degrees ? -barWidth : -barHeight));
+		webMI.gfx.setVisible("limit_low", null);
+	}
+	if (String(limithigh) == "" || (String(min) != "" && limithigh < min) || (String(max) != "" && limithigh > max)) {
+		webMI.gfx.setVisible("limit_high", false);
+	} else {
+		if (isHorizontal) webMI.gfx.setMoveX("limit_high", webMI.translate(limithigh, min, max, 0, barWidth));
+		else webMI.gfx.setMoveY("limit_high", webMI.translate(limithigh, min, max, 0, isRotated90Degrees ? -barWidth : -barHeight));
+		webMI.gfx.setVisible("limit_high", null);
+	}
+	if (String(limithighhigh) == "" || (String(min) != "" && limithighhigh < min) || (String(max) != "" && limithighhigh > max)) {
+		webMI.gfx.setVisible("limit_high_high", false);
+	} else {
+		if (isHorizontal) webMI.gfx.setMoveX("limit_high_high", webMI.translate(limithighhigh, min, max, 0, barWidth));
+		else webMI.gfx.setMoveY("limit_high_high", webMI.translate(limithighhigh, min, max, 0, isRotated90Degrees ? -barWidth : -barHeight));
+		webMI.gfx.setVisible("limit_high_high", null);
+	}
+
+	if(typeof e["data"].value != "undefined"){
+		var value = e["data"].value;
+		decimalPositions = parseFloat(decimalPositions);
+		var formatString = "%0." + decimalPositions + "f";
+		value = webMI.sprintf(formatString, value);
+		webMI.gfx.setText("bar_value", value);
+
+		value = e["data"].value;
+		var barValue=value;
+		if (String(min) != "" && String(max) != "") {
+			if (min > value) {
+				barValue = min;
+			}
+			if (value > max) {
+				barValue = max;
+			}
+		}
+		if (isHorizontal) webMI.gfx.setScaleX("bar", webMI.translate(barValue, min, max, 0, 1));
+		else webMI.gfx.setScaleY("bar", webMI.translate(barValue, min, max, 0, 1));
+		if ( typeof barColorLimitsOn != "undefined" && (String(limitlow) != "" || String(limitlowlow) != "" || String(limithigh) != "" || String(limithighhigh) != "") ) webMI.gfx.setFill("bar", barColorLimitsOn);
+		else webMI.gfx.setFill("bar" ,barColor);
+	}
+
+	if (String(limitlow) != "" && value <= limitlow) {
+		if (isHorizontal) webMI.gfx.setScaleX("bar", webMI.translate(barValue, min, max, 0, 1));
+		else webMI.gfx.setScaleY("bar", webMI.translate(barValue, min, max, 0, 1));
+		webMI.gfx.setFill("bar",limitlowfill);
+	}
+	if (String(limitlowlow) != "" && value <= limitlowlow) {
+		if (isHorizontal) webMI.gfx.setScaleX("bar", webMI.translate(barValue, min, max, 0, 1));
+		else webMI.gfx.setScaleY("bar", webMI.translate(barValue, min, max, 0, 1));
+		webMI.gfx.setFill("bar",limitlowlowfill);
+	}
+	if (String(limithigh) != "" && value >= limithigh) {
+		if (isHorizontal) webMI.gfx.setScaleX("bar", webMI.translate(barValue, min, max, 0, 1));
+		else webMI.gfx.setScaleY("bar", webMI.translate(barValue, min, max, 0, 1));
+		webMI.gfx.setFill("bar",limithighfill);
+	}
+	if (String(limithighhigh) != "" && value >= limithighhigh) {
+		if (isHorizontal) webMI.gfx.setScaleX("bar", webMI.translate(barValue, min, max, 0, 1));
+		else webMI.gfx.setScaleY("bar", webMI.translate(barValue, min, max, 0, 1));
+		webMI.gfx.setFill("bar",limithighhighfill);
+	}
+	if (typeof e["data"].status != "undefined" && typeof handleStatus === "function")
+		handleStatus(e["data"].status);
+}
+
+function setActiveLayout() {
+}
+
+function setInactiveLayout() {
+}]]></code>
+</script>

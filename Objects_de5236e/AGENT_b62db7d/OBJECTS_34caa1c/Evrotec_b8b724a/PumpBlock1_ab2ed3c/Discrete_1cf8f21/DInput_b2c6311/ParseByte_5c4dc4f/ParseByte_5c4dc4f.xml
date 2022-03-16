@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="valbyte" type="node" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.Evrotec.PumpBlock1.Discrete.DInput"/>
+  <code><![CDATA[//console.log("ParseByte valbyte.value = ", valbyte.value);
+
+var mask_FanOnCover = parseInt("00000001", 2);
+var mask_PumpPlungerLubrication = parseInt("00000010", 2);
+var mask_FanGearboxOilCooler = parseInt("00000100", 2);
+var mask_FanPumpOilCooler = parseInt("00001000", 2);
+var mask_FanBlowerElectric = parseInt("00010000", 2);
+var mask_PumpKSMLubrication = parseInt("00100000", 2);
+//var mask_FanOnCover = parseInt("00000001", 2);
+//var mask_FanOnCover = parseInt("00000001", 2);
+if(Number(valbyte.value) & mask_FanOnCover){
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.PumpBlock1.Discrete.FanOnCover");
+	var res = node.assign({value: true});
+	//console.log("FanOnCover = ", true);
+} else {
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.PumpBlock1.Discrete.FanOnCover");
+	var res = node.assign({value: false});
+	//console.log("FanOnCover = ", false);
+}
+
+if(Number(valbyte.value) & mask_PumpPlungerLubrication){
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.PumpBlock1.Discrete.PumpPlungerLubrication");
+	var res = node.assign({value: true});
+	//console.log("PumpPlungerLubrication = ", false);
+} else {
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.PumpBlock1.Discrete.PumpPlungerLubrication");
+	var res = node.assign({value: false});
+	//console.log("PumpPlungerLubrication = ", false);
+}
+	
+if(Number(valbyte.value) & mask_FanGearboxOilCooler){
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.PumpBlock1.Discrete.FanGearboxOilCooler");
+	var res = node.assign({value: true});
+} else {
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.PumpBlock1.Discrete.FanGearboxOilCooler");
+	var res = node.assign({value: false});
+}
+
+if(Number(valbyte.value) & mask_FanPumpOilCooler){
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.PumpBlock1.Discrete.FanPumpOilCooler");
+	var res = node.assign({value: true});
+} else {
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.PumpBlock1.Discrete.FanPumpOilCooler");
+	var res = node.assign({value: false});
+}	
+
+if(Number(valbyte.value) & mask_FanBlowerElectric){
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.PumpBlock1.Discrete.FanBlowerElectric");
+	var res = node.assign({value: true});
+} else {
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.PumpBlock1.Discrete.FanBlowerElectric");
+	var res = node.assign({value: false});
+} 
+
+if(Number(valbyte.value) & mask_PumpKSMLubrication){
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.PumpBlock1.Discrete.PumpKSMLubrication");
+	var res = node.assign({value: true});
+} else {
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.PumpBlock1.Discrete.PumpKSMLubrication");
+	var res = node.assign({value: false});
+}]]></code>
+</script>

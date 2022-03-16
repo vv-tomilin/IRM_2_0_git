@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Variables.CalcDrilling.DiffPressure
+NodeClass: Variable
+BrowseName: 1:DiffPressure
+DisplayName: en|DiffPressure
+Description: en|DiffPressure
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

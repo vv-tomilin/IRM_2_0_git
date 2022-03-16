@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="60" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext" version="1.2" xmlns="http://www.w3.org/2000/svg" height="60">
+ <defs/>
+ <metadata>
+  <atv:parameter desc="symbol color" defaultvalue="#000000" name="symbolColor" substitute="$SYMBOLCOLOR$" valuetype="color" behavior="optional"/>
+  <atv:gridconfig width="10" height="10" gridstyle="lines" enabled="true"/>
+  <atv:snapconfig width="5" height="5" enabled="true"/>
+ </metadata>
+ <g atv:refpy="30" id="id_1" transform="matrix(1,0,0,1,1.7505,-1.0004)" atv:refpx="30">
+  <polyline stroke-width="2" atv:refpy="31" fill="$SYMBOLCOLOR$" stroke="none" id="id_0" atv:refpx="34.752" points="6.5,2 6.5,60 49.998,31 6.5,2"/>
+ </g>
+</svg>

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRM_2_0.Text
+NodeClass: Object
+BrowseName: 1:Text
+DisplayName: en|Text
+Description: en|Text
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

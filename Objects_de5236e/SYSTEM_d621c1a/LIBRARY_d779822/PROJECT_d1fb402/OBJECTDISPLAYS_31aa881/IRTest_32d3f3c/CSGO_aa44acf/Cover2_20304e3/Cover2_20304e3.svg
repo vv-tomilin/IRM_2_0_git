@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.2" height="87.94" width="139.18" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs/>
+ <metadata>
+  <atv:gridconfig height="20" width="20" gridstyle="lines" enabled="false"/>
+  <atv:snapconfig height="10" width="10" enabled="false"/>
+ </metadata>
+ <rect stroke="#c0c0c0" fill-opacity="0" stroke-width="3" atv:refpy="33.758" height="64.516" id="id_0" x="19.914" atv:refpx="68.731" width="97.634" fill="#c0c0c0" y="1.5"/>
+ <rect fill-opacity="0" stroke="#c0c0c0" stroke-width="6" atv:refpy="17.629" height="28.817" id="id_1" x="21.635" atv:refpx="68.731" width="94.193" fill="#c0c0c0" y="3.221"/>
+ <rect fill-opacity="0" stroke="#c0c0c0" stroke-width="8" atv:refpy="17.436" height="5.591" id="id_2" x="4" atv:refpx="10.882" width="13.763" fill="#c0c0c0" y="14.64"/>
+ <rect fill-opacity="0" stroke="#c0c0c0" stroke-width="8" atv:refpy="17.436" height="5.591" id="id_3" x="121.42" atv:refpx="128.302" width="13.763" fill="#c0c0c0" y="14.64"/>
+ <rect stroke="#c0c0c0" stroke-width="6" atv:refpy="59.995" height="49.892" id="id_4" x="33.678" atv:refpx="69.807" width="72.258" fill="#c0c0c0" y="35.049"/>
+</svg>

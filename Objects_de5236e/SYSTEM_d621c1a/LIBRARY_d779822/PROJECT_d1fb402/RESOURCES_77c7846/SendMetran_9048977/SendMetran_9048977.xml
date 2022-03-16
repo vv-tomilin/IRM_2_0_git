@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="request" type="http.request" trigger="false" relative="false" value=""/>
+  <parameter name="response" type="http.response" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var node = new UaNode("AGENT.OBJECTS.HookPosition");
+if (!node.exists())
+   console.log('Node not exist');
+else
+	console.log('Node exist');	
+
+var t1 = new Date(2019, 11, 20, 09, 28, 0);
+var t2 = new Date(2019, 11, 20, 09, 39, 17);
+//var resultAt = node.datahistory([t1, t2]);
+//console.log(resultAt);
+
+//var resultRaw = node.datahistory({starttime: t1, endtime: t2});
+var resultRaw = node.datahistory({endtime: t2, numvalues: 1000});
+console.log(resultRaw);
+
+var currenttime = new Date();
+console.log('Current Time = '+currenttime)
+
+var curtime = currenttime.getTime();
+console.log('milliseconds = '+curtime)
+
+//node.datahistoryRelease();
+/*
+var ifs = new InputFileStream("D:/Pers/Serg/Work/metran-55.pdf", "binary");
+ifs.open();
+response.setHeader("Content-Type", "application/pdf");
+response.write(ifs.read(0), "binary");
+ifs.close();
+*/]]></code>
+</script>

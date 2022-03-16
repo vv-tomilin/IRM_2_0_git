@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.TimeWorkStop
+NodeClass: Variable
+BrowseName: 1:TimeWorkStop
+DisplayName: en|TimeWorkStop
+Description: en|TimeWorkStop
+DataType: UInt64
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

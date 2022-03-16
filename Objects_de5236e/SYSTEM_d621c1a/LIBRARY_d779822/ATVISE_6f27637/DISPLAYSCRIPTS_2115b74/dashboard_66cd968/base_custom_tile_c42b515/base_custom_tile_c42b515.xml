@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <code><![CDATA[
+
+/**
+ * Code for the base custom tile object display
+ * ----------------------------------------
+ * This script supports the functions of the custom dashboard tile.
+ */
+
+
+/**
+ * DECLARATION SECTION
+ */
+var BACKGROUND_ID = "background";
+var BLINKING_FRAME_ID = "blinking_frame";
+var CLICKAREA_ID = "clickarea_display";
+var MAIN_LABEL_ID = "main_label";
+var SUB_LABEL_ID = "sub_label";
+var TITLEAREA_ID = "clickarea_title";
+var VALUE_LABEL_ID = "value_label";
+
+/**
+ * BASE SETUP
+ */
+var BLINKING_FRAME_COLOR_ACTIVE = "#ffffff";
+var BLINKING_FRAME_COLOR_INACTIVE = webMI.query["backgroundColor"];
+webMI.gfx.setStroke(BLINKING_FRAME_ID, BLINKING_FRAME_COLOR_INACTIVE);
+
+
+/**
+ * RUNTIME SECTION
+ * Runtime code has to be executed after onload to take care all other resources are ready
+ */
+
+
+// -------------------------------------------------------------------------
+// INIT & PARAM
+// -------------------------------------------------------------------------
+
+var queryParams = webMI.query;
+var base = queryParams["base"];
+// Behavior
+var contentFrame = queryParams["contentFrame"] != "" ? queryParams["contentFrame"] : "content_iframe_myframe";
+var enableClick = queryParams["enableClick"] == "true" ? true : false;
+var enableClickContent = queryParams["enableClickContent"] == "true" ? true : false;
+var display = queryParams["display"];
+var linkedElementID = queryParams["linkedElementID"];
+// Notification
+var alarmAddress = queryParams["alarm"];
+var statusEnabled = queryParams["statusEnabled"];
+var statusTrigger = queryParams["statusTrigger"];
+// Appearance
+var backgroundColor = queryParams["backgroundColor"];
+var colorInactive = queryParams["colorInactive"];
+var alarmIndication = queryParams["alarmIndication"];
+var statusIndication = queryParams["statusIndication"];
+// Options
+var tooltip = queryParams["tooltip"];
+// Rights
+var right = queryParams["right"] || "";
+var activeNode = queryParams["activeNode"] || "";
+var activeValue = queryParams["activeValue"] || "";
+var isActivationNodeSet = activeNode != "" && String(activeValue) != "";
+
+// -------------------------------------------------------------------------
+// SCRIPTING
+// -------------------------------------------------------------------------
+
+var rightsHandlingProperties = {
+	right: right,
+	checkBaseNodeWriteRight: false,
+	isActivationNodeSet: isActivationNodeSet,
+	notifierConfiguration: {
+		"id": "clickarea_title",
+		"node_1": webMI.query["base"],
+		"right_1": "read",
+		"node_2": webMI.query["alarm"],
+		"right_2": "readEvent"
+	},
+	setActiveTrigger: true,
+	handleStatus: false
+};
+
+if (typeof rightsHandling === "function") rightsHandling(rightsHandlingProperties);
+
+// Click to open Display
+if (display && enableClick) {
+	webMI.addEvent(TITLEAREA_ID, ["click", "touchend"], function (e) {
+		if (active) {
+			webMI.display.openDisplay(display);
+		}
+	});
+	if (enableClickContent) {
+		webMI.addEvent(CLICKAREA_ID, ["click", "touchend"], function (e) {
+			if (active) {
+				webMI.display.openDisplay(display);
+			}
+		});
+	}
+	/* link to a customer object */
+	if (linkedElementID) {
+		var frame = webMI.rootWindow.document.getElementById(contentFrame);
+		var element = frame.contentDocument.getElementById(linkedElementID);
+		webMI.addEvent(element, ["click", "touchend"], function (e) {
+			if (active) {
+				webMI.display.openDisplay(display);
+			}
+		});
+	}
+}
+
+// tooltip
+if (tooltip) {
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tooltip", {
+		"auto": "true",
+		"id": TITLEAREA_ID,
+		"text": tooltip
+	});
+}
+
+
+// init alarm
+if (alarmAddress) {
+	initAlarm(alarmAddress);
+}
+
+
+// -------------------------------------------------------------------------
+// Functions
+// -------------------------------------------------------------------------
+
+/**
+ * Activate display
+ */
+function setActiveLayout() {
+	webMI.gfx.setVisible(MAIN_LABEL_ID, false);
+	webMI.gfx.setVisible(SUB_LABEL_ID, false);
+	webMI.gfx.setVisible(VALUE_LABEL_ID, null);
+
+	try {
+		var element = window.document.getElementById(linkedElementID);
+		webMI.gfx.setVisible(element, null);
+	} catch (ex) {
+	}
+
+	webMI.gfx.setStroke(BLINKING_FRAME_ID, null);
+	webMI.gfx.setFill(BACKGROUND_ID, backgroundColor);
+	webMI.gfx.setFill(BLINKING_FRAME_ID, BLINKING_FRAME_COLOR_ACTIVE);
+	setIndicator();
+}
+
+/**
+ * Deactivate display
+ */
+function setInactiveLayout() {
+	webMI.gfx.setText(SUB_LABEL_ID, "T{Tile inactive}");
+	webMI.gfx.setVisible(MAIN_LABEL_ID, null);
+	webMI.gfx.setVisible(SUB_LABEL_ID, null);
+	webMI.gfx.setVisible(VALUE_LABEL_ID, false);
+
+	try {
+		var element = window.document.getElementById(linkedElementID);
+		webMI.gfx.setVisible(element, false);
+	} catch (ex) {
+	}
+
+	webMI.gfx.setFill(BACKGROUND_ID, colorInactive);
+	webMI.gfx.setFill(BLINKING_FRAME_ID, colorInactive);
+	webMI.gfx.setStroke(BLINKING_FRAME_ID, BLINKING_FRAME_COLOR_INACTIVE);
+}
+
+]]></code>
+</script>

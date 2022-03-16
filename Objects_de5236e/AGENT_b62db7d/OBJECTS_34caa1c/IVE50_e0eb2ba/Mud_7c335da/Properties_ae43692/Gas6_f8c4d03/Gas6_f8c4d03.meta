@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.Properties.Gas6
+NodeClass: Variable
+BrowseName: 1:Gas6
+DisplayName: en|Gas6
+Description: en|Gas6
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType

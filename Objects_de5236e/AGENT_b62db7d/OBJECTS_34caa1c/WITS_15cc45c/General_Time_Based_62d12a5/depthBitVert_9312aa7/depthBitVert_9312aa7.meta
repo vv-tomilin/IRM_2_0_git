@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.General_Time_Based.depthBitVert
+NodeClass: Variable
+BrowseName: 1:depthBitVert
+DisplayName: en|depthBitVert
+Description: en|depthBitVert
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

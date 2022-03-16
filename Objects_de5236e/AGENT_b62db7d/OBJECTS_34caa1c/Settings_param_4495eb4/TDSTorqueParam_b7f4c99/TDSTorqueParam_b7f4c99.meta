@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Settings_param.TDSTorqueParam
+NodeClass: Object
+BrowseName: 1:TDSTorqueParam
+DisplayName: en|TDSTorqueParam
+Description: en|TDSTorqueParam
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

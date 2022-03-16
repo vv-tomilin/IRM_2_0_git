@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="byteArray" type="array" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var value = 0;
+for ( var i = byteArray.length - 1; i >= 0; i--) {
+    value = (value * 256) + byteArray[i];
+}
+return value;]]></code>
+</script>

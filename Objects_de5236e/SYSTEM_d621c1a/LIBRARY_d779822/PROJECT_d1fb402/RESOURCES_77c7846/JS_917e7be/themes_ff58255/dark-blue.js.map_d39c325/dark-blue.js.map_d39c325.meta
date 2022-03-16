@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/themes/dark-blue.js.map
+NodeClass: Variable
+BrowseName: 1:dark-blue.js.map
+DisplayName: en|dark-blue.js.map
+Description: en|dark-blue.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

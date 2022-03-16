@@ -1,0 +1,306 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="73" width="232" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs/>
+ <desc>Adding, removing and showing favorites.</desc>
+ <title>Favorites button</title>
+ <metadata>
+  <atv:parameter behavior="optional" valuetype="address" desc="configuration node" defaultvalue="AGENT.OBJECTS.ButtonCfg" name="configNode"/>
+  <atv:parameter behavior="optional" valuetype="number" desc="size limit" defaultvalue="30000" substitute="" name="sizeLimit"/>
+  <atv:parameter config="Arial;Courier;Tahoma;Verdana" behavior="optional" valuetype="enum" desc="font family" group="Context menu" defaultvalue="Arial" name="context_menu_font_family" substitute="$CFONTFAMILY$"/>
+  <atv:parameter behavior="optional" valuetype="number" desc="font size" group="Context menu" defaultvalue="18" name="context_menu_font_size" substitute="$CFONTSIZE$"/>
+  <atv:parameter behavior="optional" valuetype="global" desc="font color" group="Context menu" defaultvalue="SYSTEM.GLOBALS.atvFontColor" name="context_menu_font_color" substitute="$CFONTCOLOR$"/>
+  <atv:parameter behavior="optional" valuetype="global" desc="background color" group="Context menu" defaultvalue="SYSTEM.GLOBALS.atvFillColor" name="context_menu_fill_color" substitute="$CFILLCOLOR$"/>
+  <atv:parameter behavior="optional" valuetype="global" desc="hover color" group="Context menu" defaultvalue="SYSTEM.GLOBALS.atvFillColor2" name="context_menu_hover_color" substitute="$CHOVERCOLOR$"/>
+  <atv:parameter config="left;center;right" behavior="optional" valuetype="enum" desc="text alignment" group="Context menu" defaultvalue="center" name="contextMenuTextAlignment" substitute=""/>
+  <atv:parameter config="Arial;Courier;Tahoma;Verdana" behavior="optional" valuetype="enum" desc="font family" group="Popup" defaultvalue="Arial" name="popup_font_family" substitute="$PFONTFAMILY$"/>
+  <atv:parameter behavior="optional" valuetype="number" desc="font size" group="Popup" defaultvalue="14" name="popup_font_size" substitute="$PFONTSIZE$"/>
+  <atv:parameter behavior="optional" valuetype="global" desc="font color" group="Popup" defaultvalue="SYSTEM.GLOBALS.atvFontColor" name="popup_font_color" substitute="$PFONTCOLOR$"/>
+  <atv:parameter behavior="optional" valuetype="global" desc="fill color" group="Popup" defaultvalue="SYSTEM.GLOBALS.atvFillColor2" name="popup_fill" substitute="$PFILLCOLOR$"/>
+  <atv:parameter behavior="optional" valuetype="global" desc="symbol color" group="Button" defaultvalue="SYSTEM.GLOBALS.atvSymbolColor" name="symbolColor"/>
+  <atv:parameter behavior="optional" valuetype="number" desc="symbol scaling (%)" group="Button" defaultvalue="150" name="symbolScaling"/>
+  <atv:parameter config="SYSTEM.SECURITY.RIGHTS" behavior="optional" valuetype="address" desc="necessary right" group="Button" name="right"/>
+  <atv:parameter behavior="optional" valuetype="address" desc="activation address" group="Button" name="activeNode"/>
+  <atv:parameter behavior="optional" valuetype="string" desc="activation value" group="Button" name="activeValue"/>
+  <atv:gridconfig height="20" enabled="false" width="20" gridstyle="lines"/>
+  <atv:snapconfig height="10" enabled="false" width="10"/>
+ </metadata>
+ <svg height="30" atv:refpx="116" width="80" y="0" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" transform="matrix(2.9,0,0,2.4333,0,0)" atv:refpy="36.5" x="0" id="button_fav">
+  <atv:argument name="symbol" value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.star"/>
+  <atv:argument name="label" value=""/>
+  <atv:argument name="fontSize" value="18"/>
+  <atv:argument name="visibilitySymbol" value="inherit"/>
+  <atv:argument name="fillColor" value="SYSTEM.GLOBALS.atvFillColor"/>
+  <atv:argument name="borderColor" value="SYSTEM.GLOBALS.atvBorderColor2"/>
+  <atv:argument name="fillColorInactive" value="SYSTEM.GLOBALS.atvInactiveColor"/>
+  <atv:argument prefix="symbolScaling" name="symbolScaling"/>
+  <atv:argument prefix="right" name="right"/>
+  <atv:argument prefix="activeNode" name="activeNode"/>
+  <atv:argument prefix="activeValue" name="activeValue"/>
+  <atv:overwrite height="71" width="230" transform="matrix(0.3448,0,0,0.411,0,0)" id="id_6"/>
+  <atv:overwrite y="26.5" transform="matrix(0.3448,0,0,0.411,0,0)" x="106" id="button_symbol"/>
+  <atv:overwrite y="48" transform="matrix(0.3448,0,0,0.411,0,0)" x="116" id="button_label_2"/>
+  <atv:overwrite y="33" transform="matrix(0.3448,0,0,0.411,0,0)" x="116" id="button_label_1"/>
+  <atv:overwrite y="41" transform="matrix(0.3448,0,0,0.411,0,0)" x="116" id="button_label"/>
+  <atv:overwrite height="69" width="228" transform="matrix(0.3448,0,0,0.411,0,0)" id="button_stroke"/>
+  <atv:overwrite height="71" width="230" transform="matrix(0.3448,0,0,0.411,0,0)" id="button_bg"/>
+  <atv:overwrite height="73" width="232" transform="matrix(0.3448,0,0,0.411,0,0)" id="outer_frame"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[var listOfFavorites = [];
+var originalFavSymbolFill;
+var contextMenuStyle = {
+	itemHeight: 50,
+	itemFill: webMI.query["context_menu_fill_color"],
+	itemPadding: 10,
+	itemMargin: 5,
+	itemBorderRadius: 3,
+	itemBorder: "1px #d7d7d7 solid",
+	maxRows: 5,
+	fontFamily: webMI.query["context_menu_font_family"],
+	fontSize: webMI.query["context_menu_font_size"],
+	fontFill: webMI.query["context_menu_font_color"],
+	width: 140,
+	fill: 0,
+	stroke: "#565656",
+	strokeWidth: 0,
+	hoverFill: webMI.query["context_menu_hover_color"],
+	closeTime: 0,
+	zIndex: 100,
+	showType: "right",
+	alignment: "left"
+}
+
+var popUpX = 0;
+var popUpY = 59;
+
+var activeDisplay, activeQuery;
+var configNode = webMI.query["configNode"];
+var username;
+var activeDisplay;
+
+webMI.gfx.setStroke("button_fav_button_symbol_id_0", webMI.query["symbolColor"]);
+webMI.gfx.setWidth("button_fav_button_bg", webMI.gfx.getWidth("button_fav_button_bg")-2);
+webMI.gfx.setHeight("button_fav_button_bg", webMI.gfx.getHeight("button_fav_button_bg")-2);
+webMI.gfx.setX("button_fav_button_bg", "2");
+webMI.gfx.setY("button_fav_button_bg", "2");
+
+if (webMI.getMethodSupport().indexOf("AddNode") == -1)
+	webMI.trigger.fire("com.atvise.setActive",false,"button_fav");
+
+webMI.trigger.connect("com.atvise.iframe.onloadFrame", function(e) {
+	if (e.value.name != "content") return;
+
+	activeDisplay = e.value.content;
+	if (webMI.rootWindow.displaysJs.postfix.indexOf("svg") > -1)
+		activeDisplay = activeDisplay.replace(".svg","");
+	activeQuery = e.value.query;
+	checkDisplay();
+});
+
+webMI.trigger.connect("com.atvise.favorites.add", function(e) {
+	if (e.context.id == configNode)
+		addFav(e.context.favName, e.context.displayAddress, e.context.query);
+});
+
+function checkDisplay() {
+	var activeFoundInFavorites = false;
+	for(var i = 0; i < listOfFavorites.length; i++)
+		if (listOfFavorites[i].address == activeDisplay && listOfFavorites[i].query == activeQuery) activeFoundInFavorites = true;
+
+	webMI.gfx.setFillOpacity("button_fav_button_symbol_id_0", activeFoundInFavorites ? 1 : 0);
+}
+
+function addFav(favName, displayAddress, query) {
+	listOfFavorites.push({name: favName, address: displayAddress, query: query});
+	webMI.gfx.setFillOpacity("button_fav_button_symbol_id_0",1);
+	writeConfig(configNode, username, listOfFavorites);
+}
+
+function removeFav(displayAddress, query, window) {
+	var addressFoundInFavorites = null;
+	for(var i = 0; i < listOfFavorites.length; i++) {
+		if (listOfFavorites[i].address == displayAddress && listOfFavorites[i].query == query) addressFoundInFavorites = i;
+	}
+	if (addressFoundInFavorites != null) {
+		listOfFavorites.splice(addressFoundInFavorites, 1);
+		window.close();
+		webMI.gfx.setFillOpacity("button_fav_button_symbol_id_0",0);
+		closeContextMenu();
+		writeConfig(configNode, username, listOfFavorites);
+	}
+}
+
+webMI.trigger.connect("com.atvise.favorites.remove", function(e) {
+	setConfigIfLoggedIn(); //required for update with multiple favorite buttons
+	if (e.value.webMI.query["id"] == configNode)
+		removeFav(e.value.webMI.query["displayAddress"], e.value.webMI.query["query"], e.value);
+})
+
+function addOrRemoveFav(doAdd, display, query) {
+	if (doAdd) {
+		getNameInputForFav(display, query);
+	} else {
+		webMI.display.openWindow({display:"SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dialogs.message_dialog",extern:false,width:675,height:425,menubar:false,modal:true,movable:true,resizable:false,scrollbars:false,status:false,title:"T{Favorites} ",toolbar:false,query: {btn1: "T{OK}", btn2: "T{Cancel}", headline: "T{Remove favorite}?", msg1: display, action_btn1: "com.atvise.favorites.remove", displayAddress: display, id: configNode, query: query, backgroundColor: webMI.query["popup_fill"], fontColor: webMI.query["popup_font_color"], fontSize: webMI.query["popup_font_size"], fontFamily: webMI.query["popup_font_family"]}});
+	}
+}
+
+function getNameInputForFav(display_address, query) {
+	webMI.display.openWindow({display:"SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.layoutelements.fav_input",extern:false,width:780,height:257.5,menubar:false,modal:true,movable:true,resizable:false,scrollbars:false,status:false,title:"T{Favorites} ",toolbar:false,query: {displayAddress: display_address, id: configNode, query: query, fillColor: webMI.query["popup_fill"], fontColor: webMI.query["popup_font_color"], fontSize: webMI.query["popup_font_size"], fontFamily: webMI.query["popup_font_family"], isLoggedIn: typeof username != "undefined"}});
+}
+
+function openFav(favDisplayAddress, query) {
+	return function() {
+		webMI.display.openDisplay(favDisplayAddress, query, "content");
+	};
+}
+
+function openContextMenu() {
+	var menuObj = {};
+	var activeFoundInFavorites = null;
+	for(var i = 0; i < listOfFavorites.length; i++) {
+		menuObj[i] = { text: listOfFavorites[i].name, value: openFav(listOfFavorites[i].address, listOfFavorites[i].query), textAlign: webMI.query["contextMenuTextAlignment"] };
+		if (listOfFavorites[i].address == activeDisplay && listOfFavorites[i].query == activeQuery) activeFoundInFavorites = i;
+	}
+	menuObj[i+1] = { textAlign: webMI.query["contextMenuTextAlignment"] };
+	if (activeFoundInFavorites != null) {
+		menuObj[i+1].text = "T{Remove}";
+		menuObj[i+1].menuPosition = "bottom";
+		menuObj[i+1].value = function() { addOrRemoveFav(false, activeDisplay, activeQuery) };
+	} else {
+		menuObj[i+1].text = "T{Add}";
+		menuObj[i+1].menuPosition = "bottom";
+		menuObj[i+1].value = function() { addOrRemoveFav(true, activeDisplay, activeQuery) };
+	}
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Context Menu", {
+		"id":"button_fav",
+		onEvent: "immediately",
+		menuObj: menuObj,
+		active: function() {
+			return true;
+		},
+		"x": popUpX,
+		"y": popUpY,
+		"itemsCount": 5,
+		"elementHeight": webMI.gfx.getHeight("button_fav") / webMI.gfx.getScreenCTM().d * webMI.gfx.getScreenCTM("button_fav").d,
+		"minWidth": webMI.gfx.getWidth("button_fav") / webMI.gfx.getScreenCTM().a * webMI.gfx.getScreenCTM("button_fav").a,
+		"style": contextMenuStyle
+	});
+}
+
+function closeContextMenu() {
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Context Menu", {
+		"id":"",
+		onEvent: "immediately"
+	});
+}
+
+webMI.trigger.connect("clicked", function(e) {
+	openContextMenu();
+}, "button_fav");
+
+webMI.addEvent(webMI.data, "clientvariableschange", function(e) {
+	if ("username" in e) {
+		username = (e.username != "") ? e.username : null;
+		loggedIn = (e.username != "");
+		if (loggedIn) {
+			setConfigIfLoggedIn();
+		} else {
+			listOfFavorites= [];
+			webMI.gfx.setFillOpacity("button_fav_button_symbol_id_0", 0);
+		}
+	}
+});
+
+if (username) {
+	webMI.addOnload(function () {
+		setConfigIfLoggedIn();
+	});
+}
+
+function setConfigIfLoggedIn() {
+	var consoleOutput = {}
+	consoleOutput["Written"] = function(){
+		console.log("Configuration for user " + username + " written.");
+	};
+
+	if (webMI.getMethodSupport().indexOf("CheckNodeExists") > -1) {
+		webMI.data.call("CheckNodeExists", {"address": configNode}, function(e) {
+			if (e.result) {
+				webMI.data.read(configNode, function (e) { // Read if config node exists
+					webMI.data.call("CheckNodeExists", {"address": configNode + "." + username}, function(e) {
+						if (e.result) {
+							webMI.data.read(configNode + "." + username, function (e) {
+								if (e.value) {
+									listOfFavorites = JSON.parse(e.value); // Read saved config from user's config node
+									checkDisplay();
+								}
+							});
+						} else {
+							addNode(configNode + "." + username, JSON.stringify(listOfFavorites), consoleOutput["Written"]);
+						}
+					});
+				});
+			} else {
+				// If config node does not exist
+				addNode(
+					configNode,
+					"",
+					function(){
+						addNode(configNode + "." + username, JSON.stringify(listOfFavorites), consoleOutput["Written"]);
+					}
+				); 
+			}
+		});
+	} else {
+		 webMI.data.read(configNode, function (e) { // Read if config node exists
+			if (e.error && e.error != "0") { // If config node does not exist
+				addNode(
+					configNode,
+					"",
+					function(){
+						addNode(configNode + "." + username, JSON.stringify(listOfFavorites), consoleOutput["Written"]);
+					}
+				);  // Add and then write to config node for current user
+			} else {
+				webMI.data.read(configNode + "." + username, function (e) {
+					if (e.error && e.error != "0") {
+						addNode(configNode + "." + username, JSON.stringify(listOfFavorites), consoleOutput["Written"]);
+					} else {
+						if (e.value == "")
+							listOfFavorites = [];
+						else
+							listOfFavorites = JSON.parse(e.value); // Read saved config from user's config node
+						checkDisplay();
+					}
+				});
+			}
+		});
+	}
+}
+
+setConfigIfLoggedIn();
+
+function addNode(node, value, callback) {
+	if (webMI.getMethodSupport().indexOf("AddNode") < 0) {
+		console.warn("The AddNode method is not supported, please add the configuration node manually");
+	} else {
+		webMI.data.call("AddNode", {
+			"address": node,
+			"typeDefinition": "i=62",
+			"dataType": "STRING",
+			"value": value,
+			"nodeClass": "NODECLASS_VARIABLE",
+			"writePolicy": 2
+		}, callback);
+	}
+}
+
+function writeConfig(configNode, username, configuration) {
+	var jsonListOfFavorites = JSON.stringify(listOfFavorites);
+	if (jsonListOfFavorites.length <= parseInt(webMI.query["sizeLimit"])) {
+		webMI.data.write(configNode + "." + username , jsonListOfFavorites);
+	} else {
+		listOfFavorites.pop();
+		webMI.display.openWindow({display:"SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dialogs.message_dialog_small",extern:false,width:510,height:200,menubar:false,modal:true,movable:true,resizable:false,scrollbars:false,status:false,title:"T{Size limit exceeded} ",toolbar:false,query: {button: "T{OK}", headline: "T{Size limit exceeded}", message: "T{The current display can not be added to the favorites, because the config node would exceed its size limit.}", backgroundColor: webMI.query["popup_fill"], fontColor: webMI.query["popup_font_color"], fontSize: webMI.query["popup_font_size"], fontFamily: webMI.query["popup_font_family"]}});
+	}
+}]]></script>
+</svg>

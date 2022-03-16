@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Промежуточное кольцо
+NodeClass: ObjectType
+BrowseName: 1:Промежуточное кольцо
+DisplayName: en|Промежуточное кольцо
+Description: en|Промежуточное кольцо
+IsAbstract: false

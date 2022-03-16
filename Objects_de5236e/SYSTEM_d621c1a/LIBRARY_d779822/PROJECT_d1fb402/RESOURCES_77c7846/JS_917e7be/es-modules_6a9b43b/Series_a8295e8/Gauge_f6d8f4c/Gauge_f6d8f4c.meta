@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/Gauge
+NodeClass: Object
+BrowseName: 1:Gauge
+DisplayName: en|Gauge
+Description: en|Gauge
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

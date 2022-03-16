@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.PumpBlock2.Analog.ThreePhaseNetwork.FullPB
+NodeClass: Variable
+BrowseName: 1:FullPB
+DisplayName: en|FullPB
+Description: en|FullPB
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

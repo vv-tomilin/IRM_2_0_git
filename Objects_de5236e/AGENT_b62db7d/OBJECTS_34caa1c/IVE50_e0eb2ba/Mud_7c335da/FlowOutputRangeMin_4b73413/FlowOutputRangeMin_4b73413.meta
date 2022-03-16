@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.FlowOutputRangeMin
+NodeClass: Variable
+BrowseName: 1:FlowOutputRangeMin
+DisplayName: en|FlowOutputRangeMin
+Description: en|FlowOutputRangeMin
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

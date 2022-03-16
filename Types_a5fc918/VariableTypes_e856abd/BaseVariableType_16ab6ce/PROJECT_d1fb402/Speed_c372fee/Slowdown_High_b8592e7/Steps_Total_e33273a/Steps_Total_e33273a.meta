@@ -1,0 +1,11 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed".Slowdown_High.Steps_Total
+NodeClass: Variable
+BrowseName: 1:Steps_Total
+DisplayName: en|Steps_Total
+Description: en|Steps_Total
+DataType: Int16
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseDataVariableType
+Reference: forward HasComponent ns=1;s=VariableTypes.PROJECT.VT_"Slowdown".Steps_Total.RelMirrorInput

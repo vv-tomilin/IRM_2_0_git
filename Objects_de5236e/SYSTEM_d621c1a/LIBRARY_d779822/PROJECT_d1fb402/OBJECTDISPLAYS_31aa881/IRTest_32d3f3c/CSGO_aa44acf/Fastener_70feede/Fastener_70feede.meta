@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.CSGO.Fastener
+NodeClass: Variable
+BrowseName: 1:Fastener
+DisplayName: en|Fastener
+Description: en|Fastener
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

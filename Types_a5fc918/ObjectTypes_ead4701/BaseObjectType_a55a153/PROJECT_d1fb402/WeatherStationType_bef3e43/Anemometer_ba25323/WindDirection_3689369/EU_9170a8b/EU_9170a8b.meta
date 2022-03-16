@@ -1,0 +1,11 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.WeatherStationType.Anemometer.WindDirection.EU
+NodeClass: Variable
+BrowseName: 1:EU
+DisplayName: en|EU
+Description: en|EU
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition PropertyType
+Reference: forward HasComponent ns=1;s=ObjectTypes.PROJECT.PROJECT.WeatherStationAnemometerType.WindDirection.EU.RelMirrorInputOutput

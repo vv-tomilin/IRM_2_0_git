@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/scripts/bur-9.obj
+NodeClass: Variable
+BrowseName: 1:bur-9.obj
+DisplayName: en|bur-9.obj
+Description: en|bur-9.obj
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

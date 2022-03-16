@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.ForMainWindow.masAdres
+NodeClass: Variable
+BrowseName: 1:masAdres
+DisplayName: en|masAdres
+Description: en|masAdres
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.Construction
+NodeClass: Object
+BrowseName: 1:Construction
+DisplayName: en|Construction
+Description: en|Construction
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DebrisScreen
+NodeClass: Variable
+BrowseName: 1:DebrisScreen
+DisplayName: en|DebrisScreen
+Description: en|DebrisScreen
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

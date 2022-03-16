@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Stock/Indicators/VWAP
+NodeClass: Object
+BrowseName: 1:VWAP
+DisplayName: en|VWAP
+Description: en|VWAP
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

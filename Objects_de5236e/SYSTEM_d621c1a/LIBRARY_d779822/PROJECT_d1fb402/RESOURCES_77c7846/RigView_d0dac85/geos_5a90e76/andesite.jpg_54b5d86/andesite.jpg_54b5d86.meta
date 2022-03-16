@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/RigView/geos/andesite.jpg
+NodeClass: Variable
+BrowseName: 1:andesite.jpg
+DisplayName: en|andesite.jpg
+Description: en|andesite.jpg
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Jpeg

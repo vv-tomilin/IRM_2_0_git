@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.timer.timerHandler
+NodeClass: Variable
+BrowseName: 1:timerHandler
+DisplayName: en|timerHandler
+Description: en|timerHandler
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 103
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

@@ -1,0 +1,867 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" height="160" xmlns="http://www.w3.org/2000/svg" version="1.2">
+ <defs/>
+ <desc>Table to display a chart legend</desc>
+ <title>Legend table</title>
+ <metadata>
+  <atv:parameter valuetype="string" substitute="trendName" name="_trendName" behavior="mandatory" desc="chart name" defaultvalue="trend1"/>
+  <atv:parameter valuetype="address" name="options_right" behavior="optional" desc="necessary right" defaultvalue="" config="SYSTEM.SECURITY.RIGHTS"/>
+  <atv:parameter valuetype="number" name="legendOptions_dateTimeFormat" behavior="optional" desc="date time format" defaultvalue="%Y-%m-%d %H:%M:%S"/>
+  <atv:parameter valuetype="number" name="legendOptions_dateTimeDeltaFormat" behavior="optional" desc="date time delta format" defaultvalue="%H:%M:%S"/>
+  <atv:parameter valuetype="string" group="Name" name="columnOptions_seriesLabel_name" behavior="optional" desc="name" defaultvalue="T{Name}"/>
+  <atv:parameter valuetype="bool" group="Name" name="columnOptions_seriesLabel_visibility" behavior="optional" desc="visibility" defaultvalue="true"/>
+  <atv:parameter valuetype="number" substitute="" group="Name" name="columnOptions_seriesLabel_index" behavior="optional" desc="index" defaultvalue="1"/>
+  <atv:parameter valuetype="number" group="Name" name="columnOptions_seriesLabel_width" behavior="optional" desc="width" defaultvalue="100"/>
+  <atv:parameter valuetype="string" group="Address" name="columnOptions_nodeAddress_name" behavior="optional" desc="name" defaultvalue="T{Address}"/>
+  <atv:parameter valuetype="bool" group="Address" name="columnOptions_nodeAddress_visibility" behavior="optional" desc="visibility" defaultvalue="true"/>
+  <atv:parameter valuetype="number" substitute="" group="Address" name="columnOptions_nodeAddress_index" behavior="optional" desc="index" defaultvalue="2"/>
+  <atv:parameter valuetype="number" group="Address" name="columnOptions_nodeAddress_width" behavior="optional" desc="width" defaultvalue="280"/>
+  <atv:parameter valuetype="string" group="Type" name="columnOptions_type_name" behavior="optional" desc="name" defaultvalue="T{Type}"/>
+  <atv:parameter valuetype="bool" group="Type" name="columnOptions_type_visibility" behavior="optional" desc="visibility" defaultvalue="true"/>
+  <atv:parameter valuetype="number" substitute="" group="Type" name="columnOptions_type_index" behavior="optional" desc="index" defaultvalue="3"/>
+  <atv:parameter valuetype="number" group="Type" name="columnOptions_type_width" behavior="optional" desc="width" defaultvalue="80"/>
+  <atv:parameter valuetype="string" group="Aggregate" name="columnOptions_aggregate_name" behavior="optional" desc="name" defaultvalue="T{Aggregate}"/>
+  <atv:parameter valuetype="bool" group="Aggregate" name="columnOptions_aggregate_visibility" behavior="optional" desc="visibility" defaultvalue="true"/>
+  <atv:parameter valuetype="number" substitute="" group="Aggregate" name="columnOptions_aggregate_index" behavior="optional" desc="index" defaultvalue="4"/>
+  <atv:parameter valuetype="number" group="Aggregate" name="columnOptions_aggregate_width" behavior="optional" desc="width" defaultvalue="100"/>
+  <atv:parameter valuetype="string" group="Value" name="columnOptions_value_name" behavior="optional" desc="name" defaultvalue="T{Value}"/>
+  <atv:parameter valuetype="bool" group="Value" name="columnOptions_value_visibility" behavior="optional" desc="visibility" defaultvalue="true"/>
+  <atv:parameter valuetype="number" substitute="" group="Value" name="columnOptions_value_index" behavior="optional" desc="index" defaultvalue="5"/>
+  <atv:parameter valuetype="number" group="Value" name="columnOptions_value_width" behavior="optional" desc="width" defaultvalue="50"/>
+  <atv:parameter valuetype="string" group="Visibility" name="columnOptions_seriesVisibility_name" behavior="optional" desc="name" defaultvalue="T{Visibility}"/>
+  <atv:parameter valuetype="bool" group="Visibility" name="columnOptions_seriesVisibility_visibility" behavior="optional" desc="visibility" defaultvalue="true"/>
+  <atv:parameter valuetype="number" substitute="" group="Visibility" name="columnOptions_seriesVisibility_index" behavior="optional" desc="index" defaultvalue="6"/>
+  <atv:parameter valuetype="number" group="Visibility" name="columnOptions_seriesVisibility_width" behavior="optional" desc="width" defaultvalue="70"/>
+  <atv:parameter valuetype="string" group="Color" name="columnOptions_color_name" behavior="optional" desc="name" defaultvalue="T{Color}"/>
+  <atv:parameter valuetype="bool" group="Color" name="columnOptions_color_visibility" behavior="optional" desc="visibility" defaultvalue="true"/>
+  <atv:parameter valuetype="number" substitute="" group="Color" name="columnOptions_color_index" behavior="optional" desc="index" defaultvalue="7"/>
+  <atv:parameter valuetype="number" group="Color" name="columnOptions_color_width" behavior="optional" desc="width" defaultvalue="50"/>
+  <atv:parameter valuetype="string" group="Marker 1 x-value" name="columnOptions_cursorXValue1_name" behavior="optional" desc="name" defaultvalue="T{Marker 1 X-Value}"/>
+  <atv:parameter valuetype="bool" group="Marker 1 x-value" name="columnOptions_cursorXValue1_visibility" behavior="optional" desc="visibility" defaultvalue="true"/>
+  <atv:parameter valuetype="number" substitute="" group="Marker 1 x-value" name="columnOptions_cursorXValue1_index" behavior="optional" desc="index" defaultvalue="8"/>
+  <atv:parameter valuetype="number" group="Marker 1 x-value" name="columnOptions_cursorXValue1_width" behavior="optional" desc="width" defaultvalue="100"/>
+  <atv:parameter valuetype="string" group="Marker 2 x-value" name="columnOptions_cursorXValue2_name" behavior="optional" desc="name" defaultvalue="T{Marker 2 X-Value}"/>
+  <atv:parameter valuetype="bool" group="Marker 2 x-value" name="columnOptions_cursorXValue2_visibility" behavior="optional" desc="visibility" defaultvalue="true"/>
+  <atv:parameter valuetype="number" substitute="" group="Marker 2 x-value" name="columnOptions_cursorXValue2_index" behavior="optional" desc="index" defaultvalue="9"/>
+  <atv:parameter valuetype="number" group="Marker 2 x-value" name="columnOptions_cursorXValue2_width" behavior="optional" desc="width" defaultvalue="100"/>
+  <atv:parameter valuetype="string" group="Delta x-value" name="columnOptions_cursorXDelta_name" behavior="optional" desc="name" defaultvalue="T{Marker X-Delta}"/>
+  <atv:parameter valuetype="bool" group="Delta x-value" name="columnOptions_cursorXDelta_visibility" behavior="optional" desc="visibility" defaultvalue="false"/>
+  <atv:parameter valuetype="number" substitute="" group="Delta x-value" name="columnOptions_cursorXDelta_index" behavior="optional" desc="index" defaultvalue="10"/>
+  <atv:parameter valuetype="number" group="Delta x-value" name="columnOptions_cursorXDelta_width" behavior="optional" desc="width" defaultvalue="100"/>
+  <atv:parameter valuetype="string" group="Marker 1 y-value" name="columnOptions_cursorYValue1_name" behavior="optional" desc="name" defaultvalue="T{Marker 1 Y-Value}"/>
+  <atv:parameter valuetype="bool" group="Marker 1 y-value" name="columnOptions_cursorYValue1_visibility" behavior="optional" desc="visibility" defaultvalue="true"/>
+  <atv:parameter valuetype="number" substitute="" group="Marker 1 y-value" name="columnOptions_cursorYValue1_index" behavior="optional" desc="index" defaultvalue="11"/>
+  <atv:parameter valuetype="number" group="Marker 1 y-value" name="columnOptions_cursorYValue1_width" behavior="optional" desc="width" defaultvalue="100"/>
+  <atv:parameter valuetype="string" group="Marker 2 y-value" name="columnOptions_cursorYValue2_name" behavior="optional" desc="name" defaultvalue="T{Marker 2 Y-Value}"/>
+  <atv:parameter valuetype="bool" group="Marker 2 y-value" name="columnOptions_cursorYValue2_visibility" behavior="optional" desc="visibility" defaultvalue="true"/>
+  <atv:parameter valuetype="number" substitute="" group="Marker 2 y-value" name="columnOptions_cursorYValue2_index" behavior="optional" desc="index" defaultvalue="12"/>
+  <atv:parameter valuetype="number" group="Marker 2 y-value" name="columnOptions_cursorYValue2_width" behavior="optional" desc="width" defaultvalue="100"/>
+  <atv:parameter valuetype="string" group="Delta y-value" name="columnOptions_cursorYDelta_name" behavior="optional" desc="name" defaultvalue="T{Marker Y-Delta}"/>
+  <atv:parameter valuetype="bool" group="Delta y-value" name="columnOptions_cursorYDelta_visibility" behavior="optional" desc="visibility" defaultvalue="false"/>
+  <atv:parameter valuetype="number" substitute="" group="Delta y-value" name="columnOptions_cursorYDelta_index" behavior="optional" desc="index" defaultvalue="13"/>
+  <atv:parameter valuetype="number" group="Delta y-value" name="columnOptions_cursorYDelta_width" behavior="optional" desc="width" defaultvalue="100"/>
+  <atv:parameter valuetype="string" group="Settings" name="columnOptions_seriesSettings_name" behavior="optional" desc="name" defaultvalue="T{Settings}"/>
+  <atv:parameter valuetype="bool" group="Settings" name="columnOptions_seriesSettings_visibility" behavior="optional" desc="visibility" defaultvalue="true"/>
+  <atv:parameter valuetype="number" substitute="" group="Settings" name="columnOptions_seriesSettings_index" behavior="optional" desc="index" defaultvalue="14"/>
+  <atv:parameter valuetype="number" group="Settings" name="columnOptions_seriesSettings_width" behavior="optional" desc="width" defaultvalue="70"/>
+  <atv:parameter valuetype="color" group="Appearance" name="legendHeaderFill" behavior="optional" desc="table header fill color" defaultvalue="#878787"/>
+  <atv:parameter valuetype="color" group="Font" name="legendHeaderFontColor" behavior="optional" desc="table header font color" defaultvalue="#E5E5E5"/>
+  <atv:parameter valuetype="color" group="Appearance" name="legendFooterFill" behavior="optional" desc="table footer fill color" defaultvalue="#4f4f4f"/>
+  <atv:parameter valuetype="color" group="Font" name="legendFooterFontColor" behavior="optional" desc="table footer font color" defaultvalue="#E5E5E5"/>
+  <atv:parameter valuetype="color" substitute="" group="Appearance" name="legendHighlightFill" behavior="optional" desc="highlight fill color" defaultvalue="#B7B7B7"/>
+  <atv:parameter valuetype="color" group="Appearance" name="legendHighlightSelected" behavior="optional" desc="highlight selected color" defaultvalue="#D0D0D0"/>
+  <atv:gridconfig enabled="true" width="128" gridstyle="lines" height="20"/>
+  <atv:snapconfig enabled="true" width="5" height="5"/>
+ </metadata>
+ <rect atv:refpy="80" stroke="#d3d3d3" atv:refpx="640" fill="#f5f5f5" stroke-width="1" width="1280" height="160" id="boarder" y="0" x="0"/>
+ <svg atv:refpy="79.713" transform="matrix(2,0,0,0.2759,0,0)" atv:refpx="638" width="640" height="580" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.slickgrid.table_panel" id="id_2" y="0" x="0">
+  <atv:argument name="tableID" value="legende" prefix="_trendName"/>
+  <atv:argument name="multiselect" value="false"/>
+  <atv:argument name="header_height" value="20"/>
+  <atv:argument name="header_text_size" value="8"/>
+  <atv:argument name="showMenuHeight" value="100"/>
+  <atv:argument name="filterBar" value="false"/>
+  <atv:argument name="showMenuFilter" value="false"/>
+  <atv:argument name="showMenuExport" value="false"/>
+  <atv:argument name="header_text_horizontal" value="center"/>
+  <atv:argument name="row_height" value="14"/>
+  <atv:argument name="row_text_size" value="8"/>
+  <atv:argument name="detail_text_size" value="8"/>
+  <atv:argument name="footer_text_size" value="8"/>
+  <atv:overwrite transform="matrix(0.5,0,0,3.625,0,0)" width="1280" height="160" id="id_1"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[/**
+ * Get parameters and set table-id
+ */
+var trendName = webMI.query["_trendName"];
+var tableID = webMI.query["_trendName"] + "legende";
+
+var tableTimeFormat = webMI.query["legendOptions_dateTimeFormat"];
+var deltaTimeFormat = webMI.query["legendOptions_dateTimeDeltaFormat"];
+
+
+/**
+ * Parameter controlling clicks, popup and dialoges
+ */
+var conf = false;
+var clicklock = false;
+var openConfig;
+var openSeries;
+
+
+/**
+ * Remove descriptions for preview in builder
+ */
+webMI.addOnload(function () {
+	webMI.gfx.setVisible("preview", false);
+});
+
+
+function getParameter(key, type) {
+	var value = webMI.query[key];
+	if (type == "number")
+		return parseInt(value, 10);
+	;
+	if (type == "boolean")
+		return value == "true" ? true : false;
+	return value;
+}
+
+
+/**
+ * Load resources for table and setup configuration
+ */
+webMI.table.loadResources(function () {
+
+	/* create configuration */
+	var config = [];
+
+	/* define some columns */
+	config["columns"] =
+		[
+			{
+				id: "series",
+				name: "T{ID}",
+				field: "series",
+				sortable: true,
+				filter: false,
+				width: 150,
+				minWidth: 150,
+				maxWidth: 150,
+				sortByDefault: true,
+				sortByDefaultAsc: true,
+				visible: false,
+			},
+			{
+				id: "name",
+				name: getParameter("columnOptions_seriesLabel_name", "string"),
+				field: "name",
+				sortable: false,
+				filter: false,
+				width: getParameter("columnOptions_seriesLabel_width", "number"),
+				minWidth: getParameter("columnOptions_seriesLabel_width", "number"),
+				maxWidth: getParameter("columnOptions_seriesLabel_width", "number"),
+				visible: getParameter("columnOptions_seriesLabel_visibility", "boolean"),
+			},
+			{
+				id: "address",
+				name: getParameter("columnOptions_nodeAddress_name", "string"),
+				field: "address",
+				sortable: false,
+				filter: false,
+//				width: getParameter("columnOptions_nodeAddress_width", "number"),
+//				minWidth: getParameter("columnOptions_nodeAddress_width", "number"),
+//				maxWidth: getParameter("columnOptions_nodeAddress_width", "number"),
+//				visible: getParameter("columnOptions_nodeAddress_visibility", "boolean"),
+			},
+			{
+				id: "type",
+				name: getParameter("columnOptions_type_name", "string"),
+				field: "type",
+				sortable: false,
+				filter: false,
+				width: getParameter("columnOptions_nodeAddress_width", "number"),
+				minWidth: getParameter("columnOptions_type_width", "number"),
+				maxWidth: getParameter("columnOptions_type_width", "number"),
+				visible: getParameter("columnOptions_type_visibility", "boolean"),
+			},
+			{
+				id: "aggregate",
+				name: getParameter("columnOptions_aggregate_name", "string"),
+				field: "aggregate",
+				sortable: false,
+				filter: false,
+				width: getParameter("columnOptions_aggregate_width", "number"),
+				minWidth: getParameter("columnOptions_aggregate_width", "number"),
+				maxWidth: getParameter("columnOptions_aggregate_width", "number"),
+				visible: getParameter("columnOptions_aggregate_visibility", "boolean"),
+			},
+			{
+				id: "value",
+				name: getParameter("columnOptions_value_name", "string"),
+				field: "value",
+				sortable: false,
+				filter: false,
+				width: getParameter("columnOptions_value_width", "number"),
+				minWidth: getParameter("columnOptions_value_width", "number"),
+				maxWidth: getParameter("columnOptions_value_width", "number"),
+				visible: getParameter("columnOptions_value_visibility", "boolean"),
+			},
+			{
+				id: "visibility",
+				name: getParameter("columnOptions_seriesVisibility_name", "string"),
+				field: "visibility",
+				sortable: false,
+				filter: false,
+				formatter: formatter_visibility,
+				width: getParameter("columnOptions_seriesVisibility_width", "number"),
+				minWidth: getParameter("columnOptions_seriesVisibility_width", "number"),
+				maxWidth: getParameter("columnOptions_seriesVisibility_width", "number"),
+				visible: getParameter("columnOptions_seriesVisibility_visibility", "boolean"),
+				type: "button",
+			},
+			{
+				id: "color",
+				name: getParameter("columnOptions_color_name", "string"),
+				field: "color",
+				sortable: false,
+				filter: false,
+				formatter: formatter_color,
+				width: getParameter("columnOptions_color_width", "number"),
+				minWidth: getParameter("columnOptions_color_width", "number"),
+				maxWidth: getParameter("columnOptions_color_width", "number"),
+				visible: getParameter("columnOptions_color_visibility", "boolean"),
+				type: "button",
+			},
+			{
+				id: "marker_1_x_value",
+				name: getParameter("columnOptions_cursorXValue1_name", "string"),
+				field: "marker_1_x_value",
+				sortable: false,
+				filter: false,
+				type: ["datetime", "s"],
+				width: getParameter("columnOptions_cursorXValue1_width", "number"),
+				minWidth: getParameter("columnOptions_cursorXValue1_width", "number"),
+				maxWidth: getParameter("columnOptions_cursorXValue1_width", "number"),
+				visible: webMI.getClientInfo().isDesktop ? getParameter("columnOptions_cursorXValue1_visibility", "boolean") : false,
+			},
+
+			{
+				id: "marker_1_y_value",
+				name: getParameter("columnOptions_cursorYValue1_name", "string"),
+				field: "marker_1_y_value",
+				sortable: false,
+				filter: false,
+				width: getParameter("columnOptions_cursorYValue1_width", "number"),
+				minWidth: getParameter("columnOptions_cursorYValue1_width", "number"),
+				maxWidth: getParameter("columnOptions_cursorYValue1_width", "number"),
+				visible: webMI.getClientInfo().isDesktop ? getParameter("columnOptions_cursorYValue1_visibility", "boolean") : false,
+			},
+			{
+				id: "marker_2_x_value",
+				name: getParameter("columnOptions_cursorXValue2_name", "string"),
+				field: "marker_2_x_value",
+				sortable: false,
+				filter: false,
+				type: ["datetime", "s"],
+				width: getParameter("columnOptions_cursorXValue2_width", "number"),
+				minWidth: getParameter("columnOptions_cursorXValue2_width", "number"),
+				maxWidth: getParameter("columnOptions_cursorXValue2_width", "number"),
+				visible: webMI.getClientInfo().isDesktop ? getParameter("columnOptions_cursorXValue2_visibility", "boolean") : false,
+			},
+			{
+				id: "marker_2_y_value",
+				name: getParameter("columnOptions_cursorYValue2_name", "string"),
+				field: "marker_2_y_value",
+				sortable: false,
+				filter: false,
+				width: getParameter("columnOptions_cursorYValue2_width", "number"),
+				minWidth: getParameter("columnOptions_cursorYValue2_width", "number"),
+				maxWidth: getParameter("columnOptions_cursorYValue2_width", "number"),
+				visible: webMI.getClientInfo().isDesktop ? getParameter("columnOptions_cursorYValue2_visibility", "boolean") : false,
+			},
+			{
+				id: "marker_x_delta",
+				name: getParameter("columnOptions_cursorXDelta_name", "string"),
+				field: "marker_x_delta",
+				sortable: false,
+				filter: false,
+				width: getParameter("columnOptions_cursorXDelta_width", "number"),
+				minWidth: getParameter("columnOptions_cursorXDelta_width", "number"),
+				maxWidth: getParameter("columnOptions_cursorXDelta_width", "number"),
+				visible: webMI.getClientInfo().isDesktop ? getParameter("columnOptions_cursorXDelta_visibility", "boolean") : false,
+			},
+			{
+				id: "marker_y_delta",
+				name: getParameter("columnOptions_cursorYDelta_name", "string"),
+				field: "marker_y_delta",
+				sortable: false,
+				filter: false,
+				width: getParameter("columnOptions_cursorYDelta_width", "number"),
+				minWidth: getParameter("columnOptions_cursorYDelta_width", "number"),
+				maxWidth: getParameter("columnOptions_cursorYDelta_width", "number"),
+				visible: webMI.getClientInfo().isDesktop ? getParameter("columnOptions_cursorYDelta_visibility", "boolean") : false,
+			},
+			{
+				id: "settings",
+				name: getParameter("columnOptions_seriesSettings_name", "string"),
+				field: "settings",
+				sortable: false,
+				filter: false,
+				formatter: formatter_settings,
+				width: getParameter("columnOptions_seriesSettings_width", "number"),
+				minWidth: getParameter("columnOptions_seriesSettings_width", "number"),
+				maxWidth: getParameter("columnOptions_seriesSettings_width", "number"),
+				visible: webMI.getClientInfo().isDesktop ? getParameter("columnOptions_seriesSettings_visibility", "boolean") : false,
+				type: "button",
+			},
+		];
+
+	/* table will run in no data mode > so use once */
+	config["mode"] = "once";
+
+	/* no initial data required > so blank customer request */
+	config["dataRequestFunction"] =
+		function customDataRequest(continuation) {
+		};
+
+	config.onClickCallback = function (e, clickinfo) {
+		clickHandler(clickinfo);
+	};
+
+	config.bufferInterval = 0;
+
+	/* Register configuration */
+	webMI.table.register(tableID, "config", config);
+	webMI.table.setReady(tableID, "config");
+
+	/* Create legend after table ready */
+	webMI.table.waitReady(tableID, "controller", function () {
+		tableController = webMI.table.request(tableID, "controller");
+		new Legend(tableController);
+	});
+
+});
+
+
+/**
+ * Formatter for visibility
+ */
+function formatter_visibility(row, cell, value, columnDef, dataContext) {
+	if (value === "")
+		return "wait";
+	return value ? '\u2611' : '\u2610';
+}
+
+
+/**
+ * Formatter for color
+ * @param > !predefined by slick grid!
+ */
+function formatter_color(row, cell, value, columnDef, dataContext) {
+	if (value == false)
+		return "";
+
+	var style = "border: 1px solid black;" +
+		"padding: 0px;" +
+		"width: 95%;" +
+		"height: 95%;" +
+		"background-color:" + value + ";";
+
+	var html = '<div style="' + style + '"></div>';
+	return html;
+}
+
+
+/**
+ * Formatter for settings
+ * @param > !predefined by slick grid!
+ */
+function formatter_settings(row, cell, value, columnDef, dataContext) {
+	if (value == false)
+		return "";
+	return html = '\u2197';
+}
+
+
+/**
+ * Add click handler for functional table cells
+ * @param clickinfo > holds information about clicked cell
+ */
+function clickHandler(clickinfo) {
+	var clickColumns = [
+		"visibility",
+		"color",
+		"settings"
+	];
+
+	if (clickColumns.indexOf(clickinfo.column.id) < 0) {
+		return;
+	}
+
+	/* prevent double click events of fast changes */
+	if (typeof clicklock != "undefined" && clicklock) return;
+	else clicklock = true;
+	setTimeout(function preventDoubleClick() {
+		clicklock = false;
+	}, 500);
+
+
+	/* handle if visibility is tried to be changed */
+	if (clickinfo.column.id == "visibility") {
+
+		webMI.trendFactory.getTrendByName(trendName, function (trendInstance) {
+			if(trendInstance.control.getLoadingState()){
+				return;
+			}
+
+			var item = JSON.parse(JSON.stringify(clickinfo.item));
+			item.visibility = !item.visibility;
+			self.tableController.updateData(item.id, item);
+
+			var serie = null;
+			var series = trendInstance.chart.series;
+
+			for (var key in series) {
+				if (series[key].userOptions.id == clickinfo.item.series) {
+					serie = series[key];
+					break;
+				}
+			}
+
+			serie.setVisible(item.visibility, trendInstance.control.isLiveModeRunning());
+		});
+		return;
+	}
+
+	/* handle if color is tried to be changed */
+	if (clickinfo.column.id == "color") {
+		webMI.trendFactory.getTrendByName(trendName, function (trendInstance) {
+			var serie = null;
+			var series = trendInstance.chart.series;
+
+			for (var key in series) {
+				if (series[key].userOptions.id == clickinfo.item.series) {
+					openSeries = series[key];
+					break;
+				}
+			}
+
+			var displayOptions = {
+				"display": "SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dialogs.picker_color_dialog",
+				"extern": false,
+				"height": 370,
+				"menubar": false,
+				"modal": true,
+				"movable": true,
+				"resizable": false,
+				"scrollbars": false,
+				"status": false,
+				"title": "",
+				"toolbar": false,
+				"width": 220,
+				"query": {"name": trendName, "color": openSeries.color}
+			}
+
+			openConfig = webMI.display.openWindow(displayOptions);
+		});
+		return;
+	}
+
+	/* handle if settings is tried to be changed */
+	if (clickinfo.column.id == "settings") {
+		if (!openConfig || openConfig.closed) {
+			var displayOptions = {
+				"display": "SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.highcharts.opt_dialog",
+				"extern": false,
+				"height": 600,
+				"menubar": false,
+				"modal": false,
+				"movable": true,
+				"resizable": true,
+				"scrollbars": false,
+				"status": false,
+				"title": " Diagrammkonfiguration",
+				"toolbar": false,
+				"width": 1200,
+				"query": {"chartName": trendName, "seriesId": clickinfo.item.series}
+			}
+			openConfig = webMI.display.openWindow(displayOptions);
+		}
+		return;
+	}
+}
+
+
+/**
+ * Creates a Legend instance to display series and measurement cursor values.
+ * @constructor
+ */
+function Legend(tableController) {
+	this.tableController = tableController;
+	this.options = {};
+	this.options.trendName = trendName,
+		// this.options = mergeData(this.options, getQueryParameters(this.options.displayParameters));
+		this.measurementCursorValues = {};
+	this.initialize();
+}
+
+
+/**
+ * call at starup
+ */
+Legend.prototype.initialize = function () {
+	var self = this;
+	this.trendInstance = {};
+	this.idx1Mapping = {};
+	this.idx2Mapping = {};
+	this.seriesStore = {};
+
+
+	/* add right check */
+	var right = (webMI.query["options_right"] == undefined) ? "" : webMI.query["options_right"];
+	if (right.search(/SYSTEM\.SECURITY\.RIGHTS\./) != -1) {
+		right = right.substring(23, right.length); //remove "prefix" SYSTEM.SECURITY.RIGHTS.
+	}
+
+	if (right == "") {
+		hasRight = true;
+	} else {
+		hasRight = false;
+		webMI.addEvent(webMI.data, "clientvariableschange", function (e) {
+			hasRight = false;
+			if (("username" in e) && (e.username != "")) {
+				hasRight = webMI.hasRight(right);
+			}
+			try {
+				self.updated();
+			} catch (err) {
+			}
+		});
+	}
+
+	/* bind destroy */
+	webMI.addOnunload(self.destroy.bind(self));
+
+	/* connect to highcharts trend */
+	webMI.trendFactory.getTrendByName(this.options.trendName, function (trendInstance) {
+		self.trendInstance = trendInstance;
+		self.series = trendInstance.chart.series;
+
+		webMI.trigger.connect("valuechanged_" + trendName, function (data) {
+			openSeries.update({color: data.value.hex});
+			trendInstance.control.updated();
+		});
+
+		self.measurementCursor1CallbackId = self.trendInstance.control.registerMeasuringCursor1Callback(self.measurementCursorHandler.bind(self, 1));
+		self.measurementCursor2CallbackId = self.trendInstance.control.registerMeasuringCursor2Callback(self.measurementCursorHandler.bind(self, 2));
+		
+		var updating = false;
+		function handleUpdate() {
+			if (updating)
+				return;
+
+			updating = true;
+			var activeSeries = [];
+			var removeSeries = [];
+
+			/* add new series if not exist */
+			for (var id in self.series) {
+				if (!self.series[id] || !self.series[id].userOptions) 
+					return;
+					
+				var idx_1 = self.idx1Mapping[self.series[id].userOptions.id];
+				var idx_2 = self.idx2Mapping[self.series[id].userOptions.id];
+
+				if (typeof self.series[id].type != "undefined") {
+					var area = self.series[id].type.indexOf("area") > -1;
+
+					if (typeof idx_1 == "undefined") {
+						idx_1 = self.idx1Mapping[self.series[id].userOptions.id] = self.addDataObject(self.series, id, true);
+					}
+
+					if (area && typeof idx_2 == "undefined" && self.series[id].userOptions.address2) {
+						idx_2 = self.idx2Mapping[self.series[id].userOptions.id] = self.addDataObject(self.series, id, false);
+					}
+
+					if (typeof idx_1 != "undefined") {
+						activeSeries.push(idx_1);
+					}
+					if (area && typeof idx_2 != "undefined") {
+						activeSeries.push(idx_2);
+					}
+				}
+			}
+
+			/* remove series if not exist */
+			for (var key in self.idx1Mapping) {
+				var search = self.idx1Mapping[key];
+				if (activeSeries.indexOf(search) < 0) {
+					self.tableController.removeData(search);
+					delete activeSeries[search];
+					delete self.idx1Mapping[key];
+				}
+			}
+
+
+			/* remove second series for areas if not exists */
+			for (var key in self.idx2Mapping) {
+				var search = self.idx2Mapping[key];
+				if (activeSeries.indexOf(search) < 0) {
+					self.tableController.removeData(search);
+					delete activeSeries[search];
+					delete self.idx2Mapping[key]
+				}
+			}
+
+
+			/* update values */
+			for (var id in self.series) {
+
+				var idx_1 = self.idx1Mapping[self.series[id].userOptions.id];
+				var idx_2 = self.idx2Mapping[self.series[id].userOptions.id];
+
+				if (typeof idx_1 != "undefined") {
+					self.updateDataObject(self.series[id], idx_1, true);
+				}
+				if (typeof idx_2 != "undefined") {
+					self.updateDataObject(self.series[id], idx_2, false);
+				}
+			}
+
+			setTimeout(function() { updating = false; }, 250);
+		}
+
+		trendInstance.chart.renderTo.ownerDocument.defaultView.Highcharts.addEvent(trendInstance.chart, 'redraw', function () {
+			handleUpdate();
+		});
+	});
+};
+
+
+/**
+ * Create a object representing a table row
+ * @param series
+ * @param idx
+ * @param value
+ * @param cursors
+ * @param parent
+ * @returns Object
+ */
+Legend.prototype.createDataObject = function (series, idx, value, cursors, parent) {
+	var aggregate = this.buildAggregateText(series.userOptions.aggregate);
+	var deltaX = cursors["m1"]["x"] && cursors["m2"]["x"] ? Math.abs(cursors["m2"]["x"] - cursors["m1"]["x"]) : "";
+	var deltaY = cursors["m1"]["y"] && cursors["m2"]["y"] ? Math.abs(cursors["m2"]["y"] - cursors["m1"]["y"]) : "";
+	var convertX = "";
+	if(deltaX != "")
+		convertX = this.convertTimeToString(this, deltaTimeFormat, deltaX, true);
+
+	var obj = {
+		series: series.userOptions.id,
+		name: series.userOptions.name,
+		address: parent ? series.userOptions.address : series.userOptions.address2,
+		aggregate: aggregate ? aggregate : "",
+		type: series.userOptions.type ? series.userOptions.type : series.type,
+		visibility: parent ? series.visible : -1,
+		color: parent ? series.color : false,
+		marker_1_x_value: cursors["m1"]["x"] != null ? cursors["m1"]["x"] : "",
+		marker_1_y_value: cursors["m1"]["y"] != null ? cursors["m1"]["y"] : "",
+		marker_2_x_value: cursors["m2"]["x"] != null ? cursors["m2"]["x"] : "",
+		marker_2_y_value: cursors["m2"]["y"] != null ? cursors["m2"]["y"] : "",
+		marker_x_delta: convertX,
+		marker_y_delta: deltaY,
+		settings: parent ? true : false,
+	}
+
+	if (idx)
+		obj["id"] = idx;
+	if (value !== false)
+		obj["value"] = value;
+
+	return obj;
+}
+
+
+/**
+ * Adds an table object to the table
+ * @param series
+ * @param id
+ * @param parent
+ * @returns {*}
+ */
+Legend.prototype.addDataObject = function (series, id, parent) {
+	var self = this;
+	var data = {};
+
+	data.result = [
+		self.createDataObject(series[id], false, "n/a", {
+			m1: {x: null, y: null},
+			m2: {x: null, y: null}
+		}, parent)
+	];
+	var idx = self.tableController.addData(data);
+	if (typeof self.seriesStore[parent] == "undefined") {
+		self.seriesStore[parent] = [];
+	}
+	if (typeof self.seriesStore[parent][idx] == "undefined") {
+		self.seriesStore[parent][idx] = {};
+		self.seriesStore[parent][idx]["name"] = null;
+		self.seriesStore[parent][idx]["value"] = null;
+		self.seriesStore[parent][idx]["visible"] = null;
+		self.seriesStore[parent][idx]["newCursor"] = {m1: {x: null, y: null}, m2: {x: null, y: null}};
+		self.seriesStore[parent][idx]["oldCursor"] = {m1: {x: null, y: null}, m2: {x: null, y: null}};
+	}
+	return idx[0];
+}
+
+
+/**
+ * Updates a table object in the table
+ * @param series
+ * @param idx
+ * @param parent
+ */
+Legend.prototype.updateDataObject = function (series, idx, parent) {
+	/* no updates while user action */
+	if(clicklock)
+		return;
+
+	var self = this;
+	var update = false;
+
+	var value = null;
+	var length = series.yData.length;
+	var name = series.name;
+	var visible = series.visible;
+
+	if (length > 0 && series.yData[length - 1] != null) { 
+		if (series.yData[length - 1].length == 2) {
+			if (parent)
+				value = series.yData[length - 1][0];
+			else
+				value = series.yData[length - 1][1];
+		} else {
+			value = series.yData[length - 1];
+		}
+	} else {
+		value = "n/a";
+	}
+
+	if (!visible)
+		value = "n/a";
+
+	if (value != self.seriesStore[parent][idx]["value"]) {
+		self.seriesStore[parent][idx]["value"] = value;
+		update = true;
+	}
+
+	if (visible != self.seriesStore[parent][idx]["visible"]) {
+		self.seriesStore[parent][idx]["visible"] = visible;
+		update = true;
+	}
+
+	if (name != self.seriesStore[parent][idx]["name"]) {
+		self.seriesStore[parent][idx]["name"] = name;
+		update = true;
+	}
+
+
+	var cursors = self.seriesStore[parent][idx]["newCursor"];
+	var oldCursor = JSON.stringify(self.seriesStore[parent][idx]["oldCursor"]);
+	var newCursor = JSON.stringify(self.seriesStore[parent][idx]["newCursor"]);
+	var areEqual = oldCursor.toUpperCase() === newCursor.toUpperCase();
+
+
+	if (!areEqual) {
+		self.seriesStore[parent][idx]["oldCursor"] = JSON.parse(JSON.stringify(self.seriesStore[parent][idx]["newCursor"]));
+		update = true;
+	}
+
+	if (update) {
+		var data = {};
+		data = self.createDataObject(series, idx, value, cursors, parent);
+		self.tableController.updateData(idx, data);
+	}
+}
+
+
+/**
+ * tbd
+ * @param instance
+ * @param data
+ */
+Legend.prototype.measurementCursorHandler = function (instance, data) {
+	var self = this;
+	for (var series in data) {
+		var idx1 = self.idx1Mapping[series];
+		var idx2 = self.idx2Mapping[series];
+		
+		if (data[series] && data[series].y && data[series].y.length == 2) {
+			if (instance == 1) {
+				self.seriesStore[true][idx1]["newCursor"]["m1"] = {x: data[series].x, y: data[series].y[0]};
+				if (idx2)
+					self.seriesStore[false][idx2]["newCursor"]["m1"] = {x: data[series].x, y: data[series].y[1]};
+			} else {
+				self.seriesStore[true][idx1]["newCursor"]["m2"] = {x: data[series].x, y: data[series].y[0]};
+				if (idx2)
+					self.seriesStore[false][idx2]["newCursor"]["m2"] = {x: data[series].x, y: data[series].y[1]};
+			}
+		} else {
+			if (instance == 1)
+				self.seriesStore[true][idx1]["newCursor"]["m1"] = {x: data[series].x, y: data[series].y};
+			else
+				self.seriesStore[true][idx1]["newCursor"]["m2"] = {x: data[series].x, y: data[series].y};
+		}
+	}
+}
+
+
+/**
+ * Converts a time value (in milliseconds since 1970) into a string, formatted in the specfied manner. (uses internally dateFormat - from highcharts)
+ * @param {Object} self The Legend instance.
+ * @param {String} format The format string that defines how the date-time string should look like.
+ * @param {Boolean} timeDelta A setting to use when the conversion of delta times is needed. (to avoid time zone offsets)
+ * @return {String} timeString
+ * @memberOf Legend
+ * @private
+ */
+Legend.prototype.convertTimeToString = function (self, format, timeValue, timeDelta) {
+	var highcharts = self.trendInstance.chart.renderTo.ownerDocument.defaultView["Highcharts"];
+	var utcOffset = 0;
+	if (timeDelta && !self.trendInstance.chart.options.global.useUTC) {
+		utcOffset = ((new Date(timeValue)).getTimezoneOffset()) * 60 * 1000;
+	}
+	var timeString = highcharts.dateFormat(format, timeValue + utcOffset);
+	return timeString;
+}
+
+
+/**
+ * A helper method that builds a string out of an aggregate object.
+ * @param {Object} aggregateObj The aggregate object build the string out of.
+ * @return {String} text
+ * @memberOf Legend
+ * @private
+ */
+Legend.prototype.buildAggregateText = function (aggregate) {
+	if (typeof aggregate == "undefined")
+		return false;
+
+	var text = "";
+	if (aggregate) {
+		text = aggregate.aggregate + " (" + aggregate.interval + " " + aggregate.unit + ")";
+	}
+	return text;
+}
+
+
+/**
+ * The methode that destroys the component on unload event
+ */
+Legend.prototype.destroy = function () {
+	 if (this.trendInstance && this.trendInstance.control) this.trendInstance.control.unregisterMeasuringCursor1Callback(this.measurementCursor1CallbackId);
+	 if (this.trendInstance && this.trendInstance.control) this.trendInstance.control.unregisterMeasuringCursor2Callback(this.measurementCursor1CallbackId);
+	 this.measurementCursor1CallbackId = null;
+	 this.measurementCursor2CallbackId = null;
+};]]></script>
+</svg>

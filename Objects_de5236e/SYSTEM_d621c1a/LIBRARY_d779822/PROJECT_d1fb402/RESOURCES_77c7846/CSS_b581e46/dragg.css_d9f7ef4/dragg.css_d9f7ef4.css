@@ -1,0 +1,45 @@
+#dragg-container {
+  display: grid;
+  grid-template-areas:
+    "nav article-1 article-2 article-3 article-4 article-5 right-side"
+    "nav hc-container hc-container hc-container hc-container hc-container right-side"
+    "footer footer footer footer footer footer footer";
+  grid-template-rows: 120px 1fr 60px;
+  grid-template-columns: 40px, 20%, 20%, 20%, 20%, 20%, 40px;
+  grid-gap: 1em;
+  height: 100vh;
+  margin: 0;
+}
+.drop-zone {
+  margin: 0 auto;
+  width: 100%;
+  padding: 0px;
+}
+.selected {
+  opacity: 0.6;
+}
+.draggable-element {
+  background-color: #ffffff;
+  outline: 2px solid black;
+  border-radius: 15px;
+}
+#zone-1 {
+  grid-area: article-1;
+  background-color: rgb(93, 202, 230);
+}
+#zone-2 {
+  grid-area: article-2;
+  background-color: rgb(212, 208, 153);
+}
+#zone-3 {
+  grid-area: article-3;
+  background-color: rgb(157, 233, 133);
+}
+#zone-4 {
+  grid-area: article-4;
+  background-color: rgb(143, 151, 216);
+}
+#zone-5 {
+  grid-area: article-5;
+  background-color: rgb(252, 152, 60);
+}

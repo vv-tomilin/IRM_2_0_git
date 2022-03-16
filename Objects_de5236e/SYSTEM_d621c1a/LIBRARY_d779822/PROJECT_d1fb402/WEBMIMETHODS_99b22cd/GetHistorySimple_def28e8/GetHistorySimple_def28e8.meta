@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.WEBMIMETHODS.GetHistorySimple
+NodeClass: Variable
+BrowseName: 1:GetHistorySimple
+DisplayName: en|GetHistorySimple
+Description: en|GetHistorySimple
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

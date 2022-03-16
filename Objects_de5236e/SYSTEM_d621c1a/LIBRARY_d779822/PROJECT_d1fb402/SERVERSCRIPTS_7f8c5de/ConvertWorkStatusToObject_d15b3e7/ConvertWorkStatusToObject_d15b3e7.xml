@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="value" type="number" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var resobj = {};
+resobj.statusval = value;
+if (value == 0){
+	resobj.status = "Не определен";
+}
+if (value == 1){
+	resobj.status = "ПВ";
+}	
+if (value == 2) {
+	resobj.status = "НПВ";
+}	
+if (value == 3){
+	resobj.status = "ВМР";
+	resobj.prodtime = "ПВ";
+}	
+// ПВ	
+if (value == 4){
+	resobj.status = "Бурение";
+	resobj.prodtime = "ПВ";
+}	
+if (value == 5){
+	resobj.status = "СПО";
+	resobj.prodtime = "ПВ";
+}
+if (value == 6){
+	resobj.status = "Наращивание";
+	resobj.prodtime = "ПВ";
+}
+if (value == 7){
+	resobj.status = "Расширение";
+	resobj.prodtime = "ПВ";
+}
+if (value == 8){
+	resobj.status = "Крепление";
+	resobj.prodtime = "ПВ";
+}
+if (value == 9){
+	resobj.status = "Вспом. работы";
+	resobj.prodtime = "ПВ";
+}
+// Бурение	
+if (value == 10 || value == 100){
+	resobj.status = "Бурение";
+	resobj.prodtime = "ПВ";
+}
+if (value == 11){
+	resobj.status = "Отбор керна";
+	resobj.substatus = "Бурение";
+	resobj.prodtime = "ПВ";
+}
+if (value == 12){
+	resobj.status = "КНБК";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Бурение";
+}
+// Вспомогательные работы	
+if (value == 13){
+	resobj.status = "ВМР";
+	resobj.prodtime = "ПВ";
+	return "Вспом. работы: ПЗР";
+}
+if (value == 14){
+	resobj.status = "Обработка раствора";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Вспом. работы";
+}
+if (value == 15){
+	resobj.status = "Проработка";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Вспом. работы";
+}
+if (value == 16){
+	resobj.status = "Снятие замеров";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Вспом. работы";
+}
+if (value == 17){
+	resobj.status = "Промывка";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Вспом. работы";
+}
+if (value == 18){
+	resobj.status = "Прокачка пачки";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Вспом. работы";
+}
+if (value == 19){
+	resobj.status = "Тест на приток";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Вспом. работы";
+}
+if (value == 20){
+	resobj.status = "Монтаж ПВО";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Вспом. работы";
+}
+if (value == 21){
+	resobj.status = "Демонтаж ПВО";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Вспом. работы";
+}
+if (value == 22){
+	resobj.status = "Монтаж ФА";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Вспом. работы";
+}
+if (value == 23){
+	resobj.status = "Демонтаж ФА";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Вспом. работы";
+}
+if (value == 24){
+	resobj.status = "Фрезерование окна";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Вспом. работы";
+}			
+if (value == 25){
+	resobj.status = "Разбуривание НЦС";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Вспом. работы";
+}
+if (value == 26){
+	resobj.status = "Разбуривание оснастки";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Вспом. работы";
+}
+if (value == 27){
+	resobj.status = "Разбуривание ЦК";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Вспом. работы";
+}
+if (value == 28){
+	resobj.status = "Опрессовка";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Вспом. работы";
+}
+if (value == 29){
+	resobj.status = "ГИС (на кабеле)";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Вспом. работы";;
+}
+if (value == 30){
+	resobj.status = "ГИС (на трубах)";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Вспом. работы";
+}
+if (value == 31){
+	resobj.status = "Ориентирование КО";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Вспом. работы";
+}
+if (value == 32){
+	resobj.status = "УТЗ";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Вспом. работы";
+}
+if (value == 33){
+	resobj.status = "Чистка ЦСГО/ЕБ";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Вспом. работы";
+}
+if (value == 34){
+	resobj.status = "Прочие работы";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Вспом. работы";
+}
+// Крепление
+if (value == 35){
+	resobj.status = "ПЗР";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Крепление";
+}
+if (value == 36){
+	resobj.status = "Промывка";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Крепление";
+}
+if (value == 37){
+	resobj.status = "Спуск колонны";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Крепление";
+}
+if (value == 38){
+	resobj.status = "Цементирование";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Крепление";
+}
+if (value == 39){
+	resobj.status = "Активация оснастки";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Крепление";
+}
+if (value == 40){
+	resobj.status = "ОЗЦ";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Крепление";
+}
+if (value == 41){
+	resobj.status = "Оборудование устья";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Крепление";
+}
+if (value == 42){
+	resobj.status = "Прочие работы";
+	resobj.prodtime = "ПВ";
+	resobj.substatus = "Крепление";
+}
+// НПВ				
+if (value == 43){
+	resobj.status = "БРАК";
+	resobj.prodtime = "НПВ";
+}
+if (value == 44){
+	resobj.status = "АВАРИЯ";
+	resobj.prodtime = "НПВ";
+}
+if (value == 45){
+	resobj.status = "ПРОСТОЙ НСАД";
+	resobj.prodtime = "НПВ";
+}
+if (value == 46){
+	resobj.status = "ПОДРЯДЧИКИ";
+	resobj.prodtime = "НПВ";
+}
+if (value == 47){
+	resobj.status = "МЕТЕО";
+	resobj.prodtime = "НПВ";
+}
+if (value == 48){
+	resobj.status = "ПРОЧЕЕ";
+	resobj.prodtime = "НПВ";
+}
+return resobj;]]></code>
+</script>

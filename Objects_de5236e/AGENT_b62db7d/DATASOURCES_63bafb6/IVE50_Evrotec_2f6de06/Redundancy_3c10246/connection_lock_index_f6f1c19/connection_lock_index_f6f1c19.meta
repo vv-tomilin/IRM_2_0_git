@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DATASOURCES.IVE50_Evrotec.Redundancy.connection_lock_index
+NodeClass: Variable
+BrowseName: 1:connection_lock_index
+DisplayName: en|connection_lock_index
+Description: en|connection_lock_index
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

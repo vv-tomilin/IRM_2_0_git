@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.ORB.MinSerovodorod1
+NodeClass: Variable
+BrowseName: 1:MinSerovodorod1
+DisplayName: en|MinSerovodorod1
+Description: en|MinSerovodorod1
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

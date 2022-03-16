@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Кольцо уплотнения
+NodeClass: ObjectType
+BrowseName: 1:Кольцо уплотнения
+DisplayName: en|Кольцо уплотнения
+Description: en|Кольцо уплотнения
+IsAbstract: false

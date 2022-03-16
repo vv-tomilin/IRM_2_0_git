@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/graph-react/react-app/asset-manifest.json
+NodeClass: Variable
+BrowseName: 1:asset-manifest.json
+DisplayName: en|asset-manifest.json
+Description: en|asset-manifest.json
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

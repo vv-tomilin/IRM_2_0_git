@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/GGD_page
+NodeClass: Object
+BrowseName: 1:GGD_page
+DisplayName: en|GGD_page
+Description: en|GGD_page
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

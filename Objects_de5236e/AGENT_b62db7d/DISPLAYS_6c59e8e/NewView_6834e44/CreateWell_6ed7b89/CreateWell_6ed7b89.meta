@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.CreateWell
+NodeClass: Object
+BrowseName: 1:CreateWell
+DisplayName: en|CreateWell
+Description: en|CreateWell
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

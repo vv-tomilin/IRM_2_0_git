@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.APD1.Slide.Angle_Start
+NodeClass: Variable
+BrowseName: 1:Angle_Start
+DisplayName: en|Angle_Start
+Description: en|Angle_Start
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

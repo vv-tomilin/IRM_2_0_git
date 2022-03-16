@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.GLOBALS.HTTPSender.path
+NodeClass: Variable
+BrowseName: 1:path
+DisplayName: en|path
+Description: en|path
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.GlobalVariable

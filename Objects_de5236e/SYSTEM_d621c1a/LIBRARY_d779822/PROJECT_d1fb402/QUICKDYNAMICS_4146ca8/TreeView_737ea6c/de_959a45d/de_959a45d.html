@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+	<title>Beschreibung - TreeView</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<style type="text/css">
+		.tg {
+			border-collapse: collapse;
+			border-spacing: 0;
+			margin-top: 20px;
+			position: relative
+		}
+
+		.tg td {
+			font-size: 14px;
+			padding: 10px 5px;
+			border-style: solid;
+			border-width: 1px;
+			overflow: hidden;
+			word-break: normal;
+		}
+
+		.tg th {
+			font-size: 14px;
+			font-weight: normal;
+			padding: 10px 5px;
+			border-style: solid;
+			border-width: 1px;
+			overflow: hidden;
+			word-break: normal;
+		}
+
+		.tg .tg-7un6 {
+			background-color: #ffffff;
+			color: #000000;
+			text-align: center;
+			vertical-align: top
+		}
+
+		.tg .tg-v0zy {
+			font-weight: bold;
+			background-color: #efefef;
+			color: #000000;
+			text-align: center;
+			vertical-align: top
+		}
+
+		.tg .tg-83xr {
+			background-color: #ffffff;
+			color: #000000;
+			text-align: center;
+			vertical-align: top
+		}
+
+		.tg .tg-ixra {
+			font-weight: bold;
+			background-color: #ffffff;
+			color: #000000;
+			vertical-align: top
+		}
+
+		.tg .tg-pxng {
+			background-color: #ffffff;
+			color: #000000;
+			vertical-align: top
+		}
+
+		.tg .tg-kixb {
+			background-color: #ffffff;
+			color: #000000;
+			vertical-align: top
+		}
+
+		.tg .tg-q9yg {
+			background-color: #ffffff;
+			color: #000000;
+			text-align: right;
+			vertical-align: top
+		}
+
+		.tg .tg-eiwr {
+			background-color: #ffffff;
+			color: #000000;
+			text-align: right;
+			vertical-align: top
+		}
+	</style>
+</head>
+<body>
+<h1><span class="description" lang="DE-DE">Beschreibung - TreeView</span></h1>
+<p class="description">Dieses Quick Dynamic erstellt eine Baumansicht aufgrund einer opcUA Nodestruktur.</p>
+<p class="description">Die folgenden Optionen und Methoden werden bereitgestellt:</p>
+<table class="tg">
+	<tr>
+		<th class="tg-v0zy" colspan="4">Options</th>
+	</tr>
+	<tr>
+		<td class="tg-ixra">Name</td>
+		<td class="tg-ixra">Beschreibung</td>
+		<td class="tg-ixra">Defaultwert</td>
+		<td class="tg-ixra">Erforderlich</td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">renderTo</td>
+		<td class="tg-pxng">Die id des DIV-Elements in dem die Baumstruktur erstellt werden soll</td>
+		<td class="tg-pxng"></td>
+		<td class="tg-7un6">x</td>
+	</tr>
+	<tr>
+		<td class="tg-kixb">busyIndicatorTolerance</td>
+		<td class="tg-kixb">Die Zeit die vergehen darf, bis der BusyIndicator angezeigt wird [ms]</td>
+		<td class="tg-83xr">100</td>
+		<td class="tg-q9yg"></td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">expandoOffset</td>
+		<td class="tg-pxng">Die Distanz vom Expando-Element zum Icon des Zweigs [px]</td>
+		<td class="tg-7un6">3</td>
+		<td class="tg-eiwr"></td>
+	</tr>
+	<tr>
+		<td class="tg-kixb">fontSize</td>
+		<td class="tg-kixb">Die Schriftgr&ouml;&szlig;e f&uuml;r die Baumstruktur [px]</td>
+		<td class="tg-83xr">12</td>
+		<td class="tg-kixb"></td>
+	</tr>
+	<tr>
+		<td class="tg-kixb">searchDepth</td>
+		<td class="tg-kixb">Die maximale Ordnertiefe in der die Filterfunktion sucht</td>
+		<td class="tg-83xr">100</td>
+		<td class="tg-kixb"></td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">imagePaths</td>
+		<td class="tg-pxng">Die Pfade zu den Icons die in der Baumstruktur angezeigt werden</td>
+		<td class="tg-pxng">{<br>baseVariableImage: &quot;/treeView/icons/baseVariable.svg&quot;,<br>folderImage:
+			&quot;/treeView/icons/folder.svg&quot;,<br>aggregateFunctionImage: &quot;/treeView/icons/aggregateFunction.svg&quot;,<br>collapsedLeafImage:
+			&quot;/treeView/icons/leafCollapsed.svg&quot;,<br>expandedLeafImage: &quot;/treeView/icons/leafExpanded.svg&quot;,<br>}
+		</td>
+		<td class="tg-pxng"></td>
+	</tr>
+	<tr>
+		<td class="tg-kixb">leafIndentation</td>
+		<td class="tg-kixb">Die Einr&uuml;ckung f&uuml;r Baumzweige [px]</td>
+		<td class="tg-83xr">15</td>
+		<td class="tg-kixb"></td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">leafPadding</td>
+		<td class="tg-pxng">Das Padding oben und unten an den Baumzweigen [px]</td>
+		<td class="tg-7un6">2</td>
+		<td class="tg-pxng"></td>
+	</tr>
+	<tr>
+		<td class="tg-kixb">selectableTypes</td>
+		<td class="tg-kixb">Die Typen von Baumzweigen die selektierbar sein sollen</td>
+		<td class="tg-kixb">[&quot;baseVariable&quot;, &quot;aggregateFunction&quot;]</td>
+		<td class="tg-kixb"></td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">startAddress</td>
+		<td class="tg-pxng">Die opcUA Adresse die f&uuml;r die Baumstruktur als Ausgangspunkt verwendet werden soll</td>
+		<td class="tg-pxng">&quot;AGENT.OBJECTS&quot;</td>
+		<td class="tg-pxng"></td>
+	</tr>
+</table>
+
+<table class="tg">
+	<tr>
+		<th class="tg-v0zy" colspan="4">Methods</th>
+	</tr>
+	<tr>
+		<td class="tg-ixra">Name</td>
+		<td class="tg-ixra">Beschreibung</td>
+		<td class="tg-ixra">Parameter</td>
+		<td class="tg-ixra">R&uuml;ckgabewert</td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">collapse</td>
+		<td class="tg-pxng">Klappt einen Zweig ein</td>
+		<td class="tg-pxng">-node<br>(HTMLElement des einzuklappenden Zweigs)</td>
+		<td class="tg-7un6"></td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">collapseAll</td>
+		<td class="tg-pxng">Klappt alle Zweige ein</td>
+		<td class="tg-pxng"></td>
+		<td class="tg-7un6"></td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">expand</td>
+		<td class="tg-pxng">Klappt einen Zweig aus</td>
+		<td class="tg-pxng">-node<br>(HTMLElement des auszuklappenden Zweigs)</td>
+		<td class="tg-7un6"></td>
+	</tr>
+	<tr>
+		<td class="tg-kixb">expandAll</td>
+		<td class="tg-kixb">Klappt alle Zweige aus</td>
+		<td class="tg-83xr"><br></td>
+		<td class="tg-q9yg"></td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">getSelectedNode</td>
+		<td class="tg-pxng">Die zugeh&ouml;rigen Daten zum akt&uuml;ll selektierten Zweig (Node) abfragen</td>
+		<td class="tg-7un6"></td>
+		<td class="tg-eiwr">data object</td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">selectNode</td>
+		<td class="tg-pxng">Einen Zweig (Node) in der Baumansicht selektieren</td>
+		<td class="tg-pxng">-nodePath (z.B.: "AGENT.OBJECT.folder1.myNode")<br>-aggregatePath (z.B.: "AGENT.HISTORY.AGGREGATETEMPLATES.myTemplate.myAverage")</td>
+		<td class="tg-eiwr"></td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">filter</td>
+		<td class="tg-pxng">Nur Zweige (Nodes) anzeigen, welche einen bestimmten Suchbegriff beinhalten.</td>
+		<td class="tg-pxng">-searchString (z.B.: "myNode")<br>-refreshSearchData (verfügbare Nodes neu abfragen)</td>
+		<td class="tg-eiwr"></td>
+	</tr>
+	<tr>
+		<td class="tg-kixb">off</td>
+		<td class="tg-kixb">Einen Eventhandler von der Baumansicht entfernen</td>
+		<td class="tg-kixb">-name<br>-callbackFunction</td>
+		<td class="tg-kixb"></td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">on</td>
+		<td class="tg-pxng">Einen Eventhandler an die Baumansicht anh&auml;ngen<br><span style="text-decoration: underline">Verf&uuml;gbare Events:</span><br>expand, expandAll, collapse, collapseAll, select, render, ready</td>
+		<td class="tg-pxng">-name<br>-callbackFunction<br>-callerScope</td>
+		<td class="tg-pxng"></td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">destroy</td>
+		<td class="tg-pxng">Die Baumansicht zerst&ouml;ren unnd Speicher freigeben</td>
+		<td class="tg-pxng"></td>
+		<td class="tg-pxng"></td>
+	</tr>
+</table>
+
+</body>
+</html>

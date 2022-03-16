@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+	<title>Datasource help EN</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Description</h1>
+<p>
+This display shows the connection state between the atvise server and the datasource as well as the configuration of the datasource. <br />
+In the atvise standalone mode the connection state of one server is displayed. If the atvise redundancy mode is used the connection state of the primary and secondary atvise server is displayed.
+</p>
+
+<h1>Parameter</h1>
+<p>
+<ul>
+<li>
+<span class="parameter">address of datasource</span>: name of the datasource whose state shall be shown
+</li>
+</ul>
+</p>
+
+<h1>Possible Conditions and their visualization</h1>
+<p>
+<ul>
+<li>
+Configured connections are represented by a gray line between the atvise server and the URL-connector of the related connection. If the connection is currently used for the communication 
+the color of the line and the connector will be green.
+</li>
+<li>
+There will be no line and a gray URL-connector if no URL is configured.
+</li>
+<li>
+There will be no line and a red URL-connector if no connection can be established via that URL.
+</li>
+<li>
+The text field next to the URL-connector shows the connection state. <br />
+Possible values are "Connected", "LostConnection" and "NotConnected" if an URL is configured. The value "-" means that there is no URL configured.
+</li>
+<li>The state of the entire datasource is represented by the server connector.
+<br/>If the server can establish a connection via at least one URL the connector will be green. If the server cannot establish a connection via one of the URLs the connector will be red. In this case 
+the server will not receive any data.
+</li>
+<li>
+In the atvise redundancy mode the atvise server is overlaid by a gray area if it can't be reached. Beneath this area the last valid values are shown.
+</li>
+</ul>
+</p>
+
+</body>
+</html>

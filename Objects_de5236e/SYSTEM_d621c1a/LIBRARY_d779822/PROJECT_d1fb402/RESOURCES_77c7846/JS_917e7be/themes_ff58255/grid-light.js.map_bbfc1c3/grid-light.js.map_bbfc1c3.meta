@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/themes/grid-light.js.map
+NodeClass: Variable
+BrowseName: 1:grid-light.js.map
+DisplayName: en|grid-light.js.map
+Description: en|grid-light.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

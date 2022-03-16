@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.MENUSCRIPTS.call_Report_Day
+NodeClass: Variable
+BrowseName: 1:call_Report_Day
+DisplayName: en|call_Report_Day
+Description: en|call_Report_Day
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

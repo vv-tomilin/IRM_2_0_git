@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.General_Time_Based.mudFlowInAvg
+NodeClass: Variable
+BrowseName: 1:mudFlowInAvg
+DisplayName: en|mudFlowInAvg
+Description: en|mudFlowInAvg
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

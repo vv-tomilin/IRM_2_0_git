@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.ORB.MinGas
+NodeClass: Variable
+BrowseName: 1:MinGas
+DisplayName: en|MinGas
+Description: en|MinGas
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

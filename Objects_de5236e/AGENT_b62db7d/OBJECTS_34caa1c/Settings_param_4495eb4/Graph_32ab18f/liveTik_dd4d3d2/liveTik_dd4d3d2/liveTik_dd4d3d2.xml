@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="intervalTrigger" type="interval" trigger="true" relative="false" value="" offset="00:00:00" interval="00:00:01"/>
+  <code><![CDATA[if (!globals.has('graph_listSensors')) return // если глобальная переменная еще не создана, то выходим из скрипта
+
+const graph_listSensors = globals.get('graph_listSensors')
+const graph_listSensorsAddition = globals.get('graph_listSensorsAddition')
+const graph_arrTagSensors = globals.get('graph_arrTagSensors')
+
+const graph_arrTagSensorsAndAddition = graph_arrTagSensors // общий массив тегов
+Object.values(graph_listSensorsAddition).forEach(el => {
+  graph_arrTagSensorsAndAddition.push(el) // добавляем к массиву тегов, теги дополнения
+})
+
+const allValues = {}
+graph_arrTagSensorsAndAddition.forEach(tag => {
+  const { name, value } = getDataFromVar(tag)
+  allValues[name] = value
+})
+
+
+
+const node = new UaNode('AGENT.OBJECTS.Settings_param.Graph.liveTik')
+node.value = JSON.stringify(allValues)
+
+function parseValue(value) {
+  let result = null
+  try {
+    const parse = JSON.parse(value)
+    result = parse
+  } catch (error) {
+    result = value
+  }
+  return result
+}
+
+function floorFloat(float) {
+  return Math.floor(float * 100) / 100
+}
+
+function operationGetValue(value) {
+  let resultValue = null
+  try {
+    const valueParse = JSON.parse(value)
+    resultValue = {
+      // npt: value.npt,
+      // subitem: value.subitem,
+      // opertime: value.opertime,
+      oper: valueParse.oper,
+      suboper: valueParse.suboper,
+      operclr: valueParse.operclr,
+      suboperclr: valueParse.suboperclr
+    }
+  } catch (error) {
+    resultValue = value
+  }
+  console.log("AAAAAAA: ", value);
+  return resultValue
+}
+
+function formattingValueByType(value, type, name) { // сделать обработку value в зависимости от типа переменной
+  let resultFormatting = null
+  switch (type) {
+    case 'i=10':  // если переменная Float
+      let newVal = value
+      if (newVal !== newVal) newVal = 0
+      if ((newVal < -2000000000) || (newVal > 2000000000)) newVal = 0
+      resultFormatting = floorFloat(newVal)  // округлить
+      break;
+    case 'i=12': // если переменная String
+      let valAfter = value
+      if (name === 'Operation') valAfter = operationGetValue(value)
+      resultFormatting = parseValue(valAfter)
+      break;
+    default:
+      resultFormatting = value
+      break;
+  }
+  return resultFormatting
+}
+
+function getDataFromVar(tag) {
+  const node = new UaNode(tag)
+  const formattingRes = formattingValueByType(node.value, node.datatype, node.browsename)
+  const result = {
+    name: node.browsename,
+    value: formattingRes
+  }
+  return result
+}]]></code>
+</script>

@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Drawworks.HookBlock.Position.Limit_Low_Warning
+NodeClass: Variable
+BrowseName: 1:Limit_Low_Warning
+DisplayName: en|Limit_Low_Warning
+Description: en|Limit_Low_Warning
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

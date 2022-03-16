@@ -1,0 +1,999 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="1015" version="1.2" width="1850" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:parameter behavior="optional" defaultvalue="Mud" name="type" valuetype="string"/>
+  <atv:gridconfig enabled="true" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <g atv:insensitive="true" atv:refpx="0" atv:refpy="0" id="id_0" transform="matrix(1.4453,0,0,1.4926,0,0)">
+  <rect atv:refpx="640" atv:refpy="340" fill="#1f1f1f" height="680.00" id="id_1" width="1280.00" x="0" y="0"/>
+ </g>
+ <foreignObject height="39.906" id="serviceName" width="310" x="770" y="123.721">
+  <div style="width:100%;height:100%text-align:center;" xmlns="http://www.w3.org/1999/xhtml">
+   <p id="service" style="color:white;text-align:center;">Сервис загружается...</p>
+  </div>
+ </foreignObject>
+ <svg atv:refpx="164.203" atv:refpy="485.314" height="534" id="id_2" transform="matrix(1.8138,0,0,1.5188,0,0)" width="150" x="15.53" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.RigConstruction.Insides2" y="130.906"/>
+ <foreignObject height="206.579" id="id_5" width="1556.364" x="271.822" y="202.533">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <style>
+#table__wrapper-plan {	
+    width: 100%;
+    height: 100%;
+}
+#table__wrapper-plan::-webkit-scrollbar-corner {
+	display: none;
+}
+#table__wrapper-plan::-webkit-scrollbar{
+	width: 20px;
+}
+#table__wrapper-plan::-webkit-scrollbar-track {
+	border-radius: 4px;
+	border: 1px solid #999999;
+}
+#table__wrapper-plan::-webkit-scrollbar-thumb {
+	background-color: rgba(230,230,230, 0.8);
+	border-radius: 6px;
+	
+}
+    
+</style>
+   <div class="dark" id="table__wrapper-plan" style="overflow:auto;height:100%;">
+    <table class="table" id="table" style="color:white;font-size:.8rem;width:99%;"/>
+   </div>
+  </div>
+ </foreignObject>
+ <foreignObject height="44.602" id="id_11" width="310" x="770" y="149.67">
+  <div style="width:100%;height:100%;text-align:center;" xmlns="http://www.w3.org/1999/xhtml">
+   <p id="currentSection" style="color:rgb(55, 222, 57);">Кондуктор</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="420.195" id="id_3" width="1556" x="274" y="487.433">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <style>
+#table__wrapper {
+	
+    width: 100%;
+    height: 100%;
+}
+#table__wrapper::-webkit-scrollbar{
+	width: 20px;
+}
+#table__wrapper::-webkit-scrollbar-corner {
+	display: none;
+}
+#table__wrapper::-webkit-scrollbar-track {
+	border: 1px solid #999999;
+	border-radius: 4px;
+}
+#table__wrapper::-webkit-scrollbar-thumb {
+	background-color: rgba(230,230,230, 0.8);
+	border-radius: 6px;
+	
+}
+</style>
+   <div class="dark" id="table__wrapper" style="overflow:auto;">
+    <table class="table" id="tableFact" style="color:white;font-size:.8rem;width:99%;"/>
+   </div>
+  </div>
+ </foreignObject>
+ <foreignObject height="56.339" id="id_6" width="208.923" x="313.322" y="419.542">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <button class="add-button" id="tableFact_buttonAddRow">
+    <span class="orange-square">
+     <span class="cross">
+      <span class="cross__first-line"/>
+      <span class="cross__second-line"/>
+     </span>
+    </span>
+    <span class="green-text">Добавить строку</span>
+   </button>
+  </div>
+ </foreignObject>
+ <foreignObject height="42.254" id="buttonSave" width="368.551" x="740.724" y="929.593">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <button class="button-blue">Сохранить изменения</button>
+  </div>
+ </foreignObject>
+ <foreignObject height="47.347" id="id_7" width="327.745" x="1924.746" y="192.491">
+  <div style="width:100%;height:100%display:flex;align-items:center;justify-content:center;" xmlns="http://www.w3.org/1999/xhtml">
+   <label style="widtht:100%;height:100%;box-sizing:border-box;">
+    <div class="button-blue" style="width:80%;height:100%;text-align:center;">Загрузить план</div>
+    <input accept=".csv" class="file-input" data-create="fromFile" id="uploadPlan" type="file"/>
+   </label>
+  </div>
+ </foreignObject>
+ <foreignObject height="32.864" id="id_4" width="232.398" x="1330.65" y="141">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <button class="button-blue" id="buttonWritePlan">Ввести план</button>
+  </div>
+ </foreignObject>
+ <foreignObject height="32" id="id_8" width="232" x="1546.62" y="141">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <button class="button-blue" id="buttonSavePlan" style="display:none;">Сохранить план</button>
+  </div>
+ </foreignObject>
+ <foreignObject height="56" id="id_9" width="208" x="317.119" y="139.763">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <button class="add-button" id="table_buttonAddRow" style="visibility:hidden;">
+    <span class="orange-square">
+     <span class="cross">
+      <span class="cross__first-line"/>
+      <span class="cross__second-line"/>
+     </span>
+    </span>
+    <span class="green-text">Добавить строку</span>
+   </button>
+  </div>
+ </foreignObject>
+ <foreignObject height="32" id="id_13" width="232" x="1091" y="141">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <button class="button-blue" id="buttonViewFiles" style="font-size: 12px;">Просмотреть файлы</button>
+  </div>
+ </foreignObject>
+ <g atv:refpx="925" atv:refpy="5.619" id="id_14" transform="matrix(1,0,0,1,-2.347,-6.6864)">
+  <g atv:refpx="927.347" atv:refpy="70.305" id="id_12">
+   <svg atv:refpx="927.347" atv:refpy="70.305" height="150" id="id_10" width="1850" x="2.347" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Services.serviceInfo" y="-4.695"/>
+  </g>
+ </g>
+ <foreignObject height="35.212" id="id_16" width="265.263" x="-302.822" y="161.974">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <button class="button-blue" id="buttonChemicals" style="display:none;">Хим.реагенты</button>
+  </div>
+ </foreignObject>
+ <foreignObject height="83" id="id_17" width="285" x="1564.365" y="931.941">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <div id="popup" style="display:none;padding: 1rem 2rem;background:#000;color:white;">Сохранение...</div>
+  </div>
+ </foreignObject>
+ <foreignObject height="32" id="id_19" width="232" x="32.297" y="150.238">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <button class="button-blue" id="reports" style="font-size: 12px;display:none;">рапорты</button>
+  </div>
+ </foreignObject>
+ <text atv:refpx="920.5" atv:refpy="198.657" fill="#ffffff" font-family="Arial" font-size="18" id="plan_header" x="904.5" y="203.157">ПЛАН</text>
+ <text atv:refpx="919" atv:refpy="444.956" fill="#ffffff" font-family="Arial" font-size="18" id="id_18" x="904.5" y="449.456">ФАКТ</text>
+ <script atv:desc="" atv:name="elId" type="text/ecmascript"><![CDATA[webMI.data.read("AGENT.OBJECTS.Depth_day_data.start_date", function(depthData) {
+webMI.libraryLoader.load([], ["CSS/main.css"], function(e) {})
+var depthDayData = depthData.value;
+
+var Table = top.Table;
+
+var popup = document.getElementById("popup");
+
+var viewFiles = document.getElementById("buttonViewFiles");
+var uploadPlan = document.getElementById("uploadPlan");
+var writePlan = document.getElementById("buttonWritePlan");
+var savePlan = document.getElementById("buttonSavePlan");
+var planAddButton = document.getElementById("table_buttonAddRow");
+var chemicals = document.getElementById("buttonChemicals");
+var delimiter = "\t";
+
+var allCols = ["Direct", "Kond", "TechCol", "ExCol", "Tail"];
+
+var editingPlan = false;
+var currentPlan = {};
+
+var col = document.getElementById("col");
+var tempTable = {"columns":[{"id":"_r8mdjrq9p5","name":"Тип","field":"Тип"},{"id":"_5vre21kbapc","name":"Тип раствора","field":"Тип раствора"},{"id":"_wmvqyictgxr","name":"\"Плотность\n (гр/см3)\"","field":"\"Плотность\n (гр/см3)\""},{"id":"_rqcwxlf3lwl","name":"\"Условная вязкость\n(сек)\"","field":"\"Условная вязкость\n(сек)\""},{"id":"_9u829egvgbp","name":"\"Водоотдача по ФП\n(мл/30 мин)\"","field":"\"Водоотдача по ФП\n(мл/30 мин)\""},{"id":"_8p3p7vrs2hm","name":"\"Пласт. вязкость\n (мПа*с)\"","field":"\"Пласт. вязкость\n (мПа*с)\""},{"id":"_uat8lw5xni","name":"\"Глинистая корка \n(мм)\"","field":"\"Глинистая корка \n(мм)\""},{"id":"_mqinpk92eas","name":"\"Тверд. Фаза \n(%)\"","field":"\"Тверд. Фаза \n(%)\""},{"id":"_tmyfq8osize","name":"\"ДНС\n(Па)\"","field":"\"ДНС\n(Па)\""},{"id":"_vmrih9a4s0k","name":"\"МВТ\n (кг/м3)\"","field":"\"МВТ\n (кг/м3)\""},{"id":"_jxty841tmp","name":"\"СНС\n (Па)\"","field":"\"СНС\n (Па)\""},{"id":"_dt5gpnk7gpe","name":"\"Смазка\n(%)\"","field":"\"Смазка\n(%)\""},{"id":"_nnr1hgg40if","name":"\"Песок\n(%)\"","field":"\"Песок\n(%)\""},{"id":"_lvxfeg5fyd","name":"\"Хлориды\n(мг/л)\"","field":"\"Хлориды\n(мг/л)\""},{"id":"_m3j2dum4lmc","name":"pH","field":"pH"},{"id":"_x36kkk687u","name":"V в скв.","field":"V в скв."},{"id":"_qcgz61xqpu","name":"V приг.","field":"V приг."},{"id":"_b2z6mcb8i2a","name":"V общ.","field":"V общ."}],"rows":[{"Тип":"План","Тип раствора":"KCL/NaCL - биополимерный","\"Плотность\n (гр/см3)\"":"1,38-1,4","\"Условная вязкость\n(сек)\"":"45-65","\"Водоотдача по ФП\n(мл/30 мин)\"":"0-6","\"Пласт. вязкость\n (мПа*с)\"":"12-35","\"Глинистая корка \n(мм)\"":"1","\"Тверд. Фаза \n(%)\"":"30","\"ДНС\n(Па)\"":"8,14-47,88","\"МВТ\n (кг/м3)\"":"0-45","\"СНС\n (Па)\"":"1,44-9,58","\"Смазка\n(%)\"":"3","\"Песок\n(%)\"":"1","\"Хлориды\n(мг/л)\"":"90000","pH":"10-11","V в скв.":"140","V приг.":"350","V общ.":"490"}],"timestamp":"2021-07-19T06:44:34.978Z"};
+
+var service = document.getElementById("service");
+var sectionElement = document.getElementById("currentSection");
+
+var table;
+var tableFact;
+
+var isButton = false;
+
+var headers = {
+    plan: {
+      Bit: {"columns":[{"id":"_3sn49ujz2ps1","name":"Номер рейса","field":"runNumber", editable: true},{"id":"_3sn49ujz2ps2","name":"Конструкция скважины","field":"rigConstruction"},{"id":"_3sn49ujz2ps3","name":"Свита","field":"suite"},{"id":"_3sn49ujz2ps4","name":"Литология","field":"lithology"},{"id":"_3sn49ujz2ps5","name":"Диам., мм","field":"diam"},{"id":"_3sn49ujz2ps25","name":"Модель","field":"model"},{"id":"_3sn49ujz2ps6","name":"Интервал от","field":"intervalFrom"},{"id":"_3sn49ujz2ps7","name":"Интервал до","field":"intervalTo"},{"id":"_3sn49ujz2ps8","name":"Проходка (м)","field":"drilling"},{"id":"_3sn49ujz2ps118","name":"Часы бур. (м)","field":"drillingTime"},{"id":"_3sn49ujz2ps9","name":"Средняя мех. скорость (м/ч)","field":"avgMechSpeed"},{"id":"_3sn49ujz2ps10","name":"Нагрузка (т)","field":"load"},{"id":"_3sn49ujz2ps11","name":"Максимальное допустимое значение нагрузки (т)","field":"maxLoad"},{"id":"_3sn49ujz2ps27","name":"Момент (кН*м)","field":"torque"},{"id":"_3sn49ujz2ps15","name":"Обороты рот./СВП (об/мин)","field":"rotorTurnover"},{"id":"_3sn49ujz2ps13","name":"Δ P насоса (атм)","field":"pPumpDelta"},{"id":"_3sn49ujz2ps12","name":"Q (л/сек)","field":"q"}]},
+      // Concrete: {"columns":[{"id":"1","name":"Тип обсадной колонны","field":"casingType"},{"id":"2","name":"Длина колонны для списания","field":"WOColumnLength"},{"id":"3","name":"Кол-во труб, шт","field":"pipeNumber"},{"id":"4","name":"Глубина установки башмака по стволу","field":"shoeDepthByBore"},{"id":"5","name":"Глубина установки башмака по вертикали","field":"ShoeDepthByVertical"},{"id":"6","name":"Глубина установки ЦКОДа по стволу","field":"CKODDepthByBore"},{"id":"7","name":"Начало цементирования","field":"concreteStart"},{"id":"8","name":"Окончание цементирования","field":"concreteEnd"},{"id":"9","name":"Продолжительность","field":"duration"},{"id":"10","name":"Объем буфера","field":"bufferVolume"},{"id":"11","name":"Плотность буфера","field":"bufferDensity"},{"id":"12","name":"Марка облегченного цемента","field":"LconcreteGrade"},{"id":"13","name":"Объем облегченного цементного раствора","field":"LconcreteVolume"},{"id":"14","name":"Плотность облегченного цементного раствора","field":"LconcreteDensity"},{"id":"15","name":"Марка тяжелого цемента","field":"HconcreteGrade"},{"id":"16","name":"Объем тяжелого цементного раствора","field":"HconcreteVolume"},{"id":"17","name":"Плотность тяжелого цементного раствора","field":"HconcreteDensity"},{"id":"18","name":"Объем продавочной жидкости","field":"displFluidVol"},{"id":"19","name":"Плотность продавочной жидкости","field":"displFluidDens"},{"id":"20","name":"Давление СТОП","field":"STOPpressure"},{"id":"21","name":"ЦКОД держит","field":"CKODholds"},{"id":"22","name":"Цементирование проведено согласно плану работ","field":"concretePlanned"},{"id":"23","name":"Примечания","field":"comments"},{"id":"24","name":"Жидкость на выходе","field":"flowOutput"},{"id":"25","name":"Плотность на выходе","field":"densityOutput"},{"id":"26","name":"Объем на выходе","field":"volumeOutput"}],"rows":[{"casingType":"2","WOColumnLength":"","pipeNumber":"","shoeDepthByBore":"","ShoeDepthByVertical":"","CKODDepthByBore":"","concreteStart":"","concreteEnd":"","duration":"","bufferVolume":"","bufferDensity":"","LconcreteGrade":"","LconcreteVolume":"","LconcreteDensity":"","HconcreteGrade":"","HconcreteVolume":"","HconcreteDensity":"","displFluidVol":"","displFluidDens":"","STOPpressure":"","CKODholds":"","concretePlanned":"","comments":"","flowOutput":"","densityOutput":"","volumeOutput":""}]},
+      Mud: {"columns":[{"id":"_5vre21kbapc1","name":"Дата","field":"Дата"},{"id":"_5vre21kbapc","name":"Тип раствора","field":"Тип раствора"},{"id":"_wmvqyictgxr","name":"\"Плотность\n (гр/см3)\"","field":"\"Плотность\n (гр/см3)\""},{"id":"_rqcwxlf3lwl","name":"\"Условная вязкость\n(сек)\"","field":"\"Условная вязкость\n(сек)\""},{"id":"_9u829egvgbp","name":"\"Водоотдача по ФП\n(мл/30 мин)\"","field":"\"Водоотдача по ФП\n(мл/30 мин)\""},{"id":"_8p3p7vrs2hm","name":"\"Пласт. вязкость\n (мПа*с)\"","field":"\"Пласт. вязкость\n (мПа*с)\""},{"id":"_uat8lw5xni","name":"\"Глинистая корка \n(мм)\"","field":"\"Глинистая корка \n(мм)\""},{"id":"_mqinpk92eas","name":"\"Тверд. Фаза \n(%)\"","field":"\"Тверд. Фаза \n(%)\""},{"id":"_tmyfq8osize","name":"\"ДНС\n(Па)\"","field":"\"ДНС\n(Па)\""},{"id":"_vmrih9a4s0k","name":"\"МВТ\n (кг/м3)\"","field":"\"МВТ\n (кг/м3)\""},{"id":"_jxty841tmp","name":"\"СНС\n (Па)\"","field":"\"СНС\n (Па)\""},{"id":"_dt5gpnk7gpe","name":"\"Смазка\n(%)\"","field":"\"Смазка\n(%)\""},{"id":"_nnr1hgg40if","name":"\"Песок\n(%)\"","field":"\"Песок\n(%)\""},{"id":"_lvxfeg5fyd","name":"\"Хлориды\n(мг/л)\"","field":"\"Хлориды\n(мг/л)\""},{"id":"_m3j2dum4lmc","name":"pH","field":"pH"},{"id":"_x36kkk687u","name":"V в скв.","field":"V в скв."},{"id":"_qcgz61xqpu","name":"V приг.","field":"V приг."},{"id":"_b2z6mcb8i2a","name":"V общ.","field":"V общ."},{"id":"electrostability","name":"Электростабильность (В)","field":"electrostability"},{"id":"differentials","name":"Соотношение","field":"differentials"}],"rows":[{"Дата":"12.08.21","Тип раствора":"KCL/NaCL - биополимерный","\"Плотность\n (гр/см3)\"":"1,38-1,4","\"Условная вязкость\n(сек)\"":"45-65","\"Водоотдача по ФП\n(мл/30 мин)\"":"0-6","\"Пласт. вязкость\n (мПа*с)\"":"12-35","\"Глинистая корка \n(мм)\"":"1","\"Тверд. Фаза \n(%)\"":"30","\"ДНС\n(Па)\"":"8,14-47,88","\"МВТ\n (кг/м3)\"":"0-45","\"СНС\n (Па)\"":"1,44-9,58","\"Смазка\n(%)\"":"3","\"Песок\n(%)\"":"1","\"Хлориды\n(мг/л)\"":"90000","pH":"10-11","V в скв.":"140","V приг.":"350","V общ.":"490"}],"timestamp":"2021-07-19T06:44:34.978Z"},
+      // NNB: {"columns":[{"id":"1","name":"№ п/п","field":"number"},{"id":"2","name":"Элемент","field":"element"},{"id":"3","name":"Принадлежность","field":"affiliation"},{"id":"4","name":"Серийный номер","field":"serialNumber"},{"id":"5","name":"D наруж. тела трубы, ВЗД, Яса (мм)","field":"DiamOut"},{"id":"6","name":"D внутр. тела трубы, ВЗД, Яса (мм)","field":"DiamIn"},{"id":"6","name":"D max наружный","field":"DiamMax"},{"id":"7","name":"Присоединительная резьба (тип/размер) (мм)","field":"connectingThread"},{"id":"8","name":"Тип соединения","field":"connectingType"},{"id":"9","name":"Длина (м)","field":"length"},{"id":"10","name":"Сум. длина (м)","field":"sumLength"},{"id":"11","name":"Вес. общ. (кг)","field":"weightTotalweight"},{"id":"12","name":"Сум. вес (кг)","field":"sumWeight"}]} 
+    },
+    fact: {
+      Bit: {"columns":[{"id":"_3sn49ujz2ps1","name":"Номер рейса","field":"runNumber"},{"id":"_3sn49ujz2ps2","name":"Конструкция скважины","field":"rigConstruction"},{"id":"_3sn49ujz2ps5","name":"Диам., мм","field":"diam"},{"id":"_3sn49ujz2ps25","name":"Модель","field":"model"},{"id":"_3sn49ujz2ps26","name":"сер. №","field":"serialNumber"},{"id":"_3sn49ujz2ps17","name":"Насадки на долото","field":"bitNozzles"},{"id":"_3sn49ujz2ps6","name":"Интервал от","field":"intervalFrom"},{"id":"_3sn49ujz2ps7","name":"Интервал до","field":"intervalTo"},{"id":"_3sn49ujz2ps8","name":"Проходка (м)","field":"drilling"},{"id":"_3sn49ujz2ps28","name":"Часы бур.","field":"drillingTime"},{"id":"_3sn49ujz2ps9","name":"Средняя мех. скорость (м/ч)","field":"avgMechSpeed"},{"id":"_3sn49ujz2ps10","name":"Нагрузка (т)","field":"load"},{"id":"_3sn49ujz2ps27","name":"Момент (кН*м)","field":"torque"},{"id":"_3sn49ujz2ps15","name":"Обороты рот./СВП (об/мин)","field":"rotorTurnover"},{"id":"_3sn49ujz2ps13","name":"P насоса (атм)","field":"pPump"},{"id":"_3sn49ujz2ps13","name":"Δ P насоса (атм)","field":"pPumpDelta"},{"id":"_3sn49ujz2ps12","name":"Q (л/сек)","field":"q"},{"id":"_3sn49ujz2ps18","name":"Отработка долота","field":"bitDrilling"},{"id":"_3sn49ujz2ps29","name":"Причина подъема","field":"comment"}]},
+      NNB: {"columns":[{"id":"1","name":"№ п/п","field":"number"},{"id":"2","name":"Элемент","field":"element"},{"id":"3","name":"Принадлежность","field":"affiliation"},{"id":"4","name":"Серийный номер","field":"serialNumber"},{"id":"5","name":"D наруж. тела трубы, ВЗД, Яса (мм)","field":"DiamOut"},{"id":"6","name":"D внутр. тела трубы, ВЗД, Яса (мм)","field":"DiamIn"},{"id":"6","name":"D max наружный","field":"DiamMax"},{"id":"7","name":"Присоединительная резьба (тип/размер) (мм)","field":"connectingThread"},{"id":"8","name":"Тип соединения","field":"connectingType"},{"id":"9","name":"Длина (м)","field":"length"},{"id":"10","name":"Сум. длина (м)","field":"sumLength"},{"id":"11","name":"Вес. общ. (кг)","field":"weightTotalweight"},{"id":"12","name":"Сум. вес (кг)","field":"sumWeight"}]},
+      Concrete: {"columns":[{"id":"1","name":"Тип обсадной колонны","field":"casingType"},{"id":"2","name":"Длина колонны для списания","field":"WOColumnLength"},{"id":"3","name":"Кол-во труб, шт","field":"pipeNumber"},{"id":"4","name":"Глубина установки башмака по стволу","field":"shoeDepthByBore"},{"id":"5","name":"Глубина установки башмака по вертикали","field":"ShoeDepthByVertical"},{"id":"6","name":"Глубина установки ЦКОДа по стволу","field":"CKODDepthByBore"},{"id":"7","name":"Начало цементирования","field":"concreteStart"},{"id":"8","name":"Окончание цементирования","field":"concreteEnd"},{"id":"9","name":"Продолжительность","field":"duration"},{"id":"10","name":"Объем буфера","field":"bufferVolume"},{"id":"11","name":"Плотность буфера","field":"bufferDensity"},{"id":"12","name":"Марка облегченного цемента","field":"LconcreteGrade"},{"id":"13","name":"Объем облегченного цементного раствора","field":"LconcreteVolume"},{"id":"14","name":"Плотность облегченного цементного раствора","field":"LconcreteDensity"},{"id":"15","name":"Марка тяжелого цемента","field":"HconcreteGrade"},{"id":"16","name":"Объем тяжелого цементного раствора","field":"HconcreteVolume"},{"id":"17","name":"Плотность тяжелого цементного раствора","field":"HconcreteDensity"},{"id":"18","name":"Объем продавочной жидкости","field":"displFluidVol"},{"id":"19","name":"Плотность продавочной жидкости","field":"displFluidDens"},{"id":"20","name":"Давление СТОП","field":"STOPpressure"},{"id":"21","name":"ЦКОД держит","field":"CKODholds"},{"id":"22","name":"Цементирование проведено согласно плану работ","field":"concretePlanned"},{"id":"23","name":"Примечания","field":"comments"},{"id":"24","name":"Жидкость на выходе","field":"flowOutput"},{"id":"25","name":"Плотность на выходе","field":"densityOutput"},{"id":"26","name":"Объем на выходе","field":"volumeOutput"}],"rows":[{"casingType":"2","WOColumnLength":"","pipeNumber":"","shoeDepthByBore":"","ShoeDepthByVertical":"","CKODDepthByBore":"","concreteStart":"","concreteEnd":"","duration":"","bufferVolume":"","bufferDensity":"","LconcreteGrade":"","LconcreteVolume":"","LconcreteDensity":"","HconcreteGrade":"","HconcreteVolume":"","HconcreteDensity":"","displFluidVol":"","displFluidDens":"","STOPpressure":"","CKODholds":"","concretePlanned":"","comments":"","flowOutput":"","densityOutput":"","volumeOutput":""}]},
+	  Mud: {"columns":[{"id":"_5vre21kbapc1","name":"Дата","field":"Дата"},{"id":"_5vre21kbapc","name":"Тип раствора","field":"Тип раствора"},{"id":"_wmvqyictgxr","name":"\"Плотность\n (гр/см3)\"","field":"\"Плотность\n (гр/см3)\""},{"id":"_rqcwxlf3lwl","name":"\"Условная вязкость\n(сек)\"","field":"\"Условная вязкость\n(сек)\""},{"id":"_9u829egvgbp","name":"\"Водоотдача по ФП\n(мл/30 мин)\"","field":"\"Водоотдача по ФП\n(мл/30 мин)\""},{"id":"_8p3p7vrs2hm","name":"\"Пласт. вязкость\n (мПа*с)\"","field":"\"Пласт. вязкость\n (мПа*с)\""},{"id":"_uat8lw5xni","name":"\"Глинистая корка \n(мм)\"","field":"\"Глинистая корка \n(мм)\""},{"id":"_mqinpk92eas","name":"\"Тверд. Фаза \n(%)\"","field":"\"Тверд. Фаза \n(%)\""},{"id":"_tmyfq8osize","name":"\"ДНС\n(Па)\"","field":"\"ДНС\n(Па)\""},{"id":"_vmrih9a4s0k","name":"\"МВТ\n (кг/м3)\"","field":"\"МВТ\n (кг/м3)\""},{"id":"_jxty841tmp","name":"\"СНС\n (Па)\"","field":"\"СНС\n (Па)\""},{"id":"_dt5gpnk7gpe","name":"\"Смазка\n(%)\"","field":"\"Смазка\n(%)\""},{"id":"_nnr1hgg40if","name":"\"Песок\n(%)\"","field":"\"Песок\n(%)\""},{"id":"_lvxfeg5fyd","name":"\"Хлориды\n(мг/л)\"","field":"\"Хлориды\n(мг/л)\""},{"id":"_m3j2dum4lmc","name":"pH","field":"pH"},{"id":"_x36kkk687u","name":"V в скв.","field":"V в скв."},{"id":"_qcgz61xqpu","name":"V приг.","field":"V приг."},{"id":"_b2z6mcb8i2a","name":"V общ.","field":"V общ."},{"id":"electrostability","name":"Электростабильность (В)","field":"electrostability"},{"id":"differentials","name":"Соотношение","field":"differentials"}],"rows":[{"Дата":"12.08.21","Тип раствора":"KCL/NaCL - биополимерный","\"Плотность\n (гр/см3)\"":"1,38-1,4","\"Условная вязкость\n(сек)\"":"45-65","\"Водоотдача по ФП\n(мл/30 мин)\"":"0-6","\"Пласт. вязкость\n (мПа*с)\"":"12-35","\"Глинистая корка \n(мм)\"":"1","\"Тверд. Фаза \n(%)\"":"30","\"ДНС\n(Па)\"":"8,14-47,88","\"МВТ\n (кг/м3)\"":"0-45","\"СНС\n (Па)\"":"1,44-9,58","\"Смазка\n(%)\"":"3","\"Песок\n(%)\"":"1","\"Хлориды\n(мг/л)\"":"90000","pH":"10-11","V в скв.":"140","V приг.":"350","V общ.":"490"}],"timestamp":"2021-07-19T06:44:34.978Z"}
+    }
+}
+
+var serviceNames = {
+	"NNB": "ННБ",
+	"Mud": "Растворный сервис",
+	"Bit": "Долотный сервис",
+	"Concrete": "Цементаж"
+};
+var colNames = {
+	"Direct": "Направление",
+	"Kond": "Кондуктор",
+	"TechCol": "Пилотный ствол",
+	"Tail": "Хвостовик",
+	"ExCol": "Эксплуатационная колонна"
+};
+
+var currentService;
+var currentCol;
+
+var tableFactCols;
+
+var historyState = [];
+var planHistoryState = [];
+
+var buttonSave = document.getElementById("buttonSave");
+
+var planExceptions = ["NNB", "Concrete"]
+
+var reports = document.getElementById("reports");
+if (reports) 
+reports.addEventListener("click", function() {
+	if (currentService == "Mud") webMI.display.openDisplay(
+		"SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Services.DetailedDaily",
+		{ service: currentService },
+		"main_frame"
+	)
+	if (currentService == "NNB") webMI.display.openDisplay(
+		"SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Services.DetailedNNB",
+		{ 
+			service: currentService,
+			col: currentCol
+		},
+		"main_frame"
+	)
+});
+
+function excludePlans() {
+	if (planExceptions.includes(currentService)) {
+		writePlan.style.display = "none";
+		document.getElementById("plan_header").style.visibility = "hidden";
+		
+		return true
+	}
+	document.getElementById("plan_header").style.visibility = "visible";	
+	
+	return false	
+}
+excludePlans()
+
+webMI.trigger.connect("changeFactTableData", function(data){
+	var filter = {};
+	var path = "AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + (currentCol ? currentCol : "Direct");
+	var path2 = "AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + (currentCol ? currentCol : "Direct") + ".current";
+	// change !Bit to Bit?
+	if (currentService == "Bit" || currentService == "NNB") path = "AGENT.OBJECTS.ServiceParams." + currentService + ".temp." + "tableCols";
+	filter.type=["v:1"];
+	filter.address = ["g:AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + data.value  + ".fact"];
+	filter.timestamp = ["n:>=" + parseInt(depthDayData) + "<" + new Date().getTime()];
+	
+	webMI.data.queryFilter(filter, function(e) {
+		var result = [];
+		
+		for (i in e.result) {
+			if (e.result[i].servertimestamp > depthDayData) {
+				if (e.result[i].value && e.result[i].value.length > 0)
+					if (currentService != "NNB") {
+						if (excludeExceptions(e, i)) result.push(JSON.parse(e.result[i].value).rows[0])
+					}
+					else if (currentService == "NNB" && e.result[i].timestamp > 1631200387509)
+						if (excludeExceptions(e, i)) result.push(JSON.parse(e.result[i].value).rows[0])
+			}
+		} 
+		// change !Bit to Bit?
+		webMI.data.read(((currentService == "!Bit" || currentService == "!NNB") ? [path, path2] : [path]), function(res) {
+			//var resCols = JSON.parse(res[0].value).columns;
+			var resCols = headers.fact[currentService].columns;
+			
+			
+			tableFactCols = resCols;
+			
+			if ((currentService == "!Bit" || currentService == "!NNB") && res[1].value.length > 0 && res[1].timestamp > depthDayData) {
+				result.push(JSON.parse(res[1].value).rows[0]);
+			
+			}
+			updateTable({
+				value: { rows: result, columns: resCols },
+				type: "fact"
+			});
+		})
+	})
+});
+
+function excludeExceptions(e, i) {
+	var res = Object.values(JSON.parse(e.result[i].value).rows[0]);
+	var bitOld = currentService == "Bit" && e.result[i].timestamp < 1634223078087;
+	
+	return res[1] != "Тестовый" && res[1] != "Тестовый2" && res[0] != "тест" && !bitOld
+}
+
+webMI.trigger.connect("colClickTrigger", function(e) {
+	sectionElement.innerHTML = colNames[e.value];
+	currentCol = e.value;
+	changeMenuMode("cancel");
+	if (!excludePlans()) {
+		webMI.trigger.fire("changeTableData", currentCol);
+	} 
+	webMI.trigger.fire("changeFactTableData", currentCol);
+});
+
+webMI.trigger.connect("changeServiceTrigger", function(e) {
+	service.innerHTML = serviceNames[e.value];
+	currentService = e.value;
+	
+	if (currentService == "Mud") chemicals.style.display = "none"
+	else chemicals.style.display = "none"
+	
+	webMI.trigger.fire("colClickTrigger", currentCol ? currentCol : "Direct");
+	
+	if ((currentService == "Mud" || currentService == "NNB") && reports) {
+		reports.style.display = "block";
+	} 
+});
+
+webMI.trigger.connect("changeTableData", function(e) {
+	var path = "AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + e.value;
+	
+	webMI.data.read(path, function(res) {
+		
+		
+		if (!excludePlans()) {
+			updateTable({value: { rows: res.timestamp > depthDayData ? JSON.parse(res.value).rows : null, columns: headers.plan[currentService].columns }, type: "plan"});
+		}
+		if (tableFact && tableFact.data && tableFact.data.rows) backlight(tableFact.data.rows);
+	})
+});
+
+webMI.trigger.fire("changeServiceTrigger", webMI.query["type"]);
+
+function isHistory(row, type) {
+	
+	if (type == "plan") {
+		if (planHistoryState.includes(row)) {
+		
+			return true
+		}
+		
+		return false
+	}
+	
+	if (historyState.includes(row)) {
+	
+		return true
+	}
+	
+	return false
+}
+
+function hotSave() {
+	var planArr;
+	var factArr;
+		
+	if (table) planArr = table.data.rows.filter(function(item) {
+		
+		return !isHistory(item, "plan") && !isEmpty(item)
+	})
+	if (tableFact) factArr = tableFact.data.rows.filter(function(item) {
+		return !isHistory(item) && !isEmpty(item);
+	})
+	
+	if (table) localStorage.setItem(table.table.id + '_' + currentService + '_' + currentCol, JSON.stringify(planArr));
+	if (tableFact) localStorage.setItem(tableFact.table.id + '_' + currentService + '_' + currentCol, JSON.stringify(factArr));
+}
+
+function hotDelete() {
+// quality content
+	setTimeout(function() {
+		hotSave();
+	}, 0);
+}
+
+function findEqual(row) {
+	var saved = hotGet(tableId);
+	
+	if (saved && saved.length > 0) {
+		saved = JSON.parse(saved);
+		
+		saved.map(function(savedRow, index) {
+			var every = true;
+			
+			for (i in savedRow) {
+				if (row[i] != savedRow[i]) {
+					every = false;
+				}
+			}
+			if (every) {
+				saved.splice(index, 1)
+				hotSave();
+			}
+		})
+	}
+	
+	return 
+}
+
+function hotGet(id) {
+
+	return localStorage.getItem(id + '_' + currentService + '_' + currentCol)
+}
+
+function shallowClone(arr) {
+	var res = []
+	
+	arr.map(function(item) {
+		res.push(item)
+	})
+
+	return res
+}
+
+function updateTable(item) {
+	var rows;
+	
+	if (item.value.rows) rows = item.value.rows
+	
+	if (item.type == "plan" && !planExceptions.includes(currentService)) {
+		
+		table = new Table("table", item.value.columns, { type: "plan" });
+		
+		table.table.removeEventListener("saveTable", hotSave);
+		table.table.addEventListener("saveTable", hotSave);
+		
+		table.table.removeEventListener("deleteTableRow", hotDelete);
+		table.table.addEventListener("deleteTableRow", hotDelete);
+		
+		table.init();
+		/*
+		var hot = hotGet(table.table.id) 
+		
+		if (hot) {
+			rows ? rows = rows.concat(JSON.parse(hot)) : rows = [].concat(JSON.parse(hot))
+		}
+		*/
+		
+		if (item.value.rows) {
+			planHistoryState = shallowClone(item.value.rows);
+			//planHistoryState = JSON.parse(JSON.stringify(item.value.rows));
+			table.fill(rows);
+		} 
+		
+		return
+	}
+	if (item.type == "fact") {
+		
+		historyState = shallowClone(item.value.rows);
+		//concat gethot with item rows here
+		tableFact = new Table("tableFact", item.value.columns, { type: "fact" });
+		
+		tableFact.table.removeEventListener("saveTable", hotSave);
+		tableFact.table.addEventListener("saveTable", hotSave);
+		
+		tableFact.table.removeEventListener("deleteTableRow", hotDelete);
+		tableFact.table.addEventListener("deleteTableRow", hotDelete);
+		
+		tableFact.init();
+		
+		var hot = hotGet(tableFact.table.id) 
+		
+		if (hot) {
+			rows ? rows = rows.concat(JSON.parse(hot)) : rows = [].concat(JSON.parse(hot))
+		}
+		
+		if (rows && rows[0]) {
+			tableFact.fill(rows);
+		}
+		
+		tableFact.table.addEventListener("click", function(e) {
+			setTimeout(function(e) { backlight(rows) }, 0)
+		})
+		
+		if (!isButton) {
+			isButton = !isButton;
+			document.getElementById(tableFact.id + "_buttonAddRow").addEventListener("click", function() {
+				backlight(tableFact.data.rows);
+				tableFact.table.scrollIntoView(false);
+			});
+		}
+		
+		if (tableFact.data.rows) backlight(tableFact.data.rows);
+		
+		return
+	}
+}
+
+function saveTable(rows) {
+	
+	for (id in rows) {
+		if (!isHistory(rows[id]) & !isEmpty(rows[id])) {
+			var col = currentCol ? currentCol : "Direct"
+			var path = "AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + col + ".fact"
+			// change !Bit to Bit?
+			if (currentService == "!Bit" || currentService == "!NNB") {
+				var path2 = "AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + (currentCol ? currentCol : "Direct") + ".current";
+				webMI.data.read(path2, function(e) {
+					var currentBit = e.value.length > 0 ? JSON.parse(e.value) : ""
+					//webMI.data.write(path, JSON.stringify({ rows: [rows[j]] }));
+					if (currentBit && e.timestamp > depthDayData) {
+						bitDataCalc(currentBit).then(function(res) {
+							currentBit.rows[0].maxLoad = res.loadOnBit.max;
+							currentBit.rows[0].load = res.loadOnBit.avg;
+							currentBit.rows[0].flowInput = res.mud.avg;
+							currentBit.rows[0].minVmex = res.drillSpeed.min;
+							currentBit.rows[0].diffPressure = res.diffPressure.avg;
+							if (currentService == "!Bit") currentBit.rows[0].depthFromTo = res.wellDepth.min + "-" + res.wellDepth.max;
+							
+							if (e.timestamp > depthDayData) {
+								webMI.data.write(path, JSON.stringify(currentBit));
+								
+								var result = rows;
+								
+								result.splice(id - 1, 1, currentBit.rows[0]);
+								
+								updateTable({
+									value: { rows: result, columns: tableFactCols },
+									type: "fact"
+								});
+							}
+							savePrev();
+						});
+					}
+					else {
+						savePrev();
+					}
+					webMI.data.write(path2, JSON.stringify({ rows: [rows[id]] }));
+					//setTimeout(function() { webMI.trigger.fire("changeFactTableData", currentCol) }, 0);
+				});
+			} else {
+				webMI.data.write(path, JSON.stringify({ rows: [rows[id]] }));
+				historyState.push(rows[id]);
+			}
+			backlight(tableFact.data.rows);
+
+		} else console.log("history data")
+	}
+	backlight(tableFact.data.rows);
+	//console.log("386");
+	localStorage.setItem(tableFact.table.id + '_' + currentService + '_' + currentCol, JSON.stringify([]));
+	throwPopup("Данные сохранены");
+}
+
+function throwPopup(text) {
+	popup.style.display = "block"
+	popup.textContent = text;
+	setTimeout(function(){ popup.style.display = "none" }, 3000)
+}
+
+function savePrev() {
+	var allColsArr = [];
+	var currentId = allCols.indexOf(currentCol)
+	
+	for (colItem in allCols) {
+		allColsArr.push(allCols[colItem]);
+	}
+	
+	allColsArr.splice(currentId, allCols.length);
+	allColsFactArr = [];
+	allColsArr = allColsArr.map(function(cCol) {
+		allColsFactArr.push("AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + cCol + ".fact" );
+		
+		return "AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + cCol + ".current" 
+	})
+	
+	webMI.data.read(allColsArr, function(allCurrentBits) {
+		//console.log(allCurrentBits)
+		var arrToWrite = [];
+		
+		allCurrentBits = allCurrentBits.map(function(bit, index) {
+			if (bit.value) { 
+				bitValue = JSON.parse(bit.value);
+				
+				return new Promise(function(resolve, reject) {
+					bitDataCalc(bitValue).then(function(res) {
+					
+						bitValue.rows[0].maxLoad = res.loadOnBit.max;
+						bitValue.rows[0].load = res.loadOnBit.avg;
+						bitValue.rows[0].flowInput = res.mud.avg;
+						bitValue.rows[0].minVmex = res.drillSpeed.min;
+						bitValue.rows[0].diffPressure = res.diffPressure.avg;
+						
+						resolve(bitValue)
+					})
+				})
+			} else return false
+		});
+		
+		Promise.all(allCurrentBits)
+		.then(function(values) {
+			var emptyArr = [];
+		
+			allColsFactArr = allColsFactArr.filter(function(itemPath, index) {
+				if (!values[index]) return false
+				
+				return true
+			});
+			allColsArr = allColsArr.filter(function(col, index) {
+				return values[index]
+			});
+			allColsArr.map(function() {
+				emptyArr.push("");
+			})
+			values = values.filter(function(value) {
+				if (!value) return false
+				
+				return value;
+			}).map(function(value) {
+				return value ? JSON.stringify(value) : value
+			})
+			
+		
+			webMI.data.write(allColsFactArr, values);
+			webMI.data.write(allColsArr, emptyArr);
+			//console.log("v: ", values, allColsFactArr, allColsArr);
+		})
+		.catch(function(err) { console.log(err) });
+	})
+	//console.log(allColsArr)
+}
+
+function bitDataCalc(bit, time) {
+	return new Promise(function(resolve, reject) {
+		function filter(address, time) {
+			var result = {
+				type: ["v:1"],
+				address: [],
+				timestamp: ["n:>=" + time.start + (time.end ? + "<" + time.end : "")]
+			}
+			
+			address.map(function(item) {
+				result.address.push("g:" + item);
+			});
+				
+			return result
+		}
+		//webMI.data.read("AGENT.OBJECTS.Depth_day_data.start_date", function(depthTime) {
+			
+			//currentDepthTime = depthTime.value;
+			
+			//webMI.data.queryFilter(filter(["AGENT.OBJECTS.IVE50.Well.WellDepth"], { start: depthDayData }), function(wd) {
+			webMI.data.read("AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + (currentCol ? currentCol : "Direct") + ".fact", function(prev) {
+				var currentWDTimestamp = {
+					start: null,
+					end: null
+				};
+				var result = {
+					loadOnBit: {},
+					mud: {},
+					diffPressure: {},
+					drillSpeed: {},
+					wellDepth: {}
+				};
+				
+				currentWDTimestamp.start = prev.timestamp;		
+
+				getAvgAndMax("AGENT.OBJECTS.IVE50.Drawworks.LoadOnBit", currentWDTimestamp)
+				.then(function(value) { 
+					Object.assign(result.loadOnBit, value);
+					
+					getAvgAndMax("AGENT.OBJECTS.IVE50.Mud.FlowInput", currentWDTimestamp)
+					.then(function(value) {
+						Object.assign(result.mud, value);
+						
+						getAvgAndMax("AGENT.OBJECTS.ASPD.APD1.Diff_Pressure.PID.Inputs.Input", currentWDTimestamp)
+						.then(function(value) {
+							Object.assign(result.diffPressure, value);
+							
+							getAvgAndMax("AGENT.OBJECTS.IVE50.Well.DrillSpeed", currentWDTimestamp)
+							.then(function(value) {
+								Object.assign(result.drillSpeed, value);
+								
+								getAvgAndMax("AGENT.OBJECTS.IVE50.Well.WellDepth", currentWDTimestamp)
+								.then(function(value) {
+									Object.assign(result.wellDepth, value);
+								
+									resolve(result);
+								})
+								
+							})
+						})
+					})
+				})
+			})
+		//})
+	})
+}
+//bitDataCalc(1, 1629203076592);
+
+function isEmpty(row) {
+	var some = true;
+	values = Object.values(row);
+	//console.log(values)
+	for (i in values) {
+		if (values[i].replace(/\s/, "").length > 0) {
+			some = false;	
+		}
+	}
+	
+	return some
+}
+
+function backlight(rows) {
+	//if (currentService != "Bit") {
+	for (i in rows) {
+		if (isHistory(rows[i])) {
+			
+			document.getElementById(tableFact.id + "_tr_" + i).style.pointerEvents = "none";
+			document.getElementById(tableFact.id + "_button_" + i + "_delete").style.visibility = "hidden";
+		}
+		if (isHistory(rows[i]) && table && table.data.rows.length > 0 && !excludePlans()) {
+			var items = Object.values(rows[i]);
+			var planItems = Object.values(table.data.rows[0]);
+			
+			for (j in items) {
+				if (planItems[j] && !planItems[j].match(/[A-Za-z|А-Яа-я]/) && planItems[j].includes("-")) {
+					var planMin;
+					var planMax;
+					
+					planMin = planItems[j].split("-")[0].replace(/,/g, ".");
+					planMax = planItems[j].split("-")[1].replace(/,/g, ".");
+					
+					if (parseFloat(items[j].replace(/,/g, ".")) < parseFloat(planMin) || parseFloat(items[j].replace(/,/g, ".")) > parseFloat(planMax) || items[j].match(/[A-Za-z|А-Яа-я]/) || items[j].includes("-")) {
+						//document.getElementById(tableFact.id + "_td_" + i + "-" + j).style.color = "red";
+					}
+				}
+				else if (planItems[j] && items[j] != planItems[j] && (!items[j].match(/\d{2}\.\d{2}\.\d{2}/) && !items[j].match(/\d{2}\.\d{2}\.\d{4}/))) {
+					//document.getElementById(tableFact.id + "_td_" + i + "-" + j).style.color = "red";
+				}
+			}
+		}
+	}
+}
+
+buttonSave.addEventListener("click", function(e) {
+	saveTable(tableFact.data.rows);
+	backlight(tableFact.data.rows);
+})
+
+uploadPlan.addEventListener("change", function(e) {
+	readFile(e.target.files[0]);
+	//webMI.data.write("AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + currentCol ? currentCol : "Direct");
+	webMI.trigger.fire("changeTableData", currentCol);
+	//backlight(tableFact.data.rows);
+})
+
+function changeMenuMode(mode) {
+	if (!planExceptions.includes(currentService)) {
+		writePlan.innerHTML = mode == "edit" ? "Отменить" : "Ввести план";
+	} else excludePlans()
+	savePlan.style.display = mode == "edit" ? "block" : "none";
+	editingPlan = mode == "edit" ? true : false;
+	planAddButton.style.visibility = mode == "edit" ? "visible" : "hidden";
+}
+
+writePlan.addEventListener("click", function() {
+	//webMI.data.read("AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + (currentCol ? currentCol : "Direct"), function(e) { 5678
+		var res = headers.plan[currentService].columns;
+		
+		if (!editingPlan) {			
+			currentPlan = table.data;
+			
+			var hot = hotGet(table.table.id);
+			var rows = currentPlan.rows || [];
+			
+			if (hot) {
+				rows ? rows = rows.concat(JSON.parse(hot)) : rows = [].concat(JSON.parse(hot))
+			}
+			
+			changeMenuMode("edit");
+			table = new Table("table", res, { type: "fact" });
+			table.init();
+			//table.fill(JSON.parse(JSON.stringify(currentPlan.rows)));
+			table.fill(shallowClone(rows));
+			
+		} else if (editingPlan) {
+			table = new Table("table", currentPlan.columns, { type: "plan" });
+			table.init();
+			table.fill(currentPlan.rows);
+			changeMenuMode("cancel");
+		}
+	//})
+})
+
+savePlan.addEventListener("click", function() {
+	//webMI.data.read("AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + (currentCol ? currentCol : "Direct"), function(e) {
+		//var res = JSON.parse(e.value);
+		var cTable = { rows: shallowClone(table.data.rows), columns: shallowClone(table.data.columns) }
+		
+		editingPlan = false;
+		savePlan.style.display = "none";
+		//var cTable = JSON.parse(JSON.stringify(table.data));
+		writePlan.innerHTML = "Ввести план";
+		
+		webMI.data.write("AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + (currentCol ? currentCol : "Direct"), JSON.stringify(table.data))
+		
+		localStorage.setItem(table.table.id + '_' + currentService + '_' + currentCol, JSON.stringify([]));
+		
+		table = new Table("table", cTable.columns, { type: "plan" });
+		table.init();
+		table.fill(cTable.rows);
+	//})
+})
+
+chemicals.addEventListener("click", function() {
+	
+	if (currentService == "Mud") webMI.display.openDisplay("AGENT.DISPLAYS.NewView.Services.Chemicals", { type: currentService, label: "Chemicals" }, "main_frame");
+})
+
+viewFiles.addEventListener("click", function() {
+	webMI.display.openDisplay("AGENT.DISPLAYS.NewView.Services.LoadPDFServices", { service: currentService, col: currentCol } ,"main_frame");
+})
+
+if (tableFact) {
+	document.getElementById(tableFact.id + "_buttonAddRow").addEventListener("click", function() {
+		backlight(tableFact.data.rows);
+	});
+}
+
+function ObjectToParse() {
+	this.rows = [];
+	this.columns = [];
+}
+
+function DataUnit(name, field) {
+	this.id = '_' + Math.random().toString(36).substr(2, 15);
+	this.name = name;
+	this.field = field;
+}
+
+function straight(data) {
+	var result = new ObjectToParse();
+	
+	result.columns = data.shift().split(delimiter);
+	result.rows = data;	
+	
+	return result
+}
+
+function match(data, type) {
+	if (type == "horizontal") {
+	
+		return reverseData(data);
+	} else if (type == "vertical") {
+	
+		return straightData(data);	
+	}
+}
+
+
+var columns = [""];
+/*
+// *******************************************************  PARSE FUNCTIONS ******************************************************* 
+function parseResult(data, template) {
+	// *** PARSING DATA ***
+	var result = {
+		columns: [],
+		rows: []	
+	};
+	var objectToParse;
+	//console.log(data);
+	data = data.split("\r\n");
+	if (template == "horizontal") {
+		objectToParse = reverse(data);	
+	} else {
+		objectToParse = straight(data);	
+	}
+	//columns = data.shift().split(";");
+	
+	function parseColumns(data) {
+		var result = [];
+		// *** PARSE COLUMNS INTO SLICK GRID COLUMNS FORMAT ***
+		if (!data[0]) {
+			data[0] = "Тип"
+		}
+		for (var i = 0; i < data.length; i++) {
+		// *** PASS VALUES TO COLUMN ON EACH ITERATION ***
+			if (data[i]) {
+				result.push(new DataUnit(data[i], data[i]));
+			}
+		}		
+		//console.log(result, 466);
+		return result
+	}
+	
+	function parseRows(data, keys) {
+		var result = [];
+		var rawColumns = data.columns;
+		data = data.rows;
+		var delReg = new RegExp("\"" + delimiter, "g");
+		// *** PARSE ROWS INTO SLICK GRID ROWS FORMAT ***
+		for (var i = 0; i < data.length; i++) {
+			// *** ADD ROW TO RESULT ON EACH ITERATION IF IT'S NOT EMPTY ***
+			if (data[i].replace(delimiter, "") && data[i] != false) {
+			//console.log(data[i]);
+				var resultItem = {};
+				
+					data[i] = data[i].split(delimiter);
+					//}
+					var counter = 0;
+					for (var j = 0; j < data[i].length; j++) {
+						// *** PASS VALUES TO ROW ON EACH ITERATION ***
+						if (rawColumns[j]) {
+							resultItem[keys[counter].field] = data[i][j];
+							counter++;		
+						}
+						
+					}		
+				result.push(resultItem);
+			}
+		}
+		//console.log(result, 502);
+		return result
+	}
+	result.columns = parseColumns(objectToParse.columns);
+	result.rows = parseRows(objectToParse, result.columns);
+	
+	return JSON.parse(JSON.stringify(result))
+}
+*/
+
+function readFile(file) {
+	var fileReader = new FileReader;
+		
+	fileReader.readAsText(file);
+	fileReader.onload = function() {
+		webMI.data.write("AGENT.OBJECTS.ServiceParams." + currentService + ".cols." + (currentCol ? currentCol : "Direct"), JSON.stringify(parseResult(fileReader.result, "vertical")));
+		webMI.trigger.fire("changeTableData", currentCol ? currentCol : "Direct");
+		webMI.trigger.fire("changeTableFactData", currentCol ? currentCol : "Direct");
+		backlight(tableFact.data.rows);
+	}
+}
+
+function getAvgAndMax(path, currentWDTimestamp, next) {
+	
+	return new Promise(function(resolve, reject) {
+		if (currentWDTimestamp.start) {
+			function filter(address, time) {
+				return {
+					type: ["v:1"],
+					address: ["g:" + address],
+					timestamp: ["n:>=" + time.start + (time.end ? "<" + time.end : "<" + new Date().getTime())]
+				}
+			}
+			webMI.data.queryFilter(filter(path, { start: currentWDTimestamp.start, end: currentWDTimestamp.end }), function(values) {
+				//console.log(filter(path, { start: currentWDTimestamp.start, end: currentWDTimestamp.end }));
+				var allValues = 0;
+				var avgValue = 0;
+				var maxValue = 0;
+				var minValue = 0;
+				
+				if (values.result.length > 0) {
+					for (cValue in values.result) {
+						allValues += values.result[cValue].value;
+						if (maxValue < values.result[cValue].value) {
+							maxValue = values.result[cValue].value;
+						}
+						if (minValue > values.result[cValue].value) minValue = values.result[cValue].value
+						if (!minValue) minValue = values.result[cValue].value
+					}			
+					avgValue = allValues / values.result.length;
+				}
+				
+				resolve(
+					{ 
+						max: maxValue ? maxValue.toFixed(2).toString() : maxValue.toString(),
+						avg: avgValue ? avgValue.toFixed(2).toString() : avgValue.toString(),
+						min: minValue ? minValue.toFixed(2).toString() : minValue.toString() 
+					}
+				)
+				//console.log(maxValue, avgValue)
+			})
+		} else {
+			resolve({ max: "0", avg: "0", min: "0" })
+		}
+		
+	})
+}
+})
+
+]]></script>
+</svg>

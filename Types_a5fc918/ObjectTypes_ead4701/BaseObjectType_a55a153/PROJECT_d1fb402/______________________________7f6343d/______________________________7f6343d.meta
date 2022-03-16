@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Торцевая крышка главного вала
+NodeClass: ObjectType
+BrowseName: 1:Торцевая крышка главного вала
+DisplayName: en|Торцевая крышка главного вала
+Description: en|Торцевая крышка главного вала
+IsAbstract: false

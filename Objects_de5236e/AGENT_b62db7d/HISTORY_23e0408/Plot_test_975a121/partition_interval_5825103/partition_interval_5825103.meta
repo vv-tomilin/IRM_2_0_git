@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.HISTORY.Plot_test.partition_interval
+NodeClass: Variable
+BrowseName: 1:partition_interval
+DisplayName: en|partition_interval
+Description: en|partition_interval
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

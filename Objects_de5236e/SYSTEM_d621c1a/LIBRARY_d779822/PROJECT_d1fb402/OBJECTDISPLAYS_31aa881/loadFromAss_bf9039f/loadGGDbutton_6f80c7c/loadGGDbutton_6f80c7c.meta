@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.loadFromAss.loadGGDbutton
+NodeClass: Variable
+BrowseName: 1:loadGGDbutton
+DisplayName: en|loadGGDbutton
+Description: en|loadGGDbutton
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

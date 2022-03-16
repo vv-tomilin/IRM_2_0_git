@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.Properties.TemperatureVolume
+NodeClass: Variable
+BrowseName: 1:TemperatureVolume
+DisplayName: en|TemperatureVolume
+Description: en|TemperatureVolume
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

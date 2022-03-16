@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.SimulatedDataMax.PkeMax
+NodeClass: Variable
+BrowseName: 1:PkeMax
+DisplayName: en|PkeMax
+Description: en|PkeMax
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

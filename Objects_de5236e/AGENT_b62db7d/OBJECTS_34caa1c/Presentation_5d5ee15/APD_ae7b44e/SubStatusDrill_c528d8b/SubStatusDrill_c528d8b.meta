@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Presentation.APD.SubStatusDrill
+NodeClass: Variable
+BrowseName: 1:SubStatusDrill
+DisplayName: en|SubStatusDrill
+Description: en|SubStatusDrill
+DataType: UInt16
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="timer" type="timer" trigger="true" relative="false" value="" starttime="00:00:00" repeat="00:00:20"/>
+  <code><![CDATA[function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+var node = new UaNode(base.nodeid);
+
+node.value = getRandomInt(5, 60);]]></code>
+</script>

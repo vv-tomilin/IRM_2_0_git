@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="43" version="1.2" width="64" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient gradientUnits="objectBoundingBox" id="linear_0" x1="-0.436364" x2="-0.272727" y1="-0.818182" y2="-0.545455">
+   <stop offset="0" stop-color="#000000"/>
+   <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient gradientUnits="objectBoundingBox" id="linear_1" x1="-0.345455" x2="-0.181818" y1="-0.818182" y2="-0.309091">
+   <stop offset="0" stop-color="#003399"/>
+   <stop offset="1" stop-color="#003399" stop-opacity="0"/>
+  </linearGradient>
+ </defs>
+ <desc>BUTTONS MENU</desc>
+ <title>BUTTONS MENU</title>
+ <metadata>
+  <atv:parameter behavior="optional" defaultvalue="" desc="button text" name="text" substitute="$TEXT$" valuetype="address"/>
+  <atv:parameter behavior="optional" config="1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17" defaultvalue="1" desc="button icon" name="icon" valuetype="enum"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="target display" name="display" valuetype="display"/>
+  <atv:parameter behavior="optional" defaultvalue="main_frame" desc="target frame" name="frame" valuetype="string"/>
+  <atv:parameter behavior="mandatory" defaultvalue="clickarea" desc="name" name="name" substitute="" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="tooltip" name="tooltip" substitute="" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="true" desc="set button active" name="active" substitute="" valuetype="bool"/>
+  <atv:gridconfig enabled="true" gridstyle="lines" height="1" width="1"/>
+  <atv:snapconfig enabled="true" height="1" width="1"/>
+ </metadata>
+ <g atv:insensitive="true" atv:refpx="0" atv:refpy="0" id="id_0">
+  <rect atv:refpx="32" atv:refpy="21.5" fill="#2e2d3b" height="43.00" id="id_1" width="64.00" x="0" y="0"/>
+ </g>
+ <rect atv:refpx="32" atv:refpy="21.5" fill="#2e2d3b" height="43" id="button_background" stroke="#ffffff" stroke-width="0" width="64" x="0" y="0"/>
+ <svg atv:refpx="32" atv:refpy="22" height="30" id="icon8" visibility="hidden" width="22" x="21" xlink:href="SYSTEM.LIBRARY.PROJECT.RESOURCES%2FIMG%2F%D0%92%D1%8B%D1%88%D0%BA%D0%B0.svg" y="7"/>
+ <svg atv:refpx="33" atv:refpy="21" height="24" id="icon6" visibility="hidden" width="30" x="18" xlink:href="SYSTEM.LIBRARY.PROJECT.RESOURCES%2FIMG%2F%D0%93%D0%B8%D0%B4%D1%80%D0%BE%D1%81%D1%85%D0%B5%D0%BC%D0%B0.svg" y="9"/>
+ <svg atv:refpx="32" atv:refpy="22" height="30" id="icon1" visibility="hidden" width="30" x="17" xlink:href="SYSTEM.LIBRARY.PROJECT.RESOURCES%2FIMG%2F%D0%93%D0%BB%20%D0%BC%D0%B5%D0%BD%D1%8E.svg" y="7"/>
+ <svg atv:refpx="32" atv:refpy="23" height="30" id="icon2" visibility="hidden" width="30" x="17" xlink:href="SYSTEM.LIBRARY.PROJECT.RESOURCES%2FIMG%2F%D0%93%D1%80%D0%B0%D1%84%D0%B8%D0%BA%20%D0%93%D0%93%D0%94.svg" y="8"/>
+ <svg atv:refpx="32.5" atv:refpy="22" height="34" id="icon14" visibility="hidden" width="29" x="18" xlink:href="SYSTEM.LIBRARY.PROJECT.RESOURCES%2FIMG%2F%D0%94%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B.svg" y="5"/>
+ <svg atv:refpx="31.5" atv:refpy="23" height="26" id="icon10" visibility="hidden" width="27" x="18" xlink:href="SYSTEM.LIBRARY.PROJECT.RESOURCES%2FIMG%2F%D0%9D%D0%B0%D1%81%D0%BE%D1%81%D1%8B.svg" y="10"/>
+ <svg atv:refpx="32" atv:refpy="22" height="30" id="icon12" visibility="hidden" width="30" x="17" xlink:href="SYSTEM.LIBRARY.PROJECT.RESOURCES%2FIMG%2F%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B8.svg" y="7"/>
+ <svg atv:refpx="32" atv:refpy="23" height="30" id="icon11" visibility="hidden" width="30" x="17" xlink:href="SYSTEM.LIBRARY.PROJECT.RESOURCES%2FIMG%2F%D0%9E%D0%B1%D0%BE%D1%80%D1%83%D0%B4%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5.svg" y="8"/>
+ <svg atv:refpx="33.5" atv:refpy="20" height="30" id="icon4" visibility="hidden" width="25" x="21" xlink:href="SYSTEM.LIBRARY.PROJECT.RESOURCES%2FIMG%2F%D0%9E%D1%82%D1%87%D0%B5%D1%82%D1%8B.svg" y="5"/>
+ <svg atv:refpx="32" atv:refpy="23" height="24" id="icon5" visibility="hidden" width="30" x="17" xlink:href="SYSTEM.LIBRARY.PROJECT.RESOURCES%2FIMG%2F%D0%A0%D0%B5%D0%BA%D0%BE%D0%BC%D0%B5%D0%BD%D0%B4%D0%B0%D1%86%D0%B8%D0%B8.svg" y="11"/>
+ <svg atv:refpx="32" atv:refpy="22" height="24" id="icon7" visibility="hidden" width="30" x="17" xlink:href="SYSTEM.LIBRARY.PROJECT.RESOURCES%2FIMG%2F%D0%A1%D1%85%D0%B5%D0%BC%D0%B0%20%D0%91%D0%A3.svg" y="10"/>
+ <svg atv:refpx="31.5" atv:refpy="21.5" height="25" id="icon9" visibility="hidden" width="27" x="20" xlink:href="SYSTEM.LIBRARY.PROJECT.RESOURCES%2FIMG%2F%D0%A6%D0%A1%D0%93%D0%9E.svg" y="8"/>
+ <svg atv:refpx="31.5" atv:refpy="22" height="30" id="icon13" visibility="hidden" width="25" x="19" xlink:href="SYSTEM.LIBRARY.PROJECT.RESOURCES%2FIMG%2F%D0%9E%D1%82%D1%87%D0%B5%D1%82%D1%8B.svg" y="7"/>
+ <svg atv:refpx="31.5" atv:refpy="22.5" height="29" id="icon3" visibility="hidden" width="29" x="17" xlink:href="SYSTEM.LIBRARY.PROJECT.RESOURCES%2FIMG%2F%D0%9E%D1%81%D0%BB%D0%BE%D0%B6%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F.svg" y="8"/>
+ <svg atv:refpx="32.5" atv:refpy="22" height="30" id="icon15" visibility="hidden" width="25" x="20" xlink:href="SYSTEM.LIBRARY.PROJECT.RESOURCES%2FIMG%2FAPD_icon.svg" y="7"/>
+ <svg atv:refpx="32.5" atv:refpy="22" height="32" id="icon16" visibility="hidden" width="21" x="22" xlink:href="SYSTEM.LIBRARY.PROJECT.RESOURCES%2FIMG%2FDocs.svg" y="6"/>
+ <svg atv:refpx="32.5" atv:refpy="21.5" height="38" id="icon17" transform="matrix(0.8462,0,0,0.8158,0,0)" visibility="hidden" width="39" x="18.909" xlink:href="SYSTEM.LIBRARY.PROJECT.RESOURCES%2Fservice_ico%202.svg" y="7.355"/>
+ <text atv:refpx="32.5" atv:refpy="21.5" fill="#c7c3ff" font-family="Arial" font-size="12" id="id_2" visibility="hidden" x="15.5" y="26">button</text>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[/*webMI.addOnload(function(e) {
+	
+	var id = "icon"+webMI.query["icon"];	
+	webMI.gfx.setVisible(id, true);	
+
+	webMI.addEvent(id, "click", function(e) {
+	var background = this.parentNode.parentNode.children[3];
+	
+	var value = true;
+		if (value == true) {
+			this.setAttribute("fill", "#ffffff");
+			webMI.display.openDisplay(webMI.query["display"],webMI.query,webMI.query["frame"]);
+			} 
+			});
+	
+			
+	webMI.addEvent(id, "mouseover", function(e) {
+	var background = this.parentNode.parentNode.children[3];
+	var value = true;
+		if (value == true)		
+			this.setAttribute("fill", "#c3c3cf");
+			background.setAttribute("fill", "#c3c3cf");
+			});
+	
+	webMI.addEvent(id, "mouseout", function(e) {
+	var background = this.parentNode.parentNode.children[3];
+	var value = true;
+		if (value == true) {
+			this.setAttribute("fill", "#c3c3cf");
+			background.setAttribute("fill", "#2e2d3d");}
+			
+			});
+
+
+});
+
+
+webMI.addEvent("button_background", "click", function(e) {
+	var icon_id = "icon"+webMI.query["icon"];
+	var active = webMI.query["active"];	
+	console.log(active)		
+	var value = true;
+		if (value == true)
+			webMI.display.openDisplay(webMI.query["display"],webMI.query,webMI.query["frame"]);
+			
+});
+webMI.addEvent("button_background", "mouseover", function(e) {
+	var icon_id = "icon"+webMI.query["icon"];
+	var active = webMI.query["active"];
+
+	console.log(active)	
+
+	var value = true;
+		if (value == true) {
+			this.setAttribute("fill", "#c3c3cf");
+			}
+			
+});
+
+webMI.addEvent("button_background", "mouseout", function(e) {
+	var icon_id = "icon"+webMI.query["icon"];
+	var active = webMI.query["active"];
+
+	console.log(active)	
+
+	var value = true;
+		if (value == true)
+			this.setAttribute("fill", "#2e2d3b");
+			
+});
+*/]]></script>
+</svg>

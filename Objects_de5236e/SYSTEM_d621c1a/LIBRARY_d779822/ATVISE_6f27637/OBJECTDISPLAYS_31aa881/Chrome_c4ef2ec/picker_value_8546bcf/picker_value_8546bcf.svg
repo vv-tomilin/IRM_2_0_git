@@ -1,0 +1,649 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="160" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linear_21" y1="0.0151344" y2="0.938184" x1="1.00116" gradientUnits="objectBoundingBox" x2="1.00116">
+   <stop offset="0" stop-color="#d2d2d6"/>
+   <stop offset="0.3318385650224215" stop-color="#ffffff"/>
+   <stop offset="0.3856502242152466" stop-color="#2c2c3c"/>
+   <stop offset="1" stop-color="#adadad"/>
+  </linearGradient>
+  <linearGradient id="linear_8" y1="-0.0183441" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#494949"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient id="linear_9" y1="-0.0183441" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#494949"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient id="linear_3" y1="0.0447761" y2="0.955818" x1="0.239739" gradientUnits="objectBoundingBox" x2="0.239739">
+   <stop offset="0" stop-color="#000000"/>
+   <stop offset="1" stop-color="#ffffff"/>
+  </linearGradient>
+  <linearGradient id="linear_7" y1="1" y2="-0.136364" x1="1.01755" gradientUnits="objectBoundingBox" x2="1.0303">
+   <stop offset="0.6008771929824561" stop-color="#ffffff" stop-opacity="0"/>
+   <stop offset="1" stop-color="#ffffff"/>
+  </linearGradient>
+  <linearGradient id="linear_10" y1="1" y2="-0.0183441" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#ffffff" stop-opacity="0.2745098039215687"/>
+   <stop offset="0.5515695067264574" stop-color="#ffffff" stop-opacity="0"/>
+  </linearGradient>
+ </defs>
+ <desc>Sets/displays a value to/from an address of type number.</desc>
+ <title>Picker Value</title>
+ <metadata>
+  <atv:parameter desc="base" behavior="mandatory" valuetype="address" name="base"/>
+  <atv:parameter defaultvalue="" desc="alarm address" behavior="optional" valuetype="address" name="alarm"/>
+  <atv:parameter config="Yes;No" defaultvalue="Yes" desc="enable status monitoring" behavior="optional" valuetype="enum" name="statusEnabled"/>
+  <atv:parameter defaultvalue="" desc="fire status trigger" behavior="optional" valuetype="string" name="statusTrigger"/>
+  <atv:parameter defaultvalue="1" desc="step to increment" behavior="optional" valuetype="number" name="stepInc"/>
+  <atv:parameter defaultvalue="1" desc="step to decrement" behavior="optional" valuetype="number" name="stepDec"/>
+  <atv:parameter defaultvalue="150" desc="interval [ms] (0 = off)" behavior="optional" valuetype="number" name="interval"/>
+  <atv:parameter config="Times New Roman=Times New Roman,Bodoni,Garamond,Minion Web,ITC Stone Serif,MS Georgia,Bitstream Cyberbit,serif;Arial=MS Trebuchet,ITC Avant Garde Gothic,MS Arial,MS Verdana,Univers,Futura,ITC Stone Sans,Gill Sans,Akzidenz Grotesk,Helvetica,sans-serif;Courier=Courier,MS Courier New,Prestige,Everson Mono,monospace;Zapf-Chancery=Caflisch Script,Adobe Poetica,Sanvito,Ex Ponto,Snell Roundhand,Zapf-Chancery,cursive;Alpha Geometrique=Alpha Geometrique,Critter,Cottonwood,FB Reactor,Studz,fantasy" substitute="$FONTFAMILY$" defaultvalue="Arial" desc="family" group="Font" behavior="optional" valuetype="enum" name="fontFamily"/>
+  <atv:parameter config="6;7;8;9;10;11;12;14;16;18;20;22;24;26;28;36;48;72" substitute="$FONTSIZE$" defaultvalue="12" desc="size" group="Font" behavior="optional" valuetype="enum" name="fontSize"/>
+  <atv:parameter substitute="$FONTCOLOR$" defaultvalue="#000000" desc="color" group="Font" behavior="optional" valuetype="color" name="fontColor"/>
+  <atv:parameter substitute="$FILL$" defaultvalue="#FFFFFF" desc="fill color" group="Appearance" behavior="optional" valuetype="color" name="fill"/>
+  <atv:parameter defaultvalue="#8c8c8c" desc="fill color when inactive" group="Appearance" behavior="optional" valuetype="color" name="fillColorInactive"/>
+  <atv:parameter substitute="$BUTTONFILL$" defaultvalue="#000000" desc="button fill color" group="Appearance" behavior="optional" valuetype="color" name="buttonFill"/>
+  <atv:parameter substitute="$ARROWFILL$" defaultvalue="#FFFFFF" desc="arrow fill color" group="Appearance" behavior="optional" valuetype="color" name="arrowFill"/>
+  <atv:parameter defaultvalue="#ffffff" desc="button stroke color pressed" group="Appearance" behavior="optional" valuetype="color" name="buttonStrokePressed"/>
+  <atv:parameter substitute="$FOCUSSTROKECOLOR$" defaultvalue="#FFFFFF" desc="focus stroke color" group="Appearance" behavior="optional" valuetype="color" name="focusStrokeColor"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvStatusIndication" group="Appearance" desc="status indication" behavior="optional" valuetype="global" name="statusIndication"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvAlarmIndication" group="Appearance" desc="alarm indication" behavior="optional" valuetype="global" name="alarmIndication"/>
+  <atv:parameter desc="minimum" group="Options" behavior="optional" valuetype="number" name="min"/>
+  <atv:parameter desc="maximum" group="Options" behavior="optional" valuetype="number" name="max"/>
+  <atv:parameter desc="consistency group" group="Options" behavior="optional" valuetype="string" name="consistencyGroup"/>
+  <atv:parameter desc="tab index" group="Options" behavior="optional" valuetype="number" name="tabIndex"/>
+  <atv:parameter desc="tooltip" group="Options" behavior="optional" valuetype="trstring" name="tooltip"/>
+  <atv:parameter config="SYSTEM.SECURITY.RIGHTS" desc="necessary right" group="Security" behavior="optional" valuetype="address" name="right"/>
+  <atv:parameter desc="activation address" group="Security" behavior="optional" valuetype="address" name="activeNode"/>
+  <atv:parameter desc="activation value" group="Security" behavior="optional" valuetype="string" name="activeValue"/>
+  <atv:gridconfig width="2" enabled="true" height="2" gridstyle="lines"/>
+  <atv:snapconfig width="2" enabled="true" height="2"/>
+ </metadata>
+ <rect id="id_0" ry="3" width="159.5" fill="url(#linear_21)" stroke="#646464" atv:bindbr="1,1" atv:refpy="15.5" height="29.5" atv:refpx="80.25" stroke-width="0.5" x="0.25" y="0.25" rx="3" atv:bindtl="0,0"/>
+ <rect id="id_2" ry="3" width="128" fill="url(#linear_3)" stroke="none" atv:bindbr="1,1" atv:refpy="-12.25" height="24.5" atv:refpx="153.5" stroke-width="0.5" x="2.5" y="2.75" rx="3" atv:bindtl="0,0"/>
+ <g id="input_clickarea" atv:refpy="15.5" atv:refpx="66.527" atv:dynamic="true">
+  <rect id="input_bg" ry="3" width="126" fill="$FILL$" stroke="none" atv:bindbr="1,1" atv:refpy="22.5" height="22.5" atv:refpx="156.5" stroke-width="2" x="3.5" y="3.75" rx="3" atv:bindtl="0,0"/>
+  <rect id="blinking_frame" ry="2" width="126" fill="none" atv:bindbr="1,1" stroke="none" atv:refpy="10" stroke-width="2" atv:refpx="214.155" height="22.5" x="3.5" y="3.75" rx="2" atv:bindtl="0,0"/>
+  <text id="input_label" font-size="$FONTSIZE$" fill="$FONTCOLOR$" atv:bindbr="1,0.5" atv:refpy="19" atv:refpx="371.017" font-family="$FONTFAMILY$" x="125.5" y="20.25" atv:bindtl="1,0.5" text-anchor="end">T{Picker Value}</text>
+ </g>
+ <g id="clickarea_inc" atv:bindbr="1,0.5" atv:refpy="8.875" atv:refpx="144.75" atv:bindtl="1,0.5" atv:dynamic="true">
+  <rect id="id_1" ry="3" width="22.5" fill="#000000" stroke="none" atv:refpy="5.389" height="10" atv:refpx="255.75" stroke-width="0.5" x="133.5" y="3.75" rx="3"/>
+  <rect id="id_10" ry="3" width="24.5" fill="url(#linear_3)" stroke="none" atv:refpy="-6.125" height="12.25" atv:refpx="409.75" stroke-width="0.5" x="132.5" y="2.75" rx="3"/>
+  <rect id="inc_bg" ry="3" width="22.5" fill="$BUTTONFILL$" stroke="none" atv:refpy="13" height="10" atv:refpx="411.75" stroke-width="2" x="133.5" y="4" rx="3"/>
+  <polyline id="inc_arrow" fill="$ARROWFILL$" stroke="none" atv:refpy="4.418" points="141.143,11.875 151.965,11.875 144.75,5.875 137.535,11.875 141.143,11.875" atv:refpx="333.759" stroke-width="0.482"/>
+  <rect id="inc_stroke" ry="3" width="22.5" fill="url(#linear_7)" stroke="none" atv:refpy="13" height="10" atv:refpx="411.75" stroke-width="1" x="133.5" y="4" rx="3"/>
+ </g>
+ <g id="clickarea_dec" atv:bindbr="1,0.5" atv:refpy="21.125" atv:refpx="144.75" atv:bindtl="1,0.5" atv:dynamic="true">
+  <rect id="id_8" ry="3" width="22.5" fill="#000000" stroke="none" atv:refpy="4.389" height="10" atv:refpx="107.75" stroke-width="0.5" x="133.5" y="16.5" rx="3"/>
+  <rect id="id_11" ry="3" width="24.5" fill="url(#linear_3)" stroke="none" atv:refpy="21.125" height="12.25" atv:refpx="409.75" stroke-width="0.5" x="132.5" y="15" rx="3"/>
+  <rect id="dec_bg" ry="3" width="22.5" fill="$BUTTONFILL$" stroke="none" atv:refpy="13.25" height="10" atv:refpx="247.75" stroke-width="2" x="133.5" y="16.25" rx="3"/>
+  <polyline id="dec_arrow" fill="$ARROWFILL$" stroke="none" atv:refpy="22.573" points="141.143,18.125 151.965,18.125 144.75,24.125 137.535,18.125 141.143,18.125" atv:refpx="308.702" stroke-width="0.482"/>
+  <rect id="dec_stroke" ry="3" width="22.5" fill="url(#linear_7)" stroke="none" atv:refpy="11.25" height="10" atv:refpx="255.75" stroke-width="1" x="133.5" y="16.25" rx="3"/>
+ </g>
+ <script type="text/ecmascript"><![CDATA[var isTouch = (navigator.userAgent.indexOf("Mobi") > -1);
+var useSVGKeyboard = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Configuration", {"action":"existsIndexParameter", "parameterName":"useSVGKeyboard"});
+if(useSVGKeyboard == "true")
+	isTouch = true;
+var base = (webMI.query["base"] == undefined) ? "" : webMI.query["base"];
+var stepInc = parseFloat(webMI.query["stepInc"]);
+var stepDec = parseFloat(webMI.query["stepDec"]);
+var min = (webMI.query["min"] == undefined) ? "" : parseFloat(webMI.query["min"]);
+var max = (webMI.query["max"] == undefined) ? "" : parseFloat(webMI.query["max"]);
+var interval = parseFloat(webMI.query["interval"]);
+var tabHandler = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tab Handler");
+var tabIndex = (webMI.query["tabIndex"] == undefined) ? "" : webMI.query["tabIndex"];
+var tooltip = (webMI.query["tooltip"] == undefined) ? "" : webMI.query["tooltip"];
+var alarmToSubscribe = webMI.query["alarm"];
+var alarmIndication = webMI.query["alarmIndication"];
+var statusEnabled = webMI.query["statusEnabled"];
+var statusTrigger = webMI.query["statusTrigger"];
+var statusIndication = webMI.query["statusIndication"];
+var activeIndicators = {};
+
+var curValue = 0;
+webMI.gfx.setText("input_label", curValue);
+
+var CONST_NUMBER_FORMAT = "[^-0-9.]";
+var format = CONST_NUMBER_FORMAT;
+
+var fontColor = webMI.query["fontColor"];
+var fill = webMI.query["fill"];
+var fillColorInactive = webMI.query["fillColorInactive"];
+var buttonFill = webMI.query["buttonFill"];
+var buttonStrokePressed = webMI.query["buttonStrokePressed"];
+var arrowFill = webMI.query["arrowFill"];
+var consistencyGroup = webMI.query["consistencyGroup"];
+
+if (consistencyGroup)
+	var consistencyHandler = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Consistency Handler");
+
+var right = (webMI.query["right"] == undefined) ? "" : webMI.query["right"];
+if (right.search(/SYSTEM\.SECURITY\.RIGHTS\./) != -1) {
+	right = right.substring(23,right.length); //remove "prefix" SYSTEM.SECURITY.RIGHTS.
+}
+
+var active = false;
+var hasRight = false;
+var isSetActive = true; //isSetActive is set by the com.atvise.setActive trigger.
+
+if (right != "") {
+	webMI.addEvent(webMI.data, "clientvariableschange", function(e) {
+		hasRight=false;
+		if (("username" in e) && (e.username != "")) {
+				hasRight = webMI.hasRight(right);
+		}
+		deActivate();
+	});
+}
+
+var activeValue = (webMI.query["activeValue"] == undefined) ? "" :webMI.query["activeValue"];
+var activeNode = (webMI.query["activeNode"] == undefined) ? "" : webMI.query["activeNode"];
+var nodeIsActive = false;
+
+if ((activeNode != "") && (String(activeValue) != "")) {
+	webMI.data.subscribe(activeNode, function(e) {
+		var nodeActiveValue = e.value;
+		if (typeof nodeActiveValue == "boolean") {
+			nodeIsActive = (String(nodeActiveValue) == activeValue);
+		} else if (typeof nodeActiveValue == "number") {
+			try {
+				var temp = parseFloat(activeValue);
+				nodeIsActive = (nodeActiveValue == temp);
+			} catch(e) {
+				nodeIsActive = false;
+			}
+		} else {
+			nodeIsActive = (nodeActiveValue == activeValue);
+		}
+		if (typeof e.status != "undefined")
+			handleStatus(e.status);
+		deActivate();
+	});
+} else {
+	deActivate();
+}
+
+function deActivate() {
+	if (right != "") {
+		if ((String(activeValue) != "") && (activeNode != "")) {
+			active=(nodeIsActive && hasRight);
+		} else {
+			active=hasRight;
+		}
+	} else {
+		if ((String(activeValue) != "") && (activeNode != "")) {
+			active=nodeIsActive;
+		} else {
+			active=true;
+		}
+	}
+	active = active && isSetActive;
+	if (active) {
+		webMI.gfx.setFill("input_bg", fill);
+		webMI.gfx.setFill("inc_bg", buttonFill);
+		webMI.gfx.setFill("dec_bg", buttonFill);
+		webMI.gfx.setVisible("inc_stroke", null);
+		webMI.gfx.setVisible("dec_stroke", null);
+	} else {
+		webMI.gfx.setFill("input_bg", fillColorInactive);
+		webMI.gfx.setFill("inc_bg", fillColorInactive);
+		webMI.gfx.setFill("dec_bg", fillColorInactive);
+		webMI.gfx.setVisible("inc_stroke", false);
+		webMI.gfx.setVisible("dec_stroke", false);
+	}
+}
+
+function handleStatus(status) {
+	if (statusEnabled != "Yes")
+		return;
+
+	if (statusTrigger != "") {
+		webMI.trigger.fire(statusTrigger, status);
+	} else {
+		if (typeof statusIndication["ItemStatusBad"] == "undefined")
+			statusIndication = {"ItemStatusBad": {color: "#ffff00", interval: "250"}};
+
+		if (status == 0 || (status & 0xC0000000).toString(16) == 0)	//Good value state
+			delete activeIndicators["status"];
+		else if ((status & 0x80000000).toString(16) != 0)			//Bad value state
+			activeIndicators["status"] = {color: statusIndication["ItemStatusBad"].color, interval: parseInt(statusIndication["ItemStatusBad"].interval)};
+		else if ((status & 0xC0000000).toString(16) == 40000000)	//Uncertain value state
+			activeIndicators["status"] = {color: statusIndication["ItemStatusBad"].color, interval: parseInt(statusIndication["ItemStatusBad"].interval)};
+		else														//Unknown value state
+			activeIndicators["status"] = {color: statusIndication["ItemStatusBad"].color, interval: parseInt(statusIndication["ItemStatusBad"].interval)};
+
+		setIndicator();
+	}
+}
+
+function initAlarm(address) {
+	if (alarmIndication == "")
+		alarmIndication = {};
+
+	if (typeof alarmIndication["AlarmStatusOnUnacknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOnUnacknowledged"] = {color: "#ff0000", interval: "250"};
+
+	if (typeof alarmIndication["AlarmStatusOnAcknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOnAcknowledged"] = {color: "#ff0000", interval: "500"};
+
+	if (typeof alarmIndication["AlarmStatusOffUnacknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOffUnacknowledged"] = {color: "#ff0000", interval: "750"};
+
+	if (typeof alarmIndication["AlarmStatusOnOffUnacknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOnOffUnacknowledged"] = {color: "#ff0000", interval: "1500"};
+
+	webMI.alarm.subscribe(address, function(e) {
+		if (e.state == 1)
+			activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOnUnacknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOnUnacknowledged"].interval)};
+		else if (e.state == 2)
+			activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOnAcknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOnAcknowledged"].interval)};
+		else if (e.state == 3)
+			activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOffUnacknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOffUnacknowledged"].interval)};
+		else if (e.state == 5)
+			activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOnOffUnacknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOnOffUnacknowledged"].interval)};
+		else
+			delete activeIndicators["alarm"];
+
+		setIndicator();
+	});
+}
+
+if (alarmToSubscribe != "")
+	initAlarm(alarmToSubscribe);
+
+var currentIndicator = "";
+function setIndicator() {
+	if (currentIndicator != "")
+		return;
+
+	if (activeIndicators["trigger"]) {
+		currentIndicator = "trigger";
+	} else if (activeIndicators["status"]) {
+		currentIndicator = "status";
+	} else if (activeIndicators["alarm"]) {
+		currentIndicator = "alarm";
+	} else {
+		currentIndicator = "";
+		return;
+	}
+
+	indicationActive = true;
+
+	webMI.gfx.setStroke("blinking_frame", activeIndicators[currentIndicator].color);
+	webMI.gfx.setVisible("blinking_frame", null);
+
+	var interval = activeIndicators[currentIndicator].interval;
+	setTimeout(function() {
+		webMI.gfx.setVisible("blinking_frame", false);
+		setTimeout(function() {
+			currentIndicator = "";
+			setIndicator();
+		}, interval);
+	}, interval);
+}
+
+function update(value) {
+	curValue = value;
+
+	webMI.gfx.setText("input_label", value);
+	webMI.trigger.fire("valuechanged", value, "");
+}
+
+if (base != "") {
+	if (consistencyGroup) {
+		consistencyHandler.register(consistencyGroup, base, update);
+	} else {
+		webMI.data.subscribe(base, function(e) {
+			curValue = parseFloat(e.value);
+
+			if(isNaN(curValue)) {
+				curValue = "-";
+			}
+
+			webMI.gfx.setText("input_label", curValue);
+			if (typeof e.status != "undefined")
+				handleStatus(e.status);
+		});
+	}
+}
+
+function focusTH(){
+	if (active) {
+		webMI.gfx.setStroke("input_bg", webMI.query["focusStrokeColor"]);
+	}
+}
+function blurTH(){
+	if (active) {
+		webMI.gfx.setStroke("input_bg", "none");
+	}
+}
+
+function getDisplayParameters(){
+	var communicationID = new Date().getTime().toString();
+	webMI.trigger.connect(communicationID, function(e) {
+		setCurrentValue(e.value);
+	});
+
+	var passObj = {};
+	for(var i in webMI.query)
+		passObj[i] = webMI.query[i];
+	passObj["minValue"] = passObj["min"];
+	passObj["maxValue"] = passObj["max"];
+	passObj["trigger"] = communicationID;
+	if(!consistencyGroup)
+		passObj["target"] = passObj["base"];
+	return passObj;
+}
+
+function applyTH(){
+	if (active) {
+		var tmp = null;
+
+		if (isTouch) {
+			var keyboard = "";
+			var size = (format != undefined && format == CONST_NUMBER_FORMAT) ? {w: 438, h: 378} : {w: 550, h: 250};
+
+
+			if (format != undefined && format == CONST_NUMBER_FORMAT) {
+				keyboard = "SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.keyboard.number_keyboard";
+			} else {
+				keyboard = "SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.keyboard.keyboard";
+			}
+			var keyboardParam = getDisplayParameters();
+			webMI.display.openWindow({display:keyboard,extern:false,height:size.h,menubar:false,modal:true,movable:true,resizable:false,scrollbars:false,status:false,title:"T{Keyboard}",toolbar:false,width:size.w,query:keyboardParam});
+		} else {
+			tmp = prompt("T{Input value:}", curValue);
+		}
+
+		if (tmp == null) {
+			return false;
+		}
+
+		var tmpValue = parseFloat(tmp);
+
+		if (isNaN(tmpValue)) {
+			alert("T{Invalid format!}");
+		} else if ((String(max) != "") && (tmpValue > max)) {
+			alert("T{Value too high!}");
+		} else if ((String(min) != "") && (tmpValue < min)) {
+			alert("T{Value too low!}");
+		} else {
+			curValue = tmpValue;
+			setCurrentValue(curValue);
+		}
+	}
+}
+function backTH(){}
+function arrowTH(dir){
+	if (active && (dir == 38 || dir == 40)) {
+		var step = (dir == 40)?stepDec*(-1):stepInc;
+		//Execute action once on mousedown
+		var newValue = (curValue+step);
+		if (((String(max) == "") || (newValue <= max)) && ((String(min) == "") || (newValue >= min))) {
+			setCurrentValue(newValue);
+		}
+	}
+}
+function keyHandler(keyTH,param2){
+	if (keyTH == "focus"){
+		focusTH();
+	} else if (keyTH == "blur"){
+		blurTH();
+	} else if (keyTH == "apply"){
+		applyTH();
+	} else if (keyTH == "space"){
+		applyTH();
+	} else if (keyTH == "back"){
+		backTH();
+	} else if (keyTH == "arrow"){
+		(param2 == 38) && webMI.gfx.setFill("inc_stroke", "url(#linear_10)");
+		(param2 == 40) && webMI.gfx.setFill("dec_stroke", "url(#linear_10)");
+		arrowTH(param2);
+	} else if (keyTH == "releaseClick"){
+		webMI.gfx.setFill("inc_stroke", "url(#linear_7)");
+		webMI.gfx.setFill("dec_stroke", "url(#linear_7)");
+	} else if (keyTH == "isActive"){
+		return active && param2(document.getElementById("input_clickarea").parentNode);
+	}
+}
+
+webMI.trigger.connect("com.atvise.setActive",function(e){
+	 isSetActive = e.value;
+	 deActivate();
+});
+
+webMI.trigger.connect("setValue", function(e) {
+	setCurrentValue(e.value);
+}, "");
+
+webMI.trigger.connect("com.atvise.setBlinking", function(e){
+	if (e.value == "none"){
+		delete activeIndicators["trigger"];
+	} else {
+		activeIndicators["trigger"] = {color: e.value, interval: 500};
+	}	
+	setIndicator();
+});
+
+function setCurrentValue(newValue) {
+	if (base != "" && !consistencyGroup) {
+		webMI.data.write(base, newValue, function(e){
+			if (e && e.error) {
+				alert("T{Invalid format!}");
+
+				webMI.data.read(base, function(e){
+					curValue = e.value;
+					if (typeof e.status != "undefined")
+						handleStatus(e.status);
+				});
+			}
+		});
+	} else {
+		curValue = newValue;
+		webMI.gfx.setText("input_label", newValue);
+
+		if (consistencyGroup)
+			consistencyHandler.set(consistencyGroup, base, newValue);
+	}
+	webMI.trigger.fire("valuechanged", newValue, "");
+}
+
+var isPressed = false;
+var isRunning = false;
+var activeTimer;
+function buttonPressed(pressed, step) {
+	isPressed = pressed;
+	if (isPressed && step != undefined && curValue != undefined) {
+		//Execute action once on mousedown
+		var newValue = (curValue+step);
+
+		//if ((String(max) != "") && (newValue > max)) newValue = max;
+		//if ((String(min) != "") && (newValue < min)) newValue = min;
+		if (((String(max) == "") || (newValue <= max)) && ((String(min) == "") || (newValue >= min))) {
+			setCurrentValue(newValue);
+		}
+
+		// Execute action while holding mousedown
+		if (interval > 0) {
+			isRunning = true;
+			var callFn = function() { doInDecrement(step); };
+			activeTimer = setTimeout(callFn, interval);
+		}
+	} else if(isRunning && activeTimer != undefined) {
+		isRunning = false;
+		clearTimeout(activeTimer);
+	}
+}
+
+function doInDecrement(step) {
+	if (isRunning && isPressed) {
+		var calcStep = ((step<0)?(-1)*step:step) -1;
+//		var steps = Math.floor(max / calcStep);
+		var newValue = (curValue+step);
+
+		//if ((String(max) != "") && (newValue > max)) newValue = max;
+		//if ((String(min) != "") && (newValue < min)) newValue = min;
+		if (((String(max) == "") || (newValue <= max)) && ((String(min) == "") || (newValue >= min))) {
+			setCurrentValue(newValue);
+		}
+
+		if (active) {
+			var callFn = function() { doInDecrement(step); };
+			activeTimer = setTimeout(callFn, interval);
+		} else if (activeTimer) {
+			clearTimeout(activeTimer);
+		}
+	}
+}
+
+
+
+webMI.addEvent("clickarea_inc", "mousedown", function(e) {
+var id = "clickarea_inc";
+var value = true;
+return function(value) {
+	if (active) {
+		tabHandler.setCurrentIndex(keyHandler);
+		webMI.gfx.setFill("inc_stroke", "url(#linear_10)");
+		webMI.gfx.setStroke("inc_stroke", buttonStrokePressed);
+		buttonPressed(true, stepInc);
+	}
+} (value);
+});
+
+function releaseInc() {
+	if (active) {
+		webMI.gfx.setFill("inc_stroke", "url(#linear_7)");
+		webMI.gfx.setStroke("inc_stroke", "none");
+		buttonPressed(false, null);
+	}
+}
+
+webMI.addEvent("clickarea_inc", "mouseup", function(e) {
+var id = "clickarea_inc";
+var value = true;
+return function(value) {
+	releaseInc();
+} (value);
+});
+
+webMI.addEvent("clickarea_inc", "mouseout", function(e) {
+var id = "clickarea_inc";
+var value = true;
+return function(value) {
+	releaseInc();
+} (value);
+});
+
+webMI.addEvent("clickarea_inc", "dragstart", function(e) {
+	if (e.preventDefault) {
+		e.preventDefault();
+	}
+});
+
+webMI.addEvent("clickarea_dec", "mousedown", function(e) {
+var id = "clickarea_dec";
+var value = true;
+return function(value) {
+	if (active) {
+		tabHandler.setCurrentIndex(keyHandler);
+		webMI.gfx.setFill("dec_stroke", "url(#linear_10)");
+		webMI.gfx.setStroke("dec_stroke", buttonStrokePressed);
+		buttonPressed(true, stepDec*(-1));
+	}
+} (value);
+});
+
+function releaseDec() {
+	if (active) {
+		webMI.gfx.setFill("dec_stroke", "url(#linear_7)");
+		webMI.gfx.setStroke("dec_stroke", "none");
+		buttonPressed(false, null);
+	}
+}
+
+webMI.addEvent("clickarea_dec", "mouseup", function(e) {
+var id = "clickarea_dec";
+var value = true;
+return function(value) {
+	releaseDec();
+} (value);
+});
+
+
+webMI.addEvent("clickarea_dec", "mouseout", function(e) {
+var id = "clickarea_dec";
+var value = true;
+return function(value) {
+	releaseDec();
+} (value);
+});
+
+webMI.addEvent("clickarea_dec", "dragstart", function(e) {
+	if (e.preventDefault) {
+		e.preventDefault();
+	}
+});
+
+webMI.addEvent("input_clickarea", "dragstart", function(e) {
+	if (e.preventDefault) {
+		e.preventDefault();
+	}
+});
+
+
+webMI.addEvent("input_clickarea", "click", function(e) {
+var id = "input_clickarea";
+var value = true;
+return function(value) {
+	if (active) {
+		tabHandler.setCurrentIndex(keyHandler);
+		var tmp = null;
+
+		if (isTouch) {
+			var keyboard = "";
+			var size = (format != undefined && format == CONST_NUMBER_FORMAT) ? {w: 438, h: 378} : {w: 550, h: 250};
+
+
+			if (format != undefined && format == CONST_NUMBER_FORMAT) {
+				keyboard = "SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.keyboard.number_keyboard";
+			} else {
+				keyboard = "SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.keyboard.keyboard";
+			}
+			var keyboardParam = getDisplayParameters();
+			webMI.display.openWindow({display:keyboard,extern:false,height:size.h,menubar:false,modal:true,movable:true,resizable:false,scrollbars:false,status:false,title:"T{Keyboard}",toolbar:false,width:size.w,query:keyboardParam});
+		} else {
+			tmp = prompt("T{Input value:}", curValue);
+		}
+
+		if (tmp == null) {
+			return false;
+		}
+
+		var tmpValue = parseFloat(tmp);
+
+		if (isNaN(tmpValue)) {
+			alert("T{Invalid format!}");
+		} else if ((String(max) != "") && (tmpValue > max)) {
+			alert("T{Value too high!}");
+		} else if ((String(min) != "") && (tmpValue < min)) {
+			alert("T{Value too low!}");
+		} else {
+			curValue = tmpValue;
+			setCurrentValue(curValue);
+		}
+	}
+} (value);
+});
+webMI.addOnload(function() {
+	var doc = document.getElementById("input_clickarea").ownerDocument;
+	tabHandler.register(tabIndex,keyHandler,doc);
+});
+
+if (tooltip != ""){
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tooltip", {"auto":"true", "id":"input_clickarea", "text":tooltip});
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tooltip", {"auto":"true", "id":"clickarea_dec", "text":tooltip});
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tooltip", {"auto":"true", "id":"clickarea_inc", "text":tooltip});
+}]]></script>
+</svg>

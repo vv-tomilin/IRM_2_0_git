@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/variwide.js.map
+NodeClass: Variable
+BrowseName: 1:variwide.js.map
+DisplayName: en|variwide.js.map
+Description: en|variwide.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

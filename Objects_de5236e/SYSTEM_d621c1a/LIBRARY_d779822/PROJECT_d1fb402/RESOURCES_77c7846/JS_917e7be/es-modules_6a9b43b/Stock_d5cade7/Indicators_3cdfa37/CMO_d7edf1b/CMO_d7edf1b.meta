@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Stock/Indicators/CMO
+NodeClass: Object
+BrowseName: 1:CMO
+DisplayName: en|CMO
+Description: en|CMO
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

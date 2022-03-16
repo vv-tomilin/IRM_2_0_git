@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="startup" type="startup" trigger="true" relative="false" value=""/>
+  <parameter name="connection" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Halliburton.connection"/>
+  <parameter name="interval" type="interval" trigger="true" relative="false" value="" offset="00:00:00" interval="00:01:00"/>
+  <code><![CDATA[if (connection) return
+
+var connectionNode = new UaNode("ns=1;s=AGENT.OBJECTS.Halliburton.connection");
+var t = new TCPClient();
+
+connectionNode.assign({value: Boolean(true)})
+
+function connect() {
+	try {
+		t.connect("127.0.0.1", 8081);
+		//console.log("[TCPConnection]: connected");
+		
+		while(1) {
+			var response_content = t.receive(1000000000);
+			//console.log(response_content)
+			if(response_content.length > 1) {
+				try {
+				
+				var res = JSON.parse(response_content)
+				var nnode = new UaNode(res.idnode);
+				
+				res.map(function(item) {
+					try {
+						var nnode = new UaNode(item.idnode);
+						//console.log(typeof valuestr)
+						nnode.assign({value: JSON.stringify(item.value)});
+					}
+					catch(e){
+						//console.log("[TCPConnection] Error: Cannot assign value for ", nodeidstr);
+					}
+				})
+				//console.log(res.idnode);			
+				//nnode.assign({value: String(res.value)});
+				
+				/*
+					var docXML = new XMLDoc(response_content, "string");
+					
+					var node = docXML.root.first("node");
+						
+					for (; node; node = node.next("node")) {
+						var xnodeid = node.first("idnode");
+						//var xservertime = node.first("servertime");
+						var xvalue = node.first("value");
+						var xstatus = node.first("status");
+						if (xnodeid.first(XMLDoc.TEXT_NODE).content != "nodata"){
+							var nodeidstr = xnodeid.first(XMLDoc.TEXT_NODE).content;
+							var valuestr = xvalue.first(XMLDoc.TEXT_NODE).content;
+							var statusstr = xstatus.first(XMLDoc.TEXT_NODE).content;
+	
+							try {
+								var nnode = new UaNode(nodeidstr);
+								//console.log(typeof valuestr)
+								nnode.assign({value: String(valuestr)});
+							}
+							catch(e){
+								console.log("[TCPConnection] Error: Cannot assign value for ", nodeidstr);
+							}
+								
+						} 
+						else {
+							console.log("XML = ",xnodeid.first(XMLDoc.TEXT_NODE).content);
+						}						
+					}
+				*/				
+				}		
+				catch(e){
+					//console.log("[TCPConnection] Error: Cannot parse XML!!", e);
+				}				
+			}
+			else {
+				//console.log("[TCPConnection]: no content received");
+				//break;
+			}
+		}	
+		t.close();
+		connectionNode.assign({value: false});
+	}
+	catch(e){
+		//console.log("[TCPConnection]: Cannot connect to TCP server");
+		t.close();
+		connectionNode.assign({value: false})
+		//connect();
+	}
+	finally {
+		if(!!t){
+			//console.log("[TCPConnection]: connection closed");
+			t.close();
+			connectionNode.assign({value: false})
+		}
+	}
+}
+connect();
+
+console.log("tcp end")]]></code>
+</script>

@@ -1,0 +1,10 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Load".Descent_Limit
+NodeClass: Variable
+BrowseName: 1:Descent_Limit
+DisplayName: en|Descent_Limit
+Description: en|Descent_Limit
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseDataVariableType

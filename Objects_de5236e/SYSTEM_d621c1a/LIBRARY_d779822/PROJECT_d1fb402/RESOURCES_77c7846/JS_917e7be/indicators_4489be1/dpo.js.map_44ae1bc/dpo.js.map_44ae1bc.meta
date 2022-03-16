@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/indicators/dpo.js.map
+NodeClass: Variable
+BrowseName: 1:dpo.js.map
+DisplayName: en|dpo.js.map
+Description: en|dpo.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

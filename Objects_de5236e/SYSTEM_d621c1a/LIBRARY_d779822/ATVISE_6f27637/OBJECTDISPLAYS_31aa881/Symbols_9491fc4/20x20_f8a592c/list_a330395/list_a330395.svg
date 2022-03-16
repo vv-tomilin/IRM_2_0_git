@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg width="20" x="0px" version="1.1" y="0px" xmlns="http://www.w3.org/2000/svg" height="20" xmlns:xlink="http://www.w3.org/1999/xlink" id="Ebene_1" enable-background="new 0 0 20 20" xml:space="preserve" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs/>
+ <metadata>
+  <atv:parameter desc="symbol color" valuetype="color" substitute="$SYMBOLCOLOR$" behavior="optional" name="symbolColor" defaultvalue="#000000"/>
+  <atv:gridconfig width="20" enabled="false" height="20" gridstyle="lines"/>
+  <atv:snapconfig width="10" enabled="false" height="10"/>
+ </metadata>
+ <path fill="$SYMBOLCOLOR$" id="id_2" atv:refpx="10.108" atv:refpy="10.146" stroke-width="1" d="M16.71,0.1L16.244,0.1L12.863,0.1L12.075,0.1L11.592,0.1L3.277,0.1L3.277,19.9L15.7,19.9L16.263,19.9L16.722,19.9L16.722,4.583L16.722,4.443L16.722,3.472ZM4.131,18.921L4.131,0.922L12.073,0.922L15.698,0.922L15.698,4.443L15.698,18.919Z"/>
+ <rect width="9.453" x="5.236" y="12.642" fill="$SYMBOLCOLOR$" height="0.979" id="id_6" atv:refpx="9.962" atv:refpy="13.132" stroke-width="1"/>
+ <rect width="9.453" x="5.236" y="16.967" fill="$SYMBOLCOLOR$" height="0.979" id="id_7" atv:refpx="9.962" atv:refpy="17.457" stroke-width="1"/>
+ <rect width="9.453" x="5.236" y="14.804" fill="$SYMBOLCOLOR$" height="0.979" id="id_8" atv:refpx="9.962" atv:refpy="15.294" stroke-width="1"/>
+ <rect width="9.453" x="5.236" y="6.154" fill="$SYMBOLCOLOR$" height="0.979" id="id_0" atv:refpx="9.962" atv:refpy="6.644" stroke-width="1"/>
+ <rect width="9.453" x="5.236" y="10.479" fill="$SYMBOLCOLOR$" height="0.979" id="id_1" atv:refpx="9.962" atv:refpy="10.969" stroke-width="1"/>
+ <rect width="9.453" x="5.236" y="8.317" fill="$SYMBOLCOLOR$" height="0.979" id="id_3" atv:refpx="9.962" atv:refpy="8.807" stroke-width="1"/>
+ <rect width="9.453" x="5.236" y="3.992" fill="$SYMBOLCOLOR$" height="0.979" id="id_5" atv:refpx="9.962" atv:refpy="4.482" stroke-width="1"/>
+ <rect width="9.453" x="5.236" y="1.829" fill="$SYMBOLCOLOR$" height="0.979" id="id_9" atv:refpx="9.962" atv:refpy="2.319" stroke-width="1"/>
+</svg>

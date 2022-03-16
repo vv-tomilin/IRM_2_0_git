@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <code><![CDATA[var tActive = new UaNode("AGENT.OBJECTS.timer.active");
+var tSec = new UaNode("AGENT.OBJECTS.timer.sec");
+var tMin = new UaNode("AGENT.OBJECTS.timer.min");
+var tHour = new UaNode("AGENT.OBJECTS.timer.hour");
+
+if(tActive.value == 0)
+	tActive.assign({value:1});
+tSec.assign({value:0});
+tMin.assign({value:0});
+tHour.assign({value:0});
+console.log('resetTimerOper');]]></code>
+</script>

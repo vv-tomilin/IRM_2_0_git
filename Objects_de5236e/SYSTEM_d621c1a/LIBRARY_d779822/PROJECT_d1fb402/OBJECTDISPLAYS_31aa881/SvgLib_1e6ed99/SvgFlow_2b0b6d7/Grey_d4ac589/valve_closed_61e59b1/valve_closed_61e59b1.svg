@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.2" height="50" width="50" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs/>
+ <metadata>
+  <atv:gridconfig height="20" width="20" gridstyle="lines" enabled="false"/>
+  <atv:snapconfig height="10" width="10" enabled="false"/>
+ </metadata>
+ <g atv:refpy="25" transform="matrix(200,0,0,200,0,0)" id="id_2" atv:refpx="25">
+  <svg atv:refpy="0.125" id="id_1" atv:refpx="0.125">
+   <g>
+    <g id="frame">
+     <rect height="100" width="100" fill="none"/>
+    </g>
+    <g id="shape">
+     <rect height="19" width="5.667" fill="#999" y="40.5"/>
+     <rect height="19" x="94.333" width="5.667" fill="#999" y="40.5"/>
+     <rect height="16" width="100" fill="#999" y="42"/>
+     <circle cy="50" cx="50" r="27.5" fill="#999"/>
+    </g>
+    <g id="dark">
+     <rect height="13.988" width="100" fill="#808080" y="43.006"/>
+     <circle cy="50" cx="50" r="26.5" fill="#808080"/>
+    </g>
+    <g id="light">
+     <path d="M50,28.5c-11.874,0-21.5,9.626-21.5,21.5S38.126,71.5,50,71.5S71.5,61.874,71.5,50S61.874,28.5,50,28.5z&#xd;&#xa;&#x9;&#x9; M50,70c-11.046,0-20-8.954-20-20s8.954-20,20-20s20,8.954,20,20S61.046,70,50,70z" fill="#b2b2b2"/>
+     <g fill="#b2b2b2">
+      <path d="M100,45.004H69.346C69.758,46.604,70,48.272,70,50s-0.242,3.396-0.654,4.996H100V45.004z" fill="#b2b2b2"/>
+      <path d="M30.654,45.004H0v9.992h30.655C30.242,53.396,30,51.728,30,50S30.242,46.604,30.654,45.004z" fill="#b2b2b2"/>
+      <path d="M54.996,69.346V30.654C53.396,30.242,51.728,30,50,30s-3.396,0.242-4.996,0.654v38.691&#xd;&#xa;&#x9;&#x9;&#x9;C46.604,69.758,48.272,70,50,70S53.396,69.758,54.996,69.346z" fill="#b2b2b2"/>
+     </g>
+    </g>
+    <g id="hlight">
+     <path d="M28.5,50c0-1.195,0.122-2.358,0.31-3.5H0v7h28.81C28.622,52.358,28.5,51.195,28.5,50z" fill="#ccc"/>
+     <path d="M46.5,69.675C47.638,69.876,48.804,70,50,70s2.362-0.124,3.5-0.325V68.97V30.325&#xd;&#xa;&#x9;&#x9;C52.362,30.124,51.196,30,50,30s-2.362,0.124-3.5,0.325V69.16V69.675z" fill="#ccc"/>
+     <path d="M73.411,46.5h-2.22c0.187,1.142,0.31,2.305,0.31,3.5s-0.122,2.358-0.31,3.5h2.03H100v-7H73.411z" fill="#ccc"/>
+    </g>
+   </g>
+  </svg>
+ </g>
+</svg>

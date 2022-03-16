@@ -1,0 +1,10 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Accessibility/Components/SeriesComponent/ForcedMarkers.js
+NodeClass: Variable
+BrowseName: 1:ForcedMarkers.js
+DisplayName: en|ForcedMarkers.js
+Description: en|ForcedMarkers.js
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Javascript
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Javascript.Compress

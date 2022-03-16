@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="to" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook.talkanat"/>
+  <parameter name="hookweight" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Test.ForMainWindow.hookWeight"/>
+  <parameter name="pHP" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition.previous"/>
+  <parameter name="pWOH" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook.previous"/>
+  <parameter name="weightonhook" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook"/>
+  <code><![CDATA[//console.log('DED jivoy')
+var dt=Date.now()
+var sourcenode = new UaNode(to);
+var WOfH = new UaNode(hookweight);
+var prevWOH = new UaNode(pWOH);
+var prevHP = new UaNode(pHP);
+
+/////////запрос
+var rawWOH=call("SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.Report.simplifier",{"nodeName":'g:AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook',"startT":dt-60000,"endT":dt})
+
+var rawHP=call("SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.Report.simplifier",{"nodeName":'g:AGENT.OBJECTS.IVE50.Drawworks.HookPosition',"startT":dt-60000,"endT":dt})
+
+var WOH_bs=[]
+var HP_bs=[]
+
+////разбиение по секундам
+
+for(var i = dt-60000;i<=dt;i+=1000){
+
+	var buf=[]
+	buf=rawWOH.filter(function(e){
+		if((e[0]>=i)&(e[0]<i+1000)){
+			return true
+		}
+		return false
+	}).map(function(e){return e[1]})
+	if(buf.length==0){WOH_bs.push('null')}
+	else if(buf.length>1){
+		var sum=0;
+		buf.forEach(function(e){sum+=e})
+		WOH_bs.push(sum/buf.length)
+	}else WOH_bs.push(buf[0])
+	
+	buf=rawHP.filter(function(e){
+		if((e[0]>=i)&(e[0]<i+1000)){
+			return true
+		}
+		return false
+	}).map(function(e){return e[1]})
+	if(buf.length==0){HP_bs.push('null')}
+	else if(buf.length>1){
+		var sum=0;
+		buf.forEach(function(e){sum+=e})
+		HP_bs.push(sum/buf.length)
+	}else HP_bs.push(buf[0])
+}
+
+///////////очистка пустых, усреднение если несколько в секунду
+
+
+
+for(var i=0;i<WOH_bs.length;i++){
+	if(WOH_bs[i]=='null'){
+		if(i==0){WOH_bs[0]=prevWOH.value}
+		else{WOH_bs[i]=WOH_bs[i-1]}
+	}
+	if(HP_bs[i]=='null'){
+		if(i==0){HP_bs[0]=prevHP.value}
+		else{HP_bs[i]=HP_bs[i-1]}
+	}
+}
+
+var res=0;
+
+for(var i=0;i<WOH_bs.length;i++){
+	var buf=0;
+	var WOH_now=WOH_bs[i]+(WOfH.value/1000)
+	var HP_now=0
+	if(i==0){
+		HP_now=Math.abs(HP_bs[0]-prevHP.value)
+	}else{
+		HP_now=Math.abs(HP_bs[i]-HP_bs[i-1])
+	}
+	//console.log('ves: ' + WOH_now+' rast: '+HP_now+' res: '+WOH_now*HP_now)
+	res+=(WOH_now*HP_now)
+	
+}
+//console.log(res)
+/*
+var sourcenode = new UaNode(to);
+var WOfH = new UaNode(hookweight);
+var prevWOH = new UaNode(pWOH);
+var prevHP = new UaNode(pHP);
+*/
+
+prevWOH.assign({value:WOH_bs[WOH_bs.length-1]})
+prevHP.assign({value:HP_bs[HP_bs.length-1]})
+sourcenode.assign({value:sourcenode.value+res})]]></code>
+</script>

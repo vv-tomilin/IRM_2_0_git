@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.report_date
+NodeClass: Variable
+BrowseName: 1:report_date
+DisplayName: en|report_date
+Description: en|report_date
+DataType: DateTime
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

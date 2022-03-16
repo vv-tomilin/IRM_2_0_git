@@ -1,0 +1,9 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.WeatherStationType.Anemometer
+NodeClass: Object
+BrowseName: 1:Anemometer
+DisplayName: en|Anemometer
+Description: en|Anemometer
+EventNotifier: 0
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.PROJECT.PROJECT.WeatherStationAnemometerType
+Reference: forward HasComponent ns=1;s=ObjectTypes.PROJECT.PROJECT.WeatherStationAnemometerType.Overview

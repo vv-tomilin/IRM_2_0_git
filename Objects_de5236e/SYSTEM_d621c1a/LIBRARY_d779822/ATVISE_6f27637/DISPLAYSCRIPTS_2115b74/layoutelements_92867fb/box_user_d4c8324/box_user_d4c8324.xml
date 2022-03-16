@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+	<metadata>
+		<priority>0</priority>
+	</metadata>
+	<code><![CDATA[/**
+ * Code for the layout element box user object display
+ * ----------------------------------------
+ * This script supports the display showing user and login dialog.
+ */
+
+
+/**
+ * DECLARATION SECTION
+ */
+var fillColor = webMI.query["fillColor"];
+var buttonFillColorInactive = webMI.query["buttonFillColorInactive"];
+var height = webMI.query["height"];
+var width = webMI.query["width"];
+var loggedIn = false;
+var loginmethod = null;
+var activatedEvents = true;
+var symbolScaling = parseInt(webMI.query["symbolScaling"], 10);
+
+
+/**
+ * UI SETUP SECTION
+ */
+webMI.gfx.setStrokeWidth("button_login_id_0", 3);
+webMI.gfx.setRadiusX("button_login_id_0", 5);
+webMI.gfx.setRadiusY("button_login_id_0", 5);
+webMI.gfx.setFill("button_login_id_3", webMI.gfx.getFill("button_login_id_0"));
+
+
+/**
+ * RUNTIME SECTION
+ * Runtime code has to be executed after onload to take care all other resources are ready
+ */
+webMI.addOnload(function () {
+	webMI.data.call("info", {}, function (e) { //get information from webmi.js
+		loginmethod = e.loginmethod;
+		if (loginmethod == "none") {
+			setButton(false);
+			return;
+		}
+		webMI.addEvent(webMI.data, "clientvariableschange", function (e) {
+				loggedIn = (e.username != "" && e.username != undefined);
+				if (loggedIn && loginmethod == "form")
+					webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.AutoLogout", {"action": "start"});
+				if ("username" in e) {
+					if (loginmethod == "http" || loginmethod == "ntlm") //ntml is not defined in webmi
+						setButton(false);
+					else if (loginmethod == "form")
+						setButton(true);
+				}
+				else if (e.username == undefined) //webMI2ADS 2.0.1 specific fix to enable login
+					setButton(true);
+			}
+		);
+	});
+
+	/* set and scale icon position */
+	var FRAME = {};
+	FRAME.element = document.getElementById("clickarea");
+	FRAME.height = parseInt(FRAME.element.getAttribute("height"));
+	FRAME.width = parseInt(FRAME.element.getAttribute("width"));
+
+	var SYMBOL = {};
+	SYMBOL.element = document.getElementById("button_symbol").parentNode;
+	SYMBOL.height = parseInt(SYMBOL.element.getAttribute("height"));
+	SYMBOL.width = parseInt(SYMBOL.element.getAttribute("width"));
+
+	if (symbolScaling != 0 && symbolScaling != 100) {
+		var scale = {};
+		scale.x = FRAME.width / SYMBOL.width;
+		scale.y = FRAME.height / SYMBOL.height;
+		scale.value = symbolScaling / 100;
+
+		var offset = {};
+		offset.x = 20 * (scale.x - scale.value) / 2;
+		offset.y = 20 * (scale.y - scale.value) / 2;
+
+		var icon = document.getElementById("button_symbol");
+		icon.setAttribute("viewBox", "0,0,20,20");
+		icon.setAttribute("x", 4.694 * scale.x + offset.x);
+		icon.setAttribute("y", 4.694 * scale.y + offset.y);
+		icon.setAttribute("width", 20 * scale.value);
+		icon.setAttribute("height", 20 * scale.value);
+	}
+});
+
+
+/**
+ * FUNCTION SECTION
+ */
+function setButton(active) {
+	webMI.gfx.setVisible("button_symbol_pressed", loggedIn);
+	webMI.gfx.setVisible("button_symbol", !loggedIn);
+	webMI.gfx.setFill("button_bg", active ? fillColor : buttonFillColorInactive);
+	activatedEvents = active;
+}
+
+
+
+/**
+ * EVENT SECTION
+ */
+webMI.addEvent(webMI.data, "clientvariableschange", function (e) {
+	if ("username" in e) {
+		username = (e.username != "") ? e.username : null;
+		loggedIn = (e.username != "");
+		if (loggedIn) {
+			webMI.gfx.setText("user", "T{User}: " + username);
+		} else {
+			webMI.gfx.setText("user", "T{Login}");
+		}
+	}
+});
+
+webMI.addEvent("clickarea", "click", function (e) {
+	if (loggedIn == false && loginmethod == "form") {
+		webMI.display.openWindow({
+			display: "SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dialogs.login_dialog",
+			extern: false,
+			height: height,
+			menubar: false,
+			modal: true,
+			movable: true,
+			resizable: false,
+			scrollbars: false,
+			status: false,
+			title: "T{Login}",
+			toolbar: false,
+			width: width,
+			query: webMI.query
+		});
+	} else if (loggedIn == false && loginmethod == "http") { //webMI2ADS 2.0.1 specific fix to enable login
+		webMI.data.login();
+	} else if (loggedIn == true && loginmethod == "form") {
+		webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.AutoLogout", {"action": "manualLogout"});
+		webMI.data.logout(function () {
+		});
+	}
+});
+]]></code>
+</script>

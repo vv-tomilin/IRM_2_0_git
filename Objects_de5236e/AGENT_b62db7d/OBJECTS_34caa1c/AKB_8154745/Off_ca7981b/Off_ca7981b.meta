@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AKB.Off
+NodeClass: Variable
+BrowseName: 1:Off
+DisplayName: en|Off
+Description: en|Off
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

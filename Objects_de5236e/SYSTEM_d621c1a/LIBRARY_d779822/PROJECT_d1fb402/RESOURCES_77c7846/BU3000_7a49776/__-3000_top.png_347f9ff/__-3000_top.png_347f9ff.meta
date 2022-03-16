@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/BU3000/БУ-3000_top.png
+NodeClass: Variable
+BrowseName: 1:БУ-3000_top.png
+DisplayName: en|БУ-3000_top.png
+Description: en|БУ-3000_top.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

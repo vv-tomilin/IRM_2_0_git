@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/GGD_page/button_red.png
+NodeClass: Variable
+BrowseName: 1:button_red.png
+DisplayName: en|button_red.png
+Description: en|button_red.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/treemap.js.map
+NodeClass: Variable
+BrowseName: 1:treemap.js.map
+DisplayName: en|treemap.js.map
+Description: en|treemap.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

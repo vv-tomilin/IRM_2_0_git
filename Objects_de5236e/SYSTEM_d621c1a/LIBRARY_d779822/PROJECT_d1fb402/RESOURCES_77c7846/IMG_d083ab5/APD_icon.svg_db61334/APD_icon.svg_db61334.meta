@@ -1,0 +1,11 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/IMG/APD_icon.svg
+NodeClass: Variable
+BrowseName: 1:APD_icon.svg
+DisplayName: en|APD_icon.svg
+Description: en|APD_icon.svg
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Svg
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Svg.Compress
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Svg.Translate

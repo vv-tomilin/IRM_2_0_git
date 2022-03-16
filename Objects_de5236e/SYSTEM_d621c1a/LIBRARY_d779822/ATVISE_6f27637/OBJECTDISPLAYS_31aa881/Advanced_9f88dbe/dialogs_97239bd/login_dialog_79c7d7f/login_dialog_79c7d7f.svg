@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="430" height="280" xmlns:atv="http://webmi.atvise.com/2007/svgext" version="1.2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <desc>Simple display that can be used as dialog to login.</desc>
+ <title>Login dialog</title>
+ <metadata>
+  <atv:parameter name="fontColor" valuetype="global" substitute="$FONTCOLOR$" defaultvalue="SYSTEM.GLOBALS.atvFontColor" desc="font color" behavior="optional"/>
+  <atv:parameter name="fillColor" valuetype="global" substitute="$FILLCOLOR$" defaultvalue="SYSTEM.GLOBALS.atvFillColor" desc="fill color" behavior="optional"/>
+  <atv:parameter name="symbolColor" valuetype="global" substitute="$SYMBOLCOLOR$" defaultvalue="SYSTEM.GLOBALS.atvSymbolColor" desc="symbol color" behavior="optional"/>
+  <atv:gridconfig width="20" gridstyle="lines" height="20" enabled="true"/>
+  <atv:snapconfig width="10" height="10" enabled="true"/>
+ </metadata>
+ <rect width="430" x="0" id="background" y="0" atv:refpy="140" height="280" fill="$FILLCOLOR$" stroke="none" atv:refpx="215" stroke-width="0"/>
+ <rect width="390" x="20" id="id_13" y="150" atv:refpy="105" height="50" fill="#ffffff" stroke="none" atv:refpx="-186.142" ry="10" rx="10" stroke-width="0"/>
+ <rect width="390" x="20" id="username_background" y="90" atv:refpy="115" height="50" fill="#ffffff" stroke="none" atv:refpx="215" ry="10" rx="10" stroke-width="0"/>
+ <rect width="200" x="110" id="id_1" y="210" atv:refpy="165" height="50" fill="none" stroke="none" atv:refpx="4.286" ry="5.961" rx="5.961" stroke-width="0"/>
+ <svg width="80" x="120" id="ok_button" y="220" atv:refpy="235" atv:dynamic="true" height="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" atv:refpx="160">
+  <atv:argument name="label" value="T{OK}"/>
+  <atv:argument name="tabIndex" value="5"/>
+  <atv:argument name="borderVisible" value="true"/>
+  <atv:argument name="extraBorderColor" value="#FFFFFF"/>
+ </svg>
+ <svg width="80" x="220" id="cancel_button" y="220" atv:refpy="235" atv:dynamic="true" height="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" atv:refpx="260">
+  <atv:argument name="label" value="T{Cancel}"/>
+  <atv:argument name="tabIndex" value="6"/>
+  <atv:argument name="borderVisible" value="true"/>
+  <atv:argument name="extraBorderColor" value="#FFFFFF"/>
+ </svg>
+ <svg width="160" x="151.111" id="username_input" y="100" atv:refpy="115" height="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.in_out_value" atv:refpx="260" transform="matrix(1.125,0,0,1,0,0)">
+  <atv:argument name="validation" value="String"/>
+  <atv:argument name="allowDirectInput" value="Yes"/>
+  <atv:argument name="tabIndex" value="1"/>
+  <atv:overwrite width="174.5" id="id_2" transform="matrix(0.8889,0,0,1,0,0)"/>
+  <atv:overwrite width="179.5" id="id_0" transform="matrix(0.8889,0,0,1,0,0)"/>
+  <atv:overwrite id="input_label" x="171.5" transform="matrix(0.8889,0,0,1,0,0)"/>
+  <atv:overwrite width="172" id="input_bg" transform="matrix(0.8889,0,0,1,0,0)"/>
+ </svg>
+ <svg width="160" x="151.111" id="password_input" y="160" atv:refpy="175" height="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.in_out_value" atv:refpx="260" transform="matrix(1.125,0,0,1,0,0)">
+  <atv:argument name="validation" value="String"/>
+  <atv:argument name="password" value="Yes"/>
+  <atv:argument name="allowDirectInput" value="Yes"/>
+  <atv:argument name="tabIndex" value="3"/>
+  <atv:overwrite width="174.5" id="id_2" transform="matrix(0.8889,0,0,1,0,0)"/>
+  <atv:overwrite width="179.5" id="id_0" transform="matrix(0.8889,0,0,1,0,0)"/>
+  <atv:overwrite id="input_label" x="171.5" transform="matrix(0.8889,0,0,1,0,0)"/>
+  <atv:overwrite width="172" id="input_bg" transform="matrix(0.8889,0,0,1,0,0)"/>
+ </svg>
+ <text x="34" id="username_label" font-size="16" y="119.5" atv:refpy="113.5" font-family="Arial" fill="$FONTCOLOR$" atv:refpx="79.5">T{Username}</text>
+ <text x="34" id="password_label" font-size="16" y="179.5" atv:refpy="173.5" font-family="Arial" fill="$FONTCOLOR$" atv:refpx="78.5">T{Password}</text>
+ <text x="216" id="status_message" text-anchor="middle" font-size="12" y="49" atv:refpy="44.5" font-family="Arial" fill="$FONTCOLOR$" atv:refpx="216">T{Please enter username and password.}</text>
+ <svg width="80" x="960" id="username_keyboard" y="100" atv:refpy="115" atv:dynamic="true" height="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" atv:refpx="375" transform="matrix(0.375,0,0,1,0,0)">
+  <atv:argument name="symbol" value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.keyboard"/>
+  <atv:argument name="visibilitySymbol" value="inherit"/>
+  <atv:argument name="visibilityLabel" value="hidden"/>
+  <atv:argument name="tabIndex" value="2"/>
+  <atv:overwrite width="24.5" id="id_2" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="29.5" id="id_0" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="30" id="id_1" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="28" id="id_6" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite id="button_symbol" x="5" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite id="button_label" x="15" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="26" id="button_stroke" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="28" id="button_bg" transform="matrix(2.6667,0,0,1,0,0)"/>
+ </svg>
+ <svg width="80" x="960" id="password_keyboard" y="160" atv:refpy="175" atv:dynamic="true" height="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" atv:refpx="375" transform="matrix(0.375,0,0,1,0,0)">
+  <atv:argument name="symbol" value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.keyboard"/>
+  <atv:argument name="visibilitySymbol" value="inherit"/>
+  <atv:argument name="visibilityLabel" value="hidden"/>
+  <atv:argument name="tabIndex" value="4"/>
+  <atv:overwrite width="24.5" id="id_2" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="29.5" id="id_0" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="30" id="id_1" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="28" id="id_6" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite id="button_symbol" x="5" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite id="button_label" x="15" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="26" id="button_stroke" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite width="28" id="button_bg" transform="matrix(2.6667,0,0,1,0,0)"/>
+ </svg>
+ <svg width="60" x="30" id="status_symbol" y="37.5" atv:refpy="45" height="60" visibility="hidden" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.60x60.prohibition_sign_grey" atv:refpx="40" transform="matrix(0.6667,0,0,0.6667,0,0)">
+  <atv:argument name="symbolColor" prefix="symbolColor" value=""/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[var trigger_username = "com.atvise.login.username";
+var trigger_password = "com.atvise.login.password";
+var username = "";
+var password = "";
+
+webMI.addOnload(function(e) {
+	webMI.trigger.fire("setValue", "", "username_input");
+	webMI.trigger.fire("setValue", "", "password_input");
+});
+
+webMI.trigger.connect("valuechanged", function(e) {
+	username = e.value;
+}, "username_input");
+
+webMI.trigger.connect("valuechanged", function(e) {
+	password = e.value;
+}, "password_input");
+
+webMI.trigger.connect(trigger_password, function(e) {
+	password = e.value;
+	webMI.trigger.fire("setValue", e.value, "password_input");
+});
+
+webMI.trigger.connect(trigger_username, function(e) {
+	username = e.value;
+	webMI.trigger.fire("setValue", e.value, "username_input");
+});
+
+webMI.trigger.connect("clicked", function(e) {
+	webMI.display.closeWindow();
+}, "cancel_button");
+
+webMI.trigger.connect("clicked", function(e) {
+	webMI.data.login(username, password, function(e) {
+		if (e[""].hasOwnProperty("username") && e[""].username){
+			webMI.display.closeWindow();
+		} else if (e[""].hasOwnProperty("username")) {
+			webMI.gfx.setText("status_message", "T{Login failed! Username/password wrong.}");
+			webMI.gfx.setVisible("status_symbol", null);
+		} else if (e[""].hasOwnProperty("error")) {
+			webMI.gfx.setText("status_message", "T{Login failed! Username/password wrong.}");
+			webMI.gfx.setVisible("status_symbol", null);
+		} else {
+			webMI.display.closeWindow();
+		}
+	});
+}, "ok_button");
+
+webMI.trigger.connect("clicked", function(e) {
+	webMI.query.trigger = trigger_username;
+	webMI.query.password = "No";
+	webMI.query.value = "";
+	webMI.display.openWindow({display:"SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.keyboard.keyboard",extern:false,height:250,menubar:false,modal:true,movable:true,resizable:false,scrollbars:false,status:false,title:"T{Keyboard}",toolbar:false,width:550,query:webMI.query});
+}, "username_keyboard");
+
+webMI.trigger.connect("clicked", function(e) {
+	webMI.query.trigger = trigger_password;
+	webMI.query.password = "Yes";
+	webMI.query.value = "";
+	webMI.display.openWindow({display:"SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.keyboard.keyboard",extern:false,height:250,menubar:false,modal:true,movable:true,resizable:false,scrollbars:false,status:false,title:"T{Keyboard}",toolbar:false,width:550,query:webMI.query});
+}, "password_keyboard");]]></script>
+</svg>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.MENUSCRIPTS.callScript
+NodeClass: Variable
+BrowseName: 1:callScript
+DisplayName: en|callScript
+Description: en|callScript
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

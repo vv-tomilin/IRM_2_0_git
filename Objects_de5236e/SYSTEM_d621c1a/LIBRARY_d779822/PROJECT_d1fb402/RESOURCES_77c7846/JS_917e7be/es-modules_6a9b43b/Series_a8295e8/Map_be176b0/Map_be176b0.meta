@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/Map
+NodeClass: Object
+BrowseName: 1:Map
+DisplayName: en|Map
+Description: en|Map
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

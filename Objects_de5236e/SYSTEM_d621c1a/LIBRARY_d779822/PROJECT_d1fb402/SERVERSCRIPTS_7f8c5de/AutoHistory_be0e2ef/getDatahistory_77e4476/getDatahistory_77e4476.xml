@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nodeStr" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="timestart" type="number" trigger="false" relative="false" value=""/>
+  <parameter name="numvalue" type="number" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var strJSONArray = nodeStr+'.JsonArray';
+var nodeJsonArray = new UaNode(strJSONArray);
+var valJsonArray = nodeJsonArray.value;
+
+if(valJsonArray===null){
+	//console.log('No JsonArray');
+	return null;
+}
+//console.log('valJsonArray = '+valJsonArray);
+var arrObj = [];
+if(valJsonArray !=''){
+	arrObj = JSON.parse(valJsonArray);
+}
+// else {
+//	console.log('No JsonArray');
+//}
+//console.log('arrObjRec.length = '+arrObj.length);
+if(numvalue){
+	if(arrObj.length > 0){ 	
+		retArr = arrObj.slice(numvalue*-1);
+/*		var counter = 0;
+		for(var i = arrObj.length-1; i >=0 ; i--){
+			console.log('counter = '+counter+', numvalue = '+numvalue);
+			if(counter++ >= numvalue){
+				break;
+			}
+		}
+		console.log('counter = '+counter);
+		retArr = arrObj.slice(arrObj.length-counter);
+*/		
+	}
+} else 
+if(timestart){
+var i=0;
+for (i = 0; i < arrObj.length; i++) {
+	if(new Date(arrObj[i].servertime.replace(/"/g, '')) >= new Date(timestart)){
+		//console.log('i = '+i);
+		break;
+	}
+}
+var retArr = arrObj.slice(i);
+if(retArr.length%2 == 0)
+	retArr = arrObj.slice(i-1);
+//console.log('retArr.length = ', retArr.length);
+//console.log('retArr = ', retArr);	
+}
+return retArr;]]></code>
+</script>

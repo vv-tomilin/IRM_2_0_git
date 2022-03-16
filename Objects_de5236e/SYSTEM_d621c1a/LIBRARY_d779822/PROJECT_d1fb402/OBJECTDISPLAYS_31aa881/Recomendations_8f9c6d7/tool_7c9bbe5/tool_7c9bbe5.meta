@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Recomendations.tool
+NodeClass: Object
+BrowseName: 1:tool
+DisplayName: en|tool
+Description: en|tool
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

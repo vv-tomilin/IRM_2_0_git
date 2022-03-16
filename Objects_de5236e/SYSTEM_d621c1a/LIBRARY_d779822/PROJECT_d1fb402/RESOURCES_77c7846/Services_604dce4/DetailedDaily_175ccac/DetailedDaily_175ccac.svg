@@ -1,0 +1,584 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="1015" version="1.2" width="1850" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:parameter behavior="optional" defaultvalue="" name="table" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="" name="service" valuetype="string"/>
+  <atv:gridconfig enabled="true" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <g atv:insensitive="true" atv:refpx="0" atv:refpy="0" id="id_0" transform="matrix(1.0278,0,0,1.1278,0,0)">
+  <rect atv:refpx="900" atv:refpy="450" fill="#1f1f1f" height="900.00" id="id_1" width="1800.00" x="0" y="0"/>
+ </g>
+ <foreignObject height="763.848" id="id_2" width="1850" x="2.136" y="136.714">
+  <div style="width:100%;height:100%;overflow:visible;" xmlns="http://www.w3.org/1999/xhtml">
+   <div class="printTable" id="tableContainer" style="width:100%;height:100%;overflow:auto;color:#FFF;">
+    <style>
+.printTable * {
+	overflow: visible;
+}
+.printTable::-webkit-scrollbar{
+	width: 20px;
+}
+.printTable::-webkit-scrollbar-corner {
+	display: none;
+}
+.printTable::-webkit-scrollbar-track {
+	border: 1px solid #999999;
+	border-radius: 4px;
+}
+.printTable::-webkit-scrollbar-thumb {
+	background-color: rgba(230,230,230, 0.8);
+	border-radius: 6px;
+	
+}
+@media print
+{   
+	#tableContainer, html, .printTable, iframe, svg, #tableCOntainer * {
+		overflow: visible !important;
+    }
+}
+</style>
+    <table class="table" id="DETable" style="color:white;font-size:.6rem;"/>
+   </div>
+   <script src="../../excelParse/snatcher.js"/>
+   <script src="../../excelParse/injectSkeleton.js"/>
+   <script src="../../excelParse/elementary.js"/>
+  </div>
+ </foreignObject>
+ <foreignObject height="39.907" id="id_4" width="136.152" x="1967.169" y="65.728">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <button class="goTo" id="openCanvas">Создать подпись</button>
+   <style>
+.goTo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background: #4286f5;
+	color: white;
+	border-color: transparent;
+	border-radius: 30px;
+	cursor:pointer;
+}
+.goTo:hover {
+	background: #4286C9;
+}
+.goTo:active {
+	transform: translateY(2px);
+}
+</style>
+  </div>
+ </foreignObject>
+ <line atv:refpx="-192.378" atv:refpy="-152.649" id="id_6" stroke="#0000ff" stroke-width="2" x1="-192.878" x2="-192.878" y1="-155.052" y2="-150.245"/>
+ <svg atv:refpx="1448.01" atv:refpy="56" height="50" id="id_3" width="200" x="1377.01" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Services.uploader" y="35"/>
+ <foreignObject height="40" id="id_12" width="80.283" x="862.456" y="89">
+  <div style="width:100%;height:100%;cursor:pointer;" xmlns="http://www.w3.org/1999/xhtml">
+   <style>
+.goto {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background: #4286f5;
+	color: white;
+	border-radius: 8px;
+	cursor:pointer;
+}
+.goto:hover {
+	background: #4286C9;
+}
+.goto:active {
+	transform: translateY(2px);
+}
+@media print {
+	.goto {
+		display: none;
+	}
+}	
+</style>
+   <div class="goto" id="goToLeft" style="width:100%;height:100%;cursor:pointer;">
+	Назад
+</div>
+  </div>
+ </foreignObject>
+ <foreignObject height="40" id="id_13" width="80" x="956.868" y="89">
+  <div style="width:100%;height:100%;cursor:pointer;" xmlns="http://www.w3.org/1999/xhtml">
+   <style>
+.goto {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width:100%;
+	height:100%;
+	background: #4286f5;
+	color: white;
+	border-radius: 8px;
+	cursor:pointer;
+}
+.goto:hover {
+	background: #4286C9;
+}
+.goto:active {
+	transform: translateY(2px);
+}
+@media print {
+	.goto {
+		display: none;
+	}
+}	
+</style>
+   <div class="goto" id="goToRight">
+Вперёд
+</div>
+  </div>
+ </foreignObject>
+ <foreignObject height="56.339" id="id_14" width="176.529" x="877.01" y="35.212">
+  <div style="width:100%;height:100%;display:flex;;align-items:center" xmlns="http://www.w3.org/1999/xhtml">
+   <input id="datePicker" type="date"/>
+  </div>
+ </foreignObject>
+ <text atv:refpx="755.117" atv:refpy="61.751" fill="#fdf1f1" font-family="Arial" font-size="16" id="id_5" transform="matrix(1.1677,0,0,1.3478,-114.5735,-14.4445)" x="687.805" y="61.035">Суточный рапорт за</text>
+ <foreignObject height="41.315" id="id_18" width="133.336" x="41.315" y="50.705">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <style>
+.goTo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background: #4286f5;
+	color: white;
+	border-radius: 30px;
+	cursor:pointer;
+}
+.goTo:hover {
+	background: #4286C9;
+}
+.goTo:active {
+	transform: translateY(2px);
+}
+</style>
+   <div class="goTo" id="backToService">Назад в сервис</div>
+  </div>
+ </foreignObject>
+ <svg atv:refpx="2027.965" atv:refpy="281.459" height="300" id="canvasus" width="300" x="1877.965" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Canvasius.Canvasus" y="131.459"/>
+ <svg atv:refpx="1108.703" atv:refpy="1068.187" height="80" id="sigImage" width="100" x="1058.703" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Canvasius.CanvImage" y="1028.187"/>
+ <foreignObject height="37.559" id="id_22" width="159.627" x="504.703" y="1082.178">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <button class="goTo" id="addSignature">Подписать как</button>
+   <style>
+.goTo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	background: #4286f5;
+	color: white;
+	border-radius: 30px;
+	cursor:pointer;
+}
+.goTo:hover {
+	background: #4286C9;
+}
+.goTo:active {
+	transform: translateY(2px);
+}
+</style>
+  </div>
+ </foreignObject>
+ <foreignObject height="44.602" id="id_23" width="298.127" x="737.101" y="1035.228">
+  <div style="width:100%;height:100%;display:flex;justift-content:center;align-items:center" xmlns="http://www.w3.org/1999/xhtml">
+   <select class="options" id="selectSignature" style="width:100%;"/>
+   <style>
+.options-unit {
+	color: rgba(255, 255, 255, 0.85);
+	background: rgb(31, 31, 31);
+	padding: 1rem .5rem;
+	text-decoration: none;
+	list-style: none;
+	cursor: pointer;
+}
+.options-text {
+	color: rgba(255, 255, 255, 0.85);
+	background: rgb(31, 31, 31);
+	padding: 1rem .5rem;
+	cursor: pointer;
+}
+.options {
+	font-size: 1rem;
+	width: 100%;
+	color: rgba(255, 255, 255, 0.85);
+	background: rgb(31, 31, 31);
+	border: 1px solid #303030;
+	padding: 1rem .5rem;
+	outline: transparent;
+	cursor: pointer;
+}
+</style>
+  </div>
+ </foreignObject>
+ <foreignObject height="49.884" id="id_7" width="61.62" x="31.104" y="946.613">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <img id="print" src="../../excelParse/icons/printer.png" style="background:#fff;width:2.5rem;height:2.5rem;border-radius:8px;cursor:pointer;"/>
+  </div>
+ </foreignObject>
+ <foreignObject height="44.602" id="id_8" width="298.127" x="1057.53" y="35">
+  <div style="width:100%;height:100%;display:flex;justift-content:center;align-items:center" xmlns="http://www.w3.org/1999/xhtml">
+   <select class="options" id="colSelect" style="width:100%;">
+    <option class="options-unit options-text" value="Direct">
+Направление
+</option>
+    <option class="options-unit options-text" value="Kond">
+	Кондуктор
+</option>
+    <option class="options-unit options-text" value="TechCol">
+	Пилотный ствол
+</option>
+    <option class="options-unit options-text" value="ExCol">
+	Эксплуатационная колонна
+</option>
+    <option class="options-unit options-text" value="Tail">
+	Хвостовик
+</option>
+   </select>
+   <style>
+.options-unit {
+	color: rgba(255, 255, 255, 0.85);
+	background: rgb(31, 31, 31);
+	padding: 1rem .5rem;
+	text-decoration: none;
+	list-style: none;
+	cursor: pointer;
+}
+.options-text {
+	color: rgba(255, 255, 255, 0.85);
+	background: rgb(31, 31, 31);
+	padding: 1rem .5rem;
+	cursor: pointer;
+}
+.options {
+	font-size: 1rem;
+	width: 100%;
+	color: rgba(255, 255, 255, 0.85);
+	background: rgb(31, 31, 31);
+	border: 1px solid #303030;
+	padding: 1rem .5rem;
+	outline: transparent;
+	cursor: pointer;
+}
+</style>
+  </div>
+ </foreignObject>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var table
+var Table = top.Table
+//console.log(inject())
+var tContainer = document.getElementById("tableContainer")
+
+var print = document.getElementById("print")
+
+var canvasus = document.getElementById("canvasus")
+
+var currentService = webMI.query["service"]
+var reportsPath = "AGENT.OBJECTS.ServiceParams." + currentService + ".reports"
+
+var sigImage = document.getElementById("sigImage")
+
+var currentSig = {}
+
+var addSignature = document.getElementById("addSignature")
+var select = document.getElementById("selectSignature")
+
+var colSelect = document.getElementById("colSelect")
+
+var signatures = []
+
+var isCanvasVisible = true
+
+var datePicker = document.getElementById("datePicker")
+
+var currentTimestamp = new Date(new Date().setHours(23,0,0,0)).getTime()
+
+var toLeft = document.getElementById("goToLeft")
+var toRight = document.getElementById("goToRight")
+
+var backToService = document.getElementById("backToService")
+
+var startDate
+var currentData
+
+webMI.data.read("AGENT.OBJECTS.Depth_day_data.start_date", function(e) {
+	startDate = e.value;
+	datePicker.min = beautifyDate(new Date(parseInt(e.value)))
+	datePicker.value = beautifyDate(new Date(currentTimestamp))
+})
+
+webMI.libraryLoader.load([], ["CSS/main.css"], function(e) {})
+
+function Publisher() {
+	this.events = {}
+}
+Publisher.prototype.subscribe = function(event, fn) {
+	if (!this.events[event]) this.events[event] = []
+	if (!this.events[event].includes(fn)) this.events[event].push(fn)
+}
+Publisher.prototype.unsubscribe = function(event, fn) {
+	var id = this.events[event].indexOf(fn)
+	if (id >= 0) this.events[event].splice(id, 1)
+}
+Publisher.prototype.publish = function(event, payload) {
+	if (!this.events[event]) this.events[event] = []
+	this.events[event].forEach(function(fn) {
+		fn(payload || 0)
+	})
+}
+
+var pub = new Publisher()
+
+pub.subscribe("setReport", function(data) {
+	//console.log(123, data)
+	if (data) {
+		//table = new Table("DETable", data.columns, { type: "fact", undeletable: "no" })
+		//table.init()
+		//table.fill(data.rows)
+		//table.table.removeEventListener("submit", submitHandler)
+		//table.table.addEventListener("submit", submitHandler)
+		tContainer.innerHTML = inject()
+		toElement(data)
+		currentData = data
+	}
+	else {
+		//table = new Table("DETable", [], { type: "plan" })
+		tContainer.innerHTML = ""
+	}
+})
+//canvasus.style.display = "none"
+
+function submitHandler() {
+	var arr = []
+	var data = Object.assign(currentData, { timestamp: currentTimestamp }, { signature: currentSig })
+	
+	webMI.data.read("AGENT.OBJECTS.ServiceParams.Mud.reports", function(rep) {
+		if (rep.value.length > 0 && rep.timestamp > startDate) {
+			arr = JSON.parse(rep.value)
+			
+			/*
+			//console.log(arr.length)
+			var id = arr.findIndex(function(item) {
+				return new Date(item.timestamp).setHours(0, 0, 0, 0) == new Date(currentTimestamp).setHours(0, 0, 0, 0)
+			})
+			
+			if (id) arr.splice(id, 1, data)
+			else arr.push(data)
+			
+			//console.log(arr)
+			webMI.data.write("AGENT.OBJECTS.ServiceParams.Mud.reports", JSON.stringify(arr))
+			*/
+		}
+		var id = arr.findIndex(function(item) {
+			return new Date(item.timestamp).setHours(0, 0, 0, 0) == new Date(currentTimestamp).setHours(0, 0, 0, 0)
+		})
+		
+		if (id) arr.splice(id, 1, data)
+		else arr.push(data)
+		
+		//console.log(arr)
+		webMI.data.write("AGENT.OBJECTS.ServiceParams.Mud.reports", JSON.stringify(arr))
+	})
+}
+
+getData()
+
+webMI.trigger.connect("setReport", function(e) {
+	//console.log(e)
+	pub.publish("setReport", e.value)
+})
+
+function toggleCanvas() {
+	webMI.trigger.fire("createCanvas")
+	if (!isCanvasVisible) {
+		//canvasus.style.display = "block"
+		webMI.trigger.fire("showCanvas")
+	}
+	else {
+		//canvasus.style.display = "none"
+		webMI.trigger.fire("hideCanvas")
+	}
+	isCanvasVisible = !isCanvasVisible
+}
+
+toggleCanvas()
+
+webMI.trigger.fire("hideCanvas")
+
+document.getElementById("openCanvas").addEventListener("click", function() {
+	toggleCanvas()
+})
+
+function uglifyDate(date) {
+	//console.log(date);
+	var day = date.replace(/\.\d{2}\.\d{4}/, "")
+	var month = date.replace(/\d{2}/, "").replace(/\.\d{4}/, "")
+	var year = date.replace(/\d{2}\.\d{2}/, "")
+	
+	var dateString = (year + "-" + month + "-" + day).replace(/\./g, "").replace(/\s/g, "")
+	
+	return new Date(dateString)
+}
+
+function beautifyDate(date) {
+	var str = ""
+	var buf
+	
+	buf = date.getFullYear()
+	if (buf < 10){
+		buf = "0" + buf
+	}
+	str += buf + "-"
+	
+	buf = date.getMonth()+1
+	if (buf < 10) {
+		buf = "0" + buf
+	}
+	str += buf + "-";
+	
+	buf = date.getDate()
+	if (buf < 10) {
+		buf= "0" + buf
+	}
+	str += buf + ""
+		/*
+	buf = date.getHours()
+	if (buf < 10){
+		buf = "0" + buf
+	}
+	str += buf + ":";
+	
+	buf = date.getMinutes()
+	if (buf < 10){
+		buf = "0" + buf
+	}
+	str += buf;
+	*/
+		
+		
+	return str
+}
+
+function changeDate(time) {
+	currentTimestamp = time
+	//console.log(beautifyDate(new Date(currentTimestamp)));
+	datePicker.value = beautifyDate(new Date(currentTimestamp))
+	webMI.trigger.fire("changeUploadDate", currentTimestamp)
+	getData()
+}
+
+function findCurrentDataByDate(arr) {
+	//console.log(arr)
+	res = arr.find(function(item) {
+		//console.log(new Date(item.timestamp).getDate(), new Date(currentTimestamp).getDate())
+		return new Date(item.timestamp).setHours(0, 0, 0, 0) == new Date(currentTimestamp).setHours(0, 0, 0, 0)
+	});
+	//console.log(res)
+	return res
+}
+
+function getData() {
+	webMI.data.read(reportsPath, function(e) {
+		if (e.value.length > 0 && startDate < e.timestamp) {
+			var data = findCurrentDataByDate(JSON.parse(e.value))
+			
+			if (data) pub.publish("setReport", data)
+			else pub.publish("setReport", null)
+		} else pub.publish("setReport", null)
+	})
+}
+
+function createOption(name, id) {
+	var option = parent.document.createElement("option")
+	
+	option.classList.add("options-unit")
+	
+	option.textContent = name
+	option.value = id
+	option.dataset.id = id
+	
+	if (!name && !id) {
+		option.disabled = true
+		option.selected = true
+	}
+	
+	return option
+}
+
+datePicker.addEventListener("change", function(e) {
+	var value = new Date(e.target.value).setHours(23, 59, 59, 999)
+	
+	changeDate(value > startDate ? value : currentTimestamp)
+})
+
+toLeft.addEventListener("click", function() {
+	var changed = currentTimestamp - 86400 * 1000
+
+	changeDate(changed > startDate ? changed : currentTimestamp)
+})
+toRight.addEventListener("click", function() {
+	changeDate(currentTimestamp + 86400 * 1000)
+})
+
+backToService.addEventListener("click", function() {
+	webMI.display.openDisplay("AGENT.DISPLAYS.NewView.Services.Service", { type: currentService }, "main_frame");
+})
+
+/*
+addSignature.addEventListener("click", function() {
+	var id = select.selectedIndex
+	
+	console.log(id, signatures)
+	webMI.trigger.fire("loadCanvas", signatures[id])
+})
+*/
+
+webMI.trigger.connect("signSaved", function() {
+	toggleCanvas()
+})
+
+select.addEventListener("change", function() {
+	var id = select.value
+	
+	if (signatures[id]) webMI.trigger.fire("loadCanvas", signatures[id])
+})
+
+webMI.trigger.fire("colSelect", "Direct")
+
+colSelect.addEventListener("click", function(e) {
+	webMI.trigger.fire("colSelect", e.target.value)
+})
+
+webMI.data.subscribe("AGENT.OBJECTS.Classification.signatures", function(e) {
+	if (e.value.length > 0) {
+		var value = JSON.parse(e.value)
+		
+		signatures = value
+		
+		select.innerHTML = ""
+		select.appendChild(createOption("", null))
+		value.map(function(sig, id) {
+			select.appendChild(createOption(sig.transcription, id))
+		})
+	}
+})
+
+print.addEventListener("click", function() {
+	//parent.window.print()
+	var style = "<style>@media print{   #tableContainer, html, .printTable, iframe, svg, #tableCOntainer * {overflow: visible !important;}} .printTable * {overflow: visible;}.printTable::-webkit-scrollbar{width: 20px;}.printTable::-webkit-scrollbar-corner {display: none;}.printTable::-webkit-scrollbar-track {border: 1px solid #999999;border-radius: 4px;}.printTable::-webkit-scrollbar-thumb {background-color: rgba(230,230,230, 0.8);border-radius: 6px;}</style>"	
+	newWin = parent.window.open("")
+	newWin.document.write(tContainer.outerHTML + sigImage.outerHTML + style)
+	newWin.print()
+	newWin.close()
+})]]></script>
+</svg>

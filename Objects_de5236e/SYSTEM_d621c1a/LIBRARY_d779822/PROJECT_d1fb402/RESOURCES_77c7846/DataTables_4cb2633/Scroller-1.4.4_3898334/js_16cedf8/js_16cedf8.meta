@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/DataTables/Scroller-1.4.4/js
+NodeClass: Object
+BrowseName: 1:js
+DisplayName: en|js
+Description: en|js
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

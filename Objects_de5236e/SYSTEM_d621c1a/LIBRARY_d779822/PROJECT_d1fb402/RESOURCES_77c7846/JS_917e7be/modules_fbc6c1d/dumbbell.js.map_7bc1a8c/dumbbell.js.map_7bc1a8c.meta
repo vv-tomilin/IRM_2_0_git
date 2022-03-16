@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/dumbbell.js.map
+NodeClass: Variable
+BrowseName: 1:dumbbell.js.map
+DisplayName: en|dumbbell.js.map
+Description: en|dumbbell.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

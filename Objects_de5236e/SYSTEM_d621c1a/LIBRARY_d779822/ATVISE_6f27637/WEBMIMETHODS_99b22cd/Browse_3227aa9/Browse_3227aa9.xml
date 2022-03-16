@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="request" type="http.request" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var startAddress = request.postvalues.startAddress;
+var endLevel = request.postvalues.endLevel;
+var array = [];
+var node = new UaNode(startAddress);
+if (!node.exists()){
+	/*search in parent's children*/
+	var nodeName = startAddress.substring(startAddress.lastIndexOf(".")+1);
+	node = new UaNode(startAddress.substr(0,startAddress.lastIndexOf(".")));
+	var parentArray = node.browse();
+	for (var i=0; i<parentArray.length; i++){
+		if (parentArray[i].node.browsename == nodeName){
+			array = parentArray[i].node.browse(); i = parentArray.length;
+		}
+	}
+} else {
+	array = node.browse();
+}
+endLevel = (endLevel && isNaN(Number(endLevel))?0:Number(endLevel)) || 0;
+var nodeDataObj = {};
+var level = 1;
+
+/*
+ * i=61													FolderType
+ * i=62													BaseVariableType (int, string, ...)
+ * i=63													BaseDataVariableType
+ * VariableTypes.ATVISE.Display							Display
+ * ObjectTypes.PROJECT									Objects
+ * ns=1;s=ObjectTypes.ATVISE.ArchiveGroup.Data			Data (archives)
+ * ns=1;s=ObjectTypes.ATVISE.AlarmConfiguration			AlarmConfiguration
+ */
+var validTypes = ["i=61", "i=62", "i=63", "VariableTypes.ATVISE.Display", "ObjectTypes.PROJECT", "ns=1;s=ObjectTypes.ATVISE.ArchiveGroup.Data", "ns=1;s=ObjectTypes.ATVISE.Alarm"];
+var vTypes = request.postvalues.vTypes;
+
+if (vTypes && vTypes.length > 0 ) {
+	validTypes = vTypes;
+	if (validTypes.indexOf("i=62") > -1 && validTypes.indexOf("i=63") == -1)
+		validTypes.push("i=63"); // requesting type i=62 (BaseVariableType) always shall implicitely include type i=63 (BaseDataVariableType)
+}
+
+function checkType(type) {
+	var valid = false;
+	for (var i in validTypes) {
+		if (type.indexOf(validTypes[i]) > -1) {
+			valid = true;
+			break;
+		}
+	}
+	return valid;
+}
+
+function addLevel(nodeDataObj, array, level, parentName) {
+	for (var i=0; i<array.length; i++) {
+		if (checkType(array[i].node.typedefinition)) {
+			var identifier = array[i].node.browsename;
+			var subarray = array[i].node.browse();
+			if (subarray != undefined && subarray.length > 0 ) {
+				var hasValidSub = false;
+				for (var j in subarray) {
+					if (checkType(subarray[j].node.typedefinition)) {
+						hasValidSub = true;
+						break;
+					}
+				}
+				if (hasValidSub) {
+					level++;
+					if ( endLevel == 0 || level <= endLevel ) {
+						nodeDataObj[identifier] = {};
+						addLevel(nodeDataObj[identifier], subarray, level, parentName + "." + array[i].node.browsename);
+					}
+					else {
+						nodeDataObj[identifier] = { name: parentName + "." + array[i].node.browsename, text: array[i].node.browsename, sub: "true"};
+					}
+				} else {
+					nodeDataObj[identifier] = { name: parentName + "." + array[i].node.browsename, text: array[i].node.browsename };
+				}
+			} else {
+				nodeDataObj[identifier] = { name: parentName + "." + array[i].node.browsename, text: array[i].node.browsename };
+			}
+		} else {
+			//console.log("WARNING: Unhandled typedefinition " + array[i].node.typedefinition + " (" + array[i].node.browsename + ")");
+		}
+	}
+	return nodeDataObj;
+}
+nodeDataObj = addLevel(nodeDataObj, array, level, startAddress);
+return nodeDataObj;]]></code>
+</script>

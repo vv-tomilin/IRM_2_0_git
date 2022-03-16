@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="RepStartDate" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Test.ForMainWindow.StartReportDate"/>
+  <parameter name="RepFinishDate" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Test.ForMainWindow.FinishReportDate"/>
+  <parameter name="boolRunning" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Test.ForMainWindow.dataRepRunning"/>
+  <code><![CDATA[var fileLoad = new UaNode(boolRunning);
+console.log('fileLoad = ',fileLoad.value);									
+if(fileLoad.value){
+	fileLoad.assign({value:false});
+	console.log('fileLoad after assign = ',fileLoad.value);	
+	var first = new Date(RepStartDate);									    //Дата начала 
+	var second = new Date(RepFinishDate);									// Дата конца отчета
+	var third = second - first;												// Разница в датах чтобы расчитать дни 
+	
+	var count = Math.ceil(third/86400000);									//Округление в большую сторону
+	console.log("count =" + third/86400000);								 
+	//var nrd = new UaNode("AGENT.OBJECTS.report_date");
+	var curdate = new Date(first);
+	if(third%86400000==0)
+		{																	// если делиться на цело то делаем за 1 больше
+		count++;
+		}	
+	else{																	//Иначе все нормально так и считаем 
+		}
+	for (var i=0;i<count;i++)
+		{
+		console.log('ODBC_report_apd is running'+count)
+		curdate.setDate(curdate.getDate() + 1);												
+	//	nrd.assign({value: curdate});								 
+		call("ODBC_report_apd",{report_date:curdate});
+		
+		}
+	fileLoad.assign({value:true});
+	console.log('fileLoad after assign = ',fileLoad.value);
+}]]></code>
+</script>

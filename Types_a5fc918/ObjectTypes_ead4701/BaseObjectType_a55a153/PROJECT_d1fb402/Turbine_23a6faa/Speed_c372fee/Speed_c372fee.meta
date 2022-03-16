@@ -1,0 +1,10 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Turbine.Speed
+NodeClass: Variable
+BrowseName: 1:Speed
+DisplayName: en|Speed
+Description: en|Speed
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType

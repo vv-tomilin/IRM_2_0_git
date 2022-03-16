@@ -1,0 +1,10 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed".Slowdown_High
+NodeClass: Variable
+BrowseName: 1:Slowdown_High
+DisplayName: en|Slowdown_High
+Description: en|Slowdown_High
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.PROJECT.VT_"Slowdown"

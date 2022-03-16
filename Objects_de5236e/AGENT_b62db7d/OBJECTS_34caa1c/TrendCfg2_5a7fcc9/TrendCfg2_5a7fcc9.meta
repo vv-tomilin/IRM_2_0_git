@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.TrendCfg2
+NodeClass: Variable
+BrowseName: 1:TrendCfg2
+DisplayName: en|TrendCfg2
+Description: en|TrendCfg2
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

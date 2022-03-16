@@ -1,0 +1,69 @@
+{
+  "columns": [
+    {
+      "id": "1",
+      "name": "№ п/п",
+      "field": "number"
+    },
+    {
+      "id": "2",
+      "name": "Элемент",
+      "field": "element"
+    },
+    {
+      "id": "3",
+      "name": "Принадлежность",
+      "field": "affiliation"
+    },
+    {
+      "id": "4",
+      "name": "Серийный номер",
+      "field": "serialNumber"
+    },
+    {
+      "id": "5",
+      "name": "D наруж. тела трубы, ВЗД, Яса (мм)",
+      "field": "DiamOut"
+    },
+    {
+      "id": "6",
+      "name": "D внутр. тела трубы, ВЗД, Яса (мм)",
+      "field": "DiamIn"
+    },
+    {
+      "id": "6",
+      "name": "D max наружный",
+      "field": "DiamMax"
+    },
+    {
+      "id": "7",
+      "name": "Присоединительная резьба (тип/размер) (мм)",
+      "field": "connectingThread"
+    },
+    {
+      "id": "8",
+      "name": "Тип соединения",
+      "field": "connectingType"
+    },
+    {
+      "id": "9",
+      "name": "Длина (м)",
+      "field": "length"
+    },
+    {
+      "id": "10",
+      "name": "Сум. длина (м)",
+      "field": "sumLength"
+    },
+    {
+      "id": "11",
+      "name": "Вес. общ. (кг)",
+      "field": "weightTotalweight"
+    },
+    {
+      "id": "12",
+      "name": "Сум. вес (кг)",
+      "field": "sumWeight"
+    }
+  ]
+}

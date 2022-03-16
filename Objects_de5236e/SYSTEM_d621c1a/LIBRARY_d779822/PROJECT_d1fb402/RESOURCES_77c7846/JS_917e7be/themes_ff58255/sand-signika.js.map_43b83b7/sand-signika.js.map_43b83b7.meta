@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/themes/sand-signika.js.map
+NodeClass: Variable
+BrowseName: 1:sand-signika.js.map
+DisplayName: en|sand-signika.js.map
+Description: en|sand-signika.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Platforma.RegionBoard.numberOfOilfields
+NodeClass: Variable
+BrowseName: 1:numberOfOilfields
+DisplayName: en|numberOfOilfields
+Description: en|numberOfOilfields
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

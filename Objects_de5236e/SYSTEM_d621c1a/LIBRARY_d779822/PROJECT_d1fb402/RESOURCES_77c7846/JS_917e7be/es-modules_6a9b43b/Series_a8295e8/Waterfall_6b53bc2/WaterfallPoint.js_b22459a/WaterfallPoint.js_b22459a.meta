@@ -1,0 +1,10 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/Waterfall/WaterfallPoint.js
+NodeClass: Variable
+BrowseName: 1:WaterfallPoint.js
+DisplayName: en|WaterfallPoint.js
+Description: en|WaterfallPoint.js
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Javascript
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Javascript.Compress

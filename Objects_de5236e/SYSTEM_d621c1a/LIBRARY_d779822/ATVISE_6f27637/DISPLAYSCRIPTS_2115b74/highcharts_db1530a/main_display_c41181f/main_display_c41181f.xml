@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+	<metadata>
+		<priority>0</priority>
+	</metadata>
+	<code><![CDATA[/**
+ * Code for the highcharts main display object display
+ * ----------------------------------------
+ * This script supports the display to combines the highcharts, toolbar and legend displays.
+ */
+
+
+/**
+ * TRIGGER SECTION
+ */
+webMI.trigger.connect("com.atvise.highchart_options", function (e) {
+	webMI.gfx.setVisible("highcharts", !e.value);
+	webMI.gfx.setVisible("configuration", e.value);
+}, "toolbar");]]></code>
+</script>

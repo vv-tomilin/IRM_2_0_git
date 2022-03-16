@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="request" type="http.request" trigger="false" relative="false" value=""/>
+  <code><![CDATA[/*GetTranslations*/
+var language = request.postvalues.language;
+var dataArchives = {};
+var startNode = "SYSTEM.TRANSLATIONS";
+var translationNode = new UaNode(startNode);
+var first = "";
+if (translationNode.exists()) {
+	var nodes = translationNode.browse();
+	for (var i = 0; i < nodes.length; ++i) {
+		if (first == "") first = nodes[i]["node"]["value"];
+		if (nodes[i]["node"]["browsename"] == language)
+			return nodes[i]["node"]["value"];
+	}
+}
+
+return first;]]></code>
+</script>

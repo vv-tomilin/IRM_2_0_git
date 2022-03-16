@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Fan_topview_blue
+NodeClass: Variable
+BrowseName: 1:Fan_topview_blue
+DisplayName: en|Fan_topview_blue
+Description: en|Fan_topview_blue
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

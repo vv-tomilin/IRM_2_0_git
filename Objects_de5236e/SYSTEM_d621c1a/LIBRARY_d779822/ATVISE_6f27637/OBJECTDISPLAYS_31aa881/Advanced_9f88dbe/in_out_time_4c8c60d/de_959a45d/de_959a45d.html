@@ -1,0 +1,71 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Beschreibung</h1>
+<p>Dieses Steuerelement erm&ouml;glicht die Eingabe einer
+Zeit.</p>
+<p>Dar&uuml;ber hinaus wird der Trigger "valuechanged" aktiviert.</p>
+<h1>Parameter</h1>
+<p>Dieses Steuerelement hat die folgenden allgemeinen
+Parameter:</p>
+<ul>
+  <li><span class="parameter">base</span>: Der Wert dieser Adresse wird auf die ausgew&auml;hlte Zeit gesetzt.</li>
+  <li><span class="parameter">Alarmadresse</span>: Optional zus&auml;tzliche Adresse eines Alarms, welcher angezeigt werden soll.</li>
+  <li><span class="parameter">Intervall [ms] (0 = aus)</span>: Legt fest, wie lange das Steuerelement bet&auml;tigt werden muss, damit der Wert von "base"
+automatisch ge&auml;ndert wird (Standard: 150&nbsp;ms, d.&nbsp;h., wird
+die Schaltfl&auml;che kontinuierlich bet&auml;tigt, wird der Wert alle
+150&nbsp;ms ge&auml;ndert).</li>
+  <li><span class="parameter">Status&uuml;berwachung aktivieren</span>: Schaltet die Anzeige des aktuellen Wertestatus ein oder aus.</li>
+  <li><span class="parameter">Statustrigger feuern</span>: Statt der Statusanzeige kann auch ein hier definierter Trigger global gefeuert werden.</li>
+</ul>
+Schrift:<br>
+<ul>
+  <li><span class="parameter">Schriftart</span>: Schriftart, die auf die Beschriftung angewendet wird (Standard: Arial)</li>
+  <li><span class="parameter">Gr&ouml;&szlig;e</span>: Schriftgr&ouml;&szlig;e, die auf die Beschriftung angewendet wird (Standard: 12)</li>
+  <li><span class="parameter">Farbe</span>: Farbe, die auf die Beschriftung angewendet wird (Standard: schwarz)</li>
+</ul>
+Darstellung:<br>
+<ul>
+  <li><span class="parameter">F&uuml;llfarbe</span>: F&uuml;llfarbe von Hintergrundfl&auml;chen (Standard: Globaler Parameter <i>atvFillColor</i>)</li>
+  <li><span class="parameter">F&uuml;llfarbe Wertefeld</span>: F&uuml;llfarbe der vier Wertefelder (Standard: wei&szlig;)</li>
+  <li><span class="parameter">F&uuml;llfarbe Wertefeld inaktiv</span>: F&uuml;llfarbe der Wertefelder, wenn nicht aktiv (Standard: dunkelgrau)</li>
+  <li><span class="parameter">F&uuml;llfarbe Pfeil</span>: F&uuml;llfarbe des Pfeils&nbsp;(Standard: grau)</li>
+  <li><span class="parameter">F&uuml;llfarbe gedr&uuml;ckter Pfeil</span>:	 F&uuml;llfarbe der Pfeile, wenn sie bet&auml;tigt werden (Standard: gelb)</li>
+  <li><span class="parameter">F&uuml;llfarbe wenn inaktiv</span>: F&uuml;llfarbe der nicht aktiven Schaltfl&auml;che&nbsp;(Standard: dunkelgrau)</li>
+  <li><span class="parameter">Konturfarbe Schaltfl&auml;che gedr&uuml;ckt</span>: Farbe der Kontur, die bei Bet&auml;tigung einer der acht Schaltfl&auml;chen eingestellt wird (Standard: wei&szlig;)</li>
+  <li><span class="parameter">Fokus Konturfarbe</span>: Farbe der Kontur, die beim Fokus der Schaltfl&auml;chen eingestellt wird (Standard: wei&szlig;)</li>
+</ul>
+Optionen:<br>
+<ul>
+  <li><span class="parameter">Minimum</span>: Legt das untere Limit f&uuml;r die zu &auml;ndernde Zeit fest (z.&nbsp;B. 0:0:0), d.&nbsp;h.,
+wenn die aktuelle Zeit mit diesem Minimum &uuml;bereinstimmt, wird sie
+nicht weiter zur&uuml;ckgesetzt (Standard: kein Minimum festgelegt).</li>
+  <li><span class="parameter">Maximum</span>: Legt das obere Limit f&uuml;r die zu &auml;ndernde Zeit fest (z.&nbsp;B. 12:0:0), d.&nbsp;h., wenn die aktuelle Zeit mit diesem
+Maximum &uuml;bereinstimmt, wird sie nicht weiter vorgesetzt (Standard: kein Maximum festgelegt).</li>
+  <li><span class="parameter">Zu setzende Adresse</span>: Mit diesem Parameter kann, parallel zu "base" eine zweite Adresse eingestellt
+werden.</li>
+  <li><span class="parameter">Konsistenzgruppe</span>: Name der Konsistenzgruppe.</li>
+  <li><span class="parameter">Tab-Index</span>: Bestimmt die Reihenfolge, in der mit der Tabulatortaste zwischen den einzelnen Object Displays gewechselt werden kann</li>
+  <li><span class="parameter">Tooltip</span>: Zeigt eine Tooltip Box mit dem eingegebenen Text an (Standard HTML-Elemente k&ouml;nnen auch eingegeben werden)</li> </ul>
+Sicherheit:
+<ul>
+  <li><span class="parameter">Ben&ouml;tigtes Recht</span>: Der Benutzer muss &uuml;ber dieses Recht verf&uuml;gen, um dieses Steuerelement aktivieren, d.&nbsp;h. eine der acht Schaltfl&auml;chen bet&auml;tigen zu
+k&ouml;nnen.</li>
+  <li><span class="parameter">Aktivierungsadresse</span>: Stimmt der Wert dieser Adresse mit dem "Aktivierungswert" &uuml;berein, ist das Steuerelement aktiv, so dass
+es bet&auml;tigt werden kann.</li>
+  <li><span class="parameter">Aktivierungswert</span>: Wert, von dem das Steuerelement aktiviert wird</li> </ul>
+<div style="margin-left: 40px;">HINWEIS: Die Aktivierung des
+Steuerelements kann nur &uuml;ber das ben&ouml;tigte Recht konfiguriert
+werden oder nur &uuml;ber die Aktivierungsadresse und den
+Aktivierungswert oder &uuml;ber beide. Werden beide Einstellungen
+vorgenommen, muss der Benutzer das ben&ouml;tigte Recht besitzen und
+der Wert der "Aktivierungsadresse" muss mit dem "Aktivierungswert"
+identisch sein, andernfalls wird das Steuerelement nicht aktiviert.
+</div>
+</body>
+</html>

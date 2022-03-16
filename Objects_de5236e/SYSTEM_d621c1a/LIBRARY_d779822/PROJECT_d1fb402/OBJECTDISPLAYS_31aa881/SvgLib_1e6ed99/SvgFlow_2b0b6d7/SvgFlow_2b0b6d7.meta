@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.SvgFlow
+NodeClass: Object
+BrowseName: 1:SvgFlow
+DisplayName: en|SvgFlow
+Description: en|SvgFlow
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

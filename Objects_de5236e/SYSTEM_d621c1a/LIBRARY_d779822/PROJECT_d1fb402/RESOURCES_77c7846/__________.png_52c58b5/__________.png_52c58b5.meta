@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/Безымянный.png
+NodeClass: Variable
+BrowseName: 1:Безымянный.png
+DisplayName: en|Безымянный.png
+Description: en|Безымянный.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

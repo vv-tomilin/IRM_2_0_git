@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns="http://www.w3.org/2000/svg" width="232.65" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" height="106.67">
+ <defs/>
+ <metadata>
+  <atv:gridconfig width="20" gridstyle="lines" enabled="false" height="20"/>
+  <atv:snapconfig width="10" enabled="false" height="10"/>
+ </metadata>
+ <rect fill-opacity="0" rx="2.397" stroke-width="2" width="178.726" fill="#000088" atv:refpy="53.405" id="id_0" x="36.554" stroke="#c0c0c0" y="3.314" ry="2.397" height="100.181" atv:refpx="125.917"/>
+ <rect fill-opacity="0" rx="3.715" stroke-width="2" width="199.27" fill="#000088" atv:refpy="52.964" id="id_1" x="32.379" stroke="#c0c0c0" y="12.093" ry="3.715" height="81.742" atv:refpx="132.014"/>
+ <rect fill-opacity="0" rx="4.335" stroke-width="4" width="168.903" fill="#000088" atv:refpy="52.964" id="id_2" x="42.895" stroke="#c0c0c0" y="17.061" ry="4.335" height="71.806" atv:refpx="127.347"/>
+ <rect fill-opacity="0" rx="0" stroke-width="2" width="12.645" fill="#000088" atv:refpy="53.364" id="id_3" x="44.641" stroke="#c0c0c0" y="17.698" ry="0" height="71.333" atv:refpx="50.964"/>
+ <rect fill-opacity="0" stroke-width="2" width="12.645" fill="#000088" atv:refpy="53.016" id="id_4" x="63.876" stroke="#c0c0c0" y="17.534" height="70.963" atv:refpx="70.198"/>
+ <rect fill-opacity="0" stroke-width="2" width="12.645" fill="#000088" atv:refpy="53.305" id="id_5" x="82.093" stroke="#c0c0c0" y="17.453" height="71.703" atv:refpx="88.415"/>
+ <rect fill-opacity="0" stroke-width="2" width="12.645" fill="#000088" atv:refpy="52.935" id="id_6" x="100.776" stroke="#c0c0c0" y="17.268" height="71.333" atv:refpx="107.098"/>
+ <rect fill-opacity="0" stroke-width="2" width="12.645" fill="#000088" atv:refpy="53.027" id="id_7" x="119.644" stroke="#c0c0c0" y="17.361" height="71.333" atv:refpx="125.966"/>
+ <rect fill-opacity="0" stroke-width="2" width="12.645" fill="#000088" atv:refpy="52.843" id="id_8" x="137.772" stroke="#c0c0c0" y="17.177" height="71.333" atv:refpx="144.094"/>
+ <rect fill-opacity="0" stroke-width="2" width="12.645" fill="#000088" atv:refpy="53.027" id="id_9" x="155.53" stroke="#c0c0c0" y="17.361" height="71.333" atv:refpx="161.852"/>
+ <rect fill-opacity="0" stroke-width="2" width="12.645" fill="#000088" atv:refpy="52.842" id="id_10" x="173.844" stroke="#c0c0c0" y="17.176" height="71.333" atv:refpx="180.166"/>
+ <rect fill-opacity="0" stroke-width="2" width="12.645" fill="#000088" atv:refpy="52.842" id="id_11" x="192.896" stroke="#c0c0c0" y="17.176" height="71.333" atv:refpx="199.218"/>
+ <rect stroke-width="2" width="7.307" fill="#a3a3a3" atv:refpy="13.574" id="id_12" x="123.399" stroke="#a3a3a3" y="6.493" height="14.163" atv:refpx="127.053"/>
+ <rect stroke-width="2" width="12.764" fill="#a3a3a3" atv:refpy="6.413" id="id_13" x="120.602" stroke="#a3a3a3" y="4.933" height="2.96" atv:refpx="126.984"/>
+ <rect stroke-width="2" width="3.33" fill="#a3a3a3" atv:refpy="6.69" id="id_14" x="115.608" stroke="#a3a3a3" y="2.158" height="9.064" atv:refpx="117.273"/>
+ <rect stroke-width="2" width="3.33" fill="#a3a3a3" atv:refpy="6.228" id="id_16" x="135.401" stroke="#a3a3a3" y="1.696" height="9.064" atv:refpx="137.066"/>
+ <rect stroke-width="2" width="7.307" fill="#a3a3a3" atv:refpy="96.491" id="id_17" transform="matrix(-1,0,0,-1,0,0)" x="-130.661" stroke="#a3a3a3" y="-98.776" height="14.163" atv:refpx="126.776"/>
+ <rect stroke-width="2" width="12.764" fill="#a3a3a3" atv:refpy="89.33" id="id_18" transform="matrix(-1,0,0,-1,0,0)" x="-133.458" stroke="#a3a3a3" y="-100.336" height="2.96" atv:refpx="126.707"/>
+ <rect stroke-width="2" width="3.33" fill="#a3a3a3" atv:refpy="89.607" id="id_19" transform="matrix(-1,0,0,-1,0,0)" x="-138.453" stroke="#a3a3a3" y="-103.111" height="9.064" atv:refpx="116.995"/>
+ <rect stroke-width="2" width="3.33" fill="#a3a3a3" atv:refpy="89.145" id="id_20" transform="matrix(-1,0,0,-1,0,0)" x="-118.66" stroke="#a3a3a3" y="-103.573" height="9.064" atv:refpx="136.788"/>
+ <rect rx="3.252" stroke-width="2" width="20.594" fill="#a3a3a3" atv:refpy="52.919" id="id_21" x="161.488" stroke="#a3a3a3" y="35.396" ry="3.252" height="35.045" atv:refpx="171.785"/>
+ <rect rx="3.252" stroke-width="2" width="20.594" fill="#a3a3a3" atv:refpy="52.739" id="id_22" x="136.74" stroke="#a3a3a3" y="35.216" ry="3.252" height="35.045" atv:refpx="147.037"/>
+ <rect stroke-width="2" width="47.69" fill="#868686" atv:refpy="52.919" id="id_23" x="135.114" stroke="#868686" y="43.345" height="19.148" atv:refpx="158.959"/>
+ <rect stroke-width="2" width="10.116" fill="#868686" atv:refpy="52.739" id="id_25" x="130.418" stroke="#868686" y="47.139" height="11.2" atv:refpx="135.476"/>
+ <line stroke-width="2" x1="116.468" atv:refpy="48.695" y1="48.664" id="id_26" x2="130.417" stroke="#535353" y2="48.726" atv:refpx="123.443"/>
+ <line stroke-width="2" x1="116.617" atv:refpy="52.695" y1="52.74" id="id_27" x2="130.566" stroke="#535353" y2="52.802" atv:refpx="123.517"/>
+ <line stroke-width="2" x1="116.694" atv:refpy="56.711" y1="56.68" id="id_28" x2="130.643" stroke="#535353" y2="56.742" atv:refpx="123.669"/>
+ <rect fill-opacity="0.972549" rx="3.36" stroke-width="2" width="48.557" fill="#a3a3a3" atv:refpy="53.606" id="id_29" x="19.718" stroke="#c0c0c0" y="27.593" ry="3.36" height="52.026" atv:refpx="43.996"/>
+ <rect fill-opacity="0.972549" stroke-width="2" width="13.007" fill="#a3a3a3" atv:refpy="52.016" id="id_30" x="6.712" stroke="#c0c0c0" y="41.177" height="21.677" atv:refpx="13.216"/>
+ <line stroke-width="2" x1="14.852" atv:refpy="52.338" y1="37.338" id="id_31" x2="14.857" stroke="#c0c0c0" y2="67.338" atv:refpx="14.854"/>
+ <line stroke-width="2" x1="9.075" atv:refpy="52.301" y1="37.301" id="id_32" x2="9.08" stroke="#c0c0c0" y2="67.301" atv:refpx="9.078"/>
+ <ellipse fill-opacity="0.972549" rx="4.039" cx="5.039" stroke-width="2" fill="#a3a3a3" atv:refpy="52.156" id="id_33" cy="52.156" stroke="#a4a4a4" ry="10.433" atv:refpx="5.039"/>
+ <circle fill-opacity="0.972549" cx="30.568" stroke-width="2" fill="#a3a3a3" atv:refpy="41.855" id="id_34" cy="41.855" stroke="#c0c0c0" r="7.5" atv:refpx="30.568"/>
+ <circle fill-opacity="0.972549" cx="30.744" stroke-width="2" fill="#a3a3a3" atv:refpy="66.391" id="id_35" cy="66.392" stroke="#c0c0c0" r="7.5" atv:refpx="30.744"/>
+ <rect fill-opacity="0.972549" rx="2.692" stroke-width="2" width="13.126" fill="#a3a3a3" atv:refpy="9.078" id="id_36" x="50.474" stroke="#a6a6a6" y="3" ry="2.692" height="16.155" atv:refpx="57.037"/>
+ <rect fill-opacity="0.972549" rx="1.346" stroke-width="2" width="13.126" fill="#a3a3a3" atv:refpy="97.592" id="id_37" x="50.306" stroke="#a6a6a6" y="87.514" ry="1.346" height="16.155" atv:refpx="56.869"/>
+ <rect fill-opacity="0" stroke-width="4" width="10.097" fill="#000088" atv:refpy="55.018" id="id_38" x="150.432" stroke="#313131" y="50.474" height="9.087" atv:refpx="155.48"/>
+ <rect fill-opacity="0" stroke-width="4" width="10.097" fill="#000088" atv:refpy="52.157" id="id_39" x="171.298" stroke="#313131" y="47.613" height="9.087" atv:refpx="176.346"/>
+ <rect fill-opacity="0" rx="1.346" stroke-width="4" width="13.126" fill="#000088" atv:refpy="14.294" id="id_40" x="195.492" stroke="#686868" y="12.78" ry="1.346" height="3.029" atv:refpx="198.055"/>
+ <rect fill-opacity="0" rx="1.178" stroke-width="4" width="13.126" fill="#000088" atv:refpy="91.534" id="id_41" x="194.323" stroke="#686868" y="90.019" ry="1.178" height="3.029" atv:refpx="197.886"/>
+ <rect fill-opacity="0.972549" rx="1.009" stroke-width="2" width="2.019" fill="#a3a3a3" atv:refpy="73.865" id="id_42" x="10.76" stroke="#a6a6a6" y="58.888" ry="1.009" height="29.954" atv:refpx="11.77"/>
+ <line stroke-width="2" x1="28.261" atv:refpy="41.569" y1="35.069" id="id_45" x2="28.329" stroke="#c0c0c0" y2="48.069" atv:refpx="28.295"/>
+ <line stroke-width="2" x1="28.295" atv:refpy="66.09" y1="59.59" id="id_46" x2="28.363" stroke="#c0c0c0" y2="72.59" atv:refpx="28.329"/>
+ <circle fill-opacity="0.972549" cx="12.433" stroke-width="1" fill="#555555" atv:refpy="51.82" id="id_47" cy="51.82" stroke="#585858" r="1.904" atv:refpx="12.433"/>
+ <rect fill-opacity="0.972549" rx="2.692" stroke-width="2" width="13.126" fill="#a3a3a3" atv:refpy="11.532" id="id_15" x="191.053" stroke="#a6a6a6" y="4.454" ry="2.692" height="16.155" atv:refpx="71.616"/>
+ <rect fill-opacity="0.972549" rx="2.692" stroke-width="2" width="13.126" fill="#a3a3a3" atv:refpy="9.711" id="id_24" x="191.898" stroke="#a6a6a6" y="86.633" ry="2.692" height="16.155" atv:refpx="198.461"/>
+ <rect fill-opacity="0.972549" rx="1.821" stroke-width="2" width="18.207" fill="#a3a3a3" atv:refpy="22.759" id="id_43" x="36.629" stroke="#a6a6a6" y="19.421" ry="1.821" height="6.676" atv:refpx="45.733"/>
+ <rect fill-opacity="0.972549" rx="1.636" stroke-width="2" width="18.207" fill="#a3a3a3" atv:refpy="84.849" id="id_44" x="36.305" stroke="#a6a6a6" y="81.511" ry="1.636" height="6.676" atv:refpx="43.409"/>
+</svg>

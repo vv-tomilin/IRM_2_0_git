@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.VSP.MinHydroKeyTorque
+NodeClass: Variable
+BrowseName: 1:MinHydroKeyTorque
+DisplayName: en|MinHydroKeyTorque
+Description: en|MinHydroKeyTorque
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

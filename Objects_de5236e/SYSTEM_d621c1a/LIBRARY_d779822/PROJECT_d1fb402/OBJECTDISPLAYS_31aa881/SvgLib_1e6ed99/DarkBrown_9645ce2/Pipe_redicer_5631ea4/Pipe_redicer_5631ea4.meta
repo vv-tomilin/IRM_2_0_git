@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown.Pipe_redicer
+NodeClass: Variable
+BrowseName: 1:Pipe_redicer
+DisplayName: en|Pipe_redicer
+Description: en|Pipe_redicer
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

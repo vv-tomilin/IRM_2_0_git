@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.WEBMIMETHODS.ReportFromTo
+NodeClass: Variable
+BrowseName: 1:ReportFromTo
+DisplayName: en|ReportFromTo
+Description: en|ReportFromTo
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

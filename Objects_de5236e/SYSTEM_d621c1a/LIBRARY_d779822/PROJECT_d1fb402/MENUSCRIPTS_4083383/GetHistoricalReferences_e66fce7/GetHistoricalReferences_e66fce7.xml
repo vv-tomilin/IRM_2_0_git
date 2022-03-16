@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <code><![CDATA[// **************************************************************************************
+// * Searches historical references
+// * Author: Sedlatschek Manuel (CERTEC EDV GmbH)
+// * Created on: 29.01.2018
+// **************************************************************************************
+
+var array = [];
+var startAddress = "AGENT.OBJECTS"; // Search start address
+var i;
+
+function getHistoryRefs(nodeid) {
+	var node = new UaNode(nodeid);
+	var i = 0;
+
+	var references = node.browse({
+			direction: UaNode.BROWSEDIRECTION_FORWARD,
+			reference: UaNode.HASHISTORICALCONFIGURATION,
+			subtype: true,
+			nodeclass: UaNode.NODECLASS_UNSPECIFIED,
+			maxresult: 0
+	});
+
+	for (var i = 0; i< references.length; i++) {
+		if(references[i].node.nodeaddr.indexOf("AGENT.HISTORY.") >= 0) {
+			array.push([nodeid.replace("ns=1;s=", ""), references[i].node.nodeaddr]);
+		}
+	}
+
+	var result = node.browse({
+			direction:UaNode.BROWSEDIRECTION_FORWARD,
+			reference:UaNode.HIERARCHICALREFERENCES,
+			subtype:true,
+			nodeclass:UaNode.NODECLASS_UNSPECIFIED,
+			maxresult:0
+	});
+
+	for (i; i < result.length; i++) {
+		getHistoryRefs(result[i]["node"]["nodeid"]);
+	}
+}
+
+getHistoryRefs(startAddress);
+
+for(i in array) {
+	console.log("Node: " + array[i][0] + ", Archive: " + array[i][1]);
+}]]></code>
+</script>

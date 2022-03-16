@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nodeWellDepthStr" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Well.WellDepth"/>
+  <parameter name="nodeToolPosStr" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Tool.ToolPosition"/>
+  <parameter name="timeToAnaliseSec" type="number" trigger="false" relative="false" value="60"/>
+  <code><![CDATA[var nodeWellDepth = new UaNode(nodeWellDepthStr); 
+var wellDepth = nodeWellDepth.value;
+var nodeToolPos = new UaNode(nodeToolPosStr);
+var toolPos = nodeToolPos.value;
+
+//console.log('забой = ',wellDepth);
+//console.log('tool  = ',toolPos);
+if((wellDepth - toolPos)<0.5){	// to check
+	var timeend = new Date();
+	//var timestart = new Date(timeend.valueOf() - countSec * 1000);
+	var numval = 2;	
+	
+	var resultRaw = call('AutoHistory.getDatahistory',{nodeStr:nodeWellDepthStr, numvalue:numval});
+	//console.log('resultRaw.length = ', resultRaw.length);
+//	if(!resultRaw || resultRaw.length==0 || resultRaw.length==1){
+	if(!resultRaw || resultRaw.length==0){			
+		return false;
+	} else {
+		var lastindx = resultRaw.length-1;
+		var lastval = +resultRaw[lastindx].value;
+		var lasttime = new Date(resultRaw[lastindx].servertime.replace(/"/g, ''));
+		
+		if(resultRaw.length==1){
+			if(wellDepth >= lastval && (Number(timeend) - Number(lasttime)) < 10){
+				return true;
+			}
+		} else { 
+		
+			//var lastindx = resultRaw.length-1;	
+			var predindx = resultRaw.length-2;	
+			
+			//var lastval = +resultRaw[lastindx].value;
+			var predval = +resultRaw[predindx].value;
+			
+			//var lasttime = new Date(resultRaw[lastindx].servertime.replace(/"/g, ''));
+			var predtime = new Date(resultRaw[predindx].servertime.replace(/"/g, ''));
+			
+			if(wellDepth > lastval && (Number(timeend) - Number(lasttime))< timeToAnaliseSec*1000){
+				return true;
+			}
+			if(wellDepth > predval && (Number(timeend) - Number(predtime))< timeToAnaliseSec*1000){
+				return true;
+			}
+		}
+	}		
+}
+return false;]]></code>
+</script>

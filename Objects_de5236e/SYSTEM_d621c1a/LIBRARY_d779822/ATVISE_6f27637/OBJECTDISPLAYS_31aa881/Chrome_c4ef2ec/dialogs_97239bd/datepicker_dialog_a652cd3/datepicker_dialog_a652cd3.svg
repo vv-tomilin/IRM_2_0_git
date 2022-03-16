@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="287" version="1.2" xmlns="http://www.w3.org/2000/svg" height="140" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <desc>Simple display that can be used as dialog for picking a date.</desc>
+ <title>Date picker dialog</title>
+ <defs/>
+ <metadata>
+  <atv:parameter desc="popup id" valuetype="string" behavior="hidden" name="popupId" defaultvalue="dpt"/>
+  <atv:parameter desc="initial timestamp" valuetype="number" behavior="hidden" name="timestamp"/>
+  <atv:gridconfig width="10" enabled="true" height="10" gridstyle="lines"/>
+  <atv:snapconfig width="5" enabled="true" height="5"/>
+ </metadata>
+ <svg width="287" x="0" y="0" height="102" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.in_out_datetime" id="id_0">
+  <atv:argument value="1" name="tabIndex"/>
+ </svg>
+ <svg width="80" x="103.5" y="110" atv:dynamic="true" height="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.button" id="id_1" atv:refpx="143.5" atv:refpy="125">
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.check" name="symbol"/>
+  <atv:argument value="hidden" name="visibilityLabel"/>
+  <atv:argument value="inherit" name="visibilitySymbol"/>
+  <atv:argument value="2" name="tabIndex"/>
+ </svg>
+ <svg width="80" x="494" y="110" atv:dynamic="true" height="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.button" id="id_2" atv:refpx="154.5" atv:refpy="5" transform="matrix(0.5,0,0,1,0,0)">
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.x" name="symbol"/>
+  <atv:argument value="hidden" name="visibilityLabel"/>
+  <atv:argument value="inherit" name="visibilitySymbol"/>
+  <atv:argument value="4" name="tabIndex"/>
+  <atv:overwrite width="32" id="button_stroke" transform="matrix(2,0,0,1,0,0)"/>
+  <atv:overwrite x="20" id="button_label" transform="matrix(2,0,0,1,0,0)"/>
+  <atv:overwrite x="10" id="button_symbol" transform="matrix(2,0,0,1,0,0)"/>
+  <atv:overwrite width="32" id="button_bg" transform="matrix(2,0,0,1,0,0)"/>
+  <atv:overwrite width="34.5" id="id_2" transform="matrix(2,0,0,1,0,0)"/>
+  <atv:overwrite width="39.5" id="id_0" transform="matrix(2,0,0,1,0,0)"/>
+ </svg>
+ <svg width="80" x="0" y="110" atv:dynamic="true" height="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.button" id="id_3" atv:refpx="20" atv:refpy="125" transform="matrix(0.5,0,0,1,0,0)">
+  <atv:overwrite width="32" id="button_stroke" transform="matrix(2,0,0,1,0,0)"/>
+  <atv:overwrite x="20" id="button_label" transform="matrix(2,0,0,1,0,0)"/>
+  <atv:overwrite x="10" id="button_symbol" transform="matrix(2,0,0,1,0,0)"/>
+  <atv:overwrite width="32" id="button_bg" transform="matrix(2,0,0,1,0,0)"/>
+  <atv:overwrite width="34.5" id="id_2" transform="matrix(2,0,0,1,0,0)"/>
+  <atv:overwrite width="39.5" id="id_0" transform="matrix(2,0,0,1,0,0)"/>
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.dots" name="symbol"/>
+  <atv:argument value="T{now}" name="label"/>
+  <atv:argument value="3" name="tabIndex"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[var popupId = webMI.query["popupId"];
+var timestamp = parseInt(webMI.query["timestamp"],10);
+if (isNaN(timestamp)) timestamp = 0;
+var curTime = 0;
+
+webMI.trigger.connect("valuechanged", function(e) {
+curTime = e.value;
+}, "id_0");
+
+webMI.trigger.connect("clicked", function(e) {
+var id = "id_1";
+var value = e.value;
+return function(value) {
+webMI.trigger.fire("com.atvise.datepicker_" + popupId, curTime);
+webMI.display.closeWindow();
+} (value);
+}, "id_1");
+
+webMI.trigger.connect("clicked", function(e) {
+var id = "id_2";
+var value = e.value;
+return function(value) {
+webMI.trigger.fire("setValue", curTime = 0, "id_0");
+} (value);
+}, "id_2");
+
+webMI.addOnload(function() {
+	webMI.trigger.fire("setValue", curTime = timestamp, "id_0");
+});
+webMI.trigger.connect("clicked", function(e) {
+var id = "id_3";
+var value = e.value;
+return function(value) {
+var now = (new Date()).getTime();
+curTime = now;
+webMI.trigger.fire("setValue", now, "id_0");
+} (value);
+}, "id_3");
+
+]]></script>
+</svg>

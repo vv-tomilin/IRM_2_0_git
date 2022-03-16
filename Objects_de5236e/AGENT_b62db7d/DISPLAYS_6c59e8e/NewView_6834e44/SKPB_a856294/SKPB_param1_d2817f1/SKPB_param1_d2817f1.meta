@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.SKPB.SKPB_param1
+NodeClass: Variable
+BrowseName: 1:SKPB_param1
+DisplayName: en|SKPB_param1
+Description: en|SKPB_param1
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

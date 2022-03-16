@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/MapLine
+NodeClass: Object
+BrowseName: 1:MapLine
+DisplayName: en|MapLine
+Description: en|MapLine
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

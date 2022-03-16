@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/themes/high-contrast-light.js.map
+NodeClass: Variable
+BrowseName: 1:high-contrast-light.js.map
+DisplayName: en|high-contrast-light.js.map
+Description: en|high-contrast-light.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

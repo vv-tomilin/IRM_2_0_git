@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Halliburton.marks.MaxTorque
+NodeClass: Variable
+BrowseName: 1:MaxTorque
+DisplayName: en|MaxTorque
+Description: en|MaxTorque
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

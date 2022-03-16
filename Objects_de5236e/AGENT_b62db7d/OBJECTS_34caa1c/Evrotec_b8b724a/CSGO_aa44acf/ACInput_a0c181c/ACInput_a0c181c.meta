@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.CSGO.ACInput
+NodeClass: Variable
+BrowseName: 1:ACInput
+DisplayName: en|ACInput
+Description: en|ACInput
+DataType: UInt16
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

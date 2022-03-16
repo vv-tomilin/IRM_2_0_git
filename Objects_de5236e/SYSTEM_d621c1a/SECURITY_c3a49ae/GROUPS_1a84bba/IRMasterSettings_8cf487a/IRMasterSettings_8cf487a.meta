@@ -1,0 +1,19 @@
+NodeId: ns=1;s=SYSTEM.SECURITY.GROUPS.IRMasterSettings
+NodeClass: Object
+BrowseName: 1:IRMasterSettings
+DisplayName: en|IRMasterSettings
+Description: en|IRMasterSettings
+EventNotifier: 0
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.RIGHTS.USER.AccessIRMaster
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.RIGHTS.USER.AccessReport
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.RIGHTS.USER.AccessSettings
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.bitservice
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.cementservice
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.directionalservice
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.khayrullin.iv
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.korenevrv
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.mudservice
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.steward
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.superuser
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.user
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.Group

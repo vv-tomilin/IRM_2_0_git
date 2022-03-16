@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/overlapping-datalabels.js.map
+NodeClass: Variable
+BrowseName: 1:overlapping-datalabels.js.map
+DisplayName: en|overlapping-datalabels.js.map
+Description: en|overlapping-datalabels.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.wellPadBoard.OEDK
+NodeClass: Variable
+BrowseName: 1:OEDK
+DisplayName: en|OEDK
+Description: en|OEDK
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

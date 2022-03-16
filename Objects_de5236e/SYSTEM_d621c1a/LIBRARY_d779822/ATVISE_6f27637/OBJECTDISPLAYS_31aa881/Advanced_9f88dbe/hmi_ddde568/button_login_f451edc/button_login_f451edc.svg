@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="30" height="30" version="1.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient y1="0" gradientUnits="objectBoundingBox" y2="1" x2="1" id="linear_1" x1="1">
+   <stop stop-color="#ffffff" stop-opacity="0" offset="0"/>
+   <stop stop-color="#ffffff" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient y1="0" gradientUnits="objectBoundingBox" y2="1" x2="1" id="linear_2" x1="1">
+   <stop stop-color="#ffffff" stop-opacity="0.35" offset="0"/>
+   <stop stop-color="#ffffff" stop-opacity="0.35" offset="1"/>
+  </linearGradient>
+ </defs>
+ <desc>Opens the login dialog on click.</desc>
+ <title>Button Login</title>
+ <metadata>
+  <atv:parameter valuetype="address" behavior="hidden" desc="base" name="base"/>
+  <atv:parameter valuetype="display" behavior="optional" desc="symbol login" defaultvalue="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.login" config="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20" name="symbolLogin" group="Appearance" substitute="$SYMBOL$"/>
+  <atv:parameter valuetype="display" behavior="optional" desc="symbol logout" defaultvalue="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.logout" config="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20" name="symbolLogout" group="Appearance" substitute="$SYMBOLLOGOUT$"/>
+  <atv:parameter valuetype="global" behavior="optional" desc="symbol color login" defaultvalue="SYSTEM.GLOBALS.atvSymbolColor" name="symbolColor" group="Appearance"/>
+  <atv:parameter valuetype="global" behavior="optional" desc="symbol color logout" defaultvalue="SYSTEM.GLOBALS.atvSymbolColor" name="symbolColorLogout" group="Appearance"/>
+  <atv:parameter valuetype="number" behavior="optional" desc="symbol scaling (%)" defaultvalue="100" name="symbolScaling" group="Appearance" substitute=""/>
+  <atv:parameter valuetype="global" behavior="optional" desc="fill color" defaultvalue="SYSTEM.GLOBALS.atvFillColor" name="fill" group="Appearance" substitute="$FILLCOLOR$"/>
+  <atv:parameter valuetype="global" group="Appearance" defaultvalue="SYSTEM.GLOBALS.atvInactiveColor" behavior="optional" desc="fill color when inactive" name="fillColorInactive"/>
+  <atv:parameter valuetype="global" substitute="$BORDERCOLOR$" group="Appearance" defaultvalue="SYSTEM.GLOBALS.atvBorderColor" behavior="optional" desc="border color" name="borderColor"/>
+  <atv:parameter valuetype="color" group="Appearance" defaultvalue="#FFFFFF" behavior="optional" desc="stroke color when pressed" name="strokePressed"/>
+  <atv:parameter valuetype="number" defaultvalue="430" group="Login dialog" desc="width" behavior="optional" name="width"/>
+  <atv:parameter valuetype="number" defaultvalue="300" group="Login dialog" desc="height" behavior="optional" name="height"/>
+  <atv:gridconfig height="5" width="5" gridstyle="lines" enabled="true"/>
+  <atv:snapconfig height="5" width="5" enabled="true"/>
+ </metadata>
+ <g atv:refpx="15" atv:refpy="15" id="button_clickarea">
+  <rect fill="$FILLCOLOR$" width="29.5" atv:bindtl="0,0" height="29.5" x="0.25" atv:dynamic="true" ry="3" y="0.25" atv:bindbr="1,1" stroke="$BORDERCOLOR$" atv:refpx="15" atv:refpy="15.75" rx="3" id="id_0" stroke-width="0.5"/>
+  <rect fill="#ffffff" width="24.5" atv:bindtl="0,0" height="24.5" x="2.75" ry="3" y="2.75" atv:bindbr="1,1" stroke="none" atv:refpx="15" atv:refpy="-36.75" rx="3" id="id_3" stroke-width="0.5"/>
+  <rect fill="$FILLCOLOR$" width="22.5" atv:bindtl="0,0" height="22.5" x="3.75" ry="3" y="3.75" atv:bindbr="1,1" stroke="none" atv:refpx="15" atv:refpy="26.25" rx="3" id="button_bg" stroke-width="0.5"/>
+  <svg width="20" atv:bindtl="0.5,0.5" height="20" x="5" y="5" atv:bindbr="0.5,0.5" xlink:href="$SYMBOLLOGOUT$" atv:refpx="34.5" atv:refpy="49.5" id="button_symbol_pressed" visibility="hidden">
+   <atv:argument prefix="symbolColorLogout" name="symbolColor"/>
+  </svg>
+  <rect fill="url(#linear_1)" width="22.5" atv:bindtl="0,0" height="22.5" x="3.75" ry="3" y="3.75" atv:bindbr="1,1" stroke="none" atv:refpx="15" atv:refpy="26.25" rx="3" id="button_stroke" stroke-width="1"/>
+  <svg width="20" atv:bindtl="0.5,0.5" height="20" x="5" y="5" atv:bindbr="0.5,0.5" xlink:href="$SYMBOL$" atv:refpx="34.5" atv:refpy="49.5" id="button_symbol">
+   <atv:argument prefix="symbolColor" name="symbolColor"/>
+  </svg>
+ </g>
+ <script type="text/ecmascript"><![CDATA[var strokeNormal = "none";
+var strokePressed = webMI.query["strokePressed"];
+var loggedIn = false;
+var loginmethod = null;
+var activatedEvents = true;
+var symbolScaling = parseInt(webMI.query["symbolScaling"],10);
+
+function setButton(fill, activateEvents) {
+	webMI.gfx.setVisible("button_symbol_pressed", loggedIn);
+	webMI.gfx.setVisible("button_symbol", !loggedIn);
+	webMI.gfx.setFill("button_bg", fill ? webMI.query["fill"] : webMI.query["fillColorInactive"]);
+	activatedEvents = activateEvents;
+}
+
+webMI.addOnload(function() {
+	webMI.data.call("info",{},function(e) { //get information from webmi.js
+		loginmethod = e.loginmethod;
+		if(loginmethod == "none") {
+			setButton(false, false);
+			return;
+		}
+		webMI.addEvent(webMI.data, "clientvariableschange", function(e) {
+			loggedIn = (e.username != "" && e.username != undefined);
+			if(loggedIn && loginmethod == "form")
+				webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.AutoLogout", {"action":"start"});
+			if("username" in e) {
+				if(loginmethod == "http" ||	loginmethod == "ntlm") //ntml is not defined in webmi
+					setButton(false, false);
+				else if(loginmethod == "form")
+					setButton(true, true);
+			}
+			else if(e.username == undefined) //webMI2ADS 2.0.1 specific fix to enable login
+				setButton(true, true);
+		}
+	);});
+
+	/* set and scale icon position */
+	var FRAME = {};
+	FRAME.element = document.getElementById("id_0");
+	FRAME.height = parseInt(FRAME.element.getAttribute("height"));
+	FRAME.width = parseInt(FRAME.element.getAttribute("width"));
+
+	var SYMBOL = {};
+	SYMBOL.element = document.getElementById("button_clickarea").parentNode;
+	SYMBOL.height = parseInt(SYMBOL.element.getAttribute("height"));
+	SYMBOL.width = parseInt(SYMBOL.element.getAttribute("width"));
+
+	if(symbolScaling != 0 && symbolScaling != 100){
+		var scale = {};
+		scale.x = FRAME.width / SYMBOL.width;
+		scale.y = FRAME.height / SYMBOL.height;
+		scale.value = symbolScaling / 100;
+	
+		var offset = {};
+		offset.x = 20 * (scale.x - scale.value) / 2;
+		offset.y = 20 * (scale.y - scale.value) / 2;
+	
+		var icon = document.getElementById("button_symbol");
+		icon.setAttribute("viewBox", "0,0,20,20");
+		icon.setAttribute("x", 4.694 * scale.x + offset.x);
+		icon.setAttribute("y", 4.694 * scale.y + offset.y);
+		icon.setAttribute("width", 20 * scale.value);
+		icon.setAttribute("height", 20 * scale.value);
+	}
+});
+
+function setButtonEvents(strokeStyle, buttonFill, setStroke) {
+	if(activatedEvents) {
+		webMI.gfx.setStroke("button_stroke", strokeStyle ? strokePressed : strokeNormal);
+		webMI.gfx.setFill("button_stroke", buttonFill ? "url(#linear_1)" : "url(#linear_2)");
+		if(setStroke)
+			webMI.gfx.setStrokeWidth("button_stroke", "1");
+	}
+}
+
+webMI.addEvent("button_clickarea", "click", function(e) {
+	if (loggedIn == false && loginmethod == "form") {
+		webMI.display.openWindow({display:"SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dialogs.login_dialog",extern:false,height:webMI.query["height"],menubar:false,modal:true,movable:true,resizable:false,scrollbars:false,status:false,title:"T{Login}",toolbar:false,width:webMI.query["width"],query:webMI.query});
+	} else if (loggedIn == false && loginmethod == "http") { //webMI2ADS 2.0.1 specific fix to enable login
+		webMI.data.login();
+	} else if (loggedIn == true && loginmethod == "form") {
+		webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.AutoLogout", {"action":"manualLogout"});
+		webMI.data.logout(function(){});
+	}
+});
+
+webMI.addEvent("button_clickarea", "mouseup", function(e) {
+	setButtonEvents(false, true, false);
+});
+
+webMI.addEvent("button_clickarea", "mousedown", function(e) {
+		setButtonEvents(true, false, false);
+});
+
+webMI.addEvent("button_clickarea", "mouseout", function(e) {
+		setButtonEvents(false, true, true);
+});
+
+webMI.addEvent("button_clickarea", "dragstart", function(e) {
+	if (e.preventDefault) {
+		e.preventDefault();
+	}
+});]]></script>
+</svg>

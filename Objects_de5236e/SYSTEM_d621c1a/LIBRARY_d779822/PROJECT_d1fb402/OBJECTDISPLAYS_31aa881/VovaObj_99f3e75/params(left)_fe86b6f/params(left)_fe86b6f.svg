@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="300" height="200" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.2">
+ <defs/>
+ <metadata>
+  <atv:parameter name="MaxHookWeight" defaultvalue="10" behavior="optional" valuetype="number"/>
+  <atv:parameter name="nums" desc="т/с" substitute="$TS$" defaultvalue="т/с" behavior="optional" valuetype="string"/>
+  <atv:parameter name="HookWeight" desc="Вес на крюке" substitute="" defaultvalue="AGENT.OBJECTS.SimulatedData.double_5" behavior="optional" valuetype="address"/>
+  <atv:parameter name="DrilLoad" desc="Нагрузка на долото" defaultvalue="AGENT.OBJECTS.SimulatedData.double_2" behavior="optional" valuetype="address"/>
+  <atv:parameter name="PositionHook" desc="Положение крюка" defaultvalue="AGENT.OBJECTS.SimulatedData.double_3" behavior="optional" valuetype="address"/>
+  <atv:parameter name="SPOSpeed" desc="Скорость СПО" defaultvalue="AGENT.OBJECTS.SimulatedData.double_4" behavior="optional" valuetype="address"/>
+  <atv:parameter name="MaxDrill" desc="Макс. нагрузка на долото" defaultvalue="10" behavior="optional" valuetype="number"/>
+  <atv:parameter name="MaxPosition" desc="Макс. положение" defaultvalue="10" behavior="optional" valuetype="number"/>
+  <atv:parameter name="MaxSPOSpeed" desc="Макс. скорость СПО" defaultvalue="10" behavior="optional" valuetype="number"/>
+  <atv:parameter name="Ms" desc="м/с" substitute="$MS$" defaultvalue="м/с" behavior="optional" valuetype="string"/>
+  <atv:parameter name="M" desc="м" substitute="$M$" defaultvalue="м" behavior="optional" valuetype="address"/>
+  <atv:gridconfig enabled="false" width="20" height="20" gridstyle="lines"/>
+  <atv:snapconfig enabled="false" width="10" height="10"/>
+ </metadata>
+ <text atv:refpx="583.881" y="177.41" id="id_7" fill="#ffffff" x="583.881" font-family="Arial" font-size="6" atv:refpy="175.41"/>
+ <g transform="matrix(1,0,0,1,23.8991,3.1605)" atv:refpx="226.354" id="id_4" atv:refpy="103.514">
+  <text transform="matrix(3.6095,0,0,2.9428,-493.7129,-2.6242)" atv:refpx="236.128" y="10.351" id="id_6" fill="#ffffff" x="193.198" font-family="Arial" font-size="6" atv:refpy="21.95">000000</text>
+  <text transform="matrix(3.6095,0,0,2.9428,-493.7113,-86.0217)" atv:refpx="236.124" y="53.277" id="id_10" fill="#ffffff" x="193.198" font-family="Arial" font-size="6" atv:refpy="64.88">000000</text>
+  <text transform="matrix(3.6095,0,0,2.9428,-499.8424,-174.5124)" atv:refpx="238.468" y="98.825" id="id_11" fill="#ffffff" x="195.547" font-family="Arial" font-size="6" atv:refpy="110.433">000000</text>
+  <text transform="matrix(3.6095,0,0,2.9428,-499.8424,-307.269)" atv:refpx="238.47" y="167.158" id="id_12" fill="#ffffff" x="195.547" font-family="Arial" font-size="6" atv:refpy="178.768">000000</text>
+  <text transform="matrix(0.7821,0,0,0.7354,35.352,1.6296)" atv:refpx="181.296" y="23.159" id="id_14" fill="#ffffff" x="166.74" font-family="Arial" font-size="14" atv:refpy="17.189">Вес на</text>
+  <text transform="matrix(0.7821,0,0,0.7354,30.8247,4.8977)" atv:refpx="170.418" y="35.51" id="id_15" fill="#ffffff" x="145.963" font-family="Arial" font-size="14" atv:refpy="29.54">крюке ($TS$)</text>
+  <text transform="matrix(0.7821,0,0,0.7141,33.1428,14.1171)" atv:refpx="177.91" y="66.378" id="id_18" fill="#ffffff" x="156.601" font-family="Arial" font-size="14" atv:refpy="57.951">Нагрузка</text>
+  <text transform="matrix(0.7821,0,0,0.7141,26.0425,17.7938)" atv:refpx="161.764" y="79.238" id="id_19" fill="#ffffff" x="124.016" font-family="Arial" font-size="14" atv:refpy="70.811">на долото ($TS$)</text>
+  <text transform="matrix(0.7821,0,0,0.7884,30.1715,20.0992)" atv:refpx="170.914" y="111.987" id="id_20" fill="#ffffff" x="142.965" font-family="Arial" font-size="14" atv:refpy="104.442">Положение </text>
+  <text transform="matrix(0.7821,0,0,0.7884,32.1901,22.4435)" atv:refpx="176.077" y="123.066" id="id_21" fill="#ffffff" x="152.229" font-family="Arial" font-size="14" atv:refpy="115.52">крюка ($M$)</text>
+  <g transform="matrix(0.7821,0,0,0.6968,-19.609,21.2624)" atv:refpx="174.792" id="id_26" atv:refpy="166.682">
+   <text atv:refpx="250.328" y="221.178" id="id_22" fill="#ffffff" x="219.828" font-family="Arial" font-size="14" atv:refpy="216.178">Скорость </text>
+   <text atv:refpx="248.321" y="240.232" id="id_23" fill="#ffffff" x="216.321" font-family="Arial" font-size="14" atv:refpy="235.232">СПО ($MS$)</text>
+  </g>
+ </g>
+ <script type="text/ecmascript"><![CDATA[webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"2", "id":"id_6", "nodeId":webMI.query["HookWeight"]});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"2", "id":"id_10", "nodeId":webMI.query["DrilLoad"]});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"2", "id":"id_11", "nodeId":webMI.query["PositionHook"]});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"2", "id":"id_12", "nodeId":webMI.query["SPOSpeed"]});]]></script>
+ <svg atv:refpx="101.171" width="200" y="2.252" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.test" id="id_0" height="200" x="1.171" atv:refpy="102.252"/>
+</svg>

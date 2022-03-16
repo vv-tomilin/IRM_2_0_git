@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.DrillPlan2
+NodeClass: Variable
+BrowseName: 1:DrillPlan2
+DisplayName: en|DrillPlan2
+Description: en|DrillPlan2
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

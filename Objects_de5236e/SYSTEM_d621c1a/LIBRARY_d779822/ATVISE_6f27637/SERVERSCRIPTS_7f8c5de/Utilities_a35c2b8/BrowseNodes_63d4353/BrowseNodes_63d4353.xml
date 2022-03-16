@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="startAddress" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="endLevel" type="number" trigger="false" relative="false" value=""/>
+  <parameter name="vTypes" type="array" trigger="false" relative="false" value=""/>
+  <parameter name="mapping" type="array" trigger="false" relative="false" value=""/>
+  <parameter name="includeStartAddress" type="boolean" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var retObject = {};
+var array = [];
+
+var node = new UaNode(startAddress);
+var nodeName = startAddress.split(".").slice(-1).join("");
+if (!node.exists()) {
+	/* alternative way to find node if it was not found by node.exists(): iterate through parent node's children, and if browseName is equal to nodeName then the node was found */
+	node = new UaNode(startAddress.split(".").slice(0, -1).join("."));
+
+	if (!node.exists())
+		return {"error":-1,"errorstring":"BadNodeIdUnknown"};
+		
+	var parentArray = node.browse();
+	for (var i=0; i < parentArray.length; i++) {
+		if (parentArray[i].node.browsename == nodeName) {
+			array = parentArray[i].node.browse();
+			break;
+		}
+		return retObject;
+	}
+} else {
+	array = node.browse();
+}
+
+var validTypes = ["i=61", "i=62", "i=63", "VariableTypes.ATVISE.Display", "ObjectTypes.PROJECT", "ns=1;s=ObjectTypes.ATVISE.ArchiveGroup.Data", "ns=1;s=ObjectTypes.ATVISE.Alarm", "VariableTypes.PROJECT"];
+if (vTypes && vTypes.length > 0) {
+	validTypes = vTypes;
+	if (validTypes.indexOf("i=62") > -1 && validTypes.indexOf("i=63") == -1)
+		validTypes.push("i=63"); // requesting type i=62 (BaseVariableType) always shall implicitely include type i=63 (BaseDataVariableType)
+}
+
+if (!(mapping && mapping.length > 0))
+	mapping = ["name:nodeid:splitnamespace","text:browsename"/*,"type:typedefinition:splitnamespace"*/];
+
+function checkType(type) {
+	for (var i=0; i < validTypes.length; i++) {
+		if (type.indexOf(validTypes[i]) > -1)
+			return true;
+	}
+	return false;
+}
+
+function hasValidSubarray(array) {
+	if (typeof array === "undefined" || array.length == 0 )
+		return false;
+
+	for (var i=0; i < array.length; i++) {
+		if (checkType(array[i].node.typedefinition))
+			return true;
+	}
+	return false;
+}
+
+function createEntry(node, childs) {
+	var obj = {};
+	for (var i=0; i < mapping.length; i++) {
+		var sp = mapping[i].split(":");
+		if (sp.length == 2)
+			obj[sp[0]] = node[sp[1]];
+
+		if (sp.length == 3 && sp[2] == "splitnamespace") {
+			var str = node[sp[1]];
+			if (str.indexOf("ns=") > -1)
+				obj[sp[0]] = str.split(";")[1].substr(2);
+			else
+				obj[sp[0]] = str;
+		}
+	}
+	obj["childs"] = childs;
+	return obj;
+}
+
+function addLevel(retObject, array, level) {
+	for (var i=0; i < array.length; i++) {
+		if (!checkType(array[i].node.typedefinition))
+			continue;
+
+		var identifier = array[i].node.browsename;
+		var subarray = array[i].node.browse();
+		if (hasValidSubarray(subarray)) {
+			if (endLevel == 0 || level + 1 <= endLevel) {
+				retObject[identifier] = createEntry(array[i].node, {});
+				addLevel(retObject[identifier]["childs"], subarray, level + 1);
+			} else
+				retObject[identifier] = createEntry(array[i].node, "ondemand");
+		} else
+			retObject[identifier] = createEntry(array[i].node, null);
+	}
+}
+
+if (includeStartAddress) {
+	retObject[nodeName] = createEntry(node, {});
+	addLevel(retObject[nodeName]["childs"], array, 2);
+} else
+	addLevel(retObject, array, 1);
+
+return retObject;
+
+/*
+ * i=61													FolderType
+ * i=62													BaseVariableType (int, string, ...)
+ * i=63													BaseDataVariableType
+ * VariableTypes.ATVISE.Display							Display
+ * ObjectTypes.PROJECT									Objects
+ * ns=1;s=ObjectTypes.ATVISE.ArchiveGroup.Data			Data (archives)
+ * ns=1;s=ObjectTypes.ATVISE.AlarmConfiguration			AlarmConfiguration
+ * VariableTypes.PROJECT								Variable types
+*/]]></code>
+</script>

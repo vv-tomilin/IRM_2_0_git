@@ -1,0 +1,11 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed".Descent.Warning
+NodeClass: Variable
+BrowseName: 1:Warning
+DisplayName: en|Warning
+Description: en|Warning
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseDataVariableType
+Reference: forward HasComponent ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed"."Descent".Warning.RelMirrorInput

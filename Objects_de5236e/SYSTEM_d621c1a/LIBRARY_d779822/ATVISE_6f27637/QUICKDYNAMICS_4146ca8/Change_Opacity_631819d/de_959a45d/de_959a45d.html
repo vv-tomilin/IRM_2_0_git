@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>Beschreibung - Deckkraft &auml;ndern</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body>
+<h1><span style="" lang="EN-GB">Beschreibung
+- Deckkraft &auml;ndern</span></h1>
+<span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; font-size: medium;">
+<p>Dieses Quick Dynamic legt die Deckkraft der F&uuml;llfarbe
+und/oder der Konturfarbe des angewendeten grafischen Elements in
+Abh&auml;ngigkeit vom Wert des definierten Datenpunkts und von dem
+mit<span class="Apple-converted-space">&nbsp;</span><br>
+"minRange" und "maxRange" definierten Bereichs fest. Dies bedeutet,
+dass der mit "minRange" und "maxRange" definierte Bereich in den mit
+"StartFill" und "StopFill" definierten Bereich und/oder in den mit<span class="Apple-converted-space">&nbsp;</span><br>
+"StartStroke" und "StopStroke" definierten Bereich &uuml;bersetzt
+wird.<br>
+Die Deckkraft f&uuml;r die F&uuml;llfarbe wird nur festgelegt,
+wenn sowohl "StartFill" als auch "StopFill" definiert sind.<br>
+Die Deckkraft f&uuml;r die Konturfarbe wird nur festgelegt, wenn
+sowohl "StartStroke" als auch "StopStroke" definiert sind.<br>
+Beispiel: Der definierte Bereich des Werts von 0 (= minRange) bis 100
+(= maxRange) wird in 0 (= StartFill) bis 1 (= StopFill)
+&uuml;bersetzt, wobei 1 f&uuml;r 100&nbsp;% Deckkraft steht.</p>
+</span>
+<h1>Parameter:</h1>
+<span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; font-size: medium;">
+<ul>
+  <li>nodeID: Dieser Datenpunkt aktiviert dieses Quick Dynamic.</li>
+  <li>minRange: Unterer Grenzwert des Bereichs, innerhalb dessen
+der Datenpunktwert liegen muss</li>
+  <li>maxRange: Oberer Grenzwert des Bereichs, innerhalb dessen
+der Datenpunktwert liegen muss</li>
+  <li>StartFill: Wert f&uuml;r die geringste Deckkraft in
+Prozent</li>
+  <li>StopFill: Wert f&uuml;r die gr&ouml;&szlig;te
+Deckkraft in Prozent (1&nbsp;=&nbsp;100&nbsp;%)</li>
+  <li>StartStroke: Wert f&uuml;r die schw&auml;chste
+Kontur in Prozent</li>
+  <li>StopStroke: Wert f&uuml;r die st&auml;rkste Kontur
+in Prozent (1&nbsp;=&nbsp;100&nbsp;%)</li>
+</ul>
+</span><span class="Apple-style-span" style="border-collapse: separate; color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; font-size: medium;"></span>
+</body>
+</html>

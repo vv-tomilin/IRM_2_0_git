@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="15" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:svg="http://www.w3.org/2000/svg" version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg" height="15" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="false" width="20" gridstyle="lines" height="20"/>
+  <atv:snapconfig enabled="false" width="10" height="10"/>
+ </metadata>
+ <g atv:refpx="0.008" id="id_1" atv:refpy="0.008" transform="matrix(1,0,0,1,-14.9922,-14.9922)">
+  <g atv:refpx="15" id="layer1" atv:refpy="15" transform="translate(43.202678,5.4050594)">
+   <g atv:refpx="-28.203" id="shape" atv:refpy="9.595" transform="matrix(0.51724138,0,0,0.51724138,-43.202678,-5.4050594)">
+    <path fill="#993300" atv:refpx="29" id="path43" d="M34,58L0,58L0,42L34,42C38.411,42 42,38.411 42,34L42,0L58,0L58,34C58,47.234 47.234,58 34,58" atv:refpy="29"/>
+   </g>
+   <path fill="#702a00" atv:refpx="-28.461" id="path46" stroke-width="0.517241" d="M-25.616,24.077L-43.202,24.077L-43.202,16.836L-25.616,16.836C-23.049,16.836 -20.961,14.747 -20.961,12.181L-20.961,-5.405L-13.719,-5.405L-13.719,12.181C-13.719,18.74 -19.056,24.077 -25.616,24.077" atv:refpy="9.336"/>
+   <g atv:refpx="-28.979" id="light" atv:refpy="8.819" transform="matrix(0.51724138,0,0,0.51724138,-43.202678,-5.4050594)">
+    <path fill="#bc4512" atv:refpx="27.5" id="path49" d="M34,55L0,55L0,45L34,45C40.065,45 45,40.065 45,34L45,0L55,0L55,34C55,45.58 45.58,55 34,55" atv:refpy="27.5"/>
+   </g>
+   <g atv:refpx="-29.366" id="hlight" atv:refpy="8.431" transform="matrix(0.51724138,0,0,0.51724138,-43.202678,-5.4050594)">
+    <path fill="#eb9069" atv:refpx="26.75" id="path52" d="M34,53.5L0,53.5L0,46.5L34,46.5C40.893,46.5 46.5,40.893 46.5,34L46.5,0L53.5,0L53.5,34C53.5,44.752 44.752,53.5 34,53.5" atv:refpy="26.75"/>
+   </g>
+  </g>
+ </g>
+</svg>

@@ -1,0 +1,8 @@
+NodeId: ns=1;s=AGENT.HISTORY.AggrEvrotec
+NodeClass: Object
+BrowseName: 1:AggrEvrotec
+DisplayName: en|AggrEvrotec
+Description: en|AggrEvrotec
+EventNotifier: 0
+Reference: forward HasModellingRule Shared
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.ArchiveGroup.Aggregate

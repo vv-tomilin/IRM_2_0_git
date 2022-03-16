@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" width="320" height="30.21" xmlns="http://www.w3.org/2000/svg" version="1.2">
+ <desc>Optional start / end time buttons for the chart.</desc>
+ <title>Start / end time buttons</title>
+ <defs/>
+ <metadata>
+  <atv:parameter valuetype="string" name="chartname" behavior="mandatory" defaultvalue="trend1" desc="chart name"/>
+  <atv:parameter valuetype="string" name="xAxisIndex" behavior="optional" defaultvalue="0" desc="x-axis index"/>
+  <atv:parameter substitute="$FONTCOLOR$" valuetype="global" name="fontColor" behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvFontColor" desc="font color"/>
+  <atv:gridconfig enabled="false" width="20" gridstyle="lines" height="20"/>
+  <atv:snapconfig enabled="false" width="10" height="10"/>
+ </metadata>
+ <svg atv:refpy="1162.139" atv:refpx="242.971" width="160" height="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_date" id="dp_start" y="0.213" x="0">
+  <atv:argument name="base"/>
+  <atv:argument name="name" value="starttime" postfix="chartname"/>
+ </svg>
+ <svg atv:refpy="1161.926" atv:refpx="631.971" width="160" height="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_date" id="dp_end" y="0" x="160">
+  <atv:argument name="base"/>
+  <atv:argument name="name" value="endtime" postfix="chartname"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[var chartname = webMI.query["chartname"];
+var activeAxis = webMI.query["xAxisIndex"];
+var chart, updatedUserMin, updatedUserMax, updatedMin, updatedMax;
+
+function checkChart() {
+	chart = webMI.trendFactory.getTrendByName(chartname);
+	if (!chart) {
+		setTimeout(function() {checkChart()}, 100);
+		return;
+	}
+
+	var extremes = chart.chart.xAxis[activeAxis].getExtremes();
+	if (isNaN(extremes.min)) {
+		setTimeout(function() {checkChart()}, 100);
+		return;
+	}
+
+	updatedMin = true;
+	updatedMax = true;
+	var extremes = chart.chart.xAxis[activeAxis].getExtremes();
+	webMI.trigger.fire("com.atvise.datepicker_starttime" + chartname, extremes.min);
+	webMI.trigger.fire("com.atvise.datepicker_endtime" + chartname, extremes.max);
+
+	var chartUpdate = chart.control.registerOnUpdatedCallback(updateDatePicker);
+
+	var lockUpdateDatePicker = false;
+	function updateDatePicker() {
+		var extremes = chart.chart.xAxis[activeAxis].getExtremes();
+		if (isNaN(extremes.min) && !lockUpdateDatePicker) {
+			lockUpdateDatePicker = true;
+			updatePickerID = setTimeout(function() {
+					updateDatePicker();
+					lockUpdateDatePicker = false;
+				}, 100);
+			return;
+		} else if(!lockUpdateDatePicker)  {
+			if (updatedUserMin) {
+				updatedUserMin = false;
+				return;
+			} else {
+				updatedMin = true;
+				webMI.trigger.fire("com.atvise.datepicker_starttime" + chartname, extremes.min);
+			}
+
+			if (updatedUserMax) {
+				updatedUserMax = false;
+				return;
+			} else {
+				updatedMax = true;
+				webMI.trigger.fire("com.atvise.datepicker_endtime" + chartname, extremes.max);
+			}
+		}
+	}
+
+	webMI.addOnunload(function() {
+		if (chart && chart.control) chart.control.unregisterOnUpdatedCallback(chartUpdate);
+	});
+}
+
+webMI.addOnload(function() {
+	checkChart();
+});
+
+webMI.trigger.connect("valuechanged", function(e) {
+	if (!chart || e.value < 1)
+		return;
+
+	if (updatedMin) {
+		updatedMin = false;
+		return;
+	}
+
+	updatedUserMin = true;
+
+	starttime = e.value;
+	var extremes = chart.chart.xAxis[activeAxis].getExtremes();
+	chart.chart.xAxis[activeAxis].setExtremes(e.value, extremes.max);
+	chart.chart.xAxis[activeAxis].options.min = e.value;
+	chart.chart.xAxis[activeAxis].options.max = extremes.max;
+
+	if (chart.control.isLiveModeRunning()) chart.control.stopLiveMode();
+	var oldMode = chart.chart.options.atviseOptions.mode;
+	chart.control.setMode("history");
+	chart.control.updated(function() {
+		chart.control.setMode(oldMode);
+	});
+}, "dp_start");
+
+webMI.trigger.connect("valuechanged", function(e) {
+	if (!chart || e.value < 1)
+		return;
+
+	if (updatedMax) {
+		updatedMax = false;
+		return;
+	}
+
+	updatedUserMax = true;
+
+	endtime = e.value;
+	var extremes = chart.chart.xAxis[activeAxis].getExtremes();
+	chart.chart.xAxis[activeAxis].setExtremes(extremes.min, e.value);
+	chart.chart.xAxis[activeAxis].options.min = extremes.min; 
+	chart.chart.xAxis[activeAxis].options.max = e.value;
+
+	if (chart.control.isLiveModeRunning()) chart.control.stopLiveMode();
+	var oldMode = chart.chart.options.atviseOptions.mode;
+	chart.control.setMode("history");
+	chart.control.updated(function() {
+		chart.control.setMode(oldMode);
+	});
+}, "dp_end");]]></script>
+</svg>

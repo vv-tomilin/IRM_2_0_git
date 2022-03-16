@@ -1,0 +1,134 @@
+{
+  "columns": [
+    {
+      "id": "1",
+      "name": "Тип обсадной колонны",
+      "field": "casingType"
+    },
+    {
+      "id": "2",
+      "name": "Длина колонны для списания",
+      "field": "WOColumnLength"
+    },
+    {
+      "id": "3",
+      "name": "Кол-во труб, шт",
+      "field": "pipeNumber"
+    },
+    {
+      "id": "4",
+      "name": "Глубина установки башмака по стволу",
+      "field": "shoeDepthByBore"
+    },
+    {
+      "id": "5",
+      "name": "Глубина установки башмака по вертикали",
+      "field": "ShoeDepthByVertical"
+    },
+    {
+      "id": "6",
+      "name": "Глубина установки ЦКОДа по стволу",
+      "field": "CKODDepthByBore"
+    },
+    {
+      "id": "7",
+      "name": "Начало цементирования",
+      "field": "concreteStart"
+    },
+    {
+      "id": "8",
+      "name": "Окончание цементирования",
+      "field": "concreteEnd"
+    },
+    {
+      "id": "9",
+      "name": "Продолжительность",
+      "field": "duration"
+    },
+    {
+      "id": "10",
+      "name": "Объем буфера",
+      "field": "bufferVolume"
+    },
+    {
+      "id": "11",
+      "name": "Плотность буфера",
+      "field": "bufferDensity"
+    },
+    {
+      "id": "12",
+      "name": "Марка облегченного цемента",
+      "field": "LconcreteGrade"
+    },
+    {
+      "id": "13",
+      "name": "Объем облегченного цементного раствора",
+      "field": "LconcreteVolume"
+    },
+    {
+      "id": "14",
+      "name": "Плотность облегченного цементного раствора",
+      "field": "LconcreteDensity"
+    },
+    {
+      "id": "15",
+      "name": "Марка тяжелого цемента",
+      "field": "HconcreteGrade"
+    },
+    {
+      "id": "16",
+      "name": "Объем тяжелого цементного раствора",
+      "field": "HconcreteVolume"
+    },
+    {
+      "id": "17",
+      "name": "Плотность тяжелого цементного раствора",
+      "field": "HconcreteDensity"
+    },
+    {
+      "id": "18",
+      "name": "Объем продавочной жидкости",
+      "field": "displFluidVol"
+    },
+    {
+      "id": "19",
+      "name": "Плотность продавочной жидкости",
+      "field": "displFluidDens"
+    },
+    {
+      "id": "20",
+      "name": "Давление СТОП",
+      "field": "STOPpressure"
+    },
+    {
+      "id": "21",
+      "name": "ЦКОД держит",
+      "field": "CKODholds"
+    },
+    {
+      "id": "22",
+      "name": "Цементирование проведено согласно плану работ",
+      "field": "concretePlanned"
+    },
+    {
+      "id": "23",
+      "name": "Примечания",
+      "field": "comments"
+    },
+    {
+      "id": "24",
+      "name": "Жидкость на выходе",
+      "field": "flowOutput"
+    },
+    {
+      "id": "25",
+      "name": "Плотность на выходе",
+      "field": "densityOutput"
+    },
+    {
+      "id": "26",
+      "name": "Объем на выходе",
+      "field": "volumeOutput"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.PumpBlock2.Analog
+NodeClass: Object
+BrowseName: 1:Analog
+DisplayName: en|Analog
+Description: en|Analog
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

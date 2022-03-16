@@ -1,0 +1,11 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Tool.Drillstem.Rotation_Right
+NodeClass: Variable
+BrowseName: 1:Rotation_Right
+DisplayName: en|Rotation_Right
+Description: en|Rotation_Right
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

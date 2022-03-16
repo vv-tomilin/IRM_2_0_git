@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/Waterfall
+NodeClass: Object
+BrowseName: 1:Waterfall
+DisplayName: en|Waterfall
+Description: en|Waterfall
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

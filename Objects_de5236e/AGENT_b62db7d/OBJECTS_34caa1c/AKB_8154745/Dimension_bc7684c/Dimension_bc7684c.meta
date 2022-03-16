@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AKB.Dimension
+NodeClass: Variable
+BrowseName: 1:Dimension
+DisplayName: en|Dimension
+Description: en|Dimension
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

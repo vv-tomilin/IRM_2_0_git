@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/MapPoint
+NodeClass: Object
+BrowseName: 1:MapPoint
+DisplayName: en|MapPoint
+Description: en|MapPoint
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

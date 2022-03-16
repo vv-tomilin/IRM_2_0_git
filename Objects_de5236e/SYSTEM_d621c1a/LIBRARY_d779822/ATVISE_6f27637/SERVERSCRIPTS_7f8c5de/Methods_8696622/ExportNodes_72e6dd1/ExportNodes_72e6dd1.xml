@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="address" type="stringarray" trigger="false" relative="false" value=""/>
+  <parameter name="withouthierarchy" type="boolean" trigger="false" relative="false" value="false"/>
+  <code><![CDATA[/** atvise server wrapper for UA method "AGENT.OPCUA.METHODS.exportNodes"
+This script is a standard atvise resource and must not be modified.
+\example
+\code
+var result = call("Methods.ExportNodes", {
+	address: ["AGENT.OBJECTS.instance1", "AGENT.OBJECTS.instance2"],
+	withouthierarchy: true
+});
+if (result.error)
+	console.log(result.errorstring);
+else
+	console.log(result.result);
+\endcode
+
+\b Input:
+\param address {stringarray} Array of nodes to export.
+\param withouthierarchy {boolean}, {optional} If true then only the specified nodes shall be exported, otherwise the whole hierarchy (the default).
+
+\b Output:
+\return {Object} A result object is returned with the following properties:
+- Object.error {number},{optional} Returns the error code of the call in case of an error. If no error occurred, it is undefined.
+- Object.errorstring {string},{optional} Returns the error string of the call in case of an error. If no error occurred, it is undefined.
+- Object.result {object},{optional} Returns the result of the call if no error occurred. It has the following properties:
+	- result.xmlnodeset {string} The exported nodes in XML format.
+*/
+
+var methodCall = new UaNode("AGENT.OPCUA.METHODS.exportNodes");
+var callResult = methodCall.call({
+	object: "AGENT.OPCUA.METHODS",
+	input: [
+		{type: UaNode.NODEID, value: address},
+		{type: UaNode.BOOLEAN, value: withouthierarchy}
+	]
+});
+
+var result = {};
+
+if (callResult.error) {
+	result.error = callResult.error;
+	result.errorstring = methodCall.statusToString(result.error);
+	if (callResult.argumentError) {
+		var parameterNames = ["address", "withouthierarchy"];
+		for (var i = 0; i < callResult.argumentError.length; ++i)
+			if (callResult.argumentError[i])
+				result.errorstring += ", " + parameterNames[i] + ":" + methodCall.statusToString(callResult.argumentError[i]);
+	}
+}
+else {
+	result.result = {};
+	if (callResult.result.length > 0)
+		result.result["xmlnodeset"] = callResult.result[0];
+}
+
+return result;]]></code>
+</script>

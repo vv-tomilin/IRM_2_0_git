@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/IMG/main_menu.png
+NodeClass: Variable
+BrowseName: 1:main_menu.png
+DisplayName: en|main_menu.png
+Description: en|main_menu.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

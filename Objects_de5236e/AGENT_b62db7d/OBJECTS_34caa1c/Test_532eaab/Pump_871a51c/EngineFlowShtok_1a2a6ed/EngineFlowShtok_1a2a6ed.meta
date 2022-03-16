@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.Pump.EngineFlowShtok
+NodeClass: Variable
+BrowseName: 1:EngineFlowShtok
+DisplayName: en|EngineFlowShtok
+Description: en|EngineFlowShtok
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="once" type="once" trigger="true" relative="false" value="" startdate="2021-02-18" starttime="16:39:00"/>
+  <code><![CDATA[//var cp = new ChildProcess("PSsend.ps1", {
+//    workingDir: "d:\Pers\Serg\Work\RIGINTEL\IR-Master\atvise-ir-master\",
+//});
+//console.log("cp = ",cp.execAsync()); 
+
+//var cp = new ChildProcess("PSsend.bat", {workingDir: 'd:\Pers\Serg\Work\RIGINTEL\IR-Master\atvise-ir-master\'});
+//cp.execAsync();
+
+
+var cp = new ChildProcess("powershell", {
+    args: ['-file', 'd:/Pers/Serg/Work/RIGINTEL/IR-Master/atvise-ir-master/PSsend.ps1'],
+    workingDir: 'd:/Pers/Serg/Work/RIGINTEL/IR-Master/atvise-ir-master/',
+    env: {}
+}); 
+console.log("cpp = ",cp.execAsync());
+console.log("Data:", cp.stdOut);]]></code>
+</script>

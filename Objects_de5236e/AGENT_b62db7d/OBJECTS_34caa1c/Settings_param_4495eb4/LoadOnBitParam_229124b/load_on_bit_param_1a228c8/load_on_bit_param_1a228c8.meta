@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Settings_param.LoadOnBitParam.load_on_bit_param
+NodeClass: Variable
+BrowseName: 1:load_on_bit_param
+DisplayName: en|load_on_bit_param
+Description: en|load_on_bit_param
+DataType: String
+ValueRank: 1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.RawData

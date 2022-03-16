@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Variables.Hook.MinWeight
+NodeClass: Variable
+BrowseName: 1:MinWeight
+DisplayName: en|MinWeight
+Description: en|MinWeight
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

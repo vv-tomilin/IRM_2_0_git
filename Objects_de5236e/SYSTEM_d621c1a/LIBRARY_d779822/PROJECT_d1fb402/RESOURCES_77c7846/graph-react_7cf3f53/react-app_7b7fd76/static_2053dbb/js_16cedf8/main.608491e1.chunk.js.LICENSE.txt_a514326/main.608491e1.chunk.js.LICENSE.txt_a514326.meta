@@ -1,0 +1,11 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/graph-react/react-app/static/js/main.608491e1.chunk.js.LICENSE.txt
+NodeClass: Variable
+BrowseName: 1:main.608491e1.chunk.js.LICENSE.txt
+DisplayName: en|main.608491e1.chunk.js.LICENSE.txt
+Description: en|main.608491e1.chunk.js.LICENSE.txt
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Text
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Text.Compress
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Text.Translate

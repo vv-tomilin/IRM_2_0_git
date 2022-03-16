@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Description</h1>
+<p>This display combines the highcharts, toolbar and legend displays.
+It is an example, but can also be used in a project as is.</p>
+<p>The following parameters are distributed to the single object displays of the highcharts, toolbar and legend to ensure they address the same chart instance.
+Because of this, changes in one of these displays can trigger the correct chart instance.</p>
+
+<h1>Parameters</h1>
+<p>The following common parameters are available:</p>
+<ul>
+  <li><span class="parameter">chart name</span>: This is a unique name to identify the chart instance.</li>
+  <li><span class="parameter">chart group</span>: Multiple chart instances can be grouped.</li>
+  <li><span class="parameter">skip default modules</span>: De-/activates the loading of default highcharts modules.</li>
+  <li><span class="parameter">additional modules</span>: Defines additional modules to be loaded. (Example: "highcharts/modules/exporting.js,highcharts/datasource/opcua.js,highcharts/atviseModules/datahandler.js,highcharts/atviseModules/measuringcursor.js,highcharts/atviseModules/utils.js,highcharts/atviseModules/downsample.js")</li>
+  <li><span class="parameter">configuration node</span>: Node (address) which contains the predefined configuration.</li>
+  <li><span class="parameter">configuration file (in filesystem)</span>: File which updates a predefined configuration when saving, is set in the file system.</li>
+  <li><span class="parameter">config name</span>: Name of the predefined configuration</li>
+  <li><span class="parameter">saving method</span>: Determines whether configurations are stored in node(s) or the file system.</li>
+  <li><span class="parameter">compression</span>: Determines whether the configuration data is compressed when it is saved.</li>
+  <li><span class="parameter">data source</span>: Defines the datasource module which will be loaded for data handling (default: opcua).</li>
+  <li><span class="parameter">back/fwd step in percent</span>: Sets the step size for the previous/next page in historical data.</li>
+</ul>
+
+<p>In addition there are parameters for defining the rights for showing the configuration dialog, to load or save a configuration and to enable the export menu.</p>
+<ul>
+  <li><span class="parameter">necessary right</span>: The user must have this right for the function to work.</li>
+  <li><span class="parameter">activation address</span>: If the value of this address equals to "activation value", then the function will be active.</li>
+  <li><span class="parameter">activation value</span>: Value which activates the function</li>
+</ul>
+
+</body>
+</html>

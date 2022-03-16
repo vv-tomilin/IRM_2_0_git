@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Set_var.TDS_torque_limit.TDS_torque_limit_value
+NodeClass: Variable
+BrowseName: 1:TDS_torque_limit_value
+DisplayName: en|TDS_torque_limit_value
+Description: en|TDS_torque_limit_value
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

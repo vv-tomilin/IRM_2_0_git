@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.alarmNode.active.exclusive
+NodeClass: Variable
+BrowseName: 1:exclusive
+DisplayName: en|exclusive
+Description: en|exclusive
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

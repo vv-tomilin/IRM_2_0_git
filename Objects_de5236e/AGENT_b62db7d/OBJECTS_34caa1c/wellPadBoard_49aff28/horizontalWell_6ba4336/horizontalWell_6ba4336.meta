@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.wellPadBoard.horizontalWell
+NodeClass: Variable
+BrowseName: 1:horizontalWell
+DisplayName: en|horizontalWell
+Description: en|horizontalWell
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

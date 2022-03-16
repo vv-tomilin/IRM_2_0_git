@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Variables.DragOverpull.SPOVelosityBound
+NodeClass: Variable
+BrowseName: 1:SPOVelosityBound
+DisplayName: en|SPOVelosityBound
+Description: en|SPOVelosityBound
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

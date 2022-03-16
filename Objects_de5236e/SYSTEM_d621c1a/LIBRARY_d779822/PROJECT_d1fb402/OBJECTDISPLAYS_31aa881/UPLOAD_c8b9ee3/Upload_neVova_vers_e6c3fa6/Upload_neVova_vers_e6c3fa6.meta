@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.UPLOAD.Upload_neVova_vers
+NodeClass: Variable
+BrowseName: 1:Upload_neVova_vers
+DisplayName: en|Upload_neVova_vers
+Description: en|Upload_neVova_vers
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

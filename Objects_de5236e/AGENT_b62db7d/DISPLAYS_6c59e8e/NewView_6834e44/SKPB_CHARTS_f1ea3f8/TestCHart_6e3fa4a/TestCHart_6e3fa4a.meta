@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.SKPB_CHARTS.TestCHart
+NodeClass: Variable
+BrowseName: 1:TestCHart
+DisplayName: en|TestCHart
+Description: en|TestCHart
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

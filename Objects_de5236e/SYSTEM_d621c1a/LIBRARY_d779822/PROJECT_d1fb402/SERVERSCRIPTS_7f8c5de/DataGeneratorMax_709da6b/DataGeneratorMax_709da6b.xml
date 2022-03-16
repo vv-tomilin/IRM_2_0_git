@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="timer" type="timer" trigger="true" relative="false" value="" starttime="00:00:00" repeat="00:00:55"/>
+  <parameter name="relativeMode" type="boolean" trigger="false" relative="false" value="false"/>
+  <parameter name="browseMode" type="boolean" trigger="false" relative="false" value="true"/>
+  <parameter name="recursive" type="boolean" trigger="false" relative="false" value="false"/>
+  <parameter name="minVal" type="number" trigger="false" relative="false" value="6"/>
+  <parameter name="maxVal" type="number" trigger="false" relative="false" value="10"/>
+  <code><![CDATA[// **************************************************************************************
+// * Writes random numeric values to numeric variable nodes
+// * Author: Kevin Horvath (CERTEC EDV GmbH)
+// * Created on: 31.08.2017
+// * Parameters
+// * relativeMode --> Browse base node (true = yes; false = no)
+// * browseMode --> Browse nodes in browseList (true = yes; false = no),
+// *     can only be activated if relativeMode is set to false
+// * recursive --> Browse recursivevly or not (true = yes; false = no)
+// *
+// * Configuration examples:
+// *
+// * relativeMode = true; browseMode = true/false; recursive = false
+// *     This script's parent node will be browsed and all variable nodes
+// *     in the first level receive value changes
+// *
+// * relativeMode = true; browseMode = true/false; recursive = true
+// *     This script's parent node will be browsed recursively and all child
+// *     variable nodes receive value changes
+// *
+// * relativeMode = false; browseMode = true; recursive = false
+// *     The listed nodes in browseList will be browsed and all variable nodes
+// *     in the first level receive value changes
+// *
+// * relativeMode = false; browseMode = false; recursive = true/false
+// *     The listed nodes in nodeList receive value changes
+// *
+// **************************************************************************************
+
+var baseNodeId = base.nodeid,
+    BaseVarTypeId = "i=62",
+    IntTypeIndexes = [4,5,6,7,8,9],
+    FloatingTypeIndexes = [10,11],
+    MinRandomIntValue = minVal,
+    MaxRandomIntValue = maxVal,
+    MinRandomFloatValue = minVal,
+    MaxRandomFloatValue = maxVal,
+    nodeList = [
+        "AGENT.OBJECTS.float",
+        "AGENT.OBJECTS.myValue"
+    ],
+    browseList = [
+        "AGENT.OBJECTS.SimulatedDataMax",
+    ];
+
+// writes random values for given node list
+function writeNodesListValues (nodeList) {
+    var nodeObj = {},
+        itemIndex = 0;
+
+    for (itemIndex; itemIndex < nodeList.length; itemIndex++) {
+        nodeObj = new UaNode(nodeList[itemIndex]);
+        writeSingleValue(nodeObj, false);
+    }
+}
+
+// writes random values for given node list
+function writeBrowseListValues (browseList) {
+    var itemIndex = 0;
+
+    for (itemIndex; itemIndex < browseList.length; itemIndex++) {
+        writeBrowsedValues(browseList[itemIndex]);
+    }
+}
+
+// browses given node id and writes random values for int, float and double nodes
+function writeBrowsedValues (browseNodeId) {
+    var browseResult = browseNodes(browseNodeId),
+        itemIndex = 0;
+
+    // iterate through result and write random values for number types
+    for (itemIndex; itemIndex < browseResult.length; itemIndex++) {
+        writeSingleValue(browseResult[itemIndex], true);
+    }
+}
+
+// returns variable types for browsed node
+function browseNodes (nodeId) {
+    var browseNode = new UaNode(nodeId);
+
+    return browseNode.browse({
+        direction: UaNode.BROWSEDIRECTION_FORWARD,
+        reference: UaNode.HASCOMPONENT,
+        subtype: true,
+        nodeclass: UaNode.NODECLASS_VARIABLE,
+        maxresult: 0,
+        recursive: recursive
+    });
+}
+
+// writes random value for single node
+function writeSingleValue (nodeObj, isBrowseResult) {
+    if (isBrowseResult) {
+        nodeObj = nodeObj.node;
+    }
+
+    writeRandomValue(nodeObj.nodeid);
+}
+
+// checks if node is a variable type
+function isVarType(nodeObj) {
+    return nodeObj.typedefinition == BaseVarTypeId;
+}
+
+// writes random integer value to given browse item
+function writeRandomValue (nodeid) {
+    var node = new UaNode(nodeid),
+        numType = getNumType(node);
+
+    if (numType != "none") {
+        node.value = numType == "int" ? getRandomInt(MinRandomIntValue, MaxRandomIntValue) : 
+            getRandomFloat(MinRandomFloatValue, MaxRandomFloatValue);
+    }
+}
+
+// checks if the browse item is a numeric variable
+function getNumType (node) {
+    var splitArray = node.datatype.split("i="),
+        numIndex = 0;
+
+    if (splitArray.length <= 1) {
+        return "none";
+    }
+
+    numIndex = parseInt(splitArray[1], 10);
+
+    if (IntTypeIndexes.indexOf(numIndex) > -1) {
+        return "int";
+    } else if (FloatingTypeIndexes.indexOf(numIndex) > -1) {
+        return "float";
+    } else {
+        return "none";
+    }
+}
+
+
+// returns random integer value
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// returns random float value
+function getRandomFloat(min, max) {
+    return Math.random() * (max - min) + min;
+};
+
+// abort execution when executed in object type
+if (baseNodeId.indexOf("ObjectTypes.PROJECT") > -1) {
+    return;
+}
+
+if (relativeMode) {
+    writeBrowsedValues(baseNodeId);
+} else if (browseMode) {
+    writeBrowseListValues(browseList);
+} else {
+    writeNodesListValues(nodeList);
+}]]></code>
+</script>

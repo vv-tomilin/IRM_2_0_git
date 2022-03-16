@@ -1,0 +1,1 @@
+{"rows":[{"runNumber":"1","rigConstruction":"Направление","diam":"300","model":"BS 300 SD 519","serialNumber":"01_6849","bitNozzles":"6-16","intervalFrom":"0","intervalTo":"16","drilling":"80","drillingTime":"1","avgMechSpeed":"80","load":"1","torque":"","rotorTurnover":"40-80","pPump":"","pPumpDelta":"","q":"","bitDrilling":"O,O,NO.A/O.I,NO.TD","comment":""}]}

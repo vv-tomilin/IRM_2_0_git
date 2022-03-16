@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.ForMainWindow.FinishReportDate
+NodeClass: Variable
+BrowseName: 1:FinishReportDate
+DisplayName: en|FinishReportDate
+Description: en|FinishReportDate
+DataType: DateTime
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

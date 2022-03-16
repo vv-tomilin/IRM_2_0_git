@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="1015" version="1.2" width="1850" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <foreignObject height="1015" id="id_0" width="1850" x="0" y="0">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <style>
+@import 'https://code.highcharts.com/css/highcharts.css';
+
+.highcharts-tooltip-box {
+	fill: black;
+	fill-opacity: 0.6;
+	stroke-width: 1px;
+}
+/* Tooltip */
+.highcharts-tooltip {
+  cursor: default;
+  pointer-events: none;
+  white-space: nowrap;
+  transition: stroke 150ms;
+}
+
+.highcharts-tooltip .highcharts-header {
+  font-size: 0.85em;
+  font-family: Montserrat, sans-serif;
+	font-weight: 500;
+	color: #ffffff;
+}
+/*div.highcharts-tooltip {
+  filter: none;
+  font-weight: 500;
+	color: #ffffff;
+}*/
+.highcharts-tooltip-box  {
+  fill: ##09222e;
+  fill-opacity: 0.85;
+}
+
+.highcharts-tooltip text {
+	fill: inherit !important;	
+}
+.highcharts-range-input text {
+	fill: #fff;
+}
+
+.highcharts-background {
+fill: #213a53;
+}
+</style>
+   <script src="../../JS/highstock.js"/>
+   <script src="../../JS/highcharts-more.js"/>
+   <script src="../../JS/hc_conf.js"/>
+   <script src="../../JS/hc_conf_1.js"/>
+   <script src="../../JS/snap.svg.js"/>
+   <script src="https://blacklabel.github.io/custom_events/js/customEvents.js"/>
+   <button id="live-mode-button" style="background-color:#ffaa00;margin-left:40px;">History mode</button>
+   <div id="container" style="width:100%;height:100%"/>
+  </div>
+ </foreignObject>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[webMI.libraryLoader.load(["other/lz-string.min.js"], ["CSS/dark_IRM_Theme.css"], function () {
+webMI.gfx.setScaledEvents(document.getElementById('container'));
+
+var to = Date.now();
+var timeInterval = 5*24*60*60*1000;  // 
+var from = to - timeInterval;
+
+
+var addressList = [		["g:AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook"],  
+                        ["g:AGENT.OBJECTS.IVE50.Drawworks.LoadOnBit"],  
+                        ["g:AGENT.OBJECTS.IVE50.Drawworks.HookPosition"], 
+                        ["g:AGENT.OBJECTS.IVE50.Drawworks.HookSpeed"], 
+                        ["g:AGENT.OBJECTS.IVE50.TDS.TDSTorque"], 
+                        ["g:AGENT.OBJECTS.IVE50.TDS.TDSSpeed"], 
+                        ["g:AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold"], 
+                        ["g:AGENT.OBJECTS.IVE50.Well.DrillSpeed"], 
+                        ["g:AGENT.OBJECTS.IVE50.Mud.FlowInput"], 
+                        //["g:AGENT.OBJECTS.IVE50.Mud.FlowOutput"],
+                       ];
+                       
+var getHistoryData =  function(){
+		addressList.forEach(function(item, i) {
+		webMI.data.call("GetHistory", {t1: from, t2: to, address: item}, function(elem){
+				myChart.series[i].setData(elem);
+				})				
+				
+			})
+		}
+		
+getHistoryData();
+
+document.getElementById('live-mode-button').addEventListener('click', function(e){
+webMI.display.openDisplay("AGENT.DISPLAYS.NewView.SKPB_CHARTS.TestCHart", [],'main_frame');
+})
+
+var myChart = Highcharts.stockChart(document.getElementById('container'), myChart_conf_history)
+
+});
+
+]]></script>
+</svg>

@@ -1,0 +1,10 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed".Descent
+NodeClass: Variable
+BrowseName: 1:Descent
+DisplayName: en|Descent
+Description: en|Descent
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed"."Descent"

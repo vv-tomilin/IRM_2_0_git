@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.RigConstruction.obsCol.Show
+NodeClass: Variable
+BrowseName: 1:Show
+DisplayName: en|Show
+Description: en|Show
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

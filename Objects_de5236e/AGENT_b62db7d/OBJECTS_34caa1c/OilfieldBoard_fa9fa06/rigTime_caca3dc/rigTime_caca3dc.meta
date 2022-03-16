@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.OilfieldBoard.rigTime
+NodeClass: Variable
+BrowseName: 1:rigTime
+DisplayName: en|rigTime
+Description: en|rigTime
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

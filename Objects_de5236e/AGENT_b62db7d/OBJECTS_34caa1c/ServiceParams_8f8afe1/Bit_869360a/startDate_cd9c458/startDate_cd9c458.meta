@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ServiceParams.Bit.startDate
+NodeClass: Variable
+BrowseName: 1:startDate
+DisplayName: en|startDate
+Description: en|startDate
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

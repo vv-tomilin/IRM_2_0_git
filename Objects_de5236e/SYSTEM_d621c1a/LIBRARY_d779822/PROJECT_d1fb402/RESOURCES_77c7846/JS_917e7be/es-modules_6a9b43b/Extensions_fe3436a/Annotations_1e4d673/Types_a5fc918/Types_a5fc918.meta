@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Extensions/Annotations/Types
+NodeClass: Object
+BrowseName: 1:Types
+DisplayName: en|Types
+Description: en|Types
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

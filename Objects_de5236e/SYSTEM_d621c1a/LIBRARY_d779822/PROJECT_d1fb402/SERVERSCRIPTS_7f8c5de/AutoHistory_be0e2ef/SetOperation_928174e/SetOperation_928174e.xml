@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="oper" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="opertime" type="number" trigger="false" relative="false" value="0"/>
+  <parameter name="npt" type="string" trigger="false" relative="false" value="ПВ"/>
+  <parameter name="group" type="string" trigger="false" relative="false" value="БУРЕНИЕ"/>
+  <parameter name="suboper" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="operclr" type="string" trigger="false" relative="false" value="#00FA9A"/>
+  <parameter name="suboperclr" type="string" trigger="false" relative="false" value="#7B68EE"/>
+  <code><![CDATA[//console.log('SetOperation: oper = '+oper+', suboper = '+suboper);
+// new operation
+var nodeOper = new UaNode("AGENT.OBJECTS.Support.Auto.Operation");
+var operJsonObj = {npt: npt, group: group, oper: oper, suboper: suboper, opertime: opertime, operclr: operclr, suboperclr: suboperclr};
+
+var CurOperObj = call('AutoHistory.GetOperationObj');
+var curOperJsonObj = JSON.parse(CurOperObj.value);
+
+var CurRealObj = call('AutoHistory.GetCurrentRealObj');
+var curRealJsonObj = curOperJsonObj
+if(CurRealObj.value){
+	curRealJsonObj = JSON.parse(CurRealObj.value);
+}
+
+
+// current operation
+//Calc the operation ////////////////////////////////////////////////////////////////////////////////
+var curdate = new Date().getTime();
+if(operJsonObj.group != curRealJsonObj.group){
+	// Calc average values for parameters
+//	curRealJsonObj.loadonbit = call('getAverageByDate',{nodeStr:'AGENT.OBJECTS.IVE50.Drawworks.LoadOnBit', timestart:curRealJsonObj.servertime, timeend:curdate});													
+//	curRealJsonObj.flowinput = call('getAverageByDate',{nodeStr:'AGENT.OBJECTS.IVE50.Mud.FlowInput', timestart:itemObj.timestart, timeend:curdate});						
+//	curRealJsonObj.tdsspeed = call('getAverageByDate',{nodeStr:'AGENT.OBJECTS.IVE50.TDS.TDSSpeed', timestart:itemObj.timestart, timeend:curdate});						
+//	curRealJsonObj.tdstorque = call('getAverageByDate',{nodeStr:'AGENT.OBJECTS.IVE50.TDS.TDSTorque', timestart:itemObj.timestart, timeend:curdate});	
+//	curRealJsonObj.pressmanifold = call('getAverageByDate',{nodeStr:'AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold', timestart:itemObj.timestart, timeend:curdate});					
+//	curRealJsonObj.diffpress = call('getAverageByDate',{nodeStr:'AGENT.OBJECTS.IVE50.Mud.Pump.DiffPressure', timestart:itemObj.timestart, timeend:curdate});
+	
+	curRealJsonObj.timestart = CurOperObj.servertime;
+	curRealJsonObj.servertime = CurOperObj.servertime;
+	curRealJsonObj.sourcetime = CurOperObj.sourcetime;
+	curRealJsonObj.timework = curdate - curRealJsonObj.timestart;
+	curRealJsonObj.timestop = curdate;
+	
+	console.log('operJsonObj.group = '+operJsonObj.group);
+	console.log('curRealJsonObj.group = '+curRealJsonObj.group);
+
+//if(operJsonObj.group != curRealJsonObj.group){
+	call('AutoHistory.resetTimerOper');
+	
+	operJsonObj.timestartgroup = curdate;	
+	curRealJsonObj.timeworkgroup = curdate - curRealJsonObj.timestartgroup;
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	if(operJsonObj.group == "КЛИНЬЯ" && operJsonObj.oper =="На клиньях"){
+		operJsonObj.suboper = "постановка";
+	} 	
+	if(curRealJsonObj.group == "ОСТАНОВКА"){
+		var nodeTimeWorkStop = new UaNode('AGENT.OBJECTS.Support.Auto.TimeWorkStop');
+		nodeTimeWorkStop.assign({value: curRealJsonObj.timeworkgroup});
+		if(curRealJsonObj.timeworkgroup*1000 > 180){
+			var nodeNPVSecondsByStop = new UaNode('AGENT.OBJECTS.Support.Auto.NPVSecondsByStop');
+			nodeNPVSecondsByStop.assign({value: 180 - curRealJsonObj.timeworkgroup*1000});
+		}
+	}
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+	if(curRealJsonObj.group == "КЛИНЬЯ"){
+		var nodeTimeWorkOnWedges = new UaNode('AGENT.OBJECTS.Support.Auto.TimeWorkOnWedges');
+		nodeTimeWorkOnWedges.assign({value: curRealJsonObj.timeworkgroup});
+		var nodeTimeOnWedgesAverage = new UaNode('AGENT.OBJECTS.Support.Auto.TimeOnWedgesAverage');
+		if(curRealJsonObj.timework/1000 > nodeTimeOnWedgesAverage.value){
+			var nodeNPVSecondsByOnWedges = new UaNode('AGENT.OBJECTS.Support.Auto.NPVSecondsByOnWedges');
+			var SecondsByOnWedges = curRealJsonObj.timeworkgroup/1000 - nodeTimeOnWedgesAverage.value;
+			console.log('SecondsByOnWedges = ',SecondsByOnWedges);			
+			nodeNPVSecondsByOnWedges.assign({value: SecondsByOnWedges});
+			
+		}
+// check sequence OnWedges
+		var nodeOper = new UaNode('AGENT.OBJECTS.Support.Auto.Operation');
+		var resultRaw = nodeOper.datahistory({starttime: curRealJsonObj.timestartgroup, numvalues: 20});
+		//var resultRaw = call('AutoHistory.getDatahistory',{nodeStr:'AGENT.OBJECTS.Support.Auto.Operation', timestart:curRealJsonObj.timestartgroup});
+		
+		var numcheck=0;		
+		if(resultRaw && resultRaw.values.length > 0){
+			console.log('=========OnWedges = '+ resultRaw.values.length);
+						
+			resultRaw.values.forEach(function(item,i){
+				var histOperJsonObj =  JSON.parse(item.value); 
+				if(histOperJsonObj.group == 'КЛИНЬЯ'){
+					switch(histOperJsonObj.suboper){
+						case 'крюкоблок идет вверх':
+							numcheck++;
+						break;
+						case 'работа трубного ключа':
+							numcheck++;
+						break;
+						case 'работа ВСП':
+							numcheck++;
+						break;						
+					}
+				}
+			});
+			if(numcheck > 1){
+				curRealJsonObj.oper = 'НАРАЩИВАНИЕ';
+				curRealJsonObj.suboper = '';
+			}
+		}
+	}
+	if(curRealJsonObj.timeworkgroup/1000 > 10){
+//		if((curRealJsonObj.group.indexOf('СПУСК') + 1) || (curRealJsonObj.group.indexOf('ПОДЪЕМ') + 1)) {
+//			var curOldRealObj = call('AutoHistory.GetCurrentRealObj');
+//			var curOldRealJsonObj = JSON.parse(curOldRealObj.value);			
+//			if(curOldRealJsonObj.group == curRealJsonObj.group){
+//				
+//			}
+			
+			var nodeOperReal = new UaNode('AGENT.OBJECTS.Support.Auto.OperationReal');
+			var strOperReal = JSON.stringify(curRealJsonObj);
+			console.log('strOperRealFinish = ', strOperReal);
+			nodeOperReal.assign({value:strOperReal});
+			
+			var nodeCurReal = new UaNode('AGENT.OBJECTS.Support.Auto.OperationCurr');
+			nodeCurReal.assign({value: JSON.stringify(operJsonObj)});
+//		}	
+	}
+	
+	
+//	var nodeCurReal = new UaNode('AGENT.OBJECTS.Support.Auto.OperationCurr');
+//	nodeCurReal.assign({value: JSON.stringify(operJsonObj)});
+}
+
+
+//var nodeOper = new UaNode("AGENT.OBJECTS.Support.Auto.Operation");
+//var operObj = {npt: npt, group: group, oper: oper, suboper: suboper, opertime: opertime, operclr: operclr, suboperclr: suboperclr};
+var operJson = JSON.stringify(operJsonObj);
+//console.log('operJson = ', operJson);
+
+var checkstr = operJson;//npt+';'+subitem+';'+oper+';'+suboper;
+//	console.log('checkstr = ', checkstr);
+//if(nodeOper.value != checkstr){
+
+var strOperJson = operJsonObj.oper+' '+operJsonObj.suboper;
+var strCurOperJson = curOperJsonObj.oper+' '+curOperJsonObj.suboper;
+//console.log('strOperJson = ' + strOperJson);
+//console.log('strCurOperJson = ' + strCurOperJson);
+//if((operJsonObj.oper != curOperJsonObj.oper) && (operJsonObj.suboper != curOperJsonObj.suboper)){
+if(strOperJson != strCurOperJson){	
+	if(opertime==0){		
+		nodeOper.assign({value: checkstr});		
+	} else {
+		nodeOper.assign({value: checkstr, sourcetime: opertime});
+	}	
+	console.log('Операция in', call('AutoHistory.GetOperationObj').value);
+}
+
+//console.log('Операция out', call('Auto.GetOperationObj').value);]]></code>
+</script>

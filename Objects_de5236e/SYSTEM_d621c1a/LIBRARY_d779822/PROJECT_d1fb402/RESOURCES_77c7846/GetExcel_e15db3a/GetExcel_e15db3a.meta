@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/GetExcel
+NodeClass: Variable
+BrowseName: 1:GetExcel
+DisplayName: en|GetExcel
+Description: en|GetExcel
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

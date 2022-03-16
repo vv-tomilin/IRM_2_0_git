@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.APD1.Load.Rise
+NodeClass: Object
+BrowseName: 1:Rise
+DisplayName: en|Rise
+Description: en|Rise
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

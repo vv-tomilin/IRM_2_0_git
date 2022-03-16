@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/RigView/geos/bazalt.jpg
+NodeClass: Variable
+BrowseName: 1:bazalt.jpg
+DisplayName: en|bazalt.jpg
+Description: en|bazalt.jpg
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Jpeg

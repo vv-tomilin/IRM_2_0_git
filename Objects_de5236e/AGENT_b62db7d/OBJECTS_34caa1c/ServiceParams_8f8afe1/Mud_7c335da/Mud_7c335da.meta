@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ServiceParams.Mud
+NodeClass: Object
+BrowseName: 1:Mud
+DisplayName: en|Mud
+Description: en|Mud
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

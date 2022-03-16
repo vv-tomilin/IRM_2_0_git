@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/indicators/pivot-points.js.map
+NodeClass: Variable
+BrowseName: 1:pivot-points.js.map
+DisplayName: en|pivot-points.js.map
+Description: en|pivot-points.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

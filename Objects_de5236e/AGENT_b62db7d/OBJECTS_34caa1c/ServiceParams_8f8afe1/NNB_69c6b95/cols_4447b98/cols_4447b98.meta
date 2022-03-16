@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ServiceParams.NNB.cols
+NodeClass: Object
+BrowseName: 1:cols
+DisplayName: en|cols
+Description: en|cols
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

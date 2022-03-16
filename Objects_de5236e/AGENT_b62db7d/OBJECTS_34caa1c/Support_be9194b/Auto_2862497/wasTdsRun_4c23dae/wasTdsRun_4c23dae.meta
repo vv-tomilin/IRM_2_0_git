@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.wasTdsRun
+NodeClass: Variable
+BrowseName: 1:wasTdsRun
+DisplayName: en|wasTdsRun
+Description: en|wasTdsRun
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

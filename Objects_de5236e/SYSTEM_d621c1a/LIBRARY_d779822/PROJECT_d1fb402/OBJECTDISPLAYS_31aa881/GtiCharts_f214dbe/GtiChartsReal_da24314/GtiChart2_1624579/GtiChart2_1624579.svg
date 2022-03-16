@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" height="595" version="1.2" width="155">
+ <defs/>
+ <metadata>
+  <atv:parameter defaultvalue="gtiкуфд2" behavior="mandatory" name="chartname" valuetype="string"/>
+  <atv:parameter defaultvalue="group1" behavior="mandatory" name="groupname" valuetype="string"/>
+  <atv:parameter defaultvalue="AGENT.OBJECTS.Winch.HookPosition" behavior="mandatory" name="ChartBase1" valuetype="address"/>
+  <atv:parameter defaultvalue="AGENT.OBJECTS.Winch.HookVelosity" behavior="mandatory" name="ChartBase2" valuetype="address"/>
+  <atv:parameter defaultvalue="Положение крюкоблока" behavior="mandatory" name="ChartTitle1" valuetype="string"/>
+  <atv:parameter defaultvalue="м" behavior="optional" name="Unit1" valuetype="string"/>
+  <atv:parameter defaultvalue="Скорость крюкоблока" behavior="mandatory" name="ChartTitle2" valuetype="string"/>
+  <atv:parameter defaultvalue="м/с" behavior="optional" name="Unit2" valuetype="string"/>
+  <atv:parameter defaultvalue="#55aaff" behavior="optional" name="Color1" valuetype="color"/>
+  <atv:parameter defaultvalue="#09222e" behavior="optional" name="ColorBack1" valuetype="color"/>
+  <atv:parameter defaultvalue="#ffff7f" behavior="optional" name="Color2" valuetype="color"/>
+  <atv:parameter defaultvalue="#09222e" behavior="optional" name="ColorBack2" valuetype="color"/>
+  <atv:parameter defaultvalue="AGENT.OBJECTS.Winch.HookPosition.HighHighLimit" behavior="optional" name="MaxVal1" valuetype="address"/>
+  <atv:parameter defaultvalue="100" behavior="optional" name="MaxVal2" valuetype="address"/>
+  <atv:gridconfig gridstyle="lines" height="1" width="1" enabled="true"/>
+  <atv:snapconfig height="1" width="1" enabled="true"/>
+ </metadata>
+ <g id="id_7" atv:refpx="0" atv:refpy="0" atv:insensitive="true">
+  <rect y="0" id="id_8" x="0" fill="#09222e" height="595.00" atv:refpx="77.5" atv:refpy="297.5" width="155.00"/>
+ </g>
+ <svg y="8.633" id="id_4" x="0" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.RigCharts" height="400" atv:refpx="77.5" atv:refpy="289.035" transform="matrix(0.3875,0,0,1.39,0,0)" width="400">
+  <atv:argument value="" prefix="chartname" name="trendName"/>
+  <atv:argument value="3600" name="xAxisxAxis_timeSpan"/>
+  <atv:argument value="y1" prefix="chartname" name="yAxis1yAxis_id"/>
+  <atv:argument value="y2" prefix="chartname" name="yAxis2yAxis_id"/>
+  <atv:argument prefix="ChartBase1" name="series1series_address"/>
+  <atv:argument value="spline" name="series1series_interpolation"/>
+  <atv:argument value="false" name="series1series_marker_enabled"/>
+  <atv:argument value="y1" prefix="chartname" name="series1series_yAxis"/>
+  <atv:argument prefix="ChartBase2" name="series2series_address"/>
+  <atv:argument value="spline" name="series2series_interpolation"/>
+  <atv:argument value="false" name="series2series_marker_enabled"/>
+  <atv:argument value="y2" prefix="chartname" name="series2series_yAxis"/>
+  <atv:argument value="left" name="yAxis2yAxis_opposite"/>
+  <atv:argument value="1" name="series1series_lineWidth"/>
+  <atv:argument value="1" name="series2series_lineWidth"/>
+  <atv:argument prefix="ChartTitle1" name="series1series_name"/>
+  <atv:argument prefix="ChartTitle2" name="series2series_name"/>
+  <atv:argument value="true" name="guseLocalTime"/>
+  <atv:argument value="60000" name="xAxisxAxis_tickInterval"/>
+  <atv:argument value="" prefix="Color1" name="series1series_color"/>
+  <atv:argument value="" prefix="Color2" name="series2series_color"/>
+  <atv:argument value="#7d7d7d" name="xAxisxAxis_gridLineColor"/>
+  <atv:argument value="#7d7d7d" name="yAxis1yAxis_gridLineColor"/>
+  <atv:argument value="#7d7d7d" name="yAxis2yAxis_gridLineColor"/>
+  <atv:argument value="#7d7d7d" name="yAxis1yAxis_lineColor"/>
+  <atv:argument value="#7d7d7d" name="yAxis1yAxis_minorGridLineColor"/>
+  <atv:argument value="#7d7d7d" name="yAxis2yAxis_lineColor"/>
+  <atv:argument value="#7d7d7d" name="yAxis2yAxis_minorGridLineColor"/>
+  <atv:argument value="#7d7d7d" name="xAxisxAxis_minorGridLineColor"/>
+  <atv:argument value="true" name="series1series_nonStop"/>
+  <atv:argument value="true" name="series2series_nonStop"/>
+  <atv:argument value="" prefix="groupname" name="trendGroup"/>
+  <atv:argument value="history" name="gatviseOptions_mode"/>
+  <atv:argument value="y3" prefix="chartname" name="yAxis3yAxis_id"/>
+  <atv:argument value="y4" prefix="chartname" name="yAxis4yAxis_id"/>
+  <atv:argument prefix="GtiTrendCfg" name="gatviseOptions_configNode"/>
+  <atv:argument value="false" name="gatviseOptions_saveCompressed"/>
+  <atv:overwrite y="289" id="label" x="-73" transform="matrix(2.5806,0,0,0.7194,0,0)"/>
+  <atv:overwrite id="border" height="553.999" transform="matrix(2.5806,0,0,0.7194,0,0)" width="153"/>
+  <atv:overwrite id="id_3" height="555.999" transform="matrix(2.5806,0,0,0.7194,0,0)" width="155"/>
+ </svg>
+ <svg y="0" id="id_0" x="0" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.BarGtiTop" height="12" atv:refpx="77.5" atv:refpy="9.5" width="155">
+  <atv:argument prefix="ChartBase1" name="base"/>
+  <atv:argument prefix="ChartTitle1" name="Label"/>
+  <atv:argument prefix="Unit1" name="Unit"/>
+  <atv:argument prefix="MaxVal1" name="MaxVal"/>
+  <atv:argument prefix="Color1" name="BarColor"/>
+  <atv:argument prefix="ColorBack1" name="BarBackColor"/>
+ </svg>
+ <svg y="568" id="id_1" x="0" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.BarGtiBot" height="12" atv:refpx="77.5" atv:refpy="577.5" width="155">
+  <atv:argument prefix="ChartBase2" name="base"/>
+  <atv:argument prefix="ChartTitle2" name="Label"/>
+  <atv:argument prefix="Unit2" name="Unit"/>
+  <atv:argument prefix="MaxVal2" name="MaxVal"/>
+  <atv:argument prefix="Color2" name="BarColor"/>
+  <atv:argument prefix="ColorBack2" name="BarBackColor"/>
+ </svg>
+ <svg y="680.023" id="id_2" x="0" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.tool_new" height="14" atv:refpx="77.5" atv:refpy="587.992" transform="matrix(1,0,0,0.8559,0,0)" width="155">
+  <atv:argument value="" prefix="chartname" name="chartname"/>
+  <atv:argument value="" prefix="groupname" name="chartgroup"/>
+ </svg>
+</svg>

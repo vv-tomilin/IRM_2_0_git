@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Description</h1>
+<p>This display provides the management of the data sets for the chart.</p>
+
+<h1>Optionen</h1>
+<h2>Data set to configure</h2>
+<ul>
+  <li><span class="parameter">Add</span>: Adds a new record at the end of the record selection.</li>
+  <li><span class="parameter">Data set selection</span>: Selection area for the current record.</li>
+  <li><span class="parameter">Delete selected</span>: Deletes the selected record.</li>
+</ul>
+
+<h2>Source address (of the selected data set)</h2>
+<ul>
+  <li><span class="parameter">Type</span>: Defines the display type (line, bar, area, etc.).</li>
+  <li><span class="parameter">Visibility</span>: Enables or disables the display of the record.</li>
+  <li><span class="parameter">Address selection area</span>: In the selection area for the address, the data point can be selected, entered or searched. (*)</li>
+  <li><span class="parameter">Selectet Aggreagate</span>: For aggregates, the information type, interval and unit are displayed.</li>
+</ul>
+<p>(*) In the case of an area, two addresses must be selected - one for each address. the lower and upper line or border.</p>
+
+<h2>Data set configuration</h2>
+<ul>
+  <li><span class="parameter">Label</span>: Name of the record to be displayed (default: node name).</li>
+  <li><span class="parameter">Tooltip settings</span>: Here you can define the prefix, suffix and the decimal places to be displayed.</li>
+  <li><span class="parameter">z-Index</span>: Defines the order of the data sets in the diagram.</li>
+</ul>
+
+<h2>Type configuration</h2>
+<p>The record configuration differs due to the type selection. Depending on the type, the associated X-axis and Y-axis, interpolation, color, line width, etc. can be defined. More is described on the respective subdisplay of the type.</p>
+
+<h1>Parameters</h1>
+<p>This control has the following parameters:</p>
+<ul>
+  <li><span class="parameter">font color</span>: color which will be applied to the labels (default: global parameter <i>atvFontColor</i>)</li>
+  <li><span class="parameter">fill color</span>: left sidebar fill color (default: global parameter <i>atvFillColor</i>)</li>
+</ul>
+<h1>Type configuration</h1>
+<p>Regarding to the line type the related x-axis and y-axis, the interpolation type, colors, line widths and so on can be defined. More information can be found in the particular subdisplay of the line type.</p>
+</body>
+</html>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Load"
+NodeClass: VariableType
+BrowseName: 1:Load
+DisplayName: en|Load
+Description: en|Load
+IsAbstract: false
+DataType: BaseDataType
+ValueRank: -1
+ValueType: i=0

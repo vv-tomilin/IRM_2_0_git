@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Stock/Indicators/PriceEnvelopes
+NodeClass: Object
+BrowseName: 1:PriceEnvelopes
+DisplayName: en|PriceEnvelopes
+Description: en|PriceEnvelopes
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

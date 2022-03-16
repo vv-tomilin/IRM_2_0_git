@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <code><![CDATA[/**
+ * Code for button_image_display object display
+ * --------------------------------------------
+ * The button_image_display is used to change images (only raster graphics images are supported) depending on&nbsp;the value of an address.
+ */
+
+
+/**
+ * DECLARATION SECTION
+ */
+
+var base = (webMI.query["base"] == undefined) ? "" : webMI.query["base"];
+var stroke = webMI.query["stroke"];
+var fill = webMI.query["fill"];
+var fillColorInactive = webMI.query["fillColorInactive"];
+var image1 = webMI.query["image1"];
+var image2 = webMI.query["image2"];
+var image3 = webMI.query["image3"];
+var image4 = webMI.query["image4"];
+var image5 = webMI.query["image5"];
+var onClickValue = (webMI.query["onClickValue"] == undefined) ? "" : webMI.query["onClickValue"];
+var onClickNode = (webMI.query["onClickNode"] == undefined) ? "" : webMI.query["onClickNode"];
+var onMouseDownValue = (webMI.query["onMouseDownValue"] == undefined) ? "" : webMI.query["onMouseDownValue"];
+var onMouseDownNode = (webMI.query["onMouseDownNode"] == undefined) ? "" : webMI.query["onMouseDownNode"];
+var onMouseUpValue = (webMI.query["onMouseUpValue"] == undefined) ? "" : webMI.query["onMouseUpValue"];
+var onMouseUpNode = (webMI.query["onMouseUpNode"] == undefined) ? "" : webMI.query["onMouseUpNode"];
+var focusStrokeColor=webMI.query["focusStrokeColor"];
+var limitLowLowStroke=webMI.query["limitLowLowStroke"];
+var limitLowStroke=webMI.query["limitLowStroke"];
+var limitHighStroke=webMI.query["limitHighStroke"];
+var limitHighHighStroke=webMI.query["limitHighHighStroke"];
+var nodeStroke = (webMI.query["nodeStroke"] == undefined) ? "" : webMI.query["nodeStroke"];
+var enumList = (webMI.query["enumList"] == undefined) ? "" : webMI.query["enumList"];
+var tabHandler = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tab Handler");
+var tabIndex = (webMI.query["tabIndex"] == undefined) ? "" : webMI.query["tabIndex"];
+var tooltip = (webMI.query["tooltip"] == undefined) ? "" : webMI.query["tooltip"];
+var curValue;
+var limitLowLow = (webMI.query["limitLowLow"] == undefined) ? "" : webMI.query["limitLowLow"];
+var limitLow = (webMI.query["limitLow"] == undefined) ? "" : webMI.query["limitLow"];
+var limitHigh = (webMI.query["limitHigh"] == undefined) ? "" : webMI.query["limitHigh"];
+var limitHighHigh = (webMI.query["limitHighHigh"] == undefined) ? "" : webMI.query["limitHighHigh"];
+var right = (webMI.query["right"] == undefined) ? "" : webMI.query["right"];
+var active = false;
+var activeValue = (webMI.query["activeValue"] == undefined) ? "" :webMI.query["activeValue"];
+var activeNode = (webMI.query["activeNode"] == undefined) ? "" : webMI.query["activeNode"];
+var isActivationNodeSet = activeNode != "" && String(activeValue) != "";
+
+/**
+ * RUNTIME SECTION
+ */
+
+var rightsHandlingProperties = {
+	right: right,
+	checkBaseNodeWriteRight: false,
+	isActivationNodeSet: isActivationNodeSet,
+	notifierConfiguration: {},
+	setActiveTrigger: false,
+	handleStatus: false
+};
+
+if (typeof rightsHandling === "function") rightsHandling(rightsHandlingProperties);
+
+if (limitHighHigh != "") {
+	limitHighHigh = (limitHighHigh != "off") ? parseFloat(limitHighHigh) : "";
+}
+if (limitHigh != "") {
+	limitHigh = (limitHigh != "off") ? parseFloat(limitHigh) : "";
+}
+if (limitLow != "") {
+	limitLow = (limitLow != "off") ? parseFloat(limitLow) : "";
+}
+if (limitLowLow != "") {
+	limitLowLow = (limitLowLow != "off") ? parseFloat(limitLowLow) : "";
+}
+
+if (base != "") {
+	webMI.data.subscribe(base, function(e) {
+		curValue = e.value;
+		var image=3;
+
+		if (limitLowLow != "" || limitLow != "" || limitHigh != "" || limitHighHigh != "" ) {
+			if (limitLow != "" && curValue <= limitLow) {
+				image=2;
+			}
+			if (limitLowLow != "" && curValue <= limitLowLow) {
+				image=1;
+			}
+			if (limitHigh != "" && curValue >= limitHigh) {
+				image=4;
+			}
+			if (limitHighHigh != "" && curValue >= limitHighHigh) {
+				image=5;
+			}
+		} else {
+			image=curValue; // if no limit is specified, take value from base as index for images
+		}
+
+		if (enumList == "") {
+			switch (image) {
+				case 1:	switchImage(image1); break;
+				case 2: switchImage(image2); break;
+				case 3: switchImage(image3); break;
+				case 4: switchImage(image4); break;
+				case 5: switchImage(image5); break;
+				default: break;
+			}
+		} else {
+			// TODO: testen, wenn globale Listen funktionieren
+			image=(enumList[curValue] != undefined) ? enumList[curValue].image : null;
+			switchImage(image);
+		}
+	});
+}
+
+if (nodeStroke != "" && enumList == "") {
+	webMI.data.subscribe(nodeStroke, function(e) {
+		curValue = e.value;
+		if (limitLowLow != "" || limitLow != "" || limitHigh != "" || limitHighHigh != "") {
+			webMI.gfx.setStroke("image_stroke",stroke);
+			if (limitLow != "" && curValue <= limitLow) {
+				webMI.gfx.setStroke("image_stroke",limitLowStroke);
+			}
+			if (limitLowLow != "" && curValue <= limitLowLow) {
+				webMI.gfx.setStroke("image_stroke",limitLowLowStroke);
+			}
+			if (limitHigh != "" && curValue >= limitHigh) {
+				webMI.gfx.setStroke("image_stroke",limitHighStroke);
+			}
+			if (limitHighHigh != "" && curValue >= limitHighHigh) {
+				webMI.gfx.setStroke("image_stroke",limitHighHighStroke);
+			}
+		}
+	});
+}
+
+webMI.addOnload(function() {
+	var doc = document.getElementById("image_clickarea").ownerDocument;
+	tabHandler.register(tabIndex,keyHandler,doc);
+});
+
+if (tooltip != ""){
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tooltip", {"auto":"true", "id":"image_clickarea", "text":tooltip}, false);
+}
+
+/**
+ * FUNCTION SECTION
+ */
+
+function setActiveLayout() {
+	webMI.gfx.setFill("image_stroke", fill);
+}
+
+function setInactiveLayout() {
+	webMI.gfx.setFill("image_stroke", fillColorInactive);
+}
+
+function focusTH(){
+	if (active) {
+		webMI.gfx.setVisible("image_focus_stroke", true);
+	}
+}
+
+function blurTH(){
+	if (active) {
+		webMI.gfx.setVisible("image_focus_stroke", false);
+	}
+}
+
+function applyTH(){
+	if (active) {
+		if (onClickNode != "" && onClickValue != "") {
+			webMI.data.write(onClickNode, onClickValue);
+		}
+		webMI.trigger.fire("valuechanged", onClickValue, "");
+	}
+}
+
+function backTH() {
+}
+
+function arrowTH(dir) {
+}
+
+function keyHandler(keyTH, param2) {
+	if (keyTH == "focus"){
+		focusTH();
+	} else if (keyTH == "blur"){
+		blurTH();
+	} else if (keyTH == "apply"){
+		applyTH();
+	} else if (keyTH == "back"){
+		backTH();
+	} else if (keyTH == "arrow"){
+		arrowTH(param2);
+	} else if (keyTH == "isActive"){
+		return active && param2(document.getElementById("image_clickarea").parentNode);
+	}
+}
+
+function switchImage(image) {
+	if (image != undefined && image != null && image != "") {
+		image = image.replace(/^SYSTEM\.LIBRARY\.PROJECT\.RESOURCES\//,"");
+		if(image.indexOf(".svg") == image.length-4) {
+			image = "T{}/" + image;
+		}
+		setTimeout(function() {		// do not delete "setTimeout", otherwise it will not work on WinCE!!!
+			webMI.gfx.setImage("image","/" + image);
+		},1);
+	}
+}
+
+/**
+ * EVENT SECTION
+ */
+
+webMI.addEvent("image_clickarea", "click", function(e) {
+	var id = "image_clickarea";
+	var value = true;
+	return function(value) {
+		if (active) {
+			tabHandler.setCurrentIndex(keyHandler);
+			if (onClickNode != "" && onClickValue != "") {
+				webMI.data.write(onClickNode, onClickValue);
+			}
+			webMI.trigger.fire("valuechanged", onClickValue, "");
+		}
+	} (value);
+});
+
+webMI.addEvent("image_clickarea", "mousedown", function(e) {
+	var id = "image_clickarea";
+	var value = true;
+	return function(value) {
+		if (active) {
+			if (onMouseDownNode != "" && onMouseDownValue != "") {
+				webMI.data.write(onMouseDownNode, onMouseDownValue);
+			}
+			webMI.trigger.fire("valuechangedMouseDown", onMouseDownValue, "");
+		}
+	} (value);
+});
+
+webMI.addEvent("image_clickarea", "mouseup", function(e) {
+	var id = "image_clickarea";
+	var value = true;
+	return function(value) {
+		if (active) {
+			if (onMouseUpNode != "" && onMouseUpValue != "") {
+				webMI.data.write(onMouseUpNode, onMouseUpValue);
+			}
+			webMI.trigger.fire("valuechangedMouseUp", onMouseUpValue, "");
+		}
+	} (value);
+});
+
+webMI.addEvent("image_clickarea", "dragstart", function(e) {
+	if (e.preventDefault) {
+		e.preventDefault();
+	}
+});]]></code>
+</script>

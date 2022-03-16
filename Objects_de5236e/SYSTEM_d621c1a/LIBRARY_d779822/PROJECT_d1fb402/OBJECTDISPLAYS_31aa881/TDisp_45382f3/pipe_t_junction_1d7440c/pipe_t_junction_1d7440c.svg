@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" height="26.46" xmlns:svg="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" version="1.2" width="26.46" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="false" height="20" width="20" gridstyle="lines"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <g atv:refpy="7.673" id="id_1" atv:refpx="13.229">
+  <g inkscape:label="Слой 1" inkscape:groupmode="layer" atv:refpy="7.673" id="layer1" transform="translate(-32.883924,-29.104165)" atv:refpx="13.229">
+   <g atv:refpy="36.777" id="g59" transform="matrix(0.26458333,0,0,0.26458333,32.883924,29.104165)" atv:refpx="46.113">
+    <g atv:refpy="50" id="frame" atv:refpx="50">
+     <rect fill="none" height="100" atv:refpy="50" id="rect44" y="0" x="0" atv:refpx="50" width="100"/>
+    </g>
+    <g atv:refpy="29" id="shape" atv:refpx="50">
+     <polygon fill="#c78163" points="100,42 58,42 58,0 42,0 42,42 0,42 0,58 100,58 " atv:refpy="29" id="polygon47" atv:refpx="50"/>
+    </g>
+    <g atv:refpy="28.5" id="dark" atv:refpx="50">
+     <polygon fill="#947365" points="100,43 57,43 57,0 43,0 43,43 0,43 0,57 100,57 " atv:refpy="28.5" id="polygon50" atv:refpx="50"/>
+    </g>
+    <g atv:refpy="27.5" id="light" atv:refpx="50">
+     <polygon fill="#de9c5f" points="100,45 55,45 55,0 45,0 45,45 0,45 0,55 100,55 " atv:refpy="27.5" id="polygon53" atv:refpx="50"/>
+    </g>
+    <g atv:refpy="26.75" id="hlight" atv:refpx="50">
+     <polygon fill="#fbbc5a" points="100,46.5 53.5,46.5 53.5,0 46.5,0 46.5,46.5 0,46.5 0,53.5 100,53.5 " atv:refpy="26.75" id="polygon56" atv:refpx="50"/>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

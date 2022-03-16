@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.SideBoreholes.fieldNameInState
+NodeClass: Variable
+BrowseName: 1:fieldNameInState
+DisplayName: en|fieldNameInState
+Description: en|fieldNameInState
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

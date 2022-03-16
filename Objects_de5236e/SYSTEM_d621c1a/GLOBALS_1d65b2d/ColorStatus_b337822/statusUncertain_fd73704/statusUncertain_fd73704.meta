@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.GLOBALS.ColorStatus.statusUncertain
+NodeClass: Variable
+BrowseName: 1:statusUncertain
+DisplayName: en|statusUncertain
+Description: en|statusUncertain
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.GlobalVariable

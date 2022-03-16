@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.MikAnd
+NodeClass: Object
+BrowseName: 1:MikAnd
+DisplayName: en|MikAnd
+Description: en|MikAnd
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

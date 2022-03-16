@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Halliburton.marks
+NodeClass: Object
+BrowseName: 1:marks
+DisplayName: en|marks
+Description: en|marks
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

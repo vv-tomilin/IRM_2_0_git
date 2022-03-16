@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="1015" version="1.2" width="1850" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:parameter behavior="optional" config="SYSTEM.SECURITY.RIGHTS" defaultvalue="" desc="necessary rights" group="Security" name="right" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="AGENT.DISPLAYS.NewView.Settings.ReportFromToDay" name="fifth_display" valuetype="display"/>
+  <atv:parameter behavior="optional" defaultvalue="main_frame" name="frame" valuetype="string"/>
+  <atv:gridconfig enabled="true" gridstyle="lines" height="10" width="10"/>
+  <atv:snapconfig enabled="true" height="5" width="5"/>
+ </metadata>
+ <g atv:insensitive="true" atv:refpx="0" atv:refpy="0" id="id_3">
+  <rect atv:refpx="925" atv:refpy="507.5" fill="#000406" fill-opacity="0" height="1015.00" id="id_4" width="1850.00" x="0" y="0"/>
+ </g>
+ <svg atv:refpx="925.174" atv:refpy="541.588" height="640" id="id_Table" transform="matrix(2.8587,0,0,1.4563,0,0)" width="640" x="3.645" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.slickgrid.table" y="51.891">
+  <atv:argument name="tableID" value="report_table"/>
+  <atv:argument name="columnReorder" value="false"/>
+  <atv:argument name="multiselect" value="false"/>
+  <atv:argument name="allowDirectInput" value="false"/>
+  <atv:argument name="row_text_size" value="20"/>
+  <atv:argument name="detail_text_size" value="20"/>
+  <atv:argument name="footer_text_size" value="20"/>
+  <atv:argument name="row_height" value="25"/>
+ </svg>
+ <text atv:refpx="887.498" atv:refpy="38.625" fill="#8a8a8a" font-family="Arial" font-size="26" font-weight="bold" id="id_0" transform="matrix(2.2175,0,0,1.6793,-811.8931,-2.2817)" x="671.827" y="31.859">Суточные отчеты</text>
+ <foreignObject height="42.85" id="id_23" width="305.541" x="0" y="5">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <button class="Rep_button" id="id_24">СФОРМИРОВАТЬ ОТЧЁТЫ</button>
+  </div>
+ </foreignObject>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[webMI.libraryLoader.load([], ["CSS/main.css"], function(e) {
+var dataArr=[];
+
+// Calling ServerScript and getting back Directory List of Server Path
+webMI.data.call("ReadDirectory", {"path":"rigdata/reports"}, function(result) {
+	console.log(result);	
+	dataArr=result;	
+});
+
+function extractDateFromName(filename){
+//	var strDate=filename.slice(7, 17);
+	var strDate = '';
+	var lenext = filename.length - filename.lastIndexOf('.');
+	if(lenext<=filename.length)
+		strDate=filename.slice(-(lenext+10), -lenext);
+//	if(filename.length - filename.lastIndexOf('.')==4)
+//		strDate=filename.slice(-14, -4);
+//	else if(filename.length - filename.lastIndexOf('.')==3)		
+//		strDate=filename.slice(-13, -3);
+		
+	return strDate;
+}
+
+var right = (webMI.query["right"] == undefined) ? "" : webMI.query["right"];
+if (right.search(/SYSTEM\.SECURITY\.RIGHTS\./) != -1) {
+	right = right.substring(23,right.length); //remove "prefix" SYSTEM.SECURITY.RIGHTS.
+}
+
+var hasRight = false;
+
+if (right != "") {
+	webMI.addEvent(webMI.data, "clientvariableschange", function(e) {
+		hasRight=false;
+		if (("username" in e) && (e.username != "")) {
+				hasRight = webMI.hasRight(right);
+		}
+//		deActivate();
+	});
+}
+
+// Filling the Table
+webMI.table.loadResources(function() {
+	var config = [];
+    // *** BEGIN CONFIGURATION SECTION ***
+    config["columns"] = [
+        {id: "id", name: "T{Индекс}", field: "id", sortable: true, width:250, filter: true, visible: true, resizable: false},
+        {id: "names", name: "T{Имя файла}", field: "names", sortable: true, width:1258, filter: true, visible: true, resizable: false},       
+//        {id: "dates", name: "T{Дата создания}", field: "dates", sortable: true, width:190, filter: true, visible: true, resizable: false},
+//        {id: "butt", name: "T{Скачать}", field: "butt", sortable: false, width:69, filter: false, visible: true, resizable: false}
+    ];
+	hasRight = true; //for test only
+	if(hasRight){
+		config["columns"].push({id: "dates", name: "T{Дата создания}", field: "dates", sortable: true, width:130, filter: true, visible: true, resizable: false});
+//		config["columns"].push({id: "butt", name: "T{Скачать}", field: "butt", sortable: false, width:69, filter: false, visible: true, resizable: false});
+		config["columns"].push({id: "butt", name: "T{Скачать}", field: "butt", sortable: false, width:65, filter: false, visible: true, resizable: false,formatter: buttonFormatter, type: "button"});
+	} else {
+		config["columns"].push({id: "dates", name: "T{Дата создания}", field: "dates", sortable: true, width:259, filter: true, visible: true, resizable: false});
+	}    
+    
+    config["mode"] = "continue";
+    config["dataRequestFunction"] = function myRequest() {
+        var that = this;
+        var data = {
+			result: []
+        };
+        var elem = {};
+
+		// Looping through data result of server script "ReadDirectory" and creating datas for tables column        
+		for(var i =0; i < dataArr.length; i++) {
+
+			elem["id"] = i;
+			elem["names"] = dataArr[i];
+			//elem["names"] = dataArr[i]+"<button id='" + i + "' class='filename'>" + dataArr[i] + "</button>";
+			elem["dates"] = extractDateFromName(dataArr[i]);
+			
+			if(hasRight){
+//				elem["butt"] = "<button id='" + dataArr[i] + "' class='reportfilename'>" + "..." + "</button>";
+				elem["butt"] = i;
+			}			
+			
+
+
+/////////////////////////////////////////////////////////////////////////////////
+/*			row.speed = e[0].value;
+				row.status = e[1].value;
+				row.text = e[2].value;
+				row.display = "<button id='" + index + "' class='display'>Turbine " + index + "</button>";
+				data.result = row;
+				that.addData(data);
+*/				
+/////////////////////////////////////////////////////////////////////////////////			
+			
+			
+			if(dataArr[0]!=undefined) {
+				data.result = elem;
+				that.addData(data);
+			}		
+		}
+		webMI.rootWindow.addEventListener('click', function (e) {
+			if (e.target.className === 'reportfilename') {
+				var filename = e.target.id;
+				var fullfilename = "rigdata/reports/"+filename;
+				webMI.display.openUrl("GetCSV", {"fullreportname":fullfilename,"reportname":filename});								
+			}
+		}, false);
+		
+		
+		// #######################################
+    
+    };
+	
+	function buttonFormatter(row, cell, value, columnDef, dataContext) {
+        //var title = value;
+        var fname=dataContext.names;
+//        return "<button id='"+value+"' style='cursor:pointer;' class='display'>Turbine "+value+"</button>";
+        return "<button id='"+fname+"' style='cursor:pointer;' class='reportfilename'>...</button>";
+    }
+
+	// ### END CONFIGURATION SECTION ###
+	webMI.table.register("report_table", "config", config);
+	webMI.table.setReady("report_table", "config");
+});
+document.getElementById('id_24').addEventListener("click", function(){
+	webMI.display.openDisplay(webMI.query["fifth_display"],webMI.query,webMI.query["frame"]);
+}, false)
+})]]></script>
+</svg>

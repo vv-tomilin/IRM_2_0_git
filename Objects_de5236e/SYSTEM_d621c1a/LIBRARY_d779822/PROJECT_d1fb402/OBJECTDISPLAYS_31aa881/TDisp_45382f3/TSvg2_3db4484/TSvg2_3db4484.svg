@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" height="51.48" xmlns:svg="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" version="1.2" width="79.43000000000001" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs>
+  <linearGradient y1="0.567286" y2="0.561446" id="id0" x2="0.78174" gradientUnits="objectBoundingBox" x1="0.271596">
+   <stop stop-opacity="0.247059" stop-color="#2B2A29" offset="0"/>
+   <stop stop-opacity="1" stop-color="#FEFEFE" offset="1"/>
+  </linearGradient>
+  <linearGradient y1="0.494916" y2="0.495462" id="id1" x2="0.890646" gradientUnits="objectBoundingBox" x1="0.319785">
+   <stop stop-opacity="1" stop-color="#DCCF73" offset="0"/>
+   <stop stop-opacity="1" stop-color="white" offset="0.611765"/>
+   <stop stop-opacity="1" stop-color="#DBE285" offset="1"/>
+  </linearGradient>
+  <linearGradient y1="0.567285" y2="0.561446" id="linear_0" x2="0.781888" gradientUnits="objectBoundingBox" x1="0.271651">
+   <stop stop-opacity="0.247059" stop-color="#2B2A29" offset="0"/>
+   <stop stop-opacity="1" stop-color="#FEFEFE" offset="1"/>
+  </linearGradient>
+  <linearGradient y1="0.494916" y2="0.495462" id="linear_1" x2="0.890644" gradientUnits="objectBoundingBox" x1="0.319783">
+   <stop stop-opacity="1" stop-color="#DCCF73" offset="0"/>
+   <stop stop-opacity="1" stop-color="white" offset="0.611765"/>
+   <stop stop-opacity="1" stop-color="#DBE285" offset="1"/>
+  </linearGradient>
+ </defs>
+ <metadata>
+  <atv:gridconfig enabled="false" height="20" width="20" gridstyle="lines"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <g atv:refpy="25.741" id="id_5" atv:refpx="39.715" transform="matrix(0.574,0,0,0.7022,0,0)">
+  <g inkscape:label="Слой 1" inkscape:groupmode="layer" atv:refpy="36.66" id="layer1" transform="translate(-42.554992,-21.548329)" atv:refpx="69.195">
+   <path stroke="#008dd2" stroke-width="2.5" fill="none" atv:refpy="54.138" id="path347" d="M108.295,38.748L100.905,38.748C97.114,38.748 94.034,41.838 94.034,45.618L94.034,62.658C94.034,66.438 90.944,69.528 87.164,69.528L71.654,69.528" atv:refpx="89.975" class="fil0 str0" inkscape:connector-curvature="0" style="fill-rule:evenodd;clip-rule:evenodd;image-rendering:optimizeQuality;text-rendering:geometricPrecision;shape-rendering:geometricPrecision"/>
+   <path stroke="#2b2a29" stroke-width="0.2" fill="url(#linear_0)" atv:refpy="66.958" id="path349" d="M49.544,58.798L72.734,58.798L72.734,73.018L72.634,73.018C72.634,74.178 67.474,75.118 61.094,75.118C54.714,75.118 49.544,74.178 49.544,73.018Z" atv:refpx="61.14" class="fil1 str1" inkscape:connector-curvature="0" style="fill-rule:evenodd;clip-rule:evenodd;image-rendering:optimizeQuality;text-rendering:geometricPrecision;shape-rendering:geometricPrecision"/>
+   <ellipse stroke="#2b2a29" stroke-width="0.2" cy="58.708336" fill="#9d9e9e" atv:refpy="58.708" id="ellipse351" cx="61.094994" atv:refpx="61.095" class="fil2 str1" rx="11.550001" style="fill-rule:evenodd;clip-rule:evenodd;image-rendering:optimizeQuality;text-rendering:geometricPrecision;shape-rendering:geometricPrecision" ry="2.1000001"/>
+   <path stroke="#393185" stroke-width="2.5" fill="none" atv:refpy="71.298" id="path353" d="M49.534,69.378L48.294,69.378C45.824,69.378 43.804,71.398 43.804,73.868L43.804,89.128C43.804,91.598 45.824,93.618 48.294,93.618L159.175,93.618C161.645,93.618 163.665,91.598 163.665,89.128L163.665,68.908C163.665,66.438 161.645,64.418 159.175,64.418L135.895,64.418C133.425,64.418 131.405,62.398 131.405,59.928L131.405,53.468C131.405,50.998 133.425,48.978 135.895,48.978L179.695,48.978" atv:refpx="111.75" class="fil0 str2" inkscape:connector-curvature="0" style="fill-rule:evenodd;clip-rule:evenodd;image-rendering:optimizeQuality;text-rendering:geometricPrecision;shape-rendering:geometricPrecision"/>
+   <rect stroke="#2b2a29" stroke-width="0.2" height="28.030003" fill="url(#linear_1)" atv:refpy="35.663" id="rect355" x="108.285" y="21.648329" atv:refpx="114.325" class="fil3 str1" width="12.080002" rx="4.7400007" style="fill-rule:evenodd;clip-rule:evenodd;image-rendering:optimizeQuality;text-rendering:geometricPrecision;shape-rendering:geometricPrecision" ry="4.7400007"/>
+   <path stroke="#000000" stroke-width="0.0762" fill="#000000" atv:refpy="25.693" id="path357" d="M113.515,26.078L113.865,26.168C113.785,26.448 113.655,26.668 113.475,26.818C113.285,26.968 113.054,27.038 112.785,27.038C112.505,27.038 112.274,26.978 112.095,26.868C111.925,26.748 111.785,26.588 111.695,26.368C111.604,26.148 111.554,25.918 111.554,25.668C111.554,25.398 111.615,25.168 111.714,24.958C111.814,24.758 111.964,24.608 112.154,24.498C112.344,24.398 112.554,24.348 112.784,24.348C113.044,24.348 113.264,24.408 113.444,24.538C113.624,24.678 113.744,24.858 113.814,25.098L113.474,25.178C113.414,24.988 113.334,24.858 113.214,24.768C113.104,24.678 112.954,24.638 112.784,24.638C112.584,24.638 112.414,24.688 112.284,24.778C112.144,24.878 112.054,25.008 111.994,25.168C111.944,25.328 111.914,25.498 111.914,25.668C111.914,25.888 111.944,26.088 112.014,26.248C112.074,26.418 112.174,26.538 112.314,26.618C112.444,26.698 112.594,26.748 112.754,26.748C112.944,26.748 113.104,26.688 113.244,26.578C113.374,26.468 113.464,26.298 113.515,26.078M114.115,26.208L114.115,25.888L115.115,25.888L115.115,26.208ZM117.054,26.688L117.054,26.998L115.324,26.998C115.324,26.918 115.335,26.848 115.365,26.768C115.405,26.658 115.475,26.538 115.574,26.428C115.674,26.308 115.814,26.178 115.994,26.028C116.274,25.798 116.464,25.618 116.564,25.478C116.674,25.348 116.724,25.218 116.724,25.098C116.724,24.968 116.674,24.858 116.584,24.768C116.494,24.688 116.374,24.638 116.224,24.638C116.074,24.638 115.944,24.688 115.854,24.778C115.764,24.868 115.714,24.998 115.714,25.158L115.384,25.128C115.404,24.888 115.494,24.698 115.644,24.568C115.784,24.438 115.984,24.378 116.234,24.378C116.484,24.378 116.684,24.448 116.824,24.588C116.975,24.728 117.044,24.898 117.044,25.098C117.044,25.208 117.024,25.308 116.984,25.408C116.944,25.508 116.874,25.618 116.774,25.728C116.675,25.838 116.505,25.988 116.274,26.188C116.085,26.348 115.964,26.458 115.904,26.518C115.854,26.568 115.804,26.628 115.774,26.688Z" atv:refpx="114.305" class="fil4 str3" inkscape:connector-curvature="0" style="fill-rule:nonzero;clip-rule:evenodd;image-rendering:optimizeQuality;text-rendering:geometricPrecision;shape-rendering:geometricPrecision"/>
+  </g>
+ </g>
+</svg>

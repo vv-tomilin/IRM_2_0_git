@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Stock/Indicators/ROC
+NodeClass: Object
+BrowseName: 1:ROC
+DisplayName: en|ROC
+Description: en|ROC
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

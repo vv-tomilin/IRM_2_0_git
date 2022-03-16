@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD
+NodeClass: Object
+BrowseName: 1:ASPD
+DisplayName: en|ASPD
+Description: en|ASPD
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

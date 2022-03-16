@@ -1,0 +1,696 @@
+/*@import 'https://code.highcharts.com/css/highcharts.css';*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&display=swap');
+@import url('./dragg.css');
+/*
+Thin 100
+Light 300
+Regular 400
+Medium 500
+Bold 700
+Black 900
+*/
+#dragg-container {
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-areas: 
+    "zone-1 zone-2 zone-3 zone-4 zone-5";
+	grid-gap: 2vw;
+	background-color: red;
+}
+.zones {
+width:100%;
+hight:30px;
+}
+#drop-zone-1 {
+grid-area: zone-1;
+background-color: #aaaaff;
+}
+#drop-zone-2 {
+grid-area: zone-2;
+background-color: #ffaa7f;
+}
+#drop-zone-3 {
+grid-area: zone-3;
+background-color: #ff55ff;
+}
+#drop-zone-4 {
+grid-area: zone-4;
+background-color: #5555ff;
+}
+#drop-zone-5 {
+grid-area: zone-5;
+background-color: 
+#00aa00;
+}
+.onPause {
+	fill: #ffff00;
+	stroke: #ffff00;
+}
+.playPause .highcharts-button-box {
+	fill: #213a53;
+	stroke: #4d4d4d;
+	cursor: pointer;
+	stroke-width: 1px;
+	transition: fill 50ms;
+	width: 40px;
+    height: 22px; 
+}
+.playPause .highcharts-button text {
+	fill: #00ff00;
+	stroke: #00ff00;
+}
+/*.highcharts-background {
+fill: #213a53;
+	fill: transparent !important;
+}*/
+.highcharts-grid-line {
+	stroke: #7d7d7d;
+	stroke-opacity: 0.1;
+}
+
+.highcharts-minor-grid-line {
+	stroke: #7d7d7d;
+	stroke-opacity: 0.1;	
+}
+
+.highcharts-yaxis .highcharts-axis-line {
+	stroke-width: 2px;	
+}
+.highcharts-xaxis-labels text {
+	fill:  #ffffff;
+	font-size: 9px;
+	font-family: Montserrat, sans-serif;
+	font-weight:  400;
+}
+.highcharts-xaxis-grid .highcharts-grid-line {
+	stroke-width: 1px;
+	stroke: #d8d8d8;
+	stroke-opacity: 0.1;
+}
+.highcharts-navigator-mask-outside {
+	fill: transparent !important;
+}
+.highcharts-axis-resizer {
+	fill: #ffffff;
+	stroke: #ffffff;
+	stroke-width: 5px;
+}
+
+.onmouseclick {
+	fill: #888888;
+	stroke: #888888;
+}
+.highcharts-button-hover {
+	transition: fill 0ms;
+	fill: #5555ff;
+}
+.playPause .highcharts-button-pressed {
+	fill: #00ff7f;
+}
+.playPause .highcharts-button-disabled {
+	fill: #888884;
+}
+.highcharts-button text {
+	fill: #ffffff;
+	stroke: #ffffff;
+}
+/*#####################--COLORS FOR OPERATIONS--##################################################*/
+/*БУРЕНИЕ*/
+.highcharts-zone006633 {
+	fill: #006633;
+	stroke: #006633;
+}
+/*ПРОРАБОТКА*/
+.highcharts-zone666633 {
+	fill: #666633;
+	stroke: #666633;
+}
+/*ШАБЛОНИРОВКА*/
+.highcharts-zoneCC6633 {
+	fill: #CC6633;
+	stroke: #CC6633;
+}
+/*ПРОМЫВКА*/
+.highcharts-zone1583DC {
+	fill: #1583DC;
+	stroke: #1583DC;
+}
+/*НАРАЩИВАНИЕ*/
+.highcharts-zone1515AD {
+	fill: #1515AD;
+	stroke: #1515AD;
+}
+/*НА КЛИНЬЯХ*/
+.highcharts-zone663300 {
+	fill: #663300;
+	stroke: #663300;
+}
+/*СПО*/
+.highcharts-zone663333 {
+	fill: #663333;
+	stroke: #663333;
+}
+/*РАЗГРУЗКА*/
+.highcharts-zone003333 {
+	fill: #003333;
+	stroke: #003333;
+}
+/*НЕОПРЕДЕЛЁННЫЙ*/
+.highcharts-zone999933 {
+	fill: #999933;
+	stroke: #999933;
+}
+/*#####################--LEGEND--##################################################*/
+/*.highcharts-legend text {	
+	font-size: 12px;
+}
+.highcharts-legend-box {
+	fill: #25405b;
+	fill-opacity: 0.1;
+	stroke: black;
+	stroke-width: 1px;
+	stroke-opacity: 0.1;
+}
+.highcharts-legend-item text {
+	fill: inherit !important;
+}
+.highcharts-legend-item:hover text {
+	fill: white;
+}
+.highcharts-legend-item-hidden * {
+    fill: gray !important;
+    stroke: gray !important;
+}
+.highcharts-legend-title {
+	fill: white;
+}
+.highcharts-legend-navigation {
+	fill: white;
+}
+.highcharts-legend-nav-active {
+	fill: white;
+}
+.highcharts-legend-nav-inactive {
+	fill: gray;
+}*/
+/*#######################--END OF LEGEND--#######################################*/
+/*#####################--NAVIGATOR--#############################################*/
+.highcharts-navigator-area {
+fill-opacity: 0.4;
+}
+.highcharts-navigator-mask-inside {
+	cursor: pointer;
+}
+.highcharts-navigator-handle {
+	cursor: n-resize;
+}
+.highcharts-Depth .highcharts-navigator-series {
+    fill: #335cad;
+    stroke: #335cad;
+}
+.highcharts-scrollbar-thumb{
+	fill: #09222e;
+} 
+.highcharts-scrollbar-arrow{
+	fill: #09222e;
+	stroke: #797a7a;
+} 
+.highcharts-scrollbar-button{
+	fill: #103e53;
+	stroke: #797a7a;
+}
+.highcharts-scrollbar-button text{
+	fill: #a7a7a7;
+}  
+.highcharts-scrollbar-rifles{
+	fill: #797a7a;
+}
+.highcharts-scrollbar-track{
+	fill: #213a53;
+}
+.highcharts-navigator-xaxis .highcharts-axis-labels text  {
+	fill: #ffffff;
+	font-size: 14px;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+}
+/*#####################--END OF NAVIGATOR--########################################*/
+/*#####################--RANGE SELECTOR--########################################*/
+.highcharts-range-selector-buttons .highcharts-button text {
+	fill: #ffffff;
+	stroke: #ffffff;
+}
+.highcharts-range-selector-buttons .highcharts-button {
+	fill: #213a53;
+  stroke: #4d4d4d;
+  cursor: pointer;
+  stroke-width: 1px;
+  transition: fill 50ms;
+}
+.highcharts-range-selector-buttons .highcharts-button-hover {
+fill: #5555ff;
+}
+.highcharts-range-selector-buttons .highcharts-button-pressed {
+fill: #00ff7f;
+stroke: #00ff7f;
+}
+.highcharts-range-label rect {
+  fill: none;
+}
+
+.highcharts-range-label text {
+  fill: #ffffff;
+}
+
+.highcharts-range-input rect {
+  fill: none;
+}
+
+.highcharts-range-input text {
+  fill: #ffffff;
+}
+
+.highcharts-range-input {
+  stroke-width: 1px;
+  stroke: #cccccc;
+}
+
+input.highcharts-range-selector {
+  position: absolute;
+  border: 0;
+  width: 1px;
+  /* Chrome needs a pixel to see it */
+  height: 1px;
+  padding: 0;
+  text-align: center;
+  left: -9em;
+  /* #4798 */
+}
+/*#####################--END OF RANGE SELECTOR--########################################*/
+
+/* STYLED Y-AXES #####################################################*/
+/*########--COMON STYLES--############################################*/
+.highcharts-axis.highcharts-WeightOnHook, 
+.highcharts-axis.highcharts-HookPosition, 
+.highcharts-axis.highcharts-TDSTorque, 
+.highcharts-axis.highcharts-MudPumpPressureManifold, 
+.highcharts-axis.highcharts-FlowInput, 
+.highcharts-axis.highcharts-LoadOnBit,
+.highcharts-axis.highcharts-HookSpeed, 
+.highcharts-axis.highcharts-TDSSpeed, 
+.highcharts-axis.highcharts-DrillSpeed, 
+.highcharts-axis.highcharts-FlowOutput text {
+	font-size: 12px;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+}
+/*###########--highcharts-WeightOnHook--###############*/
+.highcharts-WeightOnHook-shadow {
+	fill: #7cb5ec;
+	stroke: #7cb5ec;
+	font-size: 12px;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+}
+.highcharts-WeightOnHook-shadow .highcharts-axis-line {
+	fill: #ffff00;
+	stroke: #ffff00;
+	stroke-width: 0px;
+}
+.highcharts-WeightOnHook {
+	fill: #7cb5ec;
+	stroke: #7cb5ec;
+}
+.highcharts-WeightOnHook .highcharts-axis-line {
+	fill: #7cb5ec;
+	stroke: #7cb5ec;
+}
+.highcharts-WeightOnHook .highcharts-axis-title {
+	fill: #7cb5ec;
+}
+
+/*###########--highcharts-HookPosition--###############*/
+.highcharts-HookPosition-shadow {
+	fill: #7cb5ec;
+	stroke: #7cb5ec;
+	font-size: 12px;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+}
+.highcharts-HookPosition-shadow .highcharts-axis-line {
+	fill: #ffff00;
+	stroke: #ffff00;
+	stroke-width: 0px;
+}
+.highcharts-HookPosition {
+	fill: #00ff00;
+	stroke: #00ff00;
+}
+.highcharts-axis.highcharts-HookPosition .highcharts-axis-line {
+	fill: #00ff00;
+	stroke: #00ff00;
+}
+.highcharts-HookPosition .highcharts-axis-title {
+	fill: #00ff00;
+}
+/*###########--highcharts-TDSTorque--###############*/
+/*highcharts-tds_torque_params####################################*/
+.highcharts-TDSTorque-shadow {
+	fill: #7cb5ec;
+	stroke: #7cb5ec;
+	font-size: 12px;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+}
+.highcharts-TDSTorque-shadow .highcharts-axis-line {
+	fill: #ffff00;
+	stroke: #ffff00;
+	stroke-width: 0px;
+}
+.highcharts-tds_torque_params .highcharts-area {
+	fill:  #ffaa00;
+	fill-opacity: 0.09;
+
+}
+.highcharts-tds_torque_params {
+	fill:  #ffaa00;
+	stroke: #ffaa00;
+	stroke-opacity: 0.1;
+	stroke-width: 0px;
+}
+.highcharts-TDSTorque {
+	fill: #ffaa00;
+	stroke: #ffaa00;
+}
+.highcharts-TDSTorque .highcharts-axis-line {
+	stroke: #ffaa00;
+}
+.highcharts-TDSTorque .highcharts-axis-title {
+	fill: #ffaa00;
+}
+/*###########--highcharts-MudPumpPressureManifold--###############*/
+/*highcharts-pressure_manifold_params####################################*/
+.highcharts-MudPumpPressureManifold-shadow {
+	fill: #7cb5ec;
+	stroke: #7cb5ec;
+	font-size: 12px;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+}
+.highcharts-MudPumpPressureManifold-shadow .highcharts-axis-line {
+	fill: #ffff00;
+	stroke: #ffff00;
+	stroke-width: 0px;
+}
+.highcharts-pressure_manifold_params .highcharts-area {
+	fill: #ff557f;
+	fill-opacity: 0.09;
+}
+.highcharts-pressure_manifold_params {
+	fill: #ff557f;
+	stroke: #ff557f;
+	stroke-opacity: 0.1;
+	stroke-width: 0px;
+}
+.highcharts-MudPumpPressureManifold {
+	fill: #ff557f;
+	stroke: #ff557f;
+}
+.highcharts-MudPumpPressureManifold .highcharts-axis-line {
+	stroke: #ff557f;
+}
+.highcharts-MudPumpPressureManifold .highcharts-axis-title {
+	fill: #ff557f;
+}
+/*###########--highcharts-FlowInput--###############*/
+.highcharts-FlowInput-shadow {
+	fill: #7cb5ec;
+	stroke: #7cb5ec;
+	font-size: 12px;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+}
+.highcharts-FlowInput-shadow .highcharts-axis-line {
+	fill: #ffff00;
+	stroke: #ffff00;
+	stroke-width: 0px;
+}
+.highcharts-FlowInput {
+	fill: #00ffff;
+	stroke: #00ffff;
+}
+.highcharts-FlowInput .highcharts-axis-line {
+	stroke: #00ffff;
+}
+.highcharts-FlowInput .highcharts-axis-title {
+	fill: #00ffff;
+}
+/*###########--highcharts-LoadOnBit--###############*/
+/*highcharts-load_on_bit_params####################################*/
+.highcharts-LoadOnBit-shadow {
+	fill: #7cb5ec;
+	stroke: #7cb5ec;
+	font-size: 12px;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+}
+.highcharts-LoadOnBit-shadow .highcharts-axis-line {
+	fill: #ffff00;
+	stroke: #ffff00;
+	stroke-width: 0px;
+}
+.highcharts-load_on_bit_params .highcharts-area {
+	fill: #ff2252;
+	fill-opacity: 0.09;
+}
+.highcharts-load_on_bit_params {
+	fill: #ff2252;
+	stroke: #ff2252;
+	stroke-opacity: 0.1;
+	stroke-width: 0px;
+}
+.highcharts-LoadOnBit {
+	fill: #ff2252;
+	stroke: #ff2252;
+}
+
+.highcharts-LoadOnBit .highcharts-axis-line  {
+	stroke: #ff2252;
+	stroke-width: 2px;
+}
+.highcharts-LoadOnBit .highcharts-axis-title {
+	fill: #ff2252;
+}
+/*###########--highcharts-HookSpeed--###############*/
+/*highcharts-hook_speed_params####################################*/
+.highcharts-HookSpeed-shadow {
+	fill: #7cb5ec;
+	stroke: #7cb5ec;
+	font-size: 12px;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+}
+.highcharts-HookSpeed-shadow .highcharts-axis-line {
+	fill: #ffff00;
+	stroke: #ffff00;
+	stroke-width: 0px;
+}
+.highcharts-hook_speed_params .highcharts-area {
+	fill: #ffaa7f;
+	fill-opacity: 0.09;
+}
+.highcharts-hook_speed_params {
+	fill: #ffaa7f;
+	stroke: #ffaa7f;
+	stroke-opacity: 0.1;
+	stroke-width: 0px;
+}
+.highcharts-HookSpeed {
+	fill: #ffaa7f;
+	stroke: #ffaa7f;
+}
+
+.highcharts-axis.highcharts-HookSpeed .highcharts-axis-line {
+	stroke: #ffaa7f;
+}
+.highcharts-HookSpeed .highcharts-axis-title {
+	fill: #ffaa7f;
+}
+/*###########--highcharts-TDSSpeed--###############*/
+/*highcharts-tds_speed_params####################################*/
+.highcharts-TDSSpeed-shadow {
+	fill: #7cb5ec;
+	stroke: #7cb5ec;
+	font-size: 12px;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+}
+.highcharts-TDSSpeed-shadow .highcharts-axis-line {
+	fill: #ffff00;
+	stroke: #ffff00;
+	stroke-width: 0px;
+}
+.highcharts-tds_speed_params .highcharts-area {
+	fill:  #aaaaff;
+	fill-opacity: 0.09;
+}
+.highcharts-tds_speed_params {
+	fill:  #aaaaff;
+	stroke: #aaaaff;
+	stroke-opacity: 0.1;
+	stroke-width: 0px;
+}
+.highcharts-TDSSpeed {
+	fill: #aaaaff;
+	stroke: #aaaaff;
+}
+
+.highcharts-axis.highcharts-TDSSpeed .highcharts-axis-line {
+	stroke: #aaaaff;
+}
+.highcharts-TDSSpeed .highcharts-axis-title {
+	fill: #aaaaff;
+}
+/*###########--highcharts-DrillSpeed--###############*/
+/*highcharts-drill_speed_params###############################*/
+.highcharts-DrillSpeed-shadow {
+	fill: #7cb5ec;
+	stroke: #7cb5ec;
+	font-size: 12px;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+}
+.highcharts-DrillSpeed-shadow .highcharts-axis-line {
+	fill: #ffff00;
+	stroke: #ffff00;
+	stroke-width: 0px;
+}
+.highcharts-drill_speed_params .highcharts-area {
+	fill: #00557f;
+	fill-opacity: 0.09;	
+}
+.highcharts-drill_speed_params {
+	fill: #00557f;
+	stroke: #00557f;
+	stroke-width: 0px;
+	stroke-opacity: 0.1;
+}
+.highcharts-DrillSpeed {
+	fill: #00557f;
+	stroke: #00557f;
+}
+
+.highcharts-DrillSpeed .highcharts-axis-line {
+	stroke: #00557f;
+}
+.highcharts-DrillSpeed .highcharts-axis-title {
+	fill: #00557f;
+}
+/*###########--highcharts-FlowOutput--###############*/
+.highcharts-FlowOutput-shadow {
+	fill: #7cb5ec;
+	stroke: #7cb5ec;
+	font-size: 12px;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+}
+.highcharts-FlowOutput-shadow .highcharts-axis-line {
+	fill: #ffff00;
+	stroke: #ffff00;
+	stroke-width: 0px;
+}
+.highcharts-FlowOutput {
+	fill: #555500;
+	stroke: #555500;
+}
+
+.highcharts-FlowOutput .highcharts-axis-line {
+	stroke: #555500;
+}
+.highcharts-FlowOutput .highcharts-axis-title {
+	fill: #555500;
+}
+/*###########--highcharts-Depth--###############*/
+.highcharts-Depth .highcharts-label .highcharts-data-label .highcharts-data-label-box{
+	fill: #55aaff;
+	fill-opacity: 0.1;
+	stroke-width: 1px;
+	stroke: #ffffff;	
+}
+ 
+.highcharts-Depth .highcharts-data-label text{	
+	fill: #ffffff;
+	font-size: 10px;
+	font-family: Montserrat, sans-serif;
+	font-weight:  500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* end STYLED Y-AXES #####################################################*/

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="interval" type="interval" trigger="true" relative="false" value="" offset="00:00:00"/>
+  <code><![CDATA[//for (var i=0;i<40;i++){
+//	var nrd = new UaNode("AGENT.OBJECTS.report_date");
+	var curdate = new Date();
+	curdate.setHours(0,0,0,0);
+//	console.log('curdate = ',curdate);
+//	var utc = new Date(curdate.getTime() + curdate.getTimezoneOffset() * 60000);
+//	console.log('utsdate = ',utc);
+	call("Report.Report_Day",{report_date:curdate});
+	
+//	curdate.setDate(curdate.getDate() + 1);
+//	console.log('newcurdate = ',curdate);
+//	nrd.assign({value: curdate});
+//}]]></code>
+</script>

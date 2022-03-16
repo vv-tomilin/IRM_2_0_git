@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/css/themes/grid-light.scss
+NodeClass: Variable
+BrowseName: 1:grid-light.scss
+DisplayName: en|grid-light.scss
+Description: en|grid-light.scss
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

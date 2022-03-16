@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/Bellcurve
+NodeClass: Object
+BrowseName: 1:Bellcurve
+DisplayName: en|Bellcurve
+Description: en|Bellcurve
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

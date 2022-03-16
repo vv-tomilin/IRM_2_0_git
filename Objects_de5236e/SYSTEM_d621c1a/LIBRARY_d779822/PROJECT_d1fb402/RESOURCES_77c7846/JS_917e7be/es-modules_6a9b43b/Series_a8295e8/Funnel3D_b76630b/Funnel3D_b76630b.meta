@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/Funnel3D
+NodeClass: Object
+BrowseName: 1:Funnel3D
+DisplayName: en|Funnel3D
+Description: en|Funnel3D
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

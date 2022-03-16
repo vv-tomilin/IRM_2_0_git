@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.APD1.MasterMode
+NodeClass: Variable
+BrowseName: 1:MasterMode
+DisplayName: en|MasterMode
+Description: en|MasterMode
+DataType: Int16
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

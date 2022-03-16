@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Variables.DragOverpull
+NodeClass: Object
+BrowseName: 1:DragOverpull
+DisplayName: en|DragOverpull
+Description: en|DragOverpull
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

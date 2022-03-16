@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.TimeoutPressureLow
+NodeClass: Variable
+BrowseName: 1:TimeoutPressureLow
+DisplayName: en|TimeoutPressureLow
+Description: en|TimeoutPressureLow
+DataType: UInt16
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Settings_param.Graph.initGraphListSensors
+NodeClass: Variable
+BrowseName: 1:initGraphListSensors
+DisplayName: en|initGraphListSensors
+Description: en|initGraphListSensors
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

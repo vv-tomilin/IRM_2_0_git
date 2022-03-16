@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Platforma.RigBoard.distribution_SPO
+NodeClass: Variable
+BrowseName: 1:distribution_SPO
+DisplayName: en|distribution_SPO
+Description: en|distribution_SPO
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

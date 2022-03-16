@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/Loader_scripts
+NodeClass: Object
+BrowseName: 1:Loader_scripts
+DisplayName: en|Loader_scripts
+Description: en|Loader_scripts
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

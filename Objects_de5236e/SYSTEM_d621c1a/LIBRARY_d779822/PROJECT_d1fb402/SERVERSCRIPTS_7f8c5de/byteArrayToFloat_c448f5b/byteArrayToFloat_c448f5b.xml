@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="byteArray" type="array" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var buf = new ArrayBuffer(4);
+var view = new DataView(buf);
+	
+var rev = byteArray.reverse();
+	rev.forEach(function (b, i) {
+//	console.log("b = "+ b);
+	view.setUint8(i, b);
+});	
+var num = view.getFloat32(0);
+return num;]]></code>
+</script>

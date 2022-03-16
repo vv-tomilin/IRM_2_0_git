@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.wasPipeKeyRun
+NodeClass: Variable
+BrowseName: 1:wasPipeKeyRun
+DisplayName: en|wasPipeKeyRun
+Description: en|wasPipeKeyRun
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

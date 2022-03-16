@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Description</h1>
+<p>The number keyboard display offers an on-screen keyboard for numerical input.</p>
+<p>Simple numerical input by clicking once on the desired key and complete the
+input by clicking the "OK" key (This will write the current input to the given
+address node "target"). The "delete" key can be used to delete single
+numbers or to remove the whole input by holding it at least for 1 second.
+To abort and escape the input it is necessary to click the "X" button on the
+middle of the right side.</p>
+<p>There are a few different ways to limit the numerical input. A simple way to
+allow an input only between a given range, is to set the "minimum" and / or
+"maximum" parameters. To limit the number of the digits before and / or after
+the decimal point, it is necessary to set these parameters. The "query confirm"
+parameter can be used to display a confirm message before the input value will
+be written.
+</p>
+<h1>Parameters</h1>
+<p>The following common Parameters exists:</p>
+<ul>
+  <li><span class="parameter">unit</span>: used to display a unit after the input</li>
+  <li><span class="parameter">value</span>: initially displayed input value</li>
+  <li><span class="parameter">minimum</span>: minimum value input</li>
+  <li><span class="parameter">maximum</span>: maximum value input</li>
+  <li><span class="parameter">digits before point</span>: number of digits that are allowed before decimal point</li>
+  <li><span class="parameter">digits after point</span>: number of digits that are allowed after decimal point</li>
+  <li><span class="parameter">Target</span>: address target node to write input to</li>
+  <li><span class="parameter">query confirm</span>: if set to true, a message dialog will be required to answer for completing the input</li>
+  <li><span class="parameter">query confirm text</span>: text that will be used for the confirm query message dialog</li>
+  <li><span class="parameter">password mode</span>: hides characters and shows stars instead</li>
+  <li><span class="parameter">trigger to be fired</span>: name of the global trigger which will be fired when the input is complete</li>
+</ul>
+<h1>Examples</h1>
+<p>Create a display with a button that opens a window with the keyboard by
+clicking on to it and add the desired target node to the query.</p>
+</body>
+</html>

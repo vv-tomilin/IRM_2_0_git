@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nodeWellDepth" type="node" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.IVE50.Well.WellDepth"/>
+  <code><![CDATA[return nodeWellDepth.value;]]></code>
+</script>

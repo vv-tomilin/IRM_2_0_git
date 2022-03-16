@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="DrillPumpName" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="DrillPumpType" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="DrillPumpFillingRatio" type="number" trigger="false" relative="false" value=""/>
+  <parameter name="PistonDiameter" type="number" trigger="false" relative="false" value=""/>
+  <parameter name="StrokePump" type="number" trigger="false" relative="false" value=""/>
+  <parameter name="StemDiameter" type="number" trigger="false" relative="false" value=""/>
+  <code><![CDATA[// Расход бурового насоса
+var res = 0
+if (DrillPumpType.toUpperCase() === "TRIPLEX") {
+//if  ( (DrillPumpType && DrillPumpType.toUpperCase()) === "TRIPLEX") {
+console.log("TRIPLEX: ");
+
+ var I5 = PistonDiameter // Диаметр поршня
+ var E5 = DrillPumpFillingRatio // коэф наполнения
+ var G5 = StrokePump // число ходов
+
+
+ res = 3.14*(Math.pow((I5/2/100),2))*2.5*3*E5*G5/60
+ 
+ } else if (DrillPumpType.toUpperCase() === "DUPLEX") {
+//} else if ((DrillPumpType && DrillPumpType.toUpperCase()) === "DUPLEX") {
+console.log("DUPLEX: ");
+ var E8 = DrillPumpFillingRatio // коэф наполнения
+ var G8 = StrokePump // число ходов поршня в минуту
+ var I8 = PistonDiameter // Диаметр поршня в мм
+ var J8 = StemDiameter // Диаметр штока
+
+ res = ( (  Math.pow((I8/100/2),2) + ( Math.pow((I8/100/2),2) - Math.pow((J8/100/2),2)) )*4*3.14*2*E8*G8/60 )
+ 
+}
+
+// 3,14*(I5/2/100)^2*2,5*3*E5*G5/60  // формула вычисления расхода для TRIPLEX
+// ((I8/100/2)^2+((I8/100/2)^2-(J8/100/2)^2))*4*3,14*2*E8*G8/60  // формула вычисления расхода для DUPLEX
+
+return res]]></code>
+</script>

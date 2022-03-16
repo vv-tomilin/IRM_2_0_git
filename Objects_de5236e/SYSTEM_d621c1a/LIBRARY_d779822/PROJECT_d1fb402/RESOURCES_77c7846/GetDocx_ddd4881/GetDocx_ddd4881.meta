@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/GetDocx
+NodeClass: Variable
+BrowseName: 1:GetDocx
+DisplayName: en|GetDocx
+Description: en|GetDocx
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

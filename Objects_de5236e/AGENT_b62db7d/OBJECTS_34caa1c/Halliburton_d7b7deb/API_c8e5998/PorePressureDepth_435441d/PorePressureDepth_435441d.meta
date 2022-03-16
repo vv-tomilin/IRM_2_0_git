@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Halliburton.API.PorePressureDepth
+NodeClass: Variable
+BrowseName: 1:PorePressureDepth
+DisplayName: en|PorePressureDepth
+Description: en|PorePressureDepth
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

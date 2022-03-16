@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" height="30" xmlns="http://www.w3.org/2000/svg" width="160">
+ <defs>
+  <linearGradient y2="1" x1="1" x2="1" y1="0" id="linear_1" gradientUnits="objectBoundingBox">
+   <stop stop-opacity="0" stop-color="#ffffff" offset="0"/>
+   <stop stop-opacity="0" stop-color="#ffffff" offset="1"/>
+  </linearGradient>
+  <linearGradient y2="1" x1="1" x2="1" y1="0" id="linear_2" gradientUnits="objectBoundingBox">
+   <stop stop-opacity="0.35" stop-color="#ffffff" offset="0"/>
+   <stop stop-opacity="0.35" stop-color="#ffffff" offset="1"/>
+  </linearGradient>
+ </defs>
+ <title>Button/Display Language</title>
+ <desc>Displays the current language and switches it on click.</desc>
+ <metadata>
+  <atv:parameter desc="base" behavior="hidden" name="base" valuetype="address"/>
+  <atv:parameter desc="language text" behavior="optional" name="languageText" valuetype="trstring" substitute="$LANGUAGE$"/>
+  <atv:parameter desc="family" config="Verdana;Arial;Courier;" behavior="optional" group="Font" defaultvalue="Arial" name="fontFamily" valuetype="enum" substitute="$FONTFAMILY$"/>
+  <atv:parameter desc="size" config="6;7;8;9;10;11;12;14;16;18;20;22;24;26;28;36;48;72" behavior="optional" group="Font" defaultvalue="16" name="fontSize" valuetype="enum" substitute="$FONTSIZE$"/>
+  <atv:parameter desc="color" behavior="optional" group="Font" defaultvalue="SYSTEM.GLOBALS.atvFontColor" name="fontColor" valuetype="global" substitute="$FONTCOLOR$"/>
+  <atv:parameter desc="fill color" behavior="optional" group="Appearance" defaultvalue="SYSTEM.GLOBALS.atvFillColor" name="fill" valuetype="global" substitute="$FILL$"/>
+  <atv:parameter desc="symbol color" behavior="optional" group="Appearance" defaultvalue="SYSTEM.GLOBALS.atvSymbolColor" name="symbolColor" valuetype="global"/>
+  <atv:parameter desc="border color" behavior="optional" group="Appearance" defaultvalue="SYSTEM.GLOBALS.atvBorderColor" name="borderColor" valuetype="global" substitute="$BORDERCOLOR$"/>
+  <atv:parameter desc="stroke color when pressed" behavior="optional" group="Appearance" defaultvalue="#ffffff" name="strokePressed" valuetype="color"/>
+  <atv:gridconfig gridstyle="lines" height="5" enabled="true" width="5"/>
+  <atv:snapconfig height="5" enabled="false" width="5"/>
+ </metadata>
+ <rect fill="$FILL$" stroke-width="0.5" atv:bindbr="1,1" ry="3" stroke="$BORDERCOLOR$" atv:refpx="80.25" rx="3" height="29.5" atv:bindtl="0,0" x="0.25" y="0.25" id="id_4" atv:refpy="15.5" width="159.5"/>
+ <rect fill="none" stroke-width="0.5" atv:bindbr="1,1" ry="3" stroke="none" atv:refpx="153.5" rx="3" height="24.5" atv:bindtl="0,0" x="2.5" y="2.75" id="id_5" atv:refpy="-12.25" width="128"/>
+ <rect fill="#ffffff" stroke-width="0.5" atv:bindbr="1,1" ry="3" stroke="none" atv:refpx="156.5" rx="3" height="22.5" atv:bindtl="0,0" x="3.5" y="3.75" id="input_bg" atv:refpy="22.5" width="126"/>
+ <text fill="$FONTCOLOR$" font-size="$FONTSIZE$" atv:bindbr="0,0.5" font-family="$FONTFAMILY$" atv:refpx="28" atv:bindtl="0,0.5" x="6.5" y="21" id="language_label" atv:refpy="15" atv:dynamic="true">$LANGUAGE$</text>
+ <g atv:refpx="144.75" id="button_clickarea" atv:refpy="15">
+  <rect fill="$BORDERCOLOR$" stroke-width="0.5" atv:bindbr="1,0.5" ry="3" stroke="none" atv:refpx="674.75" rx="3" height="24.5" atv:bindtl="1,0.5" x="132.5" y="2.75" id="id_6" atv:refpy="-3.75" width="24.5"/>
+  <rect fill="$FILL$" stroke-width="2" atv:bindbr="1,0.5" ry="3" stroke="none" atv:refpx="545.25" rx="3" height="22.5" atv:bindtl="1,0.5" x="133.5" y="3.75" id="button_bg" atv:refpy="33.75" width="22.5"/>
+  <rect fill="url(#linear_1)" stroke-width="0.5" atv:bindbr="1,0.5" ry="2.755" stroke="none" atv:refpx="545.25" rx="2.755" height="22.5" atv:bindtl="1,0.5" x="133.5" y="3.75" id="button_stroke" atv:refpy="-2.296" width="22.5"/>
+  <svg atv:bindbr="1,0.5" atv:refpx="279.5" height="20" atv:bindtl="1,0.5" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.language" x="134.75" y="5" id="id_0" atv:refpy="20" width="20">
+   <atv:argument prefix="symbolColor" name="symbolColor"/>
+  </svg>
+ </g>
+ <script type="text/ecmascript"><![CDATA[var contextMenuStyle = { maxRows: 10, fontFamily: "Arial", fontSize: 12, fontFill: "#575757", width: 140, fill: "#ffffff", stroke: "#d7d7d7", strokeWidth: 1, hoverFill: "#e5e5e5", closeTime: 0, zIndex: 100, showType: "right"};
+
+if(webMI.query["languageText"] == "" || webMI.query["languageText"] == undefined) {
+	webMI.trigger.fire("com.atvise.languages", function(languages) {
+		webMI.gfx.setText("language_label", languages["T{}"]);
+	});
+}
+
+function setButton(active) {
+	webMI.gfx.setFill("button_stroke",(active) ? "url(#linear_2)" : "url(#linear_1)");
+}
+
+webMI.addEvent("button_clickarea", "mousedown", function(e) {
+	setButton(true);
+});
+
+webMI.addEvent("button_clickarea", ["mouseup","mouseout"], function(e) {
+	setButton(false);
+});
+
+webMI.addEvent("button_clickarea", "dragstart", function(e) {
+	if (e.preventDefault)
+		e.preventDefault();
+});
+
+var menuObj = {};
+menuObj["languagemenu"] = "languagemenu";
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Context Menu", {"id":"button_clickarea", menuObj: menuObj, "outputNode":null, "x":0, "y":30, minWidth:160, onEvent: "click", "style": contextMenuStyle});]]></script>
+</svg>

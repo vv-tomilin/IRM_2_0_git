@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="group" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="subgroup" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="path" type="string" trigger="false" relative="false" value=""/>
+  <code><![CDATA[
+
+/* define some vars */
+var atviseNode = "AGENT.OBJECTS.ATVISE";
+var filterGroup = group ? group : "";
+var filterSubgroup = subgroup ? subgroup : "";
+var filterPath = path == "true" ? true : false;
+var index = {};
+
+_indexNode(_browse(atviseNode)["ATVISE"]);
+
+return _filter(filterGroup, filterSubgroup, filterPath);
+
+/**
+ * browse nodes to find valid logger nodes
+ * @param address
+ * @private
+ */
+function _browse(address) {
+	var node = call("Utilities.BrowseNodes", {
+		"startAddress": address,
+		"endLevel": 4,
+		"includeStartAddress": true
+	});
+	return node;
+}
+
+/**
+ * apply filter so only return mandatory nodes
+ * @param group
+ * @param subgroup
+ * @private
+ */
+function _filter(group, subgroup, path) {
+	var filter = {};
+
+	for(var key in index){
+		if(key != "undefined") {
+			if(path){
+				filter[key] = index[key];
+			} else if(key.split(".").length > 5) {
+				if(group && group == key.split(".")[4] && subgroup && subgroup == key.split(".")[5]) {
+					filter[key] = index[key];
+				} else if(group && group == key.split(".")[4] && !subgroup) {
+					filter[key] = index[key];
+				} else if(subgroup && subgroup == key.split(".")[5] && !group) {
+					filter[key] = index[key];
+				} else if(!group && !subgroup) {
+					filter[key] = index[key];
+				}
+			}
+		}
+	}
+
+	return filter;
+}
+
+/**
+ * evaluate browse node result
+ * @param browsed
+ * @private
+ */
+function _indexNode(browsed) {
+	if(!browsed)
+		return;
+	index[browsed.name] = true;
+	var childs = browsed.childs;
+	for (var key in childs) {
+		_indexNode(childs[key]);
+	}
+}
+    ]]></code>
+</script>

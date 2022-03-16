@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg version="1.2" height="800" atv:contentwidth="1280" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" atv:contentheight="680" width="1280">
+ <defs/>
+ <desc>1280 x 800</desc>
+ <title>Advanced</title>
+ <metadata>
+  <atv:gridconfig gridstyle="lines" height="20" enabled="false" width="20"/>
+  <atv:snapconfig height="10" enabled="true" width="10"/>
+ </metadata>
+ <svg height="60" x="0" atv:refpx="639.986" y="0" id="id_3" atv:refpy="59.999" width="1280" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.top_dashboard"/>
+ <svg transform="matrix(1.35,0,0,1.2333,0,0)" height="600" x="148.148" atv:refpx="740" y="48.65" id="id_4" atv:refpy="430.016" width="800" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.iframe">
+  <atv:argument value="AGENT.DISPLAYS.MAIN.Dashboard" name="display"/>
+  <atv:argument value="content" name="frameName"/>
+  <atv:argument value="true" name="isNavigationFrame"/>
+  <atv:overwrite transform="matrix(0.625,0,0,0.9231,0,0)" x="415.5" y="414.11" id="label2"/>
+  <atv:overwrite transform="matrix(0.625,0,0,0.9231,0,0)" x="549" y="344.5" id="label"/>
+ </svg>
+ <svg transform="matrix(1,0,0,1.775,0,0)" height="400" x="0" atv:refpx="100" y="50.704" id="display_navigator" atv:refpy="444.999" width="200" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.display_navigator">
+  <atv:argument value="content" name="targetFrame"/>
+  <atv:argument value="SYSTEM.GLOBALS.atvFontSize" name="fontSize"/>
+  <atv:argument value="SYSTEM.GLOBALS.atvFontColor" name="fontColor"/>
+  <atv:argument value="SYSTEM.GLOBALS.atvFillColor" name="bgColor"/>
+  <atv:argument value="ObjectTypes.PROJECT.WeatherStationType;ObjectTypes.PROJECT.WeatherStationAnemometerType" name="displayConfig"/>
+  <atv:overwrite transform="matrix(1,0,0,0.5634,0,0)" y="362.5" id="label"/>
+  <atv:overwrite height="710" transform="matrix(1,0,0,0.5634,0,0)" id="border"/>
+ </svg>
+ <svg transform="matrix(1.25,0,0,1,0,0)" height="30" x="0" atv:refpx="100" y="60" id="search_input" atv:refpy="75" width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.in_out_value">
+  <atv:argument value="String" name="validation"/>
+  <atv:overwrite transform="matrix(0.8,0,0,1,0,0)" x="192.055" id="input_label"/>
+  <atv:overwrite transform="matrix(0.8,0,0,1,0,0)" id="blinking_frame" width="192"/>
+  <atv:overwrite transform="matrix(0.8,0,0,1,0,0)" id="focus_frame" width="196"/>
+  <atv:overwrite transform="matrix(0.8,0,0,1,0,0)" id="input_bg" width="192"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[webMI.addOnload(function (e) {
+
+	webMI.trigger.connect("valuechanged", function(e) {
+	var id = "search_input";
+	var value = e.value;
+	webMI.trigger.fire("com.atvise.filterNavigationTree", value);
+
+	}, "search_input");
+});
+
+]]></script>
+</svg>

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/RigView
+NodeClass: Object
+BrowseName: 1:RigView
+DisplayName: en|RigView
+Description: en|RigView
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

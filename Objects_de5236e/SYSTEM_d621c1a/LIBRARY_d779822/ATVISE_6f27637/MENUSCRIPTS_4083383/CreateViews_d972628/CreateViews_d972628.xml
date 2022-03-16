@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="nodes" type="array" trigger="false" relative="false" value=""/>
+  <parameter name="folder" type="string" trigger="false" relative="false" value="ATVISE"/>
+  <parameter name="alarms" type="boolean" trigger="false" relative="false" value="true"/>
+  <parameter name="scripts" type="boolean" trigger="false" relative="false" value="true"/>
+  <parameter name="mirrors" type="boolean" trigger="false" relative="false" value="true"/>
+  <parameter name="relmirrors" type="boolean" trigger="false" relative="false" value="true"/>
+  <parameter name="exportables" type="boolean" trigger="false" relative="false" value="false"/>
+  <code><![CDATA[/* Create different views of the address space
+Input (members of ua):
+	-nodes:uanodeid[]{mandatory} Specifies the start nodes of views to create.
+		If a start node is a view then the whole address  space will be searched.
+	-folder:string Specifies the Folder under Views where the result will be stored.
+		If it is empty, the result will be stored under Views.
+	-alarms:bool{mandatory} Specifies if alarm views shall be recreated (true) or not (false).
+	-scripts:bool{mandatory} Specifies if script views shall be recreated (true) or not (false).
+	-mirrors:bool{mandatory} Specifies if mirror views shall be recreated (true) or not (false).
+	-relmirrors:bool{mandatory} Specifies if relative mirror views shall be recreated (true) or not (false).
+	-exportables:bool{mandatory} Specifies if exportable views shall be recreated (true) or not (false).
+Output (return value)	:
+	-none
+*/
+
+function isArray(x){
+	return typeof(x)=='object'&&(x instanceof Array);
+}
+
+var baseView = new UaNode("Views." + folder);
+if (folder == ""){
+	baseView = new UaNode(UaNode.VIEWSFOLDER);
+}
+else {
+	if (!baseView.exists()) baseView.create({nodeclass:UaNode.NODECLASS_VIEW, parent:UaNode.VIEWSFOLDER, reference:UaNode.ORGANIZES});
+	else (new UaNode(UaNode.VIEWSFOLDER)).addreference(UaNode.ORGANIZES, baseView);
+}
+
+/* Create a recursive view structure
+Input:
+	-node:uanodeid: Specifies the parent
+	-views:uanodeid[[...]] Specifies the view structure.
+Output:
+	-ok:bool true if the specified view structure fully created, false otherwise.
+Example:
+        E.g. parent:V, views:[V1 [V11 [V111 V112] V12] V2]  depicts the tree:
+        V--+--V1--+--V11--+--V111
+           |      |       +--V112
+           |      +--V12
+           +--V2
+*/
+function createViewFolders(parent, views){
+	var ok = true;
+	if (!parent || !isArray(views)) return;
+	var nextView = null;
+	for (var i = 0; i < views.length && ok; ++i){
+		if (isArray(views[i])){
+			ok = createViewFolders(nextView, views[i]);
+		}
+		else{
+			nextView = new UaNode(baseView.nodeaddr + "." + views[i]);
+			nextView.remove();
+			//console.log("Creating ", parent.nodeaddr, " ==> ", nextView.nodeaddr);
+			var status = nextView.create({nodeclass:UaNode.NODECLASS_VIEW, parent:parent, reference:UaNode.ORGANIZES});
+			if (!nextView.good(status)) console.log("Creating view '", nextView.nodeaddr, "' [", nextView.statusToString(status), "]");
+			ok = nextView.good(status);
+		}
+	}
+	return ok;
+}
+
+// Fill the view by searching for the specified types and calliing the given callback.
+function fillView(node, types, callbacks){
+	var result = node.browse({typedefinition:types, recursive:true});
+	//console.log("filling view for ", node.nodeid, ", found:", result.length, " for types:", types);
+	for (var i = 0; i < result.length; ++i){
+		for (var type = 0; type < types.length; ++type){
+			if (node.equal(result[i].node.typedefinition, types[type])) callbacks[type].func(result[i]);
+		}
+	}
+}
+
+// Callback object to create Declaration-Instance view.
+function DeclInstFill(parentView){
+	var myBaseView = baseView.nodeaddr + "." + parentView;
+	this.declView = new UaNode(myBaseView + ".Declarations");
+	this.instView = new UaNode(myBaseView + ".Instances");
+	if (exportables){
+		this.exportView = new UaNode(myBaseView + ".All Exportables");
+		if (!this.exportView.exists()) this.exportView.create({nodeclass:UaNode.NODECLASS_VIEW, parent:myBaseView, reference:UaNode.ORGANIZES});
+		else (new UaNode(myBaseView)).addreference(UaNode.ORGANIZES, this.exportView);
+	}
+	this.func = function(result){
+		var decl = new UaNode(this.declView.nodeaddr + '.' + result.node.nodeaddr.replace(/\./g, '_').replace(/^AGENT_OBJECTS_/,'').replace(/^ObjectTypes_PROJECT_/, "ObjectTypes_"));
+		if (!decl.exists()) decl.create({nodeclass:UaNode.NODECLASS_VIEW, parent:this.declView, reference:UaNode.ORGANIZES});
+		else this.declView.addreference(UaNode.ORGANIZES, decl);
+		if (decl.exists()){
+			decl.addreference(UaNode.ORGANIZES, result.node);
+			var inst = new UaNode(decl.nodeaddr+".Instances");
+			if (!inst.exists()) inst.create({nodeclass:UaNode.NODECLASS_VIEW, parent:decl, reference:UaNode.ORGANIZES});
+			else decl.addreference(UaNode.ORGANIZES, inst);
+			if (inst.exists()){
+				var parent = new UaNode(inst.nodeaddr + '.' + result.parent.nodeaddr.replace(/\./g, '_').replace(/^AGENT_OBJECTS_/,''));
+				if (!(/^ObjectTypes\./).test(result.parent.nodeaddr)){
+					if (!parent.exists()) parent.create({nodeclass:UaNode.NODECLASS_VIEW, parent:inst, reference:UaNode.ORGANIZES});
+					else inst.addreference(UaNode.ORGANIZES, parent);
+					parent.addreference(UaNode.ORGANIZES, result.parent);
+					this.instView.addreference(UaNode.ORGANIZES, parent);
+				}
+			}
+			if (exportables){
+				this.exportView.addreference(UaNode.ORGANIZES, result.node);
+			}
+		}
+	}
+}
+
+// Callback object to create view based on the status of the parent node.
+function ParentStatusFill(parentView){
+	var myBaseView = baseView.nodeaddr + "." + parentView;
+	this.goodView = new UaNode(myBaseView + ".Good");
+	this.badView = new UaNode(myBaseView + ".Bad");
+	this.uncertainView = new UaNode(myBaseView + ".Uncertain");
+	if (exportables){
+		this.exportView = new UaNode(myBaseView + ".All Exportables");
+		if (!this.exportView.exists()) this.exportView.create({nodeclass:UaNode.NODECLASS_VIEW, parent:myBaseView, reference:UaNode.ORGANIZES});
+		else (new UaNode(myBaseView)).addreference(UaNode.ORGANIZES, this.exportView);
+	}
+	this.func = function(result){
+		var view = this.goodView;
+		if (result.parent.bad()) view = this.badView;
+		if (result.parent.uncertain()) view = this.uncertainView;
+		var parent = new UaNode(view.nodeaddr + '.' + result.parent.nodeaddr.replace(/\./g, '_').replace(/^AGENT_OBJECTS_/,'').replace(/^ObjectTypes_PROJECT_/, "ObjectTypes_"));
+		if (!parent.exists()) parent.create({nodeclass:UaNode.NODECLASS_VIEW, parent:view, reference:UaNode.ORGANIZES});
+		else view.addreference(UaNode.ORGANIZES, decl);
+		parent.addreference(UaNode.ORGANIZES, result.node);
+		parent.addreference(UaNode.ORGANIZES, result.parent);
+		if (exportables){
+			this.exportView.addreference(UaNode.ORGANIZES, result.node);
+		}
+	};
+}
+
+var searchTypes = [];
+var searchCallbacks = [];
+if (alarms){
+	if (!createViewFolders(baseView, ["Alarms", ["Alarms.Declarations", "Alarms.Instances"]])) return;
+	searchTypes.push("ObjectTypes.ATVISE.AlarmConfiguration"); searchCallbacks.push(new DeclInstFill("Alarms"));
+}
+if (scripts){
+	if (!createViewFolders(baseView, ["Scripts", ["Scripts.Declarations", "Scripts.Instances"]])) return;
+	searchTypes.push("VariableTypes.ATVISE.ScriptCode"); searchCallbacks.push(new DeclInstFill("Scripts"));
+}
+if (mirrors){
+	if (!createViewFolders(baseView, ["Mirrors",
+	["Mirrors.Disable", ["Mirrors.Disable.Declarations", "Mirrors.Disable.Instances"]],
+	["Mirrors.Inputs", ["Mirrors.Inputs.Good", "Mirrors.Inputs.Bad", "Mirrors.Inputs.Uncertain"]],
+	["Mirrors.Outputs", ["Mirrors.Outputs.Good", "Mirrors.Outputs.Bad", "Mirrors.Outputs.Uncertain"]],
+	["Mirrors.InputOutputs", ["Mirrors.InputOutputs.Good", "Mirrors.InputOutputs.Bad", "Mirrors.InputOutputs.Uncertain"]]])) return;
+	searchTypes.push("VariableTypes.ATVISE.Mirror.Input"); searchCallbacks.push(new ParentStatusFill("Mirrors.Inputs"));
+	searchTypes.push("VariableTypes.ATVISE.Mirror.Output"); searchCallbacks.push(new ParentStatusFill("Mirrors.Outputs"));
+	searchTypes.push("VariableTypes.ATVISE.Mirror.InputOutput"); searchCallbacks.push(new ParentStatusFill("Mirrors.InputOutputs"));
+	searchTypes.push("VariableTypes.ATVISE.Mirror.Disable"); searchCallbacks.push(new DeclInstFill("Mirrors.Disable"));
+}
+if (relmirrors){
+	if (!createViewFolders(baseView, ["Relative Mirrors", [
+		"Relative Mirrors.Disable", ["Relative Mirrors.Disable.Declarations", "Relative Mirrors.Disable.Instances"],
+		"Relative Mirrors.Bases", ["Relative Mirrors.Bases.Declarations", "Relative Mirrors.Bases.Instances"],
+		"Relative Mirrors.PathFragments", ["Relative Mirrors.PathFragments.Declarations", "Relative Mirrors.PathFragments.Instances"],
+		"Relative Mirrors.Inputs", ["Relative Mirrors.Inputs.Declarations", "Relative Mirrors.Inputs.Instances"],
+		"Relative Mirrors.Outputs",["Relative Mirrors.Outputs.Declarations", "Relative Mirrors.Outputs.Instances"],
+		"Relative Mirrors.InputOutputs", ["Relative Mirrors.InputOutputs.Declarations", "Relative Mirrors.InputOutputs.Instances"]]])) return;
+	searchTypes.push("VariableTypes.ATVISE.Mirror.Relative.Input"); searchCallbacks.push(new DeclInstFill("Relative Mirrors.Inputs"));
+	searchTypes.push("VariableTypes.ATVISE.Mirror.Relative.Output"); searchCallbacks.push(new DeclInstFill("Relative Mirrors.Outputs"));
+	searchTypes.push("VariableTypes.ATVISE.Mirror.Relative.InputOutput"); searchCallbacks.push(new DeclInstFill("Relative Mirrors.InputOutputs"));
+	searchTypes.push("VariableTypes.ATVISE.Mirror.Relative.Disable"); searchCallbacks.push(new DeclInstFill("Relative Mirrors.Disable"));
+	searchTypes.push("VariableTypes.ATVISE.Mirror.Relative.Base"); searchCallbacks.push(new DeclInstFill("Relative Mirrors.Bases"));
+	searchTypes.push("VariableTypes.ATVISE.Mirror.Relative.PathFragment"); searchCallbacks.push(new DeclInstFill("Relative Mirrors.PathFragments"));
+}
+
+for (var i = 0; i < nodes.length; ++i){
+	var node = new UaNode(nodes[i]);
+	if (node.nodeclass == UaNode.NODECLASS_VIEW) {
+		fillView(new UaNode("AGENT.OBJECTS"), searchTypes, searchCallbacks);
+		fillView(new UaNode("SYSTEM.LIBRARY.PROJECT"), searchTypes, searchCallbacks);
+		fillView(new UaNode("SYSTEM.INFORMATION"), searchTypes, searchCallbacks);
+		fillView(new UaNode("ObjectTypes.ATVISE"), searchTypes, searchCallbacks);
+		fillView(new UaNode("ObjectTypes.PROJECT"), searchTypes, searchCallbacks);
+	}
+	else fillView(node, searchTypes, searchCallbacks);
+}]]></code>
+</script>

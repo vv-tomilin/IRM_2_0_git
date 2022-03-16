@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/indicators/indicators.js.map
+NodeClass: Variable
+BrowseName: 1:indicators.js.map
+DisplayName: en|indicators.js.map
+Description: en|indicators.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

@@ -1,0 +1,11 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.PumpBlock1.Discrete.PumpKSMLubrication
+NodeClass: Variable
+BrowseName: 1:PumpKSMLubrication
+DisplayName: en|PumpKSMLubrication
+Description: en|PumpKSMLubrication
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.AGGREGATETEMPLATES.ATDurationInStateNonZero
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

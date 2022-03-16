@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="100" version="1.2" xmlns="http://www.w3.org/2000/svg" height="100" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <desc>This control displays the current client time.</desc>
+ <defs>
+  <linearGradient id="linear_12" y1="0.970149" x1="0.119403" y2="-0.0159425" gradientUnits="objectBoundingBox" x2="0.119403">
+   <stop offset="0" stop-color="#29394b"/>
+   <stop offset="1" stop-color="#788ba3"/>
+  </linearGradient>
+  <linearGradient id="linear_13" y1="-0.0159425" x1="0.776844" y2="0.940299" gradientUnits="objectBoundingBox" x2="0.776844">
+   <stop offset="0" stop-color="#1a242f"/>
+   <stop offset="1" stop-color="#71849c"/>
+  </linearGradient>
+  <linearGradient id="linear_8" y1="-0.0183441" x1="1" y2="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#c4c4c4"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient id="linear_4" y1="-0.0183441" x1="1" y2="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#ffffff" stop-opacity="0.2745098039215687"/>
+   <stop offset="0.5515695067264574" stop-color="#ffffff" stop-opacity="0"/>
+  </linearGradient>
+ </defs>
+ <title>Clock Analog</title>
+ <metadata>
+  <atv:parameter valuetype="address" behavior="hidden" name="base"/>
+  <atv:gridconfig width="2" enabled="true" height="2" gridstyle="lines"/>
+  <atv:snapconfig width="2" enabled="true" height="2"/>
+ </metadata>
+ <circle fill="url(#linear_12)" cx="50" cy="50" stroke="#646464" r="49.5" id="id_46" atv:refpx="50" stroke-width="0.5" atv:refpy="50"/>
+ <circle fill="url(#linear_13)" cx="50" cy="50" stroke="none" r="47" id="id_49" atv:refpx="50" stroke-width="2" atv:refpy="50"/>
+ <circle fill="#495a6f" cx="50" cy="50" stroke="none" r="45" id="id_50" atv:refpx="50" stroke-width="2" atv:refpy="50"/>
+ <circle fill="url(#linear_4)" cx="50" cy="50" stroke="none" r="44.374" id="id_1" atv:refpx="50" stroke-width="2" atv:refpy="50"/>
+ <path fill="#bf0000" stroke="#c4c4c4" id="hour" atv:refpx="50" stroke-width="0.5" atv:refpy="49.986" d="M49.292,50L49.291,40.048L48.229,38.145L49.999,28L51.77,38.144L50.707,40.048L50.707,50Z"/>
+ <path fill="#bf0000" stroke="#c4c4c4" id="minute" atv:refpx="50" stroke-width="0.5" atv:refpy="49.998" d="M49.292,50L49.292,30.666L48.23,28.665L49.999,18L51.769,28.666L50.707,30.666L50.707,50Z"/>
+ <g id="id_3" atv:refpx="50" atv:refpy="50">
+  <circle fill="url(#linear_8)" cx="50" cy="50" stroke="none" r="6.507" id="id_65" atv:refpx="-84.354" stroke-width="1.66" atv:refpy="-14.354"/>
+  <circle fill="url(#linear_12)" cx="50" cy="50" stroke="none" r="6.242" id="id_66" atv:refpx="93.251" stroke-width="1.66" atv:refpy="137.516"/>
+ </g>
+ <g id="id_19" atv:refpx="52.081" atv:refpy="49.999" transform="matrix(0.9584,0,0,0.9584,2.0806,2.0806)">
+  <path fill="#ffffff" id="id_0" atv:refpx="-16.105" atv:refpy="14.714" stroke-width="1" d="M32.119,17.028L28.866,11.393L27.134,12.393L30.39,18.033C30.958,17.686 31.531,17.347 32.119,17.028"/>
+  <path fill="#ffffff" id="id_2" atv:refpx="-73.891" atv:refpy="56.761" stroke-width="1" d="M18.034,30.39L12.394,27.134L11.394,28.866L17.03,32.119C17.349,31.533 17.686,30.958 18.034,30.39"/>
+  <path fill="#ffffff" id="id_4" atv:refpx="167.252" atv:refpy="50.763" stroke-width="1" d="M82.972,32.119L88.606,28.867L87.606,27.135L81.966,30.391C82.314,30.958 82.652,31.533 82.972,32.119"/>
+  <path fill="#ffffff" id="id_6" atv:refpx="106.136" atv:refpy="14.715" stroke-width="1" d="M69.609,18.034L72.866,12.393L71.134,11.393L67.881,17.03C68.469,17.347 69.044,17.686 69.609,18.034"/>
+  <path fill="#ffffff" id="id_11" atv:refpx="167.252" atv:refpy="132.255" stroke-width="1" d="M81.966,69.608L87.606,72.866L88.606,71.135L82.97,67.881C82.652,68.468 82.313,69.043 81.966,69.608"/>
+  <path fill="#ffffff" id="id_12" atv:refpx="-73.891" atv:refpy="138.255" stroke-width="1" d="M17.03,67.881L11.394,71.135L12.394,72.866L18.034,69.608C17.686,69.043 17.349,68.468 17.03,67.881"/>
+  <path fill="#ffffff" id="id_14" atv:refpx="29.627" atv:refpy="243.216" stroke-width="1" d="M30.39,81.965L27.134,87.606L28.866,88.606L32.119,82.971C31.533,82.651 30.958,82.314 30.39,81.965"/>
+  <path fill="#ffffff" id="id_15" atv:refpx="70.374" atv:refpy="243.216" stroke-width="1" d="M67.881,82.971L71.134,88.606L72.866,87.606L69.609,81.965C69.042,82.312 68.467,82.651 67.881,82.971"/>
+ </g>
+ <text x="43.5" y="17" fill="#ffffff" font-family="Arial" id="id_10" atv:refpx="50" atv:refpy="12.5" font-size="12">12</text>
+ <text x="47.5" y="92" fill="#ffffff" font-family="Arial" id="id_16" atv:refpx="50" atv:refpy="88.5" font-size="10">6</text>
+ <text x="86.5" y="54.5" fill="#ffffff" font-family="Arial" id="id_17" atv:refpx="89.5" atv:refpy="50" font-size="12">3</text>
+ <text x="8.5" y="54.5" fill="#ffffff" font-family="Arial" id="id_18" atv:refpx="11.5" atv:refpy="50" font-size="12">9</text>
+ <script type="text/ecmascript"><![CDATA[
+(function setClock() {
+	var today = new Date();
+	var h = today.getHours();
+	var m = today.getMinutes();
+
+	webMI.gfx.setRotation("hour", webMI.translate(h * 30 + m/2, 0, 359, 0, 359));
+	webMI.gfx.setRotation("minute", webMI.translate(m, 0, 60, 0, 360));
+
+	setTimeout(setClock,3000);
+})();]]></script>
+</svg>

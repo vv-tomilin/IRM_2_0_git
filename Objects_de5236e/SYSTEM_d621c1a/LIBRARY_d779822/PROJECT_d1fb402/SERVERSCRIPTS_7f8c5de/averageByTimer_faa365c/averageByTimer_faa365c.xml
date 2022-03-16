@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="" type="timer" trigger="true" relative="false" value="" startdate="2021-09-13" starttime="00:00:00" repeat="01:00:00"/>
+  <code><![CDATA[console.log("Timer Average Script Call Running");]]></code>
+</script>

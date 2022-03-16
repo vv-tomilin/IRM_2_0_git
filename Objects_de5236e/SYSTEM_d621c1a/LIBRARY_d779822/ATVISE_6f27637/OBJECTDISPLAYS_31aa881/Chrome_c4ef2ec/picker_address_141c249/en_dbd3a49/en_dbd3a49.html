@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Description</h1>
+<p>This control allows you to select a node.</p>
+<p>In addition the trigger "valuechanged" will be fired.</p>
+<p>An additional border indicates the current value's negative state or an additionally defined alarm. The colors and blinking intervals are defined in global lists.</p>
+<h1>Parameters</h1>
+<p>This control has&nbsp;the following generic parameters:</p>
+<ul>
+  <li><span class="parameter">start address</span>: defines the entry point of the address space</li>
+  <li><span class="parameter">base</span>:  this address will be set</li>
+  <li><span class="parameter">alarm address</span>:  optional additional address of an alarm to be shown.</li>
+  <li><span class="parameter">enable status monitoring</span>:  switch monitoring of current value status on or off.</li>
+  <li><span class="parameter">fire status trigger</span>:  instead of the status display a here defined trigger can be fired globally.</li>
+</ul>
+Font:<br>
+<ul>
+  <li><span class="parameter">family</span>: font family which will be applied to&nbsp;value (default: Arial)</li>
+  <li><span class="parameter">size</span>: font size which will be applied to the&nbsp;value (default: 12)</li>
+  <li><span class="parameter">color</span>: color which will be applied to the&nbsp;value (default: black)</li>
+</ul>
+Appearance:<br>
+<ul>
+  <li><span class="parameter">fill color</span>: fill color (default: grey)</li>
+  <li><span class="parameter">fill color when inactive</span>: fill color if not active&nbsp;(default: dark grey)</li>
+  <li><span class="parameter">button fill color</span>: button's fill color (default: black)</li>
+  <li><span class="parameter">symbol fill color</span>: symbol's fill color (default: grey)</li>
+  <li><span class="parameter">stroke color pressed</span>: the color of the stroke which will be set when the button is pressed (default: white)</li>
+  <li><span class="parameter">color for context font</span>: color for the text in the context menu (default: black)</li>
+  <li><span class="parameter">fill color for context menu</span>: fill color for the context menu (default: white)</li>
+  <li><span class="parameter">stroke color for context menu</span>: color for the stroke of the context menu (default: black)</li>
+  <li><span class="parameter">stroke width for context menu</span>: width of the border of the context menu (default: 2)</li>
+  <li><span class="parameter">hover color for context menu</span>: color for the selected item in the context menu (default: light grey)</li>
+  <li><span class="parameter">focus stroke color</span>: the color of the stroke which will be set when the button is focused (default: white)</li>
+  <li><span class="parameter">status indication</span>: specify the status' display through a defined global list (default: global parameter <i>atvStatusIndication</i>)</li>
+  <li><span class="parameter">alarm indication</span>: specify the alarm's display through a defined global list (default: global parameter <i>atvAlarmIndication</i>)</li>
+</ul>
+Security:
+<ul>
+  <li><span class="parameter">necessary right</span>: the user must have this right to activate this control, i.e. to enter values</li>
+  <li><span class="parameter">activation address</span>: if the value of this address equals to "activation value", then the control will be active, i.e. can be used as input field</li>
+  <li><span class="parameter">activation value</span>: value which activates the control</li>
+</ul>
+<div style="margin-left: 40px;">NOTE: The activation of the control can be configured only by the necessary right, or only by the&nbsp;activation address and value or by both. In case both settings are made, the user must have the necessary right and the value of the "activation address" must equal the "activation value"; otherwise the control will not be activated.<br><br></div>
+Options<br>
+<ul>
+  <li><span class="parameter">on demand</span>: if on demand is set, sub level entries will be loaded when required, otherwise all entries will be loaded at once</li>
+  <li><span class="parameter">maximum displayed items (0 = all)</span>: number of maximum items to be displayed per scrolling page (0 = scrolling off, default: 0)</li>
+  <li><span class="parameter">show base variables</span>: whether or not base variables shall be available to pick</li>
+  <li><span class="parameter">show objects</span>: whether or not objects shall be available to pick</li>
+  <li><span class="parameter">show displays</span>: whether or not displays shall be available to pick</li>
+  <li><span class="parameter">show archives</span>: whether or not archives shall be available to pick</li>
+  <li><span class="parameter">show alarms</span>: whether or not alarms shall be available to pick</li>
+  <li><span class="parameter">show variable types</span>: whether or not variable types shall be available to pick</li>
+  <li><span class="parameter">consistency group</span>: name of the consistency group</li>
+  <li><span class="parameter">tab index</span>: defines the order for changing between the object displays by using the tab key</li>
+  <li><span class="parameter">tooltip</span>: displays a tooltip box with the entered text (standard HTML-Elements can be entered)</li>
+ </ul>
+</body>
+</html>

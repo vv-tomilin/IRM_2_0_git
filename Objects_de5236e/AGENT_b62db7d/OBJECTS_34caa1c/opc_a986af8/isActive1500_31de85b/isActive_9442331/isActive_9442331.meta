@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.opc.isActive1500.isActive
+NodeClass: Variable
+BrowseName: 1:isActive
+DisplayName: en|isActive
+Description: en|isActive
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

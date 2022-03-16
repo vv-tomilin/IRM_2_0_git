@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/DataTables/DataTables-1.10.16/images/sort_desc_disabled.png
+NodeClass: Variable
+BrowseName: 1:sort_desc_disabled.png
+DisplayName: en|sort_desc_disabled.png
+Description: en|sort_desc_disabled.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

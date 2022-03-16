@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.Pump.PressureManifold
+NodeClass: Variable
+BrowseName: 1:PressureManifold
+DisplayName: en|PressureManifold
+Description: en|PressureManifold
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

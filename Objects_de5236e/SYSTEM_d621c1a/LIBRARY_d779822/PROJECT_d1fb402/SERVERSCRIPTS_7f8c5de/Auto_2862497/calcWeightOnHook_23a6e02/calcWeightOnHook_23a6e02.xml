@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nodeWightOnHookStr" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook"/>
+  <code><![CDATA[var nodeWeightOnHook = new UaNode(nodeWightOnHookStr);
+ 
+console.log('WeightOnHook raw = ', nodeWeightOnHook.value);
+
+var retObj = call("Auto.MinQuad", {nodeStr: nodeWightOnHookStr, countSec: 40});
+			
+var nodeWeightOnHookAvr = new UaNode("AGENT.OBJECTS.Support.Auto.WeightOnHookAvr"); 
+nodeWeightOnHookAvr.assign({value: +retObj.avrVal});
+
+console.log('WeightOnHookAvr = ',nodeWeightOnHookAvr.value);
+/*
+
+var nodeHKLAMax = new UaNode('AGENT.OBJECTS.Support.Auto.WeightOnHookMax');
+
+console.log('WeightOnHookAngle = ',retObj.angle);
+
+if(Math.abs(retObj.angle) <  2){	
+	if(nodeHKLAMax.value < retObj.avrVal){
+		nodeHKLAMax.assign({value: +retObj.avrVal});
+	}	
+}
+console.log('WeightOnHookMax = ',nodeHKLAMax.value);
+
+var nodeLoadOnBitCalc = new UaNode('AGENT.OBJECTS.Support.Auto.LoadOnBitCalc');
+nodeLoadOnBitCalc.assign({value: +nodeHKLAMax.value - +retObj.avrVal});
+
+console.log('LoadOnBitCalc = ',nodeLoadOnBitCalc.value);
+*/]]></code>
+</script>

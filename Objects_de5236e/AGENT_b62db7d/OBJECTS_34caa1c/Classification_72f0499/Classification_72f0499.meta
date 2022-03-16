@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Classification
+NodeClass: Object
+BrowseName: 1:Classification
+DisplayName: en|Classification
+Description: en|Classification
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/treegrid.js.map
+NodeClass: Variable
+BrowseName: 1:treegrid.js.map
+DisplayName: en|treegrid.js.map
+Description: en|treegrid.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

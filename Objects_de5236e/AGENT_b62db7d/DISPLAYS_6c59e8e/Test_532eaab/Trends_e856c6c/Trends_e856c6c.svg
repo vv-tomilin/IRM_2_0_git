@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" width="1280" xmlns="http://www.w3.org/2000/svg" height="680">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="false" gridstyle="lines" width="20" height="20"/>
+  <atv:snapconfig enabled="false" width="10" height="10"/>
+ </metadata>
+ <g id="id_14" atv:refpy="470.549" atv:refpx="170.046">
+  <line id="id_2" y2="491.1" stroke="#0000ff" x2="150" stroke-width="1" atv:refpy="470.55" x1="150.039" atv:refpx="150.019" y1="450"/>
+  <line id="id_9" y2="466.817" stroke="#0000ff" x2="160" stroke-width="1" atv:refpy="458.408" x1="160.09" atv:refpx="160.046" y1="450"/>
+  <line id="id_11" y2="466.816" stroke="#0000ff" x2="170" stroke-width="1" atv:refpy="458.408" x1="170.09" atv:refpx="170.046" y1="450"/>
+  <line id="id_12" y2="466.816" stroke="#0000ff" x2="180" stroke-width="1" atv:refpy="458.408" x1="180.09" atv:refpx="180.046" y1="450"/>
+  <line id="id_13" y2="466.816" stroke="#0000ff" x2="190" stroke-width="1" atv:refpy="458.408" x1="190.09" atv:refpx="190.046" y1="450"/>
+ </g>
+ <g id="id_15" atv:refpy="471.051" transform="matrix(1,0,0,1,50.5005,0.5027)" atv:refpx="220.547">
+  <line id="id_16" y2="491.1" stroke="#0000ff" x2="150" stroke-width="1" atv:refpy="470.55" x1="150.039" atv:refpx="150.019" y1="450"/>
+  <line id="id_17" y2="466.817" stroke="#0000ff" x2="160" stroke-width="1" atv:refpy="458.408" x1="160.09" atv:refpx="160.046" y1="450"/>
+  <line id="id_18" y2="466.816" stroke="#0000ff" x2="170" stroke-width="1" atv:refpy="458.408" x1="170.09" atv:refpx="170.046" y1="450"/>
+  <line id="id_19" y2="466.816" stroke="#0000ff" x2="180" stroke-width="1" atv:refpy="458.408" x1="180.09" atv:refpx="180.046" y1="450"/>
+  <line id="id_20" y2="466.816" stroke="#0000ff" x2="190" stroke-width="1" atv:refpy="458.408" x1="190.09" atv:refpx="190.046" y1="450"/>
+ </g>
+ <g id="id_21" atv:refpy="471.051" transform="matrix(1,0,0,1,100.5005,0.5027)" atv:refpx="270.547">
+  <line id="id_22" y2="491.1" stroke="#0000ff" x2="150" stroke-width="1" atv:refpy="470.55" x1="150.039" atv:refpx="150.019" y1="450"/>
+  <line id="id_23" y2="466.817" stroke="#0000ff" x2="160" stroke-width="1" atv:refpy="458.408" x1="160.09" atv:refpx="160.046" y1="450"/>
+  <line id="id_24" y2="466.816" stroke="#0000ff" x2="170" stroke-width="1" atv:refpy="458.408" x1="170.09" atv:refpx="170.046" y1="450"/>
+  <line id="id_25" y2="466.816" stroke="#0000ff" x2="180" stroke-width="1" atv:refpy="458.408" x1="180.09" atv:refpx="180.046" y1="450"/>
+  <line id="id_26" y2="466.816" stroke="#0000ff" x2="190" stroke-width="1" atv:refpy="458.408" x1="190.09" atv:refpx="190.046" y1="450"/>
+ </g>
+ <g id="id_27" atv:refpy="471.051" transform="matrix(1,0,0,1,150.5005,0.5027)" atv:refpx="320.547">
+  <line id="id_28" y2="491.1" stroke="#0000ff" x2="150" stroke-width="1" atv:refpy="470.55" x1="150.039" atv:refpx="150.019" y1="450"/>
+  <line id="id_29" y2="466.817" stroke="#0000ff" x2="160" stroke-width="1" atv:refpy="458.408" x1="160.09" atv:refpx="160.046" y1="450"/>
+  <line id="id_30" y2="466.816" stroke="#0000ff" x2="170" stroke-width="1" atv:refpy="458.408" x1="170.09" atv:refpx="170.046" y1="450"/>
+  <line id="id_31" y2="466.816" stroke="#0000ff" x2="180" stroke-width="1" atv:refpy="458.408" x1="180.09" atv:refpx="180.046" y1="450"/>
+  <line id="id_32" y2="466.816" stroke="#0000ff" x2="190" stroke-width="1" atv:refpy="458.408" x1="190.09" atv:refpx="190.046" y1="450"/>
+ </g>
+ <g id="id_33" atv:refpy="471.051" transform="matrix(1,0,0,1,200.5005,0.5027)" atv:refpx="370.547">
+  <line id="id_34" y2="491.1" stroke="#0000ff" x2="150" stroke-width="1" atv:refpy="470.55" x1="150.039" atv:refpx="150.019" y1="450"/>
+  <line id="id_35" y2="466.817" stroke="#0000ff" x2="160" stroke-width="1" atv:refpy="458.408" x1="160.09" atv:refpx="160.046" y1="450"/>
+  <line id="id_36" y2="466.816" stroke="#0000ff" x2="170" stroke-width="1" atv:refpy="458.408" x1="170.09" atv:refpx="170.046" y1="450"/>
+  <line id="id_37" y2="466.816" stroke="#0000ff" x2="180" stroke-width="1" atv:refpy="458.408" x1="180.09" atv:refpx="180.046" y1="450"/>
+  <line id="id_38" y2="466.816" stroke="#0000ff" x2="190" stroke-width="1" atv:refpy="458.408" x1="190.09" atv:refpx="190.046" y1="450"/>
+ </g>
+ <g id="id_39" atv:refpy="471.051" transform="matrix(1,0,0,1,250.5005,0.5027)" atv:refpx="420.547">
+  <line id="id_40" y2="491.1" stroke="#0000ff" x2="150" stroke-width="1" atv:refpy="470.55" x1="150.039" atv:refpx="150.019" y1="450"/>
+  <line id="id_41" y2="466.817" stroke="#0000ff" x2="160" stroke-width="1" atv:refpy="458.408" x1="160.09" atv:refpx="160.046" y1="450"/>
+  <line id="id_42" y2="466.816" stroke="#0000ff" x2="170" stroke-width="1" atv:refpy="458.408" x1="170.09" atv:refpx="170.046" y1="450"/>
+  <line id="id_43" y2="466.816" stroke="#0000ff" x2="180" stroke-width="1" atv:refpy="458.408" x1="180.09" atv:refpx="180.046" y1="450"/>
+  <line id="id_44" y2="466.816" stroke="#0000ff" x2="190" stroke-width="1" atv:refpy="458.408" x1="190.09" atv:refpx="190.046" y1="450"/>
+ </g>
+ <g id="id_45" atv:refpy="471.051" transform="matrix(1,0,0,1,300.5005,0.5027)" atv:refpx="470.547">
+  <line id="id_46" y2="491.1" stroke="#0000ff" x2="150" stroke-width="1" atv:refpy="470.55" x1="150.039" atv:refpx="150.019" y1="450"/>
+  <line id="id_47" y2="466.817" stroke="#0000ff" x2="160" stroke-width="1" atv:refpy="458.408" x1="160.09" atv:refpx="160.046" y1="450"/>
+  <line id="id_48" y2="466.816" stroke="#0000ff" x2="170" stroke-width="1" atv:refpy="458.408" x1="170.09" atv:refpx="170.046" y1="450"/>
+  <line id="id_49" y2="466.816" stroke="#0000ff" x2="180" stroke-width="1" atv:refpy="458.408" x1="180.09" atv:refpx="180.046" y1="450"/>
+  <line id="id_50" y2="466.816" stroke="#0000ff" x2="190" stroke-width="1" atv:refpy="458.408" x1="190.09" atv:refpx="190.046" y1="450"/>
+ </g>
+ <g id="id_51" atv:refpy="471.051" transform="matrix(1,0,0,1,350.5005,0.5027)" atv:refpx="520.547">
+  <line id="id_52" y2="491.1" stroke="#0000ff" x2="150" stroke-width="1" atv:refpy="470.55" x1="150.039" atv:refpx="150.019" y1="450"/>
+  <line id="id_53" y2="466.817" stroke="#0000ff" x2="160" stroke-width="1" atv:refpy="458.408" x1="160.09" atv:refpx="160.046" y1="450"/>
+  <line id="id_54" y2="466.816" stroke="#0000ff" x2="170" stroke-width="1" atv:refpy="458.408" x1="170.09" atv:refpx="170.046" y1="450"/>
+  <line id="id_55" y2="466.816" stroke="#0000ff" x2="180" stroke-width="1" atv:refpy="458.408" x1="180.09" atv:refpx="180.046" y1="450"/>
+  <line id="id_56" y2="466.816" stroke="#0000ff" x2="190" stroke-width="1" atv:refpy="458.408" x1="190.09" atv:refpx="190.046" y1="450"/>
+ </g>
+ <g id="id_57" atv:refpy="471.051" transform="matrix(1,0,0,1,400.5005,0.5027)" atv:refpx="570.547">
+  <line id="id_58" y2="491.1" stroke="#0000ff" x2="150" stroke-width="1" atv:refpy="470.55" x1="150.039" atv:refpx="150.019" y1="450"/>
+  <line id="id_59" y2="466.817" stroke="#0000ff" x2="160" stroke-width="1" atv:refpy="458.408" x1="160.09" atv:refpx="160.046" y1="450"/>
+  <line id="id_60" y2="466.816" stroke="#0000ff" x2="170" stroke-width="1" atv:refpy="458.408" x1="170.09" atv:refpx="170.046" y1="450"/>
+  <line id="id_61" y2="466.816" stroke="#0000ff" x2="180" stroke-width="1" atv:refpy="458.408" x1="180.09" atv:refpx="180.046" y1="450"/>
+  <line id="id_62" y2="466.816" stroke="#0000ff" x2="190" stroke-width="1" atv:refpy="458.408" x1="190.09" atv:refpx="190.046" y1="450"/>
+ </g>
+ <g id="id_63" atv:refpy="471.051" transform="matrix(1,0,0,1,450.5005,0.5027)" atv:refpx="620.547">
+  <line id="id_64" y2="491.1" stroke="#0000ff" x2="150" stroke-width="1" atv:refpy="470.55" x1="150.039" atv:refpx="150.019" y1="450"/>
+  <line id="id_65" y2="466.817" stroke="#0000ff" x2="160" stroke-width="1" atv:refpy="458.408" x1="160.09" atv:refpx="160.046" y1="450"/>
+  <line id="id_66" y2="466.816" stroke="#0000ff" x2="170" stroke-width="1" atv:refpy="458.408" x1="170.09" atv:refpx="170.046" y1="450"/>
+  <line id="id_67" y2="466.816" stroke="#0000ff" x2="180" stroke-width="1" atv:refpy="458.408" x1="180.09" atv:refpx="180.046" y1="450"/>
+  <line id="id_68" y2="466.816" stroke="#0000ff" x2="190" stroke-width="1" atv:refpy="458.408" x1="190.09" atv:refpx="190.046" y1="450"/>
+ </g>
+ <g id="id_69" atv:refpy="471.051" transform="matrix(1,0,0,1,500.5005,0.5027)" atv:refpx="670.547">
+  <line id="id_70" y2="491.1" stroke="#0000ff" x2="150" stroke-width="1" atv:refpy="470.55" x1="150.039" atv:refpx="150.019" y1="450"/>
+  <line id="id_71" y2="466.817" stroke="#0000ff" x2="160" stroke-width="1" atv:refpy="458.408" x1="160.09" atv:refpx="160.046" y1="450"/>
+  <line id="id_72" y2="466.816" stroke="#0000ff" x2="170" stroke-width="1" atv:refpy="458.408" x1="170.09" atv:refpx="170.046" y1="450"/>
+  <line id="id_73" y2="466.816" stroke="#0000ff" x2="180" stroke-width="1" atv:refpy="458.408" x1="180.09" atv:refpx="180.046" y1="450"/>
+  <line id="id_74" y2="466.816" stroke="#0000ff" x2="190" stroke-width="1" atv:refpy="458.408" x1="190.09" atv:refpx="190.046" y1="450"/>
+ </g>
+ <g id="id_75" atv:refpy="471.051" transform="matrix(1,0,0,1,550.5005,0.5027)" atv:refpx="720.547">
+  <line id="id_76" y2="491.1" stroke="#0000ff" x2="150" stroke-width="1" atv:refpy="470.55" x1="150.039" atv:refpx="150.019" y1="450"/>
+  <line id="id_77" y2="466.817" stroke="#0000ff" x2="160" stroke-width="1" atv:refpy="458.408" x1="160.09" atv:refpx="160.046" y1="450"/>
+  <line id="id_78" y2="466.816" stroke="#0000ff" x2="170" stroke-width="1" atv:refpy="458.408" x1="170.09" atv:refpx="170.046" y1="450"/>
+  <line id="id_79" y2="466.816" stroke="#0000ff" x2="180" stroke-width="1" atv:refpy="458.408" x1="180.09" atv:refpx="180.046" y1="450"/>
+  <line id="id_80" y2="466.816" stroke="#0000ff" x2="190" stroke-width="1" atv:refpy="458.408" x1="190.09" atv:refpx="190.046" y1="450"/>
+ </g>
+ <g id="id_81" atv:refpy="471.051" transform="matrix(1,0,0,1,600.5005,0.5027)" atv:refpx="770.547">
+  <line id="id_82" y2="491.1" stroke="#0000ff" x2="150" stroke-width="1" atv:refpy="470.55" x1="150.039" atv:refpx="150.019" y1="450"/>
+  <line id="id_83" y2="466.817" stroke="#0000ff" x2="160" stroke-width="1" atv:refpy="458.408" x1="160.09" atv:refpx="160.046" y1="450"/>
+  <line id="id_84" y2="466.816" stroke="#0000ff" x2="170" stroke-width="1" atv:refpy="458.408" x1="170.09" atv:refpx="170.046" y1="450"/>
+  <line id="id_85" y2="466.816" stroke="#0000ff" x2="180" stroke-width="1" atv:refpy="458.408" x1="180.09" atv:refpx="180.046" y1="450"/>
+  <line id="id_86" y2="466.816" stroke="#0000ff" x2="190" stroke-width="1" atv:refpy="458.408" x1="190.09" atv:refpx="190.046" y1="450"/>
+ </g>
+ <g id="id_87" atv:refpy="471.051" transform="matrix(1,0,0,1,650.5005,0.5027)" atv:refpx="820.547">
+  <line id="id_88" y2="491.1" stroke="#0000ff" x2="150" stroke-width="1" atv:refpy="470.55" x1="150.039" atv:refpx="150.019" y1="450"/>
+  <line id="id_89" y2="466.817" stroke="#0000ff" x2="160" stroke-width="1" atv:refpy="458.408" x1="160.09" atv:refpx="160.046" y1="450"/>
+  <line id="id_90" y2="466.816" stroke="#0000ff" x2="170" stroke-width="1" atv:refpy="458.408" x1="170.09" atv:refpx="170.046" y1="450"/>
+  <line id="id_91" y2="466.816" stroke="#0000ff" x2="180" stroke-width="1" atv:refpy="458.408" x1="180.09" atv:refpx="180.046" y1="450"/>
+  <line id="id_92" y2="466.816" stroke="#0000ff" x2="190" stroke-width="1" atv:refpy="458.408" x1="190.09" atv:refpx="190.046" y1="450"/>
+ </g>
+ <g id="id_93" atv:refpy="471.051" transform="matrix(1,0,0,1,700.5005,0.5027)" atv:refpx="870.547">
+  <line id="id_94" y2="491.1" stroke="#0000ff" x2="150" stroke-width="1" atv:refpy="470.55" x1="150.039" atv:refpx="150.019" y1="450"/>
+  <line id="id_95" y2="466.817" stroke="#0000ff" x2="160" stroke-width="1" atv:refpy="458.408" x1="160.09" atv:refpx="160.046" y1="450"/>
+  <line id="id_96" y2="466.816" stroke="#0000ff" x2="170" stroke-width="1" atv:refpy="458.408" x1="170.09" atv:refpx="170.046" y1="450"/>
+  <line id="id_97" y2="466.816" stroke="#0000ff" x2="180" stroke-width="1" atv:refpy="458.408" x1="180.09" atv:refpx="180.046" y1="450"/>
+  <line id="id_98" y2="466.816" stroke="#0000ff" x2="190" stroke-width="1" atv:refpy="458.408" x1="190.09" atv:refpx="190.046" y1="450"/>
+ </g>
+ <g id="id_99" atv:refpy="471.051" transform="matrix(1,0,0,1,750.5005,0.5027)" atv:refpx="920.547">
+  <line id="id_100" y2="491.1" stroke="#0000ff" x2="150" stroke-width="1" atv:refpy="470.55" x1="150.039" atv:refpx="150.019" y1="450"/>
+  <line id="id_101" y2="466.817" stroke="#0000ff" x2="160" stroke-width="1" atv:refpy="458.408" x1="160.09" atv:refpx="160.046" y1="450"/>
+  <line id="id_102" y2="466.816" stroke="#0000ff" x2="170" stroke-width="1" atv:refpy="458.408" x1="170.09" atv:refpx="170.046" y1="450"/>
+  <line id="id_103" y2="466.816" stroke="#0000ff" x2="180" stroke-width="1" atv:refpy="458.408" x1="180.09" atv:refpx="180.046" y1="450"/>
+  <line id="id_104" y2="466.816" stroke="#0000ff" x2="190" stroke-width="1" atv:refpy="458.408" x1="190.09" atv:refpx="190.046" y1="450"/>
+ </g>
+ <g id="id_105" atv:refpy="471.051" transform="matrix(1,0,0,1,800.5005,0.5027)" atv:refpx="970.547">
+  <line id="id_106" y2="491.1" stroke="#0000ff" x2="150" stroke-width="1" atv:refpy="470.55" x1="150.039" atv:refpx="150.019" y1="450"/>
+  <line id="id_107" y2="466.817" stroke="#0000ff" x2="160" stroke-width="1" atv:refpy="458.408" x1="160.09" atv:refpx="160.046" y1="450"/>
+  <line id="id_108" y2="466.816" stroke="#0000ff" x2="170" stroke-width="1" atv:refpy="458.408" x1="170.09" atv:refpx="170.046" y1="450"/>
+  <line id="id_109" y2="466.816" stroke="#0000ff" x2="180" stroke-width="1" atv:refpy="458.408" x1="180.09" atv:refpx="180.046" y1="450"/>
+  <line id="id_110" y2="466.816" stroke="#0000ff" x2="190" stroke-width="1" atv:refpy="458.408" x1="190.09" atv:refpx="190.046" y1="450"/>
+ </g>
+ <g id="id_111" atv:refpy="471.051" transform="matrix(1,0,0,1,850.5005,0.5027)" atv:refpx="1020.547">
+  <line id="id_112" y2="491.1" stroke="#0000ff" x2="150" stroke-width="1" atv:refpy="470.55" x1="150.039" atv:refpx="150.019" y1="450"/>
+  <line id="id_113" y2="466.817" stroke="#0000ff" x2="160" stroke-width="1" atv:refpy="458.408" x1="160.09" atv:refpx="160.046" y1="450"/>
+  <line id="id_114" y2="466.816" stroke="#0000ff" x2="170" stroke-width="1" atv:refpy="458.408" x1="170.09" atv:refpx="170.046" y1="450"/>
+  <line id="id_115" y2="466.816" stroke="#0000ff" x2="180" stroke-width="1" atv:refpy="458.408" x1="180.09" atv:refpx="180.046" y1="450"/>
+  <line id="id_116" y2="466.816" stroke="#0000ff" x2="190" stroke-width="1" atv:refpy="458.408" x1="190.09" atv:refpx="190.046" y1="450"/>
+ </g>
+ <g id="id_117" atv:refpy="471.051" transform="matrix(1,0,0,1,900.5005,0.5027)" atv:refpx="1070.547">
+  <line id="id_118" y2="491.1" stroke="#0000ff" x2="150" stroke-width="1" atv:refpy="470.55" x1="150.039" atv:refpx="150.019" y1="450"/>
+  <line id="id_119" y2="466.817" stroke="#0000ff" x2="160" stroke-width="1" atv:refpy="458.408" x1="160.09" atv:refpx="160.046" y1="450"/>
+  <line id="id_120" y2="466.816" stroke="#0000ff" x2="170" stroke-width="1" atv:refpy="458.408" x1="170.09" atv:refpx="170.046" y1="450"/>
+  <line id="id_121" y2="466.816" stroke="#0000ff" x2="180" stroke-width="1" atv:refpy="458.408" x1="180.09" atv:refpx="180.046" y1="450"/>
+  <line id="id_122" y2="466.816" stroke="#0000ff" x2="190" stroke-width="1" atv:refpy="458.408" x1="190.09" atv:refpx="190.046" y1="450"/>
+ </g>
+ <g id="id_123" atv:refpy="471.051" transform="matrix(1,0,0,1,950.5005,0.5027)" atv:refpx="1120.547">
+  <line id="id_124" y2="491.1" stroke="#0000ff" x2="150" stroke-width="1" atv:refpy="470.55" x1="150.039" atv:refpx="150.019" y1="450"/>
+  <line id="id_125" y2="466.817" stroke="#0000ff" x2="160" stroke-width="1" atv:refpy="458.408" x1="160.09" atv:refpx="160.046" y1="450"/>
+  <line id="id_126" y2="466.816" stroke="#0000ff" x2="170" stroke-width="1" atv:refpy="458.408" x1="170.09" atv:refpx="170.046" y1="450"/>
+  <line id="id_127" y2="466.816" stroke="#0000ff" x2="180" stroke-width="1" atv:refpy="458.408" x1="180.09" atv:refpx="180.046" y1="450"/>
+  <line id="id_128" y2="466.816" stroke="#0000ff" x2="190" stroke-width="1" atv:refpy="458.408" x1="190.09" atv:refpx="190.046" y1="450"/>
+ </g>
+ <text id="id_129" y="507" font-family="Arial" atv:refpy="502.051" atv:refpx="151.011" x="144.5" fill="none" font-size="14">10</text>
+ <text id="id_130" y="507" font-family="Arial" atv:refpy="502.051" atv:refpx="201.011" x="194.5" fill="none" font-size="14">20</text>
+ <text id="id_131" y="507" font-family="Arial" atv:refpy="502.051" atv:refpx="251.011" x="244.5" fill="none" font-size="14">30</text>
+ <text id="id_132" y="507" font-family="Arial" atv:refpy="502.051" atv:refpx="301.011" x="294.5" fill="none" font-size="14">40</text>
+ <text id="id_133" y="507" font-family="Arial" atv:refpy="502.051" atv:refpx="351.011" x="344.5" fill="none" font-size="14">50</text>
+ <text id="id_134" y="507" font-family="Arial" atv:refpy="502.051" atv:refpx="401.011" x="394.5" fill="none" font-size="14">60</text>
+ <text id="id_135" y="507" font-family="Arial" atv:refpy="502.051" atv:refpx="451.011" x="444.5" fill="none" font-size="14">70</text>
+ <text id="id_136" y="507" font-family="Arial" atv:refpy="502.051" atv:refpx="501.011" x="494.5" fill="none" font-size="14">80</text>
+ <text id="id_137" y="507.825" font-family="Arial" atv:refpy="502.876" atv:refpx="551.653" x="545.142" fill="none" font-size="14">90</text>
+ <text id="id_138" y="507" font-family="Arial" atv:refpy="502.051" atv:refpx="604.681" x="594.5" fill="none" font-size="14">100</text>
+ <text id="id_139" y="507" font-family="Arial" atv:refpy="502.051" atv:refpx="654.223" x="644.5" fill="none" font-size="14">110</text>
+ <text id="id_140" y="507" font-family="Arial" atv:refpy="502.051" atv:refpx="704.681" x="694.5" fill="none" font-size="14">120</text>
+ <text id="id_141" y="507" font-family="Arial" atv:refpy="502.051" atv:refpx="754.681" x="744.5" fill="none" font-size="14">130</text>
+ <text id="id_142" y="507" font-family="Arial" atv:refpy="502.051" atv:refpx="804.681" x="794.5" fill="none" font-size="14">140</text>
+ <text id="id_143" y="507" font-family="Arial" atv:refpy="502.051" atv:refpx="854.681" x="844.5" fill="none" font-size="14">150</text>
+ <text id="id_144" y="507" font-family="Arial" atv:refpy="502.051" atv:refpx="904.681" x="894.5" fill="none" font-size="14">160</text>
+ <text id="id_145" y="507" font-family="Arial" atv:refpy="502.051" atv:refpx="954.681" x="944.5" fill="none" font-size="14">170</text>
+ <text id="id_146" y="507" font-family="Arial" atv:refpy="502.051" atv:refpx="1004.681" x="994.5" fill="none" font-size="14">180</text>
+ <text id="id_147" y="507" font-family="Arial" atv:refpy="502.051" atv:refpx="1054.681" x="1044.5" fill="none" font-size="14">190</text>
+ <text id="id_148" y="507" font-family="Arial" atv:refpy="502.051" atv:refpx="1104.681" x="1094.5" fill="none" font-size="14">200</text>
+ <text id="id_149" y="548.024" font-family="Arial" atv:refpy="543.024" atv:refpx="642.756" x="638.756" fill="none" font-size="24">X</text>
+ <line id="id_150" y2="431" stroke="#b5041c" x2="170" stroke-width="1" atv:refpy="415.5" x1="170" atv:refpx="170" y1="400"/>
+ <line id="id_152" y2="431" stroke="#b5041c" x2="240" stroke-width="1" atv:refpy="415.5" x1="240" atv:refpx="240" y1="400"/>
+ <line id="id_153" y2="431" stroke="#b5041c" x2="340" stroke-width="1" atv:refpy="415.5" x1="340" atv:refpx="340" y1="400"/>
+ <line id="id_154" y2="431" stroke="#b5041c" x2="380" stroke-width="1" atv:refpy="415.5" x1="380" atv:refpx="380" y1="400"/>
+ <line id="id_155" y2="431" stroke="#b5041c" x2="610" stroke-width="1" atv:refpy="415.5" x1="610" atv:refpx="610" y1="400"/>
+ <line id="id_156" y2="431" stroke="#b5041c" x2="750" stroke-width="1" atv:refpy="415.5" x1="750" atv:refpx="750" y1="400"/>
+ <line id="id_157" y2="431" stroke="#b5041c" x2="900" stroke-width="1" atv:refpy="415.5" x1="900" atv:refpx="900" y1="400"/>
+ <line id="id_158" y2="431" stroke="#b5041c" x2="980" stroke-width="1" atv:refpy="415.5" x1="980" atv:refpx="980" y1="400"/>
+ <line id="id_159" y2="431" stroke="#b5041c" x2="1040" stroke-width="1" atv:refpy="415.5" x1="1040" atv:refpx="1040" y1="400"/>
+ <text id="id_160" y="397" font-family="Arial" atv:refpy="392.051" atv:refpx="169.681" x="159.5" fill="none" font-size="14">100</text>
+ <text id="id_161" y="397" font-family="Arial" atv:refpy="392.051" atv:refpx="239.45" x="229.269" fill="none" font-size="14">130</text>
+ <text id="id_162" y="397" font-family="Arial" atv:refpy="392.051" atv:refpx="339.555" x="329.374" fill="none" font-size="14">180</text>
+ <text id="id_163" y="397" font-family="Arial" atv:refpy="392.051" atv:refpx="379.294" x="369.113" fill="none" font-size="14">200</text>
+ <text id="id_164" y="397" font-family="Arial" atv:refpy="392.051" atv:refpx="610.187" x="600.006" fill="none" font-size="14">220</text>
+ <text id="id_165" y="397" font-family="Arial" atv:refpy="392.051" atv:refpx="749.596" x="739.415" fill="none" font-size="14">240</text>
+ <text id="id_166" y="397" font-family="Arial" atv:refpy="392.051" atv:refpx="899.046" x="888.865" fill="none" font-size="14">300</text>
+ <text id="id_167" y="397" font-family="Arial" atv:refpy="392.051" atv:refpx="979.57" x="969.389" fill="none" font-size="14">350</text>
+ <text id="id_168" y="397" font-family="Arial" atv:refpy="392.051" atv:refpx="1039.681" x="1029.5" fill="none" font-size="14">390</text>
+ <text id="id_169" y="375.467" font-family="Arial" atv:refpy="370.467" atv:refpx="635.338" x="630.838" fill="none" font-size="24">Y</text>
+ <rect id="id_0" y="450" stroke="#000046" stroke-width="2" atv:refpy="502.456" atv:refpx="652.081" x="136" width="1018.162" height="104.911" fill="none"/>
+ <rect id="id_1" y="350" stroke="#ff6219" stroke-width="2" atv:refpy="390.315" atv:refpx="645.081" x="136" width="1018.162" height="80.629" fill="none"/>
+</svg>

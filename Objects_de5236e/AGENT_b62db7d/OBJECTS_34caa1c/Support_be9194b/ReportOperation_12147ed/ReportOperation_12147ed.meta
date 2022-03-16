@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.ReportOperation
+NodeClass: Variable
+BrowseName: 1:ReportOperation
+DisplayName: en|ReportOperation
+Description: en|ReportOperation
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

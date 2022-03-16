@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/IMG/pngwing.com.png
+NodeClass: Variable
+BrowseName: 1:pngwing.com.png
+DisplayName: en|pngwing.com.png
+Description: en|pngwing.com.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

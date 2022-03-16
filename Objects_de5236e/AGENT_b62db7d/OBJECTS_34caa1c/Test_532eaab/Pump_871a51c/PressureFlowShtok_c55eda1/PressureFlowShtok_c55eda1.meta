@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.Pump.PressureFlowShtok
+NodeClass: Variable
+BrowseName: 1:PressureFlowShtok
+DisplayName: en|PressureFlowShtok
+Description: en|PressureFlowShtok
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

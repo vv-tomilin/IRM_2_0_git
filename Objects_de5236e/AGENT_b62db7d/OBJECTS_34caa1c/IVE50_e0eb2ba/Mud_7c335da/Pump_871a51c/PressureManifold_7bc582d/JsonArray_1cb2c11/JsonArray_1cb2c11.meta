@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold.JsonArray
+NodeClass: Variable
+BrowseName: 1:JsonArray
+DisplayName: en|JsonArray
+Description: en|JsonArray
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

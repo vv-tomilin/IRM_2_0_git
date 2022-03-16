@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.APD1.Slide.Turn_Left
+NodeClass: Variable
+BrowseName: 1:Turn_Left
+DisplayName: en|Turn_Left
+Description: en|Turn_Left
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

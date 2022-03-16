@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="ua" type="uainput" trigger="false" relative="false" value=""/>
+  <code><![CDATA[/* Parse a display and collect referenced variables
+Input (members of ua):
+	-node:uanodeid{mandatory} Specifies the nodeid(s) of the display(s) to parse. It can be an array.
+	-base:uanodeid{optional, default=null} Specifies the base nodeid of the display
+	-server:uanodeid{optional, default=null} If not null, specifies the server where the object folder is checked for variables not used in the parsed displays.
+		If server is defined, absolut adresses will be searched in scripts as well.
+	-recursive:bool{optional, default=false} If true collect all descendant otherwise only the specified display
+Output (return value):
+	from:[uanodeid[]] Array of parent display histories
+	to:[string] Array of node addresses of referenced variables
+	exists:[bool] Array of flags that signals if the node name exists. If exists, the to[i] is of type UaNode otherwise String
+	unused:[uanodeid] Array of variables not used in the displays. Filled if objects is not null.
+	parent:[uanodeid] Array of guessed parents, where the referenced variable can be searched.
+If no variables are referenced empty arrays are returned.
+*/
+function isArray(x){
+	return typeof(x)=='object'&&(x instanceof Array);
+}
+
+var recursive = ua.recursive;
+var xlink = "http://www.w3.org/1999/xlink";
+var atv = "http://webmi.atvise.com/2007/svgext";
+var from = [];
+var parent = [];
+var to = [];
+var exists = [];
+var nodeid = ua.node;
+var displaysToParse = [];
+if (isArray(nodeid)){
+	for (var i = 0; i < nodeid.length; ++i)
+		displaysToParse.push(new UaNode(nodeid[i]));
+}
+else displaysToParse.push(new UaNode(nodeid));
+
+var parsingDisplays = {};
+var usedVariables = {};
+var server = new UaNode(ua.server);
+var objectsFolder = "";
+if (server.exists())
+	objectsFolder = server.nodeaddr + ".OBJECTS";
+var objects = new UaNode(objectsFolder);
+if (objects.exists()){
+	var excludeTypes = [];
+	var result = new UaNode("ObjectTypes.ATVISE").browse({nodeclass:UaNode.NODECLASS_OBJECTTYPE, recursive:true});
+	for (var i = 0; i < result.length; ++i) excludeTypes.push(result[i].node.nodeid);
+	var result = new UaNode("VariableTypes.ATVISE").browse({nodeclass:UaNode.NODECLASS_VARIABLETYPE, recursive:true});
+	for (var i = 0; i < result.length; ++i) excludeTypes.push(result[i].node.nodeid);
+	var result = objects.browse({nodeclass:UaNode.NODECLASS_VARIABLE, recursive:true, exclude:excludeTypes});
+	for (var i = 0; i < result.length; ++i) usedVariables[result[i].node.nodeaddr] = false;
+}
+
+function quote(str) {
+     return str.replace(/([.?*+^$[\]\\(){}-])/g, "\\$1");
+};
+
+function collectDisplayVariables(display, arguments, parentDisplayHistory){
+	try {
+		var xmlDoc = new XMLDoc(display.value);
+	} catch(e) {
+		console.log("error", display.nodeaddr + ": " + e);
+		throw e;
+	}
+
+	parsingDisplays[display] = true;
+	var displayHistory = parentDisplayHistory.slice();
+	displayHistory.push(display);
+	var parameters = {"base":arguments["base"]};
+	for (var meta = xmlDoc.root.first("metadata"); meta; meta = meta.next("metadata")){
+		for (var param = meta.first("parameter", atv); param; param = param.next("parameter", atv)){
+			if (param.attribute("valuetype") == "address"){
+				var name = param.attribute("name");
+				if (!name) continue;
+				if (arguments[name]) parameters[name] = arguments[name];
+				else if (param.attribute("defaultvalue")) parameters[name] = param.attribute("defaultvalue");
+				if (parameters[name]){
+					var paramNode = new UaNode(parameters[name]);
+					if (paramNode.exists()){
+						usedVariables[paramNode.nodeaddr] = true;
+						exists.push(true);
+						to.push(paramNode.nodeaddr);
+					}
+					else{
+						exists.push(false);
+						to.push(parameters[name]);
+					}
+					from.push(displayHistory);
+					if (displayHistory.length > 1) parent.push(displayHistory[displayHistory.length-2]);
+					else parent.push(display);
+				}
+			}
+		}
+	}
+	//console.log("Parsing ", display.nodeid, " Args: ", arguments, " Params:", parameters);
+	if (!recursive)
+		return;
+
+	if (objects.exists()) for (var script = xmlDoc.root.first("script"); script; script = script.next("script")){
+		for (var cdata = script.first(XMLDoc.CDATA_SECTION_NODE); cdata; cdata = cdata.next(XMLDoc.CDATA_SECTION_NODE)){
+			var content = cdata.content;
+			for (var varNodeId in usedVariables){
+				var regExp = new RegExp("[\"\']" + quote(varNodeId) + "[\"\']");
+				if (regExp.test(content)){
+					usedVariables[varNodeId] = true;
+					from.push(displayHistory);
+					to.push(varNodeId);
+					exists.push(true);
+					parent.push(display);
+				}
+				var base = arguments["base"];
+				if (base && varNodeId.length > base.length && varNodeId.slice(0, base.length) == base){
+					var regExp = new RegExp(quote("[\"base\"] + \""+varNodeId.slice(base.length)+"\""));
+					if (regExp.test(content)){
+						usedVariables[varNodeId] = true;
+						from.push(displayHistory);
+						to.push(varNodeId);
+						exists.push(true);
+						if (displayHistory.length > 1) parent.push(displayHistory[displayHistory.length-2]);
+						else parent.push(display);
+					}
+				}
+			}
+		}
+	}
+
+	for (var svg = xmlDoc.root.first("svg"); svg; svg = svg.next("svg")){
+		var child = new UaNode(unescape(svg.attribute("href", xlink)));
+		if (child.exists() && !parsingDisplays[child.nodeid]) {
+			childArguments = {};
+			for (var arg = svg.first("argument", atv); arg; arg = arg.next("argument", atv)){
+				var name = arg.attribute("name");
+				if (!name) continue;
+				if (name in parameters){
+					var value = "";
+					var x;
+					if ((x = arg.attribute("prefix")) && parameters[x]) value += parameters[x];
+					if ((x = arg.attribute("value"))) value += x;
+					if ((x = arg.attribute("postfix")) && parameters[x]) value += parameters[x];
+					childArguments[name] = value;
+				}
+			}
+			collectDisplayVariables(child, childArguments, displayHistory)
+		}
+	}
+	delete parsingDisplays[display];
+}
+
+for (var i = 0; i < displaysToParse.length; ++i){
+	var arguments = {};
+	if (ua.base) arguments["base"] = ua.base;
+	parsingDisplays = {};
+	if (!displaysToParse[i].exists()) throw new Error("Display:"+displaysToParse[i].nodeid+" does not exist.");
+	collectDisplayVariables(displaysToParse[i], arguments, []);
+}
+/* console.log("Used:", usedVariables);
+for (var i = 0; i < from.length; ++i){
+	var fromStr  = "";
+	for (var j = 0; j < from[i].length; ++j) fromStr += from[i][j].nodeaddr + "->";
+	console.log(fromStr, to[i].nodeid);
+} */
+
+var unused = [];
+if (objects.exists()){
+	for (var n in usedVariables)
+		if (!usedVariables[n])
+			unused.push(new UaNode(n));
+}
+
+var result = {"server":server, "from":from, "to":to, "exists":exists, "parent":parent, "unused":unused};
+var hook = new UaNode("SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.CrossRef.Lib.DisplayVariablesHook");
+/* Hook of referenced and unused variables
+The hook must have one input paramter named 'ua' of the type 'uainput'
+Input of hook (members of ua):
+	server:[UaNode] Specifies the nodeid of the server
+	from:[UaNode[]] Array of parent display histories (E.g. disp1->disp2->disp3)
+	to:[String] Array of node addresses (names) of referenced variables
+	exists:[Bool] Array of flags that signals if the node name exists. If exists, the to[i] is of type UaNode otherwise String
+	unused:[UaNode] Array of variables not used in the displays.
+	parent:[UaNode] Array of guessed parents, where the referenced variable can be searched.
+Output of hook (return value):
+	Must have the same structure as the input.
+
+Example: simple hook to return 1-1 the input
+
+return ua;
+*/
+if (hook.exists())
+	result = call(hook, {"ua":result});
+
+return result;]]></code>
+</script>

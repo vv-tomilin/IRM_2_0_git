@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="64" version="1.2" width="1857" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:parameter behavior="optional" defaultvalue="1" desc="Заказчик" name="Customer" substitute="$CUSTOMER$" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="2" desc="Подрядчик" name="Contractor" substitute="$CONTRACTOR$" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="AGENT.OBJECTS.Rig.General.Field" desc="Месторождение" name="OilFireld" substitute="$FIELD$" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Куст" name="Bush" substitute="$BUSH$" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Скважина" name="Borehole" substitute="$BOREHOLE$" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="6" desc="Бригада" name="Brigade" substitute="$BRIGADE$" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Буровая" name="Rig" substitute="$RIG$" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="8" desc="Дата/Время" name="Data/Time" substitute="" valuetype="string"/>
+  <atv:gridconfig enabled="true" gridstyle="lines" height="5" width="10"/>
+  <atv:snapconfig enabled="true" height="5" width="10"/>
+ </metadata>
+ <rect atv:refpx="928.495" atv:refpy="30.001" fill="#1f1f1f" height="60" id="id_3" stroke="none" stroke-width="0" width="1853" x="2" y="0"/>
+ <line atv:refpx="927" atv:refpy="61.5" id="id_4" stroke="#3a3a3a" stroke-width="4" x1="2" x2="1855" y1="61" y2="61"/>
+ <text atv:refpx="1206.275" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_24" x="1164.775" y="24.5">БУРОВАЯ:</text>
+ <text atv:refpx="1178.108" atv:refpy="42" fill="#34a9d0" font-family="Arial" font-size="16" font-weight="bold" id="id_35" x="1164.275" y="47.5">RIG</text>
+ <text atv:refpx="1057.044" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_23" x="1016.544" y="24.5">БРИГАДА:</text>
+ <text atv:refpx="1061.544" atv:refpy="42" fill="#34a9d0" font-family="Arial" font-size="16" font-weight="bold" id="id_34" x="1016.044" y="47.5">$BRIGADE$</text>
+ <text atv:refpx="897.813" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_22" x="849.313" y="24.5">СКВАЖИНА:</text>
+ <text atv:refpx="894.313" atv:refpy="42" fill="#34a9d0" font-family="Arial" font-size="16" font-weight="bold" id="id_33" x="848.813" y="47.5">BOREHOLE</text>
+ <text atv:refpx="723.082" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_21" x="700.082" y="24.5">КУСТ:</text>
+ <text atv:refpx="722.582" atv:refpy="42" fill="#34a7d0" font-family="Arial" font-size="16" font-weight="bold" id="id_32" x="699.582" y="47.5">BUSH</text>
+ <text atv:refpx="534.35" atv:refpy="18" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_20" x="447.85" y="24.5">МЕСТОРОЖДЕНИЕ:</text>
+ <text atv:refpx="450.097" atv:refpy="42" fill="#34a7d0" font-family="Arial" font-size="16" font-weight="bold" id="id_31" x="447.35" y="47.5">FIELD</text>
+ <text atv:refpx="313.619" atv:refpy="18" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_19" x="256.619" y="24.5">ПОДРЯДЧИК:</text>
+ <text atv:refpx="322.619" atv:refpy="42" fill="#34a7d0" font-family="Arial" font-size="16" font-weight="bold" id="id_30" x="256.119" y="47.5">$CONTRACTOR$</text>
+ <text atv:refpx="118.538" atv:refpy="20" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_18" x="65.229" y="24.5">ЗАКАЗЧИК:</text>
+ <text atv:refpx="123.017" atv:refpy="42" fill="#34a7d0" font-family="Arial" font-size="16" font-weight="bold" id="id_29" x="65.729" y="47.5">$CUSTOMER$</text>
+ <rect atv:refpx="1584.861" atv:refpy="-181.024" fill="#000000" height="173.783" id="id_2" stroke="#0000ff" stroke-width="0" width="280.587" x="1444.568" y="-267.915"/>
+ <text atv:refpx="1501.316" atv:refpy="-201.849" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_27" x="1469.816" y="-196.349">ВРЕМЯ:</text>
+ <text atv:refpx="1508.996" atv:refpy="-178.849" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_28" x="1469.996" y="-173.349">(МОСКВА)</text>
+ <text atv:refpx="1550.366" atv:refpy="-201.849" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="time_moscow" x="1541.366" y="-196.349">00</text>
+ <script type="text/ecmascript"><![CDATA[
+var timezone = 'Europe/Moscow';
+function clock(){
+var date = document.getElementById("currentData")
+date.innerHTML = new Date().toLocaleString().slice(11,20);
+var time = document.getElementById("curent_date")
+time.innerHTML = new Date().toLocaleString().slice(0,10);
+var timeMoscow =document.getElementById("time_moscow");
+timeMoscow.innerHTML = new Date().toLocaleString( 'en-GB',{ timeZone: 'Europe/Moscow' }).slice(11,20);
+}
+setInterval(clock, 1000);
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_29", "nodeId":"AGENT.OBJECTS.Rig.General.Contract.OrgCustomer"});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_30", "nodeId":"AGENT.OBJECTS.Rig.General.Contract.OrgContractor"});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_0", "nodeId":"AGENT.OBJECTS.Rig.General.Coordinates.Latitude"});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_1", "nodeId":"AGENT.OBJECTS.Rig.General.Coordinates.Longitude"});
+
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_33", "nodeId":"AGENT.OBJECTS.Rig.General.WellName"});
+
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_31", "nodeId":"AGENT.OBJECTS.Rig.General.FieldName"});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_32", "nodeId":"AGENT.OBJECTS.Rig.General.BushName"});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_35", "nodeId":"AGENT.OBJECTS.Rig.General.RigName"});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"0", "id":"id_34", "nodeId":"AGENT.OBJECTS.Rig.Brigade.BrigadeName"});]]></script>
+ <text atv:refpx="1414.3" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_25" x="1391.8" y="24.5">ДАТА:</text>
+ <text atv:refpx="1567.99" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_26" x="1536.49" y="24.5">ВРЕМЯ:</text>
+ <text atv:refpx="1457.59" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="curent_date" x="1449.09" y="24.5">00</text>
+ <text atv:refpx="1612.9" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="currentData" x="1603.9" y="24.5">00</text>
+ <text atv:refpx="1723.553" atv:refpy="19" fill="#34a9d0" font-family="Arial" font-size="16" font-weight="bold" id="id_0" x="1706.553" y="24.5">0,0,0</text>
+ <text atv:refpx="1724.83" atv:refpy="42" fill="#34a9d0" font-family="Arial" font-size="16" font-weight="bold" id="id_1" x="1707.83" y="47.5">0,0,0</text>
+ <text atv:refpx="1457.767" atv:refpy="41.522" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_5" x="1390.229" y="47.022">Ханты-Мансийск</text>
+</svg>

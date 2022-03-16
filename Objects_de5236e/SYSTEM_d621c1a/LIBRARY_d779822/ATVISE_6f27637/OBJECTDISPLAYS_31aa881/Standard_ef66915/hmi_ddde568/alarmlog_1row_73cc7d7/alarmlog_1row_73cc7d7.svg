@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="650" version="1.2" xmlns="http://www.w3.org/2000/svg" height="37.91" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <desc>Displays the last alarm that occured in one row.</desc>
+ <defs>
+  <linearGradient id="linear_3" y1="-0.234375" x1="-0.046875" y2="0.875" gradientUnits="objectBoundingBox" x2="0.921875">
+   <stop offset="0.2600896860986547" stop-color="#000000"/>
+   <stop offset="1" stop-color="#555555"/>
+  </linearGradient>
+  <linearGradient id="linear_1" y1="0.6875" x1="0.75" y2="-0.015625" gradientUnits="objectBoundingBox" x2="0.46875">
+   <stop offset="0.2600896860986547" stop-color="#000000"/>
+   <stop offset="1" stop-color="#555555"/>
+  </linearGradient>
+  <linearGradient id="linear_2" y1="-0.234375" x1="-0.046875" y2="0.875" gradientUnits="objectBoundingBox" x2="0.921875">
+   <stop offset="0.2600896860986547" stop-color="#000000"/>
+   <stop offset="1" stop-color="#555555"/>
+  </linearGradient>
+  <linearGradient id="linear_4" y1="-0.53125" x1="0.21875" y2="0.375" gradientUnits="objectBoundingBox" x2="0.234375">
+   <stop offset="0" stop-color="#ffffff" stop-opacity="0.6078431372549019"/>
+   <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="linear_0" y1="-0.109375" x1="0.25" y2="0.46875" gradientUnits="objectBoundingBox" x2="0.25">
+   <stop offset="0" stop-color="#ffffff"/>
+   <stop offset="1" stop-color="#000000" stop-opacity="0"/>
+  </linearGradient>
+ </defs>
+ <title>Alarmlog one row</title>
+ <metadata>
+  <atv:parameter desc="family" config="Arial;Courier;Courier New;Verdana" valuetype="enum" substitute="$FONTFAMILY$" group="Font" behavior="optional" name="fontFamily" defaultvalue="Courier New"/>
+  <atv:parameter desc="size" config="6;7;8;9;10;11;12;14;16;18;20;22;24;26;28;36;48;72" valuetype="enum" substitute="$FONTSIZE$" group="Font" behavior="optional" name="fontSize" defaultvalue="14"/>
+  <atv:parameter desc="color" valuetype="color" substitute="$FONTCOLOR$" group="Font" behavior="optional" name="fontColor" defaultvalue="#000000"/>
+  <atv:parameter desc="symbol color" valuetype="color" substitute="$SYMBOLCOLOR$" group="Appearance" behavior="optional" name="symbolColor" defaultvalue="#000000"/>
+  <atv:parameter defaultvalue="0" behavior="optional" desc="min alarm priority" group="Alarm" valuetype="number" name="minAlarmPriority"/>
+  <atv:parameter defaultvalue="0" behavior="optional" desc="max alarm priority" group="Alarm" valuetype="number" name="maxAlarmPriority"/>
+  <atv:gridconfig width="20" enabled="true" height="20" gridstyle="lines"/>
+ </metadata>
+ <text x="9.75" y="23.916" fill="$FONTCOLOR$" font-family="$FONTFAMILY$" id="row1_date" font-weight="bold" atv:refpx="40.747" atv:refpy="18.916" font-size="$FONTSIZE$">row1_date</text>
+ <text x="99.75" y="23.916" fill="$FONTCOLOR$" font-family="$FONTFAMILY$" id="row1_adr" font-weight="bold" atv:refpx="127.248" atv:refpy="18.916" font-size="$FONTSIZE$">row1_adr</text>
+ <text x="389.25" y="23.916" fill="$FONTCOLOR$" font-family="$FONTFAMILY$" id="row1_msg" font-weight="bold" atv:refpx="417.248" atv:refpy="18.916" font-size="$FONTSIZE$">row1_msg</text>
+ <svg width="50" x="1572.772" y="25.352" visibility="hidden" height="50" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.alarm1" id="row1_alarm1" atv:refpx="624.776" atv:refpy="19.692" transform="matrix(0.391,0,0,0.391,0,0)">
+  <atv:argument prefix="symbolColor" value="" name="symbolColor"/>
+ </svg>
+ <svg width="50" x="1572.89" y="25.361" visibility="hidden" height="50" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.alarm2" id="row1_alarm2" atv:refpx="624.775" atv:refpy="19.691" transform="matrix(0.391,0,0,0.391,0,0)">
+  <atv:argument prefix="symbolColor" value="" name="symbolColor"/>
+ </svg>
+ <svg width="50" x="1572.89" y="25.361" visibility="hidden" height="50" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.alarm3" id="row1_alarm3" atv:refpx="624.775" atv:refpy="19.691" transform="matrix(0.391,0,0,0.391,0,0)">
+  <atv:argument prefix="symbolColor" value="" name="symbolColor"/>
+ </svg>
+ <rect width="20.811" x="614.475" y="10.53" fill="none" height="17.972" stroke="$SYMBOLCOLOR$" id="row1_alarm1_border" atv:refpx="624.88" stroke-width="1" atv:refpy="19.516"/>
+ <script type="text/ecmascript"><![CDATA[var alarmCount = 1;
+var strLenEventText = 24;
+var strLenAddress = 32;
+
+var alarmlistItems = [];
+var lng = "T{}";
+
+var minAlarmPriority = webMI.query["minAlarmPriority"];
+var maxAlarmPriority = webMI.query["maxAlarmPriority"];
+
+Date.prototype.to24String = function(_withMS) {
+	function _preNull(_nr) {
+		return _nr < 10 ? "0" + _nr : _nr;
+	}
+	if (this.getTime() < (new Date()).getTime() - 24*60*60*1000)
+		return this.getFullYear() + "-" + _preNull(this.getMonth()+1) + "-" + _preNull(this.getDate());
+	_ret = _preNull(this.getHours()) + ":" + _preNull(this.getMinutes()) + ":" + _preNull(this.getSeconds());
+	if (_withMS)
+		_ret += "." + this.getMilliseconds();
+	return _ret;
+};
+
+function cutString(str, maxLen, delimiter) {
+	str = "" + str;
+	maxLen = maxLen || 15;
+	delimiter = "" + delimiter;
+
+	if (str.length > maxLen) {
+		var strLenPart = (maxLen - delimiter.length) / 2;
+		var strLenPartBegin = Math.floor(strLenPart);
+		var strLenPartEnd = Math.ceil(strLenPart);
+
+		str = (str.substr(0, strLenPartBegin)) + delimiter + (str.substr(str.length - strLenPartEnd));
+	}
+
+	return str;
+}
+
+webMI.addOnload(function() {
+    webMI.rootWindow.webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Alarmmanagement", {"id": ""});
+	for (var i=0; i<alarmCount; i++) {
+		setEmpty(i);
+	}
+	webMI.trigger.fire("com.atvise.alarms_items", function(alarms){
+		for (var alarm in alarms){
+			var isAlarmNoLimits = (minAlarmPriority == 0 && minAlarmPriority == maxAlarmPriority);
+			var isAlarmInLimits = (minAlarmPriority < alarms[alarm].item.priority && alarms[alarm].item.priority < maxAlarmPriority);
+			if(isAlarmNoLimits || isAlarmInLimits){
+			setItem(alarms[alarm].item);
+			}
+		}
+	});
+	webMI.trigger.connect("com.atvise.alarms_notify_item", function(notify) {
+	    var e = JSON.parse(JSON.stringify(notify));
+		if (e.value == false) {
+			alarmlistItems = [];
+			for (var i=0; i<alarmCount; i++)
+				setEmpty(i);
+		} else {
+			var isAlarmNoLimits = (minAlarmPriority == 0 && minAlarmPriority == maxAlarmPriority);
+			var isAlarmInLimits = (minAlarmPriority < e.value.priority && e.value.priority < maxAlarmPriority);
+			if(isAlarmNoLimits || isAlarmInLimits){
+			setItem(e.value);
+		}
+		}
+	});
+});
+
+function setEmpty(row) {
+	webMI.gfx.setText("row"+(row+1) + "_date", "");
+	webMI.gfx.setText("row"+(row+1) + "_msg", "");
+	webMI.gfx.setText("row"+(row+1) + "_adr", "");
+	webMI.gfx.setVisible("row"+(row+1)+"_alarm1_border", false);
+	var states = [1,2,3];
+	for (var i=0; i<states.length; i++)
+		webMI.gfx.setVisible("row"+(row+1)+"_alarm"+(i+1), false);
+}
+
+function formatString(obj, attribute){
+	var text = typeof obj[attribute] === "string" ? obj[attribute] : obj[attribute]["T{}"];
+	try {
+		return webMI.sprintf(text, obj, "T{}");
+	} catch (err) {
+		console.error(attribute+": " + text + "\n error: " + err);
+		return "";
+	}
+}
+
+// use buffer for rendering
+var buffer = [];
+var render = setInterval(renderLog, 250);
+
+webMI.addOnunload(function() {
+	clearInterval(render);
+	render = null;
+});
+
+function renderLog(){
+	var itm;
+	for(var i=0; i<alarmCount; i++)
+		if(itm = buffer.pop()) {
+			showItem(itm);
+		}
+	buffer = [];
+}
+
+webMI.addOnunload(function() {
+	clearInterval(render);
+	render = null;
+});
+
+function setItem(itm) {
+	itm.state = itm.state ? itm.state : "-1";
+	itm.timestamp = itm.timestamp ? itm.timestamp : "";
+	itm.address = itm.address ? itm.address : "";
+	itm.eventtext = itm.eventtext ? itm.eventtext : "";
+	buffer.push(itm);
+}
+
+function showItem(itm) {
+	itm.state = itm.state ? itm.state : "-1";
+	itm.timestamp = itm.timestamp ? itm.timestamp : "";
+	itm.address = itm.address ? itm.address : "";
+	itm.eventtext = itm.eventtext ? itm.eventtext : "";
+
+	if (itm.retain == false) return;
+
+	for (var i = 0; i < alarmlistItems.length; i++) {
+		if (alarmlistItems[i].address == itm.address && alarmlistItems[i].timestamp == itm.timestamp && alarmlistItems[i].state == itm.state) //unique alarm identifier
+			return;
+	}
+
+	if (itm.address != "") {
+		alarmlistItems.push(itm);
+		alarmlistItems.sort(function(a,b) { return a.timestamp - b.timestamp; });
+		alarmlistItems = alarmlistItems.slice((-1) * alarmCount);
+		alarmlistItems.sort(function(a,b) { return b.timestamp - a.timestamp; });
+	}
+
+	for (var i=0; i<alarmCount; i++) {
+		if (alarmlistItems[i] != undefined) {
+			setAlarm("row"+(i+1), alarmlistItems[i]);
+		} else {
+			setEmpty(i);
+		}
+	}
+
+	function setAlarm(row, item) {
+		if (item != undefined) {
+			var date = (new Date(item.timestamp)).to24String();
+			var eventtext = (item.eventtext ? formatString(item, "eventtext") : "");
+			webMI.gfx.setText(row + "_date", date);
+			webMI.gfx.setText(row + "_msg", eventtext ? cutString(eventtext, strLenEventText, "..") : "");
+			var dataItemAdress = item.address;
+			var replacedAdress = dataItemAdress.replace(/AGENT.OBJECTS./g,"");
+			webMI.gfx.setText(row + "_adr", cutString(replacedAdress, strLenAddress, ".."));
+			var state = item.state < 3 ? item.state : 3;
+			toggleSymbol(row, state);
+		} else {
+			toggleSymbol(row, -1);
+		}
+	}
+
+	function toggleSymbol(row, state) {
+		var states = [1,2,3];
+		for (var i=0; i<states.length; i++) {
+			var visible = (state == states[i] ? "inherit" : false);
+			webMI.gfx.setVisible(row + "_alarm"+(i+1), visible);
+			var active = (state == 1);
+			if (active) {
+				webMI.gfx.setVisible(row + "_alarm"+(i+1)+"_border", "inherit");
+			} else {
+				webMI.gfx.setVisible(row + "_alarm"+(i+1)+"_border", false);
+			}
+		}
+	}
+}
+
+]]></script>
+</svg>

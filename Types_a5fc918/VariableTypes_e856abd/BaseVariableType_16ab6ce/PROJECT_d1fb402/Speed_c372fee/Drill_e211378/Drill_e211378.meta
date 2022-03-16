@@ -1,0 +1,10 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed".Drill
+NodeClass: Variable
+BrowseName: 1:Drill
+DisplayName: en|Drill
+Description: en|Drill
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed"."Drill"

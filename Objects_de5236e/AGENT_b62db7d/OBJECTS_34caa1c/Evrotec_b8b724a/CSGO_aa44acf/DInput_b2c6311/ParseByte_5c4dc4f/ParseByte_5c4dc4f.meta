@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.CSGO.DInput.ParseByte
+NodeClass: Variable
+BrowseName: 1:ParseByte
+DisplayName: en|ParseByte
+Description: en|ParseByte
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Halliburton.marks.MaxSpeed
+NodeClass: Variable
+BrowseName: 1:MaxSpeed
+DisplayName: en|MaxSpeed
+Description: en|MaxSpeed
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,1 @@
+{"rows":[{"number":"2","element":"","affiliation":"","serialNumber":"","DiamOut":"","DiamIn":"","DiamMax":"","connectingThread":"","connectingType":"","length":"","sumLength":"","weightTotalweight":"","sumWeight":"2"}]}

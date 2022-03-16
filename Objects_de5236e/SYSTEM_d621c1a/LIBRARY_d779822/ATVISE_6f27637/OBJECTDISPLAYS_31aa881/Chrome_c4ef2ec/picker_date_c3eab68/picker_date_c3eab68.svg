@@ -1,0 +1,432 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="160" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linear_1" y1="-0.0183441" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#ffffff" stop-opacity="0.2745098039215687"/>
+   <stop offset="0.5515695067264574" stop-color="#ffffff" stop-opacity="0"/>
+   <stop offset="0.7174887892376681" stop-color="#000000" stop-opacity="0"/>
+   <stop offset="1" stop-color="#000000" stop-opacity="0.4705882352941176"/>
+  </linearGradient>
+  <linearGradient id="linear_14" y1="1" y2="-0.136364" x1="1.01755" gradientUnits="objectBoundingBox" x2="1.0303">
+   <stop offset="0.6008771929824561" stop-color="#ffffff" stop-opacity="0"/>
+   <stop offset="1" stop-color="#ffffff"/>
+  </linearGradient>
+  <linearGradient id="linear_21" y1="0.0151344" y2="0.938184" x1="1.00116" gradientUnits="objectBoundingBox" x2="1.00116">
+   <stop offset="0" stop-color="#d2d2d6"/>
+   <stop offset="0.3318385650224215" stop-color="#ffffff"/>
+   <stop offset="0.3856502242152466" stop-color="#2c2c3c"/>
+   <stop offset="1" stop-color="#adadad"/>
+  </linearGradient>
+  <linearGradient id="linear_6" y1="0.0447761" y2="0.955818" x1="0.239739" gradientUnits="objectBoundingBox" x2="0.239739">
+   <stop offset="0" stop-color="#000000"/>
+   <stop offset="1" stop-color="#ffffff"/>
+  </linearGradient>
+ </defs>
+ <desc>Opens a dialog to enter the date.</desc>
+ <title>Picker Date</title>
+ <metadata>
+  <atv:parameter desc="base" behavior="mandatory" valuetype="address" name="base"/>
+  <atv:parameter desc="name" behavior="optional" valuetype="string" name="name"/>
+  <atv:parameter defaultvalue="" desc="alarm address" behavior="optional" valuetype="address" name="alarm"/>
+  <atv:parameter config="Yes;No" defaultvalue="Yes" desc="enable status monitoring" behavior="optional" valuetype="enum" name="statusEnabled"/>
+  <atv:parameter defaultvalue="" desc="fire status trigger" behavior="optional" valuetype="string" name="statusTrigger"/>
+  <atv:parameter config="Times New Roman=Times New Roman,Bodoni,Garamond,Minion Web,ITC Stone Serif,MS Georgia,Bitstream Cyberbit,serif;Arial=MS Trebuchet,ITC Avant Garde Gothic,MS Arial,MS Verdana,Univers,Futura,ITC Stone Sans,Gill Sans,Akzidenz Grotesk,Helvetica,sans-serif;Courier=Courier,MS Courier New,Prestige,Everson Mono,monospace;Zapf-Chancery=Caflisch Script,Adobe Poetica,Sanvito,Ex Ponto,Snell Roundhand,Zapf-Chancery,cursive;Alpha Geometrique=Alpha Geometrique,Critter,Cottonwood,FB Reactor,Studz,fantasy" substitute="$FONTFAMILY$" defaultvalue="Arial" desc="family" group="Font" behavior="optional" valuetype="enum" name="fontFamily"/>
+  <atv:parameter config="6;7;8;9;10;11;12;14;16;18;20;22;24;26;28;36;48;72" substitute="$FONTSIZE$" defaultvalue="12" desc="size" group="Font" behavior="optional" valuetype="enum" name="fontSize"/>
+  <atv:parameter substitute="$FONTCOLOR$" defaultvalue="#000000" desc="color" group="Font" behavior="optional" valuetype="color" name="fontColor"/>
+  <atv:parameter substitute="$FILL$" defaultvalue="#FFFFFF" desc="fill color" group="Appearance" behavior="optional" valuetype="color" name="fill"/>
+  <atv:parameter defaultvalue="#8c8c8c" desc="fill color when inactive" group="Appearance" behavior="optional" valuetype="color" name="fillColorInactive"/>
+  <atv:parameter substitute="$BUTTONFILL$" defaultvalue="#000000" desc="button fill color" group="Appearance" behavior="optional" valuetype="color" name="buttonFill"/>
+  <atv:parameter defaultvalue="#ffffff" desc="button stroke color pressed" group="Appearance" behavior="optional" valuetype="color" name="buttonStrokePressed"/>
+  <atv:parameter defaultvalue="#FFFFFF" desc="focus stroke color" group="Appearance" behavior="optional" valuetype="color" name="focusStrokeColor"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvStatusIndication" behavior="optional" desc="status indication" group="Appearance" valuetype="global" name="statusIndication"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvAlarmIndication" behavior="optional" desc="alarm indication" group="Appearance" valuetype="global" name="alarmIndication"/>
+  <atv:parameter config="Yes;No" defaultvalue="Yes" desc="show time" group="Options" behavior="optional" valuetype="enum" name="showTime"/>
+  <atv:parameter desc="consistency group" group="Options" behavior="optional" valuetype="string" name="consistencyGroup"/>
+  <atv:parameter desc="tab index" group="Options" behavior="optional" valuetype="number" name="tabIndex"/>
+  <atv:parameter desc="tooltip" group="Options" behavior="optional" valuetype="trstring" name="tooltip"/>
+  <atv:parameter config="SYSTEM.SECURITY.RIGHTS" desc="necessary right" group="Security" behavior="optional" valuetype="address" name="right"/>
+  <atv:parameter desc="activation address" group="Security" behavior="optional" valuetype="address" name="activeNode"/>
+  <atv:parameter desc="activation value" group="Security" behavior="optional" valuetype="string" name="activeValue"/>
+  <atv:parameter defaultvalue="true" behavior="optional" desc="open picker centered" group="Appearance" valuetype="bool" name="openCentered"/>
+  <atv:gridconfig width="2" enabled="true" height="2" gridstyle="lines"/>
+  <atv:snapconfig width="2" enabled="true" height="2"/>
+ </metadata>
+ <g id="datepicker_clickarea" atv:refpy="15" atv:refpx="80" atv:dynamic="true">
+  <rect id="id_0" ry="3" width="159.5" fill="url(#linear_21)" stroke="#646464" atv:bindbr="1,1" atv:refpy="16" height="29.5" atv:refpx="80.25" stroke-width="0.5" x="0.25" y="0.25" rx="3" atv:bindtl="0,0"/>
+  <rect id="id_2" ry="3" width="128" fill="url(#linear_6)" stroke="none" atv:bindbr="1,1" atv:refpy="-6.75" height="24.5" atv:refpx="153.5" stroke-width="0.5" x="2.5" y="2.75" rx="3" atv:bindtl="0,0"/>
+  <rect id="input_bg" ry="3" width="126" fill="$FILL$" stroke="none" atv:bindbr="1,1" atv:refpy="30" height="22.5" atv:refpx="156.5" stroke-width="2" x="3.5" y="3.75" rx="3" atv:bindtl="0,0"/>
+  <rect id="blinking_frame" ry="2" width="126" fill="none" atv:bindbr="1,1" stroke="none" atv:refpy="10" stroke-width="2" atv:refpx="214.155" height="22.5" x="3.5" y="3.75" rx="2" atv:bindtl="0,0"/>
+  <text id="datepicker_label" font-size="$FONTSIZE$" fill="$FONTCOLOR$" atv:bindbr="1,0.5" atv:refpy="19" atv:refpx="506.703" font-family="$FONTFAMILY$" x="125.5" y="20.25" atv:bindtl="1,0.5" text-anchor="end">T{Picker Date}</text>
+  <rect id="button_stroke" ry="3" width="24.5" fill="url(#linear_6)" stroke="none" atv:bindbr="1,0.5" atv:refpy="-12" height="24.5" atv:refpx="409.75" stroke-width="0.5" x="132.5" y="2.75" rx="3" atv:bindtl="1,0.5"/>
+  <rect id="button_bg" ry="2.755" width="22.5" fill="$BUTTONFILL$" stroke="none" atv:bindbr="1,0.5" atv:refpy="-9.796" height="22.5" atv:refpx="411.75" stroke-width="0.5" x="133.5" y="3.75" rx="2.755" atv:bindtl="1,0.5"/>
+  <svg id="id_1" width="20" atv:bindbr="1,0.5" atv:refpy="15" height="20" atv:refpx="280" x="135" y="5" atv:bindtl="1,0.5" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.calendar">
+   <atv:argument value="#ffffff" name="symbolColor"/>
+   <atv:argument value="#000000" name="numberColor"/>
+  </svg>
+  <rect id="button_stroke" ry="2.755" width="22.5" fill="url(#linear_14)" stroke="none" atv:bindbr="1,0.5" atv:refpy="-56.562" height="22.5" atv:refpx="224.163" stroke-width="0.5" x="133.5" y="3.75" rx="2.755" atv:bindtl="1,0.5"/>
+ </g>
+ <script type="text/ecmascript"><![CDATA[var base = webMI.query["base"] == undefined ? "" : webMI.query["base"];
+var name = webMI.query["name"] == undefined ? "dpt" : webMI.query["name"];
+var showTime = webMI.query["showTime"] == "Yes" ? true : false;
+var timestamp = 0;
+
+var fill = webMI.query["fill"];
+var fillColorInactive = webMI.query["fillColorInactive"];
+var buttonFill = webMI.query["buttonFill"];
+var buttonStrokePressed = webMI.query["buttonStrokePressed"];
+var focusStrokeColor = webMI.query["focusStrokeColor"];
+var arrowFill = webMI.query["arrowFill"];
+var consistencyGroup = webMI.query["consistencyGroup"];
+
+if (base){
+	if (consistencyGroup) {
+		var consistencyHandler = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Consistency Handler");
+		consistencyHandler.register(consistencyGroup, base, updateDisplayValue);
+	} else {
+		webMI.data.subscribe(base,function(e){
+			updateDisplayValue(e.value);
+			if (typeof e.status != "undefined")
+				handleStatus(e.status);
+		});
+	}
+}
+
+var tabHandler = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tab Handler");
+var tabIndex = (webMI.query["tabIndex"] == undefined) ? "" : webMI.query["tabIndex"];
+var tooltip = (webMI.query["tooltip"] == undefined) ? "" : webMI.query["tooltip"];
+var alarmToSubscribe = webMI.query["alarm"];
+var alarmIndication = webMI.query["alarmIndication"];
+var statusEnabled = webMI.query["statusEnabled"];
+var statusTrigger = webMI.query["statusTrigger"];
+var statusIndication = webMI.query["statusIndication"];
+var activeIndicators = {};
+var openCentered = webMI.query["openCentered"];
+
+var right = (webMI.query["right"] == undefined) ? "" : webMI.query["right"];
+if (right.search(/SYSTEM\.SECURITY\.RIGHTS\./) != -1) {
+	right = right.substring(23,right.length); //remove "prefix" SYSTEM.SECURITY.RIGHTS.
+}
+
+var active = false;
+var hasRight = false;
+var isSetActive = true; //isSetActive is set by the com.atvise.setActive trigger.
+
+if (right != "") {
+	webMI.addEvent(webMI.data, "clientvariableschange", function(e) {
+		hasRight=false;
+		if (("username" in e) && (e.username != "")) {
+				hasRight = webMI.hasRight(right);
+		}
+		deActivate();
+	});
+}
+
+var activeValue = (webMI.query["activeValue"] == undefined) ? "" :webMI.query["activeValue"];
+var activeNode = (webMI.query["activeNode"] == undefined) ? "" : webMI.query["activeNode"];
+var nodeIsActive = false;
+
+if ((activeNode != "") && (String(activeValue) != "")) {
+	webMI.data.subscribe(activeNode, function(e) {
+		var nodeActiveValue = e.value;
+		if (typeof nodeActiveValue == "boolean") {
+			nodeIsActive = (String(nodeActiveValue) == activeValue);
+		} else if (typeof nodeActiveValue == "number") {
+			try {
+				var temp = parseFloat(activeValue);
+				nodeIsActive = (nodeActiveValue == temp);
+			} catch(e) {
+				nodeIsActive = false;
+			}
+		} else {
+			nodeIsActive = (nodeActiveValue == activeValue);
+		}
+		if (typeof e.status != "undefined")
+			handleStatus(e.status);
+		deActivate();
+	});
+} else {
+	deActivate();
+}
+
+function deActivate() {
+	if (right != "") {
+		if ((String(activeValue) != "") && (activeNode != "")) {
+			active=(nodeIsActive && hasRight);
+		} else {
+			active=hasRight;
+		}
+	} else {
+		if ((String(activeValue) != "") && (activeNode != "")) {
+			active=nodeIsActive;
+		} else {
+			active=true;
+		}
+	}
+	active = active && isSetActive;
+	if (active) {
+		webMI.gfx.setFill("input_bg", fill);
+		webMI.gfx.setFill("button_bg", buttonFill);
+		webMI.gfx.setVisible("button_stroke", null);
+	} else {
+		webMI.gfx.setFill("input_bg", fillColorInactive);
+		webMI.gfx.setFill("button_bg", fillColorInactive);
+		webMI.gfx.setVisible("button_stroke", false);
+	}
+}
+
+function handleStatus(status) {
+	if (statusEnabled != "Yes")
+		return;
+
+	if (statusTrigger != "") {
+		webMI.trigger.fire(statusTrigger, status);
+	} else {
+		if (typeof statusIndication["ItemStatusBad"] == "undefined")
+			statusIndication = {"ItemStatusBad": {color: "#ffff00", interval: "250"}};
+
+		if (status == 0 || (status & 0xC0000000).toString(16) == 0)	//Good value state
+			delete activeIndicators["status"];
+		else if ((status & 0x80000000).toString(16) != 0)			//Bad value state
+			activeIndicators["status"] = {color: statusIndication["ItemStatusBad"].color, interval: parseInt(statusIndication["ItemStatusBad"].interval)};
+		else if ((status & 0xC0000000).toString(16) == 40000000)	//Uncertain value state
+			activeIndicators["status"] = {color: statusIndication["ItemStatusBad"].color, interval: parseInt(statusIndication["ItemStatusBad"].interval)};
+		else														//Unknown value state
+			activeIndicators["status"] = {color: statusIndication["ItemStatusBad"].color, interval: parseInt(statusIndication["ItemStatusBad"].interval)};
+
+		setIndicator();
+	}
+}
+
+function initAlarm(address) {
+	if (alarmIndication == "")
+		alarmIndication = {};
+
+	if (typeof alarmIndication["AlarmStatusOnUnacknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOnUnacknowledged"] = {color: "#ff0000", interval: "250"};
+
+	if (typeof alarmIndication["AlarmStatusOnAcknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOnAcknowledged"] = {color: "#ff0000", interval: "500"};
+
+	if (typeof alarmIndication["AlarmStatusOffUnacknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOffUnacknowledged"] = {color: "#ff0000", interval: "750"};
+
+	if (typeof alarmIndication["AlarmStatusOnOffUnacknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOnOffUnacknowledged"] = {color: "#ff0000", interval: "1500"};
+
+	webMI.alarm.subscribe(address, function(e) {
+		if (e.state == 1)
+			activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOnUnacknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOnUnacknowledged"].interval)};
+		else if (e.state == 2)
+			activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOnAcknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOnAcknowledged"].interval)};
+		else if (e.state == 3)
+			activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOffUnacknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOffUnacknowledged"].interval)};
+		else if (e.state == 5)
+			activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOnOffUnacknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOnOffUnacknowledged"].interval)};
+		else
+			delete activeIndicators["alarm"];
+
+		setIndicator();
+	});
+}
+
+if (alarmToSubscribe != "")
+	initAlarm(alarmToSubscribe);
+
+var currentIndicator = "";
+function setIndicator() {
+	if (currentIndicator != "")
+		return;
+
+	if (activeIndicators["trigger"]) {
+		currentIndicator = "trigger";
+	} else if (activeIndicators["status"]) {
+		currentIndicator = "status";
+	} else if (activeIndicators["alarm"]) {
+		currentIndicator = "alarm";
+	} else {
+		currentIndicator = "";
+		return;
+	}
+
+	indicationActive = true;
+
+	webMI.gfx.setStroke("blinking_frame", activeIndicators[currentIndicator].color);
+	webMI.gfx.setVisible("blinking_frame", null);
+
+	var interval = activeIndicators[currentIndicator].interval;
+	setTimeout(function() {
+		webMI.gfx.setVisible("blinking_frame", false);
+		setTimeout(function() {
+			currentIndicator = "";
+			setIndicator();
+		}, interval);
+	}, interval);
+}
+
+function getDisplayParameters(){
+	var passObj = {};
+	for (var i in webMI.query)
+		passObj[i] = webMI.query[i];
+	passObj["popupId"] = name;
+	passObj["timestamp"] = timestamp;
+	return passObj;
+}
+
+function focusTH(){
+	if (active) {
+		webMI.gfx.setStroke("input_bg", focusStrokeColor);
+	}
+}
+
+function blurTH(){
+	if (active) {
+		webMI.gfx.setStroke("input_bg", "none");
+	}
+}
+
+function applyTH(){
+	if (active) {
+		webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Picker", {
+			"picker":"SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.dialogs.datepicker_dialog",
+			"openCentered": openCentered,
+			"width":287,
+			"height":160,
+			"callingElementWidth": webMI.gfx.getWidth("id_0"),
+			"callingElementHeight": webMI.gfx.getHeight("id_0"),
+			"title":"Pick date:",
+			"parameters": getDisplayParameters()
+		});
+	}
+}
+
+function backTH(){}
+
+function arrowTH(dir){}
+
+function keyHandler(keyTH,param2){
+	if (keyTH == "focus"){
+		focusTH();
+	} else if (keyTH == "blur"){
+		blurTH();
+	} else if (keyTH == "apply"){
+		applyTH();
+	} else if (keyTH == "space"){
+		applyTH();
+	} else if (keyTH == "back"){
+		backTH();
+	} else if (keyTH == "arrow"){
+		arrowTH(param2);
+	} else if (keyTH == "isActive"){
+		return active && param2(document.getElementById("datepicker_clickarea").parentNode);
+	}
+}
+
+webMI.addEvent("datepicker_clickarea", "click", function(e) {
+	var id = "datepicker_clickarea";
+	var value = true;
+	return function(value){
+		if (active) {
+			tabHandler.setCurrentIndex(keyHandler);
+			webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Picker", {
+				"picker":"SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.dialogs.datepicker_dialog",
+				"openCentered": openCentered,
+				"width":287,
+				"height":160,
+				"callingElementWidth": webMI.gfx.getWidth("id_0"),
+				"callingElementHeight": webMI.gfx.getHeight("id_0"),
+				"title":"Pick date:",
+				"parameters": getDisplayParameters()
+			});
+		}
+	}(value);
+});
+
+webMI.addEvent("datepicker_clickarea", "mousedown", function(e) {
+var id = "datepicker_clickarea";
+var value = true;
+return function(value) {
+	if (active) {
+		webMI.gfx.setStroke("input_bg", buttonStrokePressed);
+		webMI.gfx.setStroke("button_stroke", buttonStrokePressed);
+	}
+} (value);
+});
+
+webMI.addEvent("datepicker_clickarea", ["mouseup","mouseout"], function(e) {
+var id = "datepicker_clickarea";
+var value = true;
+return function(value) {
+	if (active) {
+		webMI.gfx.setStroke("input_bg", "none");
+		webMI.gfx.setStroke("button_stroke", "none");
+	}
+} (value);
+});
+
+webMI.addEvent("datepicker_clickarea", "dragstart", function(e) {
+	if (e.preventDefault) {
+		e.preventDefault();
+	}
+});
+
+webMI.trigger.connect("com.atvise.datepicker_" + name, function(e) {
+	if (base){
+		updateNodeValue(e.value);
+	} else {
+		updateDisplayValue(e.value);
+	}
+});
+
+webMI.trigger.connect("com.atvise.setActive",function(e){
+	isSetActive = e.value;
+	deActivate();
+});
+
+webMI.trigger.connect("com.atvise.setBlinking", function(e){
+	if (e.value == "none"){
+		delete activeIndicators["trigger"];
+	} else {
+		activeIndicators["trigger"] = {color: e.value, interval: 500};
+	}	
+	setIndicator();
+});
+
+webMI.addOnload(function() {
+	webMI.gfx.setText("datepicker_label", "");
+	var doc = document.getElementById("datepicker_clickarea").ownerDocument;
+	tabHandler.register(tabIndex,keyHandler,doc);
+});
+
+function updateDisplayValue(value) {
+	timestamp = value;
+	webMI.trigger.fire("valuechanged", timestamp, "");
+	var date = new Date(value);
+	var day = date.getDate();
+	var month = date.getMonth()+1;
+	var year = date.getFullYear();
+	var hours = date.getHours();
+	var minutes = date.getMinutes();
+	var seconds = date.getSeconds();
+	var text = preNull(day) + "." + preNull(month) + "." + year;
+	if (showTime) {
+		text += " " + preNull(hours) + ":" + preNull(minutes) + "." + preNull(seconds);
+	}
+	webMI.gfx.setText("datepicker_label", text);
+}
+
+function updateNodeValue(value){
+	if (consistencyGroup){
+		consistencyHandler.set(consistencyGroup, base, value);
+		updateDisplayValue(value);
+	} else {
+		webMI.data.write(base,value);
+	}
+}
+
+function preNull(value) {
+	return (value < 10) ? "0" + value : value;
+}
+if (tooltip != ""){
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tooltip", {"auto":"true", "id":"datepicker_clickarea", "text":tooltip});
+}]]></script>
+</svg>

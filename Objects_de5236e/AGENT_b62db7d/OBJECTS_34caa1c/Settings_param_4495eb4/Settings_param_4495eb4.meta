@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Settings_param
+NodeClass: Object
+BrowseName: 1:Settings_param
+DisplayName: en|Settings_param
+Description: en|Settings_param
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

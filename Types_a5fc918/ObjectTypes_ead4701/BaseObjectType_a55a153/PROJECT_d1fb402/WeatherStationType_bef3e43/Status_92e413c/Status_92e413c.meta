@@ -1,0 +1,10 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.WeatherStationType.Status
+NodeClass: Variable
+BrowseName: 1:Status
+DisplayName: en|Status
+Description: en|Status
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.PROJECT.StationStatus

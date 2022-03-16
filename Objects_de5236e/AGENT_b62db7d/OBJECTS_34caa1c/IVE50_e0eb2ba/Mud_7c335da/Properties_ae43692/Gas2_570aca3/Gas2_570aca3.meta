@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.Properties.Gas2
+NodeClass: Variable
+BrowseName: 1:Gas2
+DisplayName: en|Gas2
+Description: en|Gas2
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

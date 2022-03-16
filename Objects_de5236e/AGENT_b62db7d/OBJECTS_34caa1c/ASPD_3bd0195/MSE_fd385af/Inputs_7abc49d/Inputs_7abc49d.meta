@@ -1,0 +1,8 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.MSE.Inputs
+NodeClass: Object
+BrowseName: 1:Inputs
+DisplayName: en|Inputs
+Description: en|Inputs
+EventNotifier: 0
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition FolderType

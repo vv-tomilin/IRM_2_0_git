@@ -1,0 +1,11 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold
+NodeClass: Variable
+BrowseName: 1:PressureManifold
+DisplayName: en|PressureManifold
+Description: en|PressureManifold
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.AGGREGATETEMPLATES.ATDelta
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

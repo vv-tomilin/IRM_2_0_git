@@ -1,0 +1,192 @@
+body {
+  --translateY: 50%;
+  --fz-dynamic: 16px;
+  --scale: 1
+;
+}
+
+.app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0d0f17;
+  color: #FFF;
+}
+
+.input-component {
+  width: 352px;
+  max-width: 90%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #000;
+  margin-bottom: 15px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.input-component * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.Rectangle-7 {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: rgba(132, 133, 149, 0.15);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.auth-form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	margin: 0;
+	  padding: 0;
+	  box-sizing: border-box;
+}
+
+.Rectangle-7:hover {
+  background-color: rgba(132, 133, 149, 0.25);
+}
+
+.Rectangle-7:hover .input {
+  border-bottom: 2px solid #848595;
+}
+
+.Rectangle-7:focus-within .label-wrapper {
+  pointer-events: none;
+  --scale: .75;
+}
+
+.Rectangle-7:focus-within .label-wrapper .Hint-text {
+  -webkit-transform: translate(-12%) scale(var(--scale));
+          transform: translate(-12%) scale(var(--scale));
+}
+
+.Rectangle-7 .input + .label-wrapper {
+  pointer-events: none;
+  --scale: .75;
+}
+
+.Rectangle-7 .input + .label-wrapper .Hint-text {
+  -webkit-transform: translate(-12%) scale(var(--scale));
+          transform: translate(-12%) scale(var(--scale));
+}
+
+.Rectangle-7 .input:focus {
+  border-bottom: 2px solid #006ac7;
+}
+
+.Rectangle-7 .input:invalid:required, .Rectangle-7 .input:invalid:not(:placeholder-shown) {
+  border-bottom: 2px solid #e84640;
+}
+
+.label-wrapper {
+  width: 100%;
+}
+
+.Hint-text {
+  display: block;
+  margin: 0 16px;
+  -webkit-transform: translateY(var(--translateY)) scale(var(--scale));
+          transform: translateY(var(--translateY)) scale(var(--scale));
+  pointer-events: none;
+  background-color: transparent;
+  color: #9d9daf;
+}
+
+.input {
+  max-width: 100%;
+  width: 100%;
+  padding: 0px 16px 4px 16px;
+  border: none;
+  box-sizing: border-box;
+  outline-color: transparent;
+  outline-width: 0;
+  border-bottom: 2px solid #6b6c7b;
+  background-color: transparent;
+  color: var(--white);
+  font-size: inherit;
+  text-overflow: ellipsis;
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--white);
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+.auth-form__error {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #e84640;
+}
+
+.error-text {
+  margin-left: 4px;
+  font-size: 0.8rem;
+}
+
+.hidden {
+  visibility: hidden;
+}
+.button-blue {
+	background: #4286f5;
+	border-radius: 30px;
+	color: #FFFFFF;
+	border-color: transparent;
+	width: 90%;
+	height: 100%;
+	padding: .5rem 2rem;
+	cursor: pointer;
+}
+	
+.button-blue:hover {
+	background: #4286C9;
+}
+.button-blue:active {
+	transform: translateY(2px);
+	
+}
+	
+
+

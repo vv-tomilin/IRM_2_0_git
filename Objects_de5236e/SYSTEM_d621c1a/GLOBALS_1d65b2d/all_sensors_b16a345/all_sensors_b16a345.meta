@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.GLOBALS.all_sensors
+NodeClass: Variable
+BrowseName: 1:all_sensors
+DisplayName: en|all_sensors
+Description: en|all_sensors
+DataType: String
+ValueRank: 1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.GlobalVariable

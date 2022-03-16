@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.Mud_Tank_Volumes.depth_hole_(meas)
+NodeClass: Variable
+BrowseName: 1:depth_hole_(meas)
+DisplayName: en|depth_hole_(meas)
+Description: en|depth_hole_(meas)
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

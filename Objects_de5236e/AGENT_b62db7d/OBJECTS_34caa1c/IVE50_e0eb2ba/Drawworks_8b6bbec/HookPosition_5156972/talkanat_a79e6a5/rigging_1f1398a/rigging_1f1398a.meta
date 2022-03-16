@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Drawworks.HookPosition.talkanat.rigging
+NodeClass: Variable
+BrowseName: 1:rigging
+DisplayName: en|rigging
+Description: en|rigging
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

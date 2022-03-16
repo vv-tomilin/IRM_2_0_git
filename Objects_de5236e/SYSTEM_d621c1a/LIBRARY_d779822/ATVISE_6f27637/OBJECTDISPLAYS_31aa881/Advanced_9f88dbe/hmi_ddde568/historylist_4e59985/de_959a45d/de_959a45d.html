@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta content="text/html; charset=windows-1252" http-equiv="content-type">
+	<title>Historische Liste - Hilfe DE</title>
+	<style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Beschreibung</h1>
+<p>
+	Bei der historischen Liste handelt es sich um ein erweitertes Steuerelement, welches auf der Basis einer an den Server gerichteten Abfrage historische Daten angezeigt.
+	Vier Arten von Daten werden angezeigt: Alarme, Wert&auml;nderungen, Aggregate und (OPC-UA) Events.<br><br>
+	<b>Bitte beachten:</b> F&uuml;r die Archivierung von Alarmen und Events muss eine Archivgruppe "Event" und
+	f&uuml;r die Archivierung von Aggregaten eine Archivgruppe "Aggregate" zu den historischen Archiven hinzugef&uuml;gt werden.
+</p>
+
+<h1>Filter</h1>
+<p>
+	Im oberen Bereich der historischen Liste befindet sich eine Gruppe von Filterelementen.
+	Mit der Schaltfl&auml;che &quot;Erweiterte Filter&quot; k&ouml;nnen zus&auml;tzliche Filter angezeigt werden.
+	Hier kann eine Kombination von Filtern festlegt und durch klicken auf die Schaltfl&auml;che &quot;Filter anwenden&quot; auf die Liste angewendet werden.
+	Mit der Schaltfl&auml;che &quot;Zur&uuml;cksetzen&quot; k&ouml;nnen Sie wieder alle Filter auf die standardm&auml;&szlig;igen Parameter setzen.
+</p>
+<ul>
+	<li><b>Von</b>: Startzeit f&uuml;r die Abfrage.<br>Standard: 1 Minute in die Vergangenheit bzw. die <span class="parameter">Startzeit</span> in Sekunden des vordefinierten Parameters.</li>
+	<li><b>Bis</b>: Das Enddatum f&uuml;r die Abfrage (Standard: jetzt).</li>
+	<li><span class="parameter">Typ</span>: Filterung nach Typ: Alarme, Aggregate, Events und Werte</li>
+</ul>
+<p>
+	<b>Anmerkung:</b> Alternativ zur Auswahl des Zeitraumes &uuml;ber &quot;Von-Bis&quot;, kann auch auf die Abfrage von einem Start- oder Endzeitpunkt umgeschaltet werden.
+</p>
+<p>
+	F&uuml;r Alarme, Events und Werte gelten zus&auml;tlich die folgenden Parameter:
+</p>
+<ul>
+	<li><span class="parameter">Adresse</span>: Filterung nach dem Datenpunkt (Adresse) des Eintrags in der historischen Liste.</li>
+	<li><span class="parameter">Wert</span>: Filterung nach dem Wert in der historischen Liste.</li>
+	<li><span class="parameter">Archiv</span>: Filterung nach Archiv.</li>
+	<li><span class="parameter">Kommentar</span>: Filterung nach Kommentar.</li>
+	<li><span class="parameter">Benutzername</span>: Nach definiertem Benutzernamen filtern.</li>
+	<li><span class="parameter">Ereignistext</span>: Filterung nach der Alarmmeldung und Ereignistexten in der historischen Liste.</li>
+	<li><span class="parameter">Min. Priorit&auml;t</span>: &quot;Gr&ouml;&szlig;er gleich&quot;-Filterung nach Schweregrad (definiert in der Alarmkategorie bzw. den Events).</li>
+	<li><span class="parameter">Gruppe</span>: Filterung nach zugewiesener Gruppe.</li>
+	<li><span class="parameter">Liveansicht</span>: Aktiviert die Liveanzeige.</li>
+</ul>
+<p>
+	Ist die Checkbox &quot;Live&quot; aktiviert, werden aktuelle Wert&auml;nderungen in der Liste angezeigt, sobald sie auftreten. Hier kann nur nach Typ gefiltert werden.
+</p>
+<p>
+	F&uuml;r Aggregate gelten die folgenden Parameter
+</p>
+<ul>
+	<li><span class="parameter">Adresse</span>: Filterung nach dem Datenpunkt (Adresse) des Eintrags in der historischen Liste.</li>
+	<li><span class="parameter">Wert</span>: Filterung nach dem Wert in der historischen Liste.</li>
+	<li><span class="parameter">Archiv</span>: Filterung nach Archiv.</li>
+	<li><span class="parameter">Aggregat</span>: Filterung nach definiertem Aggregat.</li>
+</ul>
+<p>
+	<b>Bitte beachten:</b> Die Schaltfl&auml;che &quot;Filter anwenden&quot; verwendet f&uuml;r die Server-Abfrage die vorgenommenen Filtereinstellungen.
+	Bei einem langen Filterzeitraum (z.&nbsp;B. Daten aus einer Woche) werden m&ouml;glicherweise sehr gro&szlig;e Datenmengen abgerufen, was einige Zeit in Anspruch nehmen kann.
+</p>
+<p>
+	Wird &uuml;ber die Combobox eine Aggregatvorlage abgefragt (nur bei kompatiblen Servern, z.B. atvise Scada), werden f&uuml;r die Serveranfrage die Vorlagenparameter verwendet (Typ, Einheit und Intervall).
+	Das kann dazu f&uuml;hren, dass ebenfalls Ergebnisse von anderen Aggregatvrolagen mit den gleichen Parametern zur&uuml;ckgeliefert und anzeigt werden.
+</p>
+
+<h1>Priorit&auml;t</h1>
+<p>
+	Die in der globalen Liste definierte (Spalten-)Priorit&auml;t wird zur Anzeige von unterschiedlichen Spalten auf verschiedenen Endger&auml;ten genutzt.
+	Spalten mit der Priorit&auml;t 1 werden auf jedem Ger&auml;t angezeigt, Spalten ab der Priorit&auml;t 2 werden auf kleinen Displays (Smartphones), Spalten ab der Priorit&auml;t 3 auf mittleren Displays (Tablets) ausgeblendet.
+</p>
+
+<h1>Parameter</h1>
+<ul>
+	<li><span class="parameter">Tabellen-ID</span>: Eindeutige Bezeichnung der Tabelle (Standard: "history_table")</li>
+	<li><span class="parameter">Tabellenkopf H&ouml;he</span>: H&ouml;he des Tabellenkopfes in px (Standard: 30)</li>
+	<li><span class="parameter">Tabellenzeile H&ouml;he</span>: H&ouml;he der Tabellenzeile in px (Standard: 20)</li>
+</ul>
+Spalten:</br>
+<ul>
+	<li><span class="parameter">Konfiguration</span>: Die Spalten werden mit Hilfe einer globalen Liste konfiguriert. In dieser globalen Liste werden Spaltenname, Sichtbarkeit, Breite, Darstellung, etc. definiert. Ein Standardvorlage ist in atvise inkludiert. (Standard: atvObjectDisplays.Historylist.Columns)</li>
+</ul>
+Schrift:</br>
+<ul>
+	<li><span class="parameter">Schriftart</span>: Schriftart, welche f&uuml;r in der gesamten Tabelle verwendet wird (Standard: Arial)</li>
+	<li><span class="parameter">Schriftfarbe</span>: Schriftfarbe, welche in der gesamten Tabelle angewendet wird (Standard: Globaler Parameter <i>atvFontColor</i>)</li>
+	<li><span class="parameter">Tabellenkopf Schriftgr&ouml;&szlig;e</span>: Schriftgr&ouml;&szlig;e f&uuml;r den Tabellenkopf (Standard: 12)</li>
+	<li><span class="parameter">Tabellenzeile Schriftgr&ouml;&szlig;e</span>: Schriftgr&ouml;&szlig;e f&uuml;r die Tabellenzeile (Standard: 12)</li>
+	<li><span class="parameter">Detailbereich Schriftgr&ouml;&szlig;e</span>: Schriftgr&ouml;&szlig;e f&uuml;r den aufklappbaren Detailbereich (Standard: 12)</li>
+	<li><span class="parameter">Tabellenfu&szlig; Schriftgr&ouml;&szlig;e</span>: Schriftgr&ouml;&szlig;e f&uuml;r den Tabellenfu&szlig; (Standard: 12)</li>
+</ul>
+Darstellung:</br>
+<ul>
+	<li><span class="parameter">F&uuml;llfarbe</span>: F&uuml;llfarbe der oberen Hintergrundfl&auml;che (Standard: Globaler Parameter <i>atvFillColor</i>).</li>
+	<li><span class="parameter">Rahmenfarbe</span>: Farbe derTabellenrahmen (Standard: Globaler Parameter <i>atvBorderColor</i>).</li>
+	<li><span class="parameter">Symbolfarbe</span>: Farbe von Symbolen (Standard: Globaler Parameter <i>atvSymbolColor</i>).</li>
+	<li><span class="parameter">Tabellenfarben</span>: Globale liste mit der Farbkonfiguration (Standard: Globlae Liste <i>atvObjectDisplays.Tables.ColorConfig</i>).</li>
+	<li><span class="parameter">Benutzerdefiniertes Theme</span>: Name des benutzerdefinierten Themes (Standard: atviseTheme)</li>
+	<li><span class="parameter">Statushinweis</span>: Spezifiziert die Darstellung des Status &uuml;ber eine definierte globale Liste (Standard: Globaler Parameter <i>atvStatusIndication</i>)</li>
+	<li><span class="parameter">Symbol Zur&uuml;ckstellen</span>: Symbol f&uuml;r zur&uuml;ckgestellte Alarme.</li>
+	<li><span class="parameter">Symbol f&uuml; Nicht zur&uuml;ckgestellt</span>: Symbol f&uuml;r nicht zur&uuml;ckgestellte Alarme.</li>
+	<li><span class="parameter">Symbol Einmal Zur&uuml;ckstellen</span>: Symbol f&uuml;r einmalig zur&uuml;ckstellte Alarme.</li>
+	<li><span class="parameter">Symbol Befristet Zur&uuml;ckstellen</span>: Symbol f&uuml;r befristet zur&uuml;ckstellte Alarme.</li>
+	<li><span class="parameter">Symbol Unterdr&uuml;ckt</span>: Symbol f&uuml;r unterdr&uuml;ckte Alarme.</li>
+	<li><span class="parameter">Symbol f&uuml; Nicht unterdr&uuml;ckt</span>: Symbol f&uuml;r nicht unterdr&uuml;ckte Alarme.</li>
+	<li><span class="parameter">Symbol f&uuml;r Einschaltet</span>: Symbol f&uuml;r eingeschaltete Alarme.</li>
+	<li><span class="parameter">Symbol f&uuml;r Ausnschaltet</span>: Symbol f&uuml;r ausgeschaltete Alarme.</li>
+	<li><span class="parameter">Symbol Best&auml;tigt</span>: Symbol f&uuml;r best&auml;tigte Alarme.</li>
+	<li><span class="parameter">Symbol Nicht best&auml;tigt</span>: Symbol f&uuml;r nicht best&auml;tigte Alarme.</li>
+</ul>
+Optionen:</br>
+<ul>
+	<li><span class="parameter">Datenmodus</span>: Datenmodus f&uuml;r die Standardfilterung (Standard: continue)</li>
+	<li><span class="parameter">Daten je Abfrage</span>: Anzahl der Datens&auml;tze je Abfrage/Fortsetzungspunkt (Standard: 10000)</li>
+	<li><span class="parameter">Datenlimitierung</span>: Anzahl der maximal verarbeiteten Datens&auml;tze (Standard: 250000)</li>
+	<li><span class="parameter">Detailmodus</span>: Alarme, Werte oder beides anzeigen (Standard: all)</li>
+	<li><span class="parameter">Paging</span>: Aktivieren der Schaltfl&auml;chen f&uuml;r das Bl&auml;ttern (Standard: true)</li>
+	<li><span class="parameter">Filterleiste sichtbar</span>: Einblenden der Filterleiste (Standard: true)</li>
+	<li><span class="parameter">Filter mit regul&auml;re Ausdr&uuml;cke</span>: Regul&auml;re Ausdr&uuml;cke f&uuml;r das Filtern verwenden (Standard: false)</li>
+	<li><span class="parameter">Filter mit Platzhalter</span>: Aktivierung des Platzhalters &quot;*&quot; in der Suchfunktion (Standard: false)</li>
+	<li><span class="parameter">Filter Gro&szlig;-/Kleinschreibung</span>: Gro&szlig;- und Kleinschreibung beim Filtern beachten (Standard: false)</li>
+	<li><span class="parameter">Filter Mindesteingabe</span>: Minimale Anzahl an Zeichen bevor gefiltert wird (Standard: 1)</li>
+	<li><span class="parameter">Filter Verz&ouml;gerung [ms]</span>: Zeit bis die Filterung nach Eingabe gestartet wird (Standard: 1000)</li>
+	<li><span class="parameter">Zeilenumbruch in Zelle</span>: Zu langer Text wird innerhalb der Zeile umgebrochen, bei zu wenig Platz mit "..." als Endung abgeschnitten (Standard: false)</li>
+	<li><span class="parameter">Spalten verschiebbar</span>: Das &Auml;ndern der Spaltenreihenfolge wird erm&ouml;glicht (Standard: true)</li>
+	<li><span class="parameter">Mehrfachselektion bei Klick</span>: Die Mehrfachselektion ist bei Klick auf die gesamte Zeile m&ouml;glich (Standard: true)</li>
+</ul>
+Men&uuml;optionen:</br>
+<ul>
+	<li><span class="parameter">Men&uuml; anzeigen</span>: Das Men&uuml; wird angezeigt (Standard: true)</li>
+	<li><span class="parameter">Titel benutzerdefiniertes Men&uuml;</span>: Der Titel des benutzerdefinierten Men&uuml;s (Standard: "T{Export CSV}")</li>
+	<li><span class="parameter">Spaltenauswahl im Men&uuml;</span>: Das Ein- und Ausblenden von Spalten wird im Men&uuml; erm&ouml;glicht (Standard: true)</li>
+	<li><span class="parameter">Pickermmen&uuml; Titel</span>: Der Titel des Pickermen&uuml;s (Standard: "T{Columns}")</li>
+	<li><span class="parameter">Men&uuml;h&ouml;he</span>: Die H&ouml;he des Men&uuml;s.</li>
+	<li><span class="parameter">Men&uuml;breite</span>: Die Breite des Men&uuml;s.</li>
+</ul>
+Standardfilter:</br>
+<p>
+	Hier ist es m&ouml;glich, Standardwerte f&uuml;r die Filterfelder zu definieren, die die Filterung beim Starten der historischen Liste festlegen.
+</p>
+<ul>
+	<li><span class="parameter">Starzeit</span>: Wert in Sekunden von der aktuellen Zeit zur&uuml;ck (Standard: 60)</li>
+	<li><span class="parameter">Min. Priorit&auml;t</span></li>
+	<li><span class="parameter">Quelle (Adresse)</span></li>
+	<li><span class="parameter">Benutzer</span></li>
+	<li><span class="parameter">Ereignistext</span></li>
+	<li><span class="parameter">Wert</span></li>
+	<li><span class="parameter">Archiv</span></li>
+	<li><span class="parameter">Typ</span></li>
+	<li><span class="parameter">Liveansicht</span> (Standard: false)</li>
+	<li><span class="parameter">Aggregat</span> (Standard: Average)</li>
+	<li><span class="parameter">Aggregat Intervall</span> (Standard: 1)</li>
+	<li><span class="parameter">Aggregat Einheit</span> (Standard: m)</li>
+	<li><span class="parameter">Kommentar</span></li>
+	<li><span class="parameter">Gruppe</span></li>
+	<li><span class="parameter">Modus d. Bereichsauswahl</span> (Standard: 0)</li>
+</ul>
+</body>
+</html>

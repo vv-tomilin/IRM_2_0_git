@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.SECURITY.RIGHTS.USER.NNB
+NodeClass: Object
+BrowseName: 1:NNB
+DisplayName: en|NNB
+Description: en|NNB
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

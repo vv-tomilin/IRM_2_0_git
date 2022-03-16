@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.progress_bar
+NodeClass: Variable
+BrowseName: 1:progress_bar
+DisplayName: en|progress_bar
+Description: en|progress_bar
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

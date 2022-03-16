@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AKB.FinT
+NodeClass: Variable
+BrowseName: 1:FinT
+DisplayName: en|FinT
+Description: en|FinT
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

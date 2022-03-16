@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.Properties.NKPRMax.CalcAverage
+NodeClass: Variable
+BrowseName: 1:CalcAverage
+DisplayName: en|CalcAverage
+Description: en|CalcAverage
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

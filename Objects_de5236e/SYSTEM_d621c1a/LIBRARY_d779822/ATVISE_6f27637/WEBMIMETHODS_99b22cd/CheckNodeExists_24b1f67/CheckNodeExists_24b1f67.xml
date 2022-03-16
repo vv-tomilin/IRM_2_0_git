@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="request" type="http.request" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var address = request.postvalues.address;
+var node = new UaNode(address);
+
+if (node.exists()) return true;
+return false;]]></code>
+</script>

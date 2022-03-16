@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AutoInformer.Modes.Torque
+NodeClass: Variable
+BrowseName: 1:Torque
+DisplayName: en|Torque
+Description: en|Torque
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

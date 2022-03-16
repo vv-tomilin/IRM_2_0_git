@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.APD1.Diff_Pressure.PID
+NodeClass: Object
+BrowseName: 1:PID
+DisplayName: en|PID
+Description: en|PID
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

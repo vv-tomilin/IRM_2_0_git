@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" width="20" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" height="20" xmlns="http://www.w3.org/2000/svg">
+ <defs/>
+ <metadata>
+  <atv:gridconfig width="20" enabled="true" gridstyle="lines" height="20"/>
+  <atv:snapconfig width="1" enabled="true" height="1"/>
+ </metadata>
+ <polygon stroke-width="0" fill="#cfcfcf" atv:refpx="15" points="5,20 15,10 5,0 5,10" atv:refpy="10" id="id_5" stroke="#0000ff"/>
+</svg>

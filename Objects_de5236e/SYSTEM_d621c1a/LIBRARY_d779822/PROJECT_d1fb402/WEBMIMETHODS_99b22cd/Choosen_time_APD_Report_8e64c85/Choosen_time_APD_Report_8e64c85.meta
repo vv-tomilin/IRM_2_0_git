@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.WEBMIMETHODS.Choosen_time_APD_Report
+NodeClass: Variable
+BrowseName: 1:Choosen_time_APD_Report
+DisplayName: en|Choosen_time_APD_Report
+Description: en|Choosen_time_APD_Report
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

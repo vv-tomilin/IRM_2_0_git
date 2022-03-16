@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.PumpBlock2.Discrete
+NodeClass: Object
+BrowseName: 1:Discrete
+DisplayName: en|Discrete
+Description: en|Discrete
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

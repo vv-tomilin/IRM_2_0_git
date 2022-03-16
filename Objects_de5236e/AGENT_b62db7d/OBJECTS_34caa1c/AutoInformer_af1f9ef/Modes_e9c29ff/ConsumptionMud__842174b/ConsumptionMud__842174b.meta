@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AutoInformer.Modes.ConsumptionMud 
+NodeClass: Variable
+BrowseName: 1:ConsumptionMud 
+DisplayName: en|ConsumptionMud 
+Description: en|ConsumptionMud 
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

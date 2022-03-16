@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/indicators/volume-by-price.js.map
+NodeClass: Variable
+BrowseName: 1:volume-by-price.js.map
+DisplayName: en|volume-by-price.js.map
+Description: en|volume-by-price.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

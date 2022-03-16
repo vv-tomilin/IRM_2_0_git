@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="timer" type="timer" trigger="false" relative="false" value="" starttime="00:00:00" repeat="00:00:05"/>
+  <code><![CDATA[var consolelog=false;
+consolelog?console.log("--------------------------------------------------------"):'';
+
+
+consolelog?console.log("Долото = ",call('Auto.getToolPos')):'';
+consolelog?console.log("Забой  = ",call('Auto.getWellDepth')):'';
+
+var WeightOnHookMQ = call('Auto.getWeightOnHookMQ');
+
+var isWeightOnHook = false;
+if(WeightOnHookMQ.avrVal > call('GetVarValue',{varname: 'AGENT.OBJECTS.Support.Auto.WeightOnHookMin'})){
+	isWeightOnHook = true;
+}
+
+//var isWeightOnHook = call('Auto.isWeightOnHook');
+
+if(isWeightOnHook)
+	consolelog?console.log('Вес на крюке есть'):'';
+else
+	consolelog?console.log('Нет веса на крюке'):'';
+
+var isCirc = call('Auto.isCirc');
+if(isCirc){
+	consolelog?console.log("Циркуляция есть"):'';
+} else {
+	consolelog?console.log("Циркуляции нет"):'';
+}	
+var isRotation = call('Auto.isRotation');
+if(isRotation){
+	consolelog?console.log('Вращение'):'';
+} else {
+	consolelog?console.log('Вращения нет'):'';
+}
+
+var hookDir = call('Auto.getDirection');
+switch(hookDir){
+	case 0:  
+		consolelog?console.log('Крюкоблок стоит'):'';
+		break;
+	case 1:
+		consolelog?console.log("Крюкоблок движется вверх медленно"):'';
+		break;
+	case -1:
+		consolelog?console.log("Крюкоблок движется вниз медленно"):'';
+		break;
+	case 2:
+		consolelog?console.log("Крюкоблок движется вверх быстро"):'';
+		break;
+	case -2:
+		consolelog?console.log("Крюкоблок движется вниз быстро"):'';
+		break;	
+}
+
+var isDeepening = call('Auto.getDeepening');
+if(isDeepening){
+	consolelog?console.log('Углубление есть'):'';
+} else {
+	consolelog?console.log('Углубления нет'):'';
+}
+
+var isPressureRise = call('Auto.isPressureRise');
+if(isPressureRise)
+	consolelog?console.log('Перепад'):'';
+//call('Auto.SetOperation',{oper:'БУРЕНИЕ',suboper:'слайдом', operclr:'#006633', suboperclr:'#33CC66'});
+//console.log('Auto.GetOperationObj.value = ',call('Auto.GetOperationObj').value);
+var CurOperationObj = JSON.parse(call('Auto.GetOperationObj').value);
+
+consolelog?console.log('........................................................'):'';
+
+if(!isCirc && !isWeightOnHook){
+	var nodeTimeOnWedges = new UaNode("AGENT.OBJECTS.Support.Auto.TimeOnWedges");
+	var operObj = call('Auto.GetOperationObj');
+	var operObjJson = JSON.parse(operObj.value);
+//	console.log('oper.value = ', oper.value);	
+//	if(!(oper.value.indexOf('На клиньях') + 1)) {
+	if(!(operObjJson.oper =='На клиньях')) {
+		var curDate = new Date();
+//		nodeTimeOnWedges.assign({value: oper.sourcetime});
+		nodeTimeOnWedges.assign({value: curDate});
+		//call('Auto.setTimeOnWedges', {timeonwedges: oper.sourcetime});		
+		call('SetVarValue', {varname:'AGENT.OBJECTS.Support.Auto.wasPipeKeyRun', varvalue: false}); 
+		call('SetVarValue', {varname:'AGENT.OBJECTS.Support.Auto.wasTdsRun', varvalue: false});
+	}
+
+	var isTdsRun = call('Auto.isTdsRun');
+	var isPipeKeyRun = call('Auto.isPipeKeyRun');
+	if(hookDir == 2){
+		call('Auto.SetOperation',{oper:'На клиньях', suboper:'крюкоблок идет вверх', operclr:'#663300', suboperclr:'#BD6E20'});
+	} else if(isPipeKeyRun){
+		call('Auto.SetOperation',{oper:'На клиньях', suboper:'работа трубного ключа', operclr:'#663300', suboperclr:'#7A4E21'});
+		call('SetVarValue', {varname:'AGENT.OBJECTS.Support.Auto.wasPipeKeyRun', varvalue: true});
+	} else if(isTdsRun){
+		call('Auto.SetOperation',{oper:'На клиньях', suboper:'работа ВСП', operclr:'#663300', suboperclr:'#996E43'});
+		call('SetVarValue', {varname:'AGENT.OBJECTS.Support.Auto.wasTdsRun', varvalue: true});
+	} else {
+		call('Auto.SetOperation',{oper:'На клиньях', operclr:'#663300', suboperclr:'#663300'});
+	}
+	
+	if(call('GetVarValue',{varname: 'AGENT.OBJECTS.Support.Auto.wasPipeKeyRun'})  && call('GetVarValue',{varname: 'AGENT.OBJECTS.Support.Auto.wasTdsRun'})){
+		call('Auto.SetOperation',{oper: 'На клиньях', suboper:'НАРАЩИВАНИЕ', opertime: nodeTimeOnWedges.value, operclr:'#000066', suboperclr:'#000066'});
+		call('SetVarValue', {varname:'AGENT.OBJECTS.Support.Auto.wasPipeKeyRun', varvalue: false}); 
+		call('SetVarValue', {varname:'AGENT.OBJECTS.Support.Auto.wasTdsRun', varvalue: false});
+	}
+	return;
+}
+
+if(isWeightOnHook && isCirc && isRotation && isDeepening && hookDir == -1 && isPressureRise){
+	call('Auto.SetOperation',{oper:'БУРЕНИЕ',suboper:'ротором', operclr:'#006633', suboperclr:'#009933'});
+	return;
+}
+if(isWeightOnHook && isCirc && !isRotation && isDeepening && hookDir == -1 && isPressureRise){
+	call('Auto.SetOperation',{oper:'БУРЕНИЕ',suboper:'слайдом', operclr:'#006633', suboperclr:'#33CC66'});
+	return;
+}
+if(isWeightOnHook && isCirc && isDeepening && hookDir == 0 && call('Auto.getHookPos') <= 0){
+	call('Auto.SetOperation',{oper: 'ПРОМЫВКА', suboper:'на забое', operclr:'#1583DC', suboperclr:'#026AD1'});
+	return;
+}
+//if(isWeightOnHook && isCirc && isDeepening && (hookDir == 0 || hookDir == -1) &&(CurOperation == 'ПВ;БУРЕНИЕ;БУРЕНИЕ;ротором' || CurOperation == 'ПВ;БУРЕНИЕ;БУРЕНИЕ;слайдом')){
+if(isWeightOnHook && isCirc && isDeepening && (hookDir == 0 || hookDir == -1) && CurOperationObj.oper == 'БУРЕНИЕ'){
+	call('Auto.SetOperation',CurOperationObj);
+	return;
+}
+if(isWeightOnHook && isCirc && isDeepening && CurOperationObj.oper == 'ПРОМЫВКА' && CurOperationObj.suboper == 'На забое'){
+	if(isRotation)
+		call('Auto.SetOperation',{oper:'БУРЕНИЕ',suboper:'ротором', operclr:'#006633', suboperclr:'#009933'});
+	else
+		call('Auto.SetOperation',{oper:'БУРЕНИЕ',suboper:'слайдом', operclr:'#006633', suboperclr:'#33CC66'});	
+	return;
+}
+//if(isWeightOnHook && isCirc && isRotation && !isDeepening && (hookDir == 2 || hookDir == -2)){
+if(isWeightOnHook && isCirc && isRotation && !isDeepening && (hookDir > 0 || hookDir < 0)){
+	if(hookDir > 0)	
+		call('Auto.SetOperation',{oper:'ПРОРАБОТКА',suboper:'при подъеме', operclr:'#666633', suboperclr:'#999933'});
+	else {
+		if(call('Auto.getToolPos') == call('Auto.getWellDepth') && CurOperationObj.oper == 'БУРЕНИЕ'){
+			var curDeepening = call('Auto.getDeepening',{timeToAnaliseSec: 120});
+			if(curDeepening){
+				call('Auto.SetOperation',CurOperationObj);
+			} else {
+				call('Auto.SetOperation',{oper:'ПРОРАБОТКА',suboper:'при спуске', operclr:'#666633', suboperclr:'#СССС33'});
+			}
+		} else {
+			call('Auto.SetOperation',{oper:'ПРОРАБОТКА',suboper:'при спуске', operclr:'#666633', suboperclr:'#СССС33'});
+		}
+	}
+	return;
+}
+if(isWeightOnHook && isCirc && !isDeepening && hookDir == 0){	
+	if(call('Auto.getToolPos') == call('Auto.getWellDepth') && CurOperationObj.oper == 'БУРЕНИЕ'){
+		var curDeepening = call('Auto.getDeepening',{timeToAnaliseSec: 120});
+		if(curDeepening){
+			call('Auto.SetOperation',CurOperationObj);
+		} else {
+			call('Auto.SetOperation',{oper:'ПРОМЫВКА', operclr:'#1583DC', suboperclr:'#1583DC'});
+		}
+	} else {	
+		call('Auto.SetOperation',{oper:'ПРОМЫВКА', operclr:'#1583DC', suboperclr:'#1583DC'});
+	}
+	return;
+}
+//if(isWeightOnHook && isCirc && !isRotation && !isDeepening && (hookDir == 2 || hookDir == -2)){
+if(isWeightOnHook && isCirc && !isRotation && !isDeepening && (hookDir > 0 || hookDir < 0)){
+	if(hookDir == 2)	
+		call('Auto.SetOperation',{oper:'ШАБЛОНИРОВКА',suboper:'при подъеме', operclr:'#СС6633', suboperclr:'#FF9933'});
+	else 	
+		call('Auto.SetOperation',{oper:'ШАБЛОНИРОВКА',suboper:'при спуске', operclr:'#СС6633', suboperclr:'#FFCC00'});
+	return;
+}
+//if(isWeightOnHook && !isCirc && !isRotation && !isDeepening && (hookDir == 2 || hookDir == -2)){
+if(isWeightOnHook && !isCirc && !isRotation && !isDeepening && (hookDir > 0 || hookDir < 0)){
+	var toolDir = call('Auto.getToolDirection');
+
+	switch(toolDir){
+		case 0:  
+			consolelog?console.log('Инструмент стоит'):'';
+			break;
+		case 1:
+			consolelog?console.log("Инструмент движется вниз медленно"):'';
+			break;
+		case -1:
+			consolelog?console.log("Инструмент движется вверх медленно"):'';
+			break;
+		case 2:
+			consolelog?console.log("Инструмент движется вниз быстро"):'';
+			break;
+		case -2:
+			consolelog?console.log("Инструмент движется вверх быстро"):'';
+			break;	
+	}		
+	if(hookDir > 0){
+		if(toolDir < 0){
+			if(hookDir==2)
+				call('Auto.SetOperation',{oper:'СПО',suboper:'быстрый подъем',operclr:'#663333', suboperclr:'#700404'});
+			else	
+				call('Auto.SetOperation',{oper:'СПО',suboper:'медленный подъем',operclr:'#663333', suboperclr:'#302222'});
+		} else if(toolDir > 0){
+			call('Auto.SetOperation',{oper:'СПО',suboper:'ПАДЕНИЕ',operclr:'#663333', suboperclr:'#CCB3B3'});
+		} else if(toolDir==0){
+			if(hookDir == 1)
+				call('Auto.SetOperation',{oper:'СПО',suboper:'крюкоблок идет вверх медленно',operclr:'#663333', suboperclr:'#9E8E8E'});
+			else if(hookDir == 2)
+				call('Auto.SetOperation',{oper:'СПО',suboper:'крюкоблок идет вверх быстро',operclr:'#663333', suboperclr:'#9E8E8E'});
+		}
+		return; 
+	} else if(hookDir < 0){
+		if(toolDir > 0){
+			if(hookDir==-2)
+				call('Auto.SetOperation',{oper:'СПО',suboper:'быстрый спуск',operclr:'#663333', suboperclr:'#8F7171'});
+			else if(hookDir==-1)	
+				call('Auto.SetOperation',{oper:'СПО',suboper:'медленный спуск',operclr:'#663333', suboperclr:'#9C5959'});
+			return;	
+		} if(toolDir < 0){
+			call('Auto.SetOperation',{oper:'СПО',suboper:'ВЫБРОС',operclr:'#663333', suboperclr:'#D16B6B'});
+			return;
+		} else if(toolDir==0){
+			var diffWellTool = call('Auto.getDiffWellDepthAndToolPos');	
+			consolelog?console.log('diffWellTool = ',diffWellTool):'';
+			consolelog?console.log('WeightOnHookMQ.angle = ',WeightOnHookMQ.angle):'';
+			consolelog?console.log('WeightOnHookMQ.avrVal = ',WeightOnHookMQ.avrVal):'';
+			consolelog?console.log('WeightOnHookMQ.stopVal = ',WeightOnHookMQ.stopVal):'';
+			//console.log('diffVal = ',retObj.diffVal);
+			//console.log('tool speed = ',Math.floor(retObj.speedVal * 100) / 100, ' m/s ', Math.floor(retObj.speedVal*360000) / 100,' m/h');		
+			//if(diffWellTool < 1 && WeightOnHookMQ.angle < -30/* && WeightOnHookMQ.stopVal < call('GetVarValue',{varname: 'AGENT.OBJECTS.Support.Auto.WeightOnHookMin'})*/){
+			if((diffWellTool < 1 && WeightOnHookMQ.angle < -30) 
+				|| (diffWellTool < 1 && WeightOnHookMQ.stopVal < call('GetVarValue',{varname: 'AGENT.OBJECTS.Support.Auto.WeightOnHookMin'}))
+				|| (diffWellTool < 1 && call('Auto.getWeightOnHook') < 3)){
+				if(CurOperationObj.oper == 'На клиньях')
+					call('Auto.SetOperation',CurOperationObj);
+				else 
+					call('Auto.SetOperation',{oper:'Постановка',suboper:'на клинья',operclr:'#663333', suboperclr:'#FFC4C4'});	
+				return;
+			}
+			if(hookDir == -1)
+				call('Auto.SetOperation',{oper:'СПО',suboper:'крюкоблок идет вниз медленно',operclr:'#663333', suboperclr:'#CF8F8F'});
+			else 
+				call('Auto.SetOperation',{oper:'Крюкоблок', suboper:'идет вниз быстро',operclr:'#663333', suboperclr:'#CF8F8F'});
+			return;
+		}
+	} 
+	return;
+}
+if(isWeightOnHook && !isCirc && !isRotation && !isDeepening && (hookDir == -1 || hookDir == 0) && call('Auto.getHookPos') < 1){
+//	call('Auto.SetOperation',{oper:'Постановка на клинья',operclr:'#003333', suboperclr:'#003333'});
+	call('Auto.SetOperation',{oper:'Постановка',suboper:'на клинья',operclr:'#663333', suboperclr:'#FFC4C4'});
+	return;
+}
+if(isWeightOnHook && isCirc && !isDeepening && hookDir == -1){
+	var diffWellPos = call('Auto.getDiffWellDepthAndToolPos');
+//	var toolPos = call('Auto.getToolPos');
+//	var wellDepth = call('Auto.getWellDepth');
+//	console.log('Tool Posit ', toolPos);
+//	console.log('Well Depth ', wellDepth);	
+	if(diffWellPos < 10 && diffWellPos > 0){
+		call('Auto.SetOperation',{oper: 'ПРОМЫВКА',suboper:'Подведение к забою', operclr:'#1583DC', suboperclr:'#0251A1'});
+		return;
+	} else if(diffWellPos == 0){
+		call('Auto.SetOperation',{oper: 'ПРОМЫВКА',suboper:'на забое', operclr:'#1583DC', suboperclr:'#026AD1'});
+		return;
+	}
+}
+
+//if(isWeightOnHook && isCirc && isDeepening && hookDir == -1){
+//	call('Auto.SetOperation',{operstr: 'На забое. Промывка'});
+//	return;
+//}
+
+if(isWeightOnHook && isCirc && isDeepening && hookDir == -1){
+	if(isRotation)
+		call('Auto.SetOperation',{oper: 'БУРЕНИЕ', suboper:'ротором',operclr:'#006633', suboperclr:'#009933'});
+	else
+		call('Auto.SetOperation',{oper: 'БУРЕНИЕ', suboper:'слайдом', operclr:'#006633', suboperclr:'#33CC66'});	
+	return;
+}
+/*
+if(isWeightOnHook && isCirc && !isRotation && !isDeepening && (Math.abs(hookDir) == 1)){
+	if(hookDir == 1){
+		call('Auto.SetOperation',{operstr: 'ПРОМЫВКА при подъеме'});
+	} else if(hookDir == -1){
+		call('Auto.SetOperation',{operstr: 'ПРОМЫВКА при спуске'});
+	}
+	return;
+}
+*/
+call('Auto.SetOperation',{oper:'Неопределенный',operclr: '#999933', suboperclr:'#999933'});
+return;]]></code>
+</script>

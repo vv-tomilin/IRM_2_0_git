@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Description</h1>
+<p>This display can be used as a dialog to generate a color in hex format.</p>
+<p>The user can generate his color in different ways, by clicking on to the
+base colors on the top circle, by manually setting the RGB/HSV values or simply
+by entering a color in hex format. The current color will be displayed in the
+top inner circle. The default selected color can be set using the "color"
+parameter.</p>
+<p>To get the value of the color in the display that opened this dialog, it is
+necessary to connect the trigger "valuechanged_" plus the name parameter
+(e.g. "valuechanged_myColorPicker"). Usually this display will be used as a
+dialog, see "picker_color" display for further information.</p>
+<h1>Parameters</h1>
+<p>There are four parameters:</p>
+<ul>
+  <li><span class="parameter">name</span>: unique name to identify this display (mandatory)</li>
+  <li><span class="parameter">color</span>: initial displayed color</li>
+  <li><span class="parameter">font color</span>: color which will be applied to the labels (default: global parameter <i>atvFontColor</i>)</li>
+  <li><span class="parameter">border color</span>: color which will be applied to borders (default: global parameter <i>atvBorderColor</i>)</li>
+</ul>
+<h1>Examples</h1>
+<p>Create a display with a button that opens the display of this dialog with the name "myColorPicker" and connect the trigger "valuechanged_myColorPicker" for value changes.</p>
+</body>
+</html>

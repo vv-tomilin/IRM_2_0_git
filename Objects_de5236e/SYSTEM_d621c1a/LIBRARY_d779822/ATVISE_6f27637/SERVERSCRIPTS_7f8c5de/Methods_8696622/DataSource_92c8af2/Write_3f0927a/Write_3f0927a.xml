@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="datasource" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="address" type="stringarray" trigger="false" relative="false" value=""/>
+  <parameter name="value" type="objectarray" trigger="false" relative="false" value=""/>
+  <code><![CDATA[/*
+atvise server wrapper for UA method "AGENT.MIRROR.METHODS.write"
+This script is a standard atvise resource and must not be modified.
+For a description including an example see the atvise documentation.
+*/
+
+var methodCall = new UaNode("AGENT.MIRROR.METHODS.write");
+var callResult = methodCall.call({
+	object: "AGENT.MIRROR.METHODS",
+	input: [
+		{type: UaNode.STRING, value: datasource},
+		{type: UaNode.STRING, value: address},
+		{type: UaNode.BASEDATATYPE, value: value}
+	]
+});
+
+
+var result = {};
+
+if (callResult.error) {
+	result.error = callResult.error;
+	result.errorstring = methodCall.statusToString(result.error);
+	if (callResult.argumentError) {
+		var parameterNames = ["datasource", "address", "value"];
+		for (var i = 0; i < callResult.argumentError.length; ++i)
+			if (callResult.argumentError[i])
+				result.errorstring += ", " + parameterNames[i] + ":" + methodCall.statusToString(callResult.argumentError[i]);
+	}
+}
+else {
+	result.result = callResult.result[0];
+}
+
+return result;]]></code>
+</script>

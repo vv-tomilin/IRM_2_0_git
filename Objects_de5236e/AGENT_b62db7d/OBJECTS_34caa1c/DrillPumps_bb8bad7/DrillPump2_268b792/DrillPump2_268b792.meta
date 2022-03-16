@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.DrillPumps.DrillPump2
+NodeClass: Object
+BrowseName: 1:DrillPump2
+DisplayName: en|DrillPump2
+Description: en|DrillPump2
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

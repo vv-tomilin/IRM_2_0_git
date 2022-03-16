@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.RegionBoard.avgMSE
+NodeClass: Variable
+BrowseName: 1:avgMSE
+DisplayName: en|avgMSE
+Description: en|avgMSE
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

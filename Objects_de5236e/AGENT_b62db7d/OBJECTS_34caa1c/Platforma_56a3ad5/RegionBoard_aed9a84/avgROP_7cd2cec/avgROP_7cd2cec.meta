@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Platforma.RegionBoard.avgROP
+NodeClass: Variable
+BrowseName: 1:avgROP
+DisplayName: en|avgROP
+Description: en|avgROP
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

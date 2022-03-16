@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+	<title>historylist help EN</title>
+	<style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Description</h1>
+<p>
+	The history list is an advanced control that displays historical data based on a query to the server.
+	Four types of data are displayed: Alarms, Value changes, Aggregates and (OPC-UA-) Events.<br><br>
+	<b>Please note:</b> To historize alarms and events, an archive group "event" must be added to the historization archives.
+	For aggregates an archive group "aggregate" must be added to the historization archives.
+</p>
+
+<h1>Filter</h1>
+<p>
+	On top of the history list display you can find a set of filter elements.
+	By clicking the "Advanced filter" button more filter settings become available.
+	You can specify a combination of filters and apply them to the list by clicking the "Apply filter" button.
+	With the button "Reset filter" you can reset the history list to the default parameters again.<br>
+</p>
+<ul>
+	<li><b>From</b>: The start date for the query (default: 1 minute or <span class="parameter">starttime</span> in seconds of the parameter list).</li>
+	<li><b>To:</b> The end date for the query (default: now).</li>
+	<li><span class="parameter">Type</span>: Filter by type: Alarms, aggregates, events und values.</li>
+</ul>
+<p>
+	<b>Note:</b> Instead of filtering by a &quot;From-To&quot; time area, a optional filtering by a specific start or end time can be set.
+</p>
+
+<p>
+	For alarms, events and values the following filter parameters are available:
+</p>
+<ul>
+	<li><span class="parameter">Address</span>: Filter by the address of the node.</li>
+	<li><span class="parameter">Value</span>: Filter by the value of the historical data entry.</li>
+	<li><span class="parameter">Archive</span>: Filter by name of the archive.</li>
+	<li><span class="parameter">Comment</span>: Filter by comment.</li>
+	<li><span class="parameter">Username</span>: Filter by username.</li>
+	<li><span class="parameter">Eventtext</span>: Filter by alarm or event text.</li>
+	<li><span class="parameter">Min. priority</span>: "Greater equal" filter by priority.</li>
+	<li><span class="parameter">Group</span>: Filter by group.</li>
+	<li><span class="parameter">Live view</span>: Activate the live mode.</li>
+</ul>
+<p>
+	When activating the live checkbox the list immediately displays the changes that are happening at the moment. If activated, the history list can be filtered only by type.
+</p>
+<p>
+	For aggregates the following filter parameters are available:
+</p>
+<ul>
+	<li><span class="parameter">Adress</span>: Filter by the address of the node.</li>
+	<li><span class="parameter">Value</span>: Filter by the value of the historical data entry.</li>
+	<li><span class="parameter">Archive</span>: Filter by name of the archive.</li>
+	<li><span class="parameter">Aggregate</span>: Filter by aggregate.</li>
+</ul>
+<p>
+	<b>Please note:</b> The button "Apply filter" uses your filter settings to start the query to the server.
+	Please be aware that a long filter period (e.g. data of one week) can
+	result in a huge amount of data that will take some time to be loaded.
+</p>
+<p>
+	If the aggregate is filtered by the template combo box (only supported on compatible servers like atvise Scada), the client uses the template settings (type, unit, interval) for the server request.
+	Because of this the server response can include results of other aggregate templates with the same parameters.
+</p>
+
+<h1>Parameters</h1>
+<ul>
+	<p>
+		<ul>
+			<li><span class="parameter">table ID</span>: Unique table identifier.</li>
+			<li><span class="parameter">table header height</span>: Height of the table header in px.</li>
+			<li><span class="parameter">table row height</span>: Height of the table row in px.</li>
+		</ul>
+	</p>
+	<li><b>Columns</b>
+		<p>
+			<ul>
+				<li><span class="parameter">configuration</span>: The configuration of the columns is stored in a global list. In this global list column names, visibility, width, etc. are defined. A template is included in atvise.
+			</ul>
+		</p>
+	</li>
+	<li><b>Font</b></br>
+		<p>
+			<ul>
+				<li><span class="parameter">font family</span>: Font family applied to the table.</li>
+				<li><span class="parameter">font color</span>: Color which will be applied to labels and values (default: global parameter <i>atvFontColor</i>)</li>
+				<li><span class="parameter">table header font size</span>: Font size applied to the table header.</li>
+				<li><span class="parameter">table row font soze</span>: Font size applied to the table rows.</li>
+				<li><span class="parameter">table detail font size</span>: Font size applied to the detail area.</li>
+				<li><span class="parameter">table footer font size</span>: Font size applied to the table footer.</li>
+			</ul>
+		</p>
+	</li>
+	<li><b>Appearance</b>
+		<p><ul>
+			<li><span class="parameter">fill color</span>: Fill color of the top background area (default: global parameter<i>atvFillColor</i>).</li>
+			<li><span class="parameter">border color</span>: Color of borders (default: global parameter <i>atvBorderColor</i>).</li>
+			<li><span class="parameter">symbol color</span>: Color of symbols (default: global parameter <i>atvSymbolColor</i>).</li>
+			<li><span class="parameter">table colors</span>: Global color configuration (default: global list <i>atvObjectDisplays.Tables.ColorConfig</i>)</li>
+			<li><span class="parameter">custom theme</span>: Name of the cusom theme.</li>
+			<li><span class="parameter">status indication</span>: specify the status' display through a defined global list (default: global parameter <i>atvStatusIndication</i>)</li>
+			<li><span class="parameter">shelve symbol</span>: Symbol for shelved alarms.</li>
+			<li><span class="parameter">unshelved symbol</span>: Symbol for unshelved alarms.</li>
+			<li><span class="parameter">one shot shelved symbol</span>: Symbol for one shot shelved alarms.</li>
+			<li><span class="parameter">timed shelved symbol</span>: Symbol for timed shelved alarms.</li>
+			<li><span class="parameter">suppressed symbol</span>: Symbol for suppressed alarms.</li>
+			<li><span class="parameter">unsupressed symbol</span>: Symbol for unsuppressed alarms.</li>
+			<li><span class="parameter">enabled symbol</span>: Symbol for enabled alarms.</li>
+			<li><span class="parameter">disabled symbol</span>: Symbol for disabled alarms.</li>
+			<li><span class="parameter">confirmed symbol</span>: Symbol for confirmed alarms.</li>
+			<li><span class="parameter">unconfirmed symbol</span>: Symbol for unconfirmed alarms.</li>
+		</ul></p>
+	</li>
+	<li><b>Options</b>
+		<p>
+			<ul>
+				<li><span class="parameter">data mode</span>: Data mode for the standard filtering.</li>
+				<li><span class="parameter">data per request</span>: Number of data sets per request/continuation point.</li>
+			    <li><span class="parameter">data limitation</span>: Number of maximum processed data sets.</li>
+				<li><span class="parameter">paging</span>: Activated paging buttons.</li>
+				<li><span class="parameter">filter bar enabled</span>: Show filter bar.</li>
+				<li><span class="parameter">filter regular expressions</span>: Regular expressions can be used for the filter.</li>
+				<li><span class="parameter">filter use placeholder</span>: Activation of the &quot;*&quot; placeholder in the search function</li>
+				<li><span class="parameter">filter case sensitive</span>: Filter works case sensitive.</li>
+				<li><span class="parameter">filter minimum lenght</span>: Minimal number of signs for the filter to work.</li>
+				<li><span class="parameter">filter delay [ms]</span>: Delay till filtering starts after entering a sign.</li>
+				<li><span class="parameter">cell linebreak</span>: Too long text will be broken to new lines. If there is no more space the text will be cut ending with "...".</li>
+				<li><span class="parameter">columns reorderable</span>: Columns can be reordered</li>
+				<li><span class="parameter">multiselect on cell click</span>: Click for multiselection works on the whole row.</li>
+			</ul>
+		</p>
+	</li>
+	<li><b>Menu options</b></br>
+		<p>
+			<ul>
+				<li><span class="parameter">show menu</span>: Display the menu.</li>
+				<li><span class="parameter">custom menu title</span>: Title of the custom menu.</li>
+				<li><span class="parameter">show picker menu</span>: Display the picker menu.</li>
+				<li><span class="parameter">picker menu title</span>: Title of the picker menu.</li>
+				<li><span class="parameter">menu height</span>: Height of the menu.</li>
+				<li><span class="parameter">menu width</span>: Width of the menu.</li>
+			</ul>
+		</p>
+	</li>
+	<li><b>Default filter</b></br>
+		<p>
+			Default filter values defining the start up filter for the history list.
+		</p>
+		<p>
+			<ul>
+				<li><span class="parameter">start time (Value in seconds to go back from the current time)</span></li>
+				<li><span class="parameter">min. priority</span></li>
+				<li><span class="parameter">source (address)</span></li>
+				<li><span class="parameter">user</span></li>
+				<li><span class="parameter">eventtext</span></li>
+				<li><span class="parameter">value</span></li>
+				<li><span class="parameter">archive</span></li>
+				<li><span class="parameter">type</span></li>
+				<li><span class="parameter">live view</span></li>
+				<li><span class="parameter">aggregate</span></li>
+				<li><span class="parameter">aggregate interval</span></li>
+				<li><span class="parameter">aggregate unit</span></li>
+				<li><span class="parameter">comment</span></li>
+				<li><span class="parameter">group</span></li>
+				<li><span class="parameter">range filter mode</span></li>
+			</ul>
+		</p>
+	</li>
+</ul>
+</body>
+</html>

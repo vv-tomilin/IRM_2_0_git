@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.WeatherStationType
+NodeClass: ObjectType
+BrowseName: 1:WeatherStationType
+DisplayName: en|WeatherStationType
+Description: en|WeatherStationType
+IsAbstract: false

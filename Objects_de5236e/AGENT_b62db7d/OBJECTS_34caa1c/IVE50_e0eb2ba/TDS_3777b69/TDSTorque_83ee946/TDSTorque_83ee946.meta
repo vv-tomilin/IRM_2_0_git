@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.TDS.TDSTorque
+NodeClass: Variable
+BrowseName: 1:TDSTorque
+DisplayName: en|TDSTorque
+Description: en|TDSTorque
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

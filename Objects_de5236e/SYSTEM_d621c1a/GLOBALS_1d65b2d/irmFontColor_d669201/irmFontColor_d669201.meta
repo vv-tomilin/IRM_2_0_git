@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.GLOBALS.irmFontColor
+NodeClass: Variable
+BrowseName: 1:irmFontColor
+DisplayName: en|irmFontColor
+Description: en|irmFontColor
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.GlobalVariable

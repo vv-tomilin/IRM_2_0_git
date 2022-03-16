@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.left-gauge
+NodeClass: Variable
+BrowseName: 1:left-gauge
+DisplayName: en|left-gauge
+Description: en|left-gauge
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

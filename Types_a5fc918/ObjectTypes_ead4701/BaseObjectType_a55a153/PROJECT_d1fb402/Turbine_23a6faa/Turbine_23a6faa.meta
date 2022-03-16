@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Turbine
+NodeClass: ObjectType
+BrowseName: 1:Turbine
+DisplayName: en|Turbine
+Description: en|Turbine
+IsAbstract: false

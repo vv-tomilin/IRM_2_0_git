@@ -1,0 +1,8 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Буровой насос 3NB-1600HL.Гидравлическая часть
+NodeClass: Object
+BrowseName: 1:Гидравлическая часть
+DisplayName: en|Гидравлическая часть
+Description: en|Гидравлическая часть
+EventNotifier: 0
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition FolderType

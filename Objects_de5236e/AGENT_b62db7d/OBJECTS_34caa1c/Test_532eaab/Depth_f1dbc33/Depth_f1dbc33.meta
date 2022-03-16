@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.Depth
+NodeClass: Variable
+BrowseName: 1:Depth
+DisplayName: en|Depth
+Description: en|Depth
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

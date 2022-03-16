@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/lollipop.js.map
+NodeClass: Variable
+BrowseName: 1:lollipop.js.map
+DisplayName: en|lollipop.js.map
+Description: en|lollipop.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

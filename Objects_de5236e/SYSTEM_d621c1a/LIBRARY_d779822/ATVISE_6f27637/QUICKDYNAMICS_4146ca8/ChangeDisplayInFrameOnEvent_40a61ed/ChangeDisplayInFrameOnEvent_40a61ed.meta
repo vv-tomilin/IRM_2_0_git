@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.ChangeDisplayInFrameOnEvent
+NodeClass: Variable
+BrowseName: 1:ChangeDisplayInFrameOnEvent
+DisplayName: en|ChangeDisplayInFrameOnEvent
+Description: en|ChangeDisplayInFrameOnEvent
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.QuickDynamic

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec
+NodeClass: Object
+BrowseName: 1:Evrotec
+DisplayName: en|Evrotec
+Description: en|Evrotec
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="1015" version="1.2" width="1850" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <line atv:refpx="1074.978" atv:refpy="79.806" id="id_7" stroke="#4b5e6c" stroke-width="2" x1="1172.065" x2="977.892" y1="80.138" y2="79.473"/>
+ <image atv:refpx="854.381" atv:refpy="503.621" height="613" id="id_0" transform="matrix(1.6531,0,0,1.4739,0,0)" width="325" x="354.345" xlink:href="../../BU3000/bu-3000_front.png" y="35.185"/>
+ <svg atv:refpx="670.965" atv:refpy="78.454" height="65" id="id_1" transform="matrix(1.5605,0,0,1.4514,0,0)" width="165" x="347.446" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.TestList3_long" y="21.55">
+  <atv:argument name="Name" value="AGENT.OBJECTS.Test.DrillingRig.VSP_name"/>
+  <atv:argument name="Value3" value="20-05-2021"/>
+  <atv:argument name="Value1" value="AGENT.OBJECTS.IVE50.TDS.TDSTorque"/>
+ </svg>
+ <line atv:refpx="1074.039" atv:refpy="203.814" id="id_4" stroke="#4b5e6c" stroke-width="2" x1="1161.511" x2="986.568" y1="204.146" y2="203.481"/>
+ <line atv:refpx="1259.59" atv:refpy="472.346" id="id_5" stroke="#4b5e6c" stroke-width="2" x1="1524.007" x2="995.172" y1="471.144" y2="473.548"/>
+ <svg atv:refpx="1301.07" atv:refpy="81.139" height="20" id="id_6" transform="matrix(1.5605,0,0,1.4514,0,0)" width="165" x="751.243" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.TestList0_long" y="45.896">
+  <atv:argument name="Name" value="Кронблок"/>
+ </svg>
+ <line atv:refpx="859.169" atv:refpy="88.264" id="id_9" stroke="#4c5e6c" stroke-width="2" x1="798.136" x2="920.203" y1="75.119" y2="101.41"/>
+ <foreignObject height="21.11" id="id_10" width="102.713" x="1677.377" y="551.433">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <button id="kanat_zero" style="background-color:rgb(75,94,108); border-style:none; color:white;width:100%;height:100%">сброс</button>
+  </div>
+ </foreignObject>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[document.getElementById('kanat_zero').addEventListener('click',function(e){
+	webMI.data.write('AGENT.OBJECTS.IVE50.Drawworks.HookPosition.talkanat',0)
+})]]></script>
+ <svg atv:refpx="1652.788" atv:refpy="488.155" height="65" id="id_13" transform="matrix(1.5576,0,0,1.4462,0,0)" width="165" x="978.628" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.TestList3_long_for_tall" y="305.054">
+  <atv:argument name="Name" value="AGENT.OBJECTS.Test.DrillingRig.DiametrRope"/>
+  <atv:argument name="Value1" value="AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook"/>
+  <atv:argument name="Value2" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition.talkanat"/>
+  <atv:argument name="Unit2" value="т/км"/>
+ </svg>
+ <svg atv:refpx="1288.091" atv:refpy="203.919" height="20" id="id_14" transform="matrix(1.5576,0,0,1.45,0,0)" width="165" x="744.485" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.CSGO.Rig_name" y="130.634"/>
+ <rect atv:refpx="277.697" atv:refpy="157.192" fill="#4b5e6c" height="259.834" id="id_2" stroke="#0000ff" stroke-width="0" width="461.176" x="47.109" y="27.274"/>
+ <text atv:refpx="94" atv:refpy="54.5" fill="#ffffff" font-family="Arial" font-size="14" id="id_3" x="64.5" y="59">Год вышки</text>
+ <text atv:refpx="106" atv:refpy="219.5" fill="#ffffff" font-family="Arial" font-size="14" id="id_8" x="64.5" y="224">Дата проверки</text>
+ <text atv:refpx="143.5" atv:refpy="262.5" fill="#ffffff" font-family="Arial" font-size="14" id="id_11" x="64.5" y="267">Дата проверки (следующая)</text>
+ <text atv:refpx="115.485" atv:refpy="95.5" fill="#ffffff" font-family="Arial" font-size="14" id="id_12" x="64.5" y="100">Высота вышки (м)</text>
+ <text atv:refpx="172.391" atv:refpy="133.5" fill="#ffffff" font-family="Arial" font-size="14" id="id_15" x="64.5" y="138">Максимальная грузоподъемность (кг)</text>
+ <text atv:refpx="130.141" atv:refpy="172.5" fill="#ffffff" font-family="Arial" font-size="14" id="id_16" x="64.5" y="177">Высота ротор-устье (м)</text>
+ <svg atv:refpx="262.636" atv:refpy="-37.537" height="30" id="id_18" transform="matrix(0.633,0,0,0.6667,0,0)" width="160" x="375.937" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="-71.299">
+  <atv:argument name="base" value="AGENT.OBJECTS.Rig.RigInfo.RigYear"/>
+  <atv:overwrite height="16.001" id="focus_frame" transform="matrix(1.5798,0,0,1.4999,0,0)" width="97.28"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.5798,0,0,1.4999,-92.7646,-7.4989)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.5798,0,0,1.4999,-92.7646,-7.4989)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.5798,0,0,1.4999,0,0)" x="66.78" y="15.25"/>
+  <atv:overwrite height="12.001" id="blinking_frame" transform="matrix(1.5798,0,0,1.4999,0,0)" width="69.28"/>
+  <atv:overwrite height="12.001" id="input_bg" transform="matrix(1.5798,0,0,1.4999,0,0)" width="69.28"/>
+  <atv:overwrite height="18.001" id="id_0" transform="matrix(1.5798,0,0,1.4999,0,0)" width="99.28"/>
+  <atv:overwrite height="20.001" id="id_2" transform="matrix(1.5798,0,0,1.4999,0,0)" width="101.28"/>
+ </svg>
+ <svg atv:refpx="58.313" atv:refpy="-170.042" height="30" id="id_21" transform="matrix(0.633,0,0,0.6667,0,0)" width="160" x="53.152" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="-121.542">
+  <atv:argument name="base" value="AGENT.OBJECTS.Rig.RigInfo.RigHeight"/>
+  <atv:overwrite height="16.001" id="focus_frame" transform="matrix(1.5798,0,0,1.4999,0,0)" width="97.28"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.5798,0,0,1.4999,-92.7646,-7.4989)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.5798,0,0,1.4999,-92.7646,-7.4989)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.5798,0,0,1.4999,0,0)" x="66.78" y="15.25"/>
+  <atv:overwrite height="12.001" id="blinking_frame" transform="matrix(1.5798,0,0,1.4999,0,0)" width="69.28"/>
+  <atv:overwrite height="12.001" id="input_bg" transform="matrix(1.5798,0,0,1.4999,0,0)" width="69.28"/>
+  <atv:overwrite height="18.001" id="id_0" transform="matrix(1.5798,0,0,1.4999,0,0)" width="99.28"/>
+  <atv:overwrite height="20.001" id="id_2" transform="matrix(1.5798,0,0,1.4999,0,0)" width="101.28"/>
+ </svg>
+ <svg atv:refpx="-130.385" atv:refpy="-19.035" height="30" id="id_22" transform="matrix(0.633,0,0,0.6667,0,0)" width="160" x="-244.949" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="104.958">
+  <atv:argument name="base" value="AGENT.OBJECTS.Rig.RigInfo.MaxLoad"/>
+  <atv:overwrite height="16.001" id="focus_frame" transform="matrix(1.5798,0,0,1.4999,0,0)" width="97.28"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.5798,0,0,1.4999,-92.7646,-7.4989)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.5798,0,0,1.4999,-92.7646,-7.4989)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.5798,0,0,1.4999,0,0)" x="66.78" y="15.25"/>
+  <atv:overwrite height="12.001" id="blinking_frame" transform="matrix(1.5798,0,0,1.4999,0,0)" width="69.28"/>
+  <atv:overwrite height="12.001" id="input_bg" transform="matrix(1.5798,0,0,1.4999,0,0)" width="69.28"/>
+  <atv:overwrite height="18.001" id="id_0" transform="matrix(1.5798,0,0,1.4999,0,0)" width="99.28"/>
+  <atv:overwrite height="20.001" id="id_2" transform="matrix(1.5798,0,0,1.4999,0,0)" width="101.28"/>
+ </svg>
+ <svg atv:refpx="-160.432" atv:refpy="158.413" height="30" id="id_23" transform="matrix(0.633,0,0,0.6667,0,0)" width="160" x="-292.417" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="371.101">
+  <atv:argument name="base" value="AGENT.OBJECTS.Rig.RigInfo.RotorHoleHeight"/>
+  <atv:overwrite height="16.001" id="focus_frame" transform="matrix(1.5798,0,0,1.4999,0,0)" width="97.28"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.5798,0,0,1.4999,-92.7646,-7.4989)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.5798,0,0,1.4999,-92.7646,-7.4989)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.5798,0,0,1.4999,0,0)" x="66.78" y="15.25"/>
+  <atv:overwrite height="12.001" id="blinking_frame" transform="matrix(1.5798,0,0,1.4999,0,0)" width="69.28"/>
+  <atv:overwrite height="12.001" id="input_bg" transform="matrix(1.5798,0,0,1.4999,0,0)" width="69.28"/>
+  <atv:overwrite height="18.001" id="id_0" transform="matrix(1.5798,0,0,1.4999,0,0)" width="99.28"/>
+  <atv:overwrite height="20.001" id="id_2" transform="matrix(1.5798,0,0,1.4999,0,0)" width="101.28"/>
+ </svg>
+ <svg atv:refpx="413.548" atv:refpy="-53.727" height="100" id="id_28" transform="matrix(1,0,0,0.635,0,0)" width="122" x="352.548" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.in_out_date" y="-134.615">
+  <atv:argument name="base" value="AGENT.OBJECTS.Rig.RigInfo.DateOfCheck"/>
+ </svg>
+ <svg atv:refpx="559.218" atv:refpy="-42.572" height="100" id="id_29" transform="matrix(1,0,0,0.635,0,0)" width="122" x="498.218" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.in_out_date" y="-117.044">
+  <atv:argument name="base" value="AGENT.OBJECTS.Rig.RigInfo.DateOfCheckNext"/>
+ </svg>
+ <svg atv:refpx="1438.542" atv:refpy="827.429" height="65" id="id_30" transform="matrix(1.5605,0,0,1.4514,0,0)" width="165" x="839.324" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.TestList3_long" y="537.587">
+  <atv:argument name="Name" value="AGENT.OBJECTS.Rig.RigInfo.PreventorName"/>
+  <atv:argument name="Value3" value="20-05-2021"/>
+  <atv:argument name="Value1" value="AGENT.OBJECTS.IVE50.TDS.TDSTorque"/>
+ </svg>
+ <line atv:refpx="1203.024" atv:refpy="828.133" id="id_31" stroke="#4b5e6c" stroke-width="2" x1="1307.161" x2="1098.888" y1="825.158" y2="831.108"/>
+ <svg atv:refpx="413.069" atv:refpy="86.5" height="31" id="id_17" width="100" x="363.069" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.Picker%20Date" y="200">
+  <atv:argument name="name" value="Дата проверки"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Rig.RigInfo.DateOfCheck"/>
+  <atv:overwrite id="button_label" transform="matrix(1.0015,0,0,1,-0.0307,0)" x="50.97"/>
+ </svg>
+ <svg atv:refpx="413" atv:refpy="260.228" height="31" id="id_19" width="100" x="363" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.Picker%20Date" y="244.728">
+  <atv:argument name="name" value="Дата проверки 2"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Rig.RigInfo.DateOfCheckNext"/>
+  <atv:overwrite id="button_label" transform="matrix(1.0015,0,0,1,-0.0307,0)" x="50.97"/>
+ </svg>
+ <svg atv:refpx="423" atv:refpy="50.355" height="31" id="id_20" width="80" x="383" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.EditableLabel" y="34.855">
+  <atv:argument name="base" value="AGENT.OBJECTS.Rig.RigInfo.RigYear"/>
+ </svg>
+ <svg atv:refpx="423" atv:refpy="179.91" height="31" id="id_24" width="80" x="383" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.EditableLabel" y="75.41">
+  <atv:argument name="base" value="AGENT.OBJECTS.Rig.RigInfo.RigHeight"/>
+ </svg>
+ <svg atv:refpx="423" atv:refpy="221.957" height="31" id="id_25" width="80" x="383" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.EditableLabel" y="116.457">
+  <atv:argument name="base" value="AGENT.OBJECTS.Rig.RigInfo.MaxLoad"/>
+ </svg>
+ <svg atv:refpx="423" atv:refpy="259.802" height="31" id="id_26" width="80" x="383" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.EditableLabel" y="158.302">
+  <atv:argument name="base" value="AGENT.OBJECTS.Rig.RigInfo.RotorHoleHeight"/>
+ </svg>
+ <svg atv:refpx="742.845" atv:refpy="111.341" height="31" id="id_32" transform="matrix(0.9038,0,0,0.7519,0,0)" width="100" x="771.869" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.Picker%20Date" y="132.586">
+  <atv:argument name="name" value="Дата проверки ВСП"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Test.DrillingRig.VSP_name.VSP_date"/>
+  <atv:overwrite height="21.345" id="button_stroke" transform="matrix(1.1064,0,0,1.33,0,0)" width="89.366" y="1.202"/>
+  <atv:overwrite id="button_label" transform="matrix(1.1078,0,0,1.2726,-0.0226,-0.0681)" x="46.159" y="18.314"/>
+  <atv:overwrite id="button_symbol" transform="matrix(1.1062,0,0,1.2726,0,0)" x="35.192" y="2.41"/>
+  <atv:overwrite height="21.345" id="button_bg" transform="matrix(1.1064,0,0,1.33,0,0)" width="89.366" y="1.202"/>
+  <atv:overwrite height="22.303" id="id_2" transform="matrix(1.1064,0,0,1.33,0,0)" width="90.366" y="0.723"/>
+  <atv:overwrite id="button_clickarea" transform="matrix(1.0001,0,0,1.0451,0,-0.756)"/>
+ </svg>
+ <svg atv:refpx="1725.491" atv:refpy="520.577" height="31" id="id_33" transform="matrix(0.9038,0,0,0.7519,0,0)" width="100" x="1859.15" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.Picker%20Date" y="676.849">
+  <atv:argument name="name" value="Дата проверки Тальк"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Test.DrillingRig.DiametrRope.talcDate"/>
+  <atv:overwrite height="22.641" id="button_stroke" transform="matrix(1.1064,0,0,1.33,0,0)" width="89.38" y="0.44"/>
+  <atv:overwrite id="button_label" transform="matrix(1.1081,0,0,1.33,-0.026,0)" x="46.16" y="17.611"/>
+  <atv:overwrite id="button_symbol" transform="matrix(1.1064,0,0,1.33,0,0)" x="35.19" y="1.76"/>
+  <atv:overwrite height="22.641" id="button_bg" transform="matrix(1.1064,0,0,1.33,0,0)" width="89.38" y="0.44"/>
+  <atv:overwrite height="23.642" id="id_2" transform="matrix(1.1064,0,0,1.33,0,0)" width="90.38" y="-0.06"/>
+  <atv:overwrite id="button_clickarea" transform="matrix(1,0,0,1.0451,0,-0.6929)"/>
+ </svg>
+ <svg atv:refpx="1503.576" atv:refpy="857.953" height="31" id="id_34" transform="matrix(0.9038,0,0,0.7519,0,0)" width="100" x="1616.933" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.Picker%20Date" y="1128.207">
+  <atv:argument name="name" value="Дата проверки Прев"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Rig.RigInfo.PreventorDate"/>
+  <atv:overwrite height="22.641" id="button_stroke" transform="matrix(1.1064,0,0,1.33,0,0)" width="89.38" y="0.478"/>
+  <atv:overwrite id="button_label" transform="matrix(1.1081,0,0,1.33,-0.026,0)" x="46.16" y="17.65"/>
+  <atv:overwrite id="button_symbol" transform="matrix(1.1064,0,0,1.33,0,0)" x="35.19" y="1.799"/>
+  <atv:overwrite height="22.641" id="button_bg" transform="matrix(1.1064,0,0,1.33,0,0)" width="89.38" y="0.478"/>
+  <atv:overwrite height="23.642" id="id_2" transform="matrix(1.1064,0,0,1.33,0,0)" width="90.38" y="-0.022"/>
+  <atv:overwrite id="button_clickarea" transform="matrix(1,0,0,1.0451,0,-0.6929)"/>
+ </svg>
+ <g atv:refpx="1927.764" atv:refpy="624.766" id="id_38" transform="matrix(1,0,0,1,191.1018,-66.1044)">
+  <svg atv:refpx="1738.066" atv:refpy="690.967" height="31" id="id_37" transform="matrix(1.0841,0,0,1,0,0)" width="100" x="1553.186" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.Combobox" y="675.467">
+   <atv:argument name="text1" value="T{6x7}"/>
+   <atv:argument name="text1value" value="6х7"/>
+   <atv:argument name="text2" value="T{5x6}"/>
+   <atv:argument name="text2value" value="5х6"/>
+   <atv:argument name="text3" value="T{3x4}"/>
+   <atv:argument name="text3value" value="3х4"/>
+   <atv:argument name="base" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition.talkanat.rigging"/>
+   <atv:overwrite id="combobox_clickarea" transform="matrix(1,0,0,1,0,0)"/>
+   <atv:overwrite id="id_0" points="100.913,14 86.913,14 93.913,21 100.913,14" transform="matrix(0.9224,0,0,1,0,0)"/>
+   <atv:overwrite id="combobox_label" transform="matrix(0.9224,0,0,1,0,0)"/>
+   <atv:overwrite id="combobox_stroke" transform="matrix(0.9224,0,0,1,0,0)" width="108.413"/>
+  </svg>
+  <svg atv:refpx="1718.052" atv:refpy="688.774" height="31" id="id_36" width="80" x="1681.052" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.EditableLabel" y="675.274">
+   <atv:argument name="base" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition.talkanat.rigging"/>
+   <atv:argument name="validation" value="String"/>
+  </svg>
+ </g>
+ <svg atv:refpx="1948.952" atv:refpy="551.547" height="31" id="id_40" width="160" x="1868.952" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.Picker%20DateTime" y="536.047">
+  <atv:overwrite id="button_label" transform="matrix(0.6002,0,0,1,9.4772,0)"/>
+ </svg>
+ <svg atv:refpx="1606.5" atv:refpy="424.415" height="20" id="id_27" width="165" x="1524" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.TestList0_long" y="414.415">
+  <atv:argument name="Name" value="Макс. наработка"/>
+ </svg>
+ <svg atv:refpx="1740.926" atv:refpy="423.184" height="31" id="id_35" width="80" x="1700.926" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.EditableLabel" y="406.684">
+  <atv:argument name="base" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition.talkanat.talkMax"/>
+ </svg>
+</svg>

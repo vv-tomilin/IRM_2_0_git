@@ -1,0 +1,10 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed"."Rise".Warning
+NodeClass: Variable
+BrowseName: 1:Warning
+DisplayName: en|Warning
+Description: en|Warning
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseDataVariableType

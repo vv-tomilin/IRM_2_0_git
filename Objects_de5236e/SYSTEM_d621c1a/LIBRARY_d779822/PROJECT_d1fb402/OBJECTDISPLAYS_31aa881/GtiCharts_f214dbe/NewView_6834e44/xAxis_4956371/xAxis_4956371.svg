@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="60" version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg" height="965" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:parameter name="base" behavior="mandatory" defaultvalue="AGENT.OBJECTS.Test.TVal" valuetype="address"/>
+  <atv:parameter name="chartname" behavior="mandatory" defaultvalue="skpb0" valuetype="string"/>
+  <atv:parameter name="groupname" behavior="mandatory" defaultvalue="group1" valuetype="string"/>
+  <atv:gridconfig width="20" enabled="false" gridstyle="lines" height="20"/>
+  <atv:snapconfig width="10" enabled="false" height="10"/>
+ </metadata>
+ <g id="id_2" transform="matrix(1.2,0,0,1,0,0)" atv:refpy="0" atv:refpx="0" atv:insensitive="true">
+  <rect y="0" id="id_3" width="50.00" fill="#09222e" atv:refpy="482.5" atv:refpx="25" x="0" height="965.00"/>
+ </g>
+ <svg id="id_1" y="14.148" transform="matrix(0.15,0,0,2.3325,0,0)" width="400" atv:refpy="499.5" atv:refpx="30" height="400" x="0" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.xAxisChart">
+  <atv:argument name="xAxisxAxis_timeSpan" value="600"/>
+  <atv:argument name="xAxisxAxis_tickInterval" value="60000"/>
+  <atv:argument name="xAxisxAxis_gridLineColor" value="#7d7d7d"/>
+  <atv:argument name="xAxisxAxis_minorGridLineColor" value="#7d7d7d"/>
+  <atv:argument name="series2series_visible" value="false"/>
+  <atv:argument name="yAxis2yAxis_visible" value="false"/>
+  <atv:argument prefix="chartname" name="yAxis1yAxis_id" value="y1"/>
+  <atv:argument prefix="chartname" name="series1series_yAxis" value="y1"/>
+  <atv:argument prefix="chartname" name="trendName"/>
+  <atv:argument prefix="groupname" name="trendGroup"/>
+  <atv:argument prefix="base" name="series1series_address"/>
+  <atv:argument name="series1series_nonStop" value="true"/>
+  <atv:argument name="yAxis1yAxis_min" value="0"/>
+  <atv:argument name="yAxis1yAxis_max" value="10"/>
+  <atv:argument name="yAxis1yAxis_labels_format" value=""/>
+  <atv:argument name="yAxis1yAxis_visible" value="false"/>
+  <atv:argument name="series1series_visible" value="false"/>
+  <atv:overwrite id="label" transform="matrix(6.6667,0,0,0.4287,0,0)" y="477.5" x="-120.5"/>
+  <atv:overwrite id="border" transform="matrix(6.6667,0,0,0.4287,0,0)" width="58" height="931"/>
+  <atv:overwrite id="id_3" transform="matrix(6.6667,0,0,0.4287,0,0)" width="60" height="933"/>
+ </svg>
+</svg>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="ua" type="uainput" trigger="false" relative="false" value=""/>
+  <code><![CDATA[/* Parse all displays of a server and collect referenced variables. Returns the referenced ones.
+Input (members of ua):
+	-node:uanodeid{mandatory} Specifies the nodeid of the server to search.
+Output (return value)	:
+	tablecolumnheaders:[string] Array of column titles
+	tablecolumntypes:[uanodeid] Array of typedefinitions of column types
+	tabledata:[[string]] Array of string array that represents the rows of the result
+If no used variables found empty arrays are returned.
+*/
+function toNodes2(result, x) { for (var i=0; i<result.length; ++i) x.push(result[i].node); }
+
+var server = new UaNode(ua.node);
+if (!server.exists()) throw new Error("Server:"+server.nodeid+" does not exist.");
+var displays = [];
+toNodes2(new UaNode(server.nodeaddr + ".DISPLAYS").browse({typedefinition:"VariableTypes.ATVISE.Display", recursive:true}), displays);
+toNodes2(new UaNode("SYSTEM.DISPLAYS").browse({typedefinition:"VariableTypes.ATVISE.Display", recursive:true}), displays);
+
+var strings1 = [];
+var strings2 = [];
+var strings3 = [];
+var strings4 = [];
+var result = call("SYSTEM.LIBRARY.ATVISE.SERVERSCRIPTS.CrossRef.Lib.DisplayVariables", {"ua":{node:displays, server:server, recursive:true}});
+if (result && result.from) for (var i = 0; i < result.from.length; ++i){
+	strings1.push(result.to[i]);
+	if (result.exists[i]) strings4.push('yes');
+	else strings4.push('no');
+
+	var fromStr  = "";
+	for (var j = 0; j < result.from[i].length; ++j){
+		if (j > 0) fromStr += "->";
+		fromStr += result.from[i][j].nodeaddr;
+	}
+	strings2.push(fromStr);
+	strings3.push(result.parent[i].nodeaddr);
+}
+
+return {
+	tablecolumnheaders:["Node","Used in display","Exists"],
+	tablecolumntypes:[new UaNode(UaNode.BASEVARIABLETYPE), new UaNode("VariableTypes.ATVISE.Display"), new UaNode(UaNode.BASEVARIABLETYPE)],
+	tablecolumntranslate:[false, false, true],
+	tabledata:[strings1, strings3, strings4]
+};]]></code>
+</script>

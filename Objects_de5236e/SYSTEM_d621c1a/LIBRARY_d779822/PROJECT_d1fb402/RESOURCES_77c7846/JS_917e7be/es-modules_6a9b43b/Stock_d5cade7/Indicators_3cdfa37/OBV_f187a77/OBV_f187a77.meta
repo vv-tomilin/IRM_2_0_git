@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Stock/Indicators/OBV
+NodeClass: Object
+BrowseName: 1:OBV
+DisplayName: en|OBV
+Description: en|OBV
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

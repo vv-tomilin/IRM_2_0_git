@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="DrillPumpName" type="node.value" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.DrillPumps.DrillPump1.DrillPumpName"/>
+  <parameter name="DrillPumpType" type="node.value" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.DrillPumps.DrillPump1.DrillPumpType"/>
+  <parameter name="DrillPumpFillingRatio" type="node.value" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.DrillPumps.DrillPump1.DrillPumpFillingRatio"/>
+  <parameter name="PistonDiameter" type="node.value" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.DrillPumps.DrillPump1.PistonDiameter"/>
+  <parameter name="StrokePump" type="node.value" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.IVE50.Mud.Pump.StrokePump1"/>
+  <parameter name="StemDiameter" type="node.value" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.DrillPumps.DrillPump1.StemDiameter"/>
+  <code><![CDATA[var result = call("Calc_DrillingPumpConsumption", {DrillPumpType: DrillPumpType, DrillPumpFillingRatio: DrillPumpFillingRatio, PistonDiameter: PistonDiameter, StrokePump: StrokePump, StemDiameter: StemDiameter});
+
+var node = new UaNode("AGENT.OBJECTS.DrillPumps.DrillPump1.DrillPumpConsumption");
+node.value = result
+]]></code>
+</script>

@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.SimulatedDataMax.WeightOnBit
+NodeClass: Variable
+BrowseName: 1:WeightOnBit
+DisplayName: en|WeightOnBit
+Description: en|WeightOnBit
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.RawData

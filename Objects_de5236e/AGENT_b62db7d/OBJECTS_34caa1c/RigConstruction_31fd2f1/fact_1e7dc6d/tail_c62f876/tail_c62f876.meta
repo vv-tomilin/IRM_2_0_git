@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.RigConstruction.fact.tail
+NodeClass: Variable
+BrowseName: 1:tail
+DisplayName: en|tail
+Description: en|tail
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

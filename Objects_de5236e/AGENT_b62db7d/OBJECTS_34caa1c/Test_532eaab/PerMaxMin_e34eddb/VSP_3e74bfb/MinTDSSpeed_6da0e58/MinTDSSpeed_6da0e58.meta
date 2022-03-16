@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.VSP.MinTDSSpeed
+NodeClass: Variable
+BrowseName: 1:MinTDSSpeed
+DisplayName: en|MinTDSSpeed
+Description: en|MinTDSSpeed
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

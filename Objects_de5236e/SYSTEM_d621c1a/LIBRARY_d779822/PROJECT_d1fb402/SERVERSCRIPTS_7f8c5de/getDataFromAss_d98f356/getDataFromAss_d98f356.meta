@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.getDataFromAss
+NodeClass: Object
+BrowseName: 1:getDataFromAss
+DisplayName: en|getDataFromAss
+Description: en|getDataFromAss
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

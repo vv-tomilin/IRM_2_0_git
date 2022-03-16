@@ -1,0 +1,489 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="75" height="180" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linear_20" y1="-0.0183441" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#6d6d6d"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient id="linear_21" y1="-0.0183441" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#6d6d6d"/>
+   <stop offset="1" stop-color="#3e3e3e"/>
+  </linearGradient>
+  <linearGradient id="linear_3" y1="-0.0459829" y2="0.55328" x1="0.875142" gradientUnits="objectBoundingBox" x2="0.875142">
+   <stop offset="0" stop-color="#ff0000"/>
+   <stop offset="1" stop-color="#620000"/>
+  </linearGradient>
+  <linearGradient id="linear_1" y1="0.970149" y2="-0.0159425" x1="0.119403" gradientUnits="objectBoundingBox" x2="0.119403">
+   <stop offset="0" stop-color="#29394b"/>
+   <stop offset="1" stop-color="#788ba3"/>
+  </linearGradient>
+  <linearGradient id="linear_2" y1="-0.0159425" y2="0.940299" x1="0.776844" gradientUnits="objectBoundingBox" x2="0.776844">
+   <stop offset="0" stop-color="#1a242f"/>
+   <stop offset="1" stop-color="#71849c"/>
+  </linearGradient>
+ </defs>
+ <desc>Displays value of an address as a slider.</desc>
+ <title>Slider vertical</title>
+ <metadata>
+  <atv:parameter desc="base" behavior="mandatory" valuetype="address" name="base"/>
+  <atv:parameter defaultvalue="" desc="alarm address" behavior="optional" valuetype="address" name="alarm"/>
+  <atv:parameter config="Yes;No" defaultvalue="Yes" desc="enable status monitoring" behavior="optional" valuetype="enum" name="statusEnabled"/>
+  <atv:parameter defaultvalue="" desc="fire status trigger" behavior="optional" valuetype="string" name="statusTrigger"/>
+  <atv:parameter substitute="$LABEL$" defaultvalue="T{Label}" desc="label" behavior="optional" valuetype="trstring" name="label"/>
+  <atv:parameter substitute="$U$" defaultvalue="" desc="unit" behavior="optional" valuetype="trstring" name="unit"/>
+  <atv:parameter substitute="$MIN$" defaultvalue="0" desc="minimum" behavior="mandatory" valuetype="number" name="min"/>
+  <atv:parameter substitute="$MAX$" defaultvalue="100" desc="maximum" behavior="mandatory" valuetype="number" name="max"/>
+  <atv:parameter config="Times New Roman=Times New Roman,Bodoni,Garamond,Minion Web,ITC Stone Serif,MS Georgia,Bitstream Cyberbit,serif;Arial=MS Trebuchet,ITC Avant Garde Gothic,MS Arial,MS Verdana,Univers,Futura,ITC Stone Sans,Gill Sans,Akzidenz Grotesk,Helvetica,sans-serif;Courier=Courier,MS Courier New,Prestige,Everson Mono,monospace;Zapf-Chancery=Caflisch Script,Adobe Poetica,Sanvito,Ex Ponto,Snell Roundhand,Zapf-Chancery,cursive;Alpha Geometrique=Alpha Geometrique,Critter,Cottonwood,FB Reactor,Studz,fantasy" substitute="$FONTFAMILY$" defaultvalue="Arial" desc="family" group="Font" behavior="optional" valuetype="enum" name="fontFamily"/>
+  <atv:parameter substitute="$FONTCOLOR$" defaultvalue="#000000" desc="text color" group="Font" behavior="optional" valuetype="color" name="fontColor"/>
+  <atv:parameter substitute="$FILL$" defaultvalue="#d0d0d0" desc="text fill color" group="Font" behavior="optional" valuetype="color" name="fill"/>
+  <atv:parameter config="6;7;8;9;10;11;12;14;16;18;20;22;24;26;28;36;48;72" substitute="$FONTSIZEVALUE$" defaultvalue="12" desc="size for value" group="Font" behavior="optional" valuetype="enum" name="fontSizeValue"/>
+  <atv:parameter config="6;7;8;9;10;11;12;14;16;18;20;22;24;26;28;36;48;72" substitute="$FONTSIZELABELS$" defaultvalue="10" desc="size for label" group="Font" behavior="optional" valuetype="enum" name="fontSizeLabels"/>
+  <atv:parameter config="6;7;8;9;10;11;12;14;16;18;20;22;24;26;28;36;48;72" substitute="$FONTSIZEUNIT$" defaultvalue="10" desc="size for unit" group="Font" behavior="optional" valuetype="enum" name="fontSizeUnit"/>
+  <atv:parameter defaultvalue="0" desc="post decimal positions" group="Appearance" behavior="optional" valuetype="number" name="decimalPositions"/>
+  <atv:parameter defaultvalue="#b7b7b7" behavior="optional" desc="fill color when inactive" group="Appearance" valuetype="color" name="fillColorInactive"/>
+  <atv:parameter defaultvalue="#d0d0d0" behavior="optional" desc="fill color not editable" group="Appearance" valuetype="color" name="fillColorNotEditable"/>
+  <atv:parameter defaultvalue="off" desc="limit low low (off=no limit)" group="Appearance" behavior="optional" valuetype="string" name="limitLowLow"/>
+  <atv:parameter defaultvalue="off" desc="limit low (off=no limit)" group="Appearance" behavior="optional" valuetype="string" name="limitLow"/>
+  <atv:parameter defaultvalue="off" desc="limit high (off=no limit)" group="Appearance" behavior="optional" valuetype="string" name="limitHigh"/>
+  <atv:parameter defaultvalue="off" desc="limit high high (off=no limit)" group="Appearance" behavior="optional" valuetype="string" name="limitHighHigh"/>
+  <atv:parameter substitute="$LIMITLOWLOWFILL$" defaultvalue="#ff0000" desc="limit low low color" group="Appearance" behavior="optional" valuetype="color" name="limitLowLowFill"/>
+  <atv:parameter substitute="$LIMITLOWFILL$" defaultvalue="#ffff00" desc="limit low color" group="Appearance" behavior="optional" valuetype="color" name="limitLowFill"/>
+  <atv:parameter substitute="$LIMITHIGHFILL$" defaultvalue="#ffff00" desc="limit high color" group="Appearance" behavior="optional" valuetype="color" name="limitHighFill"/>
+  <atv:parameter substitute="$LIMITHIGHHIGHFILL$" defaultvalue="#ff0000" desc="limit high high color" group="Appearance" behavior="optional" valuetype="color" name="limitHighHighFill"/>
+  <atv:parameter config="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.scales" substitute="$SCALE$" defaultvalue="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.scales.scale_20_slider" desc="displayed scale" group="Appearance" behavior="optional" valuetype="display" name="scale"/>
+  <atv:parameter defaultvalue="#ffffff" desc="scale color" group="Appearance" behavior="optional" valuetype="color" name="scaleColor"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvStatusIndication" group="Appearance" desc="status indication" behavior="optional" valuetype="global" name="statusIndication"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvAlarmIndication" group="Appearance" desc="alarm indication" behavior="optional" valuetype="global" name="alarmIndication"/>
+  <atv:parameter config="Yes;No" defaultvalue="Yes" behavior="optional" desc="editable" group="Security" valuetype="enum" name="editable"/>
+  <atv:parameter config="SYSTEM.SECURITY.RIGHTS" defaultvalue="" behavior="optional" desc="necessary right" group="Security" valuetype="address" name="right"/>
+  <atv:parameter defaultvalue="" behavior="optional" desc="activation address" group="Security" valuetype="address" name="activeNode"/>
+  <atv:parameter defaultvalue="off" behavior="optional" desc="activation value" group="Security" valuetype="string" name="activeValue"/>
+  <atv:parameter desc="address for minimum" group="Options" behavior="optional" valuetype="address" name="nodeMin"/>
+  <atv:parameter desc="address for maximum" group="Options" behavior="optional" valuetype="address" name="nodeMax"/>
+  <atv:parameter desc="address for limit low low" group="Options" behavior="optional" valuetype="address" name="nodeLowLow"/>
+  <atv:parameter desc="address for limit low" group="Options" behavior="optional" valuetype="address" name="nodeLow"/>
+  <atv:parameter desc="address for limit high" group="Options" behavior="optional" valuetype="address" name="nodeHigh"/>
+  <atv:parameter desc="address for limit high high" group="Options" behavior="optional" valuetype="address" name="nodeHighHigh"/>
+  <atv:gridconfig width="10" enabled="true" height="10" gridstyle="lines"/>
+  <atv:snapconfig width="2" enabled="false" height="2"/>
+ </metadata>
+ <rect id="id_2" ry="3" width="74" fill="url(#linear_1)" stroke="#646464" atv:refpy="90" height="179" atv:refpx="37.5" stroke-width="0.5" x="0.5" y="0.5" rx="3"/>
+ <rect id="id_46" ry="3" width="70" fill="url(#linear_2)" stroke="none" atv:refpy="90.001" height="175" atv:refpx="37.5" stroke-width="0.5" x="2.5" y="2.5" rx="3"/>
+ <rect id="id_50" ry="3" width="67" fill="url(#linear_1)" stroke="none" atv:refpy="69.5" height="131" atv:refpx="37.5" stroke-width="0.5" x="4" y="4" rx="3"/>
+ <text id="max" font-size="$FONTSIZELABELS$" fill="#c4c4c4" atv:refpy="9.5" atv:refpx="37.5" font-family="$FONTFAMILY$" x="37.5" y="13" text-anchor="middle">$MAX$</text>
+ <svg id="scale" width="40" atv:refpy="69.745" height="102" atv:refpx="37.5" x="17.5" y="18.744" xlink:href="$SCALE$">
+  <atv:argument prefix="scaleColor" name="scaleColor"/>
+ </svg>
+ <text id="min" font-size="$FONTSIZELABELS$" fill="#c4c4c4" atv:refpy="129.5" atv:refpx="37.5" font-family="$FONTFAMILY$" x="37.5" y="133" text-anchor="middle">$MIN$</text>
+ <rect id="id_0" ry="3" width="67" fill="url(#linear_1)" stroke="none" atv:refpy="156.365" height="40" atv:refpx="37.5" stroke-width="0.5" x="4" y="136.365" rx="3"/>
+ <rect id="id_86" ry="3" width="62" fill="url(#linear_2)" stroke="none" atv:refpy="156.362" height="35" atv:refpx="37.499" stroke-width="0.5" x="6.5" y="138.865" rx="3"/>
+ <rect id="output_field" ry="3.097" width="59" fill="$FILL$" stroke="none" atv:refpy="156.363" height="32" atv:refpx="37.498" stroke-width="0.5" x="8" y="140.365" rx="3"/>
+ <text id="slider_value" font-size="$FONTSIZEVALUE$" fill="$FONTCOLOR$" atv:refpy="146.5" atv:refpx="37.5" font-family="$FONTFAMILY$" x="65" y="151" text-anchor="end">00000000</text>
+ <text id="slider_unit" font-size="$FONTSIZEUNIT$" fill="$FONTCOLOR$" atv:refpy="157.87" atv:refpx="37.5" font-family="$FONTFAMILY$" x="37.5" y="160" text-anchor="middle">$U$</text>
+ <text id="slider_label" font-size="$FONTSIZELABELS$" fill="$FONTCOLOR$" atv:refpy="166.5" atv:refpx="37.5" font-family="$FONTFAMILY$" x="37.5" y="170" text-anchor="middle">$LABEL$</text>
+ <path id="limit_high" d="M45,70.743L45,68.743L64.989,68.743L70.99,60.743L70.99,70.743Z" fill="$LIMITHIGHFILL$" stroke="none" atv:refpy="65.744" atv:refpx="57.996" stroke-width="0.5"/>
+ <path id="limit_high_high" d="M45,70.743L45,68.743L64.991,68.743L70.991,60.743L70.991,70.743Z" fill="$LIMITHIGHHIGHFILL$" stroke="none" atv:refpy="65.744" atv:refpx="57.996" stroke-width="0.5"/>
+ <rect id="xxx" ry="2.884" width="5" fill="#000000" stroke="none" atv:refpy="69.745" height="110.555" atv:refpx="37.5" stroke-width="2" x="35" y="14.467" rx="2.5"/>
+ <path id="limit_low" d="M30,68.744L30,70.744L10.01,70.744L4.01,78.744L4.01,68.744Z" fill="$LIMITLOWFILL$" stroke="none" atv:refpy="73.743" atv:refpx="17.005" stroke-width="0.5"/>
+ <path id="limit_low_low" d="M30,68.744L30,70.744L10.01,70.744L4.01,78.744L4.01,68.744Z" fill="$LIMITLOWLOWFILL$" stroke="none" atv:refpy="73.743" atv:refpx="17.005" stroke-width="0.5"/>
+ <g id="slider_pointer" transform="matrix(1,0,0,1,0.3322,50.127)" atv:refpy="119.872" atv:refpx="37.831" atv:dynamic="true">
+  <polyline id="id_12" fill="url(#linear_3)" stroke="#c4c4c4" atv:refpy="318.183" points="37.377,67.605 57.628,68.751 57.631,71.092 37.382,72.286 37.377,67.605" atv:refpx="47.438" stroke-width="0.5"/>
+  <polyline id="id_21" fill="url(#linear_3)" stroke="#c4c4c4" atv:refpy="318.247" points="37.627,67.62 17.375,68.737 17.368,71.078 37.614,72.301 37.627,67.62" atv:refpx="47.498" stroke-width="0.5"/>
+  <rect id="id_23" ry="2" width="6.48" fill="url(#linear_21)" stroke="none" atv:refpy="257.91" height="13.549" atv:refpx="77.512" stroke-width="2" x="34.259" y="62.97" rx="2"/>
+  <rect id="id_25" ry="2" width="5.51" transform="matrix(1,0,0,-1,0,0)" fill="url(#linear_21)" stroke="none" atv:refpy="330.293" height="11.522" atv:refpx="47.5" stroke-width="2" x="34.744" y="-75.506" rx="2"/>
+  <g id="id_26" transform="matrix(1,0,0,1,4.133,41.3928)" atv:refpy="153.732" atv:refpx="43.252">
+   <line id="id_33" y1="25.336" stroke="#c4c4c4" atv:refpy="25.836" atv:refpx="65.226" y2="25.336" stroke-width="0.5" x1="31.859" x2="34.875"/>
+   <line id="id_36" y1="27.975" stroke="#c4c4c4" atv:refpy="69.398" atv:refpx="59.359" y2="27.975" stroke-width="0.5" x1="31.859" x2="34.875"/>
+   <line id="id_41" y1="30.615" stroke="#c4c4c4" atv:refpy="31.115" atv:refpx="65.226" y2="30.615" stroke-width="0.5" x1="31.859" x2="34.875"/>
+  </g>
+ </g>
+ <rect id="blinking_frame" ry="3" width="68.5" fill="none" stroke="none" atv:refpy="68.889" height="173.75" atv:refpx="26.271" stroke-width="2.15" x="3.25" y="3.25" rx="3"/>
+ <rect id="barControl" opacity="0.01" width="25" fill="" stroke="none" atv:refpy="382.296" height="100" atv:refpx="59.36" stroke-width="1" x="25.332" y="19.539"/>
+ <rect id="activeIndicator" width="1" fill="none" stroke="none" atv:refpy="0.5" height="1" stroke-width="2" atv:refpx="0.5" x="0" y="0"/>
+ <script type="text/ecmascript"><![CDATA[
+
+var AggregateManager = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Aggregate Manager");
+ webMI.addOnunload(function unloadAggregateManager() {
+	AggregateManager.destroy();
+	AggregateManager = null;
+});
+
+var base = (webMI.query["base"] == undefined) ? "" : webMI.query["base"];
+var decimalPositions = webMI.query["decimalPositions"];
+var min = (webMI.query["min"] == undefined) ? "" : parseFloat(webMI.query["min"]);
+var max = (webMI.query["max"] == undefined) ? "" : parseFloat(webMI.query["max"]);
+var nodeMin = (webMI.query["nodeMin"] == undefined) ? "" : webMI.query["nodeMin"];
+var nodeMax = (webMI.query["nodeMax"] == undefined) ? "" : webMI.query["nodeMax"];
+var nodeLowLow = (webMI.query["nodeLowLow"] == undefined ? "" : webMI.query["nodeLowLow"]);
+var nodeLow = (webMI.query["nodeLow"] == undefined) ? "" : webMI.query["nodeLow"];
+var nodeHigh = (webMI.query["nodeHigh"] == undefined) ? "" : webMI.query["nodeHigh"];
+var nodeHighHigh = (webMI.query["nodeHighHigh"] == undefined) ? "" : webMI.query["nodeHighHigh"];
+var fontColor=webMI.query["fontColor"];
+var fillColor=webMI.query["fill"];
+var fillColorInactive=webMI.query["fillColorInactive"];
+var fillColorNotEditable=webMI.query["fillColorNotEditable"];
+var limitlowlowfill=webMI.query["limitLowLowFill"];
+var limitlowfill=webMI.query["limitLowFill"];
+var limithighfill=webMI.query["limitHighFill"];
+var limithighhighfill=webMI.query["limitHighHighFill"];
+var scaleColor = webMI.query["scaleColor"];
+var alarmToSubscribe = webMI.query["alarm"];
+var alarmIndication = webMI.query["alarmIndication"];
+var statusEnabled = webMI.query["statusEnabled"];
+var statusTrigger = webMI.query["statusTrigger"];
+var statusIndication = webMI.query["statusIndication"];
+var activeIndicators = {};
+
+var limitlowlow = (webMI.query["limitLowLow"] == undefined) ? "" : webMI.query["limitLowLow"];
+if (limitlowlow != "") {
+	limitlowlow = (limitlowlow != "off") ? parseFloat(limitlowlow) : "";
+}
+var limitlow = (webMI.query["limitLow"] == undefined) ? "" : webMI.query["limitLow"];
+if (limitlow != "") {
+	limitlow = (limitlow != "off") ? parseFloat(limitlow) : "";
+}
+var limithigh = (webMI.query["limitHigh"] == undefined) ? "" : webMI.query["limitHigh"];
+if (limithigh != "") {
+	limithigh = (limithigh != "off") ? parseFloat(limithigh) : "";
+}
+var limithighhigh = (webMI.query["limitHighHigh"] == undefined) ? "" : webMI.query["limitHighHigh"];
+if (limithighhigh != "") {
+	limithighhigh = (limithighhigh != "off") ? parseFloat(limithighhigh) : "";
+}
+
+
+var nodes=new Array(0,0,0,0,0,0,0); //array for base, min, max, limitLowLow, limitLow, LimitHigh, LimitHighhigh
+var nodesToSubscribe= new Array();
+var i=0;
+// set array to remember which nodes are specified
+if (nodeMin != "") {
+	nodes[0] = 1;
+	nodesToSubscribe[i]=nodeMin;
+	i++;
+}
+if (nodeMax != "") {
+	nodes[1] = 1;
+	nodesToSubscribe[i]=nodeMax;
+	i++;
+}
+if (nodeLowLow != "") {
+	nodes[2] = 1;
+	nodesToSubscribe[i]=nodeLowLow;
+	i++;
+}
+if (nodeLow != "") {
+	nodes[3] = 1;
+	nodesToSubscribe[i]=nodeLow;
+	i++;
+}
+if (nodeHigh != "") {
+	nodes[4] = 1;
+	nodesToSubscribe[i]=nodeHigh;
+	i++;
+}
+if (nodeHighHigh != "") {
+	nodes[5] = 1;
+	nodesToSubscribe[i]=nodeHighHigh;
+	i++;
+}
+
+
+if (base != "")  {
+	AggregateManager.subscribeNodeOrAggregate(base, manageNodeResult, manageAggregateResult);
+
+	function manageAggregateResult(subscribeResult){
+		if(nodesToSubscribe.length > 0) {
+			webMI.data.subscribeBlock(nodesToSubscribe,[], function(subscribeBlockResult){
+				subscribeBlockResult["data"] = subscribeResult;
+				manageSubcription(subscribeBlockResult);
+			});
+		} else {
+			subscribeResult["data"] = subscribeResult;
+			manageSubcription(subscribeResult);
+		}
+	}
+
+	function manageNodeResult(subscribeResult){
+		if(nodesToSubscribe.length > 0) {
+			webMI.data.subscribeBlock(nodesToSubscribe,[], function(e2){
+				e2["data"] = subscribeResult;
+				manageSubcription(e2);
+			});
+		} else {
+			subscribeResult["data"] = subscribeResult;
+			manageSubcription(subscribeResult);
+		}
+	}
+
+
+	function manageSubcription(e) {
+		i=0;
+		if (nodes[0] == 1) { // if node for minimum is specified, set node value as minimum
+			min = parseFloat(e[i].value);
+			i++;
+		}
+		webMI.gfx.setText("min", min);
+		if (nodes[1] == 1) { // if node for maximum is specified, set node value as maximum
+			max = parseFloat(e[i].value);
+			i++;
+		}
+		webMI.gfx.setText("max", max);
+		if (nodes[2] == 1) { // if node for limit LowLow is specified, set node value as limit LowLow else value from display parameter is taken
+			limitlowlow = parseFloat(e[i].value);
+			i++;
+		}
+		if (nodes[3] == 1) { // if node for limit Low is specified, set node value as limit Low else value from display parameter is taken
+			limitlow = parseFloat(e[i].value);
+			i++;
+		}
+		if (nodes[4] == 1) { // if node for limit High is specified, set node value as limit High else value from display parameter taken
+			limithigh = parseFloat(e[i].value);
+			i++;
+		}
+		if (nodes[5] == 1) { // if node for limit HighHigh is specified, set node value as limit HighHigh else value from display parameter taken
+			limithighhigh = parseFloat(e[i].value);
+			i++;
+		}
+
+		if (String(limitlowlow) == "" || (String(min) != "" && limitlowlow < min) || (String(max) != "" && limitlowlow > max)) {
+			webMI.gfx.setVisible("limit_low_low", false);
+		} else {
+			webMI.gfx.setMoveY("limit_low_low", webMI.translate(limitlowlow, min, max, 50, -50));
+			webMI.gfx.setVisible("limit_low_low", null);
+		}
+		if (String(limitlow) == "" || (String(min) != "" && limitlow < min) || (String(max) != "" && limitlow > max)) {
+			webMI.gfx.setVisible("limit_low", false);
+		} else {
+			webMI.gfx.setMoveY("limit_low", webMI.translate(limitlow, min, max, 50, -50));
+			webMI.gfx.setVisible("limit_low", null);
+		}
+		if (String(limithigh) == "" || (String(min) != "" && limithigh < min) || (String(max) != "" && limithigh > max)) {
+			webMI.gfx.setVisible("limit_high", false);
+		} else {
+			webMI.gfx.setMoveY("limit_high", webMI.translate(limithigh, min, max, 50, -50));
+			webMI.gfx.setVisible("limit_high", null);
+		}
+		if (String(limithighhigh) == "" || (String(min) != "" && limithighhigh < min) || (String(max) != "" && limithighhigh > max)) {
+			webMI.gfx.setVisible("limit_high_high", false);
+		} else {
+			webMI.gfx.setMoveY("limit_high_high", webMI.translate(limithighhigh, min, max, 50, -50));
+			webMI.gfx.setVisible("limit_high_high", null);
+		}
+
+		if(typeof e["data"].value != "undefined"){
+			var value = e["data"].value;
+			decimalPositions = parseFloat(decimalPositions);
+			var formatString = "%0." + decimalPositions + "f";
+			value = webMI.sprintf(formatString, value);
+			webMI.gfx.setText("slider_value", value);
+
+			value = e["data"].value;
+			var sliderValue=value;
+			if (String(min) != "" && String(max) != "") {
+				if (min > value) {
+					sliderValue = min;
+				}
+				if (value > max) {
+					sliderValue = max;
+				}
+			}
+			webMI.gfx.setMoveY("slider_pointer", webMI.translate(sliderValue, min, max, 0, -100));
+			webMI.gfx.setFill("slider_value",fontColor);
+		}
+		if (String(limitlow) != "" && value <= limitlow) {
+			webMI.gfx.setFill("slider_value",limitlowfill);
+		}
+		if (String(limitlowlow) != "" && value <= limitlowlow) {
+			webMI.gfx.setFill("slider_value",limitlowlowfill);
+		}
+		if (String(limithigh) != "" && value >= limithigh) {
+			webMI.gfx.setFill("slider_value",limithighfill);
+		}
+		if (String(limithighhigh) != "" && value >= limithighhigh) {
+			webMI.gfx.setFill("slider_value",limithighhighfill);
+		}
+		if (typeof e["data"].status != "undefined")
+			handleStatus(e["data"].status);
+	}
+}
+
+function handleStatus(status) {
+	if (statusEnabled != "Yes")
+		return;
+
+	if (statusTrigger != "") {
+		webMI.trigger.fire(statusTrigger, status);
+	} else {
+		if (typeof statusIndication["ItemStatusBad"] == "undefined")
+			statusIndication = {"ItemStatusBad": {color: "#ffff00", interval: "250"}};
+
+		if (status == 0 || (status & 0xC0000000).toString(16) == 0)	//Good value state
+			delete activeIndicators["status"];
+		else if ((status & 0x80000000).toString(16) != 0)			//Bad value state
+			activeIndicators["status"] = {color: statusIndication["ItemStatusBad"].color, interval: parseInt(statusIndication["ItemStatusBad"].interval)};
+		else if ((status & 0xC0000000).toString(16) == 40000000)	//Uncertain value state
+			activeIndicators["status"] = {color: statusIndication["ItemStatusBad"].color, interval: parseInt(statusIndication["ItemStatusBad"].interval)};
+		else														//Unknown value state
+			activeIndicators["status"] = {color: statusIndication["ItemStatusBad"].color, interval: parseInt(statusIndication["ItemStatusBad"].interval)};
+
+		setIndicator();
+	}
+}
+
+function initAlarm(address) {
+	if (alarmIndication == "")
+		alarmIndication = {};
+
+	if (typeof alarmIndication["AlarmStatusOnUnacknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOnUnacknowledged"] = {color: "#ff0000", interval: "250"};
+
+	if (typeof alarmIndication["AlarmStatusOnAcknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOnAcknowledged"] = {color: "#ff0000", interval: "500"};
+
+	if (typeof alarmIndication["AlarmStatusOffUnacknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOffUnacknowledged"] = {color: "#ff0000", interval: "750"};
+
+	if (typeof alarmIndication["AlarmStatusOnOffUnacknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOnOffUnacknowledged"] = {color: "#ff0000", interval: "1500"};
+
+	webMI.alarm.subscribe(address, function(e) {
+		if (e.state == 1)
+			activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOnUnacknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOnUnacknowledged"].interval)};
+		else if (e.state == 2)
+			activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOnAcknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOnAcknowledged"].interval)};
+		else if (e.state == 3)
+			activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOffUnacknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOffUnacknowledged"].interval)};
+		else if (e.state == 5)
+			activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOnOffUnacknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOnOffUnacknowledged"].interval)};
+		else
+			delete activeIndicators["alarm"];
+
+		setIndicator();
+	});
+}
+
+if (alarmToSubscribe != "")
+	initAlarm(alarmToSubscribe);
+
+var currentIndicator = "";
+function setIndicator() {
+	if (currentIndicator != "")
+		return;
+
+	if (activeIndicators["trigger"]) {
+		currentIndicator = "trigger";
+	} else if (activeIndicators["status"]) {
+		currentIndicator = "status";
+	} else if (activeIndicators["alarm"]) {
+		currentIndicator = "alarm";
+	} else {
+		currentIndicator = "";
+		return;
+	}
+
+	indicationActive = true;
+
+	webMI.gfx.setStroke("blinking_frame", activeIndicators[currentIndicator].color);
+	webMI.gfx.setVisible("blinking_frame", null);
+
+	var interval = activeIndicators[currentIndicator].interval;
+	setTimeout(function() {
+		webMI.gfx.setVisible("blinking_frame", false);
+		setTimeout(function() {
+			currentIndicator = "";
+			setIndicator();
+		}, interval);
+	}, interval);
+}
+
+webMI.trigger.connect("com.atvise.setBlinking", function(e){
+	if (e.value == "none"){
+		delete activeIndicators["trigger"];
+	} else {
+		activeIndicators["trigger"] = {color: e.value, interval: 500};
+	}	
+	setIndicator();
+});
+
+var right = (webMI.query["right"] == undefined) ? "" : webMI.query["right"];
+if (right.search(/SYSTEM\.SECURITY\.RIGHTS\./) != -1) {
+	right = right.substring(23,right.length); //remove "prefix" SYSTEM.SECURITY.RIGHTS.
+}
+
+var active = false;
+var hasRight = false;
+
+if (right != "") {
+	webMI.addEvent(webMI.data, "clientvariableschange", function(e) {
+		hasRight=false;
+		if (("username" in e) && (e.username != "")) {
+				hasRight = webMI.hasRight(right);
+		}
+		deActivate();
+	});
+}
+
+var activeValue = (webMI.query["activeValue"] == undefined) ? "" :webMI.query["activeValue"];
+var activeNode = (webMI.query["activeNode"] == undefined) ? "" : webMI.query["activeNode"];
+var nodeIsActive = false;
+
+if ((activeNode != "") && (String(activeValue) != "")) {
+	webMI.data.subscribe(activeNode, function(e) {
+		var nodeActiveValue = e.value;
+		if (typeof nodeActiveValue == "boolean") {
+			nodeIsActive = (String(nodeActiveValue) == activeValue);
+		} else if (typeof nodeActiveValue == "number") {
+			try {
+				var temp = parseFloat(activeValue);
+				nodeIsActive = (nodeActiveValue == temp);
+			} catch(e) {
+				nodeIsActive = false;
+			}
+		} else {
+			nodeIsActive = (nodeActiveValue == activeValue);
+		}
+		if (typeof e.status != "undefined")
+			handleStatus(e.status);
+		deActivate();
+	});
+} else {
+	deActivate();
+}
+
+function deActivate() {
+	if (right != "") {
+		if ((String(activeValue) != "") && (activeNode != "")) {
+			active=(nodeIsActive && hasRight);
+		} else {
+			active=hasRight;
+		}
+	} else {
+		if ((String(activeValue) != "") && (activeNode != "")) {
+			active=nodeIsActive;
+		} else {
+			active=true;
+		}
+	}
+	if (webMI.query["editable"] == "No") {
+		webMI.gfx.setFill("output_field", fillColorNotEditable);
+		webMI.gfx.setX("activeIndicator", "0"); // Position eines Rectangle-Elements als Boolean zur dynamischen Verwendung im Quick Dynamic eingesetzt
+	} else if (active) {
+		webMI.gfx.setFill("output_field", fillColor);
+		webMI.gfx.setX("activeIndicator", "1"); // Position eines Rectangle-Elements als Boolean zur dynamischen Verwendung im Quick Dynamic eingesetzt
+	}
+	if (!active) {
+		webMI.gfx.setFill("output_field", fillColorInactive);
+		webMI.gfx.setX("activeIndicator", "0"); // Position eines Rectangle-Elements als Boolean zur dynamischen Verwendung im Quick Dynamic eingesetzt
+	}
+}
+
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Slider Vertical", {
+	"id": "barControl",
+	"ele": document.getElementById("barControl"),
+	"node": webMI.query.base,
+	"min": min,
+	"max": max,
+	"decimalPositions": decimalPositions
+});
+]]></script>
+</svg>

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="110" version="1.2" xmlns="http://www.w3.org/2000/svg" height="30" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs>
+  <linearGradient id="linear_0" y1="0.0151344" x1="1.00116" y2="0.938184" gradientUnits="objectBoundingBox" x2="1.00116">
+   <stop offset="0" stop-color="#d2d2d6"/>
+   <stop offset="0.3318385650224215" stop-color="#ffffff"/>
+   <stop offset="0.3856502242152466" stop-color="#2c2c3c"/>
+   <stop offset="1" stop-color="#adadad"/>
+  </linearGradient>
+  <linearGradient id="linear_10" y1="0.0447761" x1="0.239739" y2="0.955818" gradientUnits="objectBoundingBox" x2="0.239739">
+   <stop offset="0" stop-color="#000000"/>
+   <stop offset="1" stop-color="#ffffff"/>
+  </linearGradient>
+ </defs>
+ <title>Display Date</title>
+ <desc>This control displays the current date.</desc>
+ <metadata>
+  <atv:parameter valuetype="address" behavior="optional" name="base"/>
+  <atv:parameter valuetype="trstring" substitute="$SEPERATOR$" behavior="optional" name="seperator" defaultvalue="T{.}"/>
+  <atv:gridconfig width="1" enabled="true" height="1" gridstyle="lines"/>
+  <atv:snapconfig width="1" enabled="false" height="1"/>
+ </metadata>
+ <rect width="109.5" x="0.25" y="0.25" fill="url(#linear_0)" atv:dynamic="true" rx="3" height="29.5" ry="3" stroke="#646464" id="id_0" atv:refpx="55" stroke-width="0.5" atv:refpy="15.5"/>
+ <rect width="102" x="4" y="4.399" fill="url(#linear_10)" rx="2.995" height="21.203" ry="3" stroke="none" id="id_7" atv:refpx="68.934" stroke-width="3.426" atv:refpy="-143.026"/>
+ <path fill="#ffffff" stroke="#000000" id="id_10" atv:refpx="70.1" stroke-width="1.713" atv:refpy="128.517" d="M6.985,6.616C6.985,6.616 6.291,11.255 6.291,14.608C6.291,17.96 6.985,23.383 6.985,23.383C6.985,23.383 103.016,23.383 103.016,23.383C103.016,23.383 103.708,18.328 103.708,14.975C103.708,11.621 103.016,6.616 103.016,6.616C103.016,6.616 6.985,6.616 6.985,6.616"/>
+ <path fill="#000000" stroke="none" id="id_1" atv:refpx="50.88" stroke-width="2" atv:refpy="15.113" d="M17.402,6.458L17.402,23.756L92.13,23.649L92.13,6.35L91.441,6.35L91.441,22.567L82.319,22.567L82.319,6.35L81.63,6.35L81.63,22.567L72.5,22.567L72.5,6.35L71.811,6.35L71.811,22.567L61.652,22.567L61.652,6.35L60.628,6.35L54.555,6.35L54.555,22.567L44.669,22.567L44.669,6.35L44.036,6.35L44.036,22.567L34.067,22.606L34.067,6.388L27.25,6.458L27.25,22.676L18.068,22.676L18.068,6.458Z"/>
+ <text x="30.468" y="20.811" fill="#ffffff" font-family="Arial" text-anchor="middle" id="id_3" atv:refpx="30.468" atv:refpy="14.811" font-size="16">$SEPERATOR$</text>
+ <text x="57.698" y="20.811" fill="#ffffff" font-family="Arial" text-anchor="middle" id="id_5" atv:refpx="57.698" atv:refpy="14.811" font-size="16">$SEPERATOR$</text>
+ <text x="17.5" y="19.93" fill="#000000" font-family="Courier" text-anchor="middle" id="d" font-weight="bold" atv:refpx="37.217" atv:refpy="35.131" font-size="16">00</text>
+ <text x="81.835" y="20" fill="#000000" font-family="Courier" text-anchor="middle" id="y" font-weight="bold" atv:refpx="806.714" atv:refpy="91.225" font-size="16">0000</text>
+ <text x="44.36" y="20" fill="#000000" font-family="Courier" text-anchor="middle" id="m" font-weight="bold" atv:refpx="214.172" atv:refpy="35.877" font-size="16">00</text>
+ <script type="text/ecmascript"><![CDATA[var base = (webMI.query["base"] == undefined) ? "" : webMI.query["base"];
+
+function setDate(date) {
+	var displayedDate = (date == undefined) ? new Date() : new Date(date);
+
+	var y = displayedDate.getFullYear();
+	var m = displayedDate.getMonth()+1;
+	var d = displayedDate.getDate();
+
+	webMI.gfx.setText("y", webMI.sprintf("%04d", y));
+	webMI.gfx.setText("m", webMI.sprintf("%02d", m));
+	webMI.gfx.setText("d", webMI.sprintf("%02d", d));
+}
+
+if (base != "") {
+	webMI.data.subscribe(base, function(e) {
+		setDate(e.value);
+	});
+}
+else {
+	setDate();
+	var updateInterval = setInterval(function() { setDate(); }, 3000);
+}]]></script>
+</svg>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/IMG/createNewWell/delete_btn.png
+NodeClass: Variable
+BrowseName: 1:delete_btn.png
+DisplayName: en|delete_btn.png
+Description: en|delete_btn.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

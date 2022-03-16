@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.GLOBALS.atvFillColorOrig
+NodeClass: Variable
+BrowseName: 1:atvFillColorOrig
+DisplayName: en|atvFillColorOrig
+Description: en|atvFillColorOrig
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.GlobalVariable

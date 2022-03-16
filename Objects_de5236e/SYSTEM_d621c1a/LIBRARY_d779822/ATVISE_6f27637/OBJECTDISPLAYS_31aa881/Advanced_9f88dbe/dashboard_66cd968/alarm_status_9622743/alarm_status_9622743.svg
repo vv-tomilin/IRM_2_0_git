@@ -1,0 +1,313 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="160" height="160" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <desc>Displays the current alarm status of an alarm condition</desc>
+ <title>Alarm status</title>
+ <metadata>
+  <atv:parameter defaultvalue="" behavior="mandatory" desc="base" valuetype="address" name="base"/>
+  <atv:parameter substitute="$TITLE$" defaultvalue="T{Title}" behavior="optional" desc="title" valuetype="trstring" name="title"/>
+  <atv:parameter defaultvalue="" behavior="optional" desc="display to open (click on title)" valuetype="display" name="display"/>
+  <atv:parameter behavior="optional" desc="unit" valuetype="trstring" name="unit"/>
+  <atv:parameter config="string;number" defaultvalue="string" behavior="optional" desc="value output mode" valuetype="enum" name="outputMode"/>
+  <atv:parameter config="6;7;8;9;10;11;12;14;16;18;20;22" substitute="$TITLE_FONT_SIZE$" defaultvalue="12" behavior="optional" desc="title font size" group="Font" valuetype="enum" name="titleFontSize"/>
+  <atv:parameter config="6;7;8;9;10;11;12;14;16;18;20;22;26;28;36;48;72" substitute="$LABEL_FONT_SIZE$" defaultvalue="12" behavior="optional" desc="label font size" group="Font" valuetype="enum" name="labelFontSize"/>
+  <atv:parameter config="6;7;8;9;10;11;12;14;16;18;20;22;26;28;36;48;72" substitute="$BUTTON_FONT_SIZE$" defaultvalue="12" behavior="optional" desc="button font size" group="Font" valuetype="enum" name="buttonFontSize"/>
+  <atv:parameter config="Times New Roman=Times New Roman,Bodoni,Garamond,Minion Web,ITC Stone Serif,MS Georgia,Bitstream Cyberbit,serif;Arial=MS Trebuchet,ITC Avant Garde Gothic,MS Arial,MS Verdana,Univers,Futura,ITC Stone Sans,Gill Sans,Akzidenz Grotesk,Helvetica,sans-serif;Courier=Courier,MS Courier New,Prestige,Everson Mono,monospace;Zapf-Chancery=Caflisch Script,Adobe Poetica,Sanvito,Ex Ponto,Snell Roundhand,Zapf-Chancery,cursive;Alpha Geometrique=Alpha Geometrique,Critter,Cottonwood,FB Reactor,Studz,fantasy" substitute="$FONT_FAMILY$" defaultvalue="Arial" behavior="optional" desc="font family" group="Font" valuetype="enum" name="fontFamily"/>
+  <atv:parameter defaultvalue="0" behavior="optional" desc="post decimals" group="Appearance" valuetype="address" name="postDecimals"/>
+  <atv:parameter substitute="$BACKGROUND_COLOR$" defaultvalue="SYSTEM.GLOBALS.atvFillColor" behavior="optional" desc="background color" group="Appearance" valuetype="global" name="backgroundColor"/>
+  <atv:parameter substitute="$TEXT_COLOR$" defaultvalue="SYSTEM.GLOBALS.atvFontColor" behavior="optional" desc="text color" group="Appearance" valuetype="global" name="textColor"/>
+  <atv:parameter substitute="$BORDER_COLOR$" defaultvalue="SYSTEM.GLOBALS.atvBorderColor" behavior="optional" desc="border color" group="Appearance" valuetype="global" name="borderColor"/>
+  <atv:parameter defaultvalue="#b7b7b7" behavior="optional" desc="color inactive" group="Appearance" valuetype="color" name="colorInactive"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvAlarmIndication" behavior="optional" desc="alarm indication" group="Appearance" valuetype="global" name="alarmIndication"/>
+  <atv:parameter behavior="optional" desc="tooltip" group="Options" valuetype="trstring" name="tooltip"/>
+  <atv:parameter group="Options" desc="tab index" behavior="optional" valuetype="number" name="tabIndex"/>
+  <atv:parameter config="SYSTEM.SECURITY.RIGHTS" defaultvalue="" behavior="optional" desc="necessary right" group="Security" valuetype="address" name="right"/>
+  <atv:parameter defaultvalue="" behavior="optional" desc="activation address" group="Security" valuetype="address" name="activeNode"/>
+  <atv:parameter defaultvalue="off" behavior="optional" desc="activation value" group="Security" valuetype="string" name="activeValue"/>
+  <atv:gridconfig width="10" enabled="true" height="10" gridstyle="lines"/>
+  <atv:snapconfig width="5" enabled="true" height="5"/>
+ </metadata>
+ <rect id="background" ry="0" width="158" fill="$BACKGROUND_COLOR$" stroke="$BORDER_COLOR$" atv:bindbr="1,1" atv:refpy="80" height="158" stroke-width="2" atv:refpx="80" x="1" y="1" rx="0" atv:bindtl="0,0"/>
+ <text id="title" font-size="$TITLE_FONT_SIZE$" fill="$TEXT_COLOR$" atv:bindbr="0.5,0" atv:refpy="13" atv:refpx="80" dominant-baseline="auto" font-family="$FONT_FAMILY$" x="80" y="18" atv:bindtl="0.5,0" text-anchor="middle">$TITLE$</text>
+ <rect id="blinking_frame" width="150" fill="#ffffff" stroke="#000000" atv:bindbr="1,1" atv:refpy="90" height="130" atv:refpx="80" stroke-width="1" x="5" y="25" atv:bindtl="0,0"/>
+ <text id="status_label" alignment-baseline="middle" font-size="$LABEL_FONT_SIZE$" fill="$TEXT_COLOR$" atv:bindbr="0,0" atv:refpy="46.5" atv:refpx="66" font-family="$FONT_FAMILY$" x="14.5" y="51" atv:bindtl="0,0" visibility="hidden">T{Status}: &lt;status></text>
+ <text id="value_label" alignment-baseline="middle" font-size="$LABEL_FONT_SIZE$" fill="$TEXT_COLOR$" atv:bindbr="0,0.5" atv:refpy="73" atv:refpx="61.055" font-family="$FONT_FAMILY$" x="14.555" y="77.5" atv:bindtl="0,0.5" visibility="hidden">T{Value}: &lt;value></text>
+ <text id="ack_label" alignment-baseline="middle" font-size="$LABEL_FONT_SIZE$" fill="$TEXT_COLOR$" atv:bindbr="0,1" atv:refpy="99.5" atv:refpx="81" font-family="$FONT_FAMILY$" x="14.5" y="104" atv:bindtl="0,1" visibility="hidden">T{Acknowledged}: &lt;ack></text>
+ <text id="main_label" font-size="20" fill="#575757" atv:bindbr="0.5,0.5" atv:refpy="82.999" atv:refpx="80" font-family="Arial" x="80" y="90.5" atv:bindtl="0.5,0.5" visibility="visible" text-anchor="middle">Dashboard</text>
+ <text id="sub_label" font-size="16" fill="#575757" atv:bindbr="0.5,0.5" atv:refpy="103.201" atv:refpx="79.791" font-family="Arial" x="80" y="109.2" atv:bindtl="0.5,0.5" visibility="visible" text-anchor="middle">Alarm status</text>
+ <rect id="clickarea_display" width="160" fill="#000088" stroke="#0000ff" atv:bindbr="1,1" atv:refpy="80" height="160" stroke-width="0" atv:refpx="80" x="0" y="0" fill-opacity="0" atv:bindtl="0,0"/>
+ <svg id="ack_button" width="80" transform="matrix(1.75,0,0,1,0,0)" atv:bindbr="0.5,1" atv:refpy="135.007" atv:refpx="80" height="30" x="5.714" y="120" atv:bindtl="0.5,1" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" visibility="hidden">
+  <atv:argument value="T{Acknowledge}" name="label"/>
+  <atv:argument prefix="right" name="right"/>
+  <atv:argument prefix="activeNode" name="activeNode"/>
+  <atv:argument prefix="activeValue" name="activeValue"/>
+  <atv:argument prefix="textColor" value="" name="fontColor"/>
+  <atv:argument prefix="buttonFontSize" name="fontSize"/>
+  <atv:argument prefix="tabIndex" name="tabIndex"/>
+  <atv:overwrite id="id_6" width="138" transform="matrix(0.5714,0,0,1,0,0)"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.5714,0,0,1,0,0)" x="60"/>
+  <atv:overwrite id="button_label" transform="matrix(0.5714,0,0,1,0,0)" x="70"/>
+  <atv:overwrite id="button_stroke" width="136" transform="matrix(0.5714,0,0,1,0,0)"/>
+  <atv:overwrite id="button_bg" width="138" transform="matrix(0.5714,0,0,1,0,0)"/>
+  <atv:overwrite id="outer_frame" width="140" transform="matrix(0.5714,0,0,1,0,0)"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[// Id definition
+var CLICKAREA_ID = "clickarea_display";
+var MAIN_LABEL_ID = "main_label";
+var SUB_LABEL_ID = "sub_label";
+var STATUS_LABEL_ID = "status_label";
+var VALUE_LABEL_ID = "value_label";
+var ACK_LABEL_ID = "ack_label";
+var BACKGROUND_ID = "background";
+var BLINKING_FRAME_ID = "blinking_frame";
+var ACK_BUTTON_ID = "ack_button";
+
+// Trigger definition
+var SET_ACTIVE_TRIGGER = "com.atvise.setActive";
+
+// Color definition
+var BLINKING_FRAME_COLOR_INACTIVE = "#000000";
+var BLINKING_FRAME_COLOR_ACTIVE = "#ffffff";
+
+var STATUS_PREFIX = "T{Status}: ";
+var VALUE_PREFIX = "T{Value}: ";
+var ACK_PREFIX = "T{Acknowledged}: ";
+
+webMI.addOnload(function () {
+	// Query parameters
+	var queryParams = webMI.query;
+	var display = queryParams["display"];
+	var tooltip = queryParams["tooltip"];
+	var base = queryParams["base"];
+	var unit = queryParams["unit"] || "";
+	var postDecimalFactor = Math.pow(10, queryParams["postDecimals"]);
+	var right = queryParams["right"] || "";
+	var activeNode = queryParams["activeNode"] || "";
+	var activeValue = queryParams["activeValue"] || "";
+	var alarmIndication = queryParams["alarmIndication"];
+	var colorInactive = queryParams["colorInactive"];
+	var backgroundColor = queryParams["backgroundColor"];
+	var display = queryParams["display"];
+	var numberMode = queryParams["outputMode"] === "number";
+
+	var active = false;
+	var hasRight = false;
+	var nodeIsActive = false;
+	var activeIndicators = {};
+	var currentIndicator = "";
+
+	// Activate and deactivate display
+	function deActivate() {
+		if (right != "") {
+			if ((String(activeValue) != "") && (activeNode != "")) {
+				active = (nodeIsActive && hasRight);
+			} else {
+				active = hasRight;
+			}
+		} else {
+			if ((String(activeValue) != "") && (activeNode != "")) {
+				active = nodeIsActive;
+			} else {
+				active = true;
+			}
+		}
+
+		if (active) {
+			webMI.gfx.setVisible(MAIN_LABEL_ID, false);
+			webMI.gfx.setVisible(SUB_LABEL_ID, false);
+			webMI.gfx.setVisible(STATUS_LABEL_ID, null);
+			webMI.gfx.setVisible(VALUE_LABEL_ID, null);
+			webMI.gfx.setVisible(ACK_LABEL_ID, null);
+			webMI.gfx.setVisible(ACK_BUTTON_ID, null);
+			webMI.gfx.setStroke(BLINKING_FRAME_ID, null);
+			webMI.gfx.setFill(BACKGROUND_ID, backgroundColor);
+			webMI.gfx.setFill(BLINKING_FRAME_ID, BLINKING_FRAME_COLOR_ACTIVE);
+			setIndicator();
+		} else {
+			webMI.gfx.setVisible(MAIN_LABEL_ID, null);
+			webMI.gfx.setVisible(SUB_LABEL_ID, null);
+			webMI.gfx.setVisible(STATUS_LABEL_ID, false);
+			webMI.gfx.setVisible(VALUE_LABEL_ID, false);
+			webMI.gfx.setVisible(ACK_LABEL_ID, false);
+			webMI.gfx.setVisible(ACK_BUTTON_ID, false);
+			webMI.gfx.setFill(BACKGROUND_ID, colorInactive);
+			webMI.gfx.setFill(BLINKING_FRAME_ID, colorInactive);
+			webMI.gfx.setStroke(BLINKING_FRAME_ID, BLINKING_FRAME_COLOR_INACTIVE);
+		}
+	}
+
+	// Set indicator
+	function setIndicator() {
+		if (currentIndicator != "" || !active)
+			return;
+
+		if (activeIndicators["trigger"]) {
+			currentIndicator = "trigger";
+		} else if (activeIndicators["status"]) {
+			currentIndicator = "status";
+		} else if (activeIndicators["alarm"]) {
+			currentIndicator = "alarm";
+		} else {
+			currentIndicator = "";
+			return;
+		}
+
+		if (active) {
+			webMI.gfx.setStroke(BLINKING_FRAME_ID, activeIndicators[currentIndicator].color);
+		}
+
+		var interval = activeIndicators[currentIndicator].interval;
+		setTimeout(function() {
+			if (active) {
+				webMI.gfx.setStroke(BLINKING_FRAME_ID, null);
+			}
+			setTimeout(function() {
+				currentIndicator = "";
+				setIndicator();
+			}, interval);
+		}, interval);
+	}
+
+	// Alarm handling
+	function initAlarm(address) {
+		if (alarmIndication == "")
+			alarmIndication = {};
+	
+		if (typeof alarmIndication["AlarmStatusOnUnacknowledged"] == "undefined")
+			alarmIndication["AlarmStatusOnUnacknowledged"] = {color: "#ff0000", interval: "250"};
+	
+		if (typeof alarmIndication["AlarmStatusOnAcknowledged"] == "undefined")
+			alarmIndication["AlarmStatusOnAcknowledged"] = {color: "#ff0000", interval: "500"};
+	
+		if (typeof alarmIndication["AlarmStatusOffUnacknowledged"] == "undefined")
+			alarmIndication["AlarmStatusOffUnacknowledged"] = {color: "#ff0000", interval: "750"};
+	
+		if (typeof alarmIndication["AlarmStatusOnOffUnacknowledged"] == "undefined")
+			alarmIndication["AlarmStatusOnOffUnacknowledged"] = {color: "#ff0000", interval: "1500"};
+	
+		webMI.alarm.subscribe(address, function(e) {
+			var state = e.state;
+			var value = e.value;
+			var confirmed = !e.ConfirmedStateId;
+			var ackedInfo = confirmed ? "T{Yes}" : "T{No}";
+
+			if (state == 1)
+				activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOnUnacknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOnUnacknowledged"].interval)};
+			else if (state == 2)
+				activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOnAcknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOnAcknowledged"].interval)};
+			else if (state == 3)
+				activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOffUnacknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOffUnacknowledged"].interval)};
+			else if (state == 5)
+				activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOnOffUnacknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOnOffUnacknowledged"].interval)};
+			else
+				delete activeIndicators["alarm"];
+
+			if (numberMode) {
+				value = round(parseFloat(value, 10));
+			}
+
+			webMI.gfx.setText(STATUS_LABEL_ID, STATUS_PREFIX + getStateText(state));
+			webMI.gfx.setText(VALUE_LABEL_ID, VALUE_PREFIX + value + (unit ? " " + unit : ""));
+			webMI.gfx.setText(ACK_LABEL_ID, ACK_PREFIX + ackedInfo);
+			webMI.trigger.fire(SET_ACTIVE_TRIGGER, confirmed, ACK_BUTTON_ID);
+
+			setIndicator();
+		});
+	}
+
+	function getStateText(state) {
+		switch (state) {
+			case 0:
+				return "T{inactive ack.}";
+			case 1:
+				return "T{ACTIVE!}";
+			case 2:
+				return "T{active ack.}";
+			case 3:
+				return "T{INACTIVE!}";
+			case 5:
+				return "T{(IN)ACTIVE!}";
+		}
+		return "undefined alarm state";
+	}
+
+
+	function round(value) {
+		return Math.round(value * postDecimalFactor) / postDecimalFactor;
+	}
+
+	// Remove "prefix" SYSTEM.SECURITY.RIGHTS
+	if (right.search(/SYSTEM\.SECURITY\.RIGHTS\./) != -1) {
+		right = right.substring(23,right.length); 
+	}
+
+	// Right handling
+	if (right != "") {
+		webMI.addEvent(webMI.data, "clientvariableschange", function(e) {
+			hasRight = false;
+			if (("username" in e) && (e.username != "")) {
+					hasRight = webMI.hasRight(right);
+			}
+			deActivate();
+		});
+	}
+
+	// Check active node and value
+	if ((activeNode != "") && (String(activeValue) != "")) {
+		webMI.data.subscribe(activeNode, function(e) {
+			var nodeActiveValue = e.value;
+			if (typeof nodeActiveValue == "boolean") {
+				nodeIsActive = (String(nodeActiveValue) == activeValue);
+			} else if (typeof nodeActiveValue == "number") {
+				try {
+					var temp = parseFloat(activeValue);
+					nodeIsActive = (nodeActiveValue == temp);
+				} catch(e) {
+					nodeIsActive = false;
+				}
+			} else {
+				nodeIsActive = (nodeActiveValue == activeValue);
+			}
+
+			deActivate();
+		});
+	} else {
+		deActivate();
+	}
+
+	// Blinking trigger
+	webMI.trigger.connect("com.atvise.setBlinking", function(e) {
+		if (e.value == "none"){
+			delete activeIndicators["trigger"];
+		} else {
+			activeIndicators["trigger"] = {color: e.value, interval: 500};
+		}	
+		setIndicator();
+	});
+
+	if (display) {
+		webMI.addEvent(CLICKAREA_ID, ["click","touchend"], function(e) {
+			if (active) {
+				webMI.display.openDisplay(display);
+			}
+		});
+	}
+
+	if (tooltip) {
+		webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tooltip", {"auto":"true", "id":CLICKAREA_ID, "text":tooltip});
+	}
+
+	if (base) {
+		initAlarm(base);
+
+		webMI.trigger.connect("clicked", function(e) {
+			if (active) {
+				webMI.alarm.accept(base);
+			}
+		}, ACK_BUTTON_ID);
+	}
+});
+
+
+]]></script>
+</svg>

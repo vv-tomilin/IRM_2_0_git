@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/Histogram
+NodeClass: Object
+BrowseName: 1:Histogram
+DisplayName: en|Histogram
+Description: en|Histogram
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

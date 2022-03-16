@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.Mud_Tank_Volumes.sequence_identifier
+NodeClass: Variable
+BrowseName: 1:sequence_identifier
+DisplayName: en|sequence_identifier
+Description: en|sequence_identifier
+DataType: Int64
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Platforma.WellpadBoard.verticalWell
+NodeClass: Variable
+BrowseName: 1:verticalWell
+DisplayName: en|verticalWell
+Description: en|verticalWell
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,11 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Mud1.Circulation_Rate.Sensor.Limit_low
+NodeClass: Variable
+BrowseName: 1:Limit_low
+DisplayName: en|Limit_low
+Description: en|Limit_low
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

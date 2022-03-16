@@ -1,0 +1,12 @@
+NodeId: ns=1;s=SYSTEM.SECURITY.GROUPS.Concrete
+NodeClass: Object
+BrowseName: 1:Concrete
+DisplayName: en|Concrete
+Description: en|Concrete
+EventNotifier: 0
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.RIGHTS.USER.Concrete
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.cementservice
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.khayrullin.iv
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.korenevrv
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.steward
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.Group

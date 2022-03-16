@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Tool
+NodeClass: Object
+BrowseName: 1:Tool
+DisplayName: en|Tool
+Description: en|Tool
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

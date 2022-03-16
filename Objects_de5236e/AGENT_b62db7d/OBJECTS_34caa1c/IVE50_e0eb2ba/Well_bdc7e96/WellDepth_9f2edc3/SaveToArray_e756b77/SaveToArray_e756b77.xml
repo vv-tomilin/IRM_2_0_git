@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nnode" type="node" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.IVE50.Well.WellDepth"/>
+  <code><![CDATA[var nameBase = base.nodeid.slice(base.nodeid.indexOf(';s=')+3);
+call('AutoHistory.SaveToArray',{namebase:nameBase});]]></code>
+</script>

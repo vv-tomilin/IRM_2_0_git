@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Platforma.RigBoard
+NodeClass: Object
+BrowseName: 1:RigBoard
+DisplayName: en|RigBoard
+Description: en|RigBoard
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

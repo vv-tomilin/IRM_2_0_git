@@ -1,0 +1,345 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="162" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <desc>Sets/displays a time to/from an address.</desc>
+ <title>In/Out Time</title>
+ <metadata>
+  <atv:parameter behavior="mandatory" desc="base" valuetype="address" name="base"/>
+  <atv:parameter defaultvalue="150" behavior="optional" desc="interval [ms] (0 = off)" valuetype="number" name="interval"/>
+  <atv:parameter config="Times New Roman=Times New Roman,Bodoni,Garamond,Minion Web,ITC Stone Serif,MS Georgia,Bitstream Cyberbit,serif;Arial=MS Trebuchet,ITC Avant Garde Gothic,MS Arial,MS Verdana,Univers,Futura,ITC Stone Sans,Gill Sans,Akzidenz Grotesk,Helvetica,sans-serif;Courier=Courier,MS Courier New,Prestige,Everson Mono,monospace;Zapf-Chancery=Caflisch Script,Adobe Poetica,Sanvito,Ex Ponto,Snell Roundhand,Zapf-Chancery,cursive;Alpha Geometrique=Alpha Geometrique,Critter,Cottonwood,FB Reactor,Studz,fantasy" substitute="$FONTFAMILY$" defaultvalue="Arial" behavior="optional" desc="family" group="Font" valuetype="enum" name="fontFamily"/>
+  <atv:parameter config="6;7;8;9;10;11;12;14;16;18" substitute="$FONTSIZE$" defaultvalue="12" behavior="optional" desc="size" group="Font" valuetype="enum" name="fontSize"/>
+  <atv:parameter substitute="$FONTCOLOR$" defaultvalue="SYSTEM.GLOBALS.atvFontColor" behavior="optional" desc="color" group="Font" valuetype="global" name="fontColor"/>
+  <atv:parameter defaultvalue="#FFFFFF" behavior="optional" desc="value field fill color" group="Appearance" valuetype="color" name="valueFieldFill"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvInactiveColor" behavior="optional" desc="value field fill color inactive" group="Appearance" valuetype="global" name="fillColorInactive"/>
+  <!-- <atv:parameter defaultvalue="#575756" behavior="optional" desc="fill color arrow" group="Appearance" valuetype="color" name="arrowFill"/>
+  <atv:parameter defaultvalue="#FDFF0F" behavior="optional" desc="fill color arrow pressed" group="Appearance" valuetype="color" name="arrowFillPressed"/> -->
+  <atv:parameter defaultvalue="#ffffff" behavior="optional" desc="stroke color button pressed" group="Appearance" valuetype="color" name="buttonStrokePressed"/>
+  <atv:parameter defaultvalue="#FFFFFF" behavior="optional" desc="focus stroke color" group="Appearance" valuetype="color" name="focusStrokeColor"/>
+  <atv:parameter behavior="optional" desc="minimum" group="Options" valuetype="string" name="min"/>
+  <atv:parameter behavior="optional" desc="maximum" group="Options" valuetype="string" name="max"/>
+  <atv:parameter behavior="optional" desc="address to set" group="Options" valuetype="address" name="outputNode"/>
+  <atv:parameter behavior="optional" desc="consistency group" group="Options" valuetype="string" name="consistencyGroup"/>
+  <atv:parameter behavior="optional" desc="tab index" group="Options" valuetype="number" name="tabIndex"/>
+  <atv:parameter behavior="optional" desc="tooltip" group="Options" valuetype="trstring" name="tooltip"/>
+  <atv:parameter config="SYSTEM.SECURITY.RIGHTS" behavior="optional" desc="necessary right" group="Security" valuetype="address" name="right"/>
+  <atv:parameter behavior="optional" desc="activation address" group="Security" valuetype="address" name="activeNode"/>
+  <atv:parameter behavior="optional" desc="activation value" group="Security" valuetype="string" name="activeValue"/>
+  <atv:gridconfig width="20" enabled="false" height="20" gridstyle="lines"/>
+  <atv:snapconfig width="10" enabled="false" height="10"/>
+ </metadata>
+ <rect id="id_0" ry="1.5" width="161.5" stroke="#D7D7D7" fill="#ffffff" atv:refpy="50" height="99.5" stroke-width="1" atv:refpx="59.239" y="0.25" x="0.25" rx="1.5" atv:dynamic="true"/>
+ <text id="label_day" font-size="$FONTSIZE$" fill="$FONTCOLOR$" atv:refpy="9.5" atv:refpx="17.5" font-family="$FONTFAMILY$" y="14" x="21" text-anchor="middle">T{HH}</text>
+ <text id="label_month" font-size="$FONTSIZE$" fill="$FONTCOLOR$" atv:refpy="9.5" atv:refpx="57.5" font-family="$FONTFAMILY$" y="14" x="61" atv:dynamic="true" text-anchor="middle">T{MM}</text>
+ <text id="id_63" font-size="$FONTSIZE$" fill="$FONTCOLOR$" atv:refpy="9.5" atv:refpx="98.324" font-family="$FONTFAMILY$" y="14" x="101" text-anchor="middle">T{SS}</text>
+ <svg id="1_hours" width="40" atv:refpy="59.224" height="80" atv:refpx="41.224" y="18.224" x="1.224" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.rocker_switch_small">
+  <atv:argument value="-1" name="min"/>
+  <atv:argument value="24" name="max"/>
+  <atv:argument prefix="interval" value="" name="interval"/>
+  <atv:argument prefix="arrowFillPressed" value="" name="arrowFillPressed"/>
+  <atv:argument prefix="buttonStrokePressed" value="" name="buttonStrokePressed"/>
+  <atv:argument prefix="right" value="" name="right"/>
+  <atv:argument prefix="activeNode" value="" name="activeNode"/>
+  <atv:argument prefix="activeValue" value="" name="activeValue"/>
+  <atv:argument prefix="valueFieldFill" value="" name="fill"/>
+  <atv:argument prefix="fillColorInactive" value="" name="fillColorInactive"/>
+  <atv:argument prefix="fontFamily" value="" name="fontFamily"/>
+  <atv:argument prefix="fontSize" value="" name="fontSize"/>
+  <atv:argument prefix="tabIndex" value=".4" name="tabIndex"/>
+  <atv:argument prefix="focusStrokeColor" value="" name="focusStrokeColor"/>
+  <atv:argument prefix="tooltip" value="" name="tooltip"/>
+  <atv:argument prefix="valueFieldFill" value="" name="inputFill"/>
+ </svg>
+ <svg id="2_minutes" width="40" atv:refpy="59" height="80" atv:refpx="61" y="18" x="41" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.rocker_switch_small">
+  <atv:argument value="-1" name="min"/>
+  <atv:argument value="60" name="max"/>
+  <atv:argument prefix="interval" value="" name="interval"/>
+  <atv:argument prefix="arrowFillPressed" value="" name="arrowFillPressed"/>
+  <atv:argument prefix="buttonStrokePressed" value="" name="buttonStrokePressed"/>
+  <atv:argument prefix="right" value="" name="right"/>
+  <atv:argument prefix="activeNode" value="" name="activeNode"/>
+  <atv:argument prefix="activeValue" value="" name="activeValue"/>
+  <atv:argument prefix="valueFieldFill" value="" name="fill"/>
+  <atv:argument prefix="fillColorInactive" value="" name="fillColorInactive"/>
+  <atv:argument prefix="fontFamily" value="" name="fontFamily"/>
+  <atv:argument prefix="fontSize" value="" name="fontSize"/>
+  <atv:argument prefix="tabIndex" value=".5" name="tabIndex"/>
+  <atv:argument prefix="focusStrokeColor" value="" name="focusStrokeColor"/>
+  <atv:argument prefix="tooltip" value="" name="tooltip"/>
+  <atv:argument prefix="valueFieldFill" value="" name="inputFill"/>
+ </svg>
+ <svg id="3_seconds" width="40" atv:refpy="59" height="80" atv:refpx="101" y="18" x="81" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.rocker_switch_small">
+  <atv:argument value="-1" name="min"/>
+  <atv:argument value="60" name="max"/>
+  <atv:argument prefix="interval" value="" name="interval"/>
+  <atv:argument prefix="arrowFillPressed" value="" name="arrowFillPressed"/>
+  <atv:argument prefix="buttonStrokePressed" value="" name="buttonStrokePressed"/>
+  <atv:argument prefix="right" value="" name="right"/>
+  <atv:argument prefix="activeNode" value="" name="activeNode"/>
+  <atv:argument prefix="activeValue" value="" name="activeValue"/>
+  <atv:argument prefix="valueFieldFill" value="" name="fill"/>
+  <atv:argument prefix="fillColorInactive" value="" name="fillColorInactive"/>
+  <atv:argument prefix="fontFamily" value="" name="fontFamily"/>
+  <atv:argument prefix="fontSize" value="" name="fontSize"/>
+  <atv:argument prefix="tabIndex" value=".6" name="tabIndex"/>
+  <atv:argument prefix="focusStrokeColor" value="" name="focusStrokeColor"/>
+  <atv:argument prefix="tooltip" value="" name="tooltip"/>
+  <atv:argument prefix="valueFieldFill" value="" name="inputFill"/>
+ </svg>
+ <svg id="4_millis" width="40" atv:refpy="59" height="80" atv:refpx="141.224" y="18" x="121" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.rocker_switch_small">
+  <atv:argument value="1000" name="max"/>
+  <atv:argument value="-1" name="min"/>
+  <atv:argument prefix="interval" value="" name="interval"/>
+  <atv:argument prefix="arrowFillPressed" value="" name="arrowFillPressed"/>
+  <atv:argument prefix="buttonStrokePressed" value="" name="buttonStrokePressed"/>
+  <atv:argument prefix="right" value="" name="right"/>
+  <atv:argument prefix="activeNode" value="" name="activeNode"/>
+  <atv:argument prefix="activeValue" value="" name="activeValue"/>
+  <atv:argument prefix="valueFieldFill" value="" name="fill"/>
+  <atv:argument prefix="fillColorInactive" value="" name="fillColorInactive"/>
+  <atv:argument prefix="fontFamily" value="" name="fontFamily"/>
+  <atv:argument prefix="fontSize" value="" name="fontSize"/>
+  <atv:argument prefix="tabIndex" value=".7" name="tabIndex"/>
+  <atv:argument prefix="focusStrokeColor" value="" name="focusStrokeColor"/>
+  <atv:argument prefix="tooltip" value="" name="tooltip"/>
+  <atv:argument prefix="valueFieldFill" value="" name="inputFill"/>
+ </svg>
+ <text id="id_2" font-size="$FONTSIZE$" fill="$FONTCOLOR$" atv:refpy="10.023" atv:refpx="136.739" font-family="$FONTFAMILY$" y="14" x="141" atv:dynamic="true" text-anchor="middle">T{mmm}</text>
+ <script type="text/ecmascript"><![CDATA[//connect to valuechanged-triggers
+webMI.trigger.connect("valuechanged", function(e) { setField(e.value, "hours"); }, "1_hours");
+webMI.trigger.connect("valuechanged", function(e) { setField(e.value, "minutes"); }, "2_minutes");
+webMI.trigger.connect("valuechanged", function(e) {	setField(e.value, "seconds"); }, "3_seconds");
+webMI.trigger.connect("valuechanged", function(e) {	setField(e.value, "millis"); }, "4_millis");
+
+//connect to updateDate-trigger
+webMI.trigger.connect("updateDate", function(e) {
+	var date = new Date(e.value);
+	_value.day = date.getDate();
+	_value.month = date.getMonth();
+	_value.year = date.getFullYear();
+});
+
+//connect to setValue-trigger
+webMI.trigger.connect("setValue", function(e) {
+	update(e.value);
+});
+
+//parameters
+var base = (webMI.query["base"] == undefined) ? "" : webMI.query["base"];
+var min = webMI.query["min"];
+var max = webMI.query["max"];
+var outputNode = webMI.query["outputNode"];
+var consistencyGroup = webMI.query["consistencyGroup"];
+
+// parameters passed through or not used in script
+// var interval = parseFloat(webMI.query["interval"]);
+// var fontFamily = webMI.query["fontFamily"];
+// var fontSize = webMI.query["fontSize"];
+// var arrowFill = webMI.query["arrowFill"];
+// var arrowFillPressed = webMI.query["arrowFillPressed"];
+// var buttonStrokePressed = webMI.query["buttonStrokePressed"];
+// var right = webMI.query["right"];
+// var activeNode = webMI.query["activeNode"];
+// var activeValue = webMI.query["activeValue"];
+
+//variables
+var now = new Date();
+var _value = { "date": now, "time": now.getTime(), "day": now.getDate(), "month": now.getMonth(), "year": now.getFullYear(), "hours": now.getHours(), "minutes": now.getMinutes(), "seconds": now.getSeconds(), "millis": now.getMilliseconds() };
+var minTime, maxTime;
+var oneSecond = 1000;
+var oneMinute = oneSecond * 60;
+var oneHour = oneMinute * 60;
+
+if (consistencyGroup)
+	var consistencyHandler = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Consistency Handler");
+
+//set minimum time
+if (min) {
+	minTime = parseTime(min);
+}
+
+//set maximum time
+if (max) {
+	maxTime = parseTime(max);
+}
+
+//subscribe to node
+if (base != "") {
+	if (consistencyGroup) {
+		consistencyHandler.register(consistencyGroup, base, update);
+	} else {
+		webMI.data.subscribe(base, function(e) {
+			var millis = 0;
+
+			//check if a value is given
+			if (e.value) {
+				millis = e.value;
+
+				//if not number, try to parse
+				if (typeof millis != "number") {
+					millis = parseInt(e.value, 10);
+
+					if (isNaN(millis)) {
+						millis = 0;
+					}
+				}
+			}
+
+			//set new time
+			var newDate = new Date(millis);
+			_value.day = newDate.getDate();
+			_value.month = newDate.getMonth();
+			_value.year = newDate.getFullYear();
+			_value.hours = newDate.getHours();
+			_value.minutes = newDate.getMinutes();
+			_value.seconds = newDate.getSeconds();
+			_value.millis = newDate.getMilliseconds();
+			
+			//set internal time and update display
+			updateDate();
+			updateDisplay();
+		});
+	}
+//no base defined
+} else {
+	//set internal time and display initial value
+	updateDate();
+	updateDisplay();
+}
+
+/*
+ * FUNCTIONS
+ */
+
+//set hours, minutes, seconds, millis
+function setField(value, button) {
+	//convert to number if not
+	if (typeof value != "number" || isNaN(value)) {
+		value = parseInt(value, 10);
+		
+		if (isNaN(value)) {
+			value = 0;
+		}
+	}
+
+	_value[button] = value;
+	
+	updateDate();
+	valueUpdated(true);
+	
+	//update displayed values only 
+	if ((base == undefined) || (base == "")) {
+		updateDisplay();
+	}
+}
+
+//parse string to milliseconds
+function parseTime(str) {
+	//parse string in correct format to date object
+	var time = 0;
+	
+	if (typeof str == "string" && str) {
+		var match = str.match(/\d+/g);
+	
+		if (match) {
+			var hours = match[0];
+			var minutes = match[1];
+			var seconds = match[2];
+			var millis = match[3];
+			
+			if (!hours) { hours = 0; }
+			if (!minutes) { minutes = 0; }
+			if (!seconds) { seconds = 0; }
+			if (!millis) { millis = 0; }
+
+			time += hours * oneHour;
+			time += minutes * oneMinute;
+			time += seconds * oneSecond;
+			time += millis * 1;
+		}
+	}
+	
+	return time;
+}
+
+//update display
+function updateDisplay() {
+	webMI.trigger.fire("setValue", _value.hours, "1_hours");
+	webMI.trigger.fire("setValue", _value.minutes, "2_minutes");
+	webMI.trigger.fire("setValue", _value.seconds, "3_seconds");
+	webMI.trigger.fire("setValue", _value.millis, "4_millis");
+}
+
+//set time
+function updateDate() {
+	var time = 0;
+		time += _value.hours * oneHour;
+		time += _value.minutes * oneMinute;
+		time += _value.seconds * oneSecond;
+		time += _value.millis;
+		
+	//check against maxTime
+	if (maxTime && (time > maxTime)) {
+		_value.hours = Math.floor( maxTime / oneHour );
+		_value.minutes = Math.floor( (maxTime % oneHour) / oneMinute );
+		_value.seconds = Math.floor( ((maxTime % oneHour) % oneMinute) / oneSecond );
+		_value.millis = ((maxTime % oneHour) % oneMinute) % oneSecond;
+	//check against minTime
+	} else if (minTime && (time < minTime)) {
+		_value.hours = Math.floor( minTime / oneHour );
+		_value.minutes = Math.floor( (minTime % oneHour) / oneMinute );
+		_value.seconds = Math.floor( ((minTime % oneHour) % oneMinute) / oneSecond );
+		_value.millis = ((minTime % oneHour) % oneMinute) % oneSecond;
+	}
+	
+	_value.date = new Date(_value.year, _value.month, _value.day, _value.hours, _value.minutes, _value.seconds, _value.millis);
+	_value.time = _value.date.getTime();
+	_value.day = _value.date.getDate();
+	_value.month = _value.date.getMonth();
+	_value.year = _value.date.getFullYear();
+	_value.hours = _value.date.getHours();
+	_value.minutes = _value.date.getMinutes();
+	_value.seconds = _value.date.getSeconds();
+	_value.millis = _value.date.getMilliseconds();
+}
+
+//value has been changed by display
+function valueUpdated(fireTrigger) {
+	//update node
+	if (base != "" && !consistencyGroup) {
+		webMI.data.write(base, _value.time);
+	}
+
+	if (outputNode) {
+		webMI.data.write(outputNode, _value.time);
+	}
+	
+	//fire trigger
+	if (fireTrigger) {
+		webMI.trigger.fire("valuechanged", _value.time, "");
+	}
+
+	//update consistency value
+	if (consistencyGroup)
+		consistencyHandler.set(consistencyGroup, base, _value.time);
+}
+
+//update externally by trigger or consistency handler
+function update(value) {
+	var date = new Date(value);
+	_value.day = date.getDate();
+	_value.month = date.getMonth();
+	_value.year = date.getFullYear();
+	_value.hours = date.getHours();
+	_value.minutes = date.getMinutes();
+	_value.seconds = date.getSeconds();
+	_value.millis = date.getMilliseconds();
+
+	updateDate();
+	//valueUpdated(false);
+
+	//update displayed values only
+	if ((base == "") || (base == undefined) || consistencyGroup) {
+		updateDisplay();
+	}
+}]]></script>
+</svg>

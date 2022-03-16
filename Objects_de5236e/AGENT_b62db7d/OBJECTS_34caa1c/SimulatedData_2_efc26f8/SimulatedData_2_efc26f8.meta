@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.SimulatedData_2
+NodeClass: Object
+BrowseName: 1:SimulatedData_2
+DisplayName: en|SimulatedData_2
+Description: en|SimulatedData_2
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

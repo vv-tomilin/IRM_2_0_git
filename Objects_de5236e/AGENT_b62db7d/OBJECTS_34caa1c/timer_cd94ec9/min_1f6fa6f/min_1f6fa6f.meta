@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.timer.min
+NodeClass: Variable
+BrowseName: 1:min
+DisplayName: en|min
+Description: en|min
+DataType: Int32
+ValueRank: -1
+AccessLevel: 103
+Reference: forward HasTypeDefinition BaseVariableType

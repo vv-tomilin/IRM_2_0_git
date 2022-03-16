@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.Pump.MaxSrokePump1
+NodeClass: Variable
+BrowseName: 1:MaxSrokePump1
+DisplayName: en|MaxSrokePump1
+Description: en|MaxSrokePump1
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.DATASOURCES.WITS_GTI
+NodeClass: Object
+BrowseName: 1:WITS_GTI
+DisplayName: en|WITS_GTI
+Description: en|WITS_GTI
+EventNotifier: 0
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.Datasource.OpcUa

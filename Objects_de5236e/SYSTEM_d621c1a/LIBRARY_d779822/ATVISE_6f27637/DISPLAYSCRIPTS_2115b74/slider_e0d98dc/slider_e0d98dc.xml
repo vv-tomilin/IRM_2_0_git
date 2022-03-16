@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <code><![CDATA[/**
+ * Code for slider_horizontal and slider_vertical object displays
+ * --------------------------------------------------------------
+ * The slider is used for the graphical representation of the value of an address; it cannot be used &nbsp;as input control.
+ * For each slider 0 to 4 limits (from &ldquo;limit low low&rdquo; up to &ldquo;limit high high&rdquo;) can be specified. These limits split the range defined by &ldquo;min&rdquo; and &ldquo;max&rdquo; in 1 to 5 intervals. Depending in what interval the value of the "base" address lies, the text color&nbsp;of the value will be changed according to the specified color for each limit &ndash; see below under &ldquo;Appearance&rdquo;. In case a limit lies below min or above max, it will not be explicitly drawn, though the text color will be changed accordingly. (e.g. max=100 and &ldquo;limit high high&rdquo;=120: although the slider will not go beyond &ldquo;max&rdquo;, the text color will change according to &ldquo;limit high high color&rdquo; as soon as the value reaches the &ldquo;limit high high&rdquo;)
+ * The limits are defined as follows:<br>
+ * - limit low low &gt;= value: text color according to "limit low low color"
+ * - limit low low &lt;  value &lt;= limit low: text color according to "limit low color"
+ * - limit low &lt;  value &lt; limit high: text color&nbsp;according to "text color"
+ * - limit high &lt;=  value &lt; limit high high: text color&nbsp;according to "limit high color"
+ * - limit high high  &lt;=  value: text color according to "limit high high&nbsp;color"
+ * An additional border indicates the current value's negative state or an additionally defined alarm. The colors and blinking intervals are defined in global lists.
+ */
+var AggregateManager = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Aggregate Manager");
+
+/* switch compatibility and advanced modes for designs */
+var compatibilityMode = (typeof webMI.query["compatibilityMode"] == "undefined") ? false : true;
+var advancedMode = !compatibilityMode;
+var isHorizontal = webMI.query["horizontalMode"] == "true" ? true : false;
+
+
+/**
+ * DECLARATION SECTION
+ */
+var active = false;
+var activeNode = (webMI.query["activeNode"] == undefined) ? "" : webMI.query["activeNode"];
+var activeValue = (webMI.query["activeValue"] == undefined) ? "" : webMI.query["activeValue"];
+var alarmToSubscribe = webMI.query["alarm"];
+var alarmIndication = webMI.query["alarmIndication"];
+var barColor = typeof webMI.query["fill"] != "undefined" ? webMI.query["fill"] : webMI.query["barColor"];
+var barColorInactive = typeof webMI.query["fillColorInactive"] != "undefined" ? webMI.query["fillColorInactive"] : webMI.query["barColorInactive"];
+var barColorNotEditable = typeof webMI.query["fillColorNotEditable"] != "undefined" ? webMI.query["fillColorNotEditable"] : webMI.query["barColorNotEditable"];
+var barColorLimitsOn = webMI.query["barColorLimitsOn"];
+var base = (webMI.query["base"] == undefined) ? "" : webMI.query["base"];
+var decimalPositions = webMI.query["decimalPositions"];
+var fontColor = webMI.query["fontColor"];
+var i = 0;
+var isActivationNodeSet = activeNode != "" && String(activeValue) != "";
+var limitXCord = [0, 122];
+var limitYCord = [0, -122];
+var limithigh = (webMI.query["limitHigh"] == undefined) ? "" : webMI.query["limitHigh"];
+var limithighfill = webMI.query["limitHighFill"];
+var limithighhigh = (webMI.query["limitHighHigh"] == undefined) ? "" : webMI.query["limitHighHigh"];
+var limithighhighfill = webMI.query["limitHighHighFill"];
+var limitlow = (webMI.query["limitLow"] == undefined) ? "" : webMI.query["limitLow"];
+var limitlowlow = (webMI.query["limitLowLow"] == undefined) ? "" : webMI.query["limitLowLow"];
+var limitlowfill = webMI.query["limitLowFill"];
+var limitlowlowfill = webMI.query["limitLowLowFill"];
+var min = (webMI.query["min"] == undefined) ? "" : parseFloat(webMI.query["min"]);
+var max = (webMI.query["max"] == undefined) ? "" : parseFloat(webMI.query["max"]);
+var nodeMin = (webMI.query["nodeMin"] == undefined) ? "" : webMI.query["nodeMin"];
+var nodeMax = (webMI.query["nodeMax"] == undefined) ? "" : webMI.query["nodeMax"];
+var nodeLowLow = (webMI.query["nodeLowLow"] == undefined ? "" : webMI.query["nodeLowLow"]);
+var nodeLow = (webMI.query["nodeLow"] == undefined) ? "" : webMI.query["nodeLow"];
+var nodeHigh = (webMI.query["nodeHigh"] == undefined) ? "" : webMI.query["nodeHigh"];
+var nodeHighHigh = (webMI.query["nodeHighHigh"] == undefined) ? "" : webMI.query["nodeHighHigh"];
+var nodes = new Array(0, 0, 0, 0, 0, 0, 0); //array for base, min, max, limitLowLow, limitLow, LimitHigh, LimitHighhigh
+var nodesToSubscribe = new Array();
+var right = (webMI.query["right"] == undefined) ? "" : webMI.query["right"];
+var scaleColor = webMI.query["scaleColor"];
+var scaleXCord = [0, 122];
+var scaleYCord = [0, -122];
+var statusEnabled = webMI.query["statusEnabled"];
+var statusTrigger = webMI.query["statusTrigger"];
+var statusIndication = webMI.query["statusIndication"];
+var symbolFillColor = webMI.query["fillColor"];
+var barID = "bar";
+
+if (advancedMode) {
+    var barWidth = parseInt(webMI.gfx.getWidth("bar"));
+    var barHeight = parseInt(webMI.gfx.getHeight("bar"));
+    var screenCTM = webMI.gfx.getScreenCTM("bar");
+} else {
+    limitXCord = [0, 100];
+    limitYCord = [0, -100];
+    scaleXCord = [0, 100];
+    scaleYCord = [0, -100];
+    barID = "barCompatible";
+}
+
+
+/**
+ * RUNTIME SECTION
+ */
+var rightsHandlingProperties = {
+    right: right,
+    checkBaseNodeWriteRight: true,
+    isActivationNodeSet: isActivationNodeSet,
+    notifierConfiguration: {
+        "id": "bg_rect",
+        "node_1": webMI.query["base"],
+        "right_1": "read",
+        "node_2": webMI.query["alarm"],
+        "right_2": "readEvent"
+    },
+    setActiveTrigger: false,
+    handleStatus: true
+};
+
+if (typeof rightsHandling === "function") rightsHandling(rightsHandlingProperties);
+
+if (limitlowlow != "") {
+    limitlowlow = (limitlowlow != "off") ? parseFloat(limitlowlow) : "";
+}
+
+if (limitlow != "") {
+    limitlow = (limitlow != "off") ? parseFloat(limitlow) : "";
+}
+
+if (limithigh != "") {
+    limithigh = (limithigh != "off") ? parseFloat(limithigh) : "";
+}
+
+if (limithighhigh != "") {
+    limithighhigh = (limithighhigh != "off") ? parseFloat(limithighhigh) : "";
+}
+
+// set array to remember which nodes are specified
+if (nodeMin != "") {
+    nodes[0] = 1;
+    nodesToSubscribe[i] = nodeMin;
+    i++;
+}
+if (nodeMax != "") {
+    nodes[1] = 1;
+    nodesToSubscribe[i] = nodeMax;
+    i++;
+}
+if (nodeLowLow != "") {
+    nodes[2] = 1;
+    nodesToSubscribe[i] = nodeLowLow;
+    i++;
+}
+if (nodeLow != "") {
+    nodes[3] = 1;
+    nodesToSubscribe[i] = nodeLow;
+    i++;
+}
+if (nodeHigh != "") {
+    nodes[4] = 1;
+    nodesToSubscribe[i] = nodeHigh;
+    i++;
+}
+if (nodeHighHigh != "") {
+    nodes[5] = 1;
+    nodesToSubscribe[i] = nodeHighHigh;
+    i++;
+}
+
+webMI.addOnunload(function unloadAggregateManager() {
+    AggregateManager.destroy();
+    AggregateManager = null;
+});
+
+if (base != "") {
+    AggregateManager.subscribeNodeOrAggregate(base, manageNodeResult, manageAggregateResult);
+}
+
+if (alarmToSubscribe != "")
+    initAlarm(alarmToSubscribe);
+
+webMI.callExtension(isHorizontal ? "SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Slider Horizontal" : "SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Slider Vertical", {
+    "id": "barControl",
+    "ele": document.getElementById("barControl"),
+    "node": webMI.query.base,
+    "min": min,
+    "max": max,
+    "decimalPositions": decimalPositions
+});
+
+/**
+ * FUNCTION SECTION
+ */
+function manageAggregateResult(subscribeResult) {
+    if (nodesToSubscribe.length > 0) {
+        webMI.data.subscribeBlock(nodesToSubscribe, [], function (subscribeBlockResult) {
+            subscribeBlockResult["data"] = subscribeResult;
+            manageSubcription(subscribeBlockResult);
+        });
+    } else {
+        subscribeResult["data"] = subscribeResult;
+        manageSubcription(subscribeResult);
+    }
+}
+
+function manageNodeResult(subscribeResult) {
+    if (nodesToSubscribe.length > 0) {
+        webMI.data.subscribeBlock(nodesToSubscribe, [], function (e2) {
+            e2["data"] = subscribeResult;
+            manageSubcription(e2);
+        });
+    } else {
+        subscribeResult["data"] = subscribeResult;
+        manageSubcription(subscribeResult);
+    }
+}
+
+
+function manageSubcription(e) {
+    i = 0;
+    if (nodes[0] == 1) { // if node for minimum is specified, set node value as minimum
+        min = parseFloat(e[i].value);
+        i++;
+    }
+    webMI.gfx.setText("min", min);
+    if (nodes[1] == 1) { // if node for maximum is specified, set node value as maximum
+        max = parseFloat(e[i].value);
+        i++;
+    }
+    webMI.gfx.setText("max", max);
+    if (nodes[2] == 1) { // if node for limit LowLow is specified, set node value as limit LowLow else value from display parameter is taken
+        limitlowlow = parseFloat(e[i].value);
+        i++;
+    }
+    if (nodes[3] == 1) { // if node for limit Low is specified, set node value as limit Low else value from display parameter is taken
+        limitlow = parseFloat(e[i].value);
+        i++;
+    }
+    if (nodes[4] == 1) { // if node for limit High is specified, set node value as limit High else value from display parameter taken
+        limithigh = parseFloat(e[i].value);
+        i++;
+    }
+    if (nodes[5] == 1) { // if node for limit HighHigh is specified, set node value as limit HighHigh else value from display parameter taken
+        limithighhigh = parseFloat(e[i].value);
+        i++;
+    }
+
+    if (String(limitlowlow) == "" || (String(min) != "" && limitlowlow < min) || (String(max) != "" && limitlowlow > max)) {
+        webMI.gfx.setVisible("limit_low_low", false);
+    } else {
+        if (isHorizontal) webMI.gfx.setMoveX("limit_low_low", webMI.translate(limitlowlow, min, max, limitXCord[0], limitXCord[1]));
+        else webMI.gfx.setMoveY("limit_low_low", webMI.translate(limitlowlow, min, max, limitYCord[0], limitYCord[1]));
+        webMI.gfx.setVisible("limit_low_low", null);
+    }
+    if (String(limitlow) == "" || (String(min) != "" && limitlow < min) || (String(max) != "" && limitlow > max)) {
+        webMI.gfx.setVisible("limit_low", false);
+    } else {
+        if (isHorizontal) webMI.gfx.setMoveX("limit_low", webMI.translate(limitlow, min, max, limitXCord[0], limitXCord[1]));
+        else webMI.gfx.setMoveY("limit_low", webMI.translate(limitlow, min, max, limitYCord[0], limitYCord[1]));
+        webMI.gfx.setVisible("limit_low", null);
+    }
+    if (String(limithigh) == "" || (String(min) != "" && limithigh < min) || (String(max) != "" && limithigh > max)) {
+        webMI.gfx.setVisible("limit_high", false);
+    } else {
+        if (isHorizontal) webMI.gfx.setMoveX("limit_high", webMI.translate(limithigh, min, max, limitXCord[0], limitXCord[1]));
+        else webMI.gfx.setMoveY("limit_high", webMI.translate(limithigh, min, max, limitYCord[0], limitYCord[1]));
+        webMI.gfx.setVisible("limit_high", null);
+    }
+    if (String(limithighhigh) == "" || (String(min) != "" && limithighhigh < min) || (String(max) != "" && limithighhigh > max)) {
+        webMI.gfx.setVisible("limit_high_high", false);
+    } else {
+        if (isHorizontal) webMI.gfx.setMoveX("limit_high_high", webMI.translate(limithighhigh, min, max, limitXCord[0], limitXCord[1]));
+        else webMI.gfx.setMoveY("limit_high_high", webMI.translate(limithighhigh, min, max, limitYCord[0], limitYCord[1]));
+        webMI.gfx.setVisible("limit_high_high", null);
+    }
+
+    if (typeof e["data"].value != "undefined") {
+        var value = e["data"].value;
+        decimalPositions = parseFloat(decimalPositions);
+        var formatString = "%0." + decimalPositions + "f";
+        value = webMI.sprintf(formatString, value);
+        webMI.gfx.setText("slider_value", value);
+
+        value = e["data"].value;
+        var sliderValue = value;
+        if (String(min) != "" && String(max) != "") {
+            if (min > value) {
+                sliderValue = min;
+            }
+            if (value > max) {
+                sliderValue = max;
+            }
+        }
+
+        if (isHorizontal) webMI.gfx.setMoveX("slider_pointer", webMI.translate(sliderValue, min, max, scaleXCord[0], scaleXCord[1]));
+        else webMI.gfx.setMoveY("slider_pointer", webMI.translate(sliderValue, min, max, scaleYCord[0], scaleYCord[1]));
+
+        webMI.gfx.setFill("slider_value", fontColor);
+
+        if (advancedMode) {
+            if (isHorizontal) webMI.gfx.setScaleX(barID, webMI.translate(sliderValue, min, max, 0, 1));
+            else webMI.gfx.setScaleY(barID, webMI.translate(sliderValue, min, max, 0, 1));
+        }
+    }
+
+    if (advancedMode) {
+        if (String(limitlow) != "" || String(limitlowlow) != "" || String(limithigh) != "" || String(limithighhigh) != "") webMI.gfx.setFill(barID, barColorLimitsOn);
+        else webMI.gfx.setFill(barID, barColor);
+    }
+
+    if (String(limitlow) != "" && value <= limitlow) {
+        webMI.gfx.setFill("slider_value", limitlowfill);
+        if (advancedMode) webMI.gfx.setFill(barID, limitlowfill);
+    }
+    if (String(limitlowlow) != "" && value <= limitlowlow) {
+        webMI.gfx.setFill("slider_value", limitlowlowfill);
+        if (advancedMode) webMI.gfx.setFill(barID, limitlowlowfill);
+    }
+    if (String(limithigh) != "" && value >= limithigh) {
+        webMI.gfx.setFill("slider_value", limithighfill);
+        if (advancedMode) webMI.gfx.setFill(barID, limithighfill);
+    }
+    if (String(limithighhigh) != "" && value >= limithighhigh) {
+        webMI.gfx.setFill("slider_value", limithighhighfill);
+        if (advancedMode) webMI.gfx.setFill(barID, limithighhighfill);
+    }
+    if (typeof e["data"].status != "undefined" && typeof handleStatus === "function")
+        handleStatus(e["data"].status);
+}
+
+function setActiveLayout() {
+    if (isHorizontal) {
+        if (webMI.query["editable"] == "No") {
+            webMI.gfx.setX("activeIndicator", "0"); // Position eines Rectangle-Elements als Boolean zur dynamischen Verwendung im Quick Dynamic eingesetzt
+            if (advancedMode) {
+                webMI.gfx.setFill("slider_symbol_bg", barColorInactive);
+                // webMI.gfx.setFill(barID, barColorNotEditable);
+            } else {
+                webMI.gfx.setFill("value_field", barColorNotEditable);
+                webMI.gfx.setFill("label_field", barColorNotEditable);
+            }
+        } else if (hasReadRightFromDisplayParameters() && accessControlRights["baseWrite"]) {
+            webMI.gfx.setX("activeIndicator", "1"); // Position eines Rectangle-Elements als Boolean zur dynamischen Verwendung im Quick Dynamic eingesetzt
+            if (advancedMode) {
+                webMI.gfx.setFill("slider_symbol_bg", symbolFillColor);
+                // webMI.gfx.setFill(barID, barColor);
+            } else {
+                webMI.gfx.setFill("value_field", barColor);
+                webMI.gfx.setFill("label_field", barColor);
+            }
+        }
+    } else {
+        var field = barID;
+        if (compatibilityMode) field = "output_field";
+        if (webMI.query["editable"] == "No") {
+            webMI.gfx.setX("activeIndicator", "0"); // Position eines Rectangle-Elements als Boolean zur dynamischen Verwendung im Quick Dynamic eingesetzt
+            if (advancedMode) {
+                webMI.gfx.setFill("slider_symbol_bg", barColorInactive);
+            } else {
+                webMI.gfx.setFill(field, barColorNotEditable);
+            }
+        } else if (hasReadRightFromDisplayParameters() && accessControlRights["baseWrite"]) {
+            webMI.gfx.setX("activeIndicator", "1"); // Position eines Rectangle-Elements als Boolean zur dynamischen Verwendung im Quick Dynamic eingesetzt
+            if (advancedMode) {
+                webMI.gfx.setFill("slider_symbol_bg", symbolFillColor);
+            } else {
+                webMI.gfx.setFill(field, barColor);
+            }
+        }
+    }
+}
+
+function setInactiveLayout() {
+    if (isHorizontal) {
+        webMI.gfx.setX("activeIndicator", "0"); // Position eines Rectangle-Elements als Boolean zur dynamischen Verwendung im Quick Dynamic eingesetzt
+        if (advancedMode) {
+            webMI.gfx.setFill("slider_symbol_bg", barColorInactive);
+        } else {
+            webMI.gfx.setFill("value_field", barColorInactive);
+            webMI.gfx.setFill("label_field", barColorInactive);
+        }
+    } else {
+        var field = barID;
+        if (compatibilityMode) field = "output_field";
+        if (advancedMode) {
+            webMI.gfx.setFill("slider_symbol_bg", barColorInactive);
+        } else {
+            webMI.gfx.setFill(field, barColorInactive);
+        }
+        webMI.gfx.setX("activeIndicator", "0"); // Position eines Rectangle-Elements als Boolean zur dynamischen Verwendung im Quick Dynamic eingesetzt
+    }
+}
+
+/**
+ * TRIGGER SECTION
+ */
+webMI.trigger.connect("com.atvise.setBlinking", function (e) {
+    if (e.value == "none") {
+        delete activeIndicators["trigger"];
+    } else {
+        activeIndicators["trigger"] = {color: e.value, interval: 500};
+    }
+    setIndicator();
+});
+
+]]></code>
+</script>

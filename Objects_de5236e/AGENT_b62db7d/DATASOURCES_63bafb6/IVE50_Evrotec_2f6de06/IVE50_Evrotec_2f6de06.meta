@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.DATASOURCES.IVE50_Evrotec
+NodeClass: Object
+BrowseName: 1:IVE50_Evrotec
+DisplayName: en|IVE50_Evrotec
+Description: en|IVE50_Evrotec
+EventNotifier: 0
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.Datasource.OpcUa

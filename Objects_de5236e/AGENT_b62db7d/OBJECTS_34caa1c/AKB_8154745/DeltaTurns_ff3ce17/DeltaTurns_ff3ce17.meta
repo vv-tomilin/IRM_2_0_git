@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AKB.DeltaTurns
+NodeClass: Variable
+BrowseName: 1:DeltaTurns
+DisplayName: en|DeltaTurns
+Description: en|DeltaTurns
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

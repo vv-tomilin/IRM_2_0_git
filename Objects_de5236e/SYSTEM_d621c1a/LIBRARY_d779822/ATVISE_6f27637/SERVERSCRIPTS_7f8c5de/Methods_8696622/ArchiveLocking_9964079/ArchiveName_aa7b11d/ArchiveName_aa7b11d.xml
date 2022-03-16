@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="archive" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="timestamp" type="datetime" trigger="false" relative="false" value=""/>
+  <code><![CDATA[/** atvise server wrapper for UA method "AGENT.HISTORY.METHODS.archiveName"
+This script is a standard atvise resource and must not be modified.
+\example
+\code
+var result = call("Methods.ArchiveLocking.ArchiveName", {
+	archive: "datavalues", 
+	timestamp: new Date(2017, 9, 20, 14, 0, 0).getTime()
+});
+if (result.error)
+	console.log(result.errorstring);
+else
+	console.log(result.result);
+\endcode
+
+\b Input:
+\param archive {string}, The name of the archive to calculate the path/real name for.
+\param timestamp {datetime}, A timestamp contained in the wanted archive.
+
+\b Output:
+\return {Object} A result object is returned with the following properties:
+- Object.error {number},{optional} Returns the error code in case of an error. If no error occurred, it is undefined.
+- Object.errorstring {string},{optional} Returns the error string in case of an error. If no error occurred, it is undefined.
+- Object.result {object},{optional} Returns the result if no error occurred. It has the following properties:
+	- result.archivename {string} The calculated archive filename/path.
+*/
+
+var historyCall = new UaNode("AGENT.HISTORY.METHODS.archiveName");
+var callResult = historyCall.call({
+	object: "AGENT.HISTORY.METHODS",
+	input: [
+		{type: UaNode.STRING, value: archive},
+		{type: UaNode.DATETIME, value: timestamp}
+	]
+});
+var result = {};
+
+if (callResult.error) {
+	result.error = callResult.error;
+	result.errorstring = historyCall.statusToString(result.error);
+	if (callResult.argumentError) {
+		var parameterNames = [
+			server.script.origin.split('.').slice(-3,-2)[0],
+			"ns=1;s=AGENT.HISTORY.METHODS.archiveName"];
+		for (var i = 0; i < callResult.argumentError.length; ++i)
+			if (callResult.argumentError[i])
+				result.errorstring += ", " + parameterNames[i] + ":" + historyCall.statusToString(callResult.argumentError[i]);
+	}
+}
+else {
+	result.result = {};
+	
+	if (callResult.result.length > 0) result.result["archivename"] = callResult.result[0];
+}
+
+return result;]]></code>
+</script>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.MaxMin.ValMax
+NodeClass: Variable
+BrowseName: 1:ValMax
+DisplayName: en|ValMax
+Description: en|ValMax
+DataType: UInt16
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

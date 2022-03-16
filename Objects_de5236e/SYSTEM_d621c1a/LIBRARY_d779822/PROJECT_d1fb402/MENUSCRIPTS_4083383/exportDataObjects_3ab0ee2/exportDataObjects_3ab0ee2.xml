@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="data_objects" type="string" trigger="false" relative="false" value="IVE50.DBTM,IVE50.DMEA"/>
+  <code><![CDATA[// Timestamps [yyyy , m 0-11 , d , h , min , sec] 
+var from = new Date(2021, 0, 12, 23, 0, 0);
+var to = new Date(2021, 0, 12, 23, 10, 0);
+
+// Paths
+var objectsDir = "AGENT.OBJECTS.";
+var exportDir = "rigdata/exports/";
+var exportFn = "export_" + new Date().valueOf() + ".csv";
+
+var ofs = new OutputFileStream(exportDir + exportFn, "utf8");
+ofs.open();
+
+var result = [];
+var nodes =  data_objects.split(',')
+
+nodes.forEach(function (node) {
+  var node_instance = new UaNode(objectsDir + node);
+  
+  var data = node_instance
+    .datahistory({ starttime: from, endtime: to })
+    .values.map(function (point) {
+      return {
+        name: node_instance.browsename,
+        servertime: point.servertime,
+        sourcetime: point.sourcetime,
+        value: point.value,
+      };
+    });
+    
+  data.forEach(function (datapoint) {
+    result.push(datapoint);
+  });
+  
+});
+
+// Sort by sourcetime 
+result.sort(function (a, b) {
+  return a.sourcetime - b.sourcetime;
+});
+
+// Header
+ofs.writeLine("parameter;sourcetime;servertime;value");
+
+for (var i = 0, len = result.length; i < len; ++i) {
+  var datapoint = result[i];
+  ofs.writeLine(
+    datapoint.name +
+      ";" +
+      datapoint.sourcetime +
+      ";" +
+      datapoint.servertime +
+      ";" +
+      datapoint.value
+  );
+}
+
+ofs.close();]]></code>
+</script>

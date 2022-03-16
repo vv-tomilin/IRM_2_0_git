@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.APD1.Load.PID.Inputs
+NodeClass: Object
+BrowseName: 1:Inputs
+DisplayName: en|Inputs
+Description: en|Inputs
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

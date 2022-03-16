@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.SignalControl
+NodeClass: Object
+BrowseName: 1:SignalControl
+DisplayName: en|SignalControl
+Description: en|SignalControl
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

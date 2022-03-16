@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Settings_param.HookSpeedParam.hook_speed_min_value
+NodeClass: Variable
+BrowseName: 1:hook_speed_min_value
+DisplayName: en|hook_speed_min_value
+Description: en|hook_speed_min_value
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.RawData

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/IMG/mud_node_shema.png
+NodeClass: Variable
+BrowseName: 1:mud_node_shema.png
+DisplayName: en|mud_node_shema.png
+Description: en|mud_node_shema.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

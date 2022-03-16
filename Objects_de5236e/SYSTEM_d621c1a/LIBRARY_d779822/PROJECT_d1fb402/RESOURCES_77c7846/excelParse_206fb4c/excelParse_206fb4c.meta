@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/excelParse
+NodeClass: Object
+BrowseName: 1:excelParse
+DisplayName: en|excelParse
+Description: en|excelParse
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

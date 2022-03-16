@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.testDateTime
+NodeClass: Variable
+BrowseName: 1:testDateTime
+DisplayName: en|testDateTime
+Description: en|testDateTime
+DataType: DateTime
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

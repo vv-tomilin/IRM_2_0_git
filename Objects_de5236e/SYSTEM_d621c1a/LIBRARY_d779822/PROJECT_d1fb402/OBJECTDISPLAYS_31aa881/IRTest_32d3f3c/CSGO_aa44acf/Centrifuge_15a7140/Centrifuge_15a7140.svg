@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="133.96" height="201.09" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg" version="1.2">
+ <defs/>
+ <metadata>
+  <atv:gridconfig width="20" height="20" enabled="false" gridstyle="lines"/>
+  <atv:snapconfig width="10" height="10" enabled="false"/>
+ </metadata>
+ <polyline fill-opacity="0" atv:refpx="65.04" stroke-width="3" stroke="#c0c0c0" points="24.451,1 123.459,1 123.459,200.093 24.92,199.618 24.451,160.655 6.619,160.655 7.089,33.787 24.258,33.915" fill="#000088" id="id_8" atv:refpy="100.547"/>
+ <line y1="33.636" x1="22.585" atv:refpx="22.543" x2="22.5" stroke-width="3" stroke="#c0c0c0" y2="0.636" id="id_9" atv:refpy="19.136"/>
+ <rect width="87.905" fill-opacity="0" height="26.134" atv:refpx="73.805" x="29.852" stroke-width="2" y="7.177" stroke="#c0c0c0" fill="#000088" id="id_10" atv:refpy="20.244"/>
+ <rect width="100.734" fill-opacity="0" height="9.503" atv:refpx="75.943" x="25.576" stroke-width="2" y="19.531" stroke="#c0c0c0" fill="#000088" id="id_11" atv:refpy="24.283"/>
+ <rect width="43.715" fill-opacity="0" height="106.911" atv:refpx="37.182" x="15.324" stroke-width="6" y="44.24" stroke="#c0c0c0" fill="#000088" id="id_13" atv:refpy="97.695"/>
+ <rect width="36.113" rx="9.849" fill-opacity="0.972549" height="61.5" atv:refpx="98.751" x="80.695" stroke-width="2" y="40.422" stroke="#c0c0c0" fill="#585858" ry="9.462" id="id_14" atv:refpy="71.172"/>
+ <line y1="40.439" x1="98.751" atv:refpx="98.989" x2="99.226" stroke-width="2" stroke="#c0c0c0" y2="83.679" id="id_15" atv:refpy="62.059"/>
+ <line y1="85.104" x1="80.695" atv:refpx="98.56" x2="116.426" stroke-width="2" stroke="#c0c0c0" y2="85.102" id="id_16" atv:refpy="85.103"/>
+ <rect width="9.342" height="9.342" atv:refpx="98.91" x="94.239" stroke-width="2" y="49.096" stroke="#c0c0c0" fill="#c0c0c0" id="id_17" atv:refpy="53.767"/>
+ <line y1="41.311" x1="90.346" atv:refpx="90.443" x2="90.541" stroke-width="2" stroke="#c0c0c0" y2="84.712" id="id_18" atv:refpy="63.012"/>
+ <line y1="41.895" x1="85.481" atv:refpx="85.481" x2="85.48" stroke-width="2" stroke="#c0c0c0" y2="84.713" id="id_19" atv:refpy="63.304"/>
+ <line y1="41.104" x1="94.969" atv:refpx="94.969" x2="94.969" stroke-width="2" stroke="#c0c0c0" y2="48.104" id="id_22" atv:refpy="44.604"/>
+ <line y1="41.603" x1="110.988" atv:refpx="111.086" x2="111.183" stroke-width="2" stroke="#c0c0c0" y2="85.004" id="id_23" atv:refpy="63.304"/>
+ <line y1="41.603" x1="106.426" atv:refpx="106.524" x2="106.621" stroke-width="2" stroke="#c0c0c0" y2="85.004" id="id_24" atv:refpy="63.304"/>
+ <rect width="3.041" height="145.155" atv:refpx="2.521" x="1" stroke-width="2" y="24.894" stroke="#a3a3a3" fill="#a3a3a3" id="id_25" atv:refpy="97.472"/>
+ <rect width="93.515" fill-opacity="0" height="38.883" atv:refpx="75.304" x="28.547" stroke-width="3" y="160.945" stroke="#c0c0c0" fill="#000088" id="id_26" atv:refpy="180.386"/>
+ <rect width="50.203" fill-opacity="0" height="89.086" atv:refpx="96.96" x="71.859" stroke-width="1" y="72.351" stroke="#c0c0c0" fill="#000088" id="id_27" atv:refpy="116.894"/>
+ <rect width="50.695" fill-opacity="0" height="29.531" atv:refpx="98.191" x="72.843" stroke-width="1" y="102.867" stroke="#c0c0c0" fill="#000088" id="id_28" atv:refpy="117.633"/>
+ <rect width="49.988" fill-opacity="0" height="49.219" atv:refpx="97.284" x="72.29" stroke-width="2" y="98.437" stroke="#c0c0c0" fill="#000088" id="id_32" atv:refpy="123.046"/>
+ <rect width="22.302" fill-opacity="0.972549" height="37.283" atv:refpx="107.206" x="96.055" stroke-width="2" y="147.653" stroke="#c0c0c0" fill="#585858" id="id_33" atv:refpy="166.294"/>
+ <rect width="3.041" height="143.744" atv:refpx="129.969" x="128.448" stroke-width="2" y="23.553" stroke="#a3a3a3" fill="#a3a3a3" id="id_34" atv:refpy="95.426"/>
+ <rect width="9.352" fill-opacity="0.972549" height="21.656" atv:refpx="91.301" x="86.625" stroke-width="2" y="154.546" stroke="#c0c0c0" fill="#c0c0c0" id="id_35" atv:refpy="165.374"/>
+ <rect width="49.219" fill-opacity="0.972549" height="19.195" atv:refpx="97.453" x="72.843" stroke-width="2" y="110.742" stroke="#c0c0c0" fill="#c0c0c0" id="id_36" atv:refpy="120.34"/>
+</svg>

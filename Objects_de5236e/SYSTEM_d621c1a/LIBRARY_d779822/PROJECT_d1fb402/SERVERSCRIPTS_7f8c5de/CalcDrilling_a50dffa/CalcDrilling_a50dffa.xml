@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="interval" type="interval" trigger="false" relative="false" value="" offset="00:00:00" interval="00:01:00"/>
+  <code><![CDATA[//console.log("Start CalcDrilling");
+// вычисление момента начала бурения по перепадам Нагрузки на долото и Давления в манифольде
+var countMin = 3;
+var timeend = new Date();
+var timestart = new Date(timeend.valueOf() - countMin * 60000);
+var countval = 1;
+//console.log("timestart = ", timestart);
+//console.log("timeend = ", timeend);
+
+if(call("GetVarValue",{varname:"AGENT.OBJECTS.Variables.CalcDrilling.DiffPressure"})){
+	//console.log("CalcDrilling: DiffPressure == ",true);
+	var nodeLoadOnBit = new UaNode("AGENT.OBJECTS.IVE50.Drawworks.LoadOnBit");
+	var resultAverageLoadOnBit = nodeLoadOnBit.datahistory({
+			starttime: timestart, 
+			numvalues: countval,
+			aggregate: UaNode.AGGREGATEFUNCTION_AVERAGE,
+			samplinginterval: 60000
+		});		
+
+	if(resultAverageLoadOnBit.values.length > 0){			
+		resultAverageLoadOnBit.values.forEach(function(item, i) {
+		console.log("AverageLoadOnBit item.value = "+item.value);					
+		var nodeAverageLoadOnBitBound = new UaNode("AGENT.OBJECTS.Variables.CalcDrilling.AverageLoadOnBitBound");
+		var curPressure = call("GetVarValue",{varname:"AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold"});
+		var boundPressure  = call("GetVarValue",{varname:"AGENT.OBJECTS.Variables.CalcDrilling.DiffPressureBound"});		
+		if(item.value > nodeAverageLoadOnBitBound.value && curPressure > boundPressure){					
+			var nodeHookDir = new UaNode("AGENT.OBJECTS.IVE50.Drawworks.HookPosition.HookDirection");
+			if (nodeHookDir.value == 1){
+				call("SetWorkStatus", {workstatus: 10});
+				//var nodeWorkStatus = new UaNode("AGENT.OBJECTS.Rig.WorkStatus");
+				//var res = nodeWorkStatus.assign({value: 100});
+			} 				
+//			var nodeSPOVelosityBound = new UaNode("AGENT.OBJECTS.Variables.DragOverpull.SPOVelosityBound");
+//			var valSPOVelosityBound = nodeSPOVelosityBound.value;
+//			if(valSPOVelosityBound >0){ 
+//				var nodeWorkStatus = new UaNode("AGENT.OBJECTS.Rig.WorkStatus");
+//				var res = nodeWorkStatus.assign({value: 100});
+//			}
+						
+			}
+		});	
+				
+	}
+}
+
+
+var mynode = new UaNode("AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold");
+/*
+var resultDeltaPressure = mynode.datahistory({
+	starttime: timestart, 
+    //endtime: timeend,
+    numvalues: countval,
+    aggregate: UaNode.AGGREGATEFUNCTION_DELTABOUNDS,
+    samplinginterval: 60000
+});
+*/
+var resultDeltaPressure = mynode.datahistory({
+	starttime: timestart, 
+    //endtime: timeend,
+    numvalues: countval,
+    aggregate: UaNode.AGGREGATEFUNCTION_DELTA,
+    samplinginterval: 60000
+});
+//console.log(resultDelta);
+//console.log("resultDeltaPressure.values count = ", resultDeltaPressure.values.length);
+if(resultDeltaPressure.values.length > 0){
+	resultDeltaPressure.values.forEach(function(item, i) {
+		console.log("resultDeltaPressure item.value = "+item.value);
+		var nodeDiffPressureBound = new UaNode("AGENT.OBJECTS.Variables.CalcDrilling.DiffPressureBound");				
+		
+		if(item.value > nodeDiffPressureBound.value){
+			call("SetVarValue",{varname:"AGENT.OBJECTS.Variables.CalcDrilling.DiffPressure",varvalue:true});
+			call("SetVarValue",{varname:"AGENT.OBJECTS.Variables.CalcDrilling.TimeDiffPressure",varvalue:item.servertime});
+				
+			//console.log("CalcDrilling: DiffPressure = ",true,", value = ", item.value);
+			
+		} else if(item.value < 0 && Math.abs(item.value) > nodeDiffPressureBound.value){
+			call("SetVarValue",{varname:"AGENT.OBJECTS.Variables.CalcDrilling.DiffPressure",varvalue:false});
+			call("SetVarValue",{varname:"AGENT.OBJECTS.Variables.CalcDrilling.TimeDiffPressure",varvalue:item.servertime});
+			//console.log("CalcDrilling: DiffPressure = ",false,", value = ", item.value);
+			var curWorkStatus = call("GetVarValue",{varname:"AGENT.OBJECTS.Rig.WorkStatus"});
+			if(curWorkStatus == 10){
+				call("SetWorkStatus", {workstatus: 6});
+			} else {
+				call("SetWorkStatus", {workstatus: 9});
+			}
+		}
+	
+	});
+}
+/*
+// вычисление момента начала бурения по перепадам Нагрузки на долото и Давления в манифольде
+var countMin = 3;
+var mynode = new UaNode("AGENT.OBJECTS.IVE50.Drawworks.LoadOnBit");
+var timeend = new Date();
+var timestart = new Date(timeend.valueOf() - countMin * 60000);
+var countval = 1;
+
+//console.log("timestart = ", timestart);
+//console.log("timeend = ", timeend);
+var resultDeltaLoadOnBit = mynode.datahistory({
+	starttime: timestart, 
+    //endtime: timeend,
+    numvalues: countval,
+    aggregate: UaNode.AGGREGATEFUNCTION_DELTABOUNDS,
+    samplinginterval: 60000
+});
+//console.log(resultDelta);
+var i=0;
+var count = resultDeltaLoadOnBit.values.length;
+//console.log("resultDeltaPressure.values count = ", count);
+if(count > 0){
+	resultDeltaLoadOnBit.values.forEach(function(item, i) {
+		console.log(++i+" item.value = "+item.value);
+		
+		var nodeDiffLoadOnBitBound = new UaNode("AGENT.OBJECTS.Variables.CalcDrilling.LoadOnBitBoundDrill");
+		if(item.value > nodeDiffLoadOnBitBound.value){
+		
+			var nodePress = new UaNode("AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold");
+			var resultDeltaPress = nodePress.datahistory({
+				starttime: timestart, 
+				numvalues: countval,
+				aggregate: UaNode.AGGREGATEFUNCTION_DELTABOUNDS,
+				samplinginterval: 60000
+			});		
+			var i=0;
+			if(resultDeltaPress.values.length > 0){			
+				resultDeltaPressure.values.forEach(function(item, i) {
+					console.log(++i+" item.value = "+item.value);
+					
+					var nodeDiffPressBound = new UaNode("AGENT.OBJECTS.Variables.CalcDrilling.DiffPressureBound");
+					if(item.value > nodeDiffPressBound.value){					
+						var nodeHookDir = new UaNode("AGENT.OBJECTS.IVE50.Drawworks.HookPosition.HookDirection");
+						if (nodeHookDir.value == 1){
+							call("SetWorkStatus", {workstatus: 10});
+							//var nodeWorkStatus = new UaNode("AGENT.OBJECTS.Rig.WorkStatus");
+							//var res = nodeWorkStatus.assign({value: 100});
+						} 
+						
+//						var nodeSPOVelosityBound = new UaNode("AGENT.OBJECTS.Variables.DragOverpull.SPOVelosityBound");
+//						var valSPOVelosityBound = nodeSPOVelosityBound.value;
+//						if(valSPOVelosityBound >0){ 
+//							var nodeWorkStatus = new UaNode("AGENT.OBJECTS.Rig.WorkStatus");
+//							var res = nodeWorkStatus.assign({value: 100});
+//						}
+						
+					}
+				});	
+				
+			}
+		}
+	
+	});
+}
+*/
+
+/*
+// вычисление момента начала бурения по постоянным значениям параметров
+if(call("GetWorkStatus")!=10){
+	var nodeTDSTorque = new UaNode("AGENT.OBJECTS.IVE50.TDS.TDSTorque");
+	var nodeTDSSpeed = new UaNode("AGENT.OBJECTS.IVE50.TDS.TDSSpeed");
+	var nodePressureManifold = new UaNode("AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold");
+	var nodeWeightOnHook = new UaNode("AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook");
+	var nodeLoadOnBit = new UaNode("AGENT.OBJECTS.IVE50.Drawworks.LoadOnBit");
+	var nodeHookDirection = new UaNode("AGENT.OBJECTS.IVE50.Drawworks.HookPosition.HookDirection");
+	var nodeHookSpeed = new UaNode("AGENT.OBJECTS.IVE50.Drawworks.HookSpeed");
+	var nodeToolPosition = new UaNode("AGENT.OBJECTS.IVE50.Tool.ToolPosition");
+	
+	if(nodeToolPosition.value > 10 && nodeHookDirection.value == 1 && nodeTDSTorque.value > 0 && nodeTDSSpeed.value > 10){
+		
+		if(nodeHookSpeed.value < call("GetVarValue", {varname: "AGENT.OBJECTS.Variables.DragOverpull.SPOVelosityBound"}) 
+		&& nodeWeightOnHook.value > call("GetVarValue", {varname: "AGENT.OBJECTS.Variables.Hook.MinWeight"}) 
+		&& nodePressureManifold.value > call("GetVarValue", {varname: "AGENT.OBJECTS.Variables.CalcDrilling.DiffPressureBound"}) 
+		&& nodeLoadOnBit.value > call("GetVarValue", {varname: "AGENT.OBJECTS.Variables.CalcDrilling.LoadOnBitBoundDrill"}))
+			call("SetWorkStatus",{workstatus: 10});
+	}
+}
+*/
+
+
+/*
+// old
+var countMin = 3;
+var mynode = new UaNode("AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold");
+var timeend = new Date();
+var timestart = new Date(timeend.valueOf() - countMin * 60000);
+var countval = 1;
+
+//console.log("timestart = ", timestart);
+//console.log("timeend = ", timeend);
+var resultDeltaPressure = mynode.datahistory({
+	starttime: timestart, 
+    //endtime: timeend,
+    numvalues: countval,
+    aggregate: UaNode.AGGREGATEFUNCTION_DELTABOUNDS,
+    samplinginterval: 60000
+});
+//console.log(resultDelta);
+var i=0;
+var count = resultDeltaPressure.values.length;
+//console.log("resultDeltaPressure.values count = ", count);
+if(count > 0){
+	resultDeltaPressure.values.forEach(function(item, i) {
+		console.log(++i+" item.value = "+item.value);
+		
+		var nodeDiffPressureBound = new UaNode("AGENT.OBJECTS.Variables.CalcDrilling.DiffPressureBound");
+		var valDiffPressureBound = nodeDiffPressureBound.value;
+		if(item.value > valDiffPressureBound){
+			var nodeLoadOnBit = new UaNode("AGENT.OBJECTS.IVE50.Drawworks.LoadOnBit");
+			var resultDeltaLoadOnBit = nodeLoadOnBit.datahistory({
+				starttime: timestart, 
+				numvalues: countval,
+				aggregate: UaNode.AGGREGATEFUNCTION_DELTABOUNDS,
+				samplinginterval: 60000
+			});		
+			var i=0;
+			var countLoadOnBit = resultDeltaLoadOnBit.values.length;
+			if(countLoadOnBit > 0){
+				resultDeltaPressure.values.forEach(function(item, i) {
+					console.log(++i+" item.value = "+item.value);
+					var nodeLoadOnBitBoundDrill = new UaNode("AGENT.OBJECTS.Variables.CalcDrilling.LoadOnBitBoundDrill");
+					var valLoadOnBitBoundDrill = nodeLoadOnBitBoundDrill.value;
+					if(item.value > valLoadOnBitBoundDrill){					
+						var nodeSPOVelosityBound = new UaNode("AGENT.OBJECTS.Variables.DragOverpull.SPOVelosityBound");
+						var valSPOVelosityBound = nodeSPOVelosityBound.value;
+						if(valSPOVelosityBound >0){ 
+							var nodeWorkStatus = new UaNode("AGENT.OBJECTS.Rig.WorkStatus");
+							var res = nodeWorkStatus.assign({value: 100});
+						}
+					}
+				});	
+			}
+		}
+	
+	});
+}
+*/
+/*
+// Второй способ
+var to = new Date().getTime();
+var from = to-countMin*60*1000;
+
+var result = history.query({
+	type:["v:1"],
+	timestamp:["n:>=" + from + "<"+to],
+	address:["g:AGENT.OBJECTS.Mud.PressureManifold"],
+	aggregate:["v:DeltaBounds"],
+	interval:["v:1"],
+	unit:["v:m"]
+});
+
+//console.log(result);
+
+i=0;
+count = result.result.length;
+console.log("result.result count = ", count);
+
+result.result.forEach(function(item, i) {
+	console.log(++i+" item.value = "+item.value);
+});
+*/]]></code>
+</script>

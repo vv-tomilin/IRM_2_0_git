@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.Platforma.IR-manager.Регион.Ханты-Мансийский АО.Месторождения.Приобское.Кустовые площадки.Кустовая площадка Б-1.Скважина Б-1-1
+NodeClass: Variable
+BrowseName: 1:Скважина Б-1-1
+DisplayName: en|Скважина Б-1-1
+Description: en|Скважина Б-1-1
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

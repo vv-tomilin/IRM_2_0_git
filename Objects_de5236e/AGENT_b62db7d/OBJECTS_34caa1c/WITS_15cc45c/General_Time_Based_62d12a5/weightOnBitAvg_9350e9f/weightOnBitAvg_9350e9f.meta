@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.General_Time_Based.weightOnBitAvg
+NodeClass: Variable
+BrowseName: 1:weightOnBitAvg
+DisplayName: en|weightOnBitAvg
+Description: en|weightOnBitAvg
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

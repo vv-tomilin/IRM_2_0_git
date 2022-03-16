@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.TdsRpmLimit
+NodeClass: Variable
+BrowseName: 1:TdsRpmLimit
+DisplayName: en|TdsRpmLimit
+Description: en|TdsRpmLimit
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

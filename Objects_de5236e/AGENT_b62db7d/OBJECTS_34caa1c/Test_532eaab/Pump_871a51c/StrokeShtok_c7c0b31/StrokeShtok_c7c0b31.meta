@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.Pump.StrokeShtok
+NodeClass: Variable
+BrowseName: 1:StrokeShtok
+DisplayName: en|StrokeShtok
+Description: en|StrokeShtok
+DataType: UInt32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

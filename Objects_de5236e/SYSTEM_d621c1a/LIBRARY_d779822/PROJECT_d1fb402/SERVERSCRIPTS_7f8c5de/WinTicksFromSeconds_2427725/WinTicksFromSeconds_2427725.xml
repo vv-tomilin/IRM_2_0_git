@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="us" type="number" trigger="false" relative="false" value=""/>
+  <code><![CDATA[return (Number(us)/1000+11644473600)*10000000;]]></code>
+</script>

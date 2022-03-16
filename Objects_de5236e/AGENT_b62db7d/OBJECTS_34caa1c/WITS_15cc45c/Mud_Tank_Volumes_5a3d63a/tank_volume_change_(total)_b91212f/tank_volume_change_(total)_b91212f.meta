@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.Mud_Tank_Volumes.tank_volume_change_(total)
+NodeClass: Variable
+BrowseName: 1:tank_volume_change_(total)
+DisplayName: en|tank_volume_change_(total)
+Description: en|tank_volume_change_(total)
+DataType: Int64
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType

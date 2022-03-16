@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRM_2_0.Left_Menu.button_irm2_0
+NodeClass: Variable
+BrowseName: 1:button_irm2_0
+DisplayName: en|button_irm2_0
+Description: en|button_irm2_0
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

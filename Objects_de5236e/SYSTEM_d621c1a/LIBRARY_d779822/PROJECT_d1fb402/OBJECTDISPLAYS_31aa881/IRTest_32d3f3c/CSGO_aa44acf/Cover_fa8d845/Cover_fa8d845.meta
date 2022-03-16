@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest.CSGO.Cover
+NodeClass: Variable
+BrowseName: 1:Cover
+DisplayName: en|Cover
+Description: en|Cover
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

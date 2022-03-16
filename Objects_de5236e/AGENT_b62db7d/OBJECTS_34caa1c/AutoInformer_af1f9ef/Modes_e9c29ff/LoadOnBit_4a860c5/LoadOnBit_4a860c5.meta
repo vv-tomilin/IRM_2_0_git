@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AutoInformer.Modes.LoadOnBit
+NodeClass: Variable
+BrowseName: 1:LoadOnBit
+DisplayName: en|LoadOnBit
+Description: en|LoadOnBit
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

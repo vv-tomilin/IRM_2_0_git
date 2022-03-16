@@ -1,0 +1,10 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.WeatherStationAnemometerType.Overview
+NodeClass: Variable
+BrowseName: 1:Overview
+DisplayName: en|Overview
+Description: en|Overview
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule Shared
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

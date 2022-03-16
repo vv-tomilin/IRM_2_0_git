@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Settings_param.DrillSpeedParam
+NodeClass: Object
+BrowseName: 1:DrillSpeedParam
+DisplayName: en|DrillSpeedParam
+Description: en|DrillSpeedParam
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

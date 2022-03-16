@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.alarmNode
+NodeClass: Variable
+BrowseName: 1:alarmNode
+DisplayName: en|alarmNode
+Description: en|alarmNode
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <icon type="image/png"></icon>
+    <visible>1</visible>
+    <title></title>
+    <description></description>
+  </metadata>
+  <parameter behavior="optional" name="nodeId" valuetype="address"/>
+  <parameter behavior="optional" defaultvalue="0" name="minValue" valuetype="number"/>
+  <parameter behavior="optional" defaultvalue="100" name="maxValue" valuetype="number"/>
+  <parameter behavior="optional" name="startScaleX" valuetype="number"/>
+  <parameter behavior="optional" name="stopScaleX" valuetype="number"/>
+  <parameter behavior="optional" name="startScaleY" valuetype="number"/>
+  <parameter behavior="optional" name="stopScaleY" valuetype="number"/>
+  <parameter behavior="optional" name="minValueRef" valuetype="address"/>
+  <parameter behavior="optional" name="maxValueRef" valuetype="address"/>
+  <code><![CDATA[// This Quick Dynamic scales the applied graphical element in X- and/or Y-direction depending on the value of the defined node and the ranged defined by "minValue" and "maxValue", i.e. the
+// range defined by "minValue" and "maxValue" will be translated to the range defined by "startScaleX" and "stopScaleX" and/or to the range defined by "startScaleY" and
+// "stopScaleY".
+// The scale in X-direction will only be done if both "startScaleX" and "stopScaleX" are defined.
+// The scale in Y-direction will only be done if both "startScaleY" and "stopScaleY" are defined.
+// e.g.: the defined range of the value from 0 (=minValue) to 100 (=maxValue) will be translated to 0 (=startScaleX) to 10 (=stopScaleX) in X-direction
+// Parameters:
+//	nodeId:			this node triggers this Quick Dynamic
+//	minValue:		lower bound of the range where the node's value should lie in
+//	maxValue:		upper bound of the range where the node's value should lie in
+//	startScaleX:	start position for X-direction where "minValue" will be translated to
+//	stopScaleX:		stop position for X-direction where "maxValue" will be translated to
+//	startScaleY:	start position for Y-direction where "minValue" will be translated to
+//	stopScaleY:		stop position for Y-direction where "maxValue" will be translated to
+
+function isNum(value) {
+  if(value instanceof Number)
+    value = value.valueOf(); // Если это объект числа, то берём значение, которое и будет числом
+  return(!isNaN(parseFloat(value)) && isFinite(value))
+//  return  isFinite(value) && value === parseInt(value, 10);
+}
+
+var AggregateManager = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Aggregate Manager");
+webMI.addOnunload(function unloadAggregateManager() {
+	AggregateManager.destroy();
+	AggregateManager = null;
+});
+
+AggregateManager.subscribeNodeOrAggregate(base.nodeId, handleResult);
+
+function handleResult(e) {
+	var value = e.value;
+///////////////////////////////////////////////////
+
+
+	if(base.maxValueRef != ""){
+		if(isNum(base.maxValueRef)){
+			if(base.minValueRef != ""){
+				if(isNum(base.minValueRef)){
+					setScales(value, base.minValueRef, base.maxValueRef);
+				} else {
+					webMI.data.subscribe(base.minValueRef, function(e) {
+						var minval = e.value;
+						setScales(value,minval,base.maxValueRef);
+					});
+				}
+			} else {
+				setScales(value,base.minValue,base.maxValueRef);
+			}
+		} else {
+			webMI.data.subscribe(base.maxValueRef, function(e) {
+				var maxval = e.value;
+				if(base.minValueRef != ""){
+					if(isNum(base.minValueRef)){
+						setScales(value, base.minValueRef, maxval);
+					} else {
+						webMI.data.subscribe(base.minValueRef, function(e) {
+							var minval = e.value;
+							setScales(value,minval,maxval);
+						});
+					}
+				} else {
+					setScales(value,base.minValue,maxval);
+				}				
+			});
+		}
+	} else {
+		if(base.minValueRef != ""){
+			if(isNum(base.minValueRef)){
+				setScales(value, base.minValueRef, base.maxValue);
+			} else {
+				webMI.data.subscribe(base.minValueRef, function(e) {
+					var minval = e.value;
+					setScales(value,minval,base.maxValue);
+				});
+			}
+		} else {
+			setScales(value,base.minValue,base.maxValue);
+		}
+	}	
+/////////////////////////////////////////////
+/*
+	if(base.maxValueRef != ""){
+		webMI.data.subscribe(base.maxValueRef, function(e) {
+			var maxval = e.value;
+			if(base.minValueRef != ""){
+				webMI.data.subscribe(base.minValueRef, function(e) {
+					var minval = e.value;
+					setScales(value,minval,maxval);
+				});
+			} else {
+				var minval = base.minValue;
+				setScales(value,minval,maxval);
+			}
+		});
+	} else {
+		setScales(value, base.minValue, base.maxValue);
+	}
+*/
+}
+
+function setScales(val, min, max){
+	if (base.startScaleX != "" && base.stopScaleX != "") {
+		var xoff = webMI.translate(val, min, max, base.startScaleX / 100, base.stopScaleX / 100);
+		var calcxoff = (val*100)/(max-min)//((base.stopScaleX-base.startScaleX)/(max-min))*val+base.startScaleX;
+//		webMI.gfx.setScaleX(base.id, webMI.translate(val, min, max, base.startScaleX / 100, base.stopScaleX / 100));
+		webMI.gfx.setScaleX(base.id, calcxoff/100);
+	}
+	if (base.startScaleY != "" && base.stopScaleY != "") {
+		webMI.gfx.setScaleY(base.id, webMI.translate(val, min, max, base.startScaleY / 100, base.stopScaleY / 100));
+	}
+}]]></code>
+</script>

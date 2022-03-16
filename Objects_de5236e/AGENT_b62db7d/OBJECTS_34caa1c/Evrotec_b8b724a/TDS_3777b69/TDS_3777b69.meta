@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.TDS
+NodeClass: Object
+BrowseName: 1:TDS
+DisplayName: en|TDS
+Description: en|TDS
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="data" type="string" trigger="false" relative="false" value=""/>
+  <code><![CDATA[console.log(data)]]></code>
+</script>

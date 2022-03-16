@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DATASOURCES.АПД_S1500
+NodeClass: Variable
+BrowseName: 1:АПД_S1500
+DisplayName: en|АПД_S1500
+Description: en|АПД_S1500
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

@@ -1,0 +1,592 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="1016" version="1.2" width="1850" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:parameter behavior="mandatory" defaultvalue="CreateWell" desc="name" name="name" valuetype="string"/>
+  <atv:parameter behavior="mandatory" defaultvalue="" desc="" name="nextOpenDisplay" valuetype="display"/>
+  <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <image atv:refpx="926.232" atv:refpy="508.361" height="720" id="id_13" transform="matrix(1.4472,0,0,1.4121,0,0)" width="1280" x="0" xlink:href="../../IMG/createNewWell/create_new_well_form.jpg" y="0"/>
+ <rect atv:refpx="925" atv:refpy="535.739" fill="#484b49" height="975.395" id="id_3" stroke="none" stroke-width="0" width="851.763" x="499.118" y="20.303"/>
+ <foreignObject height="502.332" id="id_1" width="882.786" x="484.607" y="413.354">
+  <div id="main-container" style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <div id="barrels-container" style="width:100%;height:100%"/>
+  </div>
+  <!-- Стили для списка боковых стволов -->
+  <style>
+	
+	#barrels-container::-webkit-scrollbar {
+		position: relative;
+		right: 4px;
+		width: 6px;
+		background-color: #333333;	
+		border-radius: 3px;		
+	}
+	
+	#barrels-container::-webkit-scrollbar-thumb {
+		position: relative;
+		background-color: #7f8380;
+		border-radius: 3px;
+	}
+	
+  </style>
+ </foreignObject>
+ <svg atv:refpx="960.319" atv:refpy="123.749" height="31" id="id_25" width="600" x="625" xlink:href="AGENT.DISPLAYS.NewView.CreateWell.InputTextField" y="162.279">
+  <atv:argument name="name" value="Месторождение"/>
+  <atv:argument name="inputID" prefix="name"/>
+  <atv:argument name="varPath" value="AGENT.OBJECTS.Rig.General.FieldName"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.SideBoreholes.fieldNameInState"/>
+ </svg>
+ <svg atv:refpx="960.319" atv:refpy="180.279" height="31" id="id_26" width="600" x="625" xlink:href="AGENT.DISPLAYS.NewView.CreateWell.InputTextField" y="218.81">
+  <atv:argument name="name" value="Куст"/>
+  <atv:argument name="inputID" prefix="name"/>
+  <atv:argument name="varPath" value="AGENT.OBJECTS.Rig.General.BushName"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.SideBoreholes.bushNameInState"/>
+ </svg>
+ <svg atv:refpx="960.319" atv:refpy="239.214" height="31" id="id_27" width="600" x="625" xlink:href="AGENT.DISPLAYS.NewView.CreateWell.InputTextField" y="277.745">
+  <atv:argument name="name" value="Скважина"/>
+  <atv:argument name="inputID" prefix="name"/>
+  <atv:argument name="varPath" value="AGENT.OBJECTS.Rig.General.WellName"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.SideBoreholes.wellNameInState"/>
+ </svg>
+ <foreignObject height="63.897" id="id_30" width="603.262" x="623.369" y="60.862">
+  <div style="width:100%;height:100%; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+   <div style="font-family: Arial; font-weight: bold; font-size: 25px; color: white;">
+		СОЗДАНИЕ НОВОЙ СКВАЖИНЫ
+	</div>
+  </div>
+ </foreignObject>
+ <foreignObject height="63.897" id="id_31" width="603.262" x="623.369" y="362.559">
+  <div style="width:100%;height:100%; text-align: center;" xmlns="http://www.w3.org/1999/xhtml">
+   <div style="font-family: Arial; font-weight: bold; font-size: 25px; color: white;">
+		БОКОВЫЕ СТВОЛЫ
+	</div>
+  </div>
+ </foreignObject>
+ <foreignObject height="65.004" id="id_0" width="288.854" x="780.573" y="899.911">
+  <div id="next-button-container" style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <div id="next-button">Далее</div>
+  </div>
+  <style xmlns="http://www.w3.org/1999/xhtml">
+    #next-button-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    #next-button {
+    
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      
+      height: 80%;
+      width: 90%;
+      border-radius: 50px;
+      
+      background-color: #1b8eff;
+      
+      font-family: Arial;
+      font-size: 20px;
+      color: white;
+      
+      -webkit-box-shadow: 0px 0px 14px 0px rgb(0 0 0 / 17%)
+      -moz-box-shadow: 0px 0px 14px 0px rgb(0 0 0 / 17%)
+      box-shadow: 0px 0px 14px 0px rgb(0 0 0 / 17%)
+    }
+    
+    #next-button:active {
+      box-shadow: none;
+      opacity: 0.5;
+    }
+    </style>
+ </foreignObject>
+ <image atv:refpx="1312.739" atv:refpy="57.432" height="88" id="id_12" transform="matrix(0.3661,0,0,0.3661,0,0)" width="88" x="3542.104" xlink:href="../../IMG/createNewWell/modal_close.png" y="112.89"/>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[//* переменная хранящая текущее количество боковых стволов
+var barrelsCountState = "AGENT.OBJECTS.SideBoreholes.sideBoreholesCount"; //TODO: поменять на webMI.query[]
+
+//* переменная хранящая данные для каждого бокового ствола
+var sideBarrelsDataState = "AGENT.OBJECTS.SideBoreholes.sideBarrelsData"; //TODO: поменять на webMI.query[]
+
+var barrelsCount = 1; //* работа с количеством боковых стволов
+var sideBarrelsData = []; //* массив для работы с распарсенными данными
+var defaultDate = '2022-01-01'; //* дата по дефолту
+
+var myStorage = parent.window.localStorage;
+
+webMI.data.read(sideBarrelsDataState, function (e) {
+    sideBarrelsData = JSON.parse(e.value);
+});
+
+var mainContainer = document.getElementById("main-container");
+mainContainer.style.width = '92%';
+mainContainer.style.height = '90%';
+mainContainer.style.display = "flex";
+mainContainer.style.flexDirection = "column";
+mainContainer.style.alignItems = "center";
+mainContainer.style.justifyContent = "center";
+mainContainer.style.margin = '0 auto';
+mainContainer.style.background = '#333333';
+//* mainContainer.style.borderRadius = '15px';
+
+//* список боковых стволов
+var barrelsContainer = document.getElementById("barrels-container");
+barrelsContainer.style.width = '98%';
+barrelsContainer.style.height = '98%';
+barrelsContainer.style.display = "flex";
+barrelsContainer.style.flexWrap = "wrap";
+barrelsContainer.style.justifyContent = 'space-between';
+barrelsContainer.style.boxSizing = "border-box";
+barrelsContainer.style.position = "relative";
+barrelsContainer.style.left = '3px';
+barrelsContainer.style.zIndex = "4";
+barrelsContainer.style.overflowY = "scroll";
+barrelsContainer.style.fontFamily = "Arial";
+barrelsContainer.style.padding = "15px 0 30px 0";
+barrelsContainer.style.background = '#333333';
+
+
+watchState(barrelsCountState);
+
+function watchState(stateVar) {
+    webMI.data.subscribe(stateVar, function (e) {
+        barrelsCount = e.value; //* запись количества боковых стволов из стейта
+        resetContainer(barrelsContainer); //* вызываю функцию очистки дом дерева со списком боковых стволов перед новой отрисовкой
+        createCards(barrelsCount, sideBarrelsDataState, sideBarrelsData, barrelsCountState, defaultDate); //* вызываю функцию отрисовывки нового дом дерева
+    });
+}
+
+//* создание и вывод списка настроек боковых стволов
+function createCards(barrelsCount, sideBarrelsDataState, sideBarrelsData, barrelsCountState, defaultDate) {
+
+    webMI.data.read(sideBarrelsDataState, function (e) {
+
+        var value = JSON.parse(e.value);
+
+        sideBarrelsData = value;
+
+        //* корректирую данные перед записью в стейт
+        if (value.length > barrelsCount) {
+            sideBarrelsData.pop();
+
+            var defaultValue = JSON.stringify(sideBarrelsData);
+            webMI.data.write([sideBarrelsDataState], [defaultValue]);
+        }
+
+
+        for (var i = 0; i < barrelsCount; i++) {
+
+            //* запись данных по умолчанию при создании нового бокового ствола
+            if (sideBarrelsData[i] == undefined) {
+                sideBarrelsData.push({
+                    id: i + 1,
+                    name: i + 1,
+                    date: defaultDate,
+                    depthStart: 0,
+                    depthEnd: 0
+                });
+
+                var defaultValue = JSON.stringify(sideBarrelsData);
+                webMI.data.write([sideBarrelsDataState], [defaultValue]);
+            }
+
+
+
+            //* ============================= Элемент настройки бокового ствола ========================== //
+            var barrelItem = parent.document.createElement("div");
+            barrelItem.style.position = "relative";
+            barrelItem.style.width = "335px";
+            barrelItem.style.height = "150px";
+            barrelItem.style.background = "#484b49";
+            barrelItem.style.margin = "15px";
+            barrelItem.style.padding = "15px";
+            barrelItem.style.color = 'white';
+            barrelItem.style.boxShadow = "rgb(0 0 0 / 42%) 0px 1px 16px 3px";
+
+            barrelItem.innerHTML = createSideBoreholesOptionElement(sideBarrelsData[i].name, i);
+
+            barrelsContainer.appendChild(barrelItem);
+
+            //* ========================================================================================== //
+
+
+
+            //* ============ Работа с инпутами =================== //
+
+            //* оработка событий и запись данных из полей ввода с датами
+            var dateInputs = parent.document.querySelectorAll('input[data-input-date-id]');
+            dateInputs[i].setAttribute('value', sideBarrelsData[i].date);
+
+            for (var j = 0; j < dateInputs.length; j++) {
+                dateInputs[i].style.textAlign = 'center';
+
+                //* обработчик события для каждого поля с датой
+                dateInputs[j].addEventListener('change', dateInputHandler(sideBarrelsDataState, sideBarrelsData));
+            }
+
+            //* оработка событий и запись данных из полей ввода с "глубиной от"
+            var depthStarts = parent.document.querySelectorAll('input[data-input-depth-start-id]');
+            depthStarts[i].setAttribute('value', sideBarrelsData[i].depthStart);
+
+            for (var k = 0; k < depthStarts.length; k++) {
+                depthStarts[i].style.textAlign = 'center';
+
+                depthStarts[k].addEventListener('input', depthInputsHandler('start', sideBarrelsDataState, sideBarrelsData));
+                depthStarts[k].addEventListener('focus', function (e) {
+                    const value = e.target.value;
+
+                    if (value === '0') {
+                        e.target.value = '';
+                    };
+                });
+            }
+
+            //* оработка событий и запись данных из полей ввода с "глубиной до"
+            var depthEnds = parent.document.querySelectorAll('input[data-input-depth-end-id]');
+            depthEnds[i].setAttribute('value', sideBarrelsData[i].depthEnd);
+
+            for (var k = 0; k < depthEnds.length; k++) {
+                depthEnds[i].style.textAlign = 'center';
+
+                depthEnds[k].addEventListener('input', depthInputsHandler('end', sideBarrelsDataState, sideBarrelsData));
+                depthEnds[k].addEventListener('focus', function (e) {
+                    const value = e.target.value;
+
+                    if (value === '0') {
+                        e.target.value = '';
+                    };
+                });
+            }
+
+            //* поле ввода с изменением имени ствола
+            var changeNameButtons = parent.document.querySelectorAll('div[data-change-button]');
+            changeNameButtons.forEach(function (changeButton) {
+                changeButton.addEventListener('click', function (e) {
+                    var target = e.target;
+
+                    var idField = 'change-field-block-' + target.dataset.changeButton;
+                    document.getElementById(idField).style.display = 'flex';
+                });
+            });
+
+            var changeInputs = parent.document.querySelectorAll('input[data-name-change-input]');
+            changeInputs.forEach(function (changeInput) {
+                changeInput.addEventListener('input', function (e) {
+
+                    var value = e.target.value;
+                    console.log(e.target.value = value);
+                });
+            });
+
+            var changeInputOKButton = parent.document.querySelectorAll('div[data-name-button-ok]');
+            var okHandlerArgsObj = {
+                barrelsCount: barrelsCount,
+                sideBarrelsDataState: sideBarrelsDataState,
+                sideBarrelsData: sideBarrelsData,
+                barrelsCountState: barrelsCountState,
+                defaultDate: defaultDate
+            };
+            changeInputOKButton.forEach(function (okButton) {
+                okButton.addEventListener('click', changeNameOKButtonHandler(okHandlerArgsObj, barrelsContainer));
+            });
+
+            function changeNameOKButtonHandler(obj, barrelsContainer) {
+                return function (e) {
+                    var inputId = 'name-change-input-' + e.target.dataset.nameButtonOk;
+                    console.log(document.getElementById(inputId).value);
+
+                    var input = document.getElementById(inputId);
+                    obj.sideBarrelsData[e.target.dataset.nameButtonOk].name = input.value;
+
+                    var dataWrite = JSON.stringify(obj.sideBarrelsData);
+                    webMI.data.write([obj.sideBarrelsDataState], [dataWrite]);
+
+                    var idField = 'change-field-block-' + e.target.dataset.nameButtonOk;
+                    document.getElementById(idField).style.display = 'none';
+
+                    //* вызываю функции чтобы после нажатия кнопки "ОК" обновлялось значение имени ствола
+                    resetContainer(barrelsContainer); //* вызываю функцию очистки дом дерева со списком боковых стволов перед новой отрисовкой
+                    createCards(
+                        obj.barrelsCount,
+                        obj.sideBarrelsDataState,
+                        obj.sideBarrelsData,
+                        obj.barrelsCountState,
+                        obj.defaultDate
+                    );//* вызываю функцию отрисовывки нового дом дерева
+
+                }
+            }
+
+            //* ==================================================//
+
+
+            //* =================== Удаление последнего созданного ствола ===================== //
+            if (i != 0 && i == barrelsCount - 1) {
+                var deleteBtn = webMI.dom.createElement("http://www.w3.org/1999/xhtml", "div");
+                deleteBtn.style.position = 'absolute';
+                deleteBtn.style.top = '7px';
+                deleteBtn.style.right = '7px';
+                deleteBtn.style.width = '20px';
+                deleteBtn.style.height = '20px';
+                deleteBtn.style.backgroundRepeat = 'no-repeat';
+                deleteBtn.style.backgroundImage = "url(../../IMG/createNewWell/modal_close.png)";
+                deleteBtn.style.backgroundSize = 'cover';
+
+                // удаление последнего созданного бокового ствола
+                deleteBtn.addEventListener('click', deleteLastBarrelItem(sideBarrelsDataState, barrelsCountState, sideBarrelsData, barrelsCount, e.value));
+
+                barrelItem.appendChild(deleteBtn);
+            }
+            //* =============================================================================== //
+
+
+
+            //* ====== Работоспособность "backspace" для инпутов ================= //
+            var startDepthInput = document.getElementById("input-depth-start-" + i);
+            var endDepthInput = document.getElementById("input-depth-end-" + i);
+            var changeInput = document.getElementById("name-change-input-" + i);
+
+            startDepthInput.addEventListener('keydown', forInputToWork('start', sideBarrelsData, sideBarrelsDataState, barrelsCount, e.value));
+            endDepthInput.addEventListener('keydown', forInputToWork('end', sideBarrelsData, sideBarrelsDataState, barrelsCount, e.value));
+            changeInput.addEventListener('keydown', forInputToWork(null, null, null, null, null));
+
+            //* ================================================================== //
+        }
+
+        //* ==================== Добавление нового бокового ствола ==========================//
+
+        var addNewBarrelItem = webMI.dom.createElement("http://www.w3.org/1999/xhtml", "div");
+        addNewBarrelItem.setAttribute('id', 'add-barrel-item');
+        addNewBarrelItem.style.position = "relative";
+        addNewBarrelItem.style.width = "334px";
+        addNewBarrelItem.style.height = "150px";
+        addNewBarrelItem.style.background = "#484b49";
+        addNewBarrelItem.style.margin = "15px";
+        addNewBarrelItem.style.padding = "15px";
+        addNewBarrelItem.style.boxShadow = "0px 1px 31px 4px rgba(0, 0, 0, 0.42)";
+
+
+        //* верстка элемента добавления бокового ствола
+        addNewBarrelItem.innerHTML = createAddNewBurrelItemElement();
+
+        barrelsContainer.appendChild(addNewBarrelItem);
+
+        // добавляю новый боковой ствол
+        addNewBarrelItem.addEventListener('click', addNewBarrelItemHandler(sideBarrelsDataState, barrelsCountState, sideBarrelsData, barrelsCount, e.value));
+
+        console.log('Prev Count = ', myStorage.getItem('prevCount'));
+
+        if (Number(myStorage.getItem('prevCount')) != barrelsCount) {
+            //* чтобы прокручивался скролл к последнему эелементу списка стволов
+            var topOffset = barrelsContainer.scrollHeight;
+            barrelsContainer.scrollTop = topOffset;
+        }
+
+        //* записываю данные в переменную состояния
+        webMI.data.write(sideBarrelsDataState, JSON.stringify(sideBarrelsData));
+
+        //* =============================================================================== //
+
+        myStorage.setItem('prevCount', barrelsCount);
+
+    });
+
+}
+
+
+//* =============== Кнопка далее =================== //
+var btnNext = document.getElementById('next-button');
+btnNext.addEventListener('click', function () {
+    webMI.display.openDisplay('AGENT.DISPLAYS.NewView.CreateWell.GGDModalLoader', {}, 'main_frame');
+});
+//* ================================================ //
+
+//* =============== Кнопка закрыть =================== //
+var btnClose = document.getElementById('id_12');
+btnClose.addEventListener('click', function () {
+    webMI.display.openDisplay('AGENT.DISPLAYS.Test.Maximus', {}, 'main_frame');
+});
+//* ================================================ //
+
+
+//! ======================== CONTROL DATA ====================== //
+
+webMI.data.subscribe(sideBarrelsDataState, function (e) {
+
+    console.log('Data:', JSON.parse(e.value));
+    //console.log('Data:', e.value);
+});
+
+//! ======================================================= //
+
+
+//* удаление последнего созданного бокового ствола
+function deleteLastBarrelItem(sideBarrelsDataState, barrelsCountState, sideBarrelsData, barrelsCount, stateValue, delPrevCount) {
+
+    return function () {
+        webMI.data.write([barrelsCountState], [barrelsCount - 1]);
+
+        sideBarrelsData.pop();
+
+        var value = JSON.stringify(sideBarrelsData);
+        webMI.data.write([sideBarrelsDataState], [value]);
+
+        if (JSON.parse(stateValue).length > barrelsCount) {
+            sideBarrelsData.pop();
+            webMI.data.write(sideBarrelsDataState, JSON.stringify(sideBarrelsData));
+        }
+    };
+}
+
+//* для корректной работы с полями ввода глубины от/до
+function forInputToWork(depthType, sideBarrelsData, sideBarrelsDataState, barrelsCount, stateValue) {
+    return function (f) {
+        if (f.target.getAttribute('readonly') != 'true') {
+            if (f.key == 'Backspace') {
+                var start = f.target.selectionStart;
+                var end = f.target.selectionEnd;
+                var temp = f.target.value.split("");
+
+                if (end != start) {
+                    temp.splice(start, (end - start));
+
+                    f.target.value = temp.join("");
+                    f.target.selectionStart = start;
+                    f.target.selectionEnd = start;
+                } else {
+                    temp.splice(start - 1, 1);
+
+                    f.target.value = temp.join("");
+                    f.target.selectionStart = start - 1;
+                    f.target.selectionEnd = start - 1;
+                }
+
+                if (depthType == 'start') {
+                    sideBarrelsData[f.target.dataset.inputDepthStartId].depthStart = Number(f.target.value);
+                }
+
+                if (depthType == 'end') {
+                    sideBarrelsData[f.target.dataset.inputDepthEndId].depthEnd = Number(f.target.value);
+                }
+
+                if (depthType == 'start' || depthType == 'end') {
+                    var dateWrite = JSON.stringify(sideBarrelsData);
+                    webMI.data.write([sideBarrelsDataState], [dateWrite]);
+                }
+            }
+            if (f.key == 'Enter') {
+
+                f.stopPropagation();
+                //fn(input.value);
+            }
+        }
+
+        if (depthType == 'start' || depthType == 'end') {
+            //* перезапись данных в стейт для актуализации
+            if (JSON.parse(stateValue).length > barrelsCount) {
+                sideBarrelsData.pop();
+                webMI.data.write(sideBarrelsDataState, JSON.stringify(sideBarrelsData));
+            }
+        }
+    }
+}
+
+//* оработка событя и запись данных из поля ввода с датой
+function dateInputHandler(sideBarrelsDataState, sideBarrelsData) {
+    return function (e) {
+        sideBarrelsData[e.target.dataset.inputDateId].date = e.target.value;
+
+        var dataWrite = JSON.stringify(sideBarrelsData);
+        webMI.data.write([sideBarrelsDataState], [dataWrite]);
+    }
+}
+
+//* оработка событий и запись данных из полей ввода с "глубиной от/до"
+function depthInputsHandler(depthType, sideBarrelsDataState, sideBarrelsData) {
+
+    return function (e) {
+        var value = e.target.value;
+
+        if (depthType == 'start') {
+            sideBarrelsData[e.target.dataset.inputDepthStartId].depthStart = Number(e.target.value = value.match(/[0][.,][0-9]{0,1}|[0]|[1-9]*[.][0-9]{0,1}|[1-9]*/m)[0]);
+        }
+
+        if (depthType == 'end') {
+            sideBarrelsData[e.target.dataset.inputDepthEndId].depthEnd = Number(e.target.value = value.match(/[0][.,][0-9]{0,1}|[0]|[1-9]*[.][0-9]{0,1}|[1-9]*/m)[0]);
+        }
+
+        var dataWrite = JSON.stringify(sideBarrelsData);
+        webMI.data.write([sideBarrelsDataState], [dataWrite]);
+    }
+}
+
+//* добавление нового бокового ствола
+function addNewBarrelItemHandler(sideBarrelsDataState, barrelsCountState, sideBarrelsData, barrelsCount, stateValue) {
+
+    return function (e) {
+
+        webMI.data.write([barrelsCountState], [barrelsCount + 1]);
+
+        if (JSON.parse(stateValue).length > barrelsCount) {
+            sideBarrelsData.pop();
+            webMI.data.write(sideBarrelsDataState, JSON.stringify(sideBarrelsData));
+        }
+    }
+}
+
+//* чистка DOM при изменении количества боковых стволов
+function resetContainer(domElement) {
+    while (domElement.firstChild) {
+        domElement.removeChild(domElement.firstChild);
+    }
+}
+
+//* верстка элемента параметров бокового ствола
+function createSideBoreholesOptionElement(nameID, index) {
+
+    var itemHTML =
+        "<div style='display: flex; flex-wrap: no-wrap; justify-content: center; align-items: center; margin-bottom: 10px;'>" +
+        "<div style='text-align: center; font-weight: bold; margin-right: 15px;'>Ствол № " + nameID + "</div>" +
+        "<div data-change-button='" + index + "' id='change-button-" + index + "' style='font-size: 10px; background: #302929; padding: 2px 6px; border-radius: 50px;'>Изменить</div>" +
+        "<div id='change-field-block-" + index + "' style='position: absolute; display: none; flex-wrap: no-wrap; justify-content: center; align-items: center; background: #484b49;'>" +
+        "<input data-name-change-input='" + index + "' id='name-change-input-" + index + "' style='width: 175px;' value='" + nameID + "'/>" +
+        "<div data-name-button-ok='" + index + "' id='change-button-ok-" + index + "' style='font-size: 10px; background: #302929; padding: 8px 6px; border-radius: 50px; margin-left: 5px;'>OK</div>" +
+        "</div>" +
+        "</div>" +
+
+        "<div style='display: flex; justify-content: space-between;'>" +
+
+        "<div style='margin-right: 8px;'>" +
+        "<div style='margin: 15px 0; line-height: 23.92px;' value=' id='start-date-" + index + "'" + ">Дата начала</div>" +
+        "<div style='margin: 17px 0; line-height: 20.60px;' id='depth-start-" + index + "'" + ">Глубина от (м)</div>" +
+        "<div style='margin-bottom: 0px; margin-top: 22px; line-height: 20.59px;' id='depth-end-" + index + "'" + ">Глубина до (м)</div>" +
+        "</div>" +
+
+        "<div>" +
+        "<input data-input-date-id='" + index + "' style='margin: 7px 0; display: block; width: 209px; height: 30px;' type='date' id='input-start-date-" + index + "'" + "/>" +
+        "<input data-input-depth-start-id='" + index + "' style='margin: 7px 0; display: block; width: 207px; height: 30px;' type='text' id='input-depth-start-" + index + "'" + "/>" +
+        "<input data-input-depth-end-id='" + index + "' style='margin-bottom: 0px; display: block; width: 207px; height: 30px;' type='text' id='input-depth-end-" + index + "'" + "/>" +
+        "</div>" +
+
+        "</div>";
+
+    return itemHTML;
+}
+
+//* верстка элемента добавления бокового ствола
+function createAddNewBurrelItemElement() {
+    var elemHTML =
+
+        "<div style='width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center;'>" +
+        "<div style='margin-bottom: 25px; font-family: Arial; color: #ffffff;'>Добавить ствол</div>" +
+        "<svg width='84' height='84' viewBox='0 0 44 44' fill='none' xmlns='http://www.w3.org/2000/svg'>" +
+        "<path fill-rule='evenodd' clip-rule='evenodd' d='M26.2628 0H17.6392V17.6392H0V26.2628H17.6392V44H26.2628V26.2628H44V17.6392H26.2628V0Z'" +
+        " fill='#7a7a7a'/>" +
+        "</svg>" +
+        "</div>";
+
+    return elemHTML;
+}]]></script>
+</svg>

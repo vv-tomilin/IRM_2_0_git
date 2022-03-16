@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.Test.OPC-elem
+NodeClass: Variable
+BrowseName: 1:OPC-elem
+DisplayName: en|OPC-elem
+Description: en|OPC-elem
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

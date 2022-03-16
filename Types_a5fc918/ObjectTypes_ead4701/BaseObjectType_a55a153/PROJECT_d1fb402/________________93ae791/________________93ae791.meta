@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Поршень в сборе
+NodeClass: ObjectType
+BrowseName: 1:Поршень в сборе
+DisplayName: en|Поршень в сборе
+Description: en|Поршень в сборе
+IsAbstract: false

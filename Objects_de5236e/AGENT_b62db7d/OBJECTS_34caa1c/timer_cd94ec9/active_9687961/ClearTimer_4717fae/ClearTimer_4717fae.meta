@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.timer.active.ClearTimer
+NodeClass: Variable
+BrowseName: 1:ClearTimer
+DisplayName: en|ClearTimer
+Description: en|ClearTimer
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

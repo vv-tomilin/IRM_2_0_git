@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/highcharts-more.js.map
+NodeClass: Variable
+BrowseName: 1:highcharts-more.js.map
+DisplayName: en|highcharts-more.js.map
+Description: en|highcharts-more.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

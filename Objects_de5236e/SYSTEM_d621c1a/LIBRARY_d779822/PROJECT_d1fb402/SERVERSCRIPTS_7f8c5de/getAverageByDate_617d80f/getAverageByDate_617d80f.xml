@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nodeStr" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="timestart" type="number" trigger="false" relative="false" value=""/>
+  <parameter name="timeend" type="number" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var nodeProc = new UaNode(nodeStr);
+
+//var timeend = new Date();
+//var timestart = new Date(timeend.valueOf() - countSec * 1000);
+var avrVal=0;
+var resultRaw = nodeProc.datahistory({starttime: timestart, endtime: timeend});
+if(resultRaw.status < 0x40000000){
+	if(resultRaw.values.length==0 || resultRaw.values.length==1){
+		avrVal = call('getUaDataByDate',{strnode:nodeStr,datestop:timeend});
+	} else {
+		var lenres = resultRaw.values.length;
+		var arrReq = resultRaw.values;
+		var sumReq=0;
+		arrReq.forEach(function(valReq, indx, arrReq){
+			//if(valReq.status <0x40000000){
+				sumReq+=valReq.value;
+			//}
+		});	
+		avrVal = sumReq/lenres;
+	}
+}
+return Number(avrVal);]]></code>
+</script>

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.GLOBALS.rigintel
+NodeClass: Object
+BrowseName: 1:rigintel
+DisplayName: en|rigintel
+Description: en|rigintel
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

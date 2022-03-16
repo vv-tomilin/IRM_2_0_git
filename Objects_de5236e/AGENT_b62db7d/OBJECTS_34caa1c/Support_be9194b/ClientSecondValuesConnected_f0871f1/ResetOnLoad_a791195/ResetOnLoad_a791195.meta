@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.ClientSecondValuesConnected.ResetOnLoad
+NodeClass: Variable
+BrowseName: 1:ResetOnLoad
+DisplayName: en|ResetOnLoad
+Description: en|ResetOnLoad
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

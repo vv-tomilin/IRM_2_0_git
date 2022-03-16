@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.Loaders.GGD_Loader
+NodeClass: Variable
+BrowseName: 1:GGD_Loader
+DisplayName: en|GGD_Loader
+Description: en|GGD_Loader
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

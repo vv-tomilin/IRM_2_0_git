@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nnode" type="node" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.IVE50.Well.WellDepth.WellDepthSensor"/>
+  <code><![CDATA[call('SetVarValue',{varname:'AGENT.OBJECTS.IVE50.Well.WellDepth',varvalue:nnode.value});
+return;
+var wellDepth = call('GetVarValue',{varname:'AGENT.OBJECTS.IVE50.Well.WellDepth'});
+var wellDepthSensor = nnode.value;//call('GetVarValue',{varname:'AGENT.OBJECTS.IVE50.Well.WellDepth.WellDepthSensor'});
+
+//if(!(wellDepthSensor > wellDepth && wellDepthSensor < 1500){
+if((wellDepthSensor >= wellDepth) || (wellDepthSensor < wellDepth && wellDepthSensor > 1500)){
+	call('SetVarValue',{varname:'AGENT.OBJECTS.IVE50.Well.WellDepth',varvalue:nnode.value});	
+}
+
+/*
+var wellDepthHistObj = call('getUaDataByDate',{strnode:'AGENT.OBJECTS.IVE50.Well.WellDepth.WellDepthSensor',datestop:nnode.servertime-1000});
+var wellDepth = call('GetVarValue',{varname:'AGENT.OBJECTS.IVE50.Well.WellDepth'});
+
+if(!(wellDepth > wellDepthHistObj.value && wellDepth < 1500){
+	call('SetVarValue',{varname:'AGENT.OBJECTS.IVE50.Well.WellDepth',varvalue:nnode.value});
+	
+}
+*/
+/*
+var toolPos = call('GetVarValue',{varname:'AGENT.OBJECTS.IVE50.Tool.ToolPosition'});
+var diffWellPos = wellDepth-toolPos;
+
+var strOper = call('GetVarValue',{varname:'AGENT.OBJECTS.Support.Auto.Operation'});
+var operObj = JSON.parse(call('GetVarValue',{varname:'AGENT.OBJECTS.Support.Auto.Operation'}));
+
+if(diffWellPos > 0.5 && nnode.value != 0 && operObj.oper != 'БУРЕНИЕ' ){
+	call('SetVarValue',{varname:'AGENT.OBJECTS.IVE50.Drawworks.HookSpeed.HookSpeedFiltered',varvalue:nnode.value});
+} else {
+	call('SetVarValue',{varname:'AGENT.OBJECTS.IVE50.Drawworks.HookSpeed.HookSpeedFiltered',varvalue:0.0});
+}
+*/
+/*
+var strOper = call('GetVarValue',{varname:'AGENT.OBJECTS.Support.Auto.Operation'});
+var operObj = JSON.parse(call('GetVarValue',{varname:'AGENT.OBJECTS.Support.Auto.Operation'}));
+//console.log('CheckLoadOnBit');
+if(operObj.oper == 'БУРЕНИЕ' && nnode.value > 0){
+	call('SetVarValue',{varname:'AGENT.OBJECTS.IVE50.Drawworks.LoadOnBit.LoadOnBitFiltered',varvalue:nnode.value});
+} else {
+	call('SetVarValue',{varname:'AGENT.OBJECTS.IVE50.Drawworks.LoadOnBit.LoadOnBitFiltered',varvalue:0.0});
+}
+*/]]></code>
+</script>

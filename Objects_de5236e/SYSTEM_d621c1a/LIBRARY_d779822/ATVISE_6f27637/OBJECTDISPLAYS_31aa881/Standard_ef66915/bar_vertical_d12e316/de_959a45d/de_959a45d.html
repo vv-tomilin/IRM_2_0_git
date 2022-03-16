@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Beschreibung</h1>
+<p>Die Leiste wird f&uuml;r die grafische Darstellung des Werts einer Adresse verwendet.</p>
+<p>F&uuml;r jede Leiste k&ouml;nnen 0 bis 4 Limits (von &quot;Unteres Limit unterschritten&quot; bis &quot;Oberes Limit &uuml;berschritten&quot;) festgelegt werden. Diese Limits unterteilen den durch &quot;min.&quot; und &quot;max.&quot; definierten Bereich in 1 bis 5 Intervalle. Je nachdem, in welchem Intervall der Wert der &quot;base&quot;-Adresse liegt, wird die Textfarbe und die Balkenfarbe des Werts gem&auml;&szlig; der f&uuml;r jedes Limit definierten Farbe ge&auml;ndert - siehe unten unter &quot;Darstellung&quot;. Liegt ein Limit unter &quot;min.&quot; oder &uuml;ber &quot;max.&quot;, wird es nicht explizit gezeichnet, obwohl die Textfarbe und die Balkenfarbe entsprechend ge&auml;ndert werden. (Beispiel: &quot;max.&quot; = 100 und &quot;Oberes Limit &uuml;berschritten&quot; = 120: Obwohl die Leiste nicht &uuml;ber &quot;max.&quot; hinausgeht, werden die Textfarbe und die Balkenfarbe gem&auml;&szlig; &quot;Farbe f&uuml;r Oberes Limit &uuml;berschritten&quot; ge&auml;ndert, sobald der Wert &quot;Oberes Limit &uuml;berschritten&quot; erreicht.)</p>
+Die Limits sind wie folgt definiert:<br>
+<ul>
+  <li>Unteres Limit unterschritten &gt;= Wert: Textfarbe und Balkenfarbe gem&auml;&szlig; &quot;Farbe f&uuml;r Unteres Limit unterschritten&quot;</li>
+  <li>Unteres Limit unterschritten &lt; Wert &lt;= Unteres Limit erreicht: Textfarbe und Balkenfarbe gem&auml;&szlig; &quot;Farbe f&uuml;r Unteres Limit erreicht&quot;</li>
+  <li>Unteres Limit erreicht &lt; Wert &lt; Oberes Limit erreicht: Textfarbe und Balkenfarbe gem&auml;&szlig; &quot;Balkenfarbe&quot;</li>
+  <li>Oberes Limit erreicht &lt;= Wert &lt; Oberes Limit &uuml;berschritten: Textfarbe und Balkenfarbe gem&auml;&szlig; &quot;Farbe f&uuml;r Oberes Limit erreicht&quot;</li>
+  <li>Oberes Limit &uuml;berschritten &lt;= Wert: Textfarbe und Balkenfarbe gem&auml;&szlig; &quot;Farbe f&uuml;r Oberes Limit &uuml;berschritten&quot;</li>
+</ul>
+<p>Mit Hilfe einer Statusanzeige in Form eines zus&auml;tzlichen Rahmens kann zudem auch ein negativer Status des aktuellen Wertes und ein zus&auml;tzlich definierter Alarm dargestellt werden. Die Farben und Blinkintervalle werden in globalen Listen definiert.</p>
+<h1>Parameter</h1>
+<p>Die Leiste hat die folgenden allgemeinen Parameter:</p>
+<ul>
+  <li><span class="parameter">base</span>: Adresse des Datenpunkts, dessen Wert f&uuml;r die grafische Darstellung verwendet wird</li>
+  <li><span class="parameter">Alarmadresse</span>: Optional zus&auml;tzliche Adresse eines Alarms, welcher angezeigt werden soll.</li>
+  <li><span class="parameter">Beschriftung</span>: Beschriftung der Leiste</li>
+  <li><span class="parameter">Einheit</span>: Einheit des Werts</li>
+  <li><span class="parameter">Minimum</span>: untere Grenze des Werts (Standard: 0)</li>
+  <li><span class="parameter">Maximum</span>: obere Grenze des Werts (Standard: 100)</li>
+  <li><span class="parameter">Status&uuml;berwachung aktivieren</span>: Schaltet die Anzeige des aktuellen Wertestatus ein oder aus.</li>
+  <li><span class="parameter">Statustrigger feuern</span>: Statt der Statusanzeige kann auch ein hier definierter Trigger global gefeuert werden.</li>
+</ul>
+<p>Schrift:</p>
+<ul>
+  <li><span class="parameter">Schriftart</span>: Schriftart, die auf&nbsp;Wert, Einheit und Beschriftung angewendet wird</li>
+  <li><span class="parameter">Textfarbe</span>: Farbe, die auf Wert, Einheit und Beschriftung angewendet wird</li>
+  <li><span class="parameter">Textf&uuml;llfarbe</span>: Farbe, die auf den Hintergrund von Wert, Einheit und Beschriftung angewendet wird</li>
+  <li><span class="parameter">Gr&ouml;&szlig;e des Werts</span>: auf den Wert angewendete Schriftgr&ouml;&szlig;e</li>
+  <li><span class="parameter">Gr&ouml;&szlig;e der Beschriftung</span>: auf die Beschriftung angewendete Schriftgr&ouml;&szlig;e</li>
+  <li><span class="parameter">Gr&ouml;&szlig;e der Einheit</span>: auf die Einheit angewendete Schriftgr&ouml;&szlig;e</li>
+</ul>
+<p>Darstellung:</p>
+<ul>
+  <li><span class="parameter">Nachkommastellen</span>: Anzahl der Nachkommastellen f&uuml;r den anzuzeigenden Wert</li>
+  <li><span class="parameter">F&uuml;llfarbe</span>: F&uuml;llfarbe von Hintergrundfl&auml;chen</li>
+  <li><span class="parameter">F&uuml;llfarbe nicht editierbar</span>: F&uuml;llfarbe von Hintergrundfl&auml;chen, wenn Element nicht editierbar</li>
+  <li><span class="parameter">Balkenfarbe</span>: Farbe der Leiste, wenn keine Limits aktiviert wurden</li>
+  <li><span class="parameter">Unteres Limit unterschritten (off=kein Limit)</span>: Wert f&uuml;r Unteres Limit unterschritten&nbsp;(Standard: off, d.&nbsp;h. kein Limit) </li>
+  <li><span class="parameter">Unteres Limit erreicht (off=kein Limit)</span>: Wert f&uuml;r Unteres Limit erreicht&nbsp;(Standard: off, d.&nbsp;h. kein Limit)</li>
+  <li><span class="parameter">Oberes Limit erreicht (off=kein Limit)</span>:Wert f&uuml;r Oberes Limit erreicht&nbsp;(Standard: off, d.&nbsp;h. kein Limit)</li>
+  <li><span class="parameter">Oberes Limit &uuml;berschritten (off=kein Limit)</span>: Wert f&uuml;r Oberes Limit &uuml;berschritten&nbsp;(Standard: off, d.&nbsp;h. kein Limit)</li>
+  <li><span class="parameter">Farbe f&uuml;r Unteres Limit unterschritten</span>: Farbe des Textes und der Leiste, wenn &quot;Unteres Limit unterschritten&quot; &gt;=&nbsp;Wert (Standard: rot)</li>
+  <li><span class="parameter">Farbe f&uuml;r Unteres Limit erreicht</span>: Farbe des Textes und der Leiste, wenn &quot;Unteres Limit erreicht&quot; &lt;&nbsp;Wert &lt;= &quot;Unteres Limit erreicht&quot; (Standard: gelb)</li>
+  <li><span class="parameter">Farbe f&uuml;r Oberes Limit erreicht</span>: Farbe des Textes und der Leiste, wenn &quot;Oberes Limit erreicht&quot; &lt;=&nbsp;Wert &lt; &quot;Oberes Limit &uuml;berschritten&quot; (Standard: gelb)</li>
+  <li><span class="parameter">Farbe f&uuml;r Oberes Limit &uuml;berschritten</span>: Farbe des Textes und der Leiste, wenn &quot;Oberes Limit unterschritten&quot; &lt;=&nbsp;Wert (Standard: rot)</li>
+  <li><span class="parameter">angezeigte Skala</span>: zu verwendende Skala; weitere Skalen k&ouml;nnen ausgew&auml;hlt werden aus &quot;Object Displays (ATVISE)/Symbols/scales (Standard: scale_20_bar)</li>
+  <li><span class="parameter">Skalenfarbe</span>: Farbe der zu verwendenden Skala&nbsp; (Standard: wei&szlig;)</li>
+  <li><span class="parameter">Statushinweis</span>: Spezifiziert die Darstellung des Status &uuml;ber eine definierte globale Liste (Standard: Globaler Parameter <i>atvStatusIndication</i>)</li>
+  <li><span class="parameter">Alarmhinweis</span>: Spezifiziert die Darstellung des Alarms &uuml;berber eine definierte globale Liste (Standard: Globaler Parameter <i>atvAlarmIndication</i>)</li>
+</ul>
+Optionen:
+<ul>
+  <li><span class="parameter">Adresse f&uuml;r Minimum</span>: Adresse, der das Minimum entnommen wird; setzt den Parameter &quot;Minimum&quot; au&szlig;er Kraft</li>
+  <li><span class="parameter">Adresse f&uuml;r Maximum</span>: Adresse, der das Maximum entnommen wird; setzt den Parameter &quot;Maximum&quot; au&szlig;er Kraft</li>
+  <li><span class="parameter">Adresse f&uuml;r Unteres Limit unterschritten</span>: Adresse, der &quot;Unteres Limit unterschritten&quot; entnommen wird; setzt den Parameter &quot;Unteres Limit unterschritten&quot; au&szlig;er Kraft</li>
+  <li><span class="parameter">Adresse f&uuml;r Unteres Limit erreicht</span>: Adresse, der &quot;Unteres Limit erreicht&quot; entnommen wird; setzt den Parameter &quot;Unteres Limit erreicht&quot; au&szlig;er Kraft</li>
+  <li><span class="parameter">Adresse f&uuml;r Oberes Limit erreicht</span>: Adresse, der &quot;Oberes Limit erreicht&quot; entnommen wird; setzt den Parameter &quot;Oberes Limit erreicht&quot; au&szlig;er Kraft</li>
+  <li><span class="parameter">Adresse f&uuml;r Oberes Limit &uuml;berschritten</span>: Adresse, der &quot;Oberes Limit &uuml;berschritten&quot; entnommen wird; setzt den Parameter &quot;Oberes Limit &uuml;berschritten&quot; au&szlig;er Kraft</li>
+</ul>
+<h1></h1>
+<br>
+</body>
+</html>

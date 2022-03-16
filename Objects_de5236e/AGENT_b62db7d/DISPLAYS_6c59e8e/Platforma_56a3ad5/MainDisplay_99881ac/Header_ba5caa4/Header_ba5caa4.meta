@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.Platforma.MainDisplay.Header
+NodeClass: Variable
+BrowseName: 1:Header
+DisplayName: en|Header
+Description: en|Header
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

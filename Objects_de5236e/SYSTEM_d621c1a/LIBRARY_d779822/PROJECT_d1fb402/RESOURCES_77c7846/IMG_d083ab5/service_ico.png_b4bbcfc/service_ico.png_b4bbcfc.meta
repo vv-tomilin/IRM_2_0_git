@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/IMG/service_ico.png
+NodeClass: Variable
+BrowseName: 1:service_ico.png
+DisplayName: en|service_ico.png
+Description: en|service_ico.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

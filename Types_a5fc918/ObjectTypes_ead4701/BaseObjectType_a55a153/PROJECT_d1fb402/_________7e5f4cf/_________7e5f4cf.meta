@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Лабиринт
+NodeClass: ObjectType
+BrowseName: 1:Лабиринт
+DisplayName: en|Лабиринт
+Description: en|Лабиринт
+IsAbstract: false

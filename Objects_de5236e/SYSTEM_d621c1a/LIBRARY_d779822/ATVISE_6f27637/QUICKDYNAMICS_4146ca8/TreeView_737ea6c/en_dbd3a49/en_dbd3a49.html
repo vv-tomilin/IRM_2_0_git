@@ -1,0 +1,242 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+	<title>Description - TreeView</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<style type="text/css">
+		.tg {
+			border-collapse: collapse;
+			border-spacing: 0;
+			margin-top: 20px;
+			position: relative
+		}
+
+		.tg td {
+			font-size: 14px;
+			padding: 10px 5px;
+			border-style: solid;
+			border-width: 1px;
+			overflow: hidden;
+			word-break: normal;
+		}
+
+		.tg th {
+			font-size: 14px;
+			font-weight: normal;
+			padding: 10px 5px;
+			border-style: solid;
+			border-width: 1px;
+			overflow: hidden;
+			word-break: normal;
+		}
+
+		.tg .tg-7un6 {
+			background-color: #ffffff;
+			color: #000000;
+			text-align: center;
+			vertical-align: top
+		}
+
+		.tg .tg-v0zy {
+			font-weight: bold;
+			background-color: #efefef;
+			color: #000000;
+			text-align: center;
+			vertical-align: top
+		}
+
+		.tg .tg-83xr {
+			background-color: #ffffff;
+			color: #000000;
+			text-align: center;
+			vertical-align: top
+		}
+
+		.tg .tg-ixra {
+			font-weight: bold;
+			background-color: #ffffff;
+			color: #000000;
+			vertical-align: top
+		}
+
+		.tg .tg-pxng {
+			background-color: #ffffff;
+			color: #000000;
+			vertical-align: top
+		}
+
+		.tg .tg-kixb {
+			background-color: #ffffff;
+			color: #000000;
+			vertical-align: top
+		}
+
+		.tg .tg-q9yg {
+			background-color: #ffffff;
+			color: #000000;
+			text-align: right;
+			vertical-align: top
+		}
+
+		.tg .tg-eiwr {
+			background-color: #ffffff;
+			color: #000000;
+			text-align: right;
+			vertical-align: top
+		}
+	</style>
+</head>
+<body>
+<h1><span class="description" lang="EN-GB">Description - TreeView</span></h1>
+<p class="description">This Quick Dynamic creates a treeView based on a opcUA node structure.</p>
+<p class="description">The following options and methods are provided:</p>
+<table class="tg">
+	<tr>
+		<th class="tg-v0zy" colspan="4">Options</th>
+	</tr>
+	<tr>
+		<td class="tg-ixra">Name</td>
+		<td class="tg-ixra">Description</td>
+		<td class="tg-ixra">Default Value</td>
+		<td class="tg-ixra">Required</td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">renderTo</td>
+		<td class="tg-pxng">The id of the DIV-element the tree should be created in</td>
+		<td class="tg-pxng"></td>
+		<td class="tg-7un6">x</td>
+	</tr>
+	<tr>
+		<td class="tg-kixb">busyIndicatorTolerance</td>
+		<td class="tg-kixb">The time to has to pass by to start displaying the busy indicator [ms]</td>
+		<td class="tg-83xr">100</td>
+		<td class="tg-q9yg"></td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">expandoOffset</td>
+		<td class="tg-pxng">The distance from the expando to the leaf icon[px]</td>
+		<td class="tg-7un6">3</td>
+		<td class="tg-eiwr"></td>
+	</tr>
+	<tr>
+		<td class="tg-kixb">fontSize</td>
+		<td class="tg-kixb">The font size for the treeView [px]</td>
+		<td class="tg-83xr">12</td>
+		<td class="tg-kixb"></td>
+	</tr>
+	<tr>
+		<td class="tg-kixb">searchDepth</td>
+		<td class="tg-kixb">The maximal folderdepth the filter method is searching at</td>
+		<td class="tg-83xr">100</td>
+		<td class="tg-kixb"></td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">imagePaths</td>
+		<td class="tg-pxng">The image paths for the tree icons</td>
+		<td class="tg-pxng">{<br>baseVariableImage: &quot;/treeView/icons/baseVariable.svg&quot;,<br>folderImage:
+			&quot;/treeView/icons/folder.svg&quot;,<br>aggregateFunctionImage: &quot;/treeView/icons/aggregateFunction.svg&quot;,<br>collapsedLeafImage:
+			&quot;/treeView/icons/leafCollapsed.svg&quot;,<br>expandedLeafImage: &quot;/treeView/icons/leafExpanded.svg&quot;,<br>}
+		</td>
+		<td class="tg-pxng"></td>
+	</tr>
+	<tr>
+		<td class="tg-kixb">leafIndentation</td>
+		<td class="tg-kixb">The indentation for child leaves [px]</td>
+		<td class="tg-83xr">15</td>
+		<td class="tg-kixb"></td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">leafPadding</td>
+		<td class="tg-pxng">The padding top and bottom between the leaves [px]</td>
+		<td class="tg-7un6">2</td>
+		<td class="tg-pxng"></td>
+	</tr>
+	<tr>
+		<td class="tg-kixb">selectableTypes</td>
+		<td class="tg-kixb">The types of leaves that can be selected</td>
+		<td class="tg-kixb">[&quot;baseVariable&quot;, &quot;aggregateFunction&quot;]</td>
+		<td class="tg-kixb"></td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">startAddress</td>
+		<td class="tg-pxng">The opcUA address to start displaying the tree from</td>
+		<td class="tg-pxng">&quot;AGENT.OBJECTS&quot;</td>
+		<td class="tg-pxng"></td>
+	</tr>
+</table>
+
+<table class="tg">
+	<tr>
+		<th class="tg-v0zy" colspan="4">Methods</th>
+	</tr>
+	<tr>
+		<td class="tg-ixra">Name</td>
+		<td class="tg-ixra">Description</td>
+		<td class="tg-ixra">Parameters</td>
+		<td class="tg-ixra">Return Value</td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">collapse</td>
+		<td class="tg-pxng">Collapses a leaf</td>
+		<td class="tg-pxng">-node<br>(HTMLElement of the leaf to collapse)</td>
+		<td class="tg-7un6"></td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">collapseAll</td>
+		<td class="tg-pxng">Collapses a leaves</td>
+		<td class="tg-pxng"></td>
+		<td class="tg-7un6"></td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">expand</td>
+		<td class="tg-pxng">Expands a leaf</td>
+		<td class="tg-pxng">-node<br>(HTMLElement of the leaf to expand)</td>
+		<td class="tg-7un6"></td>
+	</tr>
+	<tr>
+		<td class="tg-kixb">expandAll</td>
+		<td class="tg-kixb">Expands all leaves</td>
+		<td class="tg-83xr"><br></td>
+		<td class="tg-q9yg"></td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">getSelectedNode</td>
+		<td class="tg-pxng">Get the data for the currently selected tree element (node)</td>
+		<td class="tg-7un6"></td>
+		<td class="tg-eiwr">data object</td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">selectNode</td>
+		<td class="tg-pxng">Select a tree element (node)</td>
+		<td class="tg-pxng">-nodePath (z.B.: "AGENT.OBJECT.folder1.myNode")<br>-aggregatePath (z.B.: "AGENT.HISTORY.AGGREGATETEMPLATES.myTemplate.myAverage")</td>
+		<td class="tg-eiwr"></td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">filter</td>
+		<td class="tg-pxng">Only show tree elements (nodes), that contain a specific search string.</td>
+		<td class="tg-pxng">-searchString (z.B.: "myNode")<br>-refreshSearchData (renew list of available nodes)</td>
+		<td class="tg-eiwr"></td>
+	</tr>
+	<tr>
+		<td class="tg-kixb">off</td>
+		<td class="tg-kixb">Detach an event handler from the tree view</td>
+		<td class="tg-kixb">-name<br>-callbackFunction</td>
+		<td class="tg-kixb"></td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">on</td>
+		<td class="tg-pxng">Attach an event handler to the tree view<br><span style="text-decoration: underline">Available Events</span><br>expand, expandAll, collapse, collapseAll, select, render, ready</td>
+		<td class="tg-pxng">-name<br>-callbackFunction<br>-callerScope</td>
+		<td class="tg-pxng"></td>
+	</tr>
+	<tr>
+		<td class="tg-pxng">destroy</td>
+		<td class="tg-pxng">Destroy the treeView and release memory</td>
+		<td class="tg-pxng"></td>
+		<td class="tg-pxng"></td>
+	</tr>
+</table>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.DrillingRig.DiametrRope.talcDate
+NodeClass: Variable
+BrowseName: 1:talcDate
+DisplayName: en|talcDate
+Description: en|talcDate
+DataType: DateTime
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="llong" type="number" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var byteArray = [0, 0, 0, 0, 0, 0, 0, 0];
+
+for ( var index = 0; index < byteArray.length; index ++ ) {
+    var bbyte = llong & 0xff;
+    byteArray [ index ] = bbyte;
+    llong = (llong - bbyte) / 256 ;
+}
+return byteArray;]]></code>
+</script>

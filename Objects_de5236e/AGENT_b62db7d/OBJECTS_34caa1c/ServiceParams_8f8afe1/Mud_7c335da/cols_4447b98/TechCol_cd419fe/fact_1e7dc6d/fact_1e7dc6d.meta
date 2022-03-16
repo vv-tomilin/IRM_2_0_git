@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ServiceParams.Mud.cols.TechCol.fact
+NodeClass: Variable
+BrowseName: 1:fact
+DisplayName: en|fact
+Description: en|fact
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.GLOBALS.plan.FontColor
+NodeClass: Variable
+BrowseName: 1:FontColor
+DisplayName: en|FontColor
+Description: en|FontColor
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.GlobalVariable

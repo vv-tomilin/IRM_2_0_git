@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.Pump.CurrentElMachine
+NodeClass: Variable
+BrowseName: 1:CurrentElMachine
+DisplayName: en|CurrentElMachine
+Description: en|CurrentElMachine
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

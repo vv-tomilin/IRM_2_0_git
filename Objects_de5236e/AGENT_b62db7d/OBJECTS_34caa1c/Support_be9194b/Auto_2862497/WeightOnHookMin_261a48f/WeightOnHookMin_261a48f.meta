@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.WeightOnHookMin
+NodeClass: Variable
+BrowseName: 1:WeightOnHookMin
+DisplayName: en|WeightOnHookMin
+Description: en|WeightOnHookMin
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

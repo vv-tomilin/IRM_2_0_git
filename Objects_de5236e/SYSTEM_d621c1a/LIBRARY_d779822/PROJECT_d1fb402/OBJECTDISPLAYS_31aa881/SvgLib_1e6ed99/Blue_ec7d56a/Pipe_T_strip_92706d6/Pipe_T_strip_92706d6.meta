@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe_T_strip
+NodeClass: Variable
+BrowseName: 1:Pipe_T_strip
+DisplayName: en|Pipe_T_strip
+Description: en|Pipe_T_strip
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

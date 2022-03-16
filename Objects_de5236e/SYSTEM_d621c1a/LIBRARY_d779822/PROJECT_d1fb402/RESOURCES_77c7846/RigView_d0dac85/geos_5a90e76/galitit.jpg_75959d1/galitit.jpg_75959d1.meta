@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/RigView/geos/galitit.jpg
+NodeClass: Variable
+BrowseName: 1:galitit.jpg
+DisplayName: en|galitit.jpg
+Description: en|galitit.jpg
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Jpeg

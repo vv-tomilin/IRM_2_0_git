@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AKB.DeltaT
+NodeClass: Variable
+BrowseName: 1:DeltaT
+DisplayName: en|DeltaT
+Description: en|DeltaT
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

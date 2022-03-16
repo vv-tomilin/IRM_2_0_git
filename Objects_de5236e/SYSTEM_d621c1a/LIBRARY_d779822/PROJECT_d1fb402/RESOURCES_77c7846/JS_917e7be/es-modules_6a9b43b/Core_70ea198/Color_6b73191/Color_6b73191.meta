@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Core/Color
+NodeClass: Object
+BrowseName: 1:Color
+DisplayName: en|Color
+Description: en|Color
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

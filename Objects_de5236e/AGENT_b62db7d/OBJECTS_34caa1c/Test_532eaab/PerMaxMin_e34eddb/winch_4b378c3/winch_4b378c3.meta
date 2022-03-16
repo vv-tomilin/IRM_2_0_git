@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.winch
+NodeClass: Object
+BrowseName: 1:winch
+DisplayName: en|winch
+Description: en|winch
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

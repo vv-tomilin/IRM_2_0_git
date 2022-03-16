@@ -1,0 +1,8 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.General_Time_Based
+NodeClass: Object
+BrowseName: 1:General_Time_Based
+DisplayName: en|General_Time_Based
+Description: en|General_Time_Based
+EventNotifier: 0
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRM_2_0.Left_Menu.menu2
+NodeClass: Variable
+BrowseName: 1:menu2
+DisplayName: en|menu2
+Description: en|menu2
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

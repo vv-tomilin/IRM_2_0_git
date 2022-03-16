@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.int3
+NodeClass: Variable
+BrowseName: 1:int3
+DisplayName: en|int3
+Description: en|int3
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

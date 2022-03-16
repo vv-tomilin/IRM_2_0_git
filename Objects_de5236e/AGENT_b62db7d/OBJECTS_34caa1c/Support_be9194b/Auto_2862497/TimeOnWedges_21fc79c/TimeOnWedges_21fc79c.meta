@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.TimeOnWedges
+NodeClass: Variable
+BrowseName: 1:TimeOnWedges
+DisplayName: en|TimeOnWedges
+Description: en|TimeOnWedges
+DataType: UInt64
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.RawData

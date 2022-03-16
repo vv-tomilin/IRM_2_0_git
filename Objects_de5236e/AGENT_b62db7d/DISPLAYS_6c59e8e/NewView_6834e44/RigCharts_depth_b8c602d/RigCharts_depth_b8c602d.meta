@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.RigCharts_depth
+NodeClass: Variable
+BrowseName: 1:RigCharts_depth
+DisplayName: en|RigCharts_depth
+Description: en|RigCharts_depth
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

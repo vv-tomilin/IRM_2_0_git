@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Description</h1>
+<p>The button_image_display is used to change images (only raster graphics images are supported) depending on&nbsp;the value of an address.</p>
+<p>It can be used in the following modes:</p>
+<ol>
+  <li>For
+each&nbsp;button_image_display
+0
+to 4 limits (from &ldquo;limit low low&rdquo; up to &ldquo;limit high
+high&rdquo;) can be specified which results in&nbsp;1 to 5 intervals.
+Depending in what interval the value of the "base" address lies, the
+related image (defined by "image low low" - "image high high") will be
+displayed.</li>
+</ol>
+<div style="margin-left: 40px;">
+The limits are defined as follows:<br>
+</div>
+<ul>
+  <ul>
+	<li>limit low low &gt;= value: image according to "image low low"</li>
+	<li>limit low low &lt;  value &lt;= limit low: image according to "image low"</li>
+	<li>limit low &lt;  value &lt; limit high: image according to "image normal"</li>
+	<li>limit high &lt;=  value &lt; limit high high: image according to "image high"</li>
+	<li>limit high high  &lt;=  value: image according to "image high high"</li>
+  </ul>
+</ul>
+<ol start="2">
+  <li>If no limits are specified, the value of "base" will directly be
+used to change the images, i.e. if value=1 the image "image low low"
+will be shown, if value=2 the image "image low" will be shown and so
+on. If the value is greater than the last configured image, the last
+configure image is still being shown.</li>
+  <li>If an "enum list" is specified, the image change is triggered by
+the value of the column "key" of the global list. If the value of
+"base" equals the value of the column "key" the related image as
+defined in the global list will be displayed. This mode supersedes the
+two above mentioned modes.</li>
+</ol>
+<div style="margin-left: 40px;">Example:<br>
+<ul>
+  <li>Add a Global List (e.g. mylist) to the Global Parameters</li>
+  <li>enter "10" in column "key" of the first row and a related image
+(e.g. image1.png) in column "image" of the first row (NOTE: Before you
+can select the image, you have to add the image to
+"Library-&gt;PROJECT-&gt;Resources")</li>
+  <li>enter "20" in column "key" of the second row and a related image (e.g. image2.png) in column "image" of the second row, etc.</li>
+  <li>select your above defined Global List (e.g. mylist) as value of the parameter "enum list"</li>
+  <li>This will cause the button_image_display
+to change the display to image1.png if the value of "base"=10 and
+change the display to image2.png if the value of "base"=20, etc.</li>
+</ul>
+</div>
+<ol start="4">
+  <li>Furthermore an additional address can be specified to change the
+stroke of the image; this will only work,&nbsp;if no enum list is
+specified, i.e. it will only work with mode 1 and 2 as described above.</li>
+</ol>
+<div style="margin-left: 40px;">
+Depending in what interval&nbsp;(defined by &ldquo;limit low low&rdquo; up to &ldquo;limit high
+high&rdquo;)
+the value of the parameter&nbsp;"address for stroke" lies, the stroke
+of the image will be changed according to the parameters "limit low low
+color" - "limit high high color".</div>
+<ol start="5">
+  <li>In any case, the button_image_display can be used as a normal button.</li>
+</ol>
+<div style="margin-left: 40px;">For further details please refer to the group "Options" in the section below.</div>
+<h1>Parameters</h1>
+<p>This control has&nbsp;the following generic parameters:</p>
+<ul>
+  <li><span class="parameter">base</span>: depending on this address' value,&nbsp;the image will be changed</li>
+  <li><span class="parameter">enum list</span>: global list which defines the images to be displayed - see item 3 above</li> </ul>
+Appearance:<br>
+<ul>
+  <li><span class="parameter">limit low low (off=no limit)</span>: value for limit low low&nbsp;(default: off, which means no limit) </li>
+  <li><span class="parameter">limit low (off=no limit)</span>: value for limit low&nbsp;(default: off, which means no limit)</li>
+  <li><span class="parameter">limit high (off=no limit)</span>: value for limit high&nbsp;(default: off, which means no limit)</li>
+  <li><span class="parameter">limit high high (off=no limit)</span>: value for limit high high&nbsp;(default: off, which means no limit)</li>
+  <li><span class="parameter">limit low low color</span>: color of the stroke (see item 4 above) if "limit low low" &gt;= value (default: red)</li>
+  <li><span class="parameter">limit low color</span>: color of the stroke&nbsp;(see item 4 above) if &quot;limit low low&quot; &lt;&nbsp;value &lt;= &quot;limit low&quot; (default: yellow)</li>
+  <li><span class="parameter">limit high color</span>: color of stroke&nbsp;(see item 4 above) if &quot;limit high&quot; &lt;=&nbsp;value &lt; &quot;limit high high&quot; (default: yellow)</li>
+  <li><span class="parameter">limit high high color</span>: color of stroke&nbsp;(see item 4 above) if &quot;limit high high&quot;&nbsp;&lt;=&nbsp;value (default: red)</li>
+  <li><span class="parameter">image low low</span>: image to be displayed - see item 1 and 2 above</li>
+  <li><span class="parameter">image low</span>: image to be displayed - see item 1 and 2 above</li>
+  <li><span class="parameter">image normal</span>: image to be displayed - see item 1 and 2 above</li>
+  <li><span class="parameter">image high</span>: image to be displayed - see item 1 and 2 above</li>   <li><span class="parameter">image high high</span>: image to be displayed - see item 1 and 2 above</li>
+  <li><span class="parameter">stroke color</span>: standard stroke color of the image</li>
+  <li><span class="parameter">fill color</span>: fill color of the image; does only affect if image is transparent</li>
+  <li><span class="parameter">fill color when inactive</span>: fill color of the image in case it is not active (see also group "Security" below); does only affect if image is transparent</li>
+  <li><span class="parameter">address for stroke</span>: depending on this address' value,&nbsp;the stroke of the image will be changed - see item 4 above</li>
+  <li><span class="parameter">focus stroke color</span>: the color of the stroke which will be set when the button is focused (default: white)</li>
+</ul>
+Options:
+<ul>
+  <li><span class="parameter">address to set at MouseClick</span>: the value of "value MouseClick" will be set to this address on a mouse click</li>
+  <li><span class="parameter">value MouseClick</span>: value to be set on&nbsp;MouseClick</li>   <li><span class="parameter">address to set at MouseDown</span>: the value of "value MouseDown" will be set to this address if the mouse button is pressed down</li>
+  <li><span class="parameter">value MouseDown</span>: value to be set on&nbsp;MouseDown</li>   <li><span class="parameter">address to set at MouseUp</span>: the value of "value MouseUp" will be set to this address if the mouse button is released</li>
+  <li><span class="parameter">value MouseUp</span>: value to be set on&nbsp;MouseUp</li>   <li><span class="parameter">tab index</span>: defines the order for changing between the object displays by using the tab key</li>
+  <li><span class="parameter">tooltip</span>: displays a tooltip box with the entered text (standard HTML-Elements can be entered)</li> </ul>
+Security:
+<ul>
+  <li><span class="parameter">necessary right</span>: the user must have this right to activate this button, i.e. to press the button</li>
+  <li><span class="parameter">activation address</span>: if the value of this address equals to "activation value", then the button will be active, i.e. can be pressed</li>
+  <li><span class="parameter">activation value</span>: value which activates the button</li> </ul>
+<div style="margin-left: 40px;">NOTE: The activation of a button can be configured only by the necessary right, or only by the&nbsp;activation
+address and value or by both. In case both settings are made, the user
+must have the necessary right and the value of the "activation address"
+must equal the "activation value"; otherwise the button will not be activated.<br>
+</div>
+</body>
+</html>

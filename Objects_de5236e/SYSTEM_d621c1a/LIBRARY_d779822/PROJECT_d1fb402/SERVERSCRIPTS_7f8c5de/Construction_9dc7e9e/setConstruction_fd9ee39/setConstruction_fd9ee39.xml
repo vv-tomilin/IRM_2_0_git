@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="Dir" type="node" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.RigConstruction.direction"/>
+  <parameter name="Cond" type="node" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.RigConstruction.conductor"/>
+  <parameter name="ObsCol" type="node" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.RigConstruction.obsCol"/>
+  <parameter name="EcsCol" type="node" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.RigConstruction.EcsCol"/>
+  <parameter name="Tail" type="node" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.RigConstruction.Tail"/>
+  <parameter name="WD" type="node" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.IVE50.Well.WellDepth"/>
+  <parameter name="StartDate" type="node" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Depth_day_data.start_date"/>
+  <code><![CDATA[var data = [
+	Dir,
+	Cond,
+	ObsCol,
+	EcsCol,
+	Tail,
+	WD,
+	StartDate
+]
+
+function func(e){
+	var resCol = 0
+	for(var i = 0; i < 5; i++){
+		if(e[i].value<e[5].value & e[i].value!=0){console.log('nth')}
+		else{
+			resCol = i;
+			break;					
+		}
+	}
+	var sectionName = ''
+	var normalName =''
+	switch (resCol){
+		case 0:
+			normalName = 'Направление'
+			sectionName = 'Direct'
+			break;
+		case 1:
+			normalName = 'Кондуктор'
+			sectionName = 'Kond'
+			break;
+		case 2:
+			normalName = 'Пилотный ствол'
+			sectionName = 'TechCol'
+			break;
+		case 3:
+			normalName = 'Эксплуатационная колонна'
+			sectionName = 'ExCol'
+			break;
+		case 4:
+			normalName = 'Хвостовик'
+			sectionName = 'Tail'
+			break;				
+	}
+	var currentCol = new UaNode("AGENT.OBJECTS.RigConstruction.currentCol")
+	currentCol.assign({ value: sectionName })
+	
+}
+func(data)]]></code>
+</script>

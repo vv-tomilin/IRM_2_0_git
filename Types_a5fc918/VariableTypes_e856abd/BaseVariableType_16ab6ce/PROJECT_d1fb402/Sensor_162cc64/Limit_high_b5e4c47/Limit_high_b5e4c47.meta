@@ -1,0 +1,10 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"Sensor".Limit_high
+NodeClass: Variable
+BrowseName: 1:Limit_high
+DisplayName: en|Limit_high
+Description: en|Limit_high
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseDataVariableType

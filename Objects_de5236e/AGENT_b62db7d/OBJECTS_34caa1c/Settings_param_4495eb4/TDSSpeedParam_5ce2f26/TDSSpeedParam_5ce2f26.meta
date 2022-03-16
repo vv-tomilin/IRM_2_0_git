@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Settings_param.TDSSpeedParam
+NodeClass: Object
+BrowseName: 1:TDSSpeedParam
+DisplayName: en|TDSSpeedParam
+Description: en|TDSSpeedParam
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

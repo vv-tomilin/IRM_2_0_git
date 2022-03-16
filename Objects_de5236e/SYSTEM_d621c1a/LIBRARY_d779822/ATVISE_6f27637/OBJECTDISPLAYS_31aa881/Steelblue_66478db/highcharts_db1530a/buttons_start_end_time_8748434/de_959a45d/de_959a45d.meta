@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Steelblue.highcharts.buttons_start_end_time.de
+NodeClass: Variable
+BrowseName: 1:de
+DisplayName: en|de
+Description: en|de
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.HtmlHelp

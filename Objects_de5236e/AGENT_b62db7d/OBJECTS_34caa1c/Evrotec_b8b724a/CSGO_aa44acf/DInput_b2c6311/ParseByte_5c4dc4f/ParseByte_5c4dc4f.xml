@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="valbyte" type="node" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.Evrotec.CSGO.DInput"/>
+  <code><![CDATA[//console.log("ParseByte valbyte.value = ", valbyte.value);
+
+var mask_FanExhaust = parseInt("00000001", 2);
+
+if(Number(valbyte.value) & mask_FanExhaust){
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.CSGO.FanExhaust");
+	var res = node.assign({value: true});
+	//console.log("FanOnCover = ", true);
+} else {
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.CSGO.FanExhaust");
+	var res = node.assign({value: false});
+	//console.log("FanOnCover = ", false);
+}
+
+]]></code>
+</script>

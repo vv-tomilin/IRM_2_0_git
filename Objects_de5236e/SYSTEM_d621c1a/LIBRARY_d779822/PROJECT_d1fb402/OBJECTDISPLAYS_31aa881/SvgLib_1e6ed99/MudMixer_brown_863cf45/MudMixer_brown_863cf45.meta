@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.MudMixer_brown
+NodeClass: Variable
+BrowseName: 1:MudMixer_brown
+DisplayName: en|MudMixer_brown
+Description: en|MudMixer_brown
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

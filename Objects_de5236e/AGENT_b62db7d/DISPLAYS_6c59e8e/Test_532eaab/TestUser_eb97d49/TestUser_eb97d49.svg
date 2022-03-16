@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="1280" xmlns="http://www.w3.org/2000/svg" height="680" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:gridconfig gridstyle="lines" width="20" enabled="false" height="20"/>
+  <atv:snapconfig width="10" enabled="false" height="10"/>
+ </metadata>
+ <svg atv:refpx="431.462" atv:refpy="299.822" x="349.017" width="164.89" y="161.817" height="276.01" id="id_2" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.user"/>
+</svg>

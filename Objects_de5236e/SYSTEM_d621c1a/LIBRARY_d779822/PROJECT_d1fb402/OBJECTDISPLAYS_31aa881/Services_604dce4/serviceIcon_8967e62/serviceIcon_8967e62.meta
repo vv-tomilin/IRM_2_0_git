@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Services.serviceIcon
+NodeClass: Variable
+BrowseName: 1:serviceIcon
+DisplayName: en|serviceIcon
+Description: en|serviceIcon
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

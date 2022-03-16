@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.General_Time_Based.depthHoleMeas
+NodeClass: Variable
+BrowseName: 1:depthHoleMeas
+DisplayName: en|depthHoleMeas
+Description: en|depthHoleMeas
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

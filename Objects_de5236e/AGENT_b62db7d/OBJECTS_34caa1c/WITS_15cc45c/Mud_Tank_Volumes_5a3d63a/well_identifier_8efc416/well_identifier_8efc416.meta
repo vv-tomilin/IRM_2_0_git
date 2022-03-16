@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.Mud_Tank_Volumes.well_identifier
+NodeClass: Variable
+BrowseName: 1:well_identifier
+DisplayName: en|well_identifier
+Description: en|well_identifier
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

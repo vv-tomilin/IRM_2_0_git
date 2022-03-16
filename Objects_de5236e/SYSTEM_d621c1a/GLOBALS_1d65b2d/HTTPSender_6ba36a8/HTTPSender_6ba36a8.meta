@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.GLOBALS.HTTPSender
+NodeClass: Object
+BrowseName: 1:HTTPSender
+DisplayName: en|HTTPSender
+Description: en|HTTPSender
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

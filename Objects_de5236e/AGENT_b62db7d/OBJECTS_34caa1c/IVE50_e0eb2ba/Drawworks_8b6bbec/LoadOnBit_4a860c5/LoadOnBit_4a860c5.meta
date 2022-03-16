@@ -1,0 +1,11 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Drawworks.LoadOnBit
+NodeClass: Variable
+BrowseName: 1:LoadOnBit
+DisplayName: en|LoadOnBit
+Description: en|LoadOnBit
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.AGGREGATETEMPLATES.AT1
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

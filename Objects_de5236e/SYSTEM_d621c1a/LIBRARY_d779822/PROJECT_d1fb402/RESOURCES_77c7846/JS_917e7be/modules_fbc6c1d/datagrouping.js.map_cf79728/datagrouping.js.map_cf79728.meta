@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/datagrouping.js.map
+NodeClass: Variable
+BrowseName: 1:datagrouping.js.map
+DisplayName: en|datagrouping.js.map
+Description: en|datagrouping.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

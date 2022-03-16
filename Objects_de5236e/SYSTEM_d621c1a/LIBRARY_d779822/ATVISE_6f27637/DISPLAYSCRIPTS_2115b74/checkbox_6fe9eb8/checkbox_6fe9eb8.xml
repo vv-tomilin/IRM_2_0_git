@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <code><![CDATA[/**
+ * Code for the checkbox object display
+ * ------------------------------------
+ * The checkbox will only be ticked if the value of "base" equals the parameter "value On".
+ * If no "outputNode" is specified, the value of "base" will be switched between "value On" (= checkbox is ticked) and "value Off".
+ * If an "outputNode" is specified, then this node will be switched between "value On to be set" (= checkbox is ticked) and "value Off to be set". This
+ * is done in addition to the switching of "base".
+ */
+
+
+/**
+ * DECLARATION SECTION
+ */
+
+var base = (webMI.query["base"] == undefined) ? "" : webMI.query["base"];
+var valueOn = (webMI.query["valueOn"] == undefined) ? "" : webMI.query["valueOn"];
+var outputNode = (webMI.query["outputNode"] == undefined) ? "" : webMI.query["outputNode"];
+var outputValueOn = webMI.query["outputValueOn"];
+var outputValueOff = webMI.query["outputValueOff"];
+var fontColor = webMI.query["fontColor"];
+var strokePressed = webMI.query["strokePressed"];
+var focusStrokeColor = webMI.query["focusStrokeColor"];
+var preselected = webMI.query["preselected"];
+var editable = (webMI.query["editable"] == "Yes") ? true : false;
+var fillCheckArea = typeof webMI.query["fillCheckArea"] != "undefined" ? webMI.query["fillCheckArea"] : webMI.query["fill"];
+var fillNotEditable = webMI.query["fillNotEditable"];
+var fillColorInactive = webMI.query["fillColorInactive"];
+var consistencyGroup = webMI.query["consistencyGroup"];
+var tabHandler = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tab Handler");
+var tabIndex = (webMI.query["tabIndex"] == undefined) ? "" : webMI.query["tabIndex"];
+var tooltip = (webMI.query["tooltip"] == undefined) ? "" : webMI.query["tooltip"];
+var alarmToSubscribe = webMI.query["alarm"];
+var alarmIndication = webMI.query["alarmIndication"];
+var statusEnabled = webMI.query["statusEnabled"];
+var statusTrigger = webMI.query["statusTrigger"];
+var statusIndication = webMI.query["statusIndication"];
+var right = (webMI.query["right"] == undefined) ? "" : webMI.query["right"];
+var activeValue = (webMI.query["activeValue"] == undefined) ? "" :webMI.query["activeValue"];
+var activeNode = (webMI.query["activeNode"] == undefined) ? "" : webMI.query["activeNode"];
+var active = false;
+if (consistencyGroup)
+	var consistencyHandler = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Consistency Handler");
+var isActivationNodeSet = activeNode != "" && String(activeValue) != "";
+
+/**
+ * RUNTIME SECTION
+ */
+
+var rightsHandlingProperties = {
+	right: right,
+	checkBaseNodeWriteRight: true,
+	isActivationNodeSet: isActivationNodeSet,
+	notifierConfiguration: {"id":"checkbox_clickarea", "node_1": webMI.query["base"], "right_1": "read", "node_2": webMI.query["alarm"], "right_2": "readEvent"},
+	setActiveTrigger: false,
+	handleStatus: true
+};
+
+if (typeof rightsHandling === "function") rightsHandling(rightsHandlingProperties);
+
+if (alarmToSubscribe != "")
+	initAlarm(alarmToSubscribe);
+
+var currentValue = outputValueOff;
+
+if (base != "") {
+	if (consistencyGroup) {
+		consistencyHandler.register(consistencyGroup, base, update);
+	} else {
+		webMI.data.subscribe(base, function(e) {
+			var value = e.value;
+			if (typeof e.status != "undefined" && typeof handleStatus === "function")
+				handleStatus(e.status);
+			return function(value) {
+				currentValue = value;
+				if (compareValue(currentValue, valueOn)) {
+					webMI.gfx.setVisible("checkbox_symbol",null);
+				} else {
+					webMI.gfx.setVisible("checkbox_symbol",false);
+				}
+			} (value);
+		});
+	}
+}
+
+if (preselected == "true" && base == "") {
+	if (active) {
+		if (compareValue(currentValue, valueOn)) {
+			currentValue=outputValueOff;
+			webMI.gfx.setVisible("checkbox_symbol", false);
+			webMI.trigger.fire("valuechanged", outputValueOff, "");
+		} else {
+			currentValue=valueOn;
+			webMI.gfx.setVisible("checkbox_symbol", null);
+			webMI.trigger.fire("valuechanged", valueOn, "");
+		}
+	}
+}
+
+webMI.addOnload(function() {
+	webMI.trigger.fire("valuechanged", (preselected == "true"), "");
+	var doc = document.getElementById("checkbox_clickarea").ownerDocument;
+	tabHandler.register(tabIndex,keyHandler,doc);
+});
+
+if (tooltip != ""){
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tooltip", {"auto":"true", "id":"checkbox_clickarea", "text":tooltip});
+}
+
+/**
+ * FUNCTION SECTION
+ */
+
+function setActiveLayout() {
+	webMI.gfx.setFill("checkbox_bg", (editable) ? fillCheckArea : fillNotEditable);
+	if (typeof webMI.gfx.getFill("checkbox_bg2") != "undefined") webMI.gfx.setFill("checkbox_bg2", (editable) ? fillCheckArea : fillNotEditable);
+	if (compareValue(currentValue, valueOn)) {
+		webMI.gfx.setVisible("checkbox_symbol",null);
+	} else {
+		webMI.gfx.setVisible("checkbox_symbol",false);
+	}
+}
+
+function setInactiveLayout() {
+	webMI.gfx.setFill("checkbox_bg", fillColorInactive);
+	if (typeof webMI.gfx.getFill("checkbox_bg2") != "undefined") webMI.gfx.setFill("checkbox_bg2", fillColorInactive);
+}
+
+function compareValue(value1, value2) {
+	// value2 is always a string
+	var equal = false;
+	switch (typeof value1) {
+		case "boolean" :
+			if (value1 == true) {
+				if ((value2 == "true") || (value2 == "1")) {
+					equal=true;
+				} else {
+					equal=false;
+				}
+			}
+			if (value1 == false) {
+				if ((value2 == "false") || (value2 == "0")) {
+					equal=true;
+				} else {
+					equal=false;
+				}
+			}
+		break;
+		case "number" :
+			try {
+				var temp = parseFloat(value2);
+				equal = (value1 == temp);
+			} catch(e) {
+				equal = false;
+			}
+		break;
+		default: equal = (value1 == value2); break;
+	}
+	return equal;
+}
+
+function update(value) {
+	currentValue = !value;
+
+	if (compareValue(currentValue, valueOn)) {
+		webMI.trigger.fire("valuechanged", outputValueOff, "");
+		webMI.gfx.setVisible("checkbox_symbol",false);
+
+		currentValue=outputValueOff;
+	} else {
+		webMI.trigger.fire("valuechanged", outputValueOn, "");
+		webMI.gfx.setVisible("checkbox_symbol",null);
+
+		currentValue=valueOn;
+	}
+}
+
+function focusTH() {
+	if (active && editable) {
+		if (webMI.gfx.getX("focus_frame") != "undefined") {
+			webMI.gfx.setStroke("focus_frame", focusStrokeColor);
+		} else {
+			webMI.gfx.setStroke("checkbox_bg2", focusStrokeColor);
+			webMI.gfx.setStroke("checkbox_bg", focusStrokeColor);
+		}													   
+	}
+}
+
+function applyTH() {
+	clickFunction();
+}
+
+function backTH() {
+}
+
+function arrowTH(dir) {
+}
+
+function keyHandler(keyTH, param2) {
+	if (keyTH == "focus"){
+		focusTH();
+	} else if (keyTH == "blur"){
+		release();
+	} else if (keyTH == "apply"){
+		applyTH();
+	} else if (keyTH == "space"){
+		applyTH();
+	} else if (keyTH == "back"){
+		backTH();
+	} else if (keyTH == "arrow"){
+		arrowTH(param2);
+	} else if (keyTH == "isActive"){
+		return (active && editable && param2(document.getElementById("checkbox_clickarea").parentNode));
+	}
+}
+
+function clickFunction() {
+	if (active && editable && (String(currentValue) != "")) {
+		if (compareValue(currentValue, valueOn)) {
+			webMI.trigger.fire("valuechanged", outputValueOff, "");
+			if (outputNode != "") {
+				webMI.data.write(outputNode , outputValueOff);
+			} else {
+				if (base != "" && !consistencyGroup) webMI.data.write(base, outputValueOff);
+			}
+			if (base == "" || consistencyGroup) {
+				currentValue=outputValueOff;
+				webMI.gfx.setVisible("checkbox_symbol",false);
+
+				if (consistencyGroup)
+					consistencyHandler.set(consistencyGroup, base, outputValueOff);
+			}
+		} else {
+			webMI.trigger.fire("valuechanged", outputValueOn, "");
+			if (outputNode != "") {
+				webMI.data.write(outputNode , outputValueOn);
+			} else {
+				if (base != "" && !consistencyGroup) webMI.data.write(base, outputValueOn);
+			}
+			if (base == "" || consistencyGroup) {
+				currentValue=valueOn;
+				webMI.gfx.setVisible("checkbox_symbol",null);
+
+				if (consistencyGroup)
+					consistencyHandler.set(consistencyGroup, base, outputValueOn);
+			}
+		}
+	}
+}
+
+function release() {
+	if (active && editable) {
+		if (webMI.gfx.getX("focus_frame") != "undefined") {
+			webMI.gfx.setStroke("focus_frame", "none");
+		} else {
+			webMI.gfx.setStroke("checkbox_bg2", "none");
+			webMI.gfx.setStroke("checkbox_bg", "none");
+		}
+	}
+}
+
+/**
+ * EVENT SECTION
+ */
+
+webMI.addEvent("checkbox_clickarea", "click", function(e) {
+	var id = "checkbox_clickarea";
+	tabHandler.setCurrentIndex(keyHandler);
+	clickFunction();
+});
+
+webMI.addEvent("checkbox_clickarea", "mousedown", function(e) {
+	var id = "checkbox_clickarea";
+	var value = true;
+	return function(value) {
+			if (active && editable) {
+				if (webMI.gfx.getX("focus_frame") != "undefined") {
+					webMI.gfx.setStroke("focus_frame", strokePressed);
+					webMI.gfx.setStroke("checkbox_bg2", strokePressed);
+					webMI.gfx.setStroke("checkbox_bg", strokePressed);
+				}
+			}
+	} (value);
+});
+
+webMI.addEvent("checkbox_clickarea", ["mouseup","mouseout"], function(e) {
+	var id = "checkbox_clickarea";
+	var value = true;
+	return function(value) {
+		release();
+	} (value);
+});
+
+webMI.addEvent("checkbox_clickarea", "dragstart", function(e) {
+	if (e.preventDefault) {
+		e.preventDefault();
+	}
+});
+
+/**
+ * TRIGGER SECTION
+ */
+
+webMI.trigger.connect("setChecked", function(e) {
+	currentValue = e.value != true;
+	clickFunction();
+}, "");]]></code>
+</script>

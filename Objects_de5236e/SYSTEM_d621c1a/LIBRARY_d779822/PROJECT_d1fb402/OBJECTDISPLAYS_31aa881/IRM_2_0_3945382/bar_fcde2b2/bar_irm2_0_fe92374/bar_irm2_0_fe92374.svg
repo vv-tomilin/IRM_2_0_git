@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="35" height="125" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.2">
+ <defs>
+  <linearGradient x2="0.630137" x1="0.616438" id="linear_0" y2="1.50685" gradientUnits="objectBoundingBox" y1="1.0411">
+   <stop stop-color="#6699ff" offset="0"/>
+   <stop stop-opacity="0" stop-color="#6699ff" offset="1"/>
+  </linearGradient>
+  <linearGradient x2="1.05479" x1="1.0411" id="linear_1" y2="1.50685" gradientUnits="objectBoundingBox" y1="-0.219178">
+   <stop stop-color="#003399" offset="0"/>
+   <stop stop-opacity="0" stop-color="#003399" offset="1"/>
+  </linearGradient>
+  <linearGradient x2="0.767123" x1="0.767123" id="linear_2" y2="-0.205479" gradientUnits="objectBoundingBox" y1="1.50685">
+   <stop stop-color="#b9d900" offset="0.3319838056680162"/>
+   <stop stop-opacity="0" stop-color="#b9d900" offset="1"/>
+  </linearGradient>
+  <linearGradient x2="0.712329" x1="0.712329" id="paint0_linear" y2="0.191781" gradientUnits="objectBoundingBox" y1="1.46575">
+   <stop stop-color="#6699ff" offset="0"/>
+   <stop stop-color="#6699ff" offset="0.5604170000000001"/>
+   <stop stop-color="#ffe70c" offset="0.7677079999999999"/>
+   <stop stop-color="#ff0000" offset="1"/>
+  </linearGradient>
+  <linearGradient x2="1" x1="1" id="linear_4" spreadMethod="repeat" y2="1.50685" gradientUnits="objectBoundingBox" y1="1.05479">
+   <stop stop-color="#6699ff" offset="0"/>
+   <stop stop-opacity="0" stop-color="#6699ff" offset="1"/>
+  </linearGradient>
+  <linearGradient x2="1" x1="0" id="linear_5" y2="1" gradientUnits="objectBoundingBox" y1="0">
+   <stop stop-color="#1992fc" offset="0"/>
+   <stop stop-opacity="0" stop-color="#1992fc" offset="1"/>
+  </linearGradient>
+  <linearGradient x2="0.534247" x1="0.547945" id="linear_3" y2="0.0684932" gradientUnits="objectBoundingBox" y1="1.47945">
+   <stop stop-color="#6699ff" offset="0"/>
+   <stop stop-color="#6699ff" offset="0.5604170000000001"/>
+   <stop stop-color="#ffe70c" offset="0.7677079999999999"/>
+   <stop stop-color="#ff0000" offset="1"/>
+  </linearGradient>
+  <linearGradient x2="0.534247" x1="0.547945" id="linear_6" y2="0.0684932" gradientUnits="objectBoundingBox" y1="1.47945">
+   <stop stop-color="#6699ff" offset="0"/>
+   <stop stop-color="#6699ff" offset="0.5604170000000001"/>
+   <stop stop-color="#ffe70c" offset="0.7677079999999999"/>
+   <stop stop-color="#ff0000" offset="1"/>
+  </linearGradient>
+  <linearGradient x2="1" x1="-0.0958904" id="linear_7" y2="1" gradientUnits="objectBoundingBox" y1="0.164384">
+   <stop stop-color="#000000" offset="0"/>
+   <stop stop-opacity="0" stop-color="#000000" offset="1"/>
+  </linearGradient>
+ </defs>
+ <metadata>
+  <atv:parameter name="first" defaultvalue="AGENT.OBJECTS.SimulatedData.double_1" behavior="optional" valuetype="address"/>
+  <atv:gridconfig enabled="false" width="1" height="1" gridstyle="points"/>
+  <atv:snapconfig enabled="false" width="1" height="1"/>
+ </metadata>
+ <rect stroke="#1f1f1f" atv:refpx="17.761" width="33.358" y="0.361" id="id_1" fill="#303e49" height="124.534" x="1.082" stroke-width="0" stroke-linejoin="miter" atv:refpy="62.627"/>
+ <rect stroke="none" atv:refpx="17.721" width="20.057" y="6.331" id="id_3" fill="url(#linear_3)" height="112.626" x="7.693" stroke-width="0" stroke-linejoin="miter" atv:refpy="62.156"/>
+ <rect stroke="#1f1f1f" atv:refpx="17.641" width="16.181" y="8.691" id="id_6" fill="#1f1f1f" height="107.694" x="9.572" stroke-width="3.836" stroke-linejoin="miter" atv:refpy="5.023"/>
+ <rect stroke="#1f1f1f" atv:refpx="17.526" width="23" y="5.958" id="id_0" fill="none" height="114.025" x="6.025" stroke-width="4" stroke-linejoin="miter" atv:refpy="62.971"/>
+ <script type="text/ecmascript"><![CDATA[webMI.data.subscribe("AGENT.OBJECTS.SimulatedData.double_1", function(e) {
+var id = "id_6";
+var value = e.value;
+webMI.gfx.setScaleY(id, webMI.translate(value, 0, 10, 0, 1));
+
+});
+]]></script>
+</svg>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Variables.CalcDrilling.DiffPressureBound
+NodeClass: Variable
+BrowseName: 1:DiffPressureBound
+DisplayName: en|DiffPressureBound
+Description: en|DiffPressureBound
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

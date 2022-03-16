@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="28.57100000000003" width="278.739" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" xmlns="http://www.w3.org/2000/svg">
+ <defs/>
+ <metadata>
+  <atv:parameter name="Name" defaultvalue="" valuetype="string" substitute="$NAME$" desc="" behavior="optional"/>
+  <atv:parameter name="Adress" defaultvalue="" valuetype="address" substitute="" desc="" behavior="optional"/>
+  <atv:gridconfig height="20" width="20" gridstyle="lines" enabled="false"/>
+  <atv:snapconfig height="10" width="10" enabled="false"/>
+ </metadata>
+ <rect atv:refpy="342.141" atv:refpx="263.237" ry="5.849" height="26.571" rx="5.849" width="276.739" stroke-width="2" fill="none" x="1" y="1" id="id_1" stroke="#4386f2"/>
+ <text atv:refpy="13.747" atv:refpx="38.399" fill="#ffffff" font-size="12" font-family="Arial" x="14.899" y="18.247" id="id_2">$NAME$</text>
+ <svg atv:refpy="14.564" atv:refpx="196.321" transform="matrix(1.7139,0,0,0.7064,0,0)" height="31" width="80" id="id_9" x="74.528" y="5.109" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.EditableLabel">
+  <atv:argument name="fontColor" value="#ffffff"/>
+  <atv:argument name="controlTextColor" value="#000000"/>
+  <atv:argument name="controlTintColor" value="#ffffff"/>
+  <atv:argument name="editingBorderColor" value="#ffffff"/>
+  <atv:argument name="editingBackgroundColor" value="#ffffff"/>
+  <atv:argument name="focusStrokeColor" value="#ffffff"/>
+  <atv:argument name="fillColorInactive" value="#ffffff"/>
+  <atv:argument name="fill" value="#ffffff"/>
+  <atv:argument name="controlEditingBackgroundColor" value="#ffffff"/>
+  <atv:argument name="controlActiveBackgroundColor" value="#ffffff"/>
+  <atv:argument name="controlBackgroundColor" value="#ffffff"/>
+  <atv:argument name="base" prefix="Adress"/>
+  <atv:argument name="validation" value="String"/>
+  <atv:overwrite transform="matrix(0.5835,0,0,1.4156,0,0)" id="input_label" x="68.557" y="16.949"/>
+  <atv:overwrite transform="matrix(0.5835,0,0,1.4156,0,0)" height="20.898" width="136.115" id="input_bg"/>
+  <atv:overwrite transform="matrix(0.5835,0,0,1.4156,0,0)" height="37.398" width="209.441" id="blinking_frame"/>
+ </svg>
+</svg>

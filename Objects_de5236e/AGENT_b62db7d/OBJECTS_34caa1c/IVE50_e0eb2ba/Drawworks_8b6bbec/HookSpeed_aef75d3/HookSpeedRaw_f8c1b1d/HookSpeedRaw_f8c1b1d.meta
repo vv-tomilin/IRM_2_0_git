@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Drawworks.HookSpeed.HookSpeedRaw
+NodeClass: Variable
+BrowseName: 1:HookSpeedRaw
+DisplayName: en|HookSpeedRaw
+Description: en|HookSpeedRaw
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

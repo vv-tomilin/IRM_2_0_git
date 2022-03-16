@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="masAdres" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Test.ForMainWindow.masAdres"/>
+  <parameter name="masName" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Test.ForMainWindow.masName"/>
+  <parameter name="DateStart" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Test.ForMainWindow.StartReportDate"/>
+  <parameter name="DateFinsh" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Test.ForMainWindow.FinishReportDate"/>
+  <code><![CDATA[console.log("work")
+try{
+////////////////////////////////////ПОЛУЧЕНИЕ ПЕРЕМЕННЫХ//////////////////////////////
+var adres=JSON.parse(masAdres)
+var names=JSON.parse(masName)
+var lengt = JSON.parse(masName).length
+console.log(length)
+console.log(adres,names)
+/////////////////////ДАТА////////////////////////////////
+var to = Number(DateFinsh)
+var from = Number(DateStart)
+
+}catch(err){}]]></code>
+</script>

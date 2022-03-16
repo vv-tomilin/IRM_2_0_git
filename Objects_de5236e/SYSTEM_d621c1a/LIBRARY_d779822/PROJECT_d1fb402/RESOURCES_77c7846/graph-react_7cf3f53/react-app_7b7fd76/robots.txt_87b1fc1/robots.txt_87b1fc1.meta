@@ -1,0 +1,11 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/graph-react/react-app/robots.txt
+NodeClass: Variable
+BrowseName: 1:robots.txt
+DisplayName: en|robots.txt
+Description: en|robots.txt
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Text
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Text.Compress
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Text.Translate

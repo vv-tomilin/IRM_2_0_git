@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.SECURITY.RIGHTS.ENGINEERING.Login
+NodeClass: Object
+BrowseName: 1:Login
+DisplayName: en|Login
+Description: en|Login
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/themes/gray.js.map
+NodeClass: Variable
+BrowseName: 1:gray.js.map
+DisplayName: en|gray.js.map
+Description: en|gray.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

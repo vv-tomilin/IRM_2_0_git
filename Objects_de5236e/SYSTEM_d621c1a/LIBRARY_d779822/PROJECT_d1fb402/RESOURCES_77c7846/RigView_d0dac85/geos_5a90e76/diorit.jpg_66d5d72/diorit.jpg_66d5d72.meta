@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/RigView/geos/diorit.jpg
+NodeClass: Variable
+BrowseName: 1:diorit.jpg
+DisplayName: en|diorit.jpg
+Description: en|diorit.jpg
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Jpeg

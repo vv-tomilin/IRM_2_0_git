@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Rig.General.SideBoreholesData
+NodeClass: Variable
+BrowseName: 1:SideBoreholesData
+DisplayName: en|SideBoreholesData
+Description: en|SideBoreholesData
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

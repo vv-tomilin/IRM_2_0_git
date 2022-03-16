@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <code><![CDATA[/**
+ * This script handles the status indicators.
+ */
+
+
+/**
+ * DECLARATION SECTION
+ */
+var currentIndicator = "";
+var activeIndicators = {};
+
+
+/**
+ * FUNCTION SECTION
+ */
+function handleStatus(status) {
+	if (statusEnabled != "Yes")
+		return;
+
+	if (statusTrigger != "") {
+		webMI.trigger.fire(statusTrigger, status);
+	} else {
+		if (typeof statusIndication["ItemStatusBad"] == "undefined")
+			statusIndication = {"ItemStatusBad": {color: "#ffff00", interval: "250"}};
+
+		if (isGood(status))				//Good value state
+			delete activeIndicators["status"];
+		else if (isBad(status))			//Bad value state
+			activeIndicators["status"] = {
+				color: statusIndication["ItemStatusBad"].color,
+				interval: parseInt(statusIndication["ItemStatusBad"].interval)
+			};
+		else if (isUncertain(status))	//Uncertain value state
+			activeIndicators["status"] = {
+				color: statusIndication["ItemStatusBad"].color,
+				interval: parseInt(statusIndication["ItemStatusBad"].interval)
+			};
+		else							//Unknown value state
+			activeIndicators["status"] = {
+				color: statusIndication["ItemStatusBad"].color,
+				interval: parseInt(statusIndication["ItemStatusBad"].interval)
+			};
+
+		if (typeof customSetIndicator === "function") customSetIndicator();
+		else setIndicator(isGood(status));
+	}
+}
+
+/**
+ * Alarm handling
+ * @param address
+ */
+function initAlarm(address) {
+	if (alarmIndication == "")
+		alarmIndication = {};
+
+	if (typeof alarmIndication["AlarmStatusOnUnacknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOnUnacknowledged"] = {color: "#ff0000", interval: "250"};
+
+	if (typeof alarmIndication["AlarmStatusOnAcknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOnAcknowledged"] = {color: "#ff0000", interval: "500"};
+
+	if (typeof alarmIndication["AlarmStatusOffUnacknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOffUnacknowledged"] = {color: "#ff0000", interval: "750"};
+
+	if (typeof alarmIndication["AlarmStatusOnOffUnacknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOnOffUnacknowledged"] = {color: "#ff0000", interval: "1500"};
+
+	webMI.alarm.subscribe(address, function (e) {
+		if (e.state == 1) {
+			activeIndicators["alarm"] = {
+				color: alarmIndication["AlarmStatusOnUnacknowledged"].color,
+				interval: parseInt(alarmIndication["AlarmStatusOnUnacknowledged"].interval)
+			};
+		} else if (e.state == 2) {
+			activeIndicators["alarm"] = {
+				color: alarmIndication["AlarmStatusOnAcknowledged"].color,
+				interval: parseInt(alarmIndication["AlarmStatusOnAcknowledged"].interval)
+			};
+		} else if (e.state == 3) {
+			activeIndicators["alarm"] = {
+				color: alarmIndication["AlarmStatusOffUnacknowledged"].color,
+				interval: parseInt(alarmIndication["AlarmStatusOffUnacknowledged"].interval)
+			};
+		} else if (e.state == 5) {
+			activeIndicators["alarm"] = {
+				color: alarmIndication["AlarmStatusOnOffUnacknowledged"].color,
+				interval: parseInt(alarmIndication["AlarmStatusOnOffUnacknowledged"].interval)
+			};
+		} else {
+			delete activeIndicators["alarm"];
+		}
+
+		if (typeof customSetIndicator === "function") customSetIndicator();
+		else setIndicator(e.state == 0);
+	});
+}
+
+/**
+ * Set indicator
+ */
+var activeIndicator = "";
+var activeIndicatorColor = null;
+var activeIndicatorCurrent = "";
+var activeIndicatorID = null;
+var activeIndicatorInterval = null;
+var activeIndicatorLock = false;
+var activeIndicatorState = false;
+var activeIndicatorTimer = 0;
+var activeIndicatorHeartBeat = 50;
+
+function setIndicator() {
+	if (activeIndicators["trigger"]) {
+		activeIndicator = "trigger";
+	} else if (activeIndicators["status"]) {
+		activeIndicator = "status";
+	} else if (activeIndicators["alarm"]) {
+		activeIndicator = "alarm";
+	} else {
+		activeIndicator = "";
+	}
+
+	var indicatorChange = false;
+	if (activeIndicator) {
+		if (activeIndicator != activeIndicatorCurrent)
+			indicatorChange = true;
+		if (activeIndicatorInterval != activeIndicators[activeIndicator].interval)
+			indicatorChange = true;
+		if (activeIndicatorColor != activeIndicators[activeIndicator].color)
+			indicatorChange = true;
+	}
+
+	if (activeIndicator && indicatorChange) {
+
+		activeIndicatorColor = activeIndicators[activeIndicator].color;
+		activeIndicatorCurrent = activeIndicator;
+		activeIndicatorInterval = activeIndicators[activeIndicator].interval;
+		activeIndicatorState = false;
+
+		if (typeof webMI.gfx.getX("gauge_value") == "undefined") {
+			webMI.gfx.setStroke("blinking_frame", activeIndicatorColor);
+		} else {
+			webMI.gfx.setFill("blinking_frame", activeIndicatorColor);
+		}
+
+	} else if (!activeIndicator) {
+		activeIndicatorInterval = 0;
+		activeIndicatorCurrent = activeIndicator;
+	}
+
+	return;
+}
+
+/**
+ * [AT-D-12401] Interval for managing the blinking as an extension for setIndicator
+ * @type {number}
+ */
+var activeIndicatorID = setInterval(function activeIndicatorBeat() {
+
+	if (!activeIndicatorInterval && activeIndicatorState == true)
+		webMI.gfx.setVisible("blinking_frame", false);
+
+	if (!activeIndicatorInterval)
+		return;
+
+	if (activeIndicatorTimer <= 0) {
+		if (activeIndicatorState) {
+			webMI.gfx.setVisible("blinking_frame", false);
+		} else {
+			webMI.gfx.setVisible("blinking_frame", "visible");
+		}
+
+		activeIndicatorState = !activeIndicatorState;
+		activeIndicatorTimer = activeIndicatorInterval;
+	} else {
+		activeIndicatorTimer = activeIndicatorTimer - activeIndicatorHeartBeat;
+	}
+
+}, activeIndicatorHeartBeat);
+
+
+function isUndefined(status) {
+	return typeof status === "undefined";
+}
+
+function isGood(status) {
+	return !isUndefined(status) && (status == 0 || (status & 0xC0000000).toString(16) == 0);
+}
+
+function isUncertain(status) {
+	return !isUndefined(status) && ((status & 0xC0000000).toString(16) == 40000000);
+}
+
+function isBad(status) {
+	return !isUndefined(status) && ((status & 0x80000000).toString(16) != 0);
+}
+
+webMI.addOnunload(function () {
+	clearInterval(activeIndicatorInterval);
+});
+
+
+/**
+ * TRIGGER SECTION
+ */
+webMI.trigger.connect("com.atvise.setBlinking", function (e) {
+	if (e.value == "none") {
+		delete activeIndicators["trigger"];
+	} else {
+		activeIndicators["trigger"] = {color: e.value, interval: 500};
+	}
+	if (typeof customSetIndicator === "function") customSetIndicator();
+	else setIndicator();
+});]]></code>
+</script>

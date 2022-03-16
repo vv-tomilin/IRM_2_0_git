@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta content="text/html; charset=windows-1252" http-equiv="content-type">
+<title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Description</h1>
+<p>This control can be used as a combination of an input and output element as well as a simple output element only. An additional border indicates the current value's negative state or an additionally defined alarm. The colors and blinking intervals are defined in global lists.</p>
+<p>In addition the trigger "valuechanged" will be fired when a value changes.</p>
+<p>Basically the following parameter groups can be used independent of the input mode.</p>
+<ul>
+  <li>Font</li>
+  <li>Appearance</li>
+  <li>Security</li>
+  <li>Options</li>
+</ul>
+The remaining parameter groups only work combined with a specific input mode.
+<h1>Input modes</h1>
+<ol>
+	<li><b>Number: </b>allows the input of "-",  ",",  "."  "0-9" and supports the following parameter groups:
+		<ul>
+			<li>Number Format</li>
+			<li>Limits</li>
+			<li>Enum List Modus</li>
+		</ul>
+	</li>
+	<li><b>Boolean: </b>allows the input of "true", "false", "1", "0" and supports the following parameter group:
+		<ul>
+			<li>Enum List Modus</li>
+		</ul>
+	</li>
+	<li><b>String: </b>has no restrictions concerning the input and supports the following parameter group:
+		<ul>
+			<li>Enum List Modus</li>
+		</ul>
+	</li>
+	<li><b>Password: </b> has no restrictions concerning the input and supports no specific parameter group:</li>
+	<p><b>Please note: </b>if a value is being entered which is not in conformity with the input mode then the value will not be set and a warning will be displayed in the console.</p>
+	<p>Further details of the parameter groups can be found in the next part.</p>
+</ol>
+<h1>Parameters</h1>
+<p><b>Please note: </b>If there is an opportunity to set a value directly by a parameter and additionally by the address of a node and both are being set, then the value from the address will be taken.</p>
+<ol>
+	<li>Without parameter group
+		<ul>
+			<li><span class="parameter">base</span>: this address will be set.</li>
+			<li><span class="parameter">alarm address</span>: optional additional address of an alarm to be shown.</li>
+			<li><span class="parameter">input mode</span>: defines the input mode (described above).</li>
+			<li><span class="parameter">allow direct input</span>: select "Yes" if you want to directly enter characters in the control without opening the SVG Keyboard.</li>
+			<li><span class="parameter">enable status monitoring</span>: switch monitoring of current value status on or off.</li>
+			<li><span class="parameter">fire status trigger</span>: instead of the status display a here defined trigger can be fired globally.</li>
+		</ul>
+	</li>
+	<br>
+	<li>Parameter group: <b>Number Format</b>
+		<ul>
+			<li><span class="parameter">displayed unit</span>: enter a unit which will be displayed in addition to the value.</li>
+			<li><span class="parameter">show sign</span>: if "true", the sign will be displayed for number (default: false).</li>
+			<li><span class="parameter">leading zeros</span>: amount of places left to the decimal point (e.g. when set to 3, the value 11 will be displayed as 011).</li>
+			<li><span class="parameter">post decimal positions</span>: amount of places right to the decimal point.</li>
+			<li><span class="parameter">force decimal fraction position</span>: converts the value by dividing by 10 (e.g. when set to 2, the value 2000 will be displayed as 20.00).</li>
+			</ul>
+	</li>
+	<br>
+	<li>Parameter group: <b>Enum List Mode</b>
+		<ul>
+			<li><span class="parameter">enum list</span>: global list which defines the value to be displayed.</li>
+			</ul>
+		<p>If an "enum list" is specified, the value will be taken from the global list in case that it is defined there.</p>
+		<p>Example</span>:</p>
+		<ul>
+			<li>Add a Global List (e.g. mylist) to the Global Parameters.</li>
+			<li>enter "1" in column "key" of the first row and a related value (e.g. 10) in column "value" of the first row.</li>
+			<li>enter "2" in column "key" of the second row and a related value (e.g. 20) in column "value" of the second row, etc.</li>
+			<li>select your above defined Global List (e.g. mylist) as value of the parameter "enum list".</li>
+			<li>This will cause the in_out_value to change the value to 10 if the value of "base"=1 and change the value to 20 if the value of "base"=2, etc.</li>
+		</ul>
+	</li>
+	<br>
+	<li>Parameter group: <b>Font</b>
+		<ul>
+			<li><span class="parameter">family</span>: font family which will be applied to the value (default: Arial).</li>
+			<li><span class="parameter">size</span>: font size which will be applied to the value (default: 12).</li>
+			<li><span class="parameter">color</span>: color which will be applied to the value (default: black).</li>
+		</ul>
+	</li>
+	<br>
+	<li>Parameter group: <b>Appearance</b>
+		<ul>
+			<li><span class="parameter">fill color</span>: fill color (default: grey).</li>
+			<li><span class="parameter">fill color not editable</span>: fill color if checkbox is not editable (default: white).</li>
+			<li><span class="parameter">fill color when inactive</span>: fill color if not active (default: dark grey).</li>
+			<li><span class="parameter">focus stroke color</span>: stroke color on focus.</li>
+			<li><span class="parameter">status indication</span>: specify the status' display through a defined global list (default: global parameter <i>atvStatusIndication</i>)</li>
+			<li><span class="parameter">alarm indication</span>: specify the alarm's display through a defined global list (default: global parameter <i>atvAlarmIndication</i>)</li>
+		</ul>
+	</li>
+	<br>
+	<li>Parameter group: <b>Limits</b>
+		<ul>
+			<li><span class="parameter">limit low low (off=no limit)</span>: value for limit low low (default: off, which means no limit).</li>
+			<li><span class="parameter">limit low (off=no limit)</span>: value for limit low (default: off, which means no limit).</li>
+			<li><span class="parameter">limit high (off=no limit)</span>: value for limit high (default: off, which means no limit).</li>
+			<li><span class="parameter">limit high high (off=no limit)</span>: value for limit high high (default: off, which means no limit).</li>
+			<li><span class="parameter">limit low low color</span>: fill color if "limit low low" &gt;= value (default: red).</li>
+			<li><span class="parameter">limit low color</span>: fill color if &quot;limit low low&quot; &lt;&nbsp;value &lt;= &quot;limit low&quot; (default: yellow).</li>
+			<li><span class="parameter">limit high color</span>: fill color if &quot;limit high&quot; &lt;=&nbsp;value &lt; &quot;limit high high&quot; (default: yellow).</li>
+			<li><span class="parameter">limit high high color</span>: fill color if &quot;limit high high&quot;&nbsp;&lt;=&nbsp;value (default: red).</li>
+			<li><span class="parameter">minimum</span>: lowest border of the value (default: off, which means no limit).</li>
+			<li><span class="parameter">maximum</span>: highest border of the value (default: off, which means no limit).</li>
+			<li><span class="parameter">address for minimum</span>: address from which the minimum will be taken; this supersedes the parameter "minimum".</li>
+			<li><span class="parameter">address for maximum</span>:address from which the maximum will be taken; this supersedes the parameter "maximum".</li>
+			<li><span class="parameter">address for limit low low</span>: address from which the "limit low low" will be taken; this supersedes the parameter "limit low low".</li>
+			<li><span class="parameter">address for limit low</span>: address from which the "limit low" will be taken; this&nbsp;supersedes the parameter "limit low"</li>
+			<li><span class="parameter">address for limit high</span>: address from which the "limit high" will be taken; this&nbsp;supersedes the parameter "limit high"</li>
+			<li><span class="parameter">address for limit high high</span>: address from which the "limit high high" will be taken; this&nbsp;supersedes the parameter "limit high high"</li>
+		</ul>
+	</li>
+	<br>
+	<li>Parameter group: <b>Security</b>
+		<ul>
+			<li><span class="parameter">editable</span>: if set to "No" the values will only be displayed but it is not possible to enter a value (default: Yes).</li>
+			<li><span class="parameter">necessary right</span>: the user must have this right to activate this control, i.e. to enter values.</li>
+			<li><span class="parameter">activation address</span>: if the value of this address equals to "activation value", then the control will be active, i.e. can be used as input field.</li>
+			<li><span class="parameter">activation value</span>: value which activates the control.</li>
+		</ul>
+		<p><b>Please note: </b></span> if only the activation address or the activation value is being entered then the input field will be active, as these both parameters only work together.</p>
+	</li>
+	<br>
+	<li> Parameter group: <b>Options</b>
+		<ul>
+			<li><span class="parameter">alternative output address</span>: if specified, only this address will be set ("base" will not be set).</li>
+			<li><span class="parameter">consistency group</span>: name of the consistency group.</li>
+			<li><span class="parameter">tab index</span>: defines the order for changing between the object displays by using the tab key.</li>
+			<li><span class="parameter">tooltip</span>: displays a tooltip box with the entered text (standard HTML-Elements can be entered).</li>
+			<li><span class="parameter">select text on focus</span>: selects the text in if the direct input is allowed.</li>
+		</ul>
+		<p><b>Please note: </b> the alternative output address does not work in combination with the consistency group.</p>
+	</li>
+	<br>
+</ol>
+</body>
+</html>

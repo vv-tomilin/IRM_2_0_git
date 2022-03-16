@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Tool.Drillstem.Torque.Smoothing
+NodeClass: Object
+BrowseName: 1:Smoothing
+DisplayName: en|Smoothing
+Description: en|Smoothing
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.ClientSecondValuesConnected
+NodeClass: Variable
+BrowseName: 1:ClientSecondValuesConnected
+DisplayName: en|ClientSecondValuesConnected
+Description: en|ClientSecondValuesConnected
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

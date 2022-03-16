@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.VSP.MinMachineKeyTorque1
+NodeClass: Variable
+BrowseName: 1:MinMachineKeyTorque1
+DisplayName: en|MinMachineKeyTorque1
+Description: en|MinMachineKeyTorque1
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg" version="1.2" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40">
+ <defs/>
+ <metadata>
+  <atv:parameter valuetype="string" behavior="optional" substitute="$STROKE$" defaultvalue="#000000" name="stroke" desc="stroke color"/>
+  <atv:parameter valuetype="color" behavior="optional" substitute="$SYMBOLCOLOR$" defaultvalue="#000000" name="symbolColor" desc="symbol color"/>
+  <atv:gridconfig gridstyle="lines" enabled="false" width="20" height="20"/>
+  <atv:snapconfig enabled="false" width="10" height="10"/>
+ </metadata>
+ <circle stroke="$STROKE$" stroke-width="1" id="id_0" cy="20" r="16.269" cx="20" atv:refpy="20" atv:refpx="20" fill="$SYMBOLCOLOR$"/>
+</svg>

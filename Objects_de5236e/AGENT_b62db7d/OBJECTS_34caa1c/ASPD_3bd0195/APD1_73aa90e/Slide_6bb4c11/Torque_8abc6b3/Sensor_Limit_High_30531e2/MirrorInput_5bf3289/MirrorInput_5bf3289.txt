@@ -1,0 +1,1 @@
+s1500/ns=3;s="Tool1"."Drillstem"."Torque"."Sensor"."Limit_high"

@@ -1,0 +1,1 @@
+s1500/ns=3;s="Averaging_DB_Mud_Manifold_Pressure_Sensor_Value"."Value"

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg width="800" atv:contentwidth="800" version="1.2" xmlns="http://www.w3.org/2000/svg" height="600" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext" atv:contentheight="480">
+ <defs/>
+ <desc>800 x 600 (4:3)</desc>
+ <title>Standard</title>
+ <metadata>
+  <atv:gridconfig width="20" enabled="false" height="20" gridstyle="lines"/>
+  <atv:snapconfig width="10" enabled="true" height="10"/>
+ </metadata>
+ <svg width="800" x="0" y="0" height="120" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.hmi.top_800" id="id_3" atv:refpx="639.986" atv:refpy="59.999"/>
+ <svg width="800" x="0" y="149.995" height="600" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.hmi.iframe" id="id_4" atv:refpx="400" atv:refpy="360.006" transform="matrix(1,0,0,0.8,0,0)">
+  <atv:argument value="%CONTENT%" name="display"/>
+  <atv:argument value="content" name="frameName"/>
+  <atv:argument value="true" name="isNavigationFrame"/>
+  <atv:overwrite x="415.5" y="414.11" id="label2" transform="matrix(0.625,0,0,0.9231,0,0)"/>
+  <atv:overwrite x="549" y="344.5" id="label" transform="matrix(0.625,0,0,0.9231,0,0)"/>
+ </svg>
+</svg>

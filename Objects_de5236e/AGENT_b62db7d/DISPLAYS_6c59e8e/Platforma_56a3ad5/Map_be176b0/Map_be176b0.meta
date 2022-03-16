@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.Platforma.Map
+NodeClass: Variable
+BrowseName: 1:Map
+DisplayName: en|Map
+Description: en|Map
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.GtiTrendCfgs
+NodeClass: Object
+BrowseName: 1:GtiTrendCfgs
+DisplayName: en|GtiTrendCfgs
+Description: en|GtiTrendCfgs
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

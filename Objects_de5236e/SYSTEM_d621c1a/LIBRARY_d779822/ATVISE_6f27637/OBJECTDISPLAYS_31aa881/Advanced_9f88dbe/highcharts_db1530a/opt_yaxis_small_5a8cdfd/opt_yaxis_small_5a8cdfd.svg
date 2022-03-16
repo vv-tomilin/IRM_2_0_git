@@ -1,0 +1,587 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" version="1.2" height="300">
+ <defs>
+  <linearGradient x2="0" gradientUnits="objectBoundingBox" id="linear_2" y2="1.07843" y1="0" x1="0">
+   <stop offset="0" stop-color="#818181"/>
+   <stop offset="0.8475336322869955" stop-color="#464646"/>
+   <stop offset="0.9372197309417041" stop-color="#000000"/>
+  </linearGradient>
+ </defs>
+ <desc>Small display variant</desc>
+ <title>Configuration - Y-Axis</title>
+ <rect x="0" fill="$FILLCOLOR$" ry="0" y="0" atv:refpy="0" stroke-width="0" width="180" atv:refpx="90" id="filters_bg" stroke="#000000" rx="0" height="300"/>
+ <metadata>
+  <atv:parameter name="fontColor" valuetype="global" desc="font color" defaultvalue="SYSTEM.GLOBALS.atvFontColor" substitute="$FONTCOLOR$" behavior="optional"/>
+  <atv:parameter name="fillColor" valuetype="global" desc="fill color" defaultvalue="SYSTEM.GLOBALS.atvFillColor" substitute="$FILLCOLOR$" behavior="optional"/>
+  <atv:gridconfig width="20" enabled="true" height="20" gridstyle="lines"/>
+  <atv:snapconfig width="5" enabled="true" height="5"/>
+ </metadata>
+ <line x2="530" atv:refpy="154" stroke-width="0.5" atv:refpx="530" id="id_0" y2="294" y1="14" stroke="#d7d7d7" x1="530"/>
+ <text x="24.5" font-weight="bold" font-family="Arial" fill="$FONTCOLOR$" y="36" atv:refpy="31.5" atv:refpx="82.774" id="id_2" font-size="12">T{Y-Axis to configure}:</text>
+ <text x="200.5" font-weight="bold" font-family="Arial" fill="$FONTCOLOR$" y="36" atv:refpy="31.5" atv:refpx="257.212" id="id_1" font-size="12">T{Axis configuration}:</text>
+ <text x="544.5" font-weight="bold" font-family="Arial" fill="$FONTCOLOR$" y="113" atv:refpy="108.5" atv:refpx="570.84" id="id_3" font-size="12">T{Styling}:</text>
+ <text x="316.5" text-anchor="end" font-family="Arial" fill="$FONTCOLOR$" y="74" atv:refpy="69.5" atv:refpx="292.5" id="id_7" font-size="12">T{Label}:</text>
+ <text x="314.39" text-anchor="end" font-family="Arial" fill="$FONTCOLOR$" y="160" atv:refpy="155.5" atv:refpx="280.39" id="id_8" font-size="12">T{Minimum}:</text>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.in_out_value" x="340" y="55" atv:refpy="70" width="160" atv:refpx="441" id="yAxis_title_text" height="30">
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="21" name="tabIndex"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.rocker_switch_horizontal" x="339.89" y="140" atv:refpy="165" width="160" atv:refpx="440.89" id="yAxis_min" height="30">
+  <atv:argument value="23" name="tabIndex"/>
+ </svg>
+ <text x="655.5" text-anchor="end" font-family="Arial" fill="$FONTCOLOR$" y="143" atv:refpy="138.5" atv:refpx="601.349" id="id_23" font-size="12">T{Position of y-axis}:</text>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.radiobutton" x="676" y="125" atv:refpy="140" width="160" atv:refpx="755" id="yAxis_opposite-false" height="30">
+  <atv:argument value="yAxis_opposite" name="radiogroupId"/>
+  <atv:argument value="T{left}" name="label"/>
+  <atv:argument value="left" name="value"/>
+  <atv:argument value="51" name="tabIndex"/>
+  <atv:overwrite transform="matrix(1.6,0,0,1,0,0)" id="radiobutton_bg2"/>
+  <atv:overwrite width="68" transform="matrix(1.6,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="99.5" transform="matrix(1.6,0,0,1,0,0)" id="id_0"/>
+  <atv:overwrite width="66" id="radiobutton_bg"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.radiobutton" x="676" y="160" atv:refpy="175" width="160" atv:refpx="755" id="yAxis_opposite-true" height="30">
+  <atv:argument value="yAxis_opposite" name="radiogroupId"/>
+  <atv:argument value="T{right}" name="label"/>
+  <atv:argument value="right" name="value"/>
+  <atv:argument value="52" name="tabIndex"/>
+  <atv:overwrite transform="matrix(1.6,0,0,1,0,0)" id="radiobutton_bg2"/>
+  <atv:overwrite width="68" transform="matrix(1.6,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="99.5" transform="matrix(1.6,0,0,1,0,0)" id="id_0"/>
+  <atv:overwrite width="66" id="radiobutton_bg"/>
+ </svg>
+ <text x="647" text-anchor="end" font-family="Arial" fill="$FONTCOLOR$" y="204" atv:refpy="199.5" atv:refpx="624" id="id_26" font-size="12">T{Label}</text>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.radiobutton" x="676" y="195" atv:refpy="210" width="160" atv:refpx="755" id="yAxis_labels_align-left" height="30">
+  <atv:argument value="yAxis_labels_align" name="radiogroupId"/>
+  <atv:argument value="T{left}" name="label"/>
+  <atv:argument value="left" name="value"/>
+  <atv:argument value="53" name="tabIndex"/>
+  <atv:overwrite transform="matrix(1.6,0,0,1,0,0)" id="radiobutton_bg2"/>
+  <atv:overwrite width="68" transform="matrix(1.6,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="99.5" transform="matrix(1.6,0,0,1,0,0)" id="id_0"/>
+  <atv:overwrite width="66" id="radiobutton_bg"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.radiobutton" x="676" y="230" atv:refpy="245" width="160" atv:refpx="755" id="yAxis_labels_align-center" height="30">
+  <atv:argument value="yAxis_labels_align" name="radiogroupId"/>
+  <atv:argument value="T{center}" name="label"/>
+  <atv:argument value="center" name="value"/>
+  <atv:argument value="54" name="tabIndex"/>
+  <atv:overwrite transform="matrix(1.6,0,0,1,0,0)" id="radiobutton_bg2"/>
+  <atv:overwrite width="68" transform="matrix(1.6,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="99.5" transform="matrix(1.6,0,0,1,0,0)" id="id_0"/>
+  <atv:overwrite width="66" id="radiobutton_bg"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.radiobutton" x="676" y="265" atv:refpy="280" width="160" atv:refpx="755" id="yAxis_labels_align-right" height="30">
+  <atv:argument value="yAxis_labels_align" name="radiogroupId"/>
+  <atv:argument value="T{right}" name="label"/>
+  <atv:argument value="right" name="value"/>
+  <atv:argument value="55" name="tabIndex"/>
+  <atv:overwrite transform="matrix(1.6,0,0,1,0,0)" id="radiobutton_bg2"/>
+  <atv:overwrite width="68" transform="matrix(1.6,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="99.5" transform="matrix(1.6,0,0,1,0,0)" id="id_0"/>
+  <atv:overwrite width="66" id="radiobutton_bg"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.radiobutton" x="20" visibility="hidden" y="125" atv:refpy="140" width="160" transform="" atv:refpx="91" id="axisSelector1" height="30">
+  <atv:argument value="T{Y-Axis}" name="label"/>
+  <atv:argument value="g0" name="radiogroupId"/>
+  <atv:argument value="1" name="value"/>
+  <atv:argument value="11" name="tabIndex"/>
+  <atv:overwrite transform="matrix(1.1429,0,0,1,0,0)" id="radiobutton_bg2"/>
+  <atv:overwrite width="108" transform="matrix(1.1429,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="139.5" transform="matrix(1.1429,0,0,1,0,0)" id="id_0"/>
+  <atv:overwrite width="106" id="radiobutton_bg"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.radiobutton" x="20" visibility="hidden" y="160" atv:refpy="175" width="160" transform="" atv:refpx="91" id="axisSelector2" height="30">
+  <atv:argument value="T{Y-Axis}" name="label"/>
+  <atv:argument value="g0" name="radiogroupId"/>
+  <atv:argument value="2" name="value"/>
+  <atv:argument value="12" name="tabIndex"/>
+  <atv:overwrite transform="matrix(1.1429,0,0,1,0,0)" id="radiobutton_bg2"/>
+  <atv:overwrite width="108" transform="matrix(1.1429,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="139.5" transform="matrix(1.1429,0,0,1,0,0)" id="id_0"/>
+  <atv:overwrite width="106" id="radiobutton_bg"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.radiobutton" x="20" visibility="hidden" y="195" atv:refpy="210" width="160" transform="" atv:refpx="91" id="axisSelector3" height="30">
+  <atv:argument value="T{Y-Axis}" name="label"/>
+  <atv:argument value="g0" name="radiogroupId"/>
+  <atv:argument value="3" name="value"/>
+  <atv:argument value="13" name="tabIndex"/>
+  <atv:overwrite transform="matrix(1.1429,0,0,1,0,0)" id="radiobutton_bg2"/>
+  <atv:overwrite width="108" transform="matrix(1.1429,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="139.5" transform="matrix(1.1429,0,0,1,0,0)" id="id_0"/>
+  <atv:overwrite width="106" id="radiobutton_bg"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.in_out_value" x="339" y="90" atv:refpy="105" width="160" atv:refpx="440" id="yAxis_labels_format" height="30">
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="22" name="tabIndex"/>
+ </svg>
+ <text x="316.5" text-anchor="end" font-family="Arial" fill="$FONTCOLOR$" y="111" atv:refpy="106.5" atv:refpx="273.5" id="id_35" font-size="12">T{Label format}:</text>
+ <text x="313.5" text-anchor="end" font-family="Arial" fill="$FONTCOLOR$" y="196" atv:refpy="191.5" atv:refpx="278.5" id="id_37" font-size="12">T{Maximum}:</text>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.rocker_switch_horizontal" x="339" y="175" atv:refpy="200" width="160" atv:refpx="440" id="yAxis_max" height="30">
+  <atv:argument value="24" name="tabIndex"/>
+ </svg>
+ <text x="313.5" text-anchor="end" font-family="Arial" fill="$FONTCOLOR$" y="244" atv:refpy="239.5" atv:refpx="276.5" id="id_39" font-size="12">T{Auto scale}:</text>
+ <text x="312.602" text-anchor="end" font-family="Arial" fill="$FONTCOLOR$" y="279" atv:refpy="274.5" atv:refpx="282.102" id="id_40" font-size="12">T{Visibility}:</text>
+ <text x="655.5" text-anchor="end" font-family="Arial" fill="$FONTCOLOR$" y="43" atv:refpy="38.5" atv:refpx="619.07" id="id_41" font-size="12">T{Scale type}:</text>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.radiobutton" x="676" y="25" atv:refpy="50" width="160" atv:refpx="714.999" id="yAxis_type-linear" height="30">
+  <atv:argument value="T{linear}" name="label"/>
+  <atv:argument value="yAxis_type" name="radiogroupId"/>
+  <atv:argument value="linear" name="value"/>
+  <atv:argument value="27" name="tabIndex"/>
+  <atv:overwrite transform="matrix(1.3333,0,0,1,0,0)" id="radiobutton_bg2"/>
+  <atv:overwrite width="88" transform="matrix(1.3333,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="119.5" transform="matrix(1.3333,0,0,1,0,0)" id="id_0"/>
+  <atv:overwrite width="86" id="radiobutton_bg"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.radiobutton" x="676" y="60" atv:refpy="75" width="160" atv:refpx="715" id="yAxis_type-logarithmic" height="30">
+  <atv:argument value="T{logarithmic}" name="label"/>
+  <atv:argument value="yAxis_type" name="radiogroupId"/>
+  <atv:argument value="logarithmic" name="value"/>
+  <atv:argument value="28" name="tabIndex"/>
+  <atv:overwrite transform="matrix(1.3333,0,0,1,0,0)" id="radiobutton_bg2"/>
+  <atv:overwrite width="88" transform="matrix(1.3333,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="119.5" transform="matrix(1.3333,0,0,1,0,0)" id="id_0"/>
+  <atv:overwrite width="86" id="radiobutton_bg"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" x="22.858" y="55" atv:refpy="70" width="80" transform="matrix(0.875,0,0,1,0,0)" atv:refpx="55.001" id="btn_add" height="30">
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.plus" name="symbol"/>
+  <atv:argument value="T{Add}" name="label"/>
+  <atv:argument value="5" name="tabIndex"/>
+  <atv:overwrite width="134.5" transform="matrix(0.5714,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="139.5" transform="matrix(0.5714,0,0,1,0,0)" id="id_0"/>
+  <atv:argument value="#ffffff" name="extraBorderColor"/>
+  <atv:overwrite transform="matrix(1.1429,0,0,1,0,0)" width="68" id="id_6"/>
+  <atv:overwrite x="25" transform="matrix(1.1429,0,0,1,0,0)" id="button_symbol"/>
+  <atv:overwrite x="35" transform="matrix(1.1429,0,0,1,0,0)" id="button_label"/>
+  <atv:overwrite transform="matrix(1.1429,0,0,1,0,0)" width="66" id="button_stroke"/>
+  <atv:overwrite transform="matrix(1.1429,0,0,1,0,0)" width="68" id="button_bg"/>
+  <atv:overwrite transform="matrix(1.1429,0,0,1,0,0)" width="70" id="outer_frame"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.checkbox" x="339" y="225" atv:refpy="230" width="160" atv:refpx="399" id="yAxis_autoscale" height="30">
+  <atv:argument value="true" name="valueOn"/>
+  <atv:argument value="true" name="outputValueOn"/>
+  <atv:argument value="false" name="outputValueOff"/>
+  <atv:argument value="T{enabled}" name="label"/>
+  <atv:argument value="25" name="tabIndex"/>
+  <atv:overwrite transform="matrix(1.3333,0,0,1,0,0)" id="checkbox_bg2"/>
+  <atv:overwrite transform="matrix(1.3333,0,0,1,0,0)" id="id_5"/>
+  <atv:overwrite width="88" transform="matrix(1.3333,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="119.5" transform="matrix(1.3333,0,0,1,0,0)" id="id_0"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.checkbox" x="339" y="260" atv:refpy="265" width="160" atv:refpx="399" id="yAxis_visible" height="30">
+  <atv:argument value="true" name="valueOn"/>
+  <atv:argument value="true" name="outputValueOn"/>
+  <atv:argument value="false" name="outputValueOff"/>
+  <atv:argument value="T{visible}" name="label"/>
+  <atv:argument value="26" name="tabIndex"/>
+  <atv:overwrite transform="matrix(1.3333,0,0,1,0,0)" id="checkbox_bg2"/>
+  <atv:overwrite transform="matrix(1.3333,0,0,1,0,0)" id="id_5"/>
+  <atv:overwrite width="88" transform="matrix(1.3333,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="119.5" transform="matrix(1.3333,0,0,1,0,0)" id="id_0"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" x="11.429" y="260" atv:refpy="275" width="80" transform="matrix(1.75,0,0,1,0,0)" atv:refpx="90" id="btn_delete" height="30">
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.plus" name="symbol"/>
+  <atv:argument value="T{Delete selected}" name="label"/>
+  <atv:argument value="21" name="tabIndex"/>
+  <atv:overwrite width="134.5" transform="matrix(0.5714,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="139.5" transform="matrix(0.5714,0,0,1,0,0)" id="id_0"/>
+  <atv:argument value="#ffffff" name="extraBorderColor"/>
+  <atv:overwrite transform="matrix(0.5714,0,0,1,0,0)" width="138" id="id_6"/>
+  <atv:overwrite x="60" transform="matrix(0.5714,0,0,1,0,0)" id="button_symbol"/>
+  <atv:overwrite x="70" transform="matrix(0.5714,0,0,1,0,0)" id="button_label"/>
+  <atv:overwrite transform="matrix(0.5714,0,0,1,0,0)" width="136" id="button_stroke"/>
+  <atv:overwrite transform="matrix(0.5714,0,0,1,0,0)" width="138" id="button_bg"/>
+  <atv:overwrite transform="matrix(0.5714,0,0,1,0,0)" width="140" id="outer_frame"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.radiobutton" x="20" y="90" atv:refpy="105" width="160" transform="" atv:refpx="90" id="axisSelector0" height="30">
+  <atv:argument value="T{Y-Axis}" name="label"/>
+  <atv:argument value="g0" name="radiogroupId"/>
+  <atv:argument value="0" name="value"/>
+  <atv:argument value="10" name="tabIndex"/>
+  <atv:argument value="true" name="preselected"/>
+  <atv:overwrite transform="matrix(1.1429,0,0,1,0,0)" id="radiobutton_bg2"/>
+  <atv:overwrite width="108" transform="matrix(1.1429,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="139.5" transform="matrix(1.1429,0,0,1,0,0)" id="id_0"/>
+  <atv:overwrite width="106" id="radiobutton_bg"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" x="253.333" y="55" atv:refpy="77" width="80" transform="matrix(0.375,0,0,1,0,0)" atv:refpx="110" id="btn_up" height="30">
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.arrow_up" name="symbol"/>
+  <atv:argument value="" name="label"/>
+  <atv:argument value="2" name="tabIndex"/>
+  <atv:argument value="hidden" name="visibilityLabel"/>
+  <atv:argument value="inherit" name="visibilitySymbol"/>
+  <atv:overwrite width="24.5" transform="matrix(2.6667,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="29.5" transform="matrix(2.6667,0,0,1,0,0)" id="id_0"/>
+  <atv:argument value="#FFFFFF" name="extraBorderColor"/>
+  <atv:argument value="T{Scroll list up}" name="tooltip"/>
+  <atv:overwrite transform="matrix(2.6667,0,0,1,0,0)" width="28" id="id_6"/>
+  <atv:overwrite x="5" transform="matrix(2.6667,0,0,1,0,0)" id="button_symbol"/>
+  <atv:overwrite x="15" transform="matrix(2.6667,0,0,1,0,0)" id="button_label"/>
+  <atv:overwrite transform="matrix(2.6667,0,0,1,0,0)" width="26" id="button_stroke"/>
+  <atv:overwrite transform="matrix(2.6667,0,0,1,0,0)" width="28" id="button_bg"/>
+  <atv:overwrite transform="matrix(2.6667,0,0,1,0,0)" width="30" id="outer_frame"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" x="346.667" y="55" atv:refpy="77" width="80" transform="matrix(0.375,0,0,1,0,0)" atv:refpx="144.999" id="btn_down" height="30">
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.arrow_down" name="symbol"/>
+  <atv:argument value="" name="label"/>
+  <atv:argument value="3" name="tabIndex"/>
+  <atv:argument value="hidden" name="visibilityLabel"/>
+  <atv:argument value="inherit" name="visibilitySymbol"/>
+  <atv:overwrite width="24.5" transform="matrix(2.6667,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="29.5" transform="matrix(2.6667,0,0,1,0,0)" id="id_0"/>
+  <atv:argument value="#FFFFFF" name="extraBorderColor"/>
+  <atv:argument value="T{Scroll list down}" name="tooltip"/>
+  <atv:overwrite transform="matrix(2.6667,0,0,1,0,0)" width="28" id="id_6"/>
+  <atv:overwrite x="5" transform="matrix(2.6667,0,0,1,0,0)" id="button_symbol"/>
+  <atv:overwrite x="15" transform="matrix(2.6667,0,0,1,0,0)" id="button_label"/>
+  <atv:overwrite transform="matrix(2.6667,0,0,1,0,0)" width="26" id="button_stroke"/>
+  <atv:overwrite transform="matrix(2.6667,0,0,1,0,0)" width="28" id="button_bg"/>
+  <atv:overwrite transform="matrix(2.6667,0,0,1,0,0)" width="30" id="outer_frame"/>
+ </svg>
+ <text x="650.5" text-anchor="end" font-family="Arial" fill="$FONTCOLOR$" y="222" atv:refpy="217.5" atv:refpx="614.5" id="id_4" font-size="12">T{alignment}:</text>
+ <script type="text/ecmascript"><![CDATA[var inputDefaults = {
+	"yAxis_title_text": "T{Y-Axis}",
+	"yAxis_min": -10,
+	"yAxis_max": 10,
+	"yAxis_labels_format": "{value}",
+	"yAxis_autoscale": true,
+	"yAxis_visible": true,
+	"yAxis_type-logarithmic": "T{logarithmic}",
+	"yAxis_type-linear": "T{linear}",
+	"yAxis_tickInterval": 1,
+	"yAxis_minorTickInterval": 0,
+	"yAxis_crosshair_width": 0,
+	"yAxis_crosshair_snap": true,
+	"yAxis_opposite-true": "T{right}",
+	"yAxis_opposite-false": "T{left}",
+	"yAxis_labels_align-left": "T{left}",
+	"yAxis_labels_align-right": "T{right}",
+	"yAxis_labels_align-center": "T{center}",
+	"yAxis_lineColor": "#000000",
+	"yAxis_crosshair_color": "#FF0000",
+	"yAxis_gridLineColor": "#888888",
+	"yAxis_minorGridLineColor": "#EEEEEE",
+	"yAxis_gridLineWidth": 1,
+	"yAxis_minorGridLineWidth": 1,
+	"yAxis_crosshair_dashStyle-Dash": "T{dashed}",
+	"yAxis_crosshair_dashStyle-Dot": "T{dotted}",
+	"yAxis_crosshair_dashStyle-Solid": "T{solid}"
+};
+
+var numAxis = 4;
+var activeOffset = 0;
+var activeAxis = 0;
+var yAxis = [];
+var triggerEnabled = true;
+var updateEnabled = true;
+
+var chartname = webMI.query.chartname;
+var chart = webMI.trendFactory.getTrendByName(chartname);
+var options = chart.chart.options;
+var configHandler = new webMI.rootWindow.ConfigHandler;
+
+//Axis functions
+function addAxis(options) {
+	if (typeof options == "undefined")
+		options = {};
+
+	if (typeof options["title"] == "undefined")
+		options["title"] = {};
+
+	if (typeof options["title"]["text"] == "undefined")
+		options["title"]["text"] = inputDefaults["yAxis_title_text"] + " " + yAxis.length;
+
+	yAxis.push(options["title"]["text"]);
+
+	chart.chart.addAxis(options, false);
+
+	updateEnabled = false;
+	chart.control.updated(function() {
+		updateEnabled = true;
+	});
+
+	if (yAxis.length > numAxis)
+		scrollButtons(true);
+
+	activeAxis = yAxis.length - 1;
+	activeOffset = Math.max(yAxis.length - numAxis,0)
+	webMI.gfx.setVisible("axisSelector" + (activeAxis - activeOffset), true);
+	webMI.gfx.setText("axisSelector" + (activeAxis - activeOffset) + "_radiobutton_label", options["title"]["text"]);
+
+	webMI.trigger.fire("radioClicked_g0", {name: webMI.gfx.getText("axisSelector" + (activeAxis - activeOffset) + "_radiobutton_label"), value: (activeAxis - activeOffset)} );
+}
+
+function removeAxis() {
+	if (yAxis.length == 1)
+		return;
+
+	if (activeAxis == 0) {
+		alert("T{First axis can not be deleted!}")
+		return;
+	}
+
+	if (options.yAxis[activeAxis]) {
+		chart.chart.yAxis[activeAxis].remove();
+
+		if (activeAxis > 0)
+			--activeAxis;
+
+		if (yAxis.length < numAxis)
+			scrollButtons(false);
+
+		if (activeAxis > (numAxis - 1))
+			scrollAxis("up");
+
+		webMI.trigger.fire("radioClicked_g0", {name: webMI.gfx.getText("axisSelector" + (activeAxis - activeOffset) + "_radiobutton_label"), value: (activeAxis - activeOffset)} );
+		activeOffset = Math.max(activeOffset - 1,0)
+
+		updateEnabled = false;
+		chart.control.updated(function() {
+			updateEnabled = true;
+		});
+	}
+}
+
+function axisManager(yAxis) {
+	if (yAxis.length > numAxis)
+		scrollButtons(true);
+	else
+		scrollButtons(false);
+
+	for (var i = 0; i < numAxis; i++) {
+		var iOffset = i + activeOffset;
+		if (typeof yAxis[iOffset] != "undefined") {
+			webMI.gfx.setVisible("axisSelector" + i, true);
+
+			var name = (yAxis[iOffset] != "") ? yAxis[iOffset] : "Axis";
+			webMI.gfx.setText("axisSelector" + i + "_radiobutton_label", name + " [" + iOffset + "]");
+		} else {
+			webMI.gfx.setVisible("axisSelector" + i, false);
+		}
+	}
+
+	webMI.trigger.fire("radioClicked_g0", {name: webMI.gfx.getText("axisSelector" + (activeAxis - activeOffset) + "_radiobutton_label"), value: (activeAxis - activeOffset)});
+}
+
+function scrollAxis(direction) {
+	if (direction == "up" && activeOffset > 0) {
+		--activeOffset;
+	} else if (direction == "down" && activeOffset < (yAxis.length - numAxis)) {
+		++activeOffset;
+	}
+	axisManager(yAxis);
+}
+
+function scrollButtons(active) {
+	webMI.trigger.fire("com.atvise.setActive", active, "btn_up");
+	webMI.trigger.fire("com.atvise.setActive", active, "btn_down");
+}
+
+//Read options
+function readOptions() {
+	triggerEnabled = false;
+	var mappedOptions = configHandler.mapToAtviseId(options);
+	yAxis = [];
+
+	//Search configured y-axis
+	var i = 0;
+	while (typeof chart.chart.yAxis[i] != "undefined") {
+		if (chart.chart.yAxis[i].userOptions["title"] && chart.chart.yAxis[i].userOptions["title"]["text"])
+			yAxis.push(chart.chart.yAxis[i].userOptions["title"]["text"]);
+		else
+			yAxis.push(inputDefaults["yAxis_title_text"] + " " + i);
+		i++;
+	}
+
+	//Avoid logarithmic y-axis on initialization (can cause errors)
+	if (typeof mappedOptions["yAxis" + activeAxis + "_yAxis_type"] == "undefined") {
+		mappedOptions["yAxis" + activeAxis + "_yAxis_type"] = "linear";
+		setOptions("yAxis_type", "linear", activeAxis);
+	}
+
+    //Fix for configs with emtpy autoscale value
+	if(typeof mappedOptions["yAxis" + activeAxis + "_yAxis_autoscale"] === "undefined"){
+		mappedOptions["yAxis" + activeAxis + "_yAxis_autoscale"] = true;
+		if(mappedOptions["yAxis" + activeAxis + "_yAxis_min"] != mappedOptions["yAxis" + activeAxis + "_yAxis_max"]){
+			mappedOptions["yAxis" + activeAxis + "_yAxis_autoscale"] = false;
+		}
+	}
+
+	if (mappedOptions["yAxis" + activeAxis + "_yAxis_autoscale"])
+		webMI.trigger.fire("setChecked", true, "yAxis_autoscale");
+	else
+		webMI.trigger.fire("setChecked", false, "yAxis_autoscale");
+
+	var extremes = chart.chart.yAxis[activeAxis].getExtremes();
+
+	//Set values for current active axis
+	for (var key in inputDefaults) {
+		var value = inputDefaults[key];
+
+		//build radio button group key
+		var isRadio = false;
+		var keyValue = key.split("-");
+		if (keyValue.length == 2) {
+			isRadio = true;
+			key = keyValue[0];
+			keyValue = keyValue[1];
+		}
+
+		var optionsKey = key;
+		if (key.search("yAxis") > -1)
+			optionsKey = "yAxis" + activeAxis + "_" + key;
+
+		if (isRadio) {
+			if (typeof mappedOptions[optionsKey] != "undefined")
+				value = inputDefaults[key + "-" + mappedOptions[optionsKey]];
+			else 
+				setOptions(key, keyValue, activeAxis);
+			webMI.trigger.fire("radioClicked_" + key, {name: value});
+			continue;
+		}
+
+		if (key == "yAxis_autoscale") {
+			if (extremes.userMax == null && extremes.userMin == null)
+				mappedOptions[optionsKey] = true;
+			else
+				mappedOptions[optionsKey] = false;
+		}
+
+		if (typeof mappedOptions[optionsKey] != "undefined")
+			value = mappedOptions[optionsKey];
+		else if (key == "yAxis_title_text")
+			setOptions(key, inputDefaults["yAxis_title_text"] + " " + activeAxis, activeAxis);
+		else if (key != "yAxis_min" && key != "yAxis_max")
+			setOptions(key, value, activeAxis);
+
+		if (key == "yAxis_crosshair_width" || key == "yAxis_crosshair_snap" || key == "yAxis_visible")
+			webMI.trigger.fire("setChecked", value, key);
+		else if (key.search(/color/ig) > -1)
+			webMI.trigger.fire("valuechanged_" + key, {hex: value})
+		else if (key == "yAxis_min")
+			webMI.trigger.fire("setValue", isNaN(extremes.min) ? 0 : extremes.min, key);
+		else if (key == "yAxis_max")
+			webMI.trigger.fire("setValue", isNaN(extremes.max) ? 0 : extremes.max, key);
+		else
+			webMI.trigger.fire("setValue", value, key);
+	}
+
+	axisManager(yAxis);
+	triggerEnabled = true;
+}
+
+//Write options
+function setOptions(key, value, identifier) {
+
+	if (value == "true") value = true;
+	else if (value == "false") value = false;
+
+	if (options.yAxis[identifier]) {
+		if (options.yAxis[identifier].type == "logarithmic" && (key == "yAxis_min" || key == "yAxis_max") && value <= 0) return readOptions();
+
+		var optionsObj = configHandler.createConfigObject(key.slice(6, key.length), value);
+
+		//Catch invalid logarithmic y-axis
+		if (optionsObj["type"] == "logarithmic") {
+			try {
+				var min = chart.chart.yAxis[identifier].userMin ? chart.chart.yAxis[identifier].userMin : chart.chart.yAxis[identifier].min;
+				var max = chart.chart.yAxis[identifier].userMax ? chart.chart.yAxis[identifier].userMax : chart.chart.yAxis[identifier].max;
+				min = min <= 0 ? Math.pow(10, min) : min;
+				max = max <= 0 ? Math.pow(10, max) : max;
+				chart.chart.yAxis[identifier].update({"min": min, "max": max});
+				chart.chart.yAxis[identifier].setExtremes(min, max);
+				chart.chart.yAxis[identifier].update({type: "logarithmic"});
+				readOptions();
+				webMI.trigger.fire("setChecked", false, "yAxis_autoscale");
+			} catch(e) {
+				chart.chart.yAxis[identifier].update({type: "linear"});
+				console.warn("Can't plot zero or subzero values on a logarithmic axis: " + e);
+			}
+		} else if (optionsObj["autoscale"]) {
+			chart.chart.yAxis[identifier].update({"min": null, "max": null});
+			chart.chart.yAxis[identifier].setExtremes(null, null);
+			chart.chart.yAxis[identifier].update(optionsObj);
+			readOptions();
+		} else {
+			chart.chart.yAxis[identifier].update(optionsObj);
+		}
+
+		var extremes = chart.chart.yAxis[identifier].getExtremes();
+		if (typeof optionsObj["autoscale"] != "undefined" && optionsObj["autoscale"] == false)
+			chart.chart.yAxis[identifier].setExtremes(extremes.min,extremes.max);
+
+		if (key == "yAxis_min") {
+			chart.chart.yAxis[identifier].setExtremes(value, extremes.max);
+			webMI.trigger.fire("setChecked", false, "yAxis_autoscale");
+		} else if (key == "yAxis_max") {
+			chart.chart.yAxis[identifier].setExtremes(extremes.min, value);
+			webMI.trigger.fire("setChecked", false, "yAxis_autoscale");
+		}
+
+		updateEnabled = false;
+		chart.control.updated(function() {
+			updateEnabled = true;
+		});
+	}
+}
+
+//Triggers for every input element
+webMI.addOnload(function() {
+	for (var key in inputDefaults)
+		webMI.trigger.connect("valuechanged", function(e){ processInput(e.context, e.value, activeAxis) }, key);
+	
+	for (var i = 0; i < numAxis; i++) {
+		webMI.trigger.connect("valuechanged", function(e){
+			if (!triggerEnabled)
+				return;
+
+			activeAxis = parseInt(e.value) + activeOffset;
+			readOptions();
+		}, "axisSelector" + i);
+	}
+
+	readOptions();
+
+	var updateCb = chart.control.registerOnUpdatedCallback(function() {
+		if (!updateEnabled)
+			return;
+
+		readOptions();
+	});
+	webMI.addOnunload(function() {
+		if (chart && chart.control) chart.control.unregisterOnUpdatedCallback(updateCb);
+	});
+});
+
+function processInput(key, value, identifier) {
+
+	if (typeof key == "undefined" || typeof value == "undefined")
+		return;
+
+	if (key == "yAxis_crosshair_width") {
+		if (value == "true") {
+			webMI.gfx.setVisible("label_snapping", true);
+			webMI.gfx.setVisible("yAxis_crosshair_snap", true);
+		} else {
+			webMI.gfx.setVisible("label_snapping", false);
+			webMI.gfx.setVisible("yAxis_crosshair_snap", false);
+		}
+	}
+
+	if (!triggerEnabled)
+		return;
+
+	if (key == "yAxis_title_text") {
+		webMI.gfx.setText("axisSelector" + (activeAxis - activeOffset) + "_radiobutton_label", value + " [" + identifier + "]");
+	}
+
+	setOptions(key, value, identifier);
+}
+
+//Triggers to add and remove y-axis
+webMI.trigger.connect("clicked", function(e) { addAxis() }, "btn_add");
+webMI.trigger.connect("clicked", function(e) { removeAxis() }, "btn_delete");
+webMI.trigger.connect("clicked", function(e) { scrollAxis("up") }, "btn_up");
+webMI.trigger.connect("clicked", function(e) { scrollAxis("down") }, "btn_down");
+]]></script>
+</svg>

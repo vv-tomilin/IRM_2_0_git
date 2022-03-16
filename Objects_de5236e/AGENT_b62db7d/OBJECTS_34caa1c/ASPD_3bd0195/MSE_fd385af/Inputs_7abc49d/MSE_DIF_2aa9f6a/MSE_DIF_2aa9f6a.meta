@@ -1,0 +1,11 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.MSE.Inputs.MSE_DIF
+NodeClass: Variable
+BrowseName: 1:MSE_DIF
+DisplayName: en|MSE_DIF
+Description: en|MSE_DIF
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/treeView/icons_navigator
+NodeClass: Object
+BrowseName: 1:icons_navigator
+DisplayName: en|icons_navigator
+Description: en|icons_navigator
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

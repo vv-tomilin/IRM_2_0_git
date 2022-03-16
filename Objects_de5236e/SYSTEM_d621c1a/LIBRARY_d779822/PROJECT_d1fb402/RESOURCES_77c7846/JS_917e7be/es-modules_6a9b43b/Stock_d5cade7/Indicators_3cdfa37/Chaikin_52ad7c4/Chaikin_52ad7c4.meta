@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Stock/Indicators/Chaikin
+NodeClass: Object
+BrowseName: 1:Chaikin
+DisplayName: en|Chaikin
+Description: en|Chaikin
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

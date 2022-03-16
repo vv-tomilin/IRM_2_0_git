@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+    <title>OD_help</title>
+    <style> #parameter {
+        font-weight: bold;
+    } </style>
+</head>
+<body>
+<h1>Description</h1>
+<p>This display supplements the table with a status bar with page navigation and information about the current
+    data status. For this, the display must be inserted in the display in which the table is located.
+    A special configuration, such as for the table, is not required for this display. All you have to do is
+    set the table name in the parameters.</p>
+
+<h2>Note</h2>
+<p><b>From version 3.4 svg icons are no longer supported in footer. Please only use more symbols from the library of Font Awesome Free.</b></p>
+
+<h2>Conditions</h2>
+<p>The table library requires jQuery> 1.7 and is currently shipped with jQuery> 3.3.x.</p>
+<p>To avoid compatibility issues, the included jQuery version is only used if none already
+    existing version is detected. Therefore jQuery should already be used in an existing project
+    the spreadsheet library to them. Therefore, make sure that in this case a jQuery version> 1.7.x
+    is used!</p>
+
+<h1>Parameter</h1>
+<p>The status bar has the following general parameters:</p>
+<ul>
+    <li><span class="parameter">base</span>: Current not in use</li>
+    <li><span class="parameter">table ID</span>: Unique table name</li>
+    <li><span class="parameter">symbol first page</span>: Symbol to open the first page (default: &lt;i class="fas fa-fast-backward"&gt;&lt;/i&gt;)</li>
+    <li><span class="parameter">symbol previous page</span>: Symbol to open the previous page (default: &lt;i class="fas fa-step-backward"&gt;&lt;/i&gt;)</li>
+    <li><span class="parameter">symbol pause</span>: Symbol for pause (default: &lt;i class="fas fa-pause"&gt;&lt;/i&gt;)</li>
+    <li><span class="parameter">symbol stop</span>: Symbol for pause (default: &lt;i class="fas fa-stop"&gt;&lt;/i&gt;)</li>
+    <li><span class="parameter">symbol next page</span>: Symbol to scroll to the next page (default: &lt;i class="fas fa-step-forward"&gt;&lt;/i&gt;) </li>
+    <li><span class="parameter">symbol last page</span>: Symbol to open the last page (default: &lt;i class="fas fa-fast-forward"&gt;&lt;/i&gt;)</li>
+    <li><span class="parameter">symbol laod pages</span>: Symbol for loading the next pages in manual mode (Standard: &lt;i class="fas fa-download"&gt;&lt;/i&gt;)</li>
+    <li><span class="parameter">symbol search</span>: Symbol for search (default: &lt;i class="fas fa-search"&gt;&lt;/i&gt;)</li>
+
+    <li><span class="parameter">symbol truncate</span>: Symbol when reaching the overflow (default: &lt;i class="fas fa-ban"&gt;&lt;/i&gt; )</li>
+    <li><span class="parameter">symbol triggered</span>: Symbol for trigger mode (default: &lt;i class="fas fa-angle-double-down"&gt;&lt;/i&gt; )</li>
+    <li><span class="parameter">symbol continue</span>: Symbol for continue mode (default: &lt;i class="fas fa-cog fa-spin"&gt;&lt;/i&gt; )</li>
+    <li><span class="parameter">symbol live</span>: Symbol for live mode (default: &lt;i class="fas fa-sync fa-spin"&gt;&lt;/i&gt; )</li>
+    <li><span class="parameter">symbol manually</span>: Symbol for manually mode (default: &lt;i class="fas fa-check"&gt;&lt;/i&gt; )</li>
+    <li><span class="parameter">symbol done</span>: Symbol for all data loaded (default: &lt;i class="fas fa-download"&gt;&lt;/i&gt; )</li>
+</ul>
+<br>
+</body>
+</html>

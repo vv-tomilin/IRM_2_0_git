@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.GLOBALS.ODBC_access
+NodeClass: Variable
+BrowseName: 1:ODBC_access
+DisplayName: en|ODBC_access
+Description: en|ODBC_access
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.GlobalVariable

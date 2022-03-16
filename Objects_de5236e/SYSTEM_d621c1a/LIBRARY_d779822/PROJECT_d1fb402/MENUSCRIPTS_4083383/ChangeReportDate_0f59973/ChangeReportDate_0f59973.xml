@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <code><![CDATA[var curdate = new Date();
+	curdate.setHours(0,0,0,0);
+	console.log('curdate = ',curdate);
+	var utc = new Date(curdate.getTime() + curdate.getTimezoneOffset() * 60000);
+	console.log('utsdate = ',utc);
+	call("ODBC_report_apd",{report_date:utc});]]></code>
+</script>

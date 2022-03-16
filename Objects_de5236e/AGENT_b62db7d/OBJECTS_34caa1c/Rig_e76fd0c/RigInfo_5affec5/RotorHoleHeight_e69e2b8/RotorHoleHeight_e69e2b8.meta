@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Rig.RigInfo.RotorHoleHeight
+NodeClass: Variable
+BrowseName: 1:RotorHoleHeight
+DisplayName: en|RotorHoleHeight
+Description: en|RotorHoleHeight
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

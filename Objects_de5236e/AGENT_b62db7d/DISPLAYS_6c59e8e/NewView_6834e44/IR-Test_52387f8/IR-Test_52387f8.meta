@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.IR-Test
+NodeClass: Object
+BrowseName: 1:IR-Test
+DisplayName: en|IR-Test
+Description: en|IR-Test
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

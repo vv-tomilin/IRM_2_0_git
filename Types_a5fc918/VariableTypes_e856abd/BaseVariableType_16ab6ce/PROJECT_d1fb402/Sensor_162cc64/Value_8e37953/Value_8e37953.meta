@@ -1,0 +1,10 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"Sensor".Value
+NodeClass: Variable
+BrowseName: 1:Value
+DisplayName: en|Value
+Description: en|Value
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseDataVariableType

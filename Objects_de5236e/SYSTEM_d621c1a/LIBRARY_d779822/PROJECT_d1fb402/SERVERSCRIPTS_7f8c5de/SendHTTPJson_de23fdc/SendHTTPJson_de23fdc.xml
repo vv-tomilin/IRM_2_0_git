@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="node_id" type="string" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var httpobj = new HTTPClient({
+	agent: "rigintel-agent/1.0"
+});
+//for (var key in httpobj) {
+//  console.log("Ключ: " + key + " значение: " + httpobj[key]);
+//}
+/*
+var res = http.request({
+    protocol: "https",
+    hostname: "www.example.com",
+    path: "/data.txt",
+    headers: {"Pragma" : "no-cache"},
+    auth: { method: "digest", user: "me", password: "secret" }
+});
+*/
+var nnode = new UaNode(node_id);
+var unode = new UaNode(node_id+".Unit");
+var status = 0;
+if(Number(nnode.status) > 12189696)
+	status = 1;
+var param_obj = {
+	id: node_id.slice(node_id.lastIndexOf("AGENT.OBJECTS.")+"AGENT.OBJECTS.".length),
+	value: nnode.value.toFixed(2),
+	unit:unode.value,
+	servertime: nnode.servertime,
+	sourcetime: nnode.sourcetime,
+	status: status
+};
+
+var rig_obj = {
+	field: "Суворовское",
+	bush: "Биг23",
+	well: "12Р",
+	brigade: "45",
+	params: [param_obj]
+};
+
+
+/*
+var json_obj = {
+	rig_id: rig_obj,
+	param: param_obj 
+};
+*/
+var naddress = new UaNode("SYSTEM.GLOBALS.HTTPSender.address");
+var nport = new UaNode("SYSTEM.GLOBALS.HTTPSender.port");
+var npath = new UaNode("SYSTEM.GLOBALS.HTTPSender.path");
+
+var res = httpobj.request({	
+    protocol: "http",
+    method: "post",
+    hostname: naddress.value,
+    port: Number(nport.value),
+    path: npath.value,
+    headers: {
+		"Pragma" : "no-cache",
+		"Content-Type": "application/json"
+    },
+    data: JSON.stringify(rig_obj, null, ' ') 
+});
+
+console.log("Response - ");
+for (var key in res) {
+	if(key == "headers"){
+		console.log("Headers");
+		for(var k in res.headers){
+			console.log(k + ": " + res.headers[k]);
+		}
+		console.log("End Headers");
+	} else 
+		console.log(key + ": " + res[key]);
+}
+
+//var response = http.get("localhost:33333?param=1234");
+//for (var key in response) {
+//  console.log("Ключ: " + key + " значение: " + response[key]);
+//}
+/*
+var t = new TCPClient();
+t.connect("localhost", 33333);
+//t.connect("rss.orf.at", 80);
+console.log("connected...");
+
+
+////var node_rig_name = new UaNode("AGENT.OBJECTS.Rig.General.RigName");
+//var node_field_name = new UaNode("AGENT.OBJECTS.Rig.General.FieldName");
+//var node_bush_name = new UaNode("AGENT.OBJECTS.Rig.General.BushName");
+//var node_well_name = new UaNode("AGENT.OBJECTS.Rig.General.WellName");
+//var node_brigade_name = new UaNode("AGENT.OBJECTS.Rig.Brigade.BrigadeName");
+//
+//var rig_obj = {
+//	field_name: node_field_name.value,
+//	bush_name: node_bush_name.value,
+//	well_name: node_well_name.value,
+//	brigade_name: node_brigade_name.value
+//};
+
+var rig_obj = {
+	field_name: "Суворовское",
+	bush_name: "Бига23",
+	well_name: "12Р",
+	brigade_name: "45"
+};
+
+var nnode = new UaNode(node_id);
+var param_obj = {
+	param_id: node_id.slice(node_id.lastIndexOf("AGENT.OBJECTS.")+"AGENT.OBJECTS.".length),
+	param_value: nnode.value.toFixed(2),
+	param_servertime: nnode.servertime,
+	param_sourcetime: nnode.sourcetime,
+	param_status: nnode.status
+};
+
+//var param_obj = {
+//	param_id: base.nodeid.slice(base.nodeid.lastIndexOf("AGENT.OBJECTS.")+"AGENT.OBJECTS.".length),
+//	param_value: nnode.value.toFixed(2),
+//	param_servertime: nnode.servertime,
+//	param_sourcetime: nnode.sourcetime,
+//	param_status: nnode.status
+//};
+
+var json_obj = {
+	rig_id: rig_obj,
+	param: param_obj 
+};
+
+//var jsonstr = JSON.stringify(json_obj, null, '\t');
+var jsonstr = JSON.stringify(json_obj, null, ' ');
+//console.log("jsonstr = "+ jsonstr);
+//var jsonstr = "\"username\" : \"my_username\"";
+
+//http header
+var request = 
+"POST HTTP/1.1\r\n" +
+//"Host: rss.orf.at\r\n" +
+"Host: localhost\r\n" +
+"Connection: close\r\n" +
+//"Cache-Control: max-age=0\r\n" +
+"Cache-Control: no-cache, no-store, must-revalidate\r\n" +
+"Content-Type: application/json\r\n" +
+"Upgrade-Insecure-Requests: 1\r\n" +
+//"Referer: https//rss.orf.at/\r\n" +
+"\r\n" + jsonstr +
+"\r\n";
+
+
+
+//perform request
+t.send(request);
+console.log("send ok..");
+
+var response_header = t.receive(5000);
+console.log("response_header = "+response_header);
+var response_content = t.receive(500000);
+console.log("response_content = "+response_content);
+//receive till no more data available
+var tmp;
+while(tmp != "")
+{
+	tmp = t.receive(50000);
+	response_content += tmp;
+}
+
+if(response_content.length > 1) {
+	//parse and print XML content to console
+	var doc = new XMLDoc(response_content, "string");
+	var x = doc.root;
+	for (x = x.first("item"); x; x = x.next("item"))
+		console.log(x.first().first(XMLDoc.TEXT_NODE).content);
+}
+else
+	console.log("no content received - please take a http site (none https site");
+*/]]></code>
+</script>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"ENC_position"
+NodeClass: VariableType
+BrowseName: 1:ENC_position
+DisplayName: en|ENC_position
+Description: en|ENC_position
+IsAbstract: false
+DataType: BaseDataType
+ValueRank: -1
+ValueType: i=0

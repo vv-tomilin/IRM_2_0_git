@@ -1,0 +1,9 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"Sensor"
+NodeClass: VariableType
+BrowseName: 1:Sensor
+DisplayName: en|Sensor
+Description: en|Sensor
+IsAbstract: false
+DataType: BaseDataType
+ValueRank: -1
+ValueType: i=0

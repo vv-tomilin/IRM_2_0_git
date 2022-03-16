@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Set_var.Load_on_bit_limit.Load_on_bit_limit_value
+NodeClass: Variable
+BrowseName: 1:Load_on_bit_limit_value
+DisplayName: en|Load_on_bit_limit_value
+Description: en|Load_on_bit_limit_value
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

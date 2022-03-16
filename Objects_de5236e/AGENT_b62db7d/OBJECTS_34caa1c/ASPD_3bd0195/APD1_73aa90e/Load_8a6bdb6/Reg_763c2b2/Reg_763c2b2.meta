@@ -1,0 +1,11 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.APD1.Load.Reg
+NodeClass: Variable
+BrowseName: 1:Reg
+DisplayName: en|Reg
+Description: en|Reg
+DataType: i=0
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/Item
+NodeClass: Object
+BrowseName: 1:Item
+DisplayName: en|Item
+Description: en|Item
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.wellPadBoard.PV
+NodeClass: Variable
+BrowseName: 1:PV
+DisplayName: en|PV
+Description: en|PV
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

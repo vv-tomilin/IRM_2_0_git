@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Platforma.WellpadBoard.rigContractor
+NodeClass: Variable
+BrowseName: 1:rigContractor
+DisplayName: en|rigContractor
+Description: en|rigContractor
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

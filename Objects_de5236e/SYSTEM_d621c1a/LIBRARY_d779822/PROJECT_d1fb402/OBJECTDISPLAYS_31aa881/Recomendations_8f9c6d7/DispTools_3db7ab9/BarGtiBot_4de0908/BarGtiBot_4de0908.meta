@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Recomendations.DispTools.BarGtiBot
+NodeClass: Variable
+BrowseName: 1:BarGtiBot
+DisplayName: en|BarGtiBot
+Description: en|BarGtiBot
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

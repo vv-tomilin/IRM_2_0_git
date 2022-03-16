@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/pareto.js.map
+NodeClass: Variable
+BrowseName: 1:pareto.js.map
+DisplayName: en|pareto.js.map
+Description: en|pareto.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

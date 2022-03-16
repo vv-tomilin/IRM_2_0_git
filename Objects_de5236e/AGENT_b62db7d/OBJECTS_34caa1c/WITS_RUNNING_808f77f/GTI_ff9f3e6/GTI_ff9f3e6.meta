@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS_RUNNING.GTI
+NodeClass: Variable
+BrowseName: 1:GTI
+DisplayName: en|GTI
+Description: en|GTI
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

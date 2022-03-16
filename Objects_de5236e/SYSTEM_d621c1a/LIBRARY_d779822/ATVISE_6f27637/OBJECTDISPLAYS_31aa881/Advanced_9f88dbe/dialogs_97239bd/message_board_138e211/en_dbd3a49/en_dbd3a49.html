@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Description</h1>
+<p>This display shows a definable dialog for messages, information or warnings, which can be called up via the openWindow function, for example.
+  Freely selectable texts can be used in the header and for the buttons.</br>
+  Messages can be transmitted to the display via triggers.
+  The two buttons can also be used to pass trigger functions. If no trigger names are passed, the default function for the two buttons is to close the window.</p>
+<h2>Conditions</h2>
+<p>This display requires jQuery, which is included as part of the library table.</p>
+<p>To avoid compatibility problems, the supplied jQuery version is only used if no existing version is detected. If jQuery is already used in an existing project, the table library will access it. Make sure that in this case a jQuery version> 1.7.x is used!!</p>
+<h1>Parameter</h1>
+<p>There are a total of 9 parameters:</p>
+<ul>
+  <li><span class="parameter">symbol</span>: address of the symbol.</li>
+  <li><span class="parameter">font color</span>: color which will be applied to the labels (default: global parameter <i>atvFontColor</i>)</li>
+  <li><span class="parameter">symbol color</span>: color of the symbol to be used (default: global parameter <i>atvSymbolColor</i>)</li>
+  <li><span class="parameter">text of headline</span>: headline for the dialog.</li>
+  <li><span class="parameter">text of button 1</span>: text of button 1</li>
+  <li><span class="parameter">text of button 2</span>: text of button 2</li>
+  <li><span class="parameter">action of button 1</span>: trigger function of button 1</li>
+  <li><span class="parameter">action of button 2</span>: trigger function of button 2</li>
+  <li><span class="parameter">unload action</span>: trigger function closing with [x]</li>
+</ul>
+<h1>Trigger</h1>
+<li><span class="parameter">com.atvise.message_board_update</span>: add a message to the board</li>
+<li><span class="parameter">com.atvise.message_board_reset</span>: clears the contents of the board</li>
+<h1>Example 1</h1>
+<p>Calling the dialog using the openWindow function:</br></br>
+  webMI.display.openWindow({display:"SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dialogs.message_board", x:0, y:0, height:600, width:800, modal:true, resizable:false, movable:true, scrollbars:false, menubar:false, status:false, toolbar:false, query: {headline:"Meine &Uuml;berschrift"}});
+</p>
+<h1>Example 2</h1>
+<p>Add a message:<br><br>
+  webMI.trigger.fire("com.atvise.message_board_update", ["Nachricht Zeile 1", "Nachricht Zeile 2", ..., "Nachricht Zeile n]);
+</p>
+</body>
+</html>

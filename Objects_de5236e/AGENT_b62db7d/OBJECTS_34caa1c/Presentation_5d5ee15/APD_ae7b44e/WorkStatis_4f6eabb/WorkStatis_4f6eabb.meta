@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Presentation.APD.WorkStatis
+NodeClass: Variable
+BrowseName: 1:WorkStatis
+DisplayName: en|WorkStatis
+Description: en|WorkStatis
+DataType: UInt16
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

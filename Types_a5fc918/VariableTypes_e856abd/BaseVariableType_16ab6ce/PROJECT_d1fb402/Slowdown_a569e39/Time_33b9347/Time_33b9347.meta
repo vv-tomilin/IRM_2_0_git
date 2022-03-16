@@ -1,0 +1,10 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"Slowdown".Time
+NodeClass: Variable
+BrowseName: 1:Time
+DisplayName: en|Time
+Description: en|Time
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseDataVariableType

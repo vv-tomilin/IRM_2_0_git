@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/drag-panes.js.map
+NodeClass: Variable
+BrowseName: 1:drag-panes.js.map
+DisplayName: en|drag-panes.js.map
+Description: en|drag-panes.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

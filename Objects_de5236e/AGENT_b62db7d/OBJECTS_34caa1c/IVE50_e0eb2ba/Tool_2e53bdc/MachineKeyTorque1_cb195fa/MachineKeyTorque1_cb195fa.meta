@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Tool.MachineKeyTorque1
+NodeClass: Variable
+BrowseName: 1:MachineKeyTorque1
+DisplayName: en|MachineKeyTorque1
+Description: en|MachineKeyTorque1
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

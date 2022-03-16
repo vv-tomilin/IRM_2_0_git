@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="sec" type="number" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var min = sec / 60;
+var hour = min / 60;
+//	var day =
+//    'Дней: ' + Math.floor(hour / 24) +
+//    ', часов: ' + Math.floor(hour % 24) +
+//    ', минут: ' + Math.floor(min % 60) +
+//    ', секунд: ' + Math.floor(sec % 60);
+return  Math.floor(hour)+":"+Math.floor(min % 60)+":"+ Math.floor(sec % 60);]]></code>
+</script>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="path" type="http.request" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var fs = new FileSystem();
+
+var options = {recursive: true};
+
+var dirPath = path.postvalues.path;
+var ret = fs.listDirectory(dirPath, options);
+
+var result=[];
+for(var i=0;i<ret.length;i++) {
+	result.push(ret[i].name);
+}
+
+return result;]]></code>
+</script>

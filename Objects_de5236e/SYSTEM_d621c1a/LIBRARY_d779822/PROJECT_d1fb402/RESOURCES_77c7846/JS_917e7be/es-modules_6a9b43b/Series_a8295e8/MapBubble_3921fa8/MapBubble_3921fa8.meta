@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/MapBubble
+NodeClass: Object
+BrowseName: 1:MapBubble
+DisplayName: en|MapBubble
+Description: en|MapBubble
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

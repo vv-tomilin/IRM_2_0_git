@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+	<icon type="image/png"></icon>
+	<visible>0</visible>
+	<title>Consistency Handler</title>
+	<description>Handles consistent read and write.</description>
+  </metadata>
+  <code><![CDATA[if (typeof this.data === "undefined") {
+	this.data = { "groups": {}, "storage": [] };
+
+	webMI.trigger.connect("com.atvise.switchedlanguage", function(e) {
+		data.groups = {};
+		data.storage = [];
+	});
+}
+
+var data = this.data;
+
+function register(group, address, update) {
+	if (!data.groups[group])
+		data.groups[group] = [];
+
+	data.groups[group].push({ "address": address, "update": update });
+}
+
+function set(group, address, value) {
+	if (data.groups[group]) {
+		for (var i = 0; i < data.groups[group].length; i++) {
+			if (data.groups[group][i].address == address)
+				data.groups[group][i].value = value;
+		}
+	}
+}
+
+function read(group) {
+	var addresses = [];
+	var entries = [];
+
+	for (var i in data.groups) {
+		if (i == group || !group) {
+			for (var j = 0; j < data.groups[i].length; j++) {
+				addresses.push(data.groups[i][j].address);
+				entries.push(data.groups[i][j]);
+			}
+		}
+	}
+
+	webMI.data.read(addresses, function(e) {
+		for (var i = 0; i < entries.length; i++) {
+			entries[i].value = e[i].value;
+			entries[i].update(e[i].value);
+		}
+	});
+}
+
+function write(group) {
+	if (data.groups[group]) {
+		var addresses = [];
+		var values = [];
+
+		for (var i = 0; i < data.groups[group].length; i++) {
+			addresses.push(data.groups[group][i].address);
+			values.push(data.groups[group][i].value);
+		}
+
+		webMI.data.write(addresses, values);
+	}
+}
+
+function renew() {
+	data.groups = {};
+	data.storage = [];
+}
+
+function push() {
+	data.storage.push(data.groups);
+}
+
+function pop() {
+	data.groups = data.storage.pop();
+}
+
+return {
+	"register": register,
+	"set": set,
+	"read": read,
+	"write": write,
+	"renew": renew,
+	"push": push,
+	"pop": pop
+}]]></code>
+</script>

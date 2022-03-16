@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.AKB.torque_akb
+NodeClass: Variable
+BrowseName: 1:torque_akb
+DisplayName: en|torque_akb
+Description: en|torque_akb
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

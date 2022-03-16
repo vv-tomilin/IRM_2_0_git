@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.wellPadBoard.serviceContractor
+NodeClass: Variable
+BrowseName: 1:serviceContractor
+DisplayName: en|serviceContractor
+Description: en|serviceContractor
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

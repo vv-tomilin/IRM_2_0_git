@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.Pdf
+NodeClass: Object
+BrowseName: 1:Pdf
+DisplayName: en|Pdf
+Description: en|Pdf
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

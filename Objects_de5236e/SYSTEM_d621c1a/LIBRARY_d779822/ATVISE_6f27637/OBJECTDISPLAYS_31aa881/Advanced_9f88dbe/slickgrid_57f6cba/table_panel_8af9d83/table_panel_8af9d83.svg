@@ -1,0 +1,444 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="580" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="640" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2">
+	<defs/>
+	<desc>Base element for the HTML table</desc>
+	<title>Table panel</title>
+	<metadata>
+		<!-- ... mandatorys ... -->
+		<atv:parameter name="tableID" behavior="mandatory" defaultvalue="atvise_table_1" substitute="$tableID$" desc="table ID" valuetype="string"/>
+		<atv:parameter group="" name="header_height" behavior="optional" defaultvalue="30" desc="table header height" valuetype="number"/>
+		<atv:parameter group="" name="header_text_size" behavior="optional" defaultvalue="14" desc="table header font size" valuetype="number"/>
+		<atv:parameter group="" name="header_text_horizontal" behavior="optional" config="center; inherit" defaultvalue="inherit" desc="table header cell align horizontal" valuetype="enum"/>
+		<atv:parameter group="" name="header_text_vertical" behavior="optional" config="center; inherit" defaultvalue="center" desc="table header cell align vertical" valuetype="enum"/>
+		<atv:parameter group="" name="row_height" behavior="optional" defaultvalue="20" desc="table row height" valuetype="number"/>
+		<atv:parameter group="" name="row_text_size" behavior="optional" defaultvalue="12" desc="table row font size" valuetype="number"/>
+		<atv:parameter group="" name="detail_text_size" behavior="optional" defaultvalue="12" desc="table detail font size" valuetype="number"/>
+		<atv:parameter group="" name="footer_text_size" behavior="optional" defaultvalue="12" desc="table footer font size" valuetype="number"/>
+		<!-- ... font ... -->
+		<atv:parameter group="Appearance" name="font_family" behavior="optional" config="Arial;Courier;Tahoma;Verdana" defaultvalue="Arial" desc="font family" valuetype="enum"/>
+		<atv:parameter group="Appearance" name="globalBorderColor" behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvBorderColor" desc="global border colors" valuetype="global"/>
+		<atv:parameter group="Appearance" name="globalFillColor" behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvFillColor" desc="global fill colors" valuetype="global"/>
+		<atv:parameter group="Appearance" name="globalFontColor" behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvFontColor" desc="global font colors" valuetype="global"/>
+		<atv:parameter group="Appearance" name="globalSymbolColor" behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvSymbolColor" desc="global symbol colors" valuetype="global"/>
+		<atv:parameter group="Appearance" name="globalInactiveColor" behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvInactiveColor" desc="global inactive colors" valuetype="global"/>
+		<atv:parameter group="Appearance" name="globalColorConfig" behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvObjectDisplays.Tables.ColorConfig" desc="global table colors" valuetype="global"/>
+		<atv:parameter group="Appearance" name="theme_class" behavior="optional" defaultvalue="atviseTheme" desc="custom theme" valuetype="string"/>
+		<!-- ... options ... -->
+		<atv:parameter group="Options" name="columnReorder" behavior="optional" defaultvalue="true" desc="columns reorderable" valuetype="bool"/>
+		<atv:parameter group="Options" name="responsive" behavior="optional" defaultvalue="true" desc="device responsive" valuetype="bool"/>
+		<atv:parameter group="Options" name="paging" behavior="optional" defaultvalue="true" desc="paging" valuetype="bool"/>
+		<atv:parameter group="Options" name="filterBar" behavior="optional" defaultvalue="true" desc="filter bar enabled" valuetype="bool"/>
+		<atv:parameter group="Options" name="filterRegExp" behavior="optional" defaultvalue="false" desc="filter regular expressions" valuetype="bool"/>
+		<atv:parameter group="Options" name="filterStar" behavior="optional" defaultvalue="false" desc="filter use placeholder" valuetype="bool"/>
+		<atv:parameter group="Options" name="filterCaseSensitive" behavior="optional" defaultvalue="false" desc="filter case sensitive" valuetype="bool"/>
+		<atv:parameter group="Options" name="filterLength" behavior="optional" defaultvalue="1" desc="filter minimum length" valuetype="number"/>
+		<atv:parameter group="Options" name="filterDelay" behavior="optional" defaultvalue="1000" desc="filter delay [ms]" valuetype="number"/>
+		<atv:parameter group="Options" name="showMode" behavior="optional" defaultvalue="true" desc="show runtime mode" valuetype="bool"/>
+		<atv:parameter group="Options" name="linebreak" behavior="optional" defaultvalue="false" desc="cell linebreak" valuetype="bool"/>
+		<atv:parameter group="Options" name="multiselect" behavior="optional" defaultvalue="true" desc="multiselect" valuetype="bool"/>
+		<atv:parameter group="Options" name="multicellselect" behavior="optional" defaultvalue="false" desc="multiselect on cell click" valuetype="bool"/>
+		<atv:parameter group="Options" name="allowDirectInput" behavior="optional" defaultvalue="true" desc="allow direct input" valuetype="bool"/>
+		<!-- menu -->
+		<atv:parameter group="Menu options" name="showMenu" behavior="optional" defaultvalue="true" desc="show menu" valuetype="bool"/>
+		<atv:parameter group="Menu options" name="showMenuWidth" behavior="optional" defaultvalue="250" desc="menu width" valuetype="number"/>
+		<atv:parameter group="Menu options" name="showMenuHeight" behavior="optional" defaultvalue="300" desc="menu height" valuetype="number"/>
+		<atv:parameter group="Menu options" name="showMenuPicker" behavior="optional" defaultvalue="true" desc="show picker menu" valuetype="bool"/>
+		<atv:parameter group="Menu options" name="showMenuFilter" behavior="optional" defaultvalue="true" substitute="" desc="show filter menu" valuetype="bool"/>
+		<atv:parameter group="Menu options" name="showMenuExport" behavior="optional" defaultvalue="true" desc="show export menu" valuetype="bool"/>
+		<atv:gridconfig height="20" gridstyle="lines" enabled="false" width="20"/>
+		<atv:snapconfig height="10" enabled="false" width="10"/>
+	</metadata>
+	<foreignObject height="580" y="0" width="640" atv:bindbr="1,1" id="id_1" atv:bindtl="0,0" x="0">
+		<div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+			<div style="width:100%; height:100%;" id="slick_table_panel_$tableID$"/>
+		</div>
+	</foreignObject>
+	<svg height="20" y="-30" width="20" atv:refpy="-14.5" atv:refpx="10.75" id="iconSelector" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.check" x="0"/>
+	<svg height="20" y="-30" width="20" atv:refpy="-14.5" atv:refpx="31.3" id="iconAction" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.alarmlist.action" x="30"/>
+	<svg height="20" y="-30" width="20" atv:refpy="-7.346" atv:refpx="12.51" id="iconBurger" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.table.burger" x="60"/>
+	<svg height="20" y="-30" width="80" atv:refpy="-20" atv:refpx="130" id="iconMessage" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.slickgrid.table_notification" x="90">
+		<atv:argument name="tableID" prefix="tableID"/>
+		<atv:argument name="font_family" prefix="font_family"/>
+		<atv:argument name="font_size" prefix="row_text_size"/>
+	</svg>
+	<svg height="20" y="-30" width="80" atv:refpy="-20" atv:refpx="220" id="iconInput" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.slickgrid.table_keyboard" x="180">
+		<atv:argument name="tableID" prefix="tableID"/>
+		<atv:argument name="allowDirectInput" value="" prefix="allowDirectInput"/>
+	</svg>
+	<foreignObject height="20" y="5" width="80" id="id_notification" x="540">
+		<div style="width:100%;height:100%;float:right;" xmlns="http://www.w3.org/1999/xhtml">
+			<div style="z-index:10000;background-color:#fff;width:80px;height:20px; float: right;" xmlns="http://www.w3.org/1999/xhtml" id="notification_area"/>
+		</div>
+	</foreignObject>
+	<script type="text/ecmascript"><![CDATA[var translation = {
+	language : "T{}",
+	title_export: "T{Export}",
+	title_command: "T{Filter}",
+	title_picker: "T{Columns}",
+
+	export_csv: "T{All rows with displayed columns}",
+	export_csv_wh: "T{All rows with all columns}",
+	export_csv_m: "T{Marked rows with displayed columns}",
+	export_csv_mwh: "T{Marked rows with all columns}",
+
+	filter_show_hide : "T{Show or hide filter}",
+	filter_clear : "T{Reset filter}",
+	sort_clear : "T{Reset sorting}",
+
+	tooltip_marks: "T{Set/Cancel marks}", // Markierung setzen/aufheben
+	tooltip_details: "T{Details show/hide}", // Details anzeigen/ausblenden
+}
+
+var slickStyler;
+var slickConfigurator;
+
+/**
+ * starting with code for the html table
+ */
+webMI.addOnload(function () {
+    /**
+     * remember for timeouts for unload
+     */
+	var displayTimeouts = [];
+
+
+    /**
+     * Scaling correction for external event listener
+     */
+	var elementForScaleEvents = document.getElementById("slick_table_panel_"+webMI.query["tableID"]);
+	var scaleType = webMI.getConfig("frame.scaletype");
+	if (scaleType == "zoom") {
+        webMI.gfx.setScaledEvents(
+            elementForScaleEvents.parentElement.parentElement,
+            false,
+            false,
+            elementForScaleEvents.parentElement
+        );
+	}
+
+    /**
+     * get the uniqe name of the table
+     */
+    var tableID = webMI.query["tableID"];
+
+    /**
+     * load resources
+     */
+    webMI.table.loadResources(function () {
+
+        /* special for ie11 */
+		function iconInnerHTML(icon, iconClass, dimensions) {
+			var newIcon = icon;
+			newIcon.setAttribute("visibility", "visible");
+			newIcon.setAttribute("viewbox", "0 0 " + icon.getAttribute("width") + " " + icon.getAttribute("height"));
+			if(dimensions) {
+                newIcon.setAttribute("width", dimensions.width);
+                newIcon.setAttribute("height", dimensions.height);
+			}
+			for (var ic in iconClass) {
+				webMI.rootWindow.jQuery(newIcon).addClass(iconClass[ic]);
+			}
+			return webMI.rootWindow.jQuery('<div>').append(webMI.rootWindow.jQuery(newIcon).clone()).html(); // webMI.rootWindow.jQuery(newIcon).outerHTML;
+		}
+
+		/**
+		 * Declaration of some ICONS
+		 * @type {HTMLElement | null}
+		 */
+		var dimensions = {
+		    width: 16,
+		    height: 16,
+		}
+		var iconAction = iconInnerHTML(document.getElementById("iconAction"), ["iconAction","table-icon"], dimensions);
+		var iconSelector = iconInnerHTML(document.getElementById("iconSelector"), ["iconSelector","table-icon"], dimensions);
+		var iconBurger = iconInnerHTML(document.getElementById("iconBurger"), ["iconBurger","table-icon"], dimensions);
+		var iconMessage = iconInnerHTML(document.getElementById("iconMessage"), [], {width: 80, height: 20,});
+
+        /**
+         * prepare config
+         */
+        webMI.table.waitReady(tableID, "config", function () {
+
+            /**
+             * get the query parameter (builder settings)
+             * @type {Array}
+             */
+            var settings = [];
+			var heightMultiplicator = (webMI.getClientInfo() && webMI.query["responsive"] == "true") ? webMI.getClientInfo().deviceScaling.table.rowheight : 1;
+            settings.header_height = webMI.query["header_height"] * heightMultiplicator;
+            settings.header_text_size = webMI.query["header_text_size"];
+			settings.header_text_horizontal = webMI.query["header_text_horizontal"];
+			settings.header_text_vertical = webMI.query["header_text_vertical"];
+            settings.row_height = webMI.query["row_height"] * heightMultiplicator;
+            settings.row_text_size = webMI.query["row_text_size"];
+            settings.detail_text_size = webMI.query["detail_text_size"];
+            settings.footer_text_size = webMI.query["footer_text_size"];
+            settings.font_family = webMI.query["font_family"];
+            settings.theme_class = webMI.query["theme_class"];
+            settings.paging = webMI.query["paging"];
+            settings.filterBar = webMI.query["filterBar"];
+            settings.filterRegExp = webMI.query["filterRegExp"];
+            settings.filterLength = webMI.query["filterLength"];
+            settings.filterDelay = webMI.query["filterDelay"];
+            settings.filterCaseSensitive = webMI.query["filterCaseSensitive"];
+			settings.filterStar = webMI.query["filterStar"];
+            settings.linebreak = webMI.query["linebreak"];
+			settings.multiselect = webMI.query["multiselect"];
+			settings.multicellselect = webMI.query["multicellselect"];
+            settings.columnReorder = webMI.query["columnReorder"];
+            settings.showMenu = webMI.query["showMenu"];
+            settings.showMenuWidth = webMI.query["showMenuWidth"];
+            settings.showMenuHeight = webMI.query["showMenuHeight"];
+            settings.showMenuPicker = webMI.query["showMenuPicker"];
+            settings.showMenuFilter = webMI.query["showMenuFilter"];
+            settings.showMenuExport = webMI.query["showMenuExport"];
+			settings.showMode = webMI.query["showMode"];
+            settings.icons = [];
+            settings.icons.selector = typeof iconSelector == "undefined" ? false : iconSelector;
+            settings.icons.action = typeof iconAction == "undefined" ? false : iconAction;
+            settings.icons.burger = typeof iconBurger == "undefined" ? false : iconBurger;
+			settings.notification = document.getElementById("notification_area").getAttribute("id");
+			settings.translation = translation;
+
+            /**
+             * add colors from global table color config
+             */
+            for (var key in webMI.query["globalColorConfig"]) {
+                var value = webMI.query["globalColorConfig"][key];
+                if (typeof value.color != "undefined")
+                    settings[key] = value.color;
+            }
+
+            /**
+             * check for optional styling parameter, set in the parent display
+             * if found, add or overwrite current settings
+             */
+            var styling = webMI.table.request(tableID, "styling");
+            for (var key in styling) {
+                var value = styling[key];
+                if (typeof value != "undefined")
+                    settings[key] = value;
+            }
+
+            /**
+             * get fallback settings from global configurations
+             * @type {Array}
+             */
+            var fallback = [];
+            fallback.globalBorderColor = webMI.query["globalBorderColor"];
+            fallback.globalFillColor = webMI.query["globalFillColor"];
+            fallback.globalFontColor = webMI.query["globalFontColor"];
+            fallback.globalSymbolColor = webMI.query["globalSymbolColor"];
+			fallback.globalInactiveColor = webMI.query["globalInactiveColor"];
+
+            /**
+             * get the configuration for mode, request and optionals from parent
+			 * and pass it to the slickConfigurator to build a valid config
+             */
+            var parentConfig = webMI.table.request(tableID, "config");
+			var slickConfigurator = new webMI.rootWindow.SlickConfigurator(parentConfig, settings, fallback);
+			var config = slickConfigurator.getConfig();
+
+            /**
+             * get own container id
+             */
+            if (!config["containerID"]) {
+                config["containerID"] = document.getElementById("slick_table_panel_"+webMI.query["tableID"]).getAttribute("id");
+            }
+
+            /**
+             * register all for other components
+             */
+            webMI.table.register(webMI.query["tableID"], "ControllerConfig", config);
+            webMI.table.setReady(webMI.query["tableID"], "ControllerConfig");
+
+            /**
+			 * Prepare Data- and tableController
+             * @type {config}
+             */
+            var dataController = new webMI.rootWindow.DataController();
+			var tableController = new webMI.rootWindow.SlickController(dataController, config);
+			webMI.table.register(tableID, "controller", tableController);
+
+            /**
+             * Generate CSS
+             */
+			slickStyler = new webMI.rootWindow.SlickStyler();
+			tableController.init(function () {
+				slickStyler.generate(config["containerID"], config.style);
+                webMI.table.setReady(tableID, "controller");
+            });
+
+            /**
+			 * Add some dialogs to the tableController
+             * @type {Array}
+             */
+            var dialogs = (new webMI.rootWindow.SlickDialogs()).getDialogs();
+			tableController.dialogs = [];
+			tableController.dialogs.continuation = [];
+			tableController.dialogs.continuation.search = function () {
+                return _openDialog(dialogs.continuation.search("T{}"))
+            };
+			tableController.dialogs.continuation.filter = function () {
+                return _openDialog(dialogs.continuation.filter("T{}"))
+            };
+
+			tableController.dialogs.sorting = [];
+			tableController.dialogs.sorting.running = function () {
+                return _openDialog(dialogs.sorting.running("T{}"))
+            };
+
+			tableController.dialogs.triggered = [];
+			tableController.dialogs.triggered.search = function () {
+                return _openDialog(dialogs.triggered.search("T{}"))
+            };
+			tableController.dialogs.triggered.filter = function () {
+                return _openDialog(dialogs.triggered.filter("T{}"))
+            };
+
+			/**
+			 * Add message icon to notification_area and configure listener
+			 */
+			webMI.rootWindow.jQuery("#" + settings.notification).append(webMI.rootWindow.jQuery(iconMessage).clone()).html();
+			webMI.addEvent("notification_area", "click", function(e) {
+				tableController.notification.handleEvent(e, null);
+			});
+
+			/**
+             * Hide show notification button
+             */
+
+			var panel = []
+			panel.element =  document.getElementById("slick_table_panel_"+webMI.query["tableID"]);
+			panel.width = panel.element.offsetWidth;
+
+			var noteButton = [];
+			noteButton.element =  document.getElementById("id_notification");
+			noteButton.top = noteButton.element.style.top;
+			tableController.hideNotificatonButton = function () {
+				noteButton.element.style.top = "-100px";
+				noteButton.element.style.display  = "none";
+			}
+			tableController.showNotificatonButton = function () {
+				noteButton.element.style.top = noteButton.top;
+				var nbWidth =  noteButton.element.style.width.replace("px", "");
+				var nbLeft =  noteButton.element.style.left.replace("px", "");
+				if(nbLeft > (panel.width - 80 - 25)) {
+					nbLeft = panel.width - 80 - 25;
+					noteButton.element.style.left = nbLeft +"px";
+				}
+				if(nbWidth < 80){
+					noteButton.element.style.width = "80px";
+				}
+				noteButton.element.style.display  = "block";
+				
+				/* correction for parent */
+				var noteArea = document.getElementById("notification_area");
+				var areaLeft = parseInt(noteArea.parentElement.parentElement.style.left, 10);
+				var areaWidth = parseInt(noteArea.parentElement.parentElement.style.width, 10);
+				var areaOffset = areaWidth - 80;
+				noteArea.parentElement.parentElement.style.left = areaLeft + areaOffset + "px";
+				noteArea.parentElement.parentElement.style.width = 80 + "px";
+			}
+			tableController.hideNotificatonButton();
+
+
+            /**
+             * Add some trigger for trigger mode
+             */
+            webMI.trigger.connect("triggerStopRequests", function (e) {
+                e.value.close();
+				tableController.triggerStopRequests();
+            });
+            webMI.trigger.connect("triggerForceRequests", function (e) {
+                e.value.close();
+				tableController.triggerForceRequests();
+            });
+
+            /**
+             * Start the requests!
+             */
+			tableController.startDataRequest();
+
+            /**
+             * A small fix for the UI due to asynchronous sizing in conjunction with transformations
+             */
+			tableController.resizeTable = function () {
+			    displayPanelResizeTimeout = setTimeout(function () {
+					tableController.resize({});
+                }, 250);
+				displayTimeouts.push(displayPanelResizeTimeout);
+			}
+			webMI.rootWindow.addEventListener('resize', tableController.resizeTable);
+
+            /**
+             * cleanup @ unload
+             */
+            webMI.addOnunload(
+                function () {
+					webMI.rootWindow.removeEventListener('resize', tableController.resizeTable);
+
+					/* remove functions */
+					tableController.hideNotificatonButton();
+					tableController.showNotificatonButton = undefined;
+					tableController.hideNotificatonButton = undefined;
+					tableController.dialogs = undefined;
+					tableController.resizeTable = undefined;
+
+					slickConfigurator = undefined;
+					delete slickConfigurator;
+
+					try {
+						slickStyler.unload();
+						slickStyler = undefined;
+						delete slickStyler;
+                	} catch(ex) {
+                		/* allready unset */
+                	}
+
+					tableController.destroy();
+			        for(var to in displayTimeouts){
+			            if(displayTimeouts[to] != null) {
+			                clearTimeout(displayTimeouts[to]);
+			            }
+			        }
+                }
+            );
+        });
+
+    });
+});
+
+/**
+ * simple open dialogs
+ * @param parameter
+ * @returns {Promise<WindowClient> | *}
+ * @private
+ */
+function _openDialog(parameter) {
+    var w = 400;
+    var h = 250;
+    var id = webMI.display.openWindow(
+        {
+            display: parameter.display, // "SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dialogs.message_dialog",
+            height: h, width: w,
+            modal: true,
+            resizable: false,
+            movable: true,
+            scrollbars: false,
+            menubar: false,
+            status: false,
+            toolbar: false,
+            query: {
+                headline: parameter.headline,
+                msg1: parameter.msg1,
+                msg2: parameter.msg2,
+                btn1: parameter.btn1,
+                btn2: parameter.btn2,
+                action_btn2: parameter.action_btn2
+            }
+        });
+    return id;
+}
+]]></script>
+</svg>

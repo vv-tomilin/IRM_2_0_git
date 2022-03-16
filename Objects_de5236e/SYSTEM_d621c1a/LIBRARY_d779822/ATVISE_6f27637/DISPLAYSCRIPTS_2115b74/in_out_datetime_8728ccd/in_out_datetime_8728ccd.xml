@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <code><![CDATA[/**
+ * Code for the in_out_datetime object display
+ * -------------------------------------------
+ * This control allows to enter a whole date/time combination.
+ * In addition the trigger "valuechanged" will be fired.
+ */
+
+
+/**
+ * DECLARATION SECTION
+ */
+
+//parameters
+var base = (webMI.query["base"] == undefined) ? "" : webMI.query["base"];
+var outputNode = webMI.query["outputNode"];
+var consistencyGroup = webMI.query["consistencyGroup"];
+
+//variables
+var _value = new Date().getTime();
+
+if (consistencyGroup)
+	var consistencyHandler = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Consistency Handler");
+
+/**
+ * RUNTIME SECTION
+ */
+
+var rightsHandlingProperties = {
+	right: right,
+	checkBaseNodeWriteRight: false,
+	isActivationNodeSet: null,
+	notifierConfiguration: {"id":"time", "node_1": webMI.query["base"], "right_1": "read"},
+	setActiveTrigger: false,
+	handleStatus: false
+};
+
+if (typeof rightsHandling === "function") rightsHandling(rightsHandlingProperties);
+
+//subscribe to node
+if (base != "") {
+	if (consistencyGroup) {
+		consistencyHandler.register(consistencyGroup, base, update);
+	} else {
+		webMI.data.subscribe(base, function(e) {
+			setDate(e.value);
+			updateDisplay();
+		});
+	}
+//no base defined
+} else {
+	//display initial value
+	updateDisplay();
+}
+
+/**
+ * FUNCTION SECTION
+ */
+
+//update display
+function updateDisplay() {
+	webMI.trigger.fire("setValue", _value, "date");
+	webMI.trigger.fire("setValue", _value, "time");
+}
+
+//set date
+function setDate(date) {
+	_value = date;
+}
+
+//value has been changed by display
+function valueUpdated(fireTrigger) {
+	//update node
+	if (base != "" && !consistencyGroup) {
+		webMI.data.write(base, _value);
+	}
+
+	if (outputNode) {
+		webMI.data.write(outputNode, _value);
+	}
+	
+	//fire trigger
+	if (fireTrigger) {
+		webMI.trigger.fire("valuechanged", _value, "");
+	}
+
+	//update consistency value
+	if (consistencyGroup)
+		consistencyHandler.set(consistencyGroup, base, _value);
+}
+
+//update externally by trigger or consistency handler
+function update(value) {
+	setDate(value);
+	//valueUpdated(false);
+
+	//update displayed values only
+	if ((base == "") || (base == undefined) || consistencyGroup) {
+		updateDisplay();
+	}
+}
+
+function setActiveLayout() {
+}
+
+function setInactiveLayout() {
+}
+
+/*
+-----------------
+---- TRIGGERS ----
+-----------------
+*/
+
+//connect to valuechanged-triggers
+webMI.trigger.connect("valuechanged", function(e) { 
+	setDate(e.value); 
+	webMI.trigger.fire("updateDate", _value, "time"); 
+	valueUpdated(true); 
+}, "date");
+
+webMI.trigger.connect("valuechanged", function(e) { 
+	setDate(e.value); 
+	webMI.trigger.fire("updateTime", _value, "date"); 
+	valueUpdated(true);
+}, "time");
+
+//connect to setValue-trigger
+webMI.trigger.connect("setValue", function(e) {
+	update(e.value);
+});]]></code>
+</script>

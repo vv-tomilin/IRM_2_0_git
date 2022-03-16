@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.TDS.Discrete.PipeClamp
+NodeClass: Variable
+BrowseName: 1:PipeClamp
+DisplayName: en|PipeClamp
+Description: en|PipeClamp
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

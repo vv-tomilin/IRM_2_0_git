@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Presentation.APD.SubStatusASPD
+NodeClass: Variable
+BrowseName: 1:SubStatusASPD
+DisplayName: en|SubStatusASPD
+Description: en|SubStatusASPD
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

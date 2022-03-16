@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.Doloto
+NodeClass: Variable
+BrowseName: 1:Doloto
+DisplayName: en|Doloto
+Description: en|Doloto
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

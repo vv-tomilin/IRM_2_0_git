@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" height="50" width="100" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:parameter defaultvalue="" name="maxValue" desc="maxValue" valuetype="address" behavior="optional"/>
+  <atv:gridconfig enabled="false" height="20" gridstyle="lines" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <svg y="-150" atv:refpy="-50" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Test.test_bar_2" id="id_2" height="200" atv:refpx="50" width="400" x="-150">
+  <atv:argument name="NeedAngle" value="15"/>
+  <atv:argument name="base" prefix="base"/>
+  <atv:argument name="MaxValue" prefix="maxValue"/>
+ </svg>
+</svg>

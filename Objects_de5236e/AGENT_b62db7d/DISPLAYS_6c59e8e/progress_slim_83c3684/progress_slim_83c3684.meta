@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.progress_slim
+NodeClass: Variable
+BrowseName: 1:progress_slim
+DisplayName: en|progress_slim
+Description: en|progress_slim
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

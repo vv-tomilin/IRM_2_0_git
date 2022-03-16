@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/GGD_page/ГГД_МАКЕТ_ВАР_2.png
+NodeClass: Variable
+BrowseName: 1:ГГД_МАКЕТ_ВАР_2.png
+DisplayName: en|ГГД_МАКЕТ_ВАР_2.png
+Description: en|ГГД_МАКЕТ_ВАР_2.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

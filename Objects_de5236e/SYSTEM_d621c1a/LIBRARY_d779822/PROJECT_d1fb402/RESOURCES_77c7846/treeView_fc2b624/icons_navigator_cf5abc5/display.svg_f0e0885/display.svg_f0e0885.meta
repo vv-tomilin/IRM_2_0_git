@@ -1,0 +1,11 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/treeView/icons_navigator/display.svg
+NodeClass: Variable
+BrowseName: 1:display.svg
+DisplayName: en|display.svg
+Description: en|display.svg
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Svg
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Svg.Compress
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Svg.Translate

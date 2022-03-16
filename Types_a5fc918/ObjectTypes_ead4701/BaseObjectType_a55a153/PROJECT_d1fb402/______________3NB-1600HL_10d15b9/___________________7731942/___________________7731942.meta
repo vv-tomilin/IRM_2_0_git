@@ -1,0 +1,8 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Буровой насос 3NB-1600HL.Динамическая часть
+NodeClass: Object
+BrowseName: 1:Динамическая часть
+DisplayName: en|Динамическая часть
+Description: en|Динамическая часть
+EventNotifier: 0
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Малый шкив в сборе
+NodeClass: ObjectType
+BrowseName: 1:Малый шкив в сборе
+DisplayName: en|Малый шкив в сборе
+Description: en|Малый шкив в сборе
+IsAbstract: false

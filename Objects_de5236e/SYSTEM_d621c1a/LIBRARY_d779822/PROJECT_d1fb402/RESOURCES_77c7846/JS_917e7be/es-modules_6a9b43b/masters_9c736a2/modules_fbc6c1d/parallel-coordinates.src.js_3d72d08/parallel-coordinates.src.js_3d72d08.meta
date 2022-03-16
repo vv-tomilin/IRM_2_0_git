@@ -1,0 +1,10 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/masters/modules/parallel-coordinates.src.js
+NodeClass: Variable
+BrowseName: 1:parallel-coordinates.src.js
+DisplayName: en|parallel-coordinates.src.js
+Description: en|parallel-coordinates.src.js
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Javascript
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Javascript.Compress

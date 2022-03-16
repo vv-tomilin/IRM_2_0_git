@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.DrillPumps.SumDrillPumpsConsumption
+NodeClass: Variable
+BrowseName: 1:SumDrillPumpsConsumption
+DisplayName: en|SumDrillPumpsConsumption
+Description: en|SumDrillPumpsConsumption
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

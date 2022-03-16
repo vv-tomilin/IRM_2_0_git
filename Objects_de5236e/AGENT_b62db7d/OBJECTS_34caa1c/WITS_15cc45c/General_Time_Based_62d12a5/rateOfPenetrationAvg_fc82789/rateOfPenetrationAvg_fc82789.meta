@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.General_Time_Based.rateOfPenetrationAvg
+NodeClass: Variable
+BrowseName: 1:rateOfPenetrationAvg
+DisplayName: en|rateOfPenetrationAvg
+Description: en|rateOfPenetrationAvg
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

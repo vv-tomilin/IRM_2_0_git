@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Settings_param.Graph.liveTik.liveTik
+NodeClass: Variable
+BrowseName: 1:liveTik
+DisplayName: en|liveTik
+Description: en|liveTik
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

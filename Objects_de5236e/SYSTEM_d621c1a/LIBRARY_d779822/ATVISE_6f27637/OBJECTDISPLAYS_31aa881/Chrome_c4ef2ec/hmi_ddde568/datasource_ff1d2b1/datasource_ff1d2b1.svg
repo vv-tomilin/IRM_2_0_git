@@ -1,0 +1,812 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" width="1280" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext" height="680">
+ <defs>
+  <linearGradient y1="0.0151344" id="linear_12" y2="0.938184" gradientUnits="objectBoundingBox" x1="1.00116" x2="1.00116">
+   <stop stop-color="#d2d2d6" offset="0"/>
+   <stop stop-color="#ffffff" offset="0.3318385650224215"/>
+   <stop stop-color="#2c2c3c" offset="0.3856502242152466"/>
+   <stop stop-color="#adadad" offset="1"/>
+  </linearGradient>
+  <linearGradient y1="0.01782" id="linear_76" y2="1" gradientUnits="objectBoundingBox" x1="1" x2="1">
+   <stop stop-color="#000000" offset="0.5807860262008734"/>
+   <stop stop-color="#656565" offset="1"/>
+  </linearGradient>
+  <linearGradient y1="0.01782" id="linear_90" y2="1" gradientUnits="objectBoundingBox" x1="1" x2="1">
+   <stop stop-color="#4b4b4b" offset="0.01746724890829694"/>
+   <stop stop-color="#e6e6e6" offset="1"/>
+  </linearGradient>
+  <linearGradient y1="-0.0183441" id="linear_105" y2="1" gradientUnits="objectBoundingBox" x1="1" x2="1">
+   <stop stop-color="#ededed" offset="0"/>
+   <stop stop-color="#d1d1d1" offset="1"/>
+  </linearGradient>
+  <linearGradient y1="0.0149254" id="linear_107" y2="1" gradientUnits="objectBoundingBox" x1="1" x2="1">
+   <stop stop-color="#ffffff" stop-opacity="0.392156862745098" offset="0"/>
+   <stop stop-color="#ffffff" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient y1="0.036325" id="linear_108" y2="1" gradientUnits="objectBoundingBox" x1="1" x2="1">
+   <stop stop-color="#000000" offset="0.1703056768558952"/>
+   <stop stop-color="#c2c2c2" offset="1"/>
+  </linearGradient>
+  <linearGradient y1="-0.0183441" id="linear_109" y2="1" gradientUnits="objectBoundingBox" x1="1" x2="1">
+   <stop stop-color="#494949" offset="0"/>
+   <stop stop-color="#000000" offset="1"/>
+  </linearGradient>
+  <linearGradient y1="0.0341922" id="linear_110" y2="1" gradientUnits="objectBoundingBox" x1="1" x2="1">
+   <stop stop-color="#000000" offset="0"/>
+   <stop stop-color="#ffffff" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <radialGradient cx="0.5" r="0.574373" id="radial_114" gradientUnits="objectBoundingBox" fx="0.5" cy="0.5" fy="0.5">
+   <stop stop-color="#000000" stop-opacity="0" offset="0.5152838427947598"/>
+   <stop stop-color="#000000" stop-opacity="0.6078431372549019" offset="0.8253275109170306"/>
+   <stop stop-color="#000000" offset="1"/>
+  </radialGradient>
+  <linearGradient y1="1.01511" id="linear_0" y2="-0.0183441" gradientUnits="objectBoundingBox" x1="0.443189" x2="0.443189">
+   <stop stop-color="#646464" offset="0.5065502183406113"/>
+   <stop stop-color="#d0d0d0" offset="1"/>
+  </linearGradient>
+ </defs>
+ <desc>Shows the connection state of a datasource.</desc>
+ <title>Datasource state</title>
+ <metadata>
+  <atv:parameter config="AGENT.DATASOURCES" behavior="mandatory" defaultvalue="" valuetype="address" desc="address of datasource" name="datasource_address" substitute=""/>
+  <atv:gridconfig enabled="false" width="10" gridstyle="lines" height="10"/>
+  <atv:snapconfig enabled="false" width="10" height="10"/>
+ </metadata>
+ <g id="id_476" atv:refpx="278.516" atv:refpy="501.235" transform="matrix(1.1157,0,0,1.1157,-877.3942,-121.6673)">
+  <polyline stroke-width="2" id="primary_alternative3" atv:refpx="965" stroke="#6a6a6a" atv:refpy="500" fill="none" points="1071,650 1031,650 1031,411 1001,411"/>
+  <polyline stroke-width="2" id="primary_alternative2" atv:refpx="965" stroke="#6a6a6a" atv:refpy="480" fill="none" points="1071,610 1031,610 1031,411 1001,411"/>
+  <polyline stroke-width="2" id="primary_alternative1" atv:refpx="965" stroke="#6a6a6a" atv:refpy="460" fill="none" points="1071,570 1031,570 1031,411 1001,411"/>
+  <polyline stroke-width="2" id="primary_source" atv:refpx="965" stroke="#6a6a6a" atv:refpy="460" fill="none" points="1071,530 1031,530 1031,411 1001,411"/>
+ </g>
+ <rect ry="4.463" stroke-width="0" id="id_305" atv:refpx="640.017" width="647.131" rx="4.463" x="316.452" stroke="none" y="40.116" height="602.502" atv:refpy="372.367" fill="url(#linear_12)"/>
+ <rect ry="4.38" stroke-width="1" id="id_307" atv:refpx="640.017" width="635.974" rx="4.386" x="322.03" stroke="#000000" y="45.694" height="591.344" atv:refpy="372.366" fill="url(#linear_0)"/>
+ <path stroke-width="0" id="id_477" atv:refpx="640.017" stroke="none" d="M394.553,39L394.553,46.81L416.868,46.81L472.655,102.597L807.379,102.597L863.166,46.81L885.481,46.81L885.481,39Z" atv:refpy="100.125" fill="url(#linear_109)"/>
+ <rect ry="2.343" stroke-width="1" id="id_329" atv:refpx="640.017" width="613.658" rx="3.347" x="333.188" stroke="#000000" y="139.279" height="39.051" atv:refpy="167.489" fill="url(#linear_105)"/>
+ <g id="id_324" atv:refpx="640.017" atv:refpy="151.262" transform="matrix(1.1157,0,0,1.1157,-71.1783,-80.3847)">
+  <rect stroke-width="0" id="id_313" atv:refpx="-1373.596" width="550" x="362.418" stroke="none" y="178.439" height="2.785" atv:refpy="-215.567" fill="url(#linear_90)"/>
+  <rect stroke-width="0" id="id_317" atv:refpx="-1373.596" width="550" x="362.418" stroke="none" y="172.085" height="2.785" atv:refpy="-221.921" fill="url(#linear_90)"/>
+  <rect stroke-width="0" id="id_320" atv:refpx="-1373.596" width="550" x="362.418" stroke="none" y="184.794" height="2.785" atv:refpy="-209.212" fill="url(#linear_90)"/>
+ </g>
+ <text font-family="Arial" id="datasource_name" font-weight="bold" atv:refpx="641.851" x="639.265" y="77.225" font-size="14" text-anchor="middle" atv:refpy="75.287" fill="#ffffff" transform="matrix(1.1157,0,0,1.1157,-73.2387,-6.9707)">-</text>
+ <text font-family="Arial" id="id_328" atv:refpx="699.062" x="766.244" y="161.089" font-size="10" text-anchor="end" atv:refpy="158.804" fill="#000000" transform="matrix(1.1157,0,0,1.1157,-70.5163,-17.0248)">T{Behaviour of alternative URLs}</text>
+ <rect ry="3.347" stroke-width="0.5" id="id_330" atv:refpx="867.568" width="129.867" rx="4.02" x="802.634" stroke="#a5a5a5" y="147.647" height="22.315" atv:refpy="167.489" fill="#ffffff"/>
+ <text font-family="Arial" id="behaviour_urls" atv:refpx="922.991" x="924.496" y="161.089" font-size="10" text-anchor="end" atv:refpy="158.804" fill="#000000" transform="matrix(1.1157,0,0,1.1157,-106.2524,-17.0248)">-</text>
+ <rect ry="2.343" stroke-width="1" id="id_335" atv:refpx="640.017" width="613.658" rx="3.347" x="333.188" stroke="#000000" y="184.864" height="39.051" atv:refpy="213.074" fill="url(#linear_105)"/>
+ <text font-family="Arial" id="id_336" atv:refpx="734.765" x="774.21" y="206.674" font-size="10" text-anchor="end" atv:refpy="204.389" fill="#000000" transform="matrix(1.1157,0,0,1.1157,-78.8458,-22.301)">T{Switching Mode}</text>
+ <rect ry="3.347" stroke-width="0.5" id="id_337" atv:refpx="867.569" width="129.867" rx="4.02" x="802.635" stroke="#a5a5a5" y="193.232" height="22.315" atv:refpy="213.074" fill="#ffffff"/>
+ <text font-family="Arial" id="switching_mode" atv:refpx="924.03" x="925.055" y="206.674" font-size="10" text-anchor="end" atv:refpy="204.389" fill="#000000" transform="matrix(1.1157,0,0,1.1157,-106.3171,-22.301)">-</text>
+ <g id="id_340" atv:refpx="640.017" atv:refpy="253.763" transform="matrix(1.1157,0,0,1.1157,-71.1778,44.4319)">
+  <rect stroke-width="0" id="id_341" atv:refpx="-1373.596" width="550" x="362.418" stroke="none" y="178.439" height="2.785" atv:refpy="-215.567" fill="url(#linear_90)"/>
+  <rect stroke-width="0" id="id_342" atv:refpx="-1373.596" width="550" x="362.418" stroke="none" y="172.085" height="2.785" atv:refpy="-221.921" fill="url(#linear_90)"/>
+  <rect stroke-width="0" id="id_343" atv:refpx="-1373.596" width="550" x="362.418" stroke="none" y="184.794" height="2.785" atv:refpy="-209.212" fill="url(#linear_90)"/>
+ </g>
+ <g id="redu_status_info" atv:refpx="640.017" atv:refpy="369.47" transform="matrix(1.1157,0,0,1.1157,-74.0586,-87.0792)">
+  <text font-family="Arial" id="id_344" font-weight="bold" atv:refpx="665.299" x="640" y="332.75" font-size="10" text-anchor="middle" atv:refpy="329.25" fill="#ffffff">T{DATASOURCE BEHAVIOUR}</text>
+  <rect ry="2.1" stroke-width="1" id="id_345" atv:refpx="779.722" width="270.557" rx="1.476" x="644.443" stroke="#000000" y="343.396" height="35" atv:refpy="340.896" fill="url(#linear_105)"/>
+  <text font-family="Arial" id="id_346" atv:refpx="758.419" x="768.919" y="364.396" font-size="10" text-anchor="end" atv:refpy="360.896" fill="#000000">T{SOP}</text>
+  <rect ry="3" stroke-width="0.5" id="id_347" atv:refpx="885.254" width="116.395" rx="3.603" x="785.747" stroke="#a5a5a5" y="350.896" height="20" atv:refpy="354.848" fill="#ffffff"/>
+  <text font-family="Arial" id="connectivity_server_sop" atv:refpx="894.549" x="896.142" y="364.396" font-size="10" text-anchor="end" atv:refpy="360.896" fill="#000000">-</text>
+  <rect ry="2.1" stroke-width="1" id="id_369" atv:refpx="779.722" width="270.557" rx="1.476" x="365" stroke="#000000" y="343.396" height="35" atv:refpy="340.896" fill="url(#linear_105)"/>
+  <text font-family="Arial" id="id_370" atv:refpx="445.582" x="490.476" y="364.396" font-size="10" text-anchor="end" atv:refpy="362.025" fill="#000000">T{Active}</text>
+  <rect ry="3" stroke-width="0.5" id="id_371" atv:refpx="885.254" width="116.395" rx="3.603" x="506.304" stroke="#a5a5a5" y="350.896" height="20" atv:refpy="354.848" fill="#ffffff"/>
+  <text font-family="Arial" id="connectivity_server_active" atv:refpx="606.483" x="616.7" y="364.396" font-size="10" text-anchor="end" atv:refpy="362.025" fill="#000000">-</text>
+  <rect ry="2.1" stroke-width="1" id="id_374" atv:refpx="779.722" width="270.557" rx="1.476" x="644.443" stroke="#000000" y="384.413" height="35" atv:refpy="340.896" fill="url(#linear_105)"/>
+  <text font-family="Arial" id="id_375" atv:refpx="737.333" x="769.919" y="405.413" font-size="10" text-anchor="end" atv:refpy="394.171" fill="#000000">T{SNOP}</text>
+  <rect ry="3" stroke-width="0.5" id="id_376" atv:refpx="885.254" width="116.395" rx="3.603" x="785.747" stroke="#a5a5a5" y="391.913" height="20" atv:refpy="354.848" fill="#ffffff"/>
+  <text font-family="Arial" id="connectivity_server_snop" atv:refpx="889.361" x="896.142" y="405.413" font-size="10" text-anchor="end" atv:refpy="394.171" fill="#000000">-</text>
+  <rect ry="2.1" stroke-width="1" id="id_379" atv:refpx="779.722" width="270.557" rx="1.476" x="365" stroke="#000000" y="384.413" height="35" atv:refpy="340.896" fill="url(#linear_105)"/>
+  <text font-family="Arial" id="id_380" atv:refpx="415.972" x="490.476" y="405.413" font-size="10" text-anchor="end" atv:refpy="395.945" fill="#000000">T{Passive}</text>
+  <rect ry="3" stroke-width="0.5" id="id_381" atv:refpx="885.254" width="116.395" rx="3.603" x="506.304" stroke="#a5a5a5" y="391.913" height="20" atv:refpy="354.848" fill="#ffffff"/>
+  <text font-family="Arial" id="connectivity_server_passive" atv:refpx="601.295" x="616.701" y="405.413" font-size="10" text-anchor="end" atv:refpy="395.945" fill="#000000">-</text>
+ </g>
+ <g id="id_384" atv:refpx="638.596" atv:refpy="403.416" transform="matrix(1.1157,0,0,1.1157,-71.1778,199.6625)">
+  <rect stroke-width="0" id="id_385" atv:refpx="-1373.596" width="550" x="362.418" stroke="none" y="178.439" height="2.785" atv:refpy="-215.567" fill="url(#linear_90)"/>
+  <rect stroke-width="0" id="id_386" atv:refpx="-1373.596" width="550" x="362.418" stroke="none" y="172.085" height="2.785" atv:refpy="-221.921" fill="url(#linear_90)"/>
+  <rect stroke-width="0" id="id_387" atv:refpx="-1373.596" width="550" x="362.418" stroke="none" y="184.794" height="2.785" atv:refpy="-209.212" fill="url(#linear_90)"/>
+ </g>
+ <text font-family="Arial" id="id_388" font-weight="bold" atv:refpx="657.385" x="634.983" y="437.795" font-size="10" text-anchor="middle" atv:refpy="435.51" fill="#ffffff" transform="matrix(1.1157,0,0,1.1157,-68.4605,-49.0521)">T{CONNECTION}</text>
+ <rect ry="2.343" stroke-width="1" id="id_390" atv:refpx="640.017" width="613.658" rx="3.347" x="333.188" stroke="#000000" y="450.426" height="39.051" atv:refpy="500.952" fill="url(#linear_105)"/>
+ <text font-family="Arial" id="id_391" atv:refpx="640.017" x="635.561" y="472.237" font-size="10" text-anchor="middle" atv:refpy="469.952" fill="#000000" transform="matrix(1.1157,0,0,1.1157,-69.1062,-53.0385)">T{Source URL}</text>
+ <rect ry="3.347" stroke-width="0.5" id="id_392" atv:refpx="867.568" width="129.867" rx="4.02" x="802.634" stroke="#a5a5a5" y="458.795" height="22.315" atv:refpy="478.637" fill="#ffffff"/>
+ <text font-family="Arial" id="secondary_source_status" atv:refpx="869.538" x="866.931" y="472.237" font-size="10" text-anchor="middle" atv:refpy="469.952" fill="#000000" transform="matrix(1.1157,0,0,1.1157,-99.7054,-53.0385)">-</text>
+ <rect ry="3.347" stroke-width="0.5" id="id_408" atv:refpx="880.9" width="129.867" rx="4.02" x="349.366" stroke="#a5a5a5" y="458.795" height="22.315" atv:refpy="478.637" fill="#ffffff"/>
+ <text font-family="Arial" id="primary_source_status" atv:refpx="414.334" x="411.989" y="472.237" font-size="10" text-anchor="middle" atv:refpy="469.952" fill="#000000" transform="matrix(1.1157,0,0,1.1157,-47.0486,-53.0385)">-</text>
+ <rect ry="2.343" stroke-width="1" id="id_421" atv:refpx="456.347" width="613.658" rx="3.347" x="333.188" stroke="#000000" y="494.892" height="39.051" atv:refpy="507.041" fill="url(#linear_105)"/>
+ <text font-family="Arial" id="id_422" atv:refpx="407.559" x="636.446" y="516.702" font-size="10" text-anchor="middle" atv:refpy="476.041" fill="#000000" transform="matrix(1.1157,0,0,1.1157,-68.9771,-58.1852)">T{Alternative 1}</text>
+ <rect ry="3.347" stroke-width="0.5" id="id_423" atv:refpx="867.568" width="129.867" rx="4.02" x="802.634" stroke="#a5a5a5" y="503.26" height="22.315" atv:refpy="478.637" fill="#ffffff"/>
+ <text font-family="Arial" id="secondary_alternative1_status" atv:refpx="835.443" x="866.932" y="516.702" font-size="10" text-anchor="middle" atv:refpy="476.041" fill="#000000" transform="matrix(1.1157,0,0,1.1157,-99.7055,-58.1852)">-</text>
+ <rect ry="3.347" stroke-width="0.5" id="id_425" atv:refpx="880.9" width="129.867" rx="4.02" x="349.366" stroke="#a5a5a5" y="503.26" height="22.315" atv:refpy="478.637" fill="#ffffff"/>
+ <text font-family="Arial" id="primary_alternative1_status" atv:refpx="414.596" x="411.989" y="516.702" font-size="10" text-anchor="middle" atv:refpy="514.418" fill="#000000" transform="matrix(1.1157,0,0,1.1157,-47.0486,-58.1852)">-</text>
+ <rect ry="2.343" stroke-width="1" id="id_428" atv:refpx="518.704" width="613.658" rx="3.347" x="333.188" stroke="#000000" y="539.359" height="39.051" atv:refpy="529.732" fill="url(#linear_105)"/>
+ <text font-family="Arial" id="id_429" atv:refpx="486.481" x="635.888" y="561.169" font-size="10" text-anchor="middle" atv:refpy="498.732" fill="#000000" transform="matrix(1.1157,0,0,1.1157,-68.9125,-63.332)">T{Alternative 2}</text>
+ <rect ry="3.347" stroke-width="0.5" id="id_430" atv:refpx="867.568" width="129.867" rx="4.02" x="802.634" stroke="#a5a5a5" y="547.727" height="22.315" atv:refpy="478.637" fill="#ffffff"/>
+ <text font-family="Arial" id="secondary_alternative2_status" atv:refpx="847.018" x="866.932" y="561.169" font-size="10" text-anchor="middle" atv:refpy="498.732" fill="#000000" transform="matrix(1.1157,0,0,1.1157,-99.7055,-63.332)">-</text>
+ <rect ry="3.347" stroke-width="0.5" id="id_432" atv:refpx="880.9" width="129.867" rx="4.02" x="349.366" stroke="#a5a5a5" y="547.727" height="22.315" atv:refpy="478.637" fill="#ffffff"/>
+ <text font-family="Arial" id="primary_alternative2_status" atv:refpx="415.301" x="411.989" y="561.169" font-size="10" text-anchor="middle" atv:refpy="558.885" fill="#000000" transform="matrix(1.1157,0,0,1.1157,-47.0486,-63.332)">-</text>
+ <rect ry="2.343" stroke-width="1" id="id_435" atv:refpx="410.816" width="613.658" rx="3.347" x="333.188" stroke="#000000" y="583.825" height="39.051" atv:refpy="539.555" fill="url(#linear_105)"/>
+ <text font-family="Arial" id="id_436" atv:refpx="349.934" x="635.888" y="605.635" font-size="10" text-anchor="middle" atv:refpy="508.555" fill="#000000" transform="matrix(1.1157,0,0,1.1157,-68.9125,-68.4787)">T{Alternative 3}</text>
+ <rect ry="3.347" stroke-width="0.5" id="id_437" atv:refpx="867.568" width="129.867" rx="4.02" x="802.634" stroke="#a5a5a5" y="592.193" height="22.315" atv:refpy="478.636" fill="#ffffff"/>
+ <text font-family="Arial" id="secondary_alternative3_status" atv:refpx="826.99" x="866.932" y="605.635" font-size="10" text-anchor="middle" atv:refpy="508.555" fill="#000000" transform="matrix(1.1157,0,0,1.1157,-99.7055,-68.4787)">-</text>
+ <rect ry="3.347" stroke-width="0.5" id="id_439" atv:refpx="880.9" width="129.867" rx="4.02" x="349.366" stroke="#a5a5a5" y="592.193" height="22.315" atv:refpy="478.636" fill="#ffffff"/>
+ <text font-family="Arial" id="primary_alternative3_status" atv:refpx="414.596" x="411.989" y="605.635" font-size="10" text-anchor="middle" atv:refpy="603.35" fill="#000000" transform="matrix(1.1157,0,0,1.1157,-47.0486,-68.4787)">-</text>
+ <g id="id_235" atv:refpx="176.617" atv:refpy="614.305" transform="matrix(1.1157,0,0,-1.1157,-468.4917,700.4203)">
+  <path stroke-width="0" id="primary_alternative3_connector" atv:refpx="700.484" stroke="#000000" fill-rule="evenodd" d="M702.515,82.109L706.58,82.471L706.58,91.529L702.515,91.891L702.515,93.34L698.449,92.977L698.449,81.022L702.515,80.66Z" atv:refpy="87" fill="#bababa"/>
+  <g id="id_239" atv:refpx="702.246" atv:refpy="87.136" transform="matrix(0.4066,0,0,0.1811,397.5792,66.1685)">
+   <line stroke-opacity="0.117647" stroke-width="1" y1="93.25" id="id_243" atv:refpx="520.5" stroke="#000000" y2="138.25" x1="744" x2="744" atv:refpy="104.75"/>
+   <line stroke-opacity="0.117647" stroke-width="1" y1="95.75" id="id_244" atv:refpx="525.833" stroke="#000000" y2="135.75" x1="749.333" x2="749.333" atv:refpy="106.75"/>
+   <line stroke-opacity="0.117647" stroke-width="1" y1="100.75" id="id_245" atv:refpx="526.167" stroke="#000000" y2="130.75" x1="754.667" x2="754.667" atv:refpy="110.75"/>
+  </g>
+  <rect stroke-width="0" id="id_246" atv:refpx="684.847" width="1.393" x="697.058" stroke="none" y="82.821" height="8.359" atv:refpy="43.926" fill="#000000"/>
+ </g>
+ <g id="id_247" atv:refpx="563.296" atv:refpy="1093.156" transform="matrix(1.1157,0,0,-1.1157,-468.4909,567.0218)">
+  <path stroke-width="0" id="primary_source_connector" atv:refpx="511.75" stroke="#000000" fill-rule="evenodd" d="M702.515,82.109L706.58,82.471L706.58,91.529L702.515,91.891L702.515,93.34L698.449,92.977L698.449,81.022L702.515,80.66Z" atv:refpy="92.663" fill="#bababa"/>
+  <g id="id_249" atv:refpx="480.314" atv:refpy="599.617" transform="matrix(0.4066,0,0,0.1811,397.5792,66.1685)">
+   <line stroke-opacity="0.117647" stroke-width="1" y1="93.25" id="id_262" atv:refpx="331.766" stroke="#000000" y2="138.25" x1="744" x2="744" atv:refpy="110.413"/>
+   <line stroke-opacity="0.117647" stroke-width="1" y1="95.75" id="id_263" atv:refpx="337.099" stroke="#000000" y2="135.75" x1="749.333" x2="749.333" atv:refpy="112.413"/>
+   <line stroke-opacity="0.117647" stroke-width="1" y1="100.75" id="id_278" atv:refpx="337.433" stroke="#000000" y2="130.75" x1="754.667" x2="754.667" atv:refpy="116.413"/>
+  </g>
+  <rect stroke-width="0" id="id_279" atv:refpx="496.113" width="1.393" x="697.058" stroke="none" y="82.821" height="8.359" atv:refpy="49.589" fill="#000000"/>
+ </g>
+ <g id="id_285" atv:refpx="176.617" atv:refpy="569.838" transform="matrix(1.1157,0,0,-1.1157,-468.4917,655.9541)">
+  <path stroke-width="0" id="primary_alternative2_connector" atv:refpx="700.484" stroke="#000000" fill-rule="evenodd" d="M702.515,82.109L706.58,82.471L706.58,91.529L702.515,91.891L702.515,93.34L698.449,92.977L698.449,81.022L702.515,80.66Z" atv:refpy="87" fill="#bababa"/>
+  <g id="id_287" atv:refpx="702.246" atv:refpy="87.136" transform="matrix(0.4066,0,0,0.1811,397.5792,66.1685)">
+   <line stroke-opacity="0.117647" stroke-width="1" y1="93.25" id="id_288" atv:refpx="520.5" stroke="#000000" y2="138.25" x1="744" x2="744" atv:refpy="104.75"/>
+   <line stroke-opacity="0.117647" stroke-width="1" y1="95.75" id="id_289" atv:refpx="525.833" stroke="#000000" y2="135.75" x1="749.333" x2="749.333" atv:refpy="106.75"/>
+   <line stroke-opacity="0.117647" stroke-width="1" y1="100.75" id="id_290" atv:refpx="526.167" stroke="#000000" y2="130.75" x1="754.667" x2="754.667" atv:refpy="110.75"/>
+  </g>
+  <rect stroke-width="0" id="id_291" atv:refpx="684.847" width="1.393" x="697.058" stroke="none" y="82.821" height="8.359" atv:refpy="43.926" fill="#000000"/>
+ </g>
+ <g id="id_292" atv:refpx="176.616" atv:refpy="565.501" transform="matrix(1.1157,0,0,-1.1157,-468.4909,611.4879)">
+  <path stroke-width="0" id="primary_alternative1_connector" atv:refpx="700.484" stroke="#000000" fill-rule="evenodd" d="M702.515,82.109L706.58,82.471L706.58,91.529L702.515,91.891L702.515,93.34L698.449,92.977L698.449,81.022L702.515,80.66Z" atv:refpy="87" fill="#bababa"/>
+  <g id="id_294" atv:refpx="702.246" atv:refpy="87.136" transform="matrix(0.4066,0,0,0.1811,397.5792,66.1685)">
+   <line stroke-opacity="0.117647" stroke-width="1" y1="93.25" id="id_295" atv:refpx="520.5" stroke="#000000" y2="138.25" x1="744" x2="744" atv:refpy="104.75"/>
+   <line stroke-opacity="0.117647" stroke-width="1" y1="95.75" id="id_296" atv:refpx="525.833" stroke="#000000" y2="135.75" x1="749.333" x2="749.333" atv:refpy="106.75"/>
+   <line stroke-opacity="0.117647" stroke-width="1" y1="100.75" id="id_297" atv:refpx="526.167" stroke="#000000" y2="130.75" x1="754.667" x2="754.667" atv:refpy="110.75"/>
+  </g>
+  <rect stroke-width="0" id="id_298" atv:refpx="684.847" width="1.393" x="697.058" stroke="none" y="82.821" height="8.359" atv:refpy="43.926" fill="#000000"/>
+ </g>
+ <g id="id_0" atv:refpx="131.14" atv:refpy="291.442" transform="matrix(1.4549,0,0,1.4549,-704.8505,-67.941)">
+  <rect stroke-width="0" id="id_9" atv:refpx="352.941" width="37.683" x="508.653" stroke="none" y="423.48" height="2.347" atv:refpy="324.641" fill="#000000"/>
+  <rect stroke-width="0" id="id_17" atv:refpx="496.431" width="37.683" x="602.861" stroke="none" y="423.48" height="2.347" atv:refpy="324.641" fill="#000000"/>
+  <rect ry="4.889" stroke-width="0.5" id="id_19" atv:refpx="-140.346" width="150.734" rx="4.346" x="499.232" stroke="#646464" y="131.433" height="292.046" atv:refpy="-195.072" fill="url(#linear_12)"/>
+  <rect ry="5.218" stroke-width="1" id="id_23" atv:refpx="-150.428" width="137.92" rx="5.218" x="505.638" stroke="#000000" y="137.915" height="279.084" atv:refpy="97.463" fill="url(#linear_109)"/>
+  <g id="id_24" atv:refpx="574.598" atv:refpy="369.685" transform="matrix(1.3045,0,0,1.3045,65.116,-36.4754)">
+   <rect stroke-width="0" id="id_25" atv:refpx="270.645" width="86.664" x="347.236" stroke="none" y="335.149" height="2.785" atv:refpy="213.58" fill="url(#linear_76)"/>
+   <rect stroke-width="0" id="id_63" atv:refpx="306.547" width="86.664" x="347.236" stroke="none" y="329.579" height="2.785" atv:refpy="205.868" fill="url(#linear_76)"/>
+   <rect stroke-width="0" id="id_64" atv:refpx="115.738" width="86.664" x="347.236" stroke="none" y="324.009" height="2.785" atv:refpy="79.685" fill="url(#linear_76)"/>
+  </g>
+ </g>
+ <g id="id_264" atv:refpx="241.633" atv:refpy="335.904" transform="matrix(-1.1157,0,0,-1.1157,1024.6838,433.9737)">
+  <path stroke-width="0" id="primary_connector" atv:refpx="284.278" stroke="#000000" fill-rule="evenodd" d="M702.515,82.109L706.58,82.471L706.58,91.529L702.515,91.891L702.515,93.34L698.449,92.977L698.449,81.022L702.515,80.66Z" atv:refpy="380" fill="#bababa"/>
+  <g id="id_266" atv:refpx="702.246" atv:refpy="87.136" transform="matrix(0.4066,0,0,0.1811,397.5792,66.1685)">
+   <line stroke-opacity="0.117647" stroke-width="1" y1="93.25" id="id_267" atv:refpx="375.548" stroke="#000000" y2="138.25" x1="744" x2="744" atv:refpy="381.861"/>
+   <line stroke-opacity="0.117647" stroke-width="1" y1="95.75" id="id_268" atv:refpx="525.833" stroke="#000000" y2="135.75" x1="749.333" x2="749.333" atv:refpy="106.75"/>
+   <line stroke-opacity="0.117647" stroke-width="1" y1="100.75" id="id_269" atv:refpx="526.167" stroke="#000000" y2="130.75" x1="754.667" x2="754.667" atv:refpy="110.75"/>
+  </g>
+  <rect stroke-width="0" id="id_270" atv:refpx="299.915" width="1.393" x="697.058" stroke="none" y="82.821" height="8.359" atv:refpy="423.074" fill="#000000"/>
+ </g>
+ <g id="primary_redu_info" atv:refpx="129.233" atv:refpy="260.172" transform="matrix(1.4549,0,0,1.4549,-169.8798,-221.2453)">
+  <g id="id_65" atv:refpx="1027.04" atv:refpy="208.54" transform="matrix(0.65,0,0,0.65,157.8996,280.5904)">
+   <circle cx="30" r="20" stroke-width="2" id="primary_led_shadow" atv:refpx="30" stroke="none" cy="70" atv:refpy="70" fill="url(#linear_108)"/>
+   <circle cx="30" r="18" stroke-width="2" id="id_67" atv:refpx="30" stroke="none" cy="70" atv:refpy="70" fill="#000000"/>
+   <circle cx="30" r="17" stroke-width="2" id="primary_led" atv:refpx="387.548" stroke="none" cy="70" atv:refpy="222.044" fill="#bababa"/>
+   <circle cx="30" r="17" stroke-width="2" id="id_78" atv:refpx="386.248" stroke="none" cy="70" atv:refpy="222.044" fill="url(#radial_114)"/>
+   <path stroke-width="2" fill-opacity="0.423529" id="id_79" atv:refpx="24.66" stroke="none" d="M16.267,70.932C16.267,70.932 14,63.004 22.66,58.004C31.32,53.004 37.052,58.932 37.052,58.932C37.052,58.932 33.32,56.468 24.66,61.468C16,66.468 16.267,70.932 16.267,70.932" atv:refpy="61.469" fill="#ffffff"/>
+  </g>
+  <text font-family="Arial" id="id_80" atv:refpx="222.899" x="201.9" y="321.09" font-size="8" text-anchor="start" atv:refpy="317.59" fill="#a5a5a5">T{STATUS}:</text>
+  <text font-family="Arial" id="primary_status" font-weight="bold" atv:refpx="201.964" x="201.9" y="337.09" font-size="14" text-anchor="start" atv:refpy="333.59" fill="#ffffff">-</text>
+  <text font-family="Arial" id="id_82" font-weight="bold" atv:refpx="145.379" x="143.776" y="334.166" font-size="24" text-anchor="start" atv:refpy="330.666" fill="#e1e1e1">P</text>
+  <text font-family="Arial" id="id_83" atv:refpx="172.967" x="189.232" y="359.047" font-size="8" text-anchor="end" atv:refpy="355.547" fill="#a5a5a5">T{VITALITY}</text>
+  <text font-family="Arial" id="id_87" atv:refpx="158.844" x="189.232" y="382.87" font-size="8" text-anchor="end" atv:refpy="369.707" fill="#a5a5a5">T{MEMORY}</text>
+  <g id="id_88" atv:refpx="1099.208" atv:refpy="279.319" transform="matrix(1,0,0,1,-317.469,172.2217)">
+   <rect ry="3" stroke-width="1.274" id="id_89" atv:refpx="757.147" width="60" rx="3" x="517.037" stroke="none" y="197.648" height="20" atv:refpy="75.3" fill="#ffffff"/>
+  </g>
+  <text font-family="Arial" id="primary_memory" font-weight="bold" atv:refpx="240.149" x="254.568" y="384.87" font-size="14" text-anchor="end" atv:refpy="353.251" fill="#000000">-</text>
+  <text font-family="Arial" id="id_91" atv:refpx="152.522" x="188.732" y="405.915" font-size="8" text-anchor="end" atv:refpy="374.428" fill="#a5a5a5">CPU</text>
+  <g id="id_92" atv:refpx="1099.208" atv:refpy="302.365" transform="matrix(1,0,0,1,-317.469,195.267)">
+   <rect ry="3" stroke-width="1.274" id="id_93" atv:refpx="757.147" width="60" rx="3" x="517.037" stroke="none" y="197.648" height="20" atv:refpy="75.3" fill="#ffffff"/>
+  </g>
+  <text font-family="Arial" id="primary_cpu" font-weight="bold" atv:refpx="220.62" x="254.568" y="407.915" font-size="14" text-anchor="end" atv:refpy="357.971" fill="#000000">-</text>
+  <g id="id_95" atv:refpx="1161.636" atv:refpy="90.79" transform="matrix(1,0,0,1,-295.2439,174.3785)">
+   <rect ry="3" stroke-width="1.542" id="id_96" atv:refpx="1031.132" width="130" rx="3" x="437.144" stroke="none" y="80.294" height="14" atv:refpy="281.057" fill="#ffffff"/>
+  </g>
+  <text font-family="Arial" id="primary_web_address1" atv:refpx="208.502" x="208.502" y="265.673" font-size="10" text-anchor="middle" atv:refpy="262.173" fill="#000000">-</text>
+  <g id="id_98" atv:refpx="1161.636" atv:refpy="108.809" transform="matrix(1,0,0,1,-295.2439,174.3785)">
+   <rect ry="3" stroke-width="1.542" id="id_99" atv:refpx="1031.132" width="130" rx="3" x="437.144" stroke="none" y="98.313" height="14" atv:refpy="299.076" fill="#ffffff"/>
+  </g>
+  <text font-family="Arial" id="primary_web_address2" atv:refpx="208.502" x="208.502" y="283.691" font-size="10" text-anchor="middle" atv:refpy="280.191" fill="#000000">-</text>
+  <g id="id_195" atv:refpx="1161.636" atv:refpy="273.44" transform="matrix(1,0,0,1,-295.244,357.0289)">
+   <rect ry="3" stroke-width="1.542" id="id_218" atv:refpx="1326.376" width="130" rx="3" x="437.144" stroke="none" y="80.294" height="14" atv:refpy="106.678" fill="#ffffff"/>
+  </g>
+  <text font-family="Arial" id="primary_server_address1" atv:refpx="208.502" x="208.502" y="448.323" font-size="10" text-anchor="middle" atv:refpy="444.823" fill="#000000">-</text>
+  <g id="id_220" atv:refpx="1161.636" atv:refpy="291.459" transform="matrix(1,0,0,1,-295.244,357.0289)">
+   <rect ry="3" stroke-width="1.542" id="id_196" atv:refpx="1326.376" width="130" rx="3" x="437.144" stroke="none" y="98.313" height="14" atv:refpy="124.697" fill="#ffffff"/>
+  </g>
+  <text font-family="Arial" id="primary_server_address2" atv:refpx="208.502" x="208.502" y="466.341" font-size="10" text-anchor="middle" atv:refpy="462.841" fill="#000000">-</text>
+  <g id="id_84" atv:refpx="1099.209" atv:refpy="255.497" transform="matrix(1,0,0,1,-317.469,148.399)">
+   <rect ry="3" stroke-width="1.274" id="id_85" atv:refpx="757.147" width="60" rx="3" x="517.037" stroke="none" y="197.648" height="20" atv:refpy="75.3" fill="#000000"/>
+  </g>
+  <rect ry="2" stroke-width="1.542" id="id_194" atv:refpx="1420.824" width="58" rx="2" x="200.568" stroke="none" y="346.997" height="9.472" atv:refpy="240.086" fill="url(#linear_107)"/>
+  <text font-family="Arial" id="primary_vitality_status" font-weight="bold" atv:refpx="245.991" x="254.568" y="361.047" font-size="14" text-anchor="end" atv:refpy="339.09" fill="#e1e1e1">-</text>
+  <rect stroke-width="1.542" fill-opacity="0" id="primary_vitality_clickarea" atv:refpx="229.361" width="60" x="199.361" stroke="none" y="345.041" height="20" atv:refpy="355.041" fill="#ffffff"/>
+ </g>
+ <rect stroke-width="2" id="id_117" atv:refpx="1396.216" width="199.719" x="31.105" stroke="none" y="210.651" height="4.849" atv:refpy="20.745" fill="url(#linear_110)"/>
+ <rect stroke-width="2" id="id_118" atv:refpx="1396.394" width="199.719" x="31.282" stroke="none" y="396.452" height="4.849" atv:refpy="194.903" fill="url(#linear_110)"/>
+ <rect stroke-width="2" id="id_223" atv:refpx="1396.216" width="199.719" x="31.105" stroke="none" y="476.392" height="4.849" atv:refpy="286.487" fill="url(#linear_110)"/>
+ <rect stroke-width="2" id="id_480" atv:refpx="-1224.425" width="423.983" x="428.026" stroke="none" y="44.579" height="3.107" atv:refpy="-247.863" fill="url(#linear_110)"/>
+ <g id="secondary" atv:refpx="1148.885" atv:refpy="291.275" transform="matrix(1.4548,0,0,1.4548,-412.2712,-222.1901)">
+  <g id="id_101" atv:refpx="712.291" atv:refpy="454.332" transform="matrix(1,0,0,1,498.5014,105.37)">
+   <rect stroke-width="0" id="id_102" atv:refpx="352.941" width="37.683" x="508.653" stroke="none" y="423.48" height="2.347" atv:refpy="324.641" fill="#000000"/>
+   <rect stroke-width="0" id="id_103" atv:refpx="496.431" width="37.683" x="602.861" stroke="none" y="423.48" height="2.347" atv:refpy="324.641" fill="#000000"/>
+   <rect ry="4.889" stroke-width="0.5" id="id_104" atv:refpx="418.162" width="150.734" rx="4.346" x="499.232" stroke="#646464" y="131.433" height="292.046" atv:refpy="-181.972" fill="url(#linear_12)"/>
+   <rect ry="5.218" stroke-width="1" id="id_105" atv:refpx="-150.428" width="137.92" rx="5.218" x="505.638" stroke="#000000" y="137.915" height="279.084" atv:refpy="97.463" fill="url(#linear_109)"/>
+   <g id="id_106" atv:refpx="574.598" atv:refpy="369.685" transform="matrix(1.3045,0,0,1.3045,65.116,-36.4754)">
+    <rect stroke-width="0" id="id_107" atv:refpx="270.645" width="86.664" x="347.236" stroke="none" y="335.149" height="2.785" atv:refpy="213.58" fill="url(#linear_76)"/>
+    <rect stroke-width="0" id="id_108" atv:refpx="306.547" width="86.664" x="347.236" stroke="none" y="329.579" height="2.785" atv:refpy="205.868" fill="url(#linear_76)"/>
+    <rect stroke-width="0" id="id_109" atv:refpx="306.547" width="86.664" x="347.236" stroke="none" y="324.009" height="2.785" atv:refpy="198.155" fill="url(#linear_76)"/>
+   </g>
+  </g>
+  <text font-family="Arial" id="id_129" atv:refpx="1089.1" x="1068.101" y="321.09" font-size="8" text-anchor="start" atv:refpy="317.59" fill="#a5a5a5">T{STATUS}:</text>
+  <text font-family="Arial" id="secondary_status" font-weight="bold" atv:refpx="1067.664" x="1068.101" y="337.09" font-size="14" text-anchor="start" atv:refpy="333.59" fill="#ffffff">-</text>
+  <text font-family="Arial" id="id_132" font-weight="bold" atv:refpx="1012.408" x="1010.805" y="334.166" font-size="24" text-anchor="start" atv:refpy="330.666" fill="#e1e1e1">S</text>
+  <text font-family="Arial" id="id_133" atv:refpx="1039.168" x="1055.433" y="359.047" font-size="8" text-anchor="end" atv:refpy="355.547" fill="#a5a5a5">T{VITALITY}</text>
+  <g id="id_134" atv:refpx="1128.371" atv:refpy="665.65" transform="matrix(1,0,0,1,548.7317,148.399)">
+   <rect ry="3" stroke-width="1.274" id="id_135" atv:refpx="757.147" width="60" rx="3" x="517.037" stroke="none" y="197.648" height="20" atv:refpy="75.3" fill="#000000"/>
+  </g>
+  <rect ry="2" stroke-width="1.542" id="id_149" atv:refpx="1449.986" width="58" rx="2" x="1066.769" stroke="none" y="346.997" height="9.472" atv:refpy="654.167" fill="url(#linear_107)"/>
+  <text font-family="Arial" id="secondary_vitality_status" font-weight="bold" atv:refpx="1112.192" x="1120.769" y="361.047" font-size="14" text-anchor="end" atv:refpy="339.09" fill="#e1e1e1">-</text>
+  <text font-family="Arial" id="id_137" atv:refpx="1025.045" x="1055.433" y="382.87" font-size="8" text-anchor="end" atv:refpy="369.707" fill="#a5a5a5">T{MEMORY}</text>
+  <g id="id_138" atv:refpx="1128.371" atv:refpy="689.474" transform="matrix(1,0,0,1,548.7317,172.2217)">
+   <rect ry="3" stroke-width="1.274" id="id_139" atv:refpx="757.147" width="60" rx="3" x="517.037" stroke="none" y="197.648" height="20" atv:refpy="75.3" fill="#ffffff"/>
+  </g>
+  <text font-family="Arial" id="secondary_memory" font-weight="bold" atv:refpx="1106.35" x="1120.769" y="384.87" font-size="14" text-anchor="end" atv:refpy="353.251" fill="#000000">-</text>
+  <text font-family="Arial" id="id_141" atv:refpx="1018.723" x="1054.933" y="405.915" font-size="8" text-anchor="end" atv:refpy="374.428" fill="#a5a5a5">CPU</text>
+  <g id="id_142" atv:refpx="1128.371" atv:refpy="712.518" transform="matrix(1,0,0,1,548.7317,195.267)">
+   <rect ry="3" stroke-width="1.274" id="id_143" atv:refpx="757.147" width="60" rx="3" x="517.037" stroke="none" y="197.648" height="20" atv:refpy="75.3" fill="#ffffff"/>
+  </g>
+  <text font-family="Arial" id="secondary_cpu" font-weight="bold" atv:refpx="1087.488" x="1120.769" y="407.915" font-size="14" text-anchor="end" atv:refpy="357.971" fill="#000000">-</text>
+  <rect ry="3" stroke-width="1.542" id="id_146" atv:refpx="2015.252" width="130" rx="3" x="1008.1" stroke="none" y="254.673" height="14" atv:refpy="524.254" fill="#ffffff"/>
+  <text font-family="Arial" id="secondary_web_address1" atv:refpx="1074.702" x="1074.702" y="265.673" font-size="10" text-anchor="middle" atv:refpy="262.173" fill="#000000">-</text>
+  <rect ry="3" stroke-width="1.542" id="id_150" atv:refpx="2015.252" width="130" rx="3" x="1008.1" stroke="none" y="272.692" height="14" atv:refpy="542.273" fill="#ffffff"/>
+  <text font-family="Arial" id="secondary_web_address2" atv:refpx="1054.612" x="1074.702" y="283.691" font-size="10" text-anchor="middle" atv:refpy="346.596" fill="#000000">-</text>
+  <rect stroke-width="2" id="id_153" atv:refpx="1105.58" width="137.272" x="1004.343" stroke="none" y="296.853" height="3.332" atv:refpy="608.123" fill="url(#linear_110)"/>
+  <rect stroke-width="2" id="id_154" atv:refpx="1105.702" width="137.272" x="1004.465" stroke="none" y="424.559" height="3.332" atv:refpy="727.828" fill="url(#linear_110)"/>
+  <g id="id_155" atv:refpx="884.201" atv:refpy="618.693" transform="matrix(0.65,0,0,0.65,1024.0998,280.5904)">
+   <circle cx="30" r="20" stroke-width="2" id="secondary_led_shadow" atv:refpx="30" stroke="none" cy="70" atv:refpy="70" fill="url(#linear_108)"/>
+   <circle cx="30" r="18" stroke-width="2" id="id_157" atv:refpx="30" stroke="none" cy="70" atv:refpy="70" fill="#000000"/>
+   <circle cx="30" r="17" stroke-width="2" id="secondary_led" atv:refpx="30" stroke="none" cy="70" atv:refpy="70" fill="#bababa"/>
+   <circle cx="30" r="17" stroke-width="2" id="id_158" atv:refpx="28" stroke="none" cy="70" atv:refpy="70" fill="url(#radial_114)"/>
+   <path stroke-width="2" fill-opacity="0.423529" id="id_159" atv:refpx="24.66" stroke="none" d="M16.267,70.932C16.267,70.932 14,63.004 22.66,58.004C31.32,53.004 37.052,58.932 37.052,58.932C37.052,58.932 33.32,56.468 24.66,61.468C16,66.468 16.267,70.932 16.267,70.932" atv:refpy="61.469" fill="#ffffff"/>
+  </g>
+  <rect ry="3" stroke-width="1.542" id="id_225" atv:refpx="2015.252" width="130" rx="3" x="1008.1" stroke="none" y="437.323" height="14" atv:refpy="706.904" fill="#ffffff"/>
+  <text font-family="Arial" id="secondary_server_address1" atv:refpx="1074.702" x="1074.702" y="448.323" font-size="10" text-anchor="middle" atv:refpy="444.823" fill="#000000">-</text>
+  <rect ry="3" stroke-width="1.542" id="id_230" atv:refpx="2015.252" width="130" rx="3" x="1008.1" stroke="none" y="455.342" height="14" atv:refpy="724.923" fill="#ffffff"/>
+  <text font-family="Arial" id="secondary_server_address2" atv:refpx="1054.612" x="1074.702" y="466.341" font-size="10" text-anchor="middle" atv:refpy="529.247" fill="#000000">-</text>
+  <rect stroke-width="2" id="id_232" atv:refpx="1105.58" width="137.272" x="1004.343" stroke="none" y="479.504" height="3.332" atv:refpy="790.773" fill="url(#linear_110)"/>
+  <rect stroke-width="1.542" fill-opacity="0" id="secondary_vitality_clickarea" atv:refpx="1095.075" width="60" x="1065.075" stroke="none" y="346.222" height="20" atv:refpy="356.222" fill="#ffffff"/>
+ </g>
+ <g id="secondary_connections" atv:refpx="1001.926" atv:refpy="501.127" transform="matrix(1.1157,0,0,1.1157,-74.0586,-87.0792)">
+  <g id="id_470" atv:refpx="965" atv:refpy="499.5">
+   <polyline stroke-width="2" id="secondary_alternative3" atv:refpx="965" stroke="#6a6a6a" atv:refpy="500" fill="none" points="930,619 970,619 970,380 1000,380"/>
+   <polyline stroke-width="2" id="secondary_alternative2" atv:refpx="965" stroke="#6a6a6a" atv:refpy="480" fill="none" points="930,579 970,579 970,380 1000,380"/>
+   <polyline stroke-width="2" id="secondary_alternative1" atv:refpx="965" stroke="#6a6a6a" atv:refpy="460" fill="none" points="930,539 970,539 970,380 1000,380"/>
+   <polyline stroke-width="2" id="secondary_source" atv:refpx="965" stroke="#6a6a6a" atv:refpy="460" fill="none" points="930,499 970,499 970,380 1000,380"/>
+  </g>
+  <g id="id_443" atv:refpx="1055.3" atv:refpy="521.133" transform="matrix(-1,0,0,-1,1633.4869,626.0993)">
+   <path stroke-width="0" id="secondary_alternative1_connector" atv:refpx="700.484" stroke="#000000" fill-rule="evenodd" d="M702.515,82.109L706.58,82.471L706.58,91.529L702.515,91.891L702.515,93.34L698.449,92.977L698.449,81.022L702.515,80.66Z" atv:refpy="87" fill="#bababa"/>
+   <g id="id_444" atv:refpx="702.246" atv:refpy="87.136" transform="matrix(0.4066,0,0,0.1811,397.5792,66.1685)">
+    <line stroke-opacity="0.117647" stroke-width="1" y1="93.25" id="id_445" atv:refpx="520.5" stroke="#000000" y2="138.25" x1="744" x2="744" atv:refpy="104.75"/>
+    <line stroke-opacity="0.117647" stroke-width="1" y1="95.75" id="id_446" atv:refpx="525.833" stroke="#000000" y2="135.75" x1="749.333" x2="749.333" atv:refpy="106.75"/>
+    <line stroke-opacity="0.117647" stroke-width="1" y1="100.75" id="id_447" atv:refpx="526.167" stroke="#000000" y2="130.75" x1="754.667" x2="754.667" atv:refpy="110.75"/>
+   </g>
+   <rect stroke-width="0" id="id_378" atv:refpx="684.847" width="1.393" x="697.058" stroke="none" y="82.821" height="8.359" atv:refpy="43.926" fill="#000000"/>
+  </g>
+  <g id="id_448" atv:refpx="1055.301" atv:refpy="517.246" transform="matrix(-1,0,0,-1,1633.4862,586.246)">
+   <path stroke-width="0" id="secondary_source_connector" atv:refpx="700.484" stroke="#000000" fill-rule="evenodd" d="M702.515,82.109L706.58,82.471L706.58,91.529L702.515,91.891L702.515,93.34L698.449,92.977L698.449,81.022L702.515,80.66Z" atv:refpy="87" fill="#bababa"/>
+   <g id="id_450" atv:refpx="702.246" atv:refpy="87.136" transform="matrix(0.4066,0,0,0.1811,397.5792,66.1685)">
+    <line stroke-opacity="0.117647" stroke-width="1" y1="93.25" id="id_451" atv:refpx="520.5" stroke="#000000" y2="138.25" x1="744" x2="744" atv:refpy="104.75"/>
+    <line stroke-opacity="0.117647" stroke-width="1" y1="95.75" id="id_383" atv:refpx="525.833" stroke="#000000" y2="135.75" x1="749.333" x2="749.333" atv:refpy="106.75"/>
+    <line stroke-opacity="0.117647" stroke-width="1" y1="100.75" id="id_452" atv:refpx="526.167" stroke="#000000" y2="130.75" x1="754.667" x2="754.667" atv:refpy="110.75"/>
+   </g>
+   <rect stroke-width="0" id="id_453" atv:refpx="684.847" width="1.393" x="697.058" stroke="none" y="82.821" height="8.359" atv:refpy="43.926" fill="#000000"/>
+  </g>
+  <g id="id_455" atv:refpx="1055.3" atv:refpy="600.84" transform="matrix(-1,0,0,-1,1633.4869,705.8061)">
+   <path stroke-width="0" id="secondary_alternative3_connector" atv:refpx="700.484" stroke="#000000" fill-rule="evenodd" d="M702.515,82.109L706.58,82.471L706.58,91.529L702.515,91.891L702.515,93.34L698.449,92.977L698.449,81.022L702.515,80.66Z" atv:refpy="87" fill="#bababa"/>
+   <g id="id_389" atv:refpx="702.246" atv:refpy="87.136" transform="matrix(0.4066,0,0,0.1811,397.5792,66.1685)">
+    <line stroke-opacity="0.117647" stroke-width="1" y1="93.25" id="id_457" atv:refpx="520.5" stroke="#000000" y2="138.25" x1="744" x2="744" atv:refpy="104.75"/>
+    <line stroke-opacity="0.117647" stroke-width="1" y1="95.75" id="id_458" atv:refpx="525.833" stroke="#000000" y2="135.75" x1="749.333" x2="749.333" atv:refpy="106.75"/>
+    <line stroke-opacity="0.117647" stroke-width="1" y1="100.75" id="id_459" atv:refpx="526.167" stroke="#000000" y2="130.75" x1="754.667" x2="754.667" atv:refpy="110.75"/>
+   </g>
+   <rect stroke-width="0" id="id_460" atv:refpx="684.847" width="1.393" x="697.058" stroke="none" y="82.821" height="8.359" atv:refpy="43.926" fill="#000000"/>
+  </g>
+  <g id="id_394" atv:refpx="1055.301" atv:refpy="596.953" transform="matrix(-1,0,0,-1,1633.4862,665.9527)">
+   <path stroke-width="0" id="secondary_alternative2_connector" atv:refpx="700.484" stroke="#000000" fill-rule="evenodd" d="M702.515,82.109L706.58,82.471L706.58,91.529L702.515,91.891L702.515,93.34L698.449,92.977L698.449,81.022L702.515,80.66Z" atv:refpy="87" fill="#bababa"/>
+   <g id="id_396" atv:refpx="702.246" atv:refpy="87.136" transform="matrix(0.4066,0,0,0.1811,397.5792,66.1685)">
+    <line stroke-opacity="0.117647" stroke-width="1" y1="93.25" id="id_397" atv:refpx="520.5" stroke="#000000" y2="138.25" x1="744" x2="744" atv:refpy="104.75"/>
+    <line stroke-opacity="0.117647" stroke-width="1" y1="95.75" id="id_398" atv:refpx="525.833" stroke="#000000" y2="135.75" x1="749.333" x2="749.333" atv:refpy="106.75"/>
+    <line stroke-opacity="0.117647" stroke-width="1" y1="100.75" id="id_399" atv:refpx="526.167" stroke="#000000" y2="130.75" x1="754.667" x2="754.667" atv:refpy="110.75"/>
+   </g>
+   <rect stroke-width="0" id="id_400" atv:refpx="684.847" width="1.393" x="697.058" stroke="none" y="82.821" height="8.359" atv:refpy="43.926" fill="#000000"/>
+  </g>
+  <g id="id_252" atv:refpx="997.064" atv:refpy="384.017" transform="matrix(1,0,0,1,295.2447,293)">
+   <path stroke-width="0" id="secondary_connector" atv:refpx="995.73" stroke="#000000" fill-rule="evenodd" d="M702.515,82.109L706.58,82.471L706.58,91.529L702.515,91.891L702.515,93.34L698.449,92.977L698.449,81.022L702.515,80.66Z" atv:refpy="397.966" fill="#b6b6b6"/>
+   <g id="id_257" atv:refpx="702.246" atv:refpy="87.136" transform="matrix(0.4066,0,0,0.1811,397.5792,66.1685)">
+    <line stroke-opacity="0.117647" stroke-width="1" y1="93.25" id="id_258" atv:refpx="520.5" stroke="#000000" y2="138.25" x1="744" x2="744" atv:refpy="104.75"/>
+    <line stroke-opacity="0.117647" stroke-width="1" y1="95.75" id="id_259" atv:refpx="525.833" stroke="#000000" y2="135.75" x1="749.333" x2="749.333" atv:refpy="106.75"/>
+    <line stroke-opacity="0.117647" stroke-width="1" y1="100.75" id="id_260" atv:refpx="526.167" stroke="#000000" y2="130.75" x1="754.667" x2="754.667" atv:refpy="110.75"/>
+   </g>
+   <rect stroke-width="0" id="id_261" atv:refpx="980.092" width="1.393" x="697.058" stroke="none" y="82.821" height="8.359" atv:refpy="336.926" fill="#000000"/>
+  </g>
+ </g>
+ <rect stroke-width="1.542" fill-opacity="0.392157" id="primary_overlay" atv:refpx="160.455" width="320.911" x="0" stroke="none" y="0" height="680" atv:refpy="340" fill="#000000"/>
+ <rect stroke-width="1.542" fill-opacity="0.392157" id="secondary_overlay" atv:refpx="1120.66" width="320.911" x="959.089" stroke="none" y="0" height="680" atv:refpy="340" fill="#000000"/>
+ <script type="text/ecmascript"><![CDATA[var datasourceAddress = webMI.query["datasource_address"];
+var datasourceName=datasourceAddress.substring("AGENT.DATASOURCES.".length);
+
+var datasourceConfig = datasourceAddress + ".Redundancy";
+var datasourcePrimary = datasourceAddress;
+var datasourceSecondary = "AGENT.REDUNDANCY.SECONDARY.DATASOURCES." + datasourceName;
+var subscribedPrimaryAlternatives = [];
+var subscribedPrimaryConnections = [];
+var subscribedSecondaryAlternatives = [];
+var subscribedSecondaryConnections = [];
+
+var reduMode = webMI.isRedundant();
+if(reduMode) {
+    datasourcePrimary = "AGENT.REDUNDANCY.PRIMARY.DATASOURCES." + datasourceName;
+}
+
+// show secondary server in reduMode only
+webMI.gfx.setVisible("secondary", reduMode);
+webMI.gfx.setVisible("secondary_connections", reduMode);
+
+// show network addresses in reduMode only
+webMI.gfx.setVisible("primary_redu_info", reduMode);
+
+// show redu status in reduMode only
+webMI.gfx.setVisible("redu_status_info", reduMode);
+
+webMI.data.subscribe(datasourceConfig + ".connection_failover_type", function(e) {
+	webMI.gfx.setText("behaviour_urls", e.value);
+});
+
+webMI.data.subscribe(datasourceConfig + ".current_connection_name", function(e) {
+	webMI.gfx.setText("datasource_name", e.value);
+});
+
+webMI.data.subscribe(datasourceConfig + ".connection_lock_index", function(e) {
+	var text = "Only alternative URL " + e.value;
+	if (e.value == -1)
+		text = "Auto";
+	else if (e.value == 0)
+		text = "Only source URL";
+	webMI.gfx.setText("switching_mode", text);
+});
+
+webMI.data.subscribeBlock([
+	datasourcePrimary + ".connection_status",
+	datasourcePrimary + ".connected",
+	datasourcePrimary + ".Redundancy.current_connection_index"
+], function(e) {
+	var active_connection = e[2].value;
+
+	webMI.gfx.setText("primary_source_status", getDatasourceConnectionStatusTranslation(e[0].value));
+	webMI.gfx.setVisible("primary_source", e[1].value ? null : false);
+	webMI.gfx.setStroke("primary_source", active_connection == 0 ? "#04ff00" : "#6d6d6d");
+	if(!e[1].value) {
+		webMI.gfx.setFill("primary_source_connector", "#ff0000");
+	} else {
+		webMI.gfx.setFill("primary_source_connector", active_connection == 0 ? "#04ff00" : "#bababa");
+	}
+});
+
+webMI.data.subscribe(datasourcePrimary + ".Redundancy.datasource_connected", function(e) {
+	webMI.gfx.setFill("primary_connector", e.value ? "#04ff00" : "#ff0000");
+});
+
+if(reduMode) {
+	webMI.addEvent(webMI.data, "serverstatechange", function(e) {
+		var active = {overlay: "primary_overlay" };
+		var passive = {overlay: "secondary_overlay" };
+
+		if (e.active.role == "Secondary") {
+			active = {overlay: "secondary_overlay" };
+			passive = {overlay: "primary_overlay" };
+		}
+
+		if (!e.active["connection-status"].primary && !e.active["connection-status"].secondary)
+			webMI.gfx.setVisible(active.overlay, null);
+		else
+			webMI.gfx.setVisible(active.overlay, false);
+
+		if (!e.passive["connection-status"].primary && !e.passive["connection-status"].secondary)
+			webMI.gfx.setVisible(passive.overlay, null);
+		else
+			webMI.gfx.setVisible(passive.overlay, false);
+	});
+
+	webMI.data.subscribeBlock([
+	        "AGENT.REDUNDANCY.replication_status",
+    	    "AGENT.REDUNDANCY.system_splitmode",
+        	"AGENT.REDUNDANCY.connection_status_network1",
+        	"AGENT.REDUNDANCY.connection_status_network2",
+        	"AGENT.REDUNDANCY.role"
+        ], function(e) {
+
+        var connection_status_nw1 = e[2].value;
+        var connection_status_nw2 = e[3].value;
+        var role  = e[4].value;
+        var replicationFinished = false;
+        if (!e[1].value) {
+            replicationFinished = e[0].value != "Replicating S->P" && e[0].value != "Replicating P->S";
+        } else {
+            // splitmode
+            replicationFinished = true;
+        }
+
+        var syncConnectionAvailable = connection_status_nw1 == "Connected";
+
+        if(!syncConnectionAvailable) {
+            syncConnectionAvailable = connection_status_nw2 == "Connected";
+        }
+
+        var overlay="secondary_overlay";
+        if(role == "Secondary") {
+            overlay="primary_overlay";
+        }
+
+        if(!syncConnectionAvailable || !replicationFinished) {
+            webMI.gfx.setVisible(overlay, null);
+        } else {
+            webMI.gfx.setVisible(overlay, false);
+        }
+    });
+
+	webMI.data.subscribe(datasourceSecondary + ".Redundancy.datasource_connected", function(e) {
+		webMI.gfx.setFill("secondary_connector", e.value ? "#04ff00" : "#ff0000");
+	});
+
+	webMI.data.subscribeBlock([
+		datasourceConfig + ".connectivity_server_active",
+		datasourceConfig + ".connectivity_server_passive",
+		datasourceConfig + ".connectivity_server_sop",
+		datasourceConfig + ".connectivity_server_snop",
+	], function(e) {
+		webMI.gfx.setText("connectivity_server_active", getDatasourceBehaviourTranslation(e[0].value));
+		webMI.gfx.setText("connectivity_server_passive", getDatasourceBehaviourTranslation(e[1].value));
+		webMI.gfx.setText("connectivity_server_sop", getDatasourceBehaviourTranslation(e[2].value));
+		webMI.gfx.setText("connectivity_server_snop", getDatasourceBehaviourTranslation(e[3].value));
+	});
+
+	webMI.data.subscribe("AGENT.REDUNDANCY.PRIMARY.status", function(e){
+		if (e.value.charAt(0) === "S")
+			e.value = e.value.toUpperCase();
+
+		webMI.gfx.setText("primary_status", getServerStatusTranslation(e.value));
+		webMI.gfx.setFill("primary_led", e.value === "Active" ? "#04ff00" : "#bababa");
+		webMI.gfx.setFill("primary_led_shadow", e.value === "Active" ? "url(#linear_4)" : "url(#linear_24)");
+	});
+
+	webMI.data.subscribe("AGENT.REDUNDANCY.PRIMARY.vitality_status", function(e){
+		webMI.gfx.setText("primary_vitality_status", e.value);
+	});
+
+	webMI.data.subscribe("AGENT.REDUNDANCY.PRIMARY.INFORMATION.DIAGNOSTICS.MEM.TotalMemUsedPercent", function(e){
+		(typeof e.value != "undefined") ? webMI.gfx.setText("primary_memory", webMI.sprintf("%0.1f", e.value) + " %") : webMI.gfx.setText("primary_memory", "-");
+	});
+
+	webMI.data.subscribe("AGENT.REDUNDANCY.PRIMARY.INFORMATION.DIAGNOSTICS.CPU.TotalCPUPercent", function(e){
+		(typeof e.value != "undefined") ? webMI.gfx.setText("primary_cpu", webMI.sprintf("%0.0f", e.value) + " %") : webMI.gfx.setText("primary_cpu", "-");
+	});
+
+	webMI.data.subscribeBlock([
+		"AGENT.REDUNDANCY.PRIMARY.primary_network1",
+		"AGENT.REDUNDANCY.PRIMARY.primary_network2",
+		"AGENT.REDUNDANCY.PRIMARY.primary_visu_network1",
+		"AGENT.REDUNDANCY.PRIMARY.primary_visu_network2",
+		"AGENT.REDUNDANCY.SECONDARY.secondary_network1",
+		"AGENT.REDUNDANCY.SECONDARY.secondary_network2",
+		"AGENT.REDUNDANCY.SECONDARY.secondary_visu_network1",
+		"AGENT.REDUNDANCY.SECONDARY.secondary_visu_network2"
+	], function(e) {
+		webMI.gfx.setText("primary_server_address1", e[0].value);
+		webMI.gfx.setText("primary_server_address2", e[1].value);
+		webMI.gfx.setText("secondary_server_address1", e[4].value);
+		webMI.gfx.setText("secondary_server_address2", e[5].value);
+
+		var ids = e[2].value.split('@');
+        webMI.gfx.setText("primary_web_address1", ids[0]);
+        if(ids.length > 1) {
+            webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tooltip", {"id":"primary_web_address1", "text":ids[1]});
+        }
+
+        ids = e[3].value.split('@');
+        webMI.gfx.setText("primary_web_address2", ids[0]);
+        if(ids.length > 1) {
+            webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tooltip", {"id":"primary_web_address2", "text":ids[1]});
+        }
+
+        ids = e[6].value.split('@');
+        webMI.gfx.setText("secondary_web_address1", ids[0]);
+        if(ids.length > 1) {
+            webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tooltip", {"id":"secondary_web_address1", "text":ids[1]});
+        }
+
+        ids = e[7].value.split('@');
+        webMI.gfx.setText("secondary_web_address2", ids[0]);
+        if(ids.length > 1) {
+             webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tooltip", {"id":"secondary_web_address2", "text":ids[1]});
+         }
+
+	});
+
+	webMI.data.subscribeBlock([
+		datasourceSecondary + ".connection_status",
+		datasourceSecondary + ".connected",
+		datasourceSecondary + ".Redundancy.current_connection_index"
+	], function(e) {
+		var active_connection = e[2].value;
+
+		webMI.gfx.setText("secondary_source_status", getDatasourceConnectionStatusTranslation(e[0].value));
+		webMI.gfx.setVisible("secondary_source", e[1].value ? null : false);
+		webMI.gfx.setStroke("secondary_source", active_connection == 0 ? "#04ff00" : "#6d6d6d");
+		if(!e[1].value) {
+			webMI.gfx.setFill("secondary_source_connector", "#ff0000");
+		} else {
+			webMI.gfx.setFill("secondary_source_connector", active_connection == 0 ? "#04ff00" : "#bababa");
+		}
+	});
+
+	webMI.data.subscribe("AGENT.REDUNDANCY.SECONDARY.status", function(e){
+		if (e.value.charAt(0) === "S")
+			e.value = e.value.toUpperCase();
+
+		webMI.gfx.setText("secondary_status", getServerStatusTranslation(e.value));
+		webMI.gfx.setFill("secondary_led", e.value === "Active" ? "#04ff00" : "#bababa");
+		webMI.gfx.setFill("secondary_led_shadow", e.value === "Active" ? "url(#linear_4)" : "url(#linear_24)");
+	});
+
+	webMI.data.subscribe("AGENT.REDUNDANCY.SECONDARY.vitality_status", function(e){
+		webMI.gfx.setText("secondary_vitality_status", e.value);
+	});
+
+	webMI.data.subscribe("AGENT.REDUNDANCY.SECONDARY.INFORMATION.DIAGNOSTICS.MEM.TotalMemUsedPercent", function(e){
+		(typeof e.value != "undefined") ? webMI.gfx.setText("secondary_memory", webMI.sprintf("%0.1f", e.value) + " %") : webMI.gfx.setText("secondary_memory", "-");
+	});
+
+	webMI.data.subscribe("AGENT.REDUNDANCY.SECONDARY.INFORMATION.DIAGNOSTICS.CPU.TotalCPUPercent", function(e){
+		(typeof e.value != "undefined") ? webMI.gfx.setText("secondary_cpu", webMI.sprintf("%0.0f", e.value) + " %") : webMI.gfx.setText("secondary_cpu", "-");
+	});
+
+	webMI.addEvent(["primary_vitality_clickarea", "secondary_vitality_clickarea"], "click", function(e) {
+		webMI.display.openWindow({
+			display: "SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.redundancy.vitality_table",
+			extern: false,
+			height: 520,
+			menubar: false,
+			modal: true,
+			movable: true,
+			resizable: false,
+			scrollbars: false,
+			status: false,
+			title: "T{Vitality table}",
+			toolbar: false,
+			width: 1200
+		});
+	});
+} else {
+	webMI.gfx.setVisible("primary_overlay", false);
+	webMI.gfx.setVisible("secondary_overlay", false);
+}
+
+showHideAlternatives();
+
+function showHideAlternatives() {
+
+    if(reduMode) {
+        webMI.data.subscribe(datasourcePrimary + ".Redundancy.connection_counter", function(e) {
+            var connection_counter = e.value;
+            var alternatives = [];
+            var connections = [];
+
+            // initialize alternative connections
+            webMI.gfx.setText("primary_alternative1_status", "-");
+            webMI.gfx.setText("primary_alternative2_status", "-");
+            webMI.gfx.setText("primary_alternative3_status", "-");
+            webMI.gfx.setVisible("primary_alternative1", false);
+            webMI.gfx.setVisible("primary_alternative2", false);
+            webMI.gfx.setVisible("primary_alternative3", false);
+
+
+            for (var i = 1; i <= connection_counter - 1; ++i) {
+                alternatives.push(datasourcePrimary + ".Redundancy.alternative" + i + ".connection_status");
+                connections.push(datasourcePrimary + ".Redundancy.alternative" + i + ".connected");
+            }
+
+            connections.push(datasourcePrimary + ".Redundancy.current_connection_index");
+
+            webMI.data.unsubscribe(subscribedPrimaryAlternatives);
+            webMI.data.unsubscribe(subscribedPrimaryConnections);
+
+            subscribedPrimaryAlternatives = webMI.data.subscribeBlock(alternatives, function(e) {
+                for (var i = 0; i < e.length; ++i) {
+                    webMI.gfx.setText("primary_alternative" + (i+1) + "_status", getDatasourceConnectionStatusTranslation(e[i].value));
+                }
+            });
+
+            subscribedPrimaryConnections = webMI.data.subscribeBlock(connections, function(e) {
+                var active_primary_connection = e[e.length-1].value;
+                // ignore last item of array because this is the active connection information
+                for (var i = 0; i < e.length-1; ++i) {
+
+                    webMI.gfx.setVisible("primary_alternative" + (i+1), e[i].value);
+                    if(!e[i].value) {
+                        webMI.gfx.setFill("primary_alternative" + (i+1) + "_connector", "#ff0000");
+                    } else {
+                        webMI.gfx.setStroke("primary_alternative" + (i+1), active_primary_connection == (i+1) ? "#04ff00" : "#6d6d6d");
+                        webMI.gfx.setFill("primary_alternative" + (i+1) + "_connector", active_primary_connection == (i+1) ? "#04ff00" : "#bababa");
+                    }
+                }
+            });
+        });
+
+        webMI.data.subscribe(datasourceSecondary + ".Redundancy.connection_counter", function(e) {
+            var connection_counter = e.value;
+            var alternatives = [];
+            var connections = [];
+
+            // initialize alternative connections
+            webMI.gfx.setText("secondary_alternative1_status", "-");
+            webMI.gfx.setText("secondary_alternative2_status", "-");
+            webMI.gfx.setText("secondary_alternative3_status", "-");
+            webMI.gfx.setVisible("secondary_alternative1", false);
+            webMI.gfx.setVisible("secondary_alternative2", false);
+            webMI.gfx.setVisible("secondary_alternative3", false);
+
+            for (var i = 1; i <= connection_counter - 1; ++i) {
+                alternatives.push(datasourceSecondary + ".Redundancy.alternative" + i + ".connection_status");
+                connections.push(datasourceSecondary + ".Redundancy.alternative" + i + ".connected");
+            }
+
+            connections.push(datasourceSecondary + ".Redundancy.current_connection_index");
+
+            webMI.data.unsubscribe(subscribedSecondaryAlternatives);
+            webMI.data.unsubscribe(subscribedSecondaryConnections);
+
+            subscribedSecondaryAlternatives = webMI.data.subscribeBlock(alternatives, function(e) {
+                for (var i = 0; i < e.length; ++i) {
+                    webMI.gfx.setText("secondary_alternative" + (i+1) + "_status", getDatasourceConnectionStatusTranslation(e[i].value));
+                }
+            });
+
+            subscribedSecondaryConnections = webMI.data.subscribeBlock(connections, function(e) {
+                var active_secondary_connection = e[e.length-1].value;
+                // ignore last item of array because this is the active connection information
+                for (var i = 0; i < e.length-1; ++i) {
+
+                    webMI.gfx.setVisible("secondary_alternative" + (i+1), e[i].value);
+                    if(!e[i].value) {
+                        webMI.gfx.setFill("secondary_alternative" + (i+1) + "_connector", "#ff0000");
+                    } else {
+                        webMI.gfx.setStroke("secondary_alternative" + (i+1), active_secondary_connection == (i+1) ? "#04ff00" : "#6d6d6d");
+                        webMI.gfx.setFill("secondary_alternative" + (i+1) + "_connector", active_secondary_connection == (i+1) ? "#04ff00" : "#bababa");
+                    }
+                }
+            });
+        });
+    } else {
+        webMI.data.subscribe(datasourceConfig + ".connection_counter", function(e) {
+            var connection_counter = e.value;
+            var alternatives = [];
+            var connections = [];
+
+            // initialize alternative connections
+            webMI.gfx.setText("primary_alternative1_status", "-");
+            webMI.gfx.setText("primary_alternative2_status", "-");
+            webMI.gfx.setText("primary_alternative3_status", "-");
+            webMI.gfx.setVisible("primary_alternative1", false);
+            webMI.gfx.setVisible("primary_alternative2", false);
+            webMI.gfx.setVisible("primary_alternative3", false);
+
+            for (var i = 1; i <= connection_counter - 1; ++i) {
+                alternatives.push(datasourcePrimary + ".Redundancy.alternative" + i + ".connection_status");
+                connections.push(datasourcePrimary + ".Redundancy.alternative" + i + ".connected");
+            }
+
+            connections.push(datasourceConfig + ".current_connection_index");
+
+            webMI.data.unsubscribe(subscribedPrimaryAlternatives);
+            webMI.data.unsubscribe(subscribedPrimaryConnections);
+
+            subscribedPrimaryAlternatives = webMI.data.subscribeBlock(alternatives, function(e) {
+                for (var i = 0; i < e.length; ++i) {
+                    webMI.gfx.setText("primary_alternative" + (i+1) + "_status", getDatasourceConnectionStatusTranslation(e[i].value));
+                }
+            });
+
+            subscribedPrimaryConnections = webMI.data.subscribeBlock(connections, function(e) {
+                var active_connection = e[e.length-1].value;
+                // ignore last item of array because this is the active connection information
+                for (var i = 0; i < e.length-1; ++i) {
+                    webMI.gfx.setVisible("primary_alternative" + (i+1), e[i].value ? null : false);
+                    webMI.gfx.setStroke("primary_alternative" + (i+1), active_connection == (i+1) ? "#04ff00" : "#6d6d6d");
+                    if(!e[i].value) {
+                        webMI.gfx.setFill("primary_alternative" + (i+1) + "_connector", "#ff0000");
+                    } else {
+                        webMI.gfx.setFill("primary_alternative" + (i+1) + "_connector", active_connection == (i+1) ? "#04ff00" : "#bababa");
+                    }
+
+                }
+            });
+        });
+	}
+}
+
+function getDatasourceBehaviourTranslation(text) {
+    var translation;
+    switch(text) {
+        case "InputOutput":
+            translation = "T{InputOutput}";
+            break;
+        case "Input":
+            translation = "T{Input}";
+            break;
+        case "Output":
+            translation = "T{Output}";
+            break;
+        case "Disabled":
+            translation = "T{Disabled}";
+            break;
+        case "Monitored":
+            translation = "T{Monitored}";
+            break;
+        default:
+            translation = text;
+    }
+    return translation;
+}
+
+function getDatasourceConnectionStatusTranslation(text) {
+    var translation;
+    switch(text) {
+        case "Connected":
+            translation = "T{Connected}";
+            break;
+        case "LostConnection":
+            translation = "T{LostConnection}";
+            break;
+        case "NotConnected":
+            translation = "T{NotConnected}";
+            break;
+        case "SubscriptionPending":
+            translation = "T{SubscriptionPending}";
+            break;
+        default:
+            translation = text;
+    }
+    return translation;
+}
+
+function getServerStatusTranslation(text) {
+    var statustext;
+    switch(text) {
+        case "Active":
+            statustext = "T{Active}";
+            break;
+        case "Passive":
+            statustext = "T{Passive}";
+            break;
+        case "SOP":
+            statustext = "T{SOP}";
+            break;
+        case "SNOP":
+            statustext = "T{SNOP}";
+            break;
+        default:
+            statustext = text;
+    }
+
+    return statustext;
+}
+]]></script>
+</svg>

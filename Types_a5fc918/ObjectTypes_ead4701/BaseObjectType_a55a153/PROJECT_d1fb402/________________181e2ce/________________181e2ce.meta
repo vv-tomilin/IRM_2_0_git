@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Станина в сборе
+NodeClass: ObjectType
+BrowseName: 1:Станина в сборе
+DisplayName: en|Станина в сборе
+Description: en|Станина в сборе
+IsAbstract: false

@@ -1,0 +1,10 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/graph-react/react-app/static/js/main.608491e1.chunk.js
+NodeClass: Variable
+BrowseName: 1:main.608491e1.chunk.js
+DisplayName: en|main.608491e1.chunk.js
+Description: en|main.608491e1.chunk.js
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Javascript
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Javascript.Compress

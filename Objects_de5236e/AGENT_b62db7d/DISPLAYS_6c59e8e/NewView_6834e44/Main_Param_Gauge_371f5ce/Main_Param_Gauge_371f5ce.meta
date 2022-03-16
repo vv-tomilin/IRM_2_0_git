@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.Main_Param_Gauge
+NodeClass: Variable
+BrowseName: 1:Main_Param_Gauge
+DisplayName: en|Main_Param_Gauge
+Description: en|Main_Param_Gauge
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

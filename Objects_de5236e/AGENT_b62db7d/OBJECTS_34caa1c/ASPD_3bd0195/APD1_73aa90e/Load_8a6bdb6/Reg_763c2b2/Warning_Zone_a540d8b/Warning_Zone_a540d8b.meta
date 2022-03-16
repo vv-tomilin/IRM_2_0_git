@@ -1,0 +1,11 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.APD1.Load.Reg.Warning_Zone
+NodeClass: Variable
+BrowseName: 1:Warning_Zone
+DisplayName: en|Warning_Zone
+Description: en|Warning_Zone
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

@@ -1,0 +1,409 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="1015" version="1.2" width="1850" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="true" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <g atv:insensitive="true" atv:refpx="0" atv:refpy="0" id="id_0">
+  <rect atv:refpx="925" atv:refpy="507.5" fill="#1f1f1f" height="1015.00" id="id_1" width="1850.00" x="0" y="0"/>
+ </g>
+ <foreignObject height="53.269" id="id_2" width="250" x="35" y="41.163">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <style> 
+.options-unit {
+	color: rgba(255, 255, 255, 0.85);
+	background: rgb(31, 31, 31);
+	padding: 1rem .5rem;
+	text-decoration: none;
+	list-style: none;
+	cursor: pointer;
+}
+.options-text {
+	color: rgba(255, 255, 255, 0.85);
+	background: rgb(31, 31, 31);
+	padding: 1rem .5rem;
+	cursor: pointer;
+}
+.options {
+	font-size: 1rem;
+	width: 100%;
+	color: rgba(255, 255, 255, 0.85);
+	background: rgb(31, 31, 31);
+	border: 1px solid #303030;
+	padding: 1rem .5rem;
+	outline: transparent;
+	cursor: pointer;
+}
+</style>
+   <select class="options" id="options"/>
+   <script/>
+  </div>
+ </foreignObject>
+ <foreignObject height="870" id="id_3" width="320" x="35" y="134.419">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <style>
+.variable-item {
+	display: block;
+	width: 100%;
+	height: 100%;
+	padding: 1rem 2rem;
+	border-bottom: 1px solid #303030;
+	font-family: Arial;
+	color: rgba(255, 255, 255, 0.85);
+	list-style: none inside;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+.variable-list {
+	list-style: none;
+	border: 1px solid #303030;
+	margin: 0;
+	padding: 0;
+}
+.variable-list li {
+	padding: 0;
+}
+
+.scrollable-div {
+	overflow: auto;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+.li-active {
+	 background: rgb(23, 125, 220);
+}
+
+.scrollable-div::-webkit-scrollbar{
+	width: .4rem;
+}
+.scrollable-div::-webkit-scrollbar-corner {
+	display: none;
+}
+.scrollable-div::-webkit-scrollbar-track {
+	border: transparent;
+}
+.scrollable-div::-webkit-scrollbar-thumb {
+	background: rgb(23, 125, 220);
+	
+}
+.variable-heading {
+	padding: 1rem 2rem;
+	margin: 0;
+	font-family: Arial;
+	font-size: 1rem;
+	color: rgba(255, 255, 255, 0.85);
+	border: 1px solid #303030;
+	border-bottom: none;
+}
+</style>
+   <div class="scrollable-div">
+    <h3 class="variable-heading" id="currentOptionHeading"/>
+    <ul class="variable-list" id="variableList"/>
+   </div>
+  </div>
+ </foreignObject>
+ <foreignObject height="419.288" id="id_4" width="1429.6" x="386.861" y="579.078">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <style>
+.value-item {
+	text-decoration: none;
+	list-style: none;
+	text-align: center;
+}
+.value-text {
+	display: block;	
+	padding: 1rem;
+	height: 100%;
+	font-family: Arial;
+	color: rgba(255, 255, 255, 0.85);
+	border: 1px solid #303030;
+	border-left: none;
+	background: rgb(40, 40, 40);
+	box-sizing: border-box;
+	text-align: center;
+	cursor: pointer;
+}
+
+.variableValues::-webkit-scrollbar{
+	width: .4rem;
+}
+.variableValues::-webkit-scrollbar-corner {
+	display: none;
+}
+.variableValues::-webkit-scrollbar-track {
+	border: transparent;
+}
+.variableValues::-webkit-scrollbar-thumb {
+	background: rgb(23, 125, 220);
+	
+}
+.variableValues {
+	display: grid;
+	width: 100%;
+	max-height: 100%;
+	grid-template-columns: 1fr 1fr 1fr;
+	row-gap: 1rem;
+	padding: 0;
+	padding-bottom: 1rem;
+	overflow-y: auto;
+	list-style: none;
+	border: .5px solid #303030;
+	box-sizing: border-box;
+}
+variableValues li {
+	margin: 0;
+}
+</style>
+   <div style="width: 100%;height:100%;">
+    <ul class="variableValues" id="variableValues"/>
+   </div>
+  </div>
+ </foreignObject>
+ <svg atv:refpx="1086" atv:refpy="310.212" height="550" id="id_5" width="1400" x="386" xlink:href="AGENT.DISPLAYS.NewView.Halliburton.complexChart" y="19.212"/>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var options = document.getElementById("options");
+var variableList = document.getElementById("variableList");
+var heading = document.getElementById("currentOptionHeading");
+var variableValues = document.getElementById("variableValues");
+var activeVar;
+
+var activeVarValues = [];
+
+var currentParam = "HookLoad";
+
+var cache = {};
+
+var convertedCache;
+
+var mapHeadings = {
+	HookLoad: "Глубина вдоль стенки скважины",
+	ECDVersusRunDepth: "Измеренная глубина рейса",
+	PorePressureDepth: "Глубина",
+	FracGradientDepth: "Глубина",
+	CirculatingPressureVersusRunDepth: "Глубина"
+};
+
+var mapOptionsTrans = {
+	HookLoad: "Нагрузка",
+	ECDVersusRunDepth: "Глубина",
+	PorePressureDepth: "Давление",
+	FracGradientDepth: "Глубина/давление",
+	CirculatingPressureVersusRunDepth: "Глубина ГРП"
+};
+
+var mapOptionsValues = {
+	HookLoad: "run_depth",
+	ECDVersusRunDepth: "MD",
+	PorePressureDepth: "PoreDepth",
+	FracGradientDepth: "FracDepth",
+	CirculatingPressureVersusRunDepth: "Annulus_Depth"
+};
+
+function Publisher() {
+	this.events = {};
+}
+Publisher.prototype.subscribe = function(event, fn) {
+	if (!this.events[event]) this.events[event] = [];
+	if (!this.events[event].includes(fn)) this.events[event].push(fn)
+}
+Publisher.prototype.unsubscribe = function(event, fn) {
+	var id = this.events[event].indexOf(fn);
+	if (id >= 0) this.events[event].splice(id, 1);
+}
+Publisher.prototype.publish = function(event, payload) {
+	if (!this.events[event]) this.events[event] = [];
+	this.events[event].forEach(function(fn) {
+		fn(payload || 0);
+	});
+}
+
+var pub = new Publisher();
+
+pub.subscribe("changeOption", changeOption)
+pub.subscribe("changeVarList", renderVariableList);
+pub.subscribe("changeVarValues", renderVariableValues);
+
+function changeOption(id) {
+	currentParam = Object.keys(mapOptionsValues)[id] || Object.keys(mapOptionsValues)[0];
+	pub.publish("changeVarList", cache[Object.keys(mapOptionsValues)[id] || Object.keys(mapOptionsValues)[0]].drag_chart_results);
+	renderHeading(currentParam);
+	webMI.trigger.fire("clearChart", {})
+}
+
+function renderHeading(param) {
+	heading.innerHTML = "";
+	heading.textContent = mapHeadings[param];
+}
+
+function renderOptions(elems) {
+	options.innerHTML = "";
+	elems.forEach(function(item) {
+		var unit = parent.document.createElement("option");
+		var span = parent.document.createElement("span");
+		
+		unit.classList.add("options-unit");
+		unit.value = item;
+		unit.appendChild(span);
+		span.classList.add("options-text");
+		span.textContent = mapOptionsTrans[item];
+		
+		options.appendChild(unit);
+	})
+}
+renderOptions(Object.keys(mapOptionsValues));
+
+function renderVariableList(arr) {
+	variableList.innerHTML = "";
+	arr.forEach(function(value, index) {
+		var calcedValue = roundUp(value[mapOptionsValues[currentParam]])
+		
+		var unit = parent.document.createElement("li");
+		var span = parent.document.createElement("span");
+
+		unit.classList.add("options-unit");
+		unit.appendChild(span);
+		
+		span.textContent = (calcedValue || 0) + cache[currentParam].units[mapOptionsValues[currentParam]];
+		span.classList.add("variable-item");
+		span.dataset.index = index;
+		
+		variableList.appendChild(unit);
+	})
+	pub.publish("changeVarValues", "0");
+}
+
+function roundUp(num) {
+
+	return num % 1 === 0 ? num : num.toFixed(2)
+}
+
+function elemDepth(e) {
+
+	return e.run_depth || e.MD || e.Annulus_Depth || e.PoreDepth || e.FracDepth || 0
+}
+
+function translate(currentParam, value) {
+
+	return (cache[currentParam].transcription[value[0]] || value[0])
+}
+
+variableValues.addEventListener("click", function(e) {
+	if (e.target.dataset.value && e.target.dataset.index) {
+		var currentObj = cache[currentParam].drag_chart_results;
+		var resArray = [];
+		var name = cache[currentParam].transcription[e.target.dataset.value];
+		
+		Object.keys(currentObj).forEach(function(item) {
+			resArray.push({
+				x: currentObj[item][e.target.dataset.value], 
+				y: elemDepth(currentObj[item]), 
+				name: name 
+			});
+		})
+		recheck(e);
+		if (e.ctrlKey) {
+			activeVarValues.map(function(item) {
+				webMI.trigger.fire("removeColor", item);
+			});
+			activeVarValues = [];
+			activeVarValues.push(e.target);
+			webMI.trigger.fire("setChartData", [{ name: name, data: resArray }]);
+			e.target.dataset.checked = true;
+			
+			return
+		}
+		if (e.target.dataset.checked != "true") {
+			var id = activeVarValues.indexOf(e.target);
+			
+			activeVarValues.splice(id, 1);
+			
+			webMI.trigger.fire("removeChartData", translate(currentParam, [e.target.dataset.value]));
+			webMI.trigger.fire("removeColor", e.target)
+			
+			return
+		}
+		activeVarValues.push(e.target);
+		webMI.trigger.fire("addChartData", { name: name, data: resArray });
+	}
+});
+
+function recheck(e) {
+	e.target.dataset.checked = e.target.dataset.checked == "false" ? "true" : "false";
+}
+
+function renderVariableValues(id) {
+	variableValues.innerHTML = "";
+	Object.entries(cache[currentParam].drag_chart_results[id]).forEach(function(value, index) {
+		var unit = parent.document.createElement("li");
+		var span = parent.document.createElement("span");
+		
+		unit.classList.add("value-item");
+		unit.appendChild(span);
+		
+		span.dataset.checked = false;
+		span.dataset.value = value[0];
+		span.dataset.index = id;
+		span.dataset.transcription = translate(currentParam, value);
+		span.classList.add("value-text");
+		span.textContent = translate(currentParam, value) + ": " + roundUp(value[1]) + cache[currentParam].units[value[0]];
+		
+		variableValues.appendChild(unit);
+	})
+}
+
+variableList.addEventListener("click", function(e) {
+	if (e.target.dataset.index) {
+		backlightTarget(e);
+		pub.publish("changeVarValues", e.target.dataset.index);
+	}
+});
+
+function backlightTarget(e) {
+	if (activeVar) activeVar.classList.remove("li-active");
+	activeVar = e.target;
+	e.target.classList.add("li-active");
+}
+
+function findElem(name) {
+	return activeVarValues.find(function(item) {
+	
+		return item.dataset.transcription == name
+	})
+}
+
+function turnActive(name, color) {
+	var target = findElem(name);
+	
+	target.style.border = "1px solid " + color;
+}
+
+function turnInactive(target) {
+	target.style.border = "1px solid " + "#303030";
+}
+
+options.addEventListener("change", function(e) {
+	pub.publish("changeOption", e.target.selectedIndex);
+});
+
+webMI.libraryLoader.load(["Halliburton/convert.js"], [], function(e) {
+	
+});
+webMI.trigger.connect("setHallData", function(res) {
+	console.log(res)
+	variableValues.innerHTML = "";
+	convertedCache = res.value.converted;
+	Object.keys(res.value.raw).forEach(function(key) {
+		cache[key] = res.value.raw[key];
+	})
+	
+	pub.publish("changeOption", 0);
+});
+webMI.trigger.connect("setColor", function(res) {
+	turnActive(res.value.name, res.value.color);
+});
+webMI.trigger.connect("removeColor", function(res) {
+	turnInactive(res.value);
+})]]></script>
+</svg>

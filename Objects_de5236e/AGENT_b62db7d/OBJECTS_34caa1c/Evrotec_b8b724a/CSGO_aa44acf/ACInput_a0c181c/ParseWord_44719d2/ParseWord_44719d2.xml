@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="valbyte" type="node" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.Evrotec.CSGO.ACInput"/>
+  <code><![CDATA[//console.log("ParseByte valbyte.value = ", valbyte.value);
+
+var mask_Heater = parseInt("000000001", 2);
+var mask_Mixer1 = parseInt("000000010", 2);
+var mask_Mixer2 = parseInt("000000100", 2);
+var mask_Mixer3 = parseInt("000001000", 2);
+var mask_Mixer4 = parseInt("000010000", 2);
+var mask_PumpSlurryHorizontal1 = parseInt("000100000", 2);
+var mask_PumpSlurryHorizontal2 = parseInt("001000000", 2);
+
+if(Number(valbyte.value) & mask_Heater){
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.CSGO.Heater");
+	var res = node.assign({value: true});
+	//console.log("FanOnCover = ", true);
+} else {
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.CSGO.Heater");
+	var res = node.assign({value: false});
+	//console.log("FanOnCover = ", false);
+}
+
+if(Number(valbyte.value) & mask_Mixer1){
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.CSGO.Mixer1");
+	var res = node.assign({value: true});
+	//console.log("Mixer1 = ", true);
+} else {
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.CSGO.Mixer1");
+	var res = node.assign({value: false});
+	//console.log("Mixer1 = ", false);
+}
+	
+if(Number(valbyte.value) & mask_Mixer2){
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.CSGO.Mixer2");
+	var res = node.assign({value: true});
+} else {
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.CSGO.Mixer2");
+	var res = node.assign({value: false});
+}
+
+if(Number(valbyte.value) & mask_Mixer3){
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.CSGO.Mixer3");
+	var res = node.assign({value: true});
+} else {
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.CSGO.Mixer3");
+	var res = node.assign({value: false});
+}	
+
+if(Number(valbyte.value) & mask_Mixer4){
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.CSGO.Mixer4");
+	var res = node.assign({value: true});
+} else {
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.CSGO.Mixer4");
+	var res = node.assign({value: false});
+} 
+
+if(Number(valbyte.value) & mask_PumpSlurryHorizontal1){
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.CSGO.PumpSlurryHorizontal1");
+	var res = node.assign({value: true});
+} else {
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.CSGO.PumpSlurryHorizontal1");
+	var res = node.assign({value: false});
+}
+
+if(Number(valbyte.value) & mask_PumpSlurryHorizontal2){
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.CSGO.PumpSlurryHorizontal2");
+	var res = node.assign({value: true});
+} else {
+	var node = new UaNode("AGENT.OBJECTS.Evrotec.CSGO.PumpSlurryHorizontal2");
+	var res = node.assign({value: false});
+}]]></code>
+</script>

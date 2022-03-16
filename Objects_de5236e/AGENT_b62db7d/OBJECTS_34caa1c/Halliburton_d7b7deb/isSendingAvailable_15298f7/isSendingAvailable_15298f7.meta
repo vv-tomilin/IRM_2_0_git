@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Halliburton.isSendingAvailable
+NodeClass: Variable
+BrowseName: 1:isSendingAvailable
+DisplayName: en|isSendingAvailable
+Description: en|isSendingAvailable
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

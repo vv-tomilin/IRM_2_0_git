@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.PumpBlock1.Analog.ThreePhaseNetwork.ReactPC
+NodeClass: Variable
+BrowseName: 1:ReactPC
+DisplayName: en|ReactPC
+Description: en|ReactPC
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

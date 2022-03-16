@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Drawworks.Brakes
+NodeClass: Object
+BrowseName: 1:Brakes
+DisplayName: en|Brakes
+Description: en|Brakes
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

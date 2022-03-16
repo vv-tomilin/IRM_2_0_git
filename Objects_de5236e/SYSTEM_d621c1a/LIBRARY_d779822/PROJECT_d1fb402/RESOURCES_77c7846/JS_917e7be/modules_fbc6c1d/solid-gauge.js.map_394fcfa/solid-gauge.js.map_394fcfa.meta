@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/solid-gauge.js.map
+NodeClass: Variable
+BrowseName: 1:solid-gauge.js.map
+DisplayName: en|solid-gauge.js.map
+Description: en|solid-gauge.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

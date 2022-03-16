@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+	<metadata>
+		<priority>0</priority>
+	</metadata>
+	<code><![CDATA[/**
+ * Code for the highcharts button forward object display
+ * ----------------------------------------
+ * This script supports the display steps forward on the x-axis
+ */
+
+
+/**
+ * DECLARATION SECTION
+ */
+var activeAxis = webMI.query["xAxisIndex"];
+var chart;
+var chartname = webMI.query.chartname;
+var stepPercent = webMI.query["stepPercent"]
+
+
+/**
+ * TRIGGER SECTION
+ */
+webMI.trigger.connect("clicked", function (e) {
+	var chart = webMI.trendFactory.getTrendByName(chartname);
+	if (!chart)
+		return;
+
+	var extremes = chart.chart.xAxis[activeAxis].getExtremes();
+	var difference = (extremes.max - extremes.min) * stepPercent / 100;
+	chart.chart.xAxis[activeAxis].setExtremes(extremes.min + difference, extremes.max + difference);
+	chart.chart.xAxis[activeAxis].options.min = extremes.min + difference;
+	chart.chart.xAxis[activeAxis].options.max = extremes.max + difference;
+
+	if (chart.control.isLiveModeRunning()) chart.control.stopLiveMode();
+	var oldMode = chart.chart.options.atviseOptions.mode;
+	chart.control.setMode("history");
+	chart.control.updated(function () {
+		chart.control.setMode(oldMode);
+	});
+}, "btn_forward");
+]]></code>
+</script>

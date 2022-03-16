@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="APDRunning" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.ASPD.APD1.Running"/>
+  <parameter name="APDMastermode" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.ASPD.APD1.MasterMode"/>
+  <parameter name="APDModereg" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.ASPD.APD1.ModeReg"/>
+  <parameter name="DateStart" type="http.request" trigger="false" relative="false" value=""/>
+  <parameter name="DateFinish" type="http.request" trigger="false" relative="false" value=""/>
+  <parameter name="rig_name" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Rig.General.RigName"/>
+  <parameter name="field_name" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Rig.General.FieldName"/>
+  <parameter name="bush_name" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Rig.General.BushName"/>
+  <parameter name="well_name" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Rig.General.WellName"/>
+  <parameter name="brigade_name" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Rig.Brigade.BrigadeName"/>
+  <parameter name="well_depth" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Well.WellDepth"/>
+  <code><![CDATA[try{
+	var from = DateStart.postvalues["DateStart"]
+	var to = DateFinish.postvalues["DateFinish"]
+	var date=new Date()
+	date.setTime(parseInt(from))
+	
+	
+	
+	
+	var y = date.getFullYear();
+	var m=date.getMonth()+1;
+	var d=date.getDate();
+		
+	var hour = date.getHours();
+	var min = date.getMinutes();
+	var sec = date.getSeconds();
+		
+	if(String(m).length < 2)
+		m = '0' + String(m);
+	if(String(d).length < 2)
+		d = '0' + String(d);	
+				
+	 if(String(hour).length < 2)
+		hour = '0' + String(hour);
+	if(String(min).length < 2)
+		min = '0' + String(min);
+	if(String(sec).length < 2)
+		sec = '0' + String(sec);		
+	 		
+	
+	
+	
+	var node_rig_name = new UaNode(rig_name);//
+	var node_field_name = new UaNode(field_name);
+	var node_bush_name = new UaNode(bush_name);
+	var node_well_name = new UaNode(well_name);
+	var node_brigade_name = new UaNode(brigade_name);//
+	var node_well_depth = new UaNode(well_depth);
+	
+	
+	
+	var reportfolder = "rigdata/reports/";
+	var filename = "APD_quick_report_" + y + "_" + m + "_" + d +"_"+hour+","+min+","+sec+ ".csv";
+	//console.log(reportfolder)
+	//console.log(filename)
+	var ofs = new OutputFileStream(reportfolder+filename,'utf8'); //assign файла
+	ofs.open();
+	var header="\ufeffОтчет по запросу:;"
+	header=header+"Буровая:;Бригада:;ООО RIGINTEL"
+	ofs.writeLine(header)
+	header="АПД;"+node_rig_name.value+";"+node_brigade_name.value+";"
+	ofs.writeLine(header)
+	header="Месторождение:;Куст:;Скважина:;Забой:"
+	ofs.writeLine(header)
+	header=node_field_name.value+";"+node_bush_name.value+";"+node_well_name.value+";"+node_well_depth.value
+	ofs.writeLine(header)
+	header="Время;От:"+d+"-"+m+"-"+y+" "+hour+":"+min+":"+sec+";;"
+	ofs.writeLine(header)
+	header = ";;;"	
+	ofs.writeLine(header)
+	header="Время;АПД_в_работе;АПД_режим;АПД_управление"
+	ofs.writeLine(header)
+	var APDRunning_raw=call("SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.Report.simplifier",{"nodeName":"g:"+APDRunning,"startT":from,"endT":to})
+	var APDMastermode_raw=call("SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.Report.simplifier",{"nodeName":"g:"+APDMastermode,"startT":from,"endT":to})
+	var APDModereg_raw=call("SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.Report.simplifier",{"nodeName":"g:"+APDModereg,"startT":from,"endT":to})
+	//console.log(APDRunning_raw)
+	//console.log(APDMastermode_raw)
+	//console.log(APDModereg_raw)
+	var prev_res=["no_data","no_data","no_data","no_data"]
+	for(var i=parseInt(from);i<parseInt(to);i+=60000){
+		var res=[]
+		
+		var dt=new Date()
+		dt.setTime(i)
+		var h = dt.getHours();
+		var m = dt.getMinutes();
+		var s = dt.getSeconds();
+		
+		if(String(h).length < 2)
+			h = '0' + String(h);
+		if(String(m).length < 2)
+			m = '0' + String(m);
+		if(String(s).length < 2)
+			s = '0' + String(s);
+		
+		res.push(h+":"+m+":"+s)
+		prev_res[0] = h+":"+m+":"+s+";"
+		
+		if(APDRunning_raw.length==0){
+			res.push("no_data")
+		}else{
+			var temp=APDRunning_raw.map(function(e){
+				if((e[0]>i)&&(e[0]<i+60000)){
+					return e[1]
+				}
+			})
+			var ttemp=temp
+			temp=[]
+			ttemp.forEach(function(e){if(e!=null){temp.push(e)}})
+			if(temp.length==0){
+				res.push(prev_res[1])
+			}else if(temp.length>1){
+				res.push(temp[temp.length-1])
+				prev_res[1]=temp[temp.length-1]
+			}else{
+				res.push(temp[0])
+				prev_res[1]=temp[0]
+			}
+		}
+		
+		if(APDMastermode_raw.length==0){
+			res.push("no_data")
+		}else{
+			var temp=APDMastermode_raw.map(function(e){
+				if((e[0]>i)&&(e[0]<i+60000)){
+					return e[1]
+				}
+			})
+			var ttemp=temp
+			temp=[]
+			ttemp.forEach(function(e){if(e!=null){temp.push(e)}})
+			//console.log(temp)
+			if(temp.length==0){
+				res.push(prev_res[2])
+			}else if(temp.length>1){
+				res.push(temp[temp.length-1])
+				prev_res[2]=temp[temp.length-1]
+			}else{
+				res.push(temp[0])
+				prev_res[2]=temp[0]
+			}
+		}
+		
+		if(APDModereg_raw.length==0){
+			res.push("no_data")
+		}else{
+			var temp=APDModereg_raw.map(function(e){
+				if((e[0]>i)&&(e[0]<i+60000)){
+					return e[1]
+				}
+			})
+			var ttemp=temp
+			temp=[]
+			ttemp.forEach(function(e){if(e!=null){temp.push(e)}})
+			//console.log(temp)
+			if(temp.length==0){
+				res.push(prev_res[3])
+			}else if(temp.length>1){
+				res.push(temp[temp.length-1])
+				prev_res[3]=temp[temp.length-1]
+			}else{
+				res.push(temp[0])
+				prev_res[3]=temp[0]
+			}
+		}
+		
+		var str=res[0]+";"+res[1]+";"
+		switch(res[2]){
+				case 0:
+					str=str+"Бурение;"
+				break;
+				case 1:
+					str=str+"Спуск;"
+				break;
+				case 2:
+					str=str+"Подъем;"
+				break;
+				case "no_data":
+					str=str+"no_data;"
+		}
+		switch(res[3]){
+				case 0:
+					str=str+"Нагрузка"
+				break;
+				case 1:
+					str=str+"Давление"
+				break;
+				case 2:
+					str=str+"Скорость"
+				break;
+				case 3:
+					str=str+"Момент"
+				break;
+				case "no_data":
+					str=str+"no_data"
+		}
+		ofs.writeLine(str)
+		
+	}
+	ofs.close();
+	return("ok")
+}catch(err){
+	console.log(err)
+	return(err)
+}]]></code>
+</script>

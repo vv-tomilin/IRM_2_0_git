@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="datasource" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="address" type="stringarray" trigger="false" relative="false" value=""/>
+  <parameter name="starttime" type="number" trigger="false" relative="false" value=""/>
+  <parameter name="endtime" type="number" trigger="false" relative="false" value=""/>
+  <parameter name="continuationpoint" type="stringarray" trigger="false" relative="false" value=""/>
+  <parameter name="releasecontinuationpoints" type="boolean" trigger="false" relative="false" value="false"/>
+  <parameter name="numvalues" type="number" trigger="false" relative="false" value="0"/>
+  <parameter name="returnbounds" type="boolean" trigger="false" relative="false" value="false"/>
+  <code><![CDATA[/*
+atvise server wrapper for UA method "AGENT.MIRROR.METHODS.historyReadRaw"
+This script is a standard atvise resource and must not be modified.
+For a description including an example see the atvise documentation.
+*/
+
+if (continuationpoint === null || continuationpoint === undefined)
+	continuationpoint = [];
+
+var methodCall = new UaNode("AGENT.MIRROR.METHODS.historyReadRaw");
+var callResult = methodCall.call({
+	object: "AGENT.MIRROR.METHODS",
+	input: [
+		{type: UaNode.STRING, value: datasource},
+		{type: UaNode.STRING, value: address},
+		{type: UaNode.DATETIME, value: starttime},
+		{type: UaNode.DATETIME, value: endtime},
+		{type: UaNode.BYTESTRING, value: continuationpoint},
+		{type: UaNode.BOOLEAN, value: releasecontinuationpoints},
+		{type: UaNode.UINT32, value: numvalues},
+		{type: UaNode.BOOLEAN, value: returnbounds}
+	]
+});
+
+var result = {};
+
+if (callResult.error) {
+	result.error = callResult.error;
+	result.errorstring = methodCall.statusToString(result.error);
+	if (callResult.argumentError) {
+		var parameterNames = [
+			"datasource",
+			"address",
+			"starttime",
+			"endtime",
+			"continuationpoint",
+			"releasecontinuationpoints",
+			"numvalues",
+			"returnbounds"];
+		for (var i = 0; i < callResult.argumentError.length; ++i)
+			if (callResult.argumentError[i])
+				result.errorstring += ", " + parameterNames[i] + ":" + methodCall.statusToString(callResult.argumentError[i]);
+	}
+}
+else if (callResult.result.length < 3) {
+	result.error = UaNode.BADUNEXPECTEDERROR;
+	result.errorstring = methodCall.statusToString(result.error);
+	result.errorstring += ", result.length < 3";
+}
+else if (callResult.result[0].length != address.length) {
+	result.error = UaNode.BADUNEXPECTEDERROR;
+	result.errorstring = methodCall.statusToString(result.error);
+	result.errorstring += ", InputArrayLength != ResultArrayLength";
+}
+else {
+	result.result = {};
+
+	result.result["status"] = callResult.result[0];
+	result.result["continuationpoint"] = callResult.result[1];
+	result.result["value"] = [];
+	for (var i = 0; i < callResult.result[2].length; ++i)
+	{
+		result.result["value"][i] = [];
+		for (var j = 0; j < callResult.result[2][i].value.length; ++j)
+		{
+			result.result["value"][i][j] = {}
+			result.result["value"][i][j]["status"] = callResult.result[2][i].value[j].value.status;
+			result.result["value"][i][j]["sourcetime"] = callResult.result[2][i].value[j].value.sourcetime;
+			result.result["value"][i][j]["servertime"] = callResult.result[2][i].value[j].value.servertime;
+			result.result["value"][i][j]["type"] = callResult.result[2][i].value[j].value.type;
+			result.result["value"][i][j]["value"] = callResult.result[2][i].value[j].value.value;
+		}
+	}
+}
+
+return result;]]></code>
+</script>

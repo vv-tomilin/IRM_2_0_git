@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/DataTables/DataTables-1.10.16
+NodeClass: Object
+BrowseName: 1:DataTables-1.10.16
+DisplayName: en|DataTables-1.10.16
+Description: en|DataTables-1.10.16
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

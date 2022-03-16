@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.NPVSecondsByStop
+NodeClass: Variable
+BrowseName: 1:NPVSecondsByStop
+DisplayName: en|NPVSecondsByStop
+Description: en|NPVSecondsByStop
+DataType: UInt64
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

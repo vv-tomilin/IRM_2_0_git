@@ -1,0 +1,10 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/DataTables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css
+NodeClass: Variable
+BrowseName: 1:dataTables.bootstrap4.min.css
+DisplayName: en|dataTables.bootstrap4.min.css
+Description: en|dataTables.bootstrap4.min.css
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Css
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Css.Compress

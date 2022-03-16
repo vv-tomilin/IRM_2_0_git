@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Recomendations.RecChart
+NodeClass: Variable
+BrowseName: 1:RecChart
+DisplayName: en|RecChart
+Description: en|RecChart
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

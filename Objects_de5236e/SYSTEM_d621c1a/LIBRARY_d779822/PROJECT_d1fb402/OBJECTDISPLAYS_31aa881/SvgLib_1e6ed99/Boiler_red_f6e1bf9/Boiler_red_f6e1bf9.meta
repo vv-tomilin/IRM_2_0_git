@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Boiler_red
+NodeClass: Variable
+BrowseName: 1:Boiler_red
+DisplayName: en|Boiler_red
+Description: en|Boiler_red
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

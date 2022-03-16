@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.opc.isActive1500
+NodeClass: Variable
+BrowseName: 1:isActive1500
+DisplayName: en|isActive1500
+Description: en|isActive1500
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

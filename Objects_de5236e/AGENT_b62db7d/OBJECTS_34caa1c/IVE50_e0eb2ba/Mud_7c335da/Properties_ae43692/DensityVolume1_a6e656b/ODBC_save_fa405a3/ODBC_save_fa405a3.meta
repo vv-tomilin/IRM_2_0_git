@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.Properties.DensityVolume1.ODBC_save
+NodeClass: Variable
+BrowseName: 1:ODBC_save
+DisplayName: en|ODBC_save
+Description: en|ODBC_save
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" inkscape:version="1.0beta1 (d07a077, 2019-11-03)" sodipodi:docname="Mixer.svg" id="svg459" xmlns="http://www.w3.org/2000/svg" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" height="145.99303" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="46.43063" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <defs id="defs453">
+  <linearGradient y1="54.6245" id="Sk2of9mgq1k" gradientUnits="userSpaceOnUse" x2="98" x1="2" y2="54.6245">
+   <stop stop-color="#2098e8" offset="0"/>
+   <stop stop-color="#005287" offset="1"/>
+  </linearGradient>
+  <linearGradient y1="54.6245" id="Sk2of9mgq1n" gradientUnits="userSpaceOnUse" x2="98" x1="2" y2="54.6245">
+   <stop stop-color="#de9c5f" offset="0"/>
+   <stop stop-color="#000000" offset="1"/>
+  </linearGradient>
+  <linearGradient y1="54.6245" id="Sk2of9mgq1q" gradientUnits="userSpaceOnUse" x2="98" x1="2" y2="54.6245">
+   <stop stop-color="#c6e2ff" offset="0"/>
+   <stop stop-color="#4c5e70" offset="1"/>
+  </linearGradient>
+  <linearGradient y1="54.6245" id="Sk2of9mgq1w" gradientUnits="userSpaceOnUse" x2="98" x1="2" y2="54.6245">
+   <stop stop-color="#6db6ff" offset="0"/>
+   <stop stop-color="#254a70" offset="1"/>
+  </linearGradient>
+  <linearGradient y1="54.6245" id="Sk2of9mgq22" gradientUnits="userSpaceOnUse" x2="98" x1="2" y2="54.6245">
+   <stop stop-color="#b2b2b2" offset="0"/>
+   <stop stop-color="#666666" offset="1"/>
+  </linearGradient>
+  <linearGradient y1="54.6245" id="Sk2of9mgq28" gradientUnits="userSpaceOnUse" x2="98" x1="2" y2="54.6245">
+   <stop stop-color="#bc4512" offset="0"/>
+   <stop stop-color="#472000" offset="1"/>
+  </linearGradient>
+  <linearGradient y1="54.6245" id="Sk2of9mgq2q" gradientUnits="userSpaceOnUse" x2="98" x1="2" y2="54.6245">
+   <stop stop-color="#96c9eb" offset="0"/>
+   <stop stop-color="#547387" offset="1"/>
+  </linearGradient>
+ </defs>
+ <sodipodi:namedview bordercolor="#666666" inkscape:window-x="234" inkscape:document-rotation="0" inkscape:pageopacity="0.0" borderopacity="1.0" inkscape:document-units="mm" inkscape:zoom="0.35" pagecolor="#ffffff" inkscape:cx="933.45721" inkscape:current-layer="layer1" inkscape:cy="363.03518" id="base" inkscape:pageshadow="2" showgrid="false" inkscape:window-height="951" inkscape:window-maximized="0" inkscape:window-width="1644" inkscape:window-y="23"/>
+ <metadata id="metadata456">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+  <atv:gridconfig height="20" enabled="false" width="20" gridstyle="lines"/>
+  <atv:snapconfig height="10" enabled="false" width="10"/>
+ </metadata>
+ <g atv:refpx="23.215" inkscape:groupmode="layer" atv:refpy="72.994" id="layer1" transform="translate(141.14389,-52.113608)" inkscape:label="Слой 1">
+  <g atv:refpx="-117.929" atv:refpy="125.107" id="g1366" transform="matrix(1.210929,0,0,1.4973807,-178.0845,50.1176)">
+   <g atv:refpx="49.678" atv:refpy="50.082" id="shape">
+    <path atv:refpx="49.678" atv:refpy="50.082" d="M51.711,93.586L51.708,93.587L51.708,93.032C52.778,92.648 55.422,91.661 56.057,91.078C56.714,90.474 54.085,89.527 51.708,88.828L51.708,88.515C53.071,88.428 54.288,87.984 53.425,86.885C52.765,86.044 52.16,85.23 51.708,84.606L51.708,84.318C56.567,85.558 68.51,88 68.845,82.13C69.07,78.195 59.743,82.902 51.711,83.286L51.708,83.287L51.708,82.732C52.778,82.348 55.422,81.362 56.057,80.778C56.714,80.174 54.085,79.227 51.708,78.528L51.708,44.698C57.677,44.46 62.238,43.195 62.238,41.666L62.238,39.34C62.238,38.663 61.333,38.038 59.818,37.53L59.845,34.952C61.158,34.474 61.924,33.899 61.924,33.28L61.924,32.006L61.924,31.163L64.14,31.163C66.177,31.163 67.829,30.759 67.829,30.259L67.829,21.851C67.829,21.352 66.177,20.948 64.14,20.948L61.924,20.948L61.924,15.467C62.633,15.068 63.031,14.628 63.031,14.165L63.031,5.511C63.031,5.365 62.988,5.222 62.912,5.081C62.918,5.042 62.924,5.003 62.924,4.963C62.924,4.495 62.517,4.051 61.789,3.649C60.437,2.319 55.53,1.333 49.68,1.333C43.831,1.333 38.923,2.319 37.571,3.649C36.843,4.051 36.436,4.495 36.436,4.963C36.436,5.002 36.442,5.042 36.448,5.081C36.372,5.222 36.329,5.365 36.329,5.511L36.329,14.166C36.329,14.629 36.727,15.069 37.436,15.468L37.436,33.281C37.436,33.903 38.211,34.482 39.537,34.961L39.51,37.542C38.013,38.048 37.122,38.668 37.122,39.341L37.122,41.667C37.122,43.196 41.683,44.461 47.652,44.699L47.652,77.99C46.464,78.134 45.548,78.592 46.327,79.583C46.812,80.201 47.263,80.801 47.652,81.327L47.652,82.267L47.6,82.132C42.707,80.888 30.844,78.485 30.51,84.333C30.285,88.269 39.619,83.558 47.652,83.176L47.652,83.879C46.431,84.327 44.262,85.169 43.695,85.69C43.074,86.261 45.389,87.137 47.652,87.823L47.652,88.288C46.464,88.433 45.548,88.89 46.327,89.882C46.812,90.499 47.263,91.1 47.652,91.626L47.652,92.566L47.6,92.431C42.707,91.187 30.844,88.783 30.51,94.631C30.285,98.567 39.619,93.856 47.652,93.475L47.652,94.178C46.431,94.625 44.262,95.468 43.695,95.989C42.894,96.725 46.976,97.972 49.531,98.657C50.904,99.025 54.795,98.933 53.422,97.185C52.626,96.172 51.915,95.2 51.45,94.553C56.135,95.769 68.502,98.403 68.842,92.43C69.07,88.495 59.742,93.201 51.711,93.586" id="path1255" inkscape:connector-curvature="0" fill="#BCBEC0"/>
+   </g>
+   <g atv:refpx="64.772" atv:refpy="21.852" id="light">
+    <path atv:refpx="64.772" atv:refpy="21.852" d="M61.714,20.949L64.14,20.949C66.177,20.949 67.829,21.353 67.829,21.852C67.829,22.351 66.177,22.755 64.14,22.755L61.714,22.755Z" id="path1258" inkscape:connector-curvature="0" fill="#F2F2F2"/>
+   </g>
+   <g atv:refpx="49.681" atv:refpy="54.25" id="dark">
+    <path atv:refpx="61.714" atv:refpy="24.129" d="M61.502,32.789C61.776,32.54 61.925,32.278 61.925,32.008L61.925,15.468C61.795,15.541 61.653,15.613 61.502,15.683Z" id="path1261" inkscape:connector-curvature="0" fill="#6D6E71"/>
+    <path atv:refpx="50.472" atv:refpy="26.206" d="M49.633,17.435L49.633,35.004C49.649,35.004 49.665,35.004 49.681,35.004C50.234,35.004 50.777,34.995 51.311,34.977L51.311,17.407C50.776,17.423 50.234,17.434 49.681,17.434C49.664,17.435 49.649,17.434 49.633,17.435" id="path1263" inkscape:connector-curvature="0" fill="#6D6E71"/>
+    <path atv:refpx="60.779" atv:refpy="24.639" d="M60.546,33.389C60.716,33.309 60.872,33.227 61.013,33.143L61.013,15.888C60.864,15.947 60.71,16.004 60.546,16.061Z" id="path1265" inkscape:connector-curvature="0" fill="#6D6E71"/>
+    <path atv:refpx="38.635" atv:refpy="24.666" d="M38.21,33.057C38.444,33.211 38.73,33.358 39.059,33.498L39.059,16.14C38.753,16.042 38.469,15.94 38.21,15.833Z" id="path1267" inkscape:connector-curvature="0" fill="#6D6E71"/>
+    <path atv:refpx="37.547" atv:refpy="24.02" d="M37.437,32.006C37.437,32.201 37.515,32.39 37.657,32.573L37.657,15.58C37.583,15.543 37.504,15.506 37.437,15.468Z" id="path1269" inkscape:connector-curvature="0" fill="#6D6E71"/>
+    <path atv:refpx="53.264" atv:refpy="26.087" d="M52.372,34.932C52.985,34.898 53.581,34.853 54.156,34.798L54.156,17.243C53.577,17.293 52.986,17.337 52.372,17.369Z" id="path1271" inkscape:connector-curvature="0" fill="#6D6E71"/>
+    <path atv:refpx="44.941" atv:refpy="25.99" d="M44.049,34.669C44.619,34.741 45.214,34.803 45.833,34.852L45.833,17.296C45.217,17.25 44.625,17.192 44.049,17.127Z" id="path1273" inkscape:connector-curvature="0" fill="#6D6E71"/>
+    <path atv:refpx="40.27" atv:refpy="25.206" d="M39.739,33.756C40.064,33.867 40.419,33.971 40.8,34.07L40.8,16.603C40.426,16.521 40.072,16.435 39.739,16.343Z" id="path1275" inkscape:connector-curvature="0" fill="#6D6E71"/>
+    <path atv:refpx="57.935" atv:refpy="25.479" d="M57.404,34.333C57.777,34.259 58.131,34.178 58.466,34.094L58.466,16.624C58.126,16.697 57.773,16.766 57.404,16.83Z" id="path1277" inkscape:connector-curvature="0" fill="#6D6E71"/>
+    <path atv:refpx="42.361" atv:refpy="25.651" d="M41.607,34.26C42.079,34.361 42.583,34.454 43.115,34.537L43.115,17.011C42.588,16.938 42.087,16.855 41.607,16.766Z" id="path1279" inkscape:connector-curvature="0" fill="#6D6E71"/>
+    <path atv:refpx="47.669" atv:refpy="26.177" d="M46.894,34.927C47.4,34.956 47.916,34.978 48.443,34.991L48.443,17.42C47.917,17.408 47.4,17.389 46.894,17.363Z" id="path1281" inkscape:connector-curvature="0" fill="#6D6E71"/>
+    <path atv:refpx="55.844" atv:refpy="25.828" d="M55.09,34.697C55.615,34.634 56.119,34.561 56.598,34.481L56.598,16.959C56.114,17.031 55.613,17.097 55.09,17.154Z" id="path1283" inkscape:connector-curvature="0" fill="#6D6E71"/>
+    <path atv:refpx="59.57" atv:refpy="25.075" d="M59.145,33.909C59.451,33.818 59.733,33.722 59.994,33.622L59.994,16.242C59.726,16.322 59.442,16.398 59.145,16.471Z" id="path1285" inkscape:connector-curvature="0" fill="#6D6E71"/>
+    <path atv:refpx="49.68" atv:refpy="88.636" d="M49.533,88.357C48.959,88.203 48.308,88.02 47.653,87.822L47.653,88.953C47.653,89.227 48.561,89.449 49.68,89.449C50.8,89.449 51.707,89.227 51.707,88.953L51.707,88.515C50.901,88.567 50.044,88.494 49.533,88.357" id="path1287" inkscape:connector-curvature="0" fill="#808285"/>
+    <path atv:refpx="46.847" atv:refpy="79.658" d="M47.654,77.989C46.466,78.133 45.55,78.591 46.329,79.583C46.814,80.2 47.266,80.801 47.654,81.327Z" id="path1289" inkscape:connector-curvature="0" fill="#6D6E71"/>
+    <path atv:refpx="53.934" atv:refpy="80.63" d="M51.708,78.528L51.708,82.732C52.778,82.348 55.422,81.362 56.057,80.778C56.714,80.174 54.084,79.227 51.708,78.528" id="path1291" inkscape:connector-curvature="0" fill="#6D6E71"/>
+    <path atv:refpx="46.847" atv:refpy="89.957" d="M47.654,88.288C46.466,88.432 45.55,88.89 46.329,89.881C46.814,90.499 47.266,91.1 47.654,91.625Z" id="path1293" inkscape:connector-curvature="0" fill="#6D6E71"/>
+    <path atv:refpx="53.934" atv:refpy="90.93" d="M51.708,88.828L51.708,93.032C52.778,92.648 55.422,91.661 56.057,91.078C56.714,90.474 54.084,89.527 51.708,88.828" id="path1295" inkscape:connector-curvature="0" fill="#6D6E71"/>
+   </g>
+   <g atv:refpx="49.681" atv:refpy="23.802" id="shadow">
+    <path atv:refpx="49.141" atv:refpy="2.655" d="M46.32,3.41L52.871,1.988C52.377,1.949 51.865,1.92 51.342,1.899C51.323,1.911 51.311,1.932 51.287,1.937L45.411,3.211Z" id="path1298" inkscape:connector-curvature="0"/>
+    <path atv:refpx="41.514" atv:refpy="2.87" d="M41.802,2.82L41.685,2.795C41.523,2.844 41.372,2.894 41.226,2.945Z" id="path1300" inkscape:connector-curvature="0"/>
+    <path atv:refpx="43.673" atv:refpy="2.391" d="M44.852,2.158C43.985,2.271 43.193,2.413 42.494,2.58L42.702,2.625Z" id="path1302" inkscape:connector-curvature="0"/>
+    <path atv:refpx="42.407" atv:refpy="4.143" d="M44.511,3.408L39.394,4.519C39.419,4.64 39.47,4.76 39.563,4.877L45.42,3.606Z" id="path1304" inkscape:connector-curvature="0"/>
+    <path atv:refpx="41.519" atv:refpy="3.568" d="M42.702,3.016L39.83,3.639C39.634,3.793 39.498,3.954 39.427,4.121L43.611,3.212Z" id="path1306" inkscape:connector-curvature="0"/>
+    <path atv:refpx="44.207" atv:refpy="5.209" d="M47.028,4.432L40.984,5.744C41.202,5.828 41.433,5.909 41.688,5.985L47.43,4.739C47.198,4.649 47.058,4.544 47.028,4.432" id="path1308" inkscape:connector-curvature="0"/>
+    <path atv:refpx="48.98" atv:refpy="5.908" d="M52.016,5.037L44.765,6.61C45.268,6.677 45.801,6.732 46.35,6.778L53.194,5.292Z" id="path1310" inkscape:connector-curvature="0"/>
+    <path atv:refpx="51.502" atv:refpy="6.202" d="M54.094,5.488L47.732,6.869C48.364,6.899 49.013,6.916 49.681,6.916C49.75,6.916 49.817,6.914 49.885,6.913L55.272,5.744Z" id="path1312" inkscape:connector-curvature="0"/>
+    <path atv:refpx="46.379" atv:refpy="5.696" d="M49.681,5.043C49.166,5.043 48.69,5.006 48.284,4.944L42.498,6.2C42.876,6.29 43.284,6.372 43.714,6.447L50.26,5.026C50.074,5.037 49.88,5.043 49.681,5.043" id="path1314" inkscape:connector-curvature="0"/>
+    <path atv:refpx="57.495" atv:refpy="4.881" d="M56.173,5.548L59.882,4.743C59.949,4.627 59.995,4.509 59.995,4.389C59.995,4.33 59.975,4.272 59.959,4.214L54.994,5.292Z" id="path1316" inkscape:connector-curvature="0"/>
+    <path atv:refpx="58.225" atv:refpy="5.582" d="M57.072,5.744L57.877,5.919C58.51,5.715 59.017,5.489 59.377,5.244Z" id="path1318" inkscape:connector-curvature="0"/>
+    <path atv:refpx="43.567" atv:refpy="4.642" d="M46.319,3.801L39.907,5.192C40.043,5.292 40.207,5.388 40.391,5.482L47.227,3.998Z" id="path1320" inkscape:connector-curvature="0"/>
+    <path atv:refpx="54.536" atv:refpy="6.395" d="M56.172,5.939L51.971,6.851C53.963,6.74 55.733,6.489 57.102,6.141Z" id="path1322" inkscape:connector-curvature="0"/>
+    <path atv:refpx="46.71" atv:refpy="2.44" d="M43.602,2.82L44.51,3.017L49.818,1.865C49.772,1.865 49.727,1.863 49.681,1.863C49.04,1.863 48.416,1.879 47.808,1.907Z" id="path1324" inkscape:connector-curvature="0"/>
+    <path atv:refpx="51.222" atv:refpy="2.957" d="M48.128,3.802L55.225,2.262C54.867,2.206 54.493,2.156 54.106,2.111L47.219,3.606Z" id="path1326" inkscape:connector-curvature="0"/>
+    <path atv:refpx="53.642" atv:refpy="3.161" d="M51.362,3.885L57.105,2.639C56.825,2.568 56.533,2.499 56.22,2.437L50.18,3.748C50.625,3.768 51.025,3.817 51.362,3.885" id="path1328" inkscape:connector-curvature="0"/>
+    <path atv:refpx="55.424" atv:refpy="3.736" d="M52.351,4.389C52.351,4.467 52.286,4.54 52.185,4.609L58.748,3.185C58.495,3.071 58.199,2.964 57.88,2.862L52.099,4.117C52.257,4.2 52.351,4.292 52.351,4.389" id="path1330" inkscape:connector-curvature="0"/>
+    <path atv:refpx="56.342" atv:refpy="4.28" d="M54.094,5.097L59.769,3.865C59.649,3.726 59.477,3.592 59.268,3.462L52.915,4.841Z" id="path1332" inkscape:connector-curvature="0"/>
+    <path atv:refpx="49.681" atv:refpy="16.702" d="M37.437,15.468L37.437,15.968C39.492,17.126 44.198,17.936 49.681,17.936C55.163,17.936 59.869,17.126 61.925,15.968L61.925,15.468C59.87,16.625 55.163,17.436 49.681,17.436C44.198,17.436 39.492,16.625 37.437,15.468" id="path1334" inkscape:connector-curvature="0" fill="#231F20"/>
+    <path atv:refpx="49.674" atv:refpy="35.765" d="M49.681,36.28C45.461,36.28 41.739,35.757 39.538,34.961L39.504,34.468C39.489,35.84 44.022,37.001 49.629,37.059C55.236,37.117 59.794,36.053 59.807,34.679L59.843,34.952C57.645,35.752 53.914,36.279 49.681,36.28" id="path1336" inkscape:connector-curvature="0" fill="#231F20"/>
+    <path atv:refpx="0.5" stroke-width="0.2548" atv:refpy="0.5" d="M0,0" id="path1338" stroke="#000000" stroke-miterlimit="10" inkscape:connector-curvature="0" fill="#E6E6E6"/>
+    <path atv:refpx="49.681" atv:refpy="45.22" d="M47.654,45.698C48.315,45.724 48.989,45.742 49.681,45.742C50.373,45.742 51.047,45.724 51.708,45.698L51.708,44.698C51.047,44.724 50.373,44.742 49.681,44.742C48.989,44.742 48.315,44.724 47.654,44.698" id="path1340" inkscape:connector-curvature="0" fill="#231F20"/>
+    <path atv:refpx="0.5" stroke-width="0.2548" atv:refpy="0.5" d="M0,0" id="path1342" stroke="#000000" stroke-miterlimit="10" inkscape:connector-curvature="0" fill="#E6E6E6"/>
+   </g>
+   <g atv:refpx="49.541" atv:refpy="51.658" id="hlight">
+    <path atv:refpx="49.68" atv:refpy="7.75" d="M37.668,6.195C37.668,7.408 43.046,8.391 49.68,8.391C56.314,8.391 61.692,7.408 61.692,6.195C61.692,7.912 56.314,9.304 49.68,9.304C43.046,9.304 37.668,7.912 37.668,6.195" id="path1345" inkscape:connector-curvature="0" fill="#FFFFFF"/>
+    <line atv:refpx="49.803" stroke-width="0.5096" y1="45.759998" atv:refpy="64.515" id="line1347" stroke="#FFFFFF" stroke-miterlimit="10" x2="49.303001" fill="none" x1="49.303001" y2="83.269997"/>
+    <line atv:refpx="49.803" stroke-width="0.5096" y1="89.5" atv:refpy="91.635" id="line1349" stroke="#FFFFFF" stroke-miterlimit="10" x2="49.303001" fill="none" x1="49.303001" y2="93.769997"/>
+    <path atv:refpx="37.568" atv:refpy="82.729" d="M44.261,81.792C44.261,81.792 37.127,80.518 34.706,81.155C32.286,81.792 31.012,83.193 30.884,84.212C30.757,85.231 32.031,83.065 35.343,82.556C38.656,82.045 44.261,81.792 44.261,81.792" id="path1351" inkscape:connector-curvature="0" fill="#FFFFFF"/>
+    <path atv:refpx="61.477" atv:refpy="83.785" d="M54.757,84.276C54.757,84.276 65.176,86.679 68.197,82.365C68.197,82.365 67.624,84.913 64.439,85.167C61.254,85.422 54.757,84.276 54.757,84.276" id="path1353" inkscape:connector-curvature="0" fill="#FFFFFF"/>
+    <path atv:refpx="46.741" atv:refpy="95.763" d="M48.847,94.404C48.847,94.404 46.469,95.933 47.318,97.122C44.599,96.443 43.693,95.994 45.789,95.296C47.319,94.786 48.847,94.404 48.847,94.404" id="path1355" inkscape:connector-curvature="0" fill="#FFFFFF"/>
+    <path atv:refpx="37.568" atv:refpy="92.984" d="M44.261,92.047C44.261,92.047 37.127,90.773 34.706,91.41C32.286,92.047 31.012,93.448 30.884,94.467C30.756,95.486 32.031,93.32 35.343,92.811C38.656,92.301 44.261,92.047 44.261,92.047" id="path1357" inkscape:connector-curvature="0" fill="#FFFFFF"/>
+    <path atv:refpx="61.227" atv:refpy="94.167" d="M54.507,94.658C54.507,94.658 64.926,97.062 67.947,92.747C67.947,92.747 67.374,95.295 64.189,95.55C61.004,95.804 54.507,94.658 54.507,94.658" id="path1359" inkscape:connector-curvature="0" fill="#FFFFFF"/>
+    <path atv:refpx="49.681" atv:refpy="41.218" d="M37.888,39.455C37.888,40.757 43.168,41.815 49.681,41.815C56.193,41.815 61.474,40.757 61.474,39.455C61.474,41.402 56.193,42.98 49.681,42.98C43.168,42.98 37.888,41.401 37.888,39.455" id="path1361" inkscape:connector-curvature="0" fill="#FFFFFF"/>
+    <path atv:refpx="46.741" atv:refpy="85.507" d="M48.847,84.148C48.847,84.148 46.469,85.676 47.318,86.866C44.599,86.187 43.693,85.738 45.789,85.04C47.319,84.531 48.847,84.148 48.847,84.148" id="path1363" inkscape:connector-curvature="0" fill="#FFFFFF"/>
+   </g>
+  </g>
+ </g>
+</svg>

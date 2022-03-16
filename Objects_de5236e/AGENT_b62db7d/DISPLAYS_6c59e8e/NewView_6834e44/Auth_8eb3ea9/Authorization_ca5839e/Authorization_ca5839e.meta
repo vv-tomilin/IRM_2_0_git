@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.Auth.Authorization
+NodeClass: Variable
+BrowseName: 1:Authorization
+DisplayName: en|Authorization
+Description: en|Authorization
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

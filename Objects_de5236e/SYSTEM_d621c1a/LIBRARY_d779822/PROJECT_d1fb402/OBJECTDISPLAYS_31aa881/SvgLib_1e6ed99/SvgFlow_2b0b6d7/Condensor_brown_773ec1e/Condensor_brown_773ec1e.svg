@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:svg="http://www.w3.org/2000/svg" height="43.74" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" inkscape:version="1.0beta1 (d07a077, 2019-11-03)" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="103.57" sodipodi:docname="Condensor_brown.svg" id="svg475">
+ <defs id="defs469"/>
+ <sodipodi:namedview inkscape:zoom="0.35" id="base" inkscape:window-y="23" inkscape:cy="347.14285" inkscape:cx="964.28573" inkscape:pageshadow="2" inkscape:window-maximized="0" inkscape:pageopacity="0.0" showgrid="false" bordercolor="#666666" pagecolor="#ffffff" inkscape:window-height="951" inkscape:document-units="mm" inkscape:document-rotation="0" borderopacity="1.0" inkscape:current-layer="layer1" inkscape:window-width="1644" inkscape:window-x="182"/>
+ <metadata id="metadata472">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+  <atv:gridconfig height="20" enabled="false" gridstyle="lines" width="20"/>
+  <atv:snapconfig height="10" enabled="false" width="10"/>
+ </metadata>
+ <g inkscape:groupmode="layer" atv:refpy="21.868" atv:refpx="51.783" transform="matrix(1,0,0,1,149.3006,-85.8556)" id="layer1" inkscape:label="Слой 1">
+  <g atv:refpy="107.723" atv:refpx="-97.518" transform="matrix(1.0356548,0,0,1.0280952,-149.3006,56.318453)" id="g526">
+   <g atv:refpy="50" atv:refpx="50" id="frame">
+    <rect height="100" y="0" x="0" atv:refpy="50" atv:refpx="50" fill="none" width="100" id="rect511"/>
+   </g>
+   <g atv:refpy="50" atv:refpx="50" id="shape">
+    <path inkscape:connector-curvature="0" d="M21.27,71.27C9.542,71.27 0,61.728 0,50C0,38.271 9.542,28.73 21.27,28.73L78.73,28.73C90.458,28.73 100,38.271 100,50C100,61.728 90.458,71.27 78.73,71.27Z" atv:refpy="50" atv:refpx="50" fill="#c78163" id="path514"/>
+   </g>
+   <g atv:refpy="50" atv:refpx="50" id="dark">
+    <path inkscape:connector-curvature="0" d="M78.73,29.03L21.27,29.03C9.707,29.03 0.3,38.437 0.3,50C0.3,61.563 9.707,70.97 21.27,70.97L78.73,70.97C90.293,70.97 99.7,61.563 99.7,50C99.7,38.437 90.293,29.03 78.73,29.03M75,64.063L25,64.063C24.724,64.063 24.5,63.839 24.5,63.563C24.5,63.287 24.724,63.063 25,63.063L75,63.063C75.276,63.063 75.5,63.287 75.5,63.563C75.5,63.839 75.276,64.063 75,64.063M75,55.021L25,55.021C24.724,55.021 24.5,54.797 24.5,54.521C24.5,54.245 24.724,54.021 25,54.021L75,54.021C75.276,54.021 75.5,54.245 75.5,54.521C75.5,54.797 75.276,55.021 75,55.021M75,45.979L25,45.979C24.724,45.979 24.5,45.755 24.5,45.479C24.5,45.202 24.724,44.979 25,44.979L75,44.979C75.276,44.979 75.5,45.202 75.5,45.479C75.5,45.755 75.276,45.979 75,45.979M75,36.938L25,36.938C24.724,36.938 24.5,36.714 24.5,36.438C24.5,36.162 24.724,35.938 25,35.938L75,35.938C75.276,35.938 75.5,36.162 75.5,36.438C75.5,36.714 75.276,36.938 75,36.938" atv:refpy="50" atv:refpx="50" fill="#947365" id="path517"/>
+   </g>
+   <g atv:refpy="49.999" atv:refpx="50" id="light">
+    <path inkscape:connector-curvature="0" d="M78.73,29.629L21.27,29.629C10.038,29.629 0.899,38.768 0.899,50C0.899,61.233 10.036,70.37 21.27,70.37L78.73,70.37C89.962,70.37 99.101,61.232 99.101,50C99.101,38.768 89.962,29.629 78.73,29.629M75,64.563L25,64.563C24.448,64.563 24,64.116 24,63.563C24,63.01 24.448,62.563 25,62.563L75,62.563C75.553,62.563 76,63.01 76,63.563C76,64.116 75.553,64.563 75,64.563M75,55.521L25,55.521C24.448,55.521 24,55.074 24,54.521C24,53.968 24.448,53.521 25,53.521L75,53.521C75.553,53.521 76,53.968 76,54.521C76,55.074 75.553,55.521 75,55.521M75,46.479L25,46.479C24.448,46.479 24,46.031 24,45.479C24,44.927 24.448,44.479 25,44.479L75,44.479C75.553,44.479 76,44.927 76,45.479C76,46.031 75.553,46.479 75,46.479M75,37.438L25,37.438C24.448,37.438 24,36.99 24,36.438C24,35.886 24.448,35.438 25,35.438L75,35.438C75.553,35.438 76,35.886 76,36.438C76,36.99 75.553,37.438 75,37.438" atv:refpy="49.999" atv:refpx="50" fill="#de9c5f" id="path520"/>
+   </g>
+   <g atv:refpy="50" atv:refpx="50" id="hlight">
+    <path inkscape:connector-curvature="0" d="M78.73,30.079L21.27,30.079C10.286,30.079 1.349,39.016 1.349,50C1.349,60.985 10.286,69.92 22.27,69.92L77.73,69.92C89.714,69.921 98.651,60.985 98.651,50C98.651,39.016 89.714,30.079 78.73,30.079M75,65.063L25,65.063C24.171,65.063 23.5,64.391 23.5,63.563C23.5,62.735 24.171,62.063 25,62.063L75,62.063C75.828,62.063 76.5,62.735 76.5,63.563C76.5,64.391 75.828,65.063 75,65.063M75,56.021L25,56.021C24.171,56.021 23.5,55.349 23.5,54.521C23.5,53.693 24.171,53.021 25,53.021L75,53.021C75.828,53.021 76.5,53.693 76.5,54.521C76.5,55.349 75.828,56.021 75,56.021M75,46.979L25,46.979C24.171,46.979 23.5,46.308 23.5,45.479C23.5,44.65 24.171,43.979 25,43.979L75,43.979C75.828,43.979 76.5,44.65 76.5,45.479C76.5,46.308 75.828,46.979 75,46.979M75,37.938L25,37.938C24.171,37.938 23.5,37.267 23.5,36.438C23.5,35.609 24.171,34.938 25,34.938L75,34.938C75.828,34.938 76.5,35.609 76.5,36.438C76.5,37.267 75.828,37.938 75,37.938" atv:refpy="50" atv:refpx="50" fill="#fbbc5a" id="path523"/>
+   </g>
+  </g>
+ </g>
+</svg>

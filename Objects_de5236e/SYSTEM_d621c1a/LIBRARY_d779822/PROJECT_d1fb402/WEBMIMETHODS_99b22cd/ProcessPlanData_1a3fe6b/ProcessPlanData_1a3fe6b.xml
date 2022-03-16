@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="query" type="http.request" trigger="false" relative="false" value=""/>
+  <code><![CDATA[function purgeDateString (str) {
+  var a = str.split('-')
+  if(a[1][0] === '0') {
+        var b = a[1].split('').pop()
+        a[1] = b
+        return a.join('-')
+  }
+  return str
+}
+
+var db = new ODBCClient();
+db.source = "DSN=test";
+var connection = db.open();
+if (connection) {
+  var result = db.query("SELECT * FROM [Лист1$]");
+  db.close();
+  var plan_data_node = new UaNode("AGENT.OBJECTS.Depth_day_data.plan_data");
+  var start_date_node = new UaNode("AGENT.OBJECTS.Depth_day_data.start_date");
+  var end_date_node = new UaNode("AGENT.OBJECTS.Depth_day_data.end_date");
+  var accumulatorDate = new Date(query.getvalues.start).valueOf();
+  var plan = result.map(function (data) {
+    var value = +data[0];
+    var hours = +data[1];
+    var delta = hours * 3600000;
+    var dataPoint = [accumulatorDate + delta, value];
+    accumulatorDate += delta;
+    return dataPoint;
+  });
+  plan_data_node.assign({ value: JSON.stringify(plan) });
+  start_date_node.assign({ value: purgeDateString(query.getvalues.start) });
+  end_date_node.assign({ value: accumulatorDate.toString() });
+  console.log("succeed, handler details:");
+  console.log("UaNode(plan_data) : JSON[]")
+  console.log("UaNode(start_date) : ", query.getvalues.start)
+  console.log("UaNode(end_date) : ", accumulatorDate)
+} else {
+  console.log("Invalid ODBC connection");
+}]]></code>
+</script>

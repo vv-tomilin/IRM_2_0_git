@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Halliburton.API.CirculatingPressureVersusRunDepth
+NodeClass: Variable
+BrowseName: 1:CirculatingPressureVersusRunDepth
+DisplayName: en|CirculatingPressureVersusRunDepth
+Description: en|CirculatingPressureVersusRunDepth
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

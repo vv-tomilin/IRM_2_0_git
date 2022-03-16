@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.DrillingRig.VSP_name.VSP_date
+NodeClass: Variable
+BrowseName: 1:VSP_date
+DisplayName: en|VSP_date
+Description: en|VSP_date
+DataType: DateTime
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

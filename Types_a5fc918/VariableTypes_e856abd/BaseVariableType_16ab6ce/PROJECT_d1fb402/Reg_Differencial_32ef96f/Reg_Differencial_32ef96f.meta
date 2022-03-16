@@ -1,0 +1,9 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"Reg_Differencial"
+NodeClass: VariableType
+BrowseName: 1:Reg_Differencial
+DisplayName: en|Reg_Differencial
+Description: en|Reg_Differencial
+IsAbstract: false
+DataType: BaseDataType
+ValueRank: -1
+ValueType: i=0

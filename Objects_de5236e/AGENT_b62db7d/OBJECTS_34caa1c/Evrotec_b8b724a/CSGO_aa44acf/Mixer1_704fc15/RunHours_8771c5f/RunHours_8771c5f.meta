@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.CSGO.Mixer1.RunHours
+NodeClass: Variable
+BrowseName: 1:RunHours
+DisplayName: en|RunHours
+Description: en|RunHours
+DataType: UInt32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

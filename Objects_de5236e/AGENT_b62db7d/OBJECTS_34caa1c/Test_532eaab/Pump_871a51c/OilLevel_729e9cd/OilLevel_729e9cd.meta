@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.Pump.OilLevel
+NodeClass: Variable
+BrowseName: 1:OilLevel
+DisplayName: en|OilLevel
+Description: en|OilLevel
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

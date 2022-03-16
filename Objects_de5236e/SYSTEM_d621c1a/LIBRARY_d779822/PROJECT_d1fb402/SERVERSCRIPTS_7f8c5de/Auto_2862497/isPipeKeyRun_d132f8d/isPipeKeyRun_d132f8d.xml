@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nodeTorquePipeRunStr" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Tool.HydrokeyTorque"/>
+  <parameter name="nodeTorqueLimitPipeKey" type="node" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Support.Auto.TorqueLimitPipeKey"/>
+  <code><![CDATA[if(call('Auto.GetAverage',{nodeStr: nodeTorquePipeRunStr,countSec: 10}) > nodeTorqueLimitPipeKey.value)//
+	return true;
+else
+	return false;]]></code>
+</script>

@@ -1,0 +1,12 @@
+NodeId: ns=1;s=SYSTEM.SECURITY.GROUPS.Mud
+NodeClass: Object
+BrowseName: 1:Mud
+DisplayName: en|Mud
+Description: en|Mud
+EventNotifier: 0
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.RIGHTS.USER.Mud
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.khayrullin.iv
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.korenevrv
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.mudservice
+Reference: forward Organizes ns=1;s=SYSTEM.SECURITY.USERS.steward
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.Group

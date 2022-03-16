@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.TBool
+NodeClass: Variable
+BrowseName: 1:TBool
+DisplayName: en|TBool
+Description: en|TBool
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

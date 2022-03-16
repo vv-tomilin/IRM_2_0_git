@@ -1,0 +1,10 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed".Descent.RelMirrorPathFragment
+NodeClass: Variable
+BrowseName: 1:RelMirrorPathFragment
+DisplayName: en|RelMirrorPathFragment
+Description: en|RelMirrorPathFragment
+DataType: String
+ValueRank: 1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Mirror.Relative.PathFragment

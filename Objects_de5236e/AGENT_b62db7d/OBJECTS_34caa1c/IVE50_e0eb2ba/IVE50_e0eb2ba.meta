@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50
+NodeClass: Object
+BrowseName: 1:IVE50
+DisplayName: en|IVE50
+Description: en|IVE50
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

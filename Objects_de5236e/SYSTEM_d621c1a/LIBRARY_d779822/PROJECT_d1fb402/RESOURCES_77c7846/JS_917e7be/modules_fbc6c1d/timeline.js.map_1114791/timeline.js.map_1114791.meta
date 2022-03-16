@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/timeline.js.map
+NodeClass: Variable
+BrowseName: 1:timeline.js.map
+DisplayName: en|timeline.js.map
+Description: en|timeline.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

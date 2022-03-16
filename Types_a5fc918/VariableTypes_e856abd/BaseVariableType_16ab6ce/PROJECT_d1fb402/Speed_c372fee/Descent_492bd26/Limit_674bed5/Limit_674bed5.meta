@@ -1,0 +1,11 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed".Descent.Limit
+NodeClass: Variable
+BrowseName: 1:Limit
+DisplayName: en|Limit
+Description: en|Limit
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseDataVariableType
+Reference: forward HasComponent ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed"."Descent".Limit.RelMirrorInput

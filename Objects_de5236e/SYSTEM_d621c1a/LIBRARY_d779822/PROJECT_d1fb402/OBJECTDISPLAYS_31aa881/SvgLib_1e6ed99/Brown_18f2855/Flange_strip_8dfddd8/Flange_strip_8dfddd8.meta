@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Brown.Flange_strip
+NodeClass: Variable
+BrowseName: 1:Flange_strip
+DisplayName: en|Flange_strip
+Description: en|Flange_strip
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

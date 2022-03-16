@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns="http://www.w3.org/2000/svg" height="140" xmlns:atv="http://webmi.atvise.com/2007/svgext" version="1.2" xmlns:xlink="http://www.w3.org/1999/xlink" width="400">
+ <defs/>
+ <desc>Adjustable dialog for showing messages.</desc>
+ <title>Message dialog (small)</title>
+ <metadata>
+  <atv:parameter behavior="optional" defaultvalue="Headline" name="headline" desc="headline" group="Headline" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="Arial" config="Times New Roman=Times New Roman,Bodoni,Garamond,Minion Web,ITC Stone Serif,MS Georgia,Bitstream Cyberbit,serif;Arial=MS Trebuchet,ITC Avant Garde Gothic,MS Arial,MS Verdana,Univers,Futura,ITC Stone Sans,Gill Sans,Akzidenz Grotesk,Helvetica,sans-serif;Courier=Courier,MS Courier New,Prestige,Everson Mono,monospace;Zapf-Chancery=Caflisch Script,Adobe Poetica,Sanvito,Ex Ponto,Snell Roundhand,Zapf-Chancery,cursive;Alpha Geometrique=Alpha Geometrique,Critter,Cottonwood,FB Reactor,Studz,fantasy" name="headlineFontFamily" desc="font family" group="Headline" valuetype="enum"/>
+  <atv:parameter behavior="optional" defaultvalue="16" name="headlineFontSize" desc="font size" group="Headline" valuetype="number"/>
+  <atv:parameter behavior="optional" defaultvalue="bold" config="normal;bold" name="headlineFontWeight" desc="font weight" group="Headline" valuetype="enum" scope=""/>
+  <atv:parameter behavior="optional" defaultvalue="left" config="left;right;center" name="headlineHorizontalAlign" desc="horizontal alignment" group="Headline" valuetype="enum"/>
+  <atv:parameter behavior="optional" defaultvalue="middle" config="top;middle;bottom" name="headlineVerticalAlign" desc="vertical alignment" group="Headline" valuetype="enum"/>
+  <atv:parameter behavior="optional" defaultvalue="Message" name="message" desc="message" group="Message" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="Arial" config="Times New Roman=Times New Roman,Bodoni,Garamond,Minion Web,ITC Stone Serif,MS Georgia,Bitstream Cyberbit,serif;Arial=MS Trebuchet,ITC Avant Garde Gothic,MS Arial,MS Verdana,Univers,Futura,ITC Stone Sans,Gill Sans,Akzidenz Grotesk,Helvetica,sans-serif;Courier=Courier,MS Courier New,Prestige,Everson Mono,monospace;Zapf-Chancery=Caflisch Script,Adobe Poetica,Sanvito,Ex Ponto,Snell Roundhand,Zapf-Chancery,cursive;Alpha Geometrique=Alpha Geometrique,Critter,Cottonwood,FB Reactor,Studz,fantasy" name="messageFontFamily" desc="font family" group="Message" valuetype="enum"/>
+  <atv:parameter behavior="optional" defaultvalue="12" name="messageFontSize" desc="font size" group="Message" valuetype="number"/>
+  <atv:parameter behavior="optional" defaultvalue="normal" config="normal;bold" name="messageFontWeight" desc="font weight" group="Message" valuetype="enum" scope=""/>
+  <atv:parameter behavior="optional" defaultvalue="left" config="left;right;center" name="messageHorizontalAlign" desc="horizontal alignment" group="Message" valuetype="enum"/>
+  <atv:parameter behavior="optional" defaultvalue="middle" config="top;middle;bottom" name="messageVerticalAlign" desc="vertical  alignment" group="Message" valuetype="enum"/>
+  <atv:parameter behavior="optional" defaultvalue="OK" name="button" desc="text" group="Button" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="" name="buttonAction" desc="action" group="Button" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="16" name="buttonFontSize" desc="font size" group="Button" valuetype="number"/>
+  <atv:parameter behavior="optional" defaultvalue="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.info" name="symbol" desc="symbol" group="Symbol" substitute="$SYMBOL$" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="SYSTEM.GLOBALS.atvSymbolColor" name="symbolColor" desc="symbol color" group="Symbol" substitute="$SYMBOLCOLOR$" valuetype="global"/>
+  <atv:parameter behavior="optional" defaultvalue="#ffffff" name="backgroundColor" desc="background color" group="Appearance" substitute="$BGCOLOR$" valuetype="string"/>
+  <atv:gridconfig enabled="true" height="10" gridstyle="lines" width="10"/>
+  <atv:snapconfig enabled="true" height="10" width="10"/>
+ </metadata>
+ <rect atv:refpy="70" height="140" id="id_3" x="0" y="0" stroke-width="2" atv:refpx="200" fill="$BGCOLOR$" stroke="none" width="400"/>
+ <svg transform="matrix(4.25,0,0,1.8425,0,0)" atv:refpy="-34.588" height="30" id="message" x="11.765" y="17.1" atv:refpx="0" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.label" width="80">
+  <atv:argument value="" prefix="message" name="text"/>
+  <atv:argument prefix="messageVerticalAlign" name="vertical-align"/>
+  <atv:argument prefix="messageFontFamily" name="font-family"/>
+  <atv:argument prefix="messageFontSize" name="font-size"/>
+  <atv:argument prefix="messageFontWeight" name="font-weight"/>
+  <atv:argument value="SYSTEM.GLOBALS.atvFontColor" name="color"/>
+  <atv:argument prefix="messageHorizontalAlign" name="horizontal-align"/>
+ </svg>
+ <svg transform="matrix(2.25,0,0,1.1616,0,0)" atv:refpy="91.387" height="30" id="button" x="48.889" y="77.479" atv:refpx="542.438" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" width="80">
+  <atv:argument value="" prefix="button" name="label"/>
+  <atv:argument prefix="buttonFontSize" name="fontSize"/>
+  <atv:overwrite transform="matrix(0.1333,0,0,0.3,0,0)" height="94.499" id="id_2" width="594.5"/>
+  <atv:overwrite transform="matrix(0.1333,0,0,0.3,0,0)" height="99.499" id="id_0" width="599.5"/>
+  <atv:overwrite transform="matrix(0.1333,0,0,0.375,0,0)" height="80" id="id_1" width="600"/>
+  <atv:overwrite transform="matrix(0.4444,0,0,0.8609,0,0)" id="id_6" height="32.848" width="178"/>
+  <atv:overwrite transform="matrix(0.4444,0,0,0.8609,0,0)" id="button_symbol" x="80" y="7.424"/>
+  <atv:overwrite transform="matrix(0.4444,0,0,0.8609,0,0)" id="button_label" x="90" y="21.924"/>
+  <atv:overwrite transform="matrix(0.4444,0,0,0.8609,0,0)" id="button_stroke" height="30.848" width="176"/>
+  <atv:overwrite transform="matrix(0.4444,0,0,0.8609,0,0)" id="button_bg" height="32.848" width="178"/>
+  <atv:overwrite transform="matrix(0.4444,0,0,0.8609,0,0)" id="outer_frame" height="34.848" width="180"/>
+ </svg>
+ <svg transform="matrix(1.5001,0,0,1.5001,0,0)" atv:refpy="26.768" height="20" id="symbol" x="6.666" y="6.666" atv:refpx="25.269" xlink:href="$SYMBOL$" width="20">
+  <atv:argument value="" prefix="symbolColor" name="symbolColor"/>
+ </svg>
+ <svg transform="matrix(4.25,0,-0.0001,1.6667,0,0)" atv:refpy="112.5" height="30" id="header" x="11.765" y="0" atv:refpx="50.329" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.label" width="80">
+  <atv:argument prefix="headlineVerticalAlign" name="vertical-align"/>
+  <atv:argument value="" prefix="headlineFontSize" name="font-size"/>
+  <atv:argument value="" prefix="headline" name="text"/>
+  <atv:argument prefix="headlineFontWeight" name="font-weight"/>
+  <atv:argument prefix="headlineFontFamily" name="font-family"/>
+  <atv:argument prefix="headlineHorizontalAlign" name="horizontal-align"/>
+  <atv:argument value="SYSTEM.GLOBALS.atvFontColor" name="color"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[/* set values for portal */
+var button_label = document.getElementById("button_button_label");
+webMI.gfx.setText(button_label, webMI.query["button"]);
+button_label.style.fontSize = webMI.query["buttonFontSize"];
+webMI.trigger.connect("clicked", function(e) {
+	if (typeof webMI.query.buttonAction == "undefined" || webMI.query.buttonAction == "")
+		webMI.display.closeWindow();
+	else
+		webMI.trigger.fire(webMI.query.buttonAction, this);
+}, "button");
+]]></script>
+</svg>

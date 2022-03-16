@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.DBSupport.LastRowId
+NodeClass: Variable
+BrowseName: 1:LastRowId
+DisplayName: en|LastRowId
+Description: en|LastRowId
+DataType: UInt64
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

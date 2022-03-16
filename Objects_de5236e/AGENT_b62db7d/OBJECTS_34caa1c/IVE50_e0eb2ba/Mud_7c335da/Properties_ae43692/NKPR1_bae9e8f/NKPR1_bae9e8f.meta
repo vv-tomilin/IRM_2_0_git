@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.Properties.NKPR1
+NodeClass: Variable
+BrowseName: 1:NKPR1
+DisplayName: en|NKPR1
+Description: en|NKPR1
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

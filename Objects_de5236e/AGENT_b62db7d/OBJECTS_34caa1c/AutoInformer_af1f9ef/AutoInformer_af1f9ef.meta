@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AutoInformer
+NodeClass: Object
+BrowseName: 1:AutoInformer
+DisplayName: en|AutoInformer
+Description: en|AutoInformer
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

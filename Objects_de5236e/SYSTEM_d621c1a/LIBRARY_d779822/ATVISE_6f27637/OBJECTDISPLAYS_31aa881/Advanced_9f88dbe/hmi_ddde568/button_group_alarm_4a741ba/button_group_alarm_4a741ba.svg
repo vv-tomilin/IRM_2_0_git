@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="168" xmlns:atv="http://webmi.atvise.com/2007/svgext" height="45" xmlns="http://www.w3.org/2000/svg" version="1.2">
+ <defs>
+  <linearGradient y1="0" id="linear_1" x2="1" y2="1" gradientUnits="objectBoundingBox" x1="1">
+   <stop stop-color="#ffffff" stop-opacity="0" offset="0"/>
+   <stop stop-color="#ffffff" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient y1="0" id="linear_2" x2="1" y2="1" gradientUnits="objectBoundingBox" x1="1">
+   <stop stop-color="#ffffff" stop-opacity="0.35" offset="0"/>
+   <stop stop-color="#ffffff" stop-opacity="0.35" offset="1"/>
+  </linearGradient>
+ </defs>
+ <desc>Display offers four alarm specified buttons.</desc>
+ <title>Group Alarmbuttons</title>
+ <metadata>
+  <atv:parameter defaultvalue="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.alarmlist" valuetype="display" behavior="optional" name="alarmDisplay" desc="alarm list display"/>
+  <atv:parameter defaultvalue="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.alarmlist_small" valuetype="display" behavior="optional" name="alarmDisplaySmall" desc="small alarm list display"/>
+  <atv:parameter defaultvalue="content" valuetype="string" behavior="optional" name="targetFrame" desc="target frame"/>
+  <atv:parameter defaultvalue="false" valuetype="bool" behavior="optional" name="soundEnabled" desc="enable sound"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvFillColor" valuetype="global" behavior="optional" group="Appearance" name="fill" substitute="$FILLCOLOR$" desc="fill color"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvBorderColor" valuetype="global" behavior="optional" group="Appearance" name="borderColor" substitute="$BORDERCOLOR$" desc="border color"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvSymbolColor" valuetype="global" behavior="optional" group="Appearance" name="symbolColor" substitute="$SYMBOLCOLOR$" desc="symbol color"/>
+  <atv:gridconfig gridstyle="lines" width="20" height="20" enabled="false"/>
+  <atv:snapconfig width="10" height="10" enabled="false"/>
+ </metadata>
+ <rect id="id_0" y="0.25" ry="3" atv:bindbr="1,1" stroke-width="0.5" rx="3" atv:dynamic="true" atv:refpy="23.254" atv:bindtl="0,0" x="0.25" width="167.5" fill="$FILLCOLOR$" stroke="$BORDERCOLOR$" height="44.5" atv:refpx="80"/>
+ <g id="clickarea_1old" transform="matrix(1.074,0,0,1.074,-1.6171,-1.5903)" atv:dynamic="true" atv:refpy="23.287" atv:refpx="23.966">
+  <rect id="button_bg" y="5.274" ry="3" stroke-width="0.766" rx="3" atv:refpy="33.984" x="5.299" width="34.452" fill="$FILLCOLOR$" stroke="none" height="34.452" atv:refpx="27.823"/>
+  <rect id="button_stroke_1" y="5.274" ry="3" stroke-width="1" rx="3" atv:refpy="22.5" x="5.299" width="34.452" fill="url(#linear_1)" stroke="#ffffff" height="34.452" atv:refpx="27.823"/>
+  <svg id="stophorn" y="4.694" transform="matrix(1.5312,0,0,1.5312,0,0)" atv:refpy="22.5" x="4.71" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.stophorn" width="20" height="20" atv:refpx="29.737">
+   <atv:argument prefix="symbolColor" name="symbolColor" value=""/>
+  </svg>
+  <svg id="starthorn" y="4.694" transform="matrix(1.5312,0,0,1.5312,0,0)" atv:refpy="22.5" x="4.71" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.starthorn" width="20" height="20" atv:refpx="29.737">
+   <atv:argument prefix="symbolColor" name="symbolColor" value=""/>
+  </svg>
+ </g>
+ <rect id="clickarea_1" y="0" stroke-width="0" atv:refpy="22.5" x="0" width="43" fill="#ffffff" stroke="none" height="45" fill-opacity="0" atv:refpx="66.598"/>
+ <g id="clickarea_2old" transform="matrix(1.074,0,0,1.074,0.7361,-1.5903)" atv:dynamic="true" atv:refpy="0.613" atv:refpx="3.379">
+  <rect id="id_3" y="5.274" ry="3" stroke-width="0.766" rx="3" atv:refpy="33.984" x="41.283" width="34.452" fill="$FILLCOLOR$" stroke="none" height="34.452" atv:refpx="99.791"/>
+  <rect id="button_stroke_2" y="5.274" ry="3" stroke-width="1" rx="3" atv:refpy="22.5" x="41.283" width="34.452" fill="none" stroke="#ffffff" height="34.452" atv:refpx="99.791"/>
+  <svg id="id_6" y="4.694" transform="matrix(1.5312,0,0,1.5312,0,0)" atv:refpy="22.5" x="28.21" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.alarm2" width="20" height="20" atv:refpx="101.704">
+   <atv:argument prefix="symbolColor" name="symbolColor" value=""/>
+  </svg>
+ </g>
+ <rect id="clickarea_2" y="0" stroke-width="0" atv:refpy="22.5" x="43" width="41" fill="#ffffff" stroke="none" height="45" fill-opacity="0" atv:refpx="63.5"/>
+ <g id="clickarea_3old" transform="matrix(1.074,0,0,1.074,-0.4688,-1.7664)" atv:dynamic="true" atv:refpy="32.636" atv:refpx="81.546">
+  <rect id="id_7" y="5.274" ry="3.222" stroke-width="0.823" rx="3.222" atv:refpy="53.856" x="80.58" width="34.452" fill="$FILLCOLOR$" stroke="none" height="34.452" atv:refpx="434.488"/>
+  <rect id="button_stroke_3" y="5.274" ry="3" stroke-width="1" rx="3" atv:refpy="22.5" x="80.58" width="34.452" fill="none" stroke="#ffffff" height="34.452" atv:refpx="99.791"/>
+  <svg id="id_9" y="3.682" transform="matrix(1.6445,0,0,1.6445,0,0)" atv:refpy="22.501" x="49.117" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.alarm3" width="20" height="20" atv:refpx="308.625">
+   <atv:argument prefix="symbolColor" name="symbolColor" value=""/>
+  </svg>
+ </g>
+ <rect id="clickarea_3" y="0" stroke-width="0" atv:refpy="22.5" x="84" width="41" fill="#ffffff" stroke="none" height="45" fill-opacity="0" atv:refpx="104.5"/>
+ <g id="clickarea_4old" transform="matrix(1.074,0,0,1.074,-2.5893,-1.5903)" atv:dynamic="true" atv:refpy="22.917" atv:refpx="141.671">
+  <rect id="id_10" y="5.274" ry="3.222" stroke-width="0.823" rx="3.222" atv:refpy="51.746" x="120.767" width="34.452" fill="$FILLCOLOR$" stroke="none" height="34.452" atv:refpx="419.207"/>
+  <rect id="id_1" y="30.945" stroke-width="0" rx="1.027" atv:refpy="33.068" x="120.823" width="34.382" fill="#ffffff" stroke="none" height="0.933" atv:refpx="162.85"/>
+  <rect id="button_stroke_4" y="5.274" ry="3" stroke-width="1" rx="3" atv:refpy="22.5" x="120.767" width="34.452" fill="none" stroke="#ffffff" height="34.452" atv:refpx="99.791"/>
+  <rect id="alarm_stroke" y="5.205" ry="3.798" stroke-width="1.3" rx="3.802" atv:refpy="20.68" x="120.66" visibility="hidden" width="34.637" fill="none" stroke="#ff0004" height="34.637" atv:refpx="151.047"/>
+  <svg id="id_15" y="0.807" transform="matrix(1.6445,0,0,1.6445,0,0)" atv:refpy="22.578" x="73.909" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.alarm" width="20" height="20" atv:refpx="491.341">
+   <atv:argument prefix="symbolColor" name="symbolColor" value=""/>
+  </svg>
+ </g>
+ <!--rect width="37" x="4" y="4" fill="#969696" rx="3" height="37" ry="3" stroke="none" fill-opacity="0.592" id="RC_INACTIVE" atv:refpx="22.5" stroke-width="1" atv:refpy="22.5"/-->
+ <svg id="id_4" y="69.083" transform="matrix(0.4587,0,0,0.4587,0,0)" atv:refpy="36.279" x="307.797" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.arrow_down" width="20" height="20" atv:refpx="145.786">
+  <atv:argument name="symbolColor" value="#575757"/>
+ </svg>
+ <rect id="clickarea_5" y="26" stroke-width="0" atv:refpy="36.848" x="125" width="43" fill="#ffffff" stroke="none" height="19" fill-opacity="0" atv:refpx="146.501"/>
+ <rect id="clickarea_4" y="0" stroke-width="0" atv:refpy="13.002" x="125" width="43" fill="#ffffff" stroke="none" height="26" fill-opacity="0" atv:refpx="146.5"/>
+ <script type="text/ecmascript"><![CDATA[var frameName = webMI.query["targetFrame"];
+var strokeNormal = "none";
+var strokePressed = webMI.query["strokePressed"];
+var alarmDisplay = webMI.query["alarmDisplay"];
+var alarmDisplaySmall = webMI.query["alarmDisplaySmall"];
+alarmDisplay = webMI.getClientInfo() ? (webMI.getClientInfo().isDesktop ? alarmDisplay : alarmDisplaySmall) : alarmDisplay;
+var soundEnabled = (webMI.query["soundEnabled"]=="true");
+var borderColor = webMI.query["borderColor"];
+var symbolColor = webMI.query["symbolColor"];
+var contextMenuStyle = { maxRows: 10, fontFamily: "Verdana", fontSize: 11, fontFill: symbolColor, width: 140, fill: "#ffffff", stroke: borderColor, strokeWidth: 1, hoverFill: "#e5e5e5", closeTime: 0, zIndex: 100, showType: "right"};
+
+var isAlarm = false;
+
+webMI.addOnload(function(e) {
+    webMI.rootWindow.webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Alarmmanagement", {"id": ""});
+	webMI.gfx.setVisible("starthorn",soundEnabled);
+	webMI.gfx.setVisible("stophorn",!soundEnabled);
+	webMI.trigger.fire("com.atvise.alarms_exist", setActive);
+	webMI.trigger.connect("com.atvise.alarms_notify", function(e){
+		setActive(e.value);
+	});
+	if (webMI.getMethodSupport().indexOf("AlarmShelve") == -1) {
+		webMI.gfx.setVisible("id_1", false);
+		webMI.gfx.setVisible("id_4", false);
+		webMI.gfx.setVisible("clickarea_5", false);
+		webMI.gfx.setMoveY("id_15", 4);
+	}
+});
+
+function getSupportedAudio() {
+    var myAudio = new Audio();
+    var audioFile="/alarm.wav";
+
+    if (typeof myAudio.canPlayType === "function" && myAudio.canPlayType("audio/mp4") !== "") {
+        audioFile = "/alarm.m4a";
+    } else if(typeof myAudio.canPlayType === "function" && myAudio.canPlayType("audio/ogg") !== "") {
+        audioFile = "/alarm.ogg";
+    }
+
+    myAudio = null;
+    return audioFile;
+}
+
+function setActive(activate){
+	webMI.gfx.setVisible("alarm_stroke", activate ? {0:true,2:false,4:true,6:false,8:true,10:false} : false);
+	if (soundEnabled && activate && !isAlarm)
+		webMI.sound.play(getSupportedAudio(),0);
+	else if (soundEnabled && !activate)
+		webMI.sound.stop(getSupportedAudio());
+	isAlarm = activate;
+}
+
+function acceptDisplay() {
+	var currentDisplay = null;
+	webMI.trigger.fire("getSource_" + frameName, function(e, currentDisplayWebMI) {
+		if (e != null) {
+			currentDisplayWebMI.alarm.acceptDisplay();
+		}
+	});
+}
+
+webMI.addEvent("clickarea_1", "mousedown", function(e) {
+	var id = "clickarea_1";
+	var value = true;
+	return function(value) {
+		webMI.gfx.setFill("button_stroke_1", "url(#linear_2)");
+	} (value);
+});
+
+webMI.addEvent("clickarea_1", "mouseup", function(e) {
+	var id = "clickarea_1";
+	var value = true;
+	return function(value) {
+		webMI.gfx.setFill("button_stroke_1", "url(#linear_1)");
+	} (value);
+});
+
+webMI.addEvent("clickarea_1", "mouseout", function(e) {
+	var id = "clickarea_1";
+	var value = true;
+	return function(value) {
+		webMI.gfx.setFill("button_stroke_1", "url(#linear_1)");
+	} (value);
+});
+
+webMI.addEvent("clickarea_1", "click", function(e) {
+	var id = "clickarea_1";
+	var value = true;
+	return function(value) {
+		if (isAlarm && soundEnabled){
+			webMI.sound.stop(getSupportedAudio());
+		}
+		else if (isAlarm && !soundEnabled){
+			webMI.sound.play(getSupportedAudio(),0);
+		}
+		soundEnabled = (soundEnabled)? false : true;
+		webMI.gfx.setVisible("starthorn",soundEnabled);
+		webMI.gfx.setVisible("stophorn",!soundEnabled);
+	} (value);
+});
+
+webMI.addEvent("clickarea_2", "mousedown", function(e) {
+	var id = "clickarea_2";
+	var value = true;
+	return function(value) {
+		webMI.gfx.setFill("button_stroke_2", "url(#linear_2)");
+	} (value);
+});
+
+webMI.addEvent("clickarea_2", "mouseup", function(e) {
+	var id = "clickarea_2";
+	var value = true;
+	return function(value) {
+		webMI.gfx.setFill("button_stroke_2", "url(#linear_1)");
+	} (value);
+});
+
+webMI.addEvent("clickarea_2", "mouseout", function(e) {
+	var id = "clickarea_2";
+	var value = true;
+	return function(value) {
+		webMI.gfx.setFill("button_stroke_2", "url(#linear_1)");
+	} (value);
+});
+
+webMI.addEvent("clickarea_2", "click", function(e) {
+	var id = "clickarea_2";
+	var value = true;
+	return function(value) {
+		webMI.trigger.fire("com.atvise.alarms_next_display", true);
+	} (value);
+});
+
+webMI.addEvent("clickarea_3", "mousedown", function(e) {
+	var id = "clickarea_3";
+	var value = true;
+	return function(value) {
+		webMI.gfx.setFill("button_stroke_3", "url(#linear_2)");
+	} (value);
+});
+
+webMI.addEvent("clickarea_3", "mouseup", function(e) {
+	var id = "clickarea_3";
+	var value = true;
+	return function(value) {
+		webMI.gfx.setFill("button_stroke_3", "url(#linear_1)");
+	} (value);
+});
+
+webMI.addEvent("clickarea_3", "mouseout", function(e) {
+	var id = "clickarea_3";
+	var value = true;
+	return function(value) {
+		webMI.gfx.setFill("button_stroke_3", "url(#linear_1)");
+	} (value);
+});
+
+webMI.addEvent("clickarea_3", "click", function(e) {
+	var id = "clickarea_3";
+	var value = true;
+	return function(value) {
+		acceptDisplay();
+	} (value);
+});
+
+
+webMI.addEvent("clickarea_4", "mousedown", function(e) {
+	var id = "clickarea_4";
+	var value = true;
+	return function(value) {
+		webMI.gfx.setFill("button_stroke_4", "url(#linear_2)");
+	} (value);
+});
+
+webMI.addEvent("clickarea_4", "mouseup", function(e) {
+	var id = "clickarea_4";
+	var value = true;
+	return function(value) {
+		webMI.gfx.setFill("button_stroke_4", "url(#linear_1)");
+	} (value);
+});
+
+webMI.addEvent("clickarea_4", "mouseout", function(e) {
+	var id = "clickarea_4";
+	var value = true;
+	return function(value) {
+		webMI.gfx.setFill("button_stroke_4", "url(#linear_1)");
+	} (value);
+});
+
+webMI.addEvent("clickarea_4", "click", function(e) {
+	var id = "clickarea_4";
+	var value = true;
+	return function(value) {
+		webMI.query.view = "";
+		webMI.display.openDisplay(alarmDisplay,webMI.query,frameName);
+	} (value);
+});
+
+function openAlarmlist(view) {
+	return function() {
+		webMI.query.view = view;
+		webMI.display.openDisplay(alarmDisplay,webMI.query,frameName);
+	}
+}
+
+
+if (webMI.getMethodSupport().indexOf("AlarmShelve") != -1) {
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Context Menu", {
+		"id": "clickarea_5",
+		"itemsCount": 0,
+		"menuObj": {0: {text: "T{Alarms}", value: openAlarmlist("") },
+					1: {text: "T{Alarms and conditions}", value: openAlarmlist("all")},
+					2: {text: "T{Shelved}", value: openAlarmlist("shelved")},
+					3: {text: "T{Suppressed}", value: openAlarmlist("suppressed")},
+					4: {text: "T{Disabled}", value: openAlarmlist("disabled")}
+					},
+		"onEvent": ["click","mouseover","touchstart"],
+		"outputNode": "",
+		"minWidth": 180,
+		"style": contextMenuStyle,
+		"x": "26",
+		"y": "43"
+	});
+
+	/*Dummy menu for better usability of the upper menu*/
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Context Menu", {
+		"id": "clickarea_4",
+		"menuObj": {},
+		"onEvent": ["click","mouseover","touchstart"],
+		"x": "26",
+		"y": "43"
+	});
+}]]></script>
+</svg>

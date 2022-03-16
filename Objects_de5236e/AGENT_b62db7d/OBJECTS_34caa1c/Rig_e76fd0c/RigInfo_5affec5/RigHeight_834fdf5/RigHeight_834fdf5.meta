@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Rig.RigInfo.RigHeight
+NodeClass: Variable
+BrowseName: 1:RigHeight
+DisplayName: en|RigHeight
+Description: en|RigHeight
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

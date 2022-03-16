@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ServiceParams.Concrete.cols.ExCol
+NodeClass: Variable
+BrowseName: 1:ExCol
+DisplayName: en|ExCol
+Description: en|ExCol
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

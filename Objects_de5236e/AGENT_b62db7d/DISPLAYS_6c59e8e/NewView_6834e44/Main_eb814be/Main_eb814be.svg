@@ -1,0 +1,331 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" height="1080" xmlns="http://www.w3.org/2000/svg" version="1.2" width="1920">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="true" height="20" gridstyle="lines" width="20"/>
+  <atv:snapconfig enabled="true" height="10" width="10"/>
+ </metadata>
+ <g atv:refpx="0" atv:insensitive="true" atv:refpy="0" id="id_15">
+  <rect atv:refpx="960" x="0" fill="#000406" height="1080.00" atv:refpy="540" y="0" width="1920.00" id="id_17"/>
+ </g>
+ <svg atv:refpx="897.498" x="0" height="600" atv:refpy="538.03" y="17.717" transform="matrix(2.2438,0,0,1.6933,0,0)" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.hmi.iframe" width="800" id="id_16">
+  <atv:argument name="frameName" value="main_frame"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.Main_Param_Gauge"/>
+ </svg>
+ <rect atv:refpx="960" x="0" fill="#000088" height="1080" atv:refpy="540" y="0" fill-opacity="0" stroke="#b254b2" stroke-width="4" width="1920" id="id_9"/>
+ <svg atv:refpx="960" x="0" height="30" atv:refpy="15" y="0" xlink:href="AGENT.DISPLAYS.NewView.Main.Header" width="1920" id="id_5">
+  <atv:argument name="base" value="AGENT.DISPLAYS.NewView.Main"/>
+ </svg>
+ <rect atv:refpx="1856.5" x="1794" fill="#09222e" height="1022" atv:refpy="540" y="29" stroke="#b254b2" stroke-width="2" width="125" id="id_18"/>
+ <svg atv:refpx="1852.5" x="1790" height="40" atv:refpy="185" y="160" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Menu.ButtonMenu" width="125" id="irtab_1">
+  <atv:argument name="Text" value="Главный"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.Main_Param_Gauge"/>
+ </svg>
+ <svg atv:refpx="960" x="0" height="30" atv:refpy="1065" y="1050" xlink:href="AGENT.DISPLAYS.NewView.Main.Footer" width="1920" id="id_6">
+  <atv:argument name="base" value="AGENT.DISPLAYS.NewView.Main"/>
+ </svg>
+ <svg atv:refpx="1852.5" x="1790" height="40" atv:refpy="1025" y="1000" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Menu.ButtonMenu" width="125" id="irtab_12">
+  <atv:argument name="Text" value="Документы"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.Supplement.Documents_table"/>
+ </svg>
+ <svg atv:refpx="1852.5" x="1790" height="40" atv:refpy="975" y="950" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Menu.ButtonMenu" width="125" id="irtab_11">
+  <atv:argument name="Text" value="Настройки"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.Supplement.Settings_param"/>
+ </svg>
+ <svg atv:refpx="1852.5" x="1790" height="40" atv:refpy="925" y="900" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Menu.ButtonMenu" width="125" id="irtab_10">
+  <atv:argument name="Text" value="Отчеты"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.Supplement.Report_table"/>
+ </svg>
+ <svg atv:refpx="1852.5" x="1790" height="40" atv:refpy="785" y="760" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Menu.ButtonMenu" width="125" id="irtab_9">
+  <atv:argument name="Text" value="Насосы"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.Schema.SchMudPump"/>
+ </svg>
+ <svg atv:refpx="1852.5" x="1790" height="40" atv:refpy="745" y="720" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Menu.ButtonMenu" width="125" id="irtab_8">
+  <atv:argument name="Text" value="ЦСГО"/>
+  <atv:argument name="Icon" value="2"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.Schema.SchCSGO"/>
+ </svg>
+ <svg atv:refpx="1852.5" x="1790" height="40" atv:refpy="705" y="680" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Menu.ButtonMenu" width="125" id="irtab_7">
+  <atv:argument name="Text" value="Вышка"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.Schema.SchRig"/>
+ </svg>
+ <svg atv:refpx="1852.5" x="1790" height="40" atv:refpy="665" y="640" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Menu.ButtonMenu" width="125" id="irtab_6">
+  <atv:argument name="Text" value="Схема БУ"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.Schema.Sch2"/>
+  <atv:argument name="Icon" value="5"/>
+ </svg>
+ <svg atv:refpx="1852.5" x="1790" height="40" atv:refpy="485" y="460" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Menu.ButtonMenu" width="125" id="irtab_5">
+  <atv:argument name="Text" value="Емкости"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.SKPB.SKPB_volume_present"/>
+  <atv:argument name="Icon" value="4"/>
+ </svg>
+ <svg atv:refpx="1852.5" x="1790" height="40" atv:refpy="405" y="380" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Menu.ButtonMenu" width="125" id="irtab_3">
+  <atv:argument name="Text" value="СКПБ 2"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.SKPB.SKPB_param2_present"/>
+  <atv:argument name="Icon" value="2"/>
+ </svg>
+ <svg atv:refpx="1852.5" x="1790" height="40" atv:refpy="365" y="340" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Menu.ButtonMenu" width="125" id="irtab_2">
+  <atv:argument name="Text" value="СКПБ 1"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.SKPB.SKPB_param1_present"/>
+  <atv:argument name="Icon" value="2"/>
+ </svg>
+ <svg atv:refpx="1860.566" x="1565.217" height="100" atv:refpy="97.5" y="30.435" transform="matrix(1.15,0,0,1.15,0,0)" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.clock_combi" width="100" id="id_14"/>
+ <svg atv:refpx="1848.823" x="1790" height="40" atv:refpy="445" y="420" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Menu.ButtonMenu" width="125" id="irtab_4">
+  <atv:argument name="Text" value="Газы"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.SKPB.SKPB_gas_present"/>
+  <atv:argument name="Icon" value="3"/>
+ </svg>
+ <line atv:refpx="1858.008" y2="155" atv:refpy="155" stroke="#b254b2" stroke-width="2" x1="1794" y1="155" x2="1920" id="id_19"/>
+ <svg atv:refpx="1852.5" x="1790" height="40" atv:refpy="305" y="280" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Menu.ButtonMenu" width="125" id="irtab_13">
+  <atv:argument name="Text" value="Осложнения"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.Complications"/>
+  <atv:argument name="Icon" value="5"/>
+ </svg>
+ <svg atv:refpx="1852.5" x="1790" height="40" atv:refpy="605" y="580" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Menu.ButtonMenu" width="125" id="irtab_14">
+  <atv:argument name="Text" value="Гидросхема"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.Schema.SchCSGOTechno"/>
+  <atv:argument name="Icon" value="3"/>
+ </svg>
+ <svg atv:refpx="1852.5" x="1790" height="40" atv:refpy="545" y="520" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Menu.ButtonMenu" width="125" id="irtab_15">
+  <atv:argument name="Text" value="Рекомендации"/>
+  <atv:argument name="display" value="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Recomendations.RecTrends"/>
+  <atv:argument name="Icon" value="4"/>
+ </svg>
+ <svg atv:refpx="1852.5" x="1790" height="40" atv:refpy="845" y="820" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Menu.ButtonMenu" width="125" id="irtab_16">
+  <atv:argument name="Text" value="Оборудование"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.IR-Test.Equipment"/>
+ </svg>
+ <svg atv:refpx="1852.5" x="1790" height="40" atv:refpy="265" y="240" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Menu.ButtonMenu" width="125" id="irtab_17">
+  <atv:argument name="Text" value="Глубина/день"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.DepthDay"/>
+  <atv:argument name="Icon" value="5"/>
+ </svg>
+ <svg atv:refpx="1852.5" x="1790" height="40" atv:refpy="225" y="200" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Menu.ButtonMenu" width="125" id="irtab_18">
+  <atv:argument name="Text" value="План"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.DrillPlan"/>
+  <atv:argument name="Icon" value="4"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[var tabscount=18;
+webMI.addOnload(function(e) {
+var id = "irtab_1";
+var value = true;
+webMI.gfx.setMoveX(id, webMI.translate(value, false, true, 0, -5));
+
+for(i=1;i<=tabscount;i++){
+	var sirtab = "irtab_"+i;
+	if(id !=sirtab)
+		webMI.gfx.setMoveX("irtab_"+i, webMI.translate(value, false, true, 0, 0));
+}
+});
+
+
+webMI.addEvent("irtab_1", "click", function(e) {
+var id = "irtab_1";
+var value = true;
+webMI.trigger.fire("stopCharts",'');
+webMI.gfx.setMoveX(id, webMI.translate(value, false, true, 0, -5));
+for(i=1;i<=tabscount;i++){
+	var sirtab = "irtab_"+i;
+	if(id !=sirtab)
+		webMI.gfx.setMoveX("irtab_"+i, webMI.translate(value, false, true, 0, 0));
+}
+});
+webMI.addEvent("irtab_2", "click", function(e) {
+var id = "irtab_2";
+var value = true;
+webMI.gfx.setMoveX(id, webMI.translate(value, false, true, 0, -5));
+for(i=1;i<=tabscount;i++){
+	var sirtab = "irtab_"+i;
+	if(id !=sirtab)
+		webMI.gfx.setMoveX("irtab_"+i, webMI.translate(value, false, true, 0, 0));
+}
+});
+webMI.addEvent("irtab_3", "click", function(e) {
+var id = "irtab_3";
+var value = true;
+webMI.trigger.fire("stopCharts",'');
+webMI.gfx.setMoveX(id, webMI.translate(value, false, true, 0, -5));
+for(i=1;i<=tabscount;i++){
+	var sirtab = "irtab_"+i;
+	if(id !=sirtab)
+		webMI.gfx.setMoveX("irtab_"+i, webMI.translate(value, false, true, 0, 0));
+}
+});
+webMI.addEvent("irtab_4", "click", function(e) {
+var id = "irtab_4";
+var value = true;
+webMI.trigger.fire("stopCharts",'');
+webMI.gfx.setMoveX(id, webMI.translate(value, false, true, 0, -5));
+for(i=1;i<=tabscount;i++){
+	var sirtab = "irtab_"+i;
+	if(id !=sirtab)
+		webMI.gfx.setMoveX("irtab_"+i, webMI.translate(value, false, true, 0, 0));
+}
+});
+webMI.addEvent("irtab_5", "click", function(e) {
+var id = "irtab_5";
+var value = true;
+webMI.trigger.fire("stopCharts",'');
+webMI.gfx.setMoveX(id, webMI.translate(value, false, true, 0, -5));
+for(i=1;i<=tabscount;i++){
+	var sirtab = "irtab_"+i;
+	if(id !=sirtab)
+		webMI.gfx.setMoveX("irtab_"+i, webMI.translate(value, false, true, 0, 0));
+}
+});
+webMI.addEvent("irtab_6", "click", function(e) {
+var id = "irtab_6";
+var value = true;
+webMI.trigger.fire("stopCharts",'');
+webMI.gfx.setMoveX(id, webMI.translate(value, false, true, 0, -5));
+for(i=1;i<=tabscount;i++){
+	var sirtab = "irtab_"+i;
+	if(id !=sirtab)
+		webMI.gfx.setMoveX("irtab_"+i, webMI.translate(value, false, true, 0, 0));
+}
+});
+webMI.addEvent("irtab_7", "click", function(e) {
+var id = "irtab_7";
+var value = true;
+webMI.trigger.fire("stopCharts",'');
+webMI.gfx.setMoveX(id, webMI.translate(value, false, true, 0, -5));
+for(i=1;i<=tabscount;i++){
+	var sirtab = "irtab_"+i;
+	if(id !=sirtab)
+		webMI.gfx.setMoveX("irtab_"+i, webMI.translate(value, false, true, 0, 0));
+}
+});
+webMI.addEvent("irtab_8", "click", function(e) {
+var id = "irtab_8";
+var value = true;
+webMI.trigger.fire("stopCharts",'');
+webMI.gfx.setMoveX(id, webMI.translate(value, false, true, 0, -5));
+for(i=1;i<=tabscount;i++){
+	var sirtab = "irtab_"+i;
+	if(id !=sirtab)
+		webMI.gfx.setMoveX("irtab_"+i, webMI.translate(value, false, true, 0, 0));
+}
+});
+webMI.addEvent("irtab_9", "click", function(e) {
+var id = "irtab_9";
+var value = true;
+webMI.trigger.fire("stopCharts",'');
+webMI.gfx.setMoveX(id, webMI.translate(value, false, true, 0, -5));
+for(i=1;i<=tabscount;i++){
+	var sirtab = "irtab_"+i;
+	if(id !=sirtab)
+		webMI.gfx.setMoveX("irtab_"+i, webMI.translate(value, false, true, 0, 0));
+}
+});
+webMI.addEvent("irtab_10", "click", function(e) {
+var id = "irtab_10";
+var value = true;
+webMI.trigger.fire("stopCharts",'');
+webMI.gfx.setMoveX(id, webMI.translate(value, false, true, 0, -5));
+for(i=1;i<=tabscount;i++){
+	var sirtab = "irtab_"+i;
+	if(id !=sirtab)
+		webMI.gfx.setMoveX("irtab_"+i, webMI.translate(value, false, true, 0, 0));
+}
+});
+webMI.addEvent("irtab_11", "click", function(e) {
+var id = "irtab_11";
+var value = true;
+webMI.trigger.fire("stopCharts",'');
+webMI.gfx.setMoveX(id, webMI.translate(value, false, true, 0, -5));
+for(i=1;i<=tabscount;i++){
+	var sirtab = "irtab_"+i;
+	if(id !=sirtab)
+		webMI.gfx.setMoveX("irtab_"+i, webMI.translate(value, false, true, 0, 0));
+}
+});
+webMI.addEvent("irtab_12", "click", function(e) {
+var id = "irtab_12";
+var value = true;
+webMI.trigger.fire("stopCharts",'');
+webMI.gfx.setMoveX(id, webMI.translate(value, false, true, 0, -5));
+for(i=1;i<=tabscount;i++){
+	var sirtab = "irtab_"+i;
+	if(id !=sirtab)
+		webMI.gfx.setMoveX("irtab_"+i, webMI.translate(value, false, true, 0, 0));
+}
+});
+webMI.addEvent("irtab_13", "click", function(e) {
+var id = "irtab_13";
+var value = true;
+webMI.trigger.fire("stopCharts",'');
+webMI.gfx.setMoveX(id, webMI.translate(value, false, true, 0, -5));
+for(i=1;i<=tabscount;i++){
+	var sirtab = "irtab_"+i;
+	if(id !=sirtab)
+		webMI.gfx.setMoveX("irtab_"+i, webMI.translate(value, false, true, 0, 0));
+}
+});
+webMI.addEvent("irtab_14", "click", function(e) {
+var id = "irtab_14";
+var value = true;
+webMI.trigger.fire("stopCharts",'');
+webMI.gfx.setMoveX(id, webMI.translate(value, false, true, 0, -5));
+for(i=1;i<=tabscount;i++){
+	var sirtab = "irtab_"+i;
+	if(id !=sirtab)
+		webMI.gfx.setMoveX("irtab_"+i, webMI.translate(value, false, true, 0, 0));
+}
+});
+webMI.addEvent("irtab_15", "click", function(e) {
+var id = "irtab_15";
+var value = true;
+webMI.trigger.fire("stopCharts",'');
+webMI.gfx.setMoveX(id, webMI.translate(value, false, true, 0, -5));
+
+for(i=1;i<=tabscount;i++){
+	var sirtab = "irtab_"+i;
+	if(id !=sirtab)
+		webMI.gfx.setMoveX("irtab_"+i, webMI.translate(value, false, true, 0, 0));
+}
+});
+webMI.addEvent("irtab_16", "click", function(e) {
+var id = "irtab_16";
+var value = true;
+webMI.trigger.fire("stopCharts",'');
+webMI.gfx.setMoveX(id, webMI.translate(value, false, true, 0, -5));
+
+for(i=1;i<=tabscount;i++){
+	var sirtab = "irtab_"+i;
+	if(id !=sirtab)
+		webMI.gfx.setMoveX("irtab_"+i, webMI.translate(value, false, true, 0, 0));
+}
+});
+webMI.addEvent("irtab_17", "click", function(e) {
+var id = "irtab_17";
+var value = true;
+webMI.trigger.fire("stopCharts",'');
+webMI.gfx.setMoveX(id, webMI.translate(value, false, true, 0, -5));
+
+for(i=1;i<=tabscount;i++){
+	var sirtab = "irtab_"+i;
+	if(id !=sirtab)
+		webMI.gfx.setMoveX("irtab_"+i, webMI.translate(value, false, true, 0, 0));
+}
+webMI.data.read("AGENT.OBJECTS.isPresentation", function(ep) {
+		   if(ep.value){	
+				webMI.display.openDisplay("AGENT.DISPLAYS.NewView.DepthDayPresent", webMI.query, "main_frame");
+		   } 
+		});
+		
+});
+webMI.addEvent("irtab_18", "click", function(e) {
+var id = "irtab_18";
+var value = true;
+webMI.trigger.fire("stopCharts",'');
+webMI.gfx.setMoveX(id, webMI.translate(value, false, true, 0, -5));
+
+for(i=1;i<=tabscount;i++){
+	var sirtab = "irtab_"+i;
+	if(id !=sirtab)
+		webMI.gfx.setMoveX("irtab_"+i, webMI.translate(value, false, true, 0, 0));
+}
+});
+
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.ChangeDisplayInFrameOnEvent", {"display":"AGENT.DISPLAYS.LoadFile", "id":"id_14", "inFrame":"main_frame", "onEvent":"click"});]]></script>
+</svg>

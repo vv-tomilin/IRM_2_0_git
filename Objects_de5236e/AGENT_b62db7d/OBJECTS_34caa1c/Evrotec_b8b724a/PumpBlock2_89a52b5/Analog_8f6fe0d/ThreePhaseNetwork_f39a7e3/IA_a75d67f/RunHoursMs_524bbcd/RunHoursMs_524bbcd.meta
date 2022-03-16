@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.PumpBlock2.Analog.ThreePhaseNetwork.IA.RunHoursMs
+NodeClass: Variable
+BrowseName: 1:RunHoursMs
+DisplayName: en|RunHoursMs
+Description: en|RunHoursMs
+DataType: UInt64
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

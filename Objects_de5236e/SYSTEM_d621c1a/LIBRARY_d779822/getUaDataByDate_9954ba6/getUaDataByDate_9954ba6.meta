@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.getUaDataByDate
+NodeClass: Variable
+BrowseName: 1:getUaDataByDate
+DisplayName: en|getUaDataByDate
+Description: en|getUaDataByDate
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

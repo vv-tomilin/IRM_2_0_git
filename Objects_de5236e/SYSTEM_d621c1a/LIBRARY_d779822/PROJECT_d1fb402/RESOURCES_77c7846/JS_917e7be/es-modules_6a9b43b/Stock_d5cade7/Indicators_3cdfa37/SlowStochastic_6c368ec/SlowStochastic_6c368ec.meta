@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Stock/Indicators/SlowStochastic
+NodeClass: Object
+BrowseName: 1:SlowStochastic
+DisplayName: en|SlowStochastic
+Description: en|SlowStochastic
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

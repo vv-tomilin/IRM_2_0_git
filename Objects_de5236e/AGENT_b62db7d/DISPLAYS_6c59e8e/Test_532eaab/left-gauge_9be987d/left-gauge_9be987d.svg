@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="315" version="1.2" width="315" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:parameter behavior="optional" defaultvalue="т/с" desc="т/с" name="TS" substitute="$TS$" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="м" desc="м" name="M" substitute="$M$" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="м/с" desc="м/с" name="MS" substitute="$MS$" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="AGENT.OBJECTS.SimulatedData.double_3" desc="Вес на крюке" name="HookWeight" substitute="" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="AGENT.OBJECTS.SimulatedData.double_4" desc="Нагрузка на долото" name="BitLoad" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="AGENT.OBJECTS.SimulatedData.double_5" desc="Положение крюка" name="HookPosition" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="AGENT.OBJECTS.SimulatedData.double_6" desc="Скорость СПО" name="SPOSpeed" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Максимальный вес на крюке" name="MaxHookWeight" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Максиальная нагрузка на долото" name="MaxBitLoad" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Максимальное положение крюка" name="MaxHookPosition" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Максимальная скорость СПО" name="MaxSPOSpeed" valuetype="address"/>
+  <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <text atv:refpx="821.71" atv:refpy="170.484" fill="#ffffff" font-family="Arial" font-size="6" id="id_7" transform="matrix(3.6095,0,0,2.9428,-1609.2274,-291.3143)" x="620.68" y="158.946">000000</text>
+ <text atv:refpx="821.711" atv:refpy="223.986" fill="#ffffff" font-family="Arial" font-size="6" id="id_8" transform="matrix(3.6095,0,0,2.9428,-1609.2274,-395.304)" x="620.68" y="212.471">000000</text>
+ <text atv:refpx="821.712" atv:refpy="298.317" fill="#ffffff" font-family="Arial" font-size="6" id="id_9" transform="matrix(3.6095,0,0,2.9428,-1609.2274,-539.828)" x="620.68" y="286.861">000000</text>
+ <svg atv:refpx="500.347" atv:refpy="82.115" height="100" id="id_10" transform="matrix(-1.5,0,0,-1.5,0,0)" width="100" x="-100.608" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.double_param" y="-100.203">
+  <atv:argument name="param_2" prefix="HookWeight"/>
+  <atv:argument name="param_1" prefix="BitLoad"/>
+  <atv:argument name="secondmax" prefix="MaxHookWeight"/>
+  <atv:argument name="firstmax" prefix="MaxBitLoad"/>
+ </svg>
+ <svg atv:refpx="500.347" atv:refpy="231.419" height="100" id="id_0" transform="matrix(-1.5,0,0,1.5,0,0)" width="100" x="-100.608" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.double_param" y="98.407">
+  <atv:argument name="param_2" prefix="SPOSpeed"/>
+  <atv:argument name="param_1" prefix="HookPosition"/>
+  <atv:argument name="secondmax" prefix="MaxSPOSpeed"/>
+  <atv:argument name="firstmax" prefix="MaxHookPosition"/>
+ </svg>
+ <rect atv:refpx="425.681" atv:refpy="157.868" fill="#1f1f1f" height="140" id="id_12" stroke="#0000ff" stroke-width="0" transform="matrix(-1,0,0,1,0,0)" width="7.047" x="-154.101" y="79.059"/>
+ <rect atv:refpx="462.762" atv:refpy="158.021" fill="#1f1f1f" height="7.047" id="id_11" stroke="#0000ff" stroke-width="0" transform="matrix(-1,0,0,1,0,0)" width="68.553" x="-147.773" y="145.688"/>
+ <foreignObject height="47.649" id="id_13" width="157.166" x="51.066" y="103.862">
+  <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8; text-align:right" xmlns="http://www.w3.org/1999/xhtml">
+   <p style="margin:0">Нагрузка на</p>
+   <br/>
+   <p style="margin:0">долото (т/с)</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="47.649" id="id_15" width="157.166" x="51.016" y="157.156">
+  <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8; text-align:right" xmlns="http://www.w3.org/1999/xhtml">
+   <p style="margin:0">Положение</p>
+   <br/>
+   <p style="margin:0">крюка (м)</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="47.649" id="id_18" width="157.166" x="51.392" y="229.728">
+  <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8; text-align:right" xmlns="http://www.w3.org/1999/xhtml">
+   <p style="margin:0">Скорость</p>
+   <br/>
+   <p style="margin:0">СПО (м/ч)</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="47.649" id="id_4" width="157.166" x="54.361" y="43.029">
+  <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8; text-align:right" xmlns="http://www.w3.org/1999/xhtml">
+   <p style="margin:0">Вес на</p>
+   <br/>
+   <p style="margin:0">крюке (тс)</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="31.031" id="id_6" width="112.119" x="230" y="41.998">
+  <div style="width:100%;height:100%;color:white; font-size:1.5rem" xmlns="http://www.w3.org/1999/xhtml">
+   <p id="WOH" style="margin:0">0000</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="31.031" id="id_14" width="112.119" x="230" y="102.831">
+  <div style="width:100%;height:100%;color:white; font-size:1.5rem" xmlns="http://www.w3.org/1999/xhtml">
+   <p id="LOB" style="margin:0">0000</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="31.031" id="id_16" width="112.119" x="230" y="156.125">
+  <div style="width:100%;height:100%;color:white; font-size:1.5rem" xmlns="http://www.w3.org/1999/xhtml">
+   <p id="HP" style="margin:0">0000</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="31.031" id="id_20" width="112.119" x="230" y="228.697">
+  <div style="width:100%;height:100%;color:white; font-size:1.5rem" xmlns="http://www.w3.org/1999/xhtml">
+   <p id="SPOS" style="margin:0">0000</p>
+  </div>
+ </foreignObject>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[//* FOR = AGENT.DISPLAYS.Test.left-gauge (02.03.22)
+
+
+webMI.data.subscribe(webMI.query["HookWeight"], function (e) {
+  var num = 0;
+  if (e.value < 0) {
+  } else {
+    num = e.value
+  }
+  document.getElementById("WOH").innerHTML = num.toFixed(2)
+});
+
+webMI.data.subscribe(webMI.query["BitLoad"], function (e) {
+  var num = 0;
+  if (e.value < 0) {
+  } else {
+    num = e.value
+  }
+
+  webMI.data.read("AGENT.OBJECTS.ASPD.APD1.Running", function (apdRun) {
+    var isAdpRunning = apdRun.value;
+
+    if (isAdpRunning) {
+      document.getElementById("LOB").innerHTML = num.toFixed(2)
+    } else {
+      document.getElementById("LOB").innerHTML = "0.00"
+    }
+  })
+});
+
+webMI.data.subscribe(webMI.query["HookPosition"], function (e) {
+  document.getElementById("HP").innerHTML = Math.round(e.value * 100) / 100;
+});
+
+webMI.data.subscribe(webMI.query["SPOSpeed"], function (sposEvent) {
+
+  var sposValue = sposEvent.value;
+
+  webMI.data.read("AGENT.OBJECTS.IVE50.Drawworks.HookSpeed", function (hookSpeedEv) {
+
+    var hookSpeed = hookSpeedEv.value;
+
+    if (hookSpeed == 0) {
+
+      document.getElementById("SPOS").innerHTML = "0.00";
+
+    } else {
+
+      document.getElementById("SPOS").innerHTML = (Math.round(sposValue * 100) / 100).toFixed(2);
+
+    }
+
+  });
+
+});
+
+]]></script>
+</svg>

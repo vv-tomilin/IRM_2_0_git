@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/indicators/stochastic.js.map
+NodeClass: Variable
+BrowseName: 1:stochastic.js.map
+DisplayName: en|stochastic.js.map
+Description: en|stochastic.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

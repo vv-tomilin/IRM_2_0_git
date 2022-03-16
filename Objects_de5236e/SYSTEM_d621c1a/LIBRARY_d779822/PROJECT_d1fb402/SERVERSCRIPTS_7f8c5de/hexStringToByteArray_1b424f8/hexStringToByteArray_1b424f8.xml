@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="hexstring" type="string" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var bytes = new Uint8Array(Math.ceil(hexstring.length / 2));
+for (var i = 0; i < bytes.length; i++) 
+	bytes[i] = parseInt(hexstring.substr(i * 2, 2), 16);
+return bytes;]]></code>
+</script>

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.SECURITY.USERS.cementservice
+NodeClass: Object
+BrowseName: 1:cementservice
+DisplayName: en|cementservice
+Description: en|cementservice
+EventNotifier: 0
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.User

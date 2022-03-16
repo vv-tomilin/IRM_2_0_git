@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Каркас в сборе
+NodeClass: ObjectType
+BrowseName: 1:Каркас в сборе
+DisplayName: en|Каркас в сборе
+Description: en|Каркас в сборе
+IsAbstract: false

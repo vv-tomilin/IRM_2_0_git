@@ -1,0 +1,8 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Mud1
+NodeClass: Object
+BrowseName: 1:Mud1
+DisplayName: en|Mud1
+Description: en|Mud1
+EventNotifier: 0
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition FolderType

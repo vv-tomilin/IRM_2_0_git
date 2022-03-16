@@ -1,0 +1,9 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed"
+NodeClass: VariableType
+BrowseName: 1:Speed
+DisplayName: en|Speed
+Description: en|Speed
+IsAbstract: false
+DataType: BaseDataType
+ValueRank: -1
+ValueType: i=0

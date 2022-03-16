@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.TimeToAnalyseHook
+NodeClass: Variable
+BrowseName: 1:TimeToAnalyseHook
+DisplayName: en|TimeToAnalyseHook
+Description: en|TimeToAnalyseHook
+DataType: UInt16
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" version="1.2" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" xmlns="http://www.w3.org/2000/svg" height="20">
+ <defs/>
+ <metadata>
+  <atv:parameter behavior="optional" defaultvalue="#000000" valuetype="color" name="symbolColor" desc="symbol color" substitute="$SYMBOLCOLOR$"/>
+  <atv:parameter behavior="optional" defaultvalue="#e5e5e5" valuetype="color" name="symbolColor2" desc="symbol color 2" substitute="$SYMBOLCOLOR2$"/>
+  <atv:gridconfig width="2" height="2" enabled="true" gridstyle="lines"/>
+  <atv:snapconfig width="2" height="2" enabled="false"/>
+ </metadata>
+ <g atv:refpy="10.001" atv:refpx="10" id="id_2">
+  <rect atv:refpy="11.663" atv:refpx="33.484" y="1.974" stroke="$SYMBOLCOLOR$" stroke-width="1.435" x="9.141" id="id_0" width="8.974" height="13.461" fill="#ffffff"/>
+  <rect transform="matrix(0.8944,-0.4472,0,1,0,0)" atv:refpy="15.589" atv:refpx="42.829" y="11.031" stroke="$SYMBOLCOLOR$" stroke-width="0.957" x="14.399" id="id_1" width="5.852" height="13.461" fill="$SYMBOLCOLOR2$"/>
+  <path atv:refpy="24.458" atv:refpx="9.521" stroke="$SYMBOLCOLOR$" stroke-width="0.478" d="M1.168,8.945L1.168,11.189L7.899,11.189C7.899,11.189 7.899,13.432 7.899,13.432C7.899,13.432 12.386,9.693 12.386,9.693C12.386,9.693 7.899,6.702 7.899,6.702C7.899,6.702 7.899,8.945 7.899,8.945C7.899,8.945 1.168,8.945 1.168,8.945" id="id_4" fill="$SYMBOLCOLOR2$"/>
+ </g>
+</svg>

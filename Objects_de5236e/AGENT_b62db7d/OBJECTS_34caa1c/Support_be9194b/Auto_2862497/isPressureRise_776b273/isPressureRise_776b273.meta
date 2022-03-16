@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.isPressureRise
+NodeClass: Variable
+BrowseName: 1:isPressureRise
+DisplayName: en|isPressureRise
+Description: en|isPressureRise
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

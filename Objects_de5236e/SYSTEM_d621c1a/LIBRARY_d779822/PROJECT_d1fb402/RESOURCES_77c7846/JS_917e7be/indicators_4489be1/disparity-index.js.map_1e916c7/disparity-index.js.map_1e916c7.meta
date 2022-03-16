@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/indicators/disparity-index.js.map
+NodeClass: Variable
+BrowseName: 1:disparity-index.js.map
+DisplayName: en|disparity-index.js.map
+Description: en|disparity-index.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

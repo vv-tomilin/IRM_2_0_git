@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.SKPB_CHARTS
+NodeClass: Object
+BrowseName: 1:SKPB_CHARTS
+DisplayName: en|SKPB_CHARTS
+Description: en|SKPB_CHARTS
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

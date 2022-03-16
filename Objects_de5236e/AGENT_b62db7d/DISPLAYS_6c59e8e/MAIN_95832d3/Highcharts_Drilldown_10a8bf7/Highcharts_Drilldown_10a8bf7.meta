@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.MAIN.Highcharts_Drilldown
+NodeClass: Variable
+BrowseName: 1:Highcharts_Drilldown
+DisplayName: en|Highcharts_Drilldown
+Description: en|Highcharts_Drilldown
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="40" x="0px" version="1.1" y="0px" xmlns="http://www.w3.org/2000/svg" height="40" xmlns:xlink="http://www.w3.org/1999/xlink" id="Ebene_1" enable-background="new 0 0 50 50" xml:space="preserve" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs/>
+ <metadata>
+  <atv:parameter desc="symbol color" valuetype="color" substitute="$SYMBOLCOLOR$" behavior="optional" name="symbolColor" defaultvalue="#000000"/>
+ </metadata>
+ <polygon fill="$SYMBOLCOLOR$" points="11.901,32.247 29.483,19.996 11.901,7.748 11.901,16.751 3.097,16.751 3.097,23.244 11.901,23.244" id="id_0" atv:refpx="15.351" atv:refpy="19.999" stroke-width="1"/>
+ <g id="id_3" atv:refpx="33.656" atv:refpy="19.999" transform="matrix(1.8848,0,0,1.8848,4.6779,-0.0874)">
+  <rect width="3.441" x="13.656" y="14.642" fill="$SYMBOLCOLOR$" height="3.44" id="id_1" atv:refpx="15.376" atv:refpy="31.004" stroke-width="2.091"/>
+  <polygon fill="$SYMBOLCOLOR$" points="16.713,12.562 14.037,12.562 13.655,3.233 17.095,3.233" id="id_2" atv:refpx="29.03" atv:refpy="7.898" stroke-width="2.091"/>
+ </g>
+</svg>

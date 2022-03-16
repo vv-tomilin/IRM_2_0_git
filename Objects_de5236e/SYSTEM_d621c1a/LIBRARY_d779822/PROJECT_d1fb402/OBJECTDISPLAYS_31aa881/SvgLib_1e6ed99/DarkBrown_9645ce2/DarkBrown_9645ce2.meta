@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.DarkBrown
+NodeClass: Object
+BrowseName: 1:DarkBrown
+DisplayName: en|DarkBrown
+Description: en|DarkBrown
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.ForMainWindow
+NodeClass: Object
+BrowseName: 1:ForMainWindow
+DisplayName: en|ForMainWindow
+Description: en|ForMainWindow
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

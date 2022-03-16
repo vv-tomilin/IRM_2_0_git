@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:svg="http://www.w3.org/2000/svg" version="1.2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" width="28" xmlns="http://www.w3.org/2000/svg" height="52" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="false" gridstyle="lines" width="20" height="20"/>
+  <atv:snapconfig enabled="false" width="10" height="10"/>
+ </metadata>
+ <g id="id_2" atv:insensitive="true" atv:refpx="0" atv:refpy="0" transform="matrix(1,0,0,1,0,0)">
+  <rect id="id_3" y="0" fill="#0000ff" fill-opacity="0" atv:refpx="14" atv:refpy="26" x="0" width="28.00" height="52.00"/>
+ </g>
+ <g id="id_1" atv:refpx="14" atv:refpy="26" transform="matrix(1,0,0,1,0,0)">
+  <g id="layer1" atv:refpx="14" atv:refpy="26" transform="translate(-124.25968,-68.41369)">
+   <g id="shape" atv:refpx="138.26" atv:refpy="94.414" transform="matrix(0.50909091,0,0,0.51999999,112.80513,68.41369)">
+    <rect id="rect63" y="0" fill="#52a6f9" atv:refpx="50" atv:refpy="2.85" x="40.5" width="19" height="5.6999998"/>
+    <rect id="rect65" y="94.300003" fill="#52a6f9" atv:refpx="50" atv:refpy="97.15" x="40.5" width="19" height="5.6999998"/>
+    <rect id="rect67" y="0" fill="#52a6f9" atv:refpx="50" atv:refpy="50" x="42" width="16" height="100"/>
+    <circle cy="50" id="circle69" fill="#52a6f9" atv:refpx="50" atv:refpy="50" cx="50" r="27.5"/>
+   </g>
+   <g id="dark" atv:refpx="138.26" atv:refpy="94.414" transform="matrix(0.50909091,0,0,0.51999999,112.80513,68.41369)">
+    <rect id="rect72" y="0" fill="#3185d8" atv:refpx="50" atv:refpy="50" x="43" width="14" height="100"/>
+    <circle cy="50" id="circle74" fill="#3185d8" atv:refpx="50" atv:refpy="50" cx="50" r="26.5"/>
+   </g>
+   <g id="light" atv:refpx="138.26" atv:refpy="94.414" transform="matrix(0.50909091,0,0,0.51999999,112.80513,68.41369)">
+    <path id="path77" fill="#6db6ff" atv:refpx="50" atv:refpy="50" d="M71.5,50C71.5,38.1 61.9,28.5 50,28.5C38.1,28.5 28.5,38.1 28.5,50C28.5,61.9 38.1,71.5 50,71.5C61.9,71.5 71.5,61.9 71.5,50M30,50C30,39 39,30 50,30C61,30 70,39 70,50C70,61 61,70 50,70C39,70 30,61 30,50"/>
+    <g id="g85" atv:refpx="50.05" atv:refpy="50">
+     <path id="path79" fill="#6db6ff" atv:refpx="50" atv:refpy="84.65" d="M55,100L55,69.3C53.4,69.7 51.7,70 50,70C48.3,70 46.6,69.8 45,69.3L45,100Z"/>
+     <path id="path81" fill="#6db6ff" atv:refpx="50" atv:refpy="15.35" d="M55,30.7L55,0L45,0L45,30.7C46.6,30.3 48.3,30 50,30C51.7,30 53.4,30.2 55,30.7"/>
+     <path id="path83" fill="#6db6ff" atv:refpx="50.05" atv:refpy="50" d="M30.7,55L69.4,55C69.8,53.4 70.1,51.7 70.1,50C70.1,48.3 69.9,46.6 69.4,45L30.7,45C30.3,46.6 30,48.3 30,50C30,51.7 30.2,53.4 30.7,55"/>
+    </g>
+   </g>
+   <g id="hlight" atv:refpx="138.234" atv:refpy="94.414" transform="matrix(0.50909091,0,0,0.51999999,112.80513,68.41369)">
+    <path id="path88" fill="#a5d2ff" atv:refpx="50" atv:refpy="14.4" d="M50,28.5C51.2,28.5 52.4,28.6 53.5,28.8L53.5,0L46.5,0L46.5,28.8C47.6,28.6 48.8,28.5 50,28.5"/>
+    <path id="path90" fill="#a5d2ff" atv:refpx="49.95" atv:refpy="50" d="M30.3,46.5C30.1,47.6 30,48.8 30,50C30,51.2 30.1,52.4 30.3,53.5L31,53.5L69.6,53.5C69.8,52.4 69.899,51.2 69.899,50C69.899,48.8 69.8,47.6 69.6,46.5L30.8,46.5Z"/>
+    <path id="path92" fill="#a5d2ff" atv:refpx="50" atv:refpy="85.6" d="M53.5,73.4L53.5,71.2C52.4,71.4 51.2,71.5 50,71.5C48.8,71.5 47.6,71.4 46.5,71.2L46.5,73.2L46.5,100L53.5,100Z"/>
+   </g>
+  </g>
+ </g>
+</svg>

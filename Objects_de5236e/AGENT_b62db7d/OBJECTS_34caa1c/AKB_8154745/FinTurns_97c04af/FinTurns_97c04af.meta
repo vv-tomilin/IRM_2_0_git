@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AKB.FinTurns
+NodeClass: Variable
+BrowseName: 1:FinTurns
+DisplayName: en|FinTurns
+Description: en|FinTurns
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

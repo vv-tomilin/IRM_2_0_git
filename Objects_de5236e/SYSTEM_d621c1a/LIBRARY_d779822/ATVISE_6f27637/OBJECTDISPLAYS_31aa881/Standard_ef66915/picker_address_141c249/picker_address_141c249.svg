@@ -1,0 +1,610 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="160" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linear_14" y1="-0.0183441" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#ffffff" stop-opacity="0.2745098039215687"/>
+   <stop offset="0.5515695067264574" stop-color="#ffffff" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="linear_12" y1="-0.0183441" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#494949"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient id="linear_0" y1="-0.0183441" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#494949"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient id="linear_1" y1="-0.0183441" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#494949"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient id="linear_4" y1="-0.0183441" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#ffffff" stop-opacity="0.2745098039215687"/>
+   <stop offset="0.5515695067264574" stop-color="#ffffff" stop-opacity="0"/>
+   <stop offset="0.7174887892376681" stop-color="#000000" stop-opacity="0"/>
+   <stop offset="1" stop-color="#000000" stop-opacity="0.4705882352941176"/>
+  </linearGradient>
+  <linearGradient id="linear_3" y1="-0.0183441" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#494949"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient id="linear_21" y1="-0.0183441" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#494949"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient id="linear_5" y1="-0.0183441" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#ffffff" stop-opacity="0.2745098039215687"/>
+   <stop offset="0.5515695067264574" stop-color="#ffffff" stop-opacity="0"/>
+   <stop offset="0.7174887892376681" stop-color="#000000" stop-opacity="0"/>
+   <stop offset="1" stop-color="#000000" stop-opacity="0.4705882352941176"/>
+  </linearGradient>
+  <linearGradient id="linear_1" y1="-0.0183441" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#ffffff" stop-opacity="0.2745098039215687"/>
+   <stop offset="0.5515695067264574" stop-color="#ffffff" stop-opacity="0"/>
+   <stop offset="0.7174887892376681" stop-color="#000000" stop-opacity="0"/>
+   <stop offset="1" stop-color="#000000" stop-opacity="0.4705882352941176"/>
+  </linearGradient>
+  <linearGradient id="linear_8" y1="-0.0183441" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#494949"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient id="linear_9" y1="-0.0183441" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#494949"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient id="linear_10" y1="-0.0183441" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#ffffff" stop-opacity="0.2745098039215687"/>
+   <stop offset="0.5515695067264574" stop-color="#ffffff" stop-opacity="0"/>
+   <stop offset="0.7174887892376681" stop-color="#000000" stop-opacity="0"/>
+   <stop offset="1" stop-color="#000000" stop-opacity="0.4705882352941176"/>
+  </linearGradient>
+  <linearGradient id="linear_11" y1="-0.0183441" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#494949"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient id="linear_6" y1="1.00276" y2="0.22257" x1="0.193597" gradientUnits="objectBoundingBox" x2="0.193597">
+   <stop offset="0" stop-color="#494949"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient id="linear_7" y1="-0.0183441" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#494949"/>
+   <stop offset="1" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient id="linear_2" y1="1" y2="-0.0183441" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#ffffff" stop-opacity="0.2745098039215687"/>
+   <stop offset="0.5515695067264574" stop-color="#ffffff" stop-opacity="0"/>
+  </linearGradient>
+ </defs>
+ <desc>Provides a list of nodes starting with the parametrized address.</desc>
+ <title>Picker Address</title>
+ <metadata>
+  <atv:parameter desc="base" behavior="optional" valuetype="address" name="baseNode"/>
+  <atv:parameter defaultvalue="" desc="alarm address" behavior="optional" valuetype="address" name="alarm"/>
+  <atv:parameter config="Yes;No" defaultvalue="Yes" desc="enable status monitoring" behavior="optional" valuetype="enum" name="statusEnabled"/>
+  <atv:parameter defaultvalue="" desc="fire status trigger" behavior="optional" valuetype="string" name="statusTrigger"/>
+  <atv:parameter defaultvalue="AGENT.OBJECTS" desc="start address" behavior="mandatory" valuetype="address" name="base"/>
+  <atv:parameter config="Times New Roman=Times New Roman,Bodoni,Garamond,Minion Web,ITC Stone Serif,MS Georgia,Bitstream Cyberbit,serif;Arial=MS Trebuchet,ITC Avant Garde Gothic,MS Arial,MS Verdana,Univers,Futura,ITC Stone Sans,Gill Sans,Akzidenz Grotesk,Helvetica,sans-serif;Courier=Courier,MS Courier New,Prestige,Everson Mono,monospace;Zapf-Chancery=Caflisch Script,Adobe Poetica,Sanvito,Ex Ponto,Snell Roundhand,Zapf-Chancery,cursive;Alpha Geometrique=Alpha Geometrique,Critter,Cottonwood,FB Reactor,Studz,fantasy" substitute="$FONTFAMILY$" defaultvalue="Arial" desc="family" group="Font" behavior="optional" valuetype="enum" name="fontFamily"/>
+  <atv:parameter config="6;7;8;9;10;11;12;14;16;18;20;22;24;26;28;36;48;72" substitute="$FONTSIZE$" defaultvalue="12" desc="size" group="Font" behavior="optional" valuetype="enum" name="fontSize"/>
+  <atv:parameter substitute="$FONTCOLOR$" defaultvalue="#000000" desc="color" group="Font" behavior="optional" valuetype="color" name="fontColor"/>
+  <atv:parameter substitute="$FILL$" defaultvalue="#d0d0d0" desc="fill color" group="Appearance" behavior="optional" valuetype="color" name="fill"/>
+  <atv:parameter defaultvalue="#8c8c8c" desc="fill color when inactive" group="Appearance" behavior="optional" valuetype="color" name="fillColorInactive"/>
+  <atv:parameter substitute="$BUTTONFILL$" defaultvalue="#000000" desc="button fill color" group="Appearance" behavior="optional" valuetype="color" name="buttonFill"/>
+  <atv:parameter defaultvalue="#d0d0d0" desc="symbol fill color" group="Appearance" behavior="optional" valuetype="color" name="symbolColor"/>
+  <atv:parameter defaultvalue="#ffffff" desc="stroke color pressed" group="Appearance" behavior="optional" valuetype="color" name="strokePressed"/>
+  <atv:parameter defaultvalue="#000000" desc="color for context font" group="Appearance" behavior="optional" valuetype="color" name="contextFontColor"/>
+  <atv:parameter defaultvalue="#ffffff" desc="fill color for context menu" group="Appearance" behavior="optional" valuetype="color" name="contextFill"/>
+  <atv:parameter defaultvalue="#000000" desc="stroke color for context menu" group="Appearance" behavior="optional" valuetype="color" name="contextStroke"/>
+  <atv:parameter defaultvalue="2" desc="stroke width for context menu" group="Appearance" behavior="optional" valuetype="number" name="contextStrokeWidth"/>
+  <atv:parameter defaultvalue="#EFEFEF" desc="hover color for context menu" group="Appearance" behavior="optional" valuetype="color" name="contextHoverColor"/>
+  <atv:parameter defaultvalue="#FFFFFF" desc="focus stroke color" group="Appearance" behavior="optional" valuetype="color" name="focusStrokeColor"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvStatusIndication" desc="status indication" behavior="optional" group="Appearance" valuetype="global" name="statusIndication"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvAlarmIndication" desc="alarm indication" behavior="optional" group="Appearance" valuetype="global" name="alarmIndication"/>
+  <atv:parameter config="Yes;No" defaultvalue="Yes" desc="on demand" group="Options" behavior="optional" valuetype="enum" name="onDemand"/>
+  <atv:parameter defaultvalue="0" desc="maximum displayed items (0 = all)" group="Options" behavior="optional" valuetype="number" name="itemsCount"/>
+  <atv:parameter config="Yes;No" defaultvalue="Yes" desc="show base variables" group="Options" behavior="optional" valuetype="enum" name="showBaseVariables"/>
+  <atv:parameter config="Yes;No" defaultvalue="Yes" desc="show objects" group="Options" behavior="optional" valuetype="enum" name="showObjects"/>
+  <atv:parameter config="Yes;No" defaultvalue="Yes" desc="show displays" group="Options" behavior="optional" valuetype="enum" name="showDisplays"/>
+  <atv:parameter config="Yes;No" defaultvalue="Yes" desc="show archives" group="Options" behavior="optional" valuetype="enum" name="showArchives"/>
+  <atv:parameter config="Yes;No" defaultvalue="Yes" desc="show alarms" group="Options" behavior="optional" valuetype="enum" name="showAlarms"/>
+  <atv:parameter config="Yes;No" defaultvalue="Yes" desc="show variable types" group="Options" behavior="optional" valuetype="enum" name="showVariableTypes"/>
+  <atv:parameter desc="consistency group" group="Options" behavior="optional" valuetype="string" name="consistencyGroup"/>
+  <atv:parameter desc="tab index" group="Options" behavior="optional" valuetype="number" name="tabIndex"/>
+  <atv:parameter desc="tooltip" group="Options" behavior="optional" valuetype="trstring" name="tooltip"/>
+  <atv:parameter config="SYSTEM.SECURITY.RIGHTS" desc="necessary right" group="Security" behavior="optional" valuetype="address" name="right"/>
+  <atv:parameter desc="activation address" group="Security" behavior="optional" valuetype="address" name="activeNode"/>
+  <atv:parameter desc="activation value" group="Security" behavior="optional" valuetype="string" name="activeValue"/>
+  <atv:gridconfig width="2" enabled="true" height="2" gridstyle="lines"/>
+  <atv:snapconfig width="2" enabled="true" height="2"/>
+ </metadata>
+ <rect id="addresspicker_stroke" ry="3" width="159.5" fill="url(#linear_21)" stroke="#646464" atv:bindbr="1,1" atv:refpy="16.25" height="29.5" atv:refpx="80.25" stroke-width="0.5" x="0.25" y="0.25" rx="3" atv:bindtl="0,0"/>
+ <g id="addresspicker_input_clickarea" atv:refpy="15" atv:refpx="66.5" atv:dynamic="true">
+  <rect id="id_2" ry="3" width="128" fill="url(#linear_6)" stroke="none" atv:bindbr="1,1" atv:refpy="-61.25" height="24.5" atv:refpx="153.5" stroke-width="0.5" x="2.5" y="2.75" rx="3" atv:bindtl="0,0"/>
+  <rect id="addresspicker_bg" ry="2" width="126" fill="$FILL$" stroke="none" atv:bindbr="1,1" atv:refpy="37.5" height="22.5" atv:refpx="156.5" stroke-width="2" x="3.5" y="3.75" rx="2" atv:bindtl="0,0"/>
+  <rect id="blinking_frame" ry="2" width="126" fill="none" atv:bindbr="1,1" stroke="none" atv:refpy="10" stroke-width="2" atv:refpx="214.155" height="22.5" x="3.5" y="3.75" rx="2" atv:bindtl="0,0"/>
+  <text id="input_label" font-size="$FONTSIZE$" fill="$FONTCOLOR$" atv:bindbr="1,0.5" atv:refpy="18" atv:refpx="680.285" font-family="$FONTFAMILY$" x="126" y="19.25" atv:bindtl="1,0.5" text-anchor="end">T{Picker Address}</text>
+ </g>
+ <g id="addresspicker_clickarea" atv:refpy="25.5" atv:refpx="144.75">
+  <rect id="id_5" ry="3" width="24.5" fill="url(#linear_6)" stroke="none" atv:bindbr="1,0.5" atv:refpy="-12" height="24.5" atv:refpx="674.75" stroke-width="0.5" x="132.5" y="2.75" rx="3" atv:bindtl="1,0.5"/>
+  <rect id="button_bg" ry="2.755" width="22.5" fill="$BUTTONFILL$" stroke="none" atv:bindbr="1,0.5" atv:refpy="-9.796" height="22.5" atv:refpx="678.75" stroke-width="0.5" x="133.5" y="3.75" rx="2.755" atv:bindtl="1,0.5"/>
+  <svg id="id_1" width="20" atv:bindbr="1,0.5" atv:refpy="15" height="20" atv:refpx="549" x="134.75" y="5" atv:bindtl="1,0.5" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.dots">
+   <atv:argument prefix="symbolColor" value="" name="symbolColor"/>
+  </svg>
+  <rect id="button_stroke" ry="2.755" width="22.5" fill="url(#linear_14)" stroke="none" atv:bindbr="1,0.5" atv:refpy="-25.796" height="22.5" atv:refpx="532.75" stroke-width="0.5" x="133.5" y="3.75" rx="2.755" atv:bindtl="1,0.5"/>
+ </g>
+ <script type="text/ecmascript"><![CDATA[var isTouch = (navigator.userAgent.indexOf("Mobi") > -1);
+var useSVGKeyboard = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Configuration", {"action":"existsIndexParameter", "parameterName":"useSVGKeyboard"});
+if(useSVGKeyboard == "true")
+	isTouch = true;
+var base = (webMI.query["base"] == undefined) ? "" : webMI.query["base"];
+var baseNode = (webMI.query["baseNode"] == undefined) ? "" : webMI.query["baseNode"];
+var fill = webMI.query["fill"];
+var buttonFill = webMI.query["buttonFill"];
+var fillColorInactive = webMI.query["fillColorInactive"];
+var strokeFillPressed = webMI.query["strokePressed"];
+var focusStrokeColor = webMI.query["focusStrokeColor"];
+var contextFill = (webMI.query["contextFill"] == undefined) ? "#FFFFFF" : webMI.query["contextFill"];
+var contextStroke = (webMI.query["contextStroke"] == undefined) ? "#000000" : webMI.query["contextStroke"];
+var contextStrokeWidth = (webMI.query["contextStrokeWidth"] == undefined) ? 2 : webMI.query["contextStrokeWidth"];
+var contextFontColor = (webMI.query["contextFontColor"] == undefined) ? "#000000" : webMI.query["contextFontColor"];
+var contextHoverColor = (webMI.query["contextHoverColor"] == undefined) ? "#EFEFEF" : webMI.query["contextHoverColor"];
+var onDemand = (webMI.query["onDemand"] == "No") ? "0" : "1";
+var itemsCount = webMI.query["itemsCount"];
+var active = false;
+var hasRight = false;
+var right = (webMI.query["right"] == undefined) ? "" : webMI.query["right"];
+var consistencyGroup = webMI.query["consistencyGroup"];
+var myWidth = 160;
+var alarmToSubscribe = webMI.query["alarm"];
+var alarmIndication = webMI.query["alarmIndication"];
+var statusEnabled = webMI.query["statusEnabled"];
+var statusTrigger = webMI.query["statusTrigger"];
+var statusIndication = webMI.query["statusIndication"];
+var activeIndicators = {};
+
+var hasBrowseNodes = webMI.getMethodSupport().indexOf("BrowseNodes") !== -1;
+
+var contextMenuStyle = { maxRows: 10, fontFamily: "Arial", fontSize: 12, fontFill: contextFontColor, width: 140, fill: contextFill, stroke: contextStroke, strokeWidth: contextStrokeWidth, hoverFill: contextHoverColor, closeTime: 0, zIndex: 100, showType: "right"};
+
+if (baseNode){
+	if (consistencyGroup) {
+		var consistencyHandler = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Consistency Handler");
+		consistencyHandler.register(consistencyGroup, baseNode, updateDisplayValue);
+	} else {
+		webMI.data.subscribe(baseNode,function(e){
+			updateDisplayValue(e.value);
+			if (typeof e.status != "undefined")
+				handleStatus(e.status);
+		});
+	}
+}
+var tabHandler = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tab Handler");
+var tabIndex = (webMI.query["tabIndex"] == undefined) ? "" : webMI.query["tabIndex"];
+var tooltip = (webMI.query["tooltip"] == undefined) ? "" : webMI.query["tooltip"];
+
+if (right.search(/SYSTEM\.SECURITY\.RIGHTS\./) != -1) {
+	right = right.substring(23,right.length); //remove "prefix" SYSTEM.SECURITY.RIGHTS.
+}
+
+if (right != "") {
+	webMI.addEvent(webMI.data, "clientvariableschange", function(e) {
+		hasRight=false;
+		if (("username" in e) && (e.username != "")) {
+				hasRight = webMI.hasRight(right);
+		}
+		deActivate();
+	});
+}
+
+var activeValue = (webMI.query["activeValue"] == undefined) ? "" :webMI.query["activeValue"];
+var activeNode = (webMI.query["activeNode"] == undefined) ? "" : webMI.query["activeNode"];
+var nodeIsActive = false;
+var isSetActive = true; //isSetActive is set by the com.atvise.setActive trigger.
+
+if ((activeNode != "") && (String(activeValue) != "")) {
+	webMI.data.subscribe(activeNode, function(e) {
+		var nodeActiveValue = e.value;
+		if (typeof nodeActiveValue == "boolean") {
+			nodeIsActive = (String(nodeActiveValue) == activeValue);
+		} else if (typeof nodeActiveValue == "number") {
+			try {
+				var temp = parseFloat(activeValue);
+				nodeIsActive = (nodeActiveValue == temp);
+			} catch(e) {
+				nodeIsActive = false;
+			}
+		} else {
+			nodeIsActive = (nodeActiveValue == activeValue);
+		}
+		if (typeof e.status != "undefined")
+			handleStatus(e.status);
+		deActivate();
+	});
+} else {
+	deActivate();
+}
+
+function deActivate() {
+	if (right != "") {
+		if ((String(activeValue) != "") && (activeNode != "")) {
+			active=(nodeIsActive && hasRight);
+		} else {
+			active=hasRight;
+		}
+	} else {
+		if ((String(activeValue) != "") && (activeNode != "")) {
+			active=nodeIsActive;
+		} else {
+			active=true;
+		}
+	}
+	active = active && isSetActive;
+	if (active) {
+		webMI.gfx.setFill("addresspicker_bg", fill);
+		webMI.gfx.setFill("button_bg", buttonFill);
+	} else {
+		webMI.gfx.setFill("addresspicker_bg", fillColorInactive);
+		webMI.gfx.setFill("button_bg", fillColorInactive);
+	}
+}
+
+function handleStatus(status) {
+	if (statusEnabled != "Yes")
+		return;
+
+	if (statusTrigger != "") {
+		webMI.trigger.fire(statusTrigger, status);
+	} else {
+		if (typeof statusIndication["ItemStatusBad"] == "undefined")
+			statusIndication = {"ItemStatusBad": {color: "#ffff00", interval: "250"}};
+
+		if (status == 0 || (status & 0xC0000000).toString(16) == 0)	//Good value state
+			delete activeIndicators["status"];
+		else if ((status & 0x80000000).toString(16) != 0)			//Bad value state
+			activeIndicators["status"] = {color: statusIndication["ItemStatusBad"].color, interval: parseInt(statusIndication["ItemStatusBad"].interval)};
+		else if ((status & 0xC0000000).toString(16) == 40000000)	//Uncertain value state
+			activeIndicators["status"] = {color: statusIndication["ItemStatusBad"].color, interval: parseInt(statusIndication["ItemStatusBad"].interval)};
+		else														//Unknown value state
+			activeIndicators["status"] = {color: statusIndication["ItemStatusBad"].color, interval: parseInt(statusIndication["ItemStatusBad"].interval)};
+
+		setIndicator();
+	}
+}
+
+function initAlarm(address) {
+	if (alarmIndication == "")
+		alarmIndication = {};
+
+	if (typeof alarmIndication["AlarmStatusOnUnacknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOnUnacknowledged"] = {color: "#ff0000", interval: "250"};
+
+	if (typeof alarmIndication["AlarmStatusOnAcknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOnAcknowledged"] = {color: "#ff0000", interval: "500"};
+
+	if (typeof alarmIndication["AlarmStatusOffUnacknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOffUnacknowledged"] = {color: "#ff0000", interval: "750"};
+
+	if (typeof alarmIndication["AlarmStatusOnOffUnacknowledged"] == "undefined")
+		alarmIndication["AlarmStatusOnOffUnacknowledged"] = {color: "#ff0000", interval: "1500"};
+
+	webMI.alarm.subscribe(address, function(e) {
+		if (e.state == 1)
+			activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOnUnacknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOnUnacknowledged"].interval)};
+		else if (e.state == 2)
+			activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOnAcknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOnAcknowledged"].interval)};
+		else if (e.state == 3)
+			activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOffUnacknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOffUnacknowledged"].interval)};
+		else if (e.state == 5)
+			activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOnOffUnacknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOnOffUnacknowledged"].interval)};
+		else
+			delete activeIndicators["alarm"];
+
+		setIndicator();
+	});
+}
+
+if (alarmToSubscribe != "")
+	initAlarm(alarmToSubscribe);
+
+var currentIndicator = "";
+function setIndicator() {
+	if (currentIndicator != "")
+		return;
+
+	if (activeIndicators["trigger"]) {
+		currentIndicator = "trigger";
+	} else if (activeIndicators["status"]) {
+		currentIndicator = "status";
+	} else if (activeIndicators["alarm"]) {
+		currentIndicator = "alarm";
+	} else {
+		currentIndicator = "";
+		return;
+	}
+
+	indicationActive = true;
+
+	webMI.gfx.setStroke("blinking_frame", activeIndicators[currentIndicator].color);
+	webMI.gfx.setVisible("blinking_frame", null);
+
+	var interval = activeIndicators[currentIndicator].interval;
+	setTimeout(function() {
+		webMI.gfx.setVisible("blinking_frame", false);
+		setTimeout(function() {
+			currentIndicator = "";
+			setIndicator();
+		}, interval);
+	}, interval);
+}
+
+// moeglichkeit ueber parameter nur "historisierte" Datenpunkte einzuschraenkeN!?!
+function createMenuFromAdress(startAddress,callback){
+	var types = ["i=61"];
+	if (webMI.query["showBaseVariables"] == "Yes") types.push("i=62");
+	if (webMI.query["showObjects"] == "Yes") types.push("ObjectTypes.PROJECT");
+	if (webMI.query["showDisplays"] == "Yes") types.push("VariableTypes.ATVISE.Display");
+	if (webMI.query["showArchives"] == "Yes") types.push("ns=1;s=ObjectTypes.ATVISE.ArchiveGroup.Data");
+	if (webMI.query["showAlarms"] == "Yes") types.push("ns=1;s=ObjectTypes.ATVISE.Alarm");
+	if (webMI.query["showVariableTypes"] == "Yes") types.push("VariableTypes.PROJECT");
+
+	webMI.data.call("BrowseNodes", {startAddress:startAddress,endLevel:onDemand,vTypes:types,mapping:["name:nodeid:splitnamespace","text:browsename"]}, function(e) {
+		var nodes = e;
+		if (nodes == null) return;
+		function getFn(value) {
+			return function(e) {
+				if (baseNode) {
+					updateNodeValue(value);
+				} else {
+					updateDisplayValue(value);
+				}
+			};
+		};
+		var menuObj = {};
+		if (startAddress == base)
+			menuObj["none"] = {text: "[none]", value: getFn("")};
+		function translateMenu(submenuObj, subnodes){
+			for (i in subnodes){
+				if (typeof subnodes[i]["name"] == "undefined") continue;
+				submenuObj[i] = {};
+				submenuObj[i]["text"] = subnodes[i]["text"];
+				submenuObj[i]["value"] = getFn(subnodes[i]["name"]);
+				submenuObj[i]["address"] = subnodes[i]["address"];
+				if (typeof subnodes[i]["childs"] == "undefined" || subnodes[i]["childs"] == null) continue;
+				else if (typeof subnodes[i]["childs"] == "object"){
+					submenuObj[i]["sub"] = {};
+					translateMenu(submenuObj[i]["sub"],subnodes[i]["childs"]);
+				} else if (typeof subnodes[i]["childs"] == "string"){
+					submenuObj[i]["sub"] = function(address,callback){return createMenuFromAdress(address,callback)};
+					submenuObj[i]["base"] = subnodes[i]["name"];
+				}
+			}
+			// Check if two Portal DB spaces exist
+			var dbspaces = {};
+			for (var propertyText in submenuObj) {
+				if (!isNaN((propertyText.substr(0, propertyText.indexOf('.'))))) dbspaces[(propertyText.substr(0, propertyText.indexOf('.')))] = true;
+			}
+			
+			if (Object.keys(dbspaces).length > 1) {
+				for (var propertyText in submenuObj) {
+					if (typeof submenuObj[propertyText].address != "undefined") {
+						submenuObj[propertyText].text = submenuObj[propertyText].address;
+						submenuObj[propertyText].value = getFn(submenuObj[propertyText].address);
+					}
+				}
+			}
+		}
+		translateMenu(menuObj,nodes);
+		if (typeof callback == "function") callback(menuObj);
+	});
+}
+
+function focusTH(){
+	if (active) {
+		webMI.gfx.setStroke("addresspicker_bg", focusStrokeColor);
+	}
+}
+function blurTH(){
+	if (active) {
+		backTH();
+		webMI.gfx.setStroke("addresspicker_bg", "none");
+	}
+}
+function applyTH(){
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Context Menu", {
+		"id":"addresspicker_clickarea",
+		menuObj: function(callback){
+			createMenuFromAdress(base,callback);
+		},
+		"outputNode":null,
+		"x":0,
+		"y":30,
+		minWidth: myWidth,
+		onEvent: "immediately",
+		active: function() {
+			return (active);
+		},
+		"itemsCount": itemsCount,
+		"style": contextMenuStyle
+	});
+}
+
+function getDisplayParameters(){
+	var communicationID = new Date().getTime().toString();
+	webMI.trigger.connect(communicationID, function(e) {
+		if (baseNode) {
+			updateNodeValue(e.value);
+		} else {
+			updateDisplayValue(e.value);
+		}
+	});
+
+	var passObj = {
+		"trigger" : communicationID
+	};
+	return passObj;
+}
+
+function applyTH2(){
+	if (active) {
+		backTH();
+		var tmp = null;
+
+		if (isTouch) {
+			var keyboardParam = getDisplayParameters();
+			webMI.display.openWindow({display:"SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.keyboard.keyboard",extern:false,height:250,menubar:false,modal:true,movable:true,resizable:false,scrollbars:false,status:false,title:"T{Keyboard}",toolbar:false,width:550,query:keyboardParam});
+		} else {
+			tmp = prompt("T{Enter address:}");
+		}
+		if (tmp != null && tmp != undefined) {
+			if (baseNode) {
+				updateNodeValue(tmp);
+			} else {
+				updateDisplayValue(tmp);
+			}
+		}
+	}
+}
+function backTH(){
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Context Menu", {
+		"id":"",
+		onEvent: "immediately"
+	});
+}
+function arrowTH(dir){}
+function keyHandler(keyTH,param2){
+	if (keyTH == "focus"){
+		focusTH();
+	} else if (keyTH == "blur"){
+		blurTH();
+	} else if (keyTH == "apply"){
+		applyTH2();
+	} else if (keyTH == "space"){
+		applyTH();
+	} else if (keyTH == "back"){
+		backTH();
+	} else if (keyTH == "arrow"){
+		arrowTH(param2);
+	} else if (keyTH == "isActive"){
+		return active && param2(document.getElementById("addresspicker_clickarea").parentNode);
+	}
+}
+
+if (!hasBrowseNodes) {
+	webMI.gfx.setVisible("addresspicker_clickarea", false);
+} else {
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Context Menu", {
+		"id":"addresspicker_clickarea",
+		menuObj: function(callback){
+			createMenuFromAdress(base,callback);
+		},
+		"outputNode":null,
+		"x":0,
+		"y":30,
+		minWidth: myWidth,
+		onEvent: "click",
+		active: function() {
+			return (active);
+		},
+		"itemsCount": itemsCount,
+		"style": contextMenuStyle
+	});
+	
+	webMI.addEvent("addresspicker_clickarea", "mousedown", function(e) {
+	var id = "addresspicker_clickarea";
+	var value = true;
+	return function(value) {
+		if (active) {
+			tabHandler.setCurrentIndex(keyHandler);
+			webMI.gfx.setStroke("addresspicker_bg", strokeFillPressed);
+			webMI.gfx.setStroke("button_stroke", strokeFillPressed);
+		}
+	} (value);
+	});
+	
+	webMI.addEvent("addresspicker_clickarea", ["mouseup","mouseout"], function(e) {
+	var id = "addresspicker_clickarea";
+	var value = true;
+	return function(value) {
+		if (active) {
+			webMI.gfx.setStroke("addresspicker_bg", "#000000");
+			webMI.gfx.setStroke("button_stroke", "none");
+		}
+	} (value);
+	});
+	
+	webMI.addEvent("addresspicker_clickarea", "dragstart", function(e) {
+		if (e.preventDefault) {
+			e.preventDefault();
+		}
+	});
+}
+
+webMI.addOnload(function() {
+	var doc = document.getElementById("addresspicker_clickarea").ownerDocument;
+	tabHandler.register(tabIndex,keyHandler,doc);
+});
+
+webMI.addEvent("addresspicker_input_clickarea", "click", function(e) {
+var id = "addresspicker_input_clickarea";
+var value = true;
+return function(value) {
+	if (active) {
+		tabHandler.setCurrentIndex(keyHandler);
+		var tmp = null;
+		if (isTouch) {
+			var keyboardParam = getDisplayParameters();
+			webMI.display.openWindow({display:"SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.keyboard.keyboard",extern:false,height:250,menubar:false,modal:true,movable:true,resizable:false,scrollbars:false,status:false,title:"T{Keyboard}",toolbar:false,width:550,query:keyboardParam});
+		} else {
+			tmp = prompt("T{Enter address:}");
+		}
+		if (tmp != null && tmp != undefined) {
+			if (baseNode) {
+				updateNodeValue(tmp);
+			} else {
+				updateDisplayValue(tmp);
+			}
+		}
+	}
+} (value);
+});
+
+webMI.trigger.connect("setValue", function(e) {
+	if (baseNode){
+		updateNodeValue(e.value);
+	} else {
+		updateDisplayValue(e.value);
+	}
+}, "");
+
+webMI.trigger.connect("com.atvise.setActive",function(e){
+	 isSetActive = e.value;
+	 deActivate();
+});
+
+webMI.trigger.connect("com.atvise.setBlinking", function(e){
+	if (e.value == "none"){
+		delete activeIndicators["trigger"];
+	} else {
+		activeIndicators["trigger"] = {color: e.value, interval: 500};
+	}	
+	setIndicator();
+});
+
+function updateDisplayValue(value) {
+	webMI.trigger.fire("valuechanged", value, "");
+	if (value.indexOf(base) > -1)
+        value = value.substring(value.indexOf(base) + base.length+1)
+	webMI.gfx.setText("input_label", value);
+}
+
+function updateNodeValue(value){
+	if (consistencyGroup){
+		consistencyHandler.set(consistencyGroup, baseNode, value);
+		updateDisplayValue(value);
+	} else {
+		webMI.data.write(baseNode,value);
+	}
+}
+if (tooltip != ""){
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tooltip", {"auto":"true", "id":"addresspicker_clickarea", "text":tooltip});
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tooltip", {"auto":"true", "id":"addresspicker_input_clickarea", "text":tooltip});
+}]]></script>
+</svg>

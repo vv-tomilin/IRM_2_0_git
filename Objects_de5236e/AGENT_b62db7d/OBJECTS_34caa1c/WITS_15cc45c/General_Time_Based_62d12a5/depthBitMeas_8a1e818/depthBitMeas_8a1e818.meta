@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.General_Time_Based.depthBitMeas
+NodeClass: Variable
+BrowseName: 1:depthBitMeas
+DisplayName: en|depthBitMeas
+Description: en|depthBitMeas
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

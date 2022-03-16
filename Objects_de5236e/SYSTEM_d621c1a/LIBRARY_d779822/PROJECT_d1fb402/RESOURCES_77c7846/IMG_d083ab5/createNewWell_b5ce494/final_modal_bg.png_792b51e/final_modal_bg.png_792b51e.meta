@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/IMG/createNewWell/final_modal_bg.png
+NodeClass: Variable
+BrowseName: 1:final_modal_bg.png
+DisplayName: en|final_modal_bg.png
+Description: en|final_modal_bg.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

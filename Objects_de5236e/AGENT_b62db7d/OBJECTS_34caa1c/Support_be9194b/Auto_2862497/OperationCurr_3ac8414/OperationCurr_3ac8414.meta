@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.OperationCurr
+NodeClass: Variable
+BrowseName: 1:OperationCurr
+DisplayName: en|OperationCurr
+Description: en|OperationCurr
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

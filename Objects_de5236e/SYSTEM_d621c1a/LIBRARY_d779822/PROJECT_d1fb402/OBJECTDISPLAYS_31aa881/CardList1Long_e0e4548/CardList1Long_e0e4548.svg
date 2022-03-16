@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="39" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="165" version="1.2">
+ <defs/>
+ <metadata>
+  <atv:parameter behavior="mandatory" valuetype="string" desc="Name" name="Name" substitute="#NAME#" defaultvalue="Name"/>
+  <atv:parameter behavior="mandatory" valuetype="string" desc="Label1" name="Label1" substitute="#LABEL1#" defaultvalue="Label1"/>
+  <atv:parameter behavior="mandatory" valuetype="address" desc="Value1" name="Value1" defaultvalue=""/>
+  <atv:parameter behavior="optional" valuetype="string" desc="Unit1" name="Unit1" substitute="#UN1#" defaultvalue=""/>
+  <atv:parameter behavior="optional" valuetype="address" name="LowLevel1" defaultvalue=""/>
+  <atv:parameter behavior="optional" valuetype="address" name="HighLevel1" defaultvalue=""/>
+  <atv:parameter behavior="optional" valuetype="address" name="LowLowLevel1" defaultvalue=""/>
+  <atv:parameter behavior="optional" valuetype="address" name="HighHighLevel1" defaultvalue=""/>
+  <atv:gridconfig height="2" enabled="true" gridstyle="lines" width="2"/>
+  <atv:snapconfig height="2" enabled="true" width="2"/>
+ </metadata>
+ <g atv:refpy="0" atv:refpx="0" atv:insensitive="true" id="id_0">
+  <rect height="39.00" fill-opacity="0" x="0" atv:refpy="19.5" atv:refpx="82.5" fill="#ffffff" y="0" width="165.00" id="id_1"/>
+ </g>
+ <rect height="39" fill-opacity="0.784314" x="0" stroke-width="1" atv:refpy="19.5" rx="0" atv:refpx="82.5" stroke="#8a8a8a" fill="#09222e" y="0" width="165" stroke-linejoin="round" ry="0" id="id_4"/>
+ <text font-family="Arial Black" x="82.5" atv:refpy="11.898" text-anchor="middle" atv:refpx="82.856" fill="#8a8a8a" y="16" font-size="12" id="id_30">#NAME#</text>
+ <text font-family="Arial" x="50.5" atv:refpy="28.863" text-anchor="middle" atv:refpx="46.604" fill="#d0d0d0" y="33.363" font-size="10" id="id_31">#LABEL1#</text>
+ <text font-family="Arial" x="118" atv:refpy="29.707" text-anchor="middle" atv:refpx="118" fill="#d0d0d0" y="33.207" font-size="10" id="id_32">0000</text>
+ <text font-family="Arial" x="154" atv:refpy="30.419" text-anchor="middle" atv:refpx="151.231" fill="#d0d0d0" y="35.372" transform="matrix(0.8613,0,0,0.8225,18.5858,3.7935)" font-size="10" id="id_33">#UN1#</text>
+ <script type="text/ecmascript"><![CDATA[webMI.data.subscribe(webMI.query["Value1"], function(e) {
+var id = "id_32";
+var value = e.value;
+webMI.gfx.setText(id, webMI.sprintf("%.2f", value));
+
+});
+webMI.callExtension("SYSTEM.LIBRARY.PROJECT.QUICKDYNAMICS.Change Colors By Node", {"fillCritical":"#ec4b00", "fillNormal":"#d0d0d0", "fillWarning":"#ffff7f", "highLimit":webMI.query["HighLevel1"], "highhighLimit":webMI.query["HighHighLevel1"], "id":"id_32", "lowLimit":webMI.query["LowLevel1"], "lowlowLimit":webMI.query["LowLowLevel1"], "nodeId":webMI.query["Value1"]});
+
+webMI.data.subscribe(webMI.query["Value1"], function(e) {
+	var id = "id_4";
+	
+	var status = e.status;
+	
+	var nodeColorStatusArray = ["SYSTEM.GLOBALS.ColorStatus.statusNormal", "SYSTEM.GLOBALS.ColorStatus.statusUncertain", "SYSTEM.GLOBALS.ColorStatus.statusBad", "SYSTEM.GLOBALS.ColorStatus.statusUnknown" ];
+	webMI.data.read(nodeColorStatusArray, function(a) {
+		var ColorNormal = a[0].value;
+		var ColorUncertain = a[1].value;
+		var ColorBad = a[2].value;
+		var ColorUnknown = a[3].value;
+		
+		if (status == 0 || (status & 0xC0000000).toString(16) == 0)	//Good value state
+			webMI.gfx.setFill(id, ColorNormal);
+		else if ((status & 0x80000000).toString(16) != 0)			//Bad value state
+			webMI.gfx.setFill(id, ColorBad);
+		else if ((status & 0xC0000000).toString(16) == 40000000)	//Uncertain value state
+			webMI.gfx.setFill(id, ColorUncertain);
+		else														//Unknown value state
+			webMI.gfx.setFill(id, ColorUnknown);
+		
+	});
+});]]></script>
+</svg>

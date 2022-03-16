@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/RigView/geos/gabbro.jpg
+NodeClass: Variable
+BrowseName: 1:gabbro.jpg
+DisplayName: en|gabbro.jpg
+Description: en|gabbro.jpg
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Jpeg

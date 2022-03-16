@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.Halliburton.Halliburton
+NodeClass: Variable
+BrowseName: 1:Halliburton
+DisplayName: en|Halliburton
+Description: en|Halliburton
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

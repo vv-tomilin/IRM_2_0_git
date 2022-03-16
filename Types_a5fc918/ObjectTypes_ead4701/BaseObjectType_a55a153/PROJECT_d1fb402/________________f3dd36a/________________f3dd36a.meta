@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Клапаны в сборе
+NodeClass: ObjectType
+BrowseName: 1:Клапаны в сборе
+DisplayName: en|Клапаны в сборе
+Description: en|Клапаны в сборе
+IsAbstract: false

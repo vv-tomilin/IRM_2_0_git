@@ -1,0 +1,11 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Drawworks.HookPosition
+NodeClass: Variable
+BrowseName: 1:HookPosition
+DisplayName: en|HookPosition
+Description: en|HookPosition
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.AGGREGATETEMPLATES.graph
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="reset" type="startup" trigger="true" relative="false" value=""/>
+  <code><![CDATA[var fileLoad = new UaNode('AGENT.OBJECTS.Test.ForMainWindow.dataRepRunning'); 
+fileLoad.assign({value:true});	
+]]></code>
+</script>

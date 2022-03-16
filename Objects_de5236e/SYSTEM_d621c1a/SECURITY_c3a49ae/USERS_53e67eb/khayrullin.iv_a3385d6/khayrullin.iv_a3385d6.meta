@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.SECURITY.USERS.khayrullin.iv
+NodeClass: Object
+BrowseName: 1:khayrullin.iv
+DisplayName: en|khayrullin.iv
+Description: en|khayrullin.iv
+EventNotifier: 0
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.User

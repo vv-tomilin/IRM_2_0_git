@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.Mud_Tank_Volumes.record_identifier
+NodeClass: Variable
+BrowseName: 1:record_identifier
+DisplayName: en|record_identifier
+Description: en|record_identifier
+DataType: Int64
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType

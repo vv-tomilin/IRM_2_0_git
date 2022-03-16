@@ -1,0 +1,1632 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <icon type="image/png">iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAZdEVYdFNvZnR3YXJlAHBhaW50Lm5ldCA0LjAuMTZEaa/1AAAA9klEQVRYR+2U0Q3DIAxEM0JG6GKVulkzSkbqBtQnsArWVTW0xIrUj2cJ25wdTFhSSqFkc72vwiYkB8hbrdAo2fiLK5sVGiUbpzDiJe/B4iNk82rgYhNqENdcGxslG/miIhx2AuF3IPYveAcKWh8DDQk78j+AnKb5RsiCTdbHKMKsIGNv9tYLCzZYH6MSv7E4QEzzGn+9sOiGDn7fgPUxJC98BLGX8BuoUzlNAzhWIW4ERZgVZPRdwk7CfsPwBuaNwPoYkvd/B4ahTsXbAI5ViBtBEWYFGSd6B7yoMIqwOEBM8xp/vRhFROeMwIuIzrmER0Cdx5GWJ2HIp5zjmg5LAAAAAElFTkSuQmCC</icon>
+    <visible>1</visible>
+    <title>Tree View</title>
+    <description>Creates a tree view to display nodes</description>
+  </metadata>
+  <parameter behavior="mandatory" name="renderTo" valuetype="string"/>
+  <parameter behavior="optional" defaultvalue="AGENT.OBJECTS" name="startAddress" valuetype="address"/>
+  <parameter behavior="optional" defaultvalue="100" name="busyIndicatorTolerance" valuetype="number"/>
+  <parameter behavior="optional" defaultvalue="3" name="expandoOffset" valuetype="number"/>
+  <parameter behavior="optional" defaultvalue="12" name="fontSize" valuetype="number"/>
+  <parameter behavior="optional" defaultvalue="{&quot;baseVariableImage&quot;:&quot;/treeView/icons/baseVariable.svg&quot;,&quot;folderImage&quot;:&quot;/treeView/icons/folder.svg&quot;,&quot;aggregateFunctionImage&quot;:&quot;/treeView/icons/aggregateFunction.svg&quot;,&quot;collapsedLeafImage&quot;:&quot;/treeView/icons/leafCollapsed.svg&quot;,&quot;expandedLeafImage&quot;:&quot;/treeView/icons/leafExpanded.svg&quot;}" name="imagePaths" valuetype="string"/>
+  <parameter behavior="optional" defaultvalue="15" name="leafIndentation" valuetype="number"/>
+  <parameter behavior="optional" defaultvalue="2" name="leafPadding" valuetype="number"/>
+  <parameter behavior="optional" defaultvalue="[&quot;baseVariable&quot;, &quot;aggregateFunction&quot;]" name="selectableTypes" valuetype="string"/>
+  <parameter behavior="optional" defaultvalue="100" name="searchDepth" valuetype="string"/>
+  <code><![CDATA[(function (window, document) {
+
+
+			/**
+			 * @callback {function} TreeView#eventCallback
+			 * @param {object} data The corresponding node information.
+			 * @param {HTMLNode} target The clicked html node.
+			 */
+
+			/**
+			 * Fired when a node is expanded.
+			 * @event TreeView#expand
+			 * @type {object}
+			 * @property {object} data The corresponding node information.
+			 * @property {HTMLNode} target The clicked html node.
+			 */
+
+			/**
+			 * Fired when all nodes are expanded by calling {@link TreeView#expandAll}
+			 * @event TreeView#expandAll
+			 * @type {object}
+			 * @property {object} data The corresponding node information.
+			 * @property {HTMLNode} target The clicked html node.
+			 */
+
+			/**
+			 * Fired when a node is collapsed.
+			 * @event TreeView#collapse
+			 * @type {object}
+			 * @property {object} data The corresponding node information.
+			 * @property {HTMLNode} target The clicked html node.
+			 */
+
+			/**
+			 * Fired when all nodes are collapsed by calling {@link TreeView#collapseAll}
+			 * @event TreeView#collapseAll
+			 * @type {object}
+			 * @property {object} data The corresponding node information.
+			 * @property {HTMLNode} target The clicked html node.
+			 */
+
+			/**
+			 * Fired a node is selected.
+			 * @event TreeView#select
+			 * @type {object}
+			 * @property {object} data The corresponding node information.
+			 * @property {HTMLNode} target The clicked html node.
+			 */
+
+			/**
+			 * Fired a single node that is rendered the first time. (The first time it is appended to the DOM)
+			 * @event TreeView#render
+			 * @type {object}
+			 * @property {object} data The corresponding node information.
+			 * @property {HTMLNode} target The clicked html node.
+			 */
+
+			/**
+			 * Fired when the TreeView has finished its' initialization.
+			 * @event TreeView#ready
+			 * @type {object}
+			 * @property {object} TreeViewInstance The instance of the TreeView to work on.
+			 */
+			var events = [
+				'expand',
+				'expandAll',
+				'collapse',
+				'collapseAll',
+				'select',
+				'render',
+				'ready'
+			];
+
+
+			var opcUATypes = {
+				baseVariableDataType: "i=63",
+				baseVariable: "i=62",
+				folder: "i=61",
+				project: "ns=1;s=ObjectTypes.PROJECT",
+				projectVariables: "ns=1;s=VariableTypes.PROJECT",
+				aggregateTemplate: "ns=1;s=ObjectTypes.ATVISE.AggregateTemplate",
+				aggregateFunction: "ns=1;s=ObjectTypes.ATVISE.AggregateFunction",
+				aggregateFunctionType: "i=2340"
+			};
+
+
+			/**
+			 * Type definition for the tree nodes
+			 * @typedef {object} TreeView#types
+			 * @property {string} [baseVariable="baseVariable"]
+			 * @property {string} [folder="folder"]
+			 * @property {string} [projectVariables="baseVariable"]  ... are like ...
+			 * @property {string} [aggregateTemplate="aggregateTemplate"]
+			 * @property {string} [aggregateFunction="aggregateFunction"]
+			 * @property {string} [aggregateFunctionType="aggregateFunctionType"]
+			 */
+			var types = {
+				baseVariable: "baseVariable",
+				folder: "folder",
+				projectVariables: "baseVariable",
+				aggregateTemplate: "aggregateTemplate",
+				aggregateFunction: "aggregateFunction",
+				aggregateFunctionType: "aggregateFunctionType"
+
+			};
+
+
+			var aggregateOptions = {
+				intervalUnit: "interval_unit",
+				intervalValue: "interval_value",
+				offsetUnit: "offset_unit",
+				offsetValue: "offset_value",
+				stepped: "stepped",
+				aggregateType: "aggregate",
+				relatedNodeAddress: "relatedNodeAddress"
+			};
+
+
+			/**
+			 * The configuration object for the TreeView.
+			 * @typedef {object} TreeView#options
+			 * @property {string} renderTo The id of the container to render the tree to.
+			 * @property {string} [startAddress="AGENT.OBJECTS"] The opcUA Address to start displaying the tree from.
+			 * @property {array} [selectableTypes = "[baseVariable, aggregateFunction]"] The types of leaves that can be selected. See {@link TreeView#types}
+			 * @property {number} [fontSize=12] The font size for the treeView [px].
+			 * @property {number} [leafPadding=2] The padding top and bottom between the leaves [px]
+			 * @property {number} [leafIndentation=15] The indentation for child leaves [px]
+			 * @property {number} [expandoOffset=3] The distance from the expando to the leaf icon[px]
+			 * @property {number} [expandoOffset=3] The distance from the expando to the leaf icon[px]
+			 * @property {number} [busyIndicatorTolerance=100] The time to has to pass by to start displaying the busy indicator [ms]
+			 * @property {number} [searchDepth=100] The folder depth to use for filtering internally.
+			 * @property {number} [navigationDepth=100] The folder depth to use for navigating internally.
+			 * @property {object} imagePaths The image paths for the tree icons.
+			 *     See default:
+			 *        <p>- baseVariableImage: "/treeView/icons/baseVariable.svg" </p>
+			 *        <p>- folderImage: "/treeView/icons/folder.svg" </p>
+			 *        <p>- aggregateFunctionImage: "/treeView/icons/aggregateFunction.svg" </p>
+			 *        <p>- collapsedLeafImage: "/treeView/icons/leafCollapsed.svg" </p>
+			 *        <p>- expandedLeafImage: "/treeView/icons/leafExpanded.svg" </p>
+			 */
+			var defaultOptions = {
+				renderTo: "",
+				startAddress: "AGENT.OBJECTS",
+				aggregateAddressPrefix: "AGENT.HISTORY.AGGREGATETEMPLATES",
+				selectableTypes: [types.baseVariable, types.aggregateFunction],
+				fontSize: 12,
+				leafPadding: 2,
+				leafIndentation: 15,
+				busyIndicatorTolerance: 100,
+				expandoOffset: 3,
+				searchDepth: 100,
+				navigationDepth: 1,
+				imagePaths: {
+					baseVariableImage: "/treeView/icons/baseVariable.svg",
+					folderImage: "/treeView/icons/folder.svg",
+					aggregateFunctionImage: "/treeView/icons/aggregateFunction.svg",
+					collapsedLeafImage: "/treeView/icons/leafCollapsed.svg",
+					expandedLeafImage: "/treeView/icons/leafExpanded.svg"
+				}
+			};
+
+
+			/**
+			 * A class that represents a tree view that shows opcUA nodes.
+			 * @param {TreeView#options} options Configuration options.
+			 * @class
+			 * @alias TreeView
+			 */
+			function TreeView(options) {
+				this.internal = {};
+				this.internal.doc = document;
+				this.internal.win = window;
+				this.internal.options = mergeData(defaultOptions, options);
+				this.internal.eventListeners = [];
+				this.internal.selectedNodeData = {};
+				this.internal.selectedNode = undefined;
+				this.internal.scrollWrapper = null;
+				this.internal.container = null;
+				this.internal.busyIndicator = null;
+				this.internal.busyIndicatorWrapper = null;
+				this.internal.handlers = {};
+				this.internal.node = options.renderTo;
+				this.internal.availableAddresses = [];
+				this.internal.initialized = false;
+
+				initialize(this);
+				fetchNodeStructure(this, this.internal.container);
+				webMI.addOnunload(this.destroy.bind(this));
+
+			}
+
+
+			/**
+			 * Expands a leaflet by the expando or the leaf text
+			 * @param {HTMLElement} node The node that has the data-item attribute on it.
+			 * @param {boolean} skipEmit Option to prevent treeView event
+			 */
+			TreeView.prototype.expand = function (node, skipEmit) {
+				var data = getDataFromNode(node);
+				var leaves = getChildLeaves(node);
+
+				if (data.hasChildren) {
+					if (leaves) {
+						leaves.classList.remove('hidden');
+						var expando = node.querySelector('.tree-expando');
+						expando.src = this.internal.options.languagePrefix + this.internal.options.imagePaths.expandedLeafImage;
+						updateScroller(this);
+						if (!skipEmit) {
+							emit(this, 'expand', {
+								target: node,
+								data: getDataFromNode(node)
+							});
+						}
+					} else {
+						showBusyIndicator(this);
+						fetchNodeStructure(this, node);
+					}
+
+				}
+			};
+
+			/**
+			 * Expands all leaves
+			 */
+			TreeView.prototype.expandAll = function () {
+				var self = this;
+				if (self.expandAllInProgress) {
+					return;
+				}
+				self.expandAllInProgress = true;
+				showBusyIndicator(self);
+
+				fetchAvailableNodeAdresses(self, function (addresses) {
+					self.internal.availableAddresses = addresses;
+					expandNodeList(self, flattenAddresses(self.internal.availableAddresses), function () {
+						emit(self, 'expandAll', {});
+						hideBusyIndicator(self);
+						self.expandAllInProgress = false;
+					});
+				})
+
+			};
+
+			/**
+			 * Collapses a leaf by the expando or the leaf text
+			 * @param {HTMLElement} node  The node that has the data-item attribute on it.
+			 * @param {boolean} skipEmit Option to prevent treeView event
+			 */
+			TreeView.prototype.collapse = function (node, skipEmit) {
+				var leaves = getChildLeaves(node);
+
+				leaves.classList.add('hidden');
+				var expando = node.querySelector('.tree-expando');
+				expando.src = this.internal.options.languagePrefix + this.internal.options.imagePaths.collapsedLeafImage;
+				updateScroller(this);
+				if (skipEmit) {
+					return;
+				}
+				emit(this, 'collapse', {
+					target: node,
+					data: getDataFromNode(node)
+				});
+			};
+
+			/**
+			 * Collapses all leaves
+			 */
+			TreeView.prototype.collapseAll = function () {
+				var self = this;
+				var nodes = this.internal.container.querySelectorAll('.tree-expando');
+				forEach(nodes, function (node) {
+					var parent = node.parentNode;
+					var leaves = parent.parentNode.querySelector('.tree-child-leaves');
+					if (parent && leaves && parent.hasAttribute('data-item')) {
+						self.collapse(parent, true);
+					}
+				});
+				emit(this, 'collapseAll', {});
+			};
+
+			/**
+			 * Get the data for the currently selected tree element
+			 * @return {object} data Data from selected element
+			 */
+			TreeView.prototype.getSelectedNode = function () {
+				return this.internal.selectedNodeData;
+			};
+
+			/**
+			 * Select a specifc node in the tree.
+			 * @param {string} nodePath Nodeaddress to select
+			 * @param {string} aggregatePath Aggreateaddress to select. (in relation to the nodePath)
+			 * @param {boolean} skipCollapse Omit collapsing all nodes.
+			 */
+			TreeView.prototype.selectNode = function (nodePath, aggregatePath, skipCollapse) {
+				var self = this;
+				var nodeAddresses = [];
+				if (!isNaN((nodePath.substr(0, nodePath.indexOf('.'))))) nodeAddresses.push(nodePath); // if has dbSpace => is Portal node
+				else nodeAddresses = buildAddressList(self, nodePath, aggregatePath);
+
+				if (self.selectInProgress) {
+					return;
+				}
+
+				self.selectInProgress = true;
+				showBusyIndicator(self);
+
+				if (!skipCollapse) {
+					this.collapseAll();
+				}
+
+				expandNodeList(self, nodeAddresses, function (result) {
+					var selectElement = result.relatedNode;
+					if (selectElement === null) {
+						selectElement = result.lastValidNode;
+					}
+					if (selectElement) {
+						processSelection(self, selectElement.querySelector('.tree-leaf-text'), null);
+						self.internal.scroller.scrollToElement(selectElement);
+					} else {
+						processSelection(self);
+					}
+
+					self.selectInProgress = false;
+					hideBusyIndicator(self);
+				});
+
+
+			};
+
+			/**
+			 * Only show nodes in the tree that contain the search-string in their path.
+			 * @param {string} searchString The string to filter for.
+			 * @param {boolean} refreshSearchData Refresh the nodesdata used for filter. (use this when the nodes have been updated on the server side)
+			 */
+			TreeView.prototype.filter = function (searchString, refreshSearchData) {
+				var self = this;
+				var results = {};
+
+				if (self.filterInProgress) {
+					console.warn("Filtering for term: " + searchString + " omitted, because filterprocess is busy.");
+					return;
+				}
+
+				self.filterInProgress = true;
+				showBusyIndicator(self);
+
+				if (refreshSearchData || self.internal.availableAddresses.length < 1) {
+					fetchAvailableNodeAdresses(this, function (availableAddresses) {
+						self.internal.availableAddresses = availableAddresses;
+						results = getSearchResults(self, searchString);
+						self.collapseAll();
+						filterNodes(self, results.searchResults, results.negativeResults, searchString, function () {
+							self.filterInProgress = false;
+							hideBusyIndicator(self);
+						});
+					});
+				} else {
+					results = getSearchResults(self, searchString);
+					self.collapseAll();
+					filterNodes(self, results.searchResults, results.negativeResults, searchString, function () {
+						self.filterInProgress = false;
+						hideBusyIndicator(self);
+					});
+				}
+			};
+
+			/**
+			 * Attach an event handler to the tree view
+			 * @param {string} name Name of the event to attach
+			 * @param {TreeView#eventCallback} callback The callback to execute on the event
+			 * @param {object} scope The context to call the callback with
+			 */
+			TreeView.prototype.on = function (name, callback, scope) {
+				if (events.indexOf(name) > -1) {
+					if (!this.internal.handlers[name]) {
+						this.internal.handlers[name] = [];
+					}
+					this.internal.handlers[name].push({
+						callback: callback,
+						context: scope
+					});
+
+					//execute ready callback immediately if initialization is already complete
+					if (name === 'ready' && this.internal.initialized === true) {
+						emit(this, 'ready', this);
+					}
+				} else {
+					throw new Error(name + ' is not supported by TreeView.');
+				}
+			};
+
+
+			/**
+			 * Attach an event handler to the tree view and remove it automatically after it has been executed the first time.
+			 * @param {string} name Name of the event to attach
+			 * @param {TreeView#eventCallback} callback The callback to execute on the event
+			 * @param {object} scope The context to call the callback with
+			 */
+			TreeView.prototype.one = function (name, callback, scope) {
+				if (events.indexOf(name) > -1) {
+					if (!this.internal.handlers[name]) {
+						this.internal.handlers[name] = [];
+					}
+					this.internal.handlers[name].push({
+						callback: callback,
+						context: scope,
+						one: true
+					});
+				} else {
+					throw new Error(name + ' is not supported by TreeView.');
+				}
+			};
+
+
+			/**
+			 * Detach an event handler from the tree view
+			 * @param {string} name Name of the event to detach
+			 * @param {TreeView#eventCallback} callback The function to detach
+			 */
+			TreeView.prototype.off = function (name, callback) {
+				var index, found = false;
+				if (this.internal.handlers[name] instanceof Array) {
+					this.internal.handlers[name].forEach(function (handle, i) {
+						index = i;
+						if (handle.callback === callback && !found) {
+							found = true;
+						}
+					});
+					if (found) {
+						this.internal.handlers[name].splice(index, 1);
+					}
+				}
+			};
+
+			/**
+			 * Destroy the TreeView and release memory
+			 */
+			TreeView.prototype.destroy = function () {
+				this.internal.handlers = null;
+				for (var i = 0; i < this.internal.eventListeners.length; i++) {
+					var listenerObj = this.internal.eventListeners[i];
+					listenerObj.node.removeEventListener(listenerObj.event, listenerObj.callback, false);
+				}
+				while (this.internal.scrollWrapper.firstChild) {
+					this.internal.scrollWrapper.removeChild(this.internal.scrollWrapper.firstChild);
+				}
+				if (this.internal.busyIndicatorTimeout) {
+					this.internal.win.clearTimeout(this.internal.busyIndicatorTimeout);
+				}
+				this.internal.scroller.destroy();
+				this.internal.scroller = null;
+				this.internal.doc = null;
+				this.internal.win = null;
+				this.internal.scrollWrapper = null;
+				this.internal.selectedNodeData = null;
+				this.internal.selectedNode = null;
+				this.internal.busyIndicator = null;
+				this.internal.busyIndicatorWrapper = null;
+				this.internal.container = null;
+				this.internal.eventListeners = null;
+				this.internal.availableAddresses = null;
+				this.internal.initialized = null;
+				this.internal = null;
+
+				this.selectInProgress = null;
+				this.filterInProgress = null;
+				this.expandAllInProgress = null;
+			};
+
+
+			/**
+			 * Initialize the tree view
+			 * @param {object} self The TreeView instance
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function initialize(self) {
+				self.internal.scrollWrapper = self.internal.doc.getElementById(self.internal.node);
+				if (self.internal.scrollWrapper === null) {
+					self.internal.doc = self.internal.win.frameElement.ownerDocument;
+					self.internal.win = self.internal.doc.defaultView;
+					self.internal.scrollWrapper = self.internal.doc.getElementById(self.internal.node);
+					if (self.internal.scrollWrapper === null) {
+						throw new Error("Node '" + self.internal.node + "' not found!");
+					}
+				}
+				self.internal.scrollWrapper.classList.add("tree-wrapper");
+				self.internal.container = self.internal.doc.createElement("div");
+				self.internal.scrollWrapper.appendChild(self.internal.container);
+				self.internal.container.style.fontSize = self.internal.options.fontSize + "px";
+				self.internal.container.classList.add("tree-container");
+				self.internal.busyIndicator = self.internal.doc.createElement("div");
+				self.internal.busyIndicator.classList.add("tree-busy-indicator");
+				self.internal.busyIndicatorWrapper = self.internal.doc.createElement("div");
+				self.internal.busyIndicatorWrapper.classList.add("tree-busy-indicator-wrapper");
+				self.internal.busyIndicatorWrapper.classList.add("hidden");
+				self.internal.busyIndicatorWrapper.appendChild(self.internal.busyIndicator);
+				self.internal.scrollWrapper.appendChild(self.internal.busyIndicatorWrapper);
+
+				var languageName = "";
+				for (var language in project.languages) {
+					languageName = language;
+					break;
+				}
+				self.internal.options.languagePrefix = languageName;
+
+				loadRelatedCSS(self);
+				webMI.data.loadScript("other/atvise.iscroll.js", initScrollbars.bind(self));
+			}
+
+
+			/**
+			 * Initialize the scrollbar (IScroll)
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function initScrollbars() {
+				this.internal.scroller = new this.internal.win.IScroll(this.internal.scrollWrapper, {
+					preventDefaultException: {className: /(^|\s)tree-leaf-text|tree-expando(\s|$)/},
+					preventDefault: true,
+					useTransform: false,
+					useTransition: false,
+					mouseWheel: true,
+					scrollbars: true,
+					bounce: false,
+					mouseWheelSpeed: 1,
+					disablePointer: true,
+					disableMouse: false,
+					disableTouch: false,
+					momentum: true,
+					scrollX: true,
+					scrollY: true,
+					tap: false,
+					bindToWrapper: true,
+					interactiveScrollbars: true,
+					HWCompositing: false
+
+				});
+			}
+
+			/**
+			 * @param {object} self The treeview instance.
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function loadRelatedCSS(self) {
+				if (self.internal.doc.getElementById("treeViewStyle") == null) {
+					var fileref = self.internal.doc.createElement("link");
+					fileref.rel = "stylesheet";
+					fileref.id = "treeViewStyle";
+					fileref.type = "text/css";
+					fileref.href = "/treeView/css/treeViewStyle.css";
+					self.internal.doc.getElementsByTagName("head")[0].appendChild(fileref);
+				}
+			}
+
+			/**
+			 * Update the scrollbar when content has changed
+			 * @param {object} self The TreeView instance
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function updateScroller(self) {
+				self.internal.win.setTimeout(function () {
+					if (self.internal.scroller) {
+						self.internal.scroller.refresh();
+					}
+				}, 0);
+			}
+
+			/**
+			 * Emit an event from the tree view
+			 * @param {object} self The TreeView instance
+			 * @param {string} name The name of the event to emit
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function emit(self, name) {
+				var args = [].slice.call(arguments, 2);
+				if (events.indexOf(name) > -1) {
+					if (self.internal.handlers[name] && self.internal.handlers[name] instanceof Array) {
+						forEach(self.internal.handlers[name], function (handle) {
+							self.internal.win.setTimeout(function () {
+								handle.callback.apply(handle.context, args);
+								if (handle.one) {
+									self.off(name, handle.callback);
+								}
+							}, 0);
+						});
+					}
+				} else {
+					throw new Error(name + ' event cannot be found on TreeView.');
+				}
+			}
+
+			/**
+			 * A Handler that is executed for every dblclick on a leaf.
+			 * @param {Event} e The event object passed by the browser
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function dblClickHandler(e) {
+				var targetNode = e.target || e.currentTarget;
+				if (targetNode.classList.contains("tree-leaf-text")) {
+					handleLeafClick(this, targetNode.parentNode);
+				}
+			}
+
+			/**
+			 * A Handler that is executed for every click on a leaf.
+			 * @param {Event} e The event object passed by the browser
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function clickHandler(e) {
+				e.preventDefault();
+				var targetNode = e.target || e.currentTarget;
+				if (targetNode.classList.contains("tree-leaf-text")) {
+					processSelection(this, targetNode, e);
+				} else if (targetNode.classList.contains("tree-expando")) {
+					handleLeafClick(this, targetNode.parentNode);
+				}
+			}
+
+			/**
+			 * A method that adds the selection class to the leaf text.
+			 * @param {object} self The treeVIew instance
+			 * @param {HTMLElement} targetNode The HTMLElement the user has clicked on
+			 * @param {Event} e The event delivered by the browser
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function processSelection(self, targetNode, e) {
+
+				if (self.internal.selectedNode && self.internal.selectedNode !== null) {
+					self.internal.selectedNode.classList.remove("selected");
+					self.internal.selectedNode = null;
+					self.internal.selectedNodeData = null;
+				}
+
+				if (targetNode) {
+					var data = getDataFromNode(targetNode.parentNode);
+					if (data.type == "folder") {
+						handleLeafClick(self, targetNode.parentNode);
+						return;
+					}
+
+					emit(self, 'select', {
+						event: e,
+						data: data
+					});
+
+					var selectableValid = false;
+					for (var i = 0; i < self.internal.options.selectableTypes.length; i++) {
+						if (self.internal.options.selectableTypes[i] == data.type) {
+							selectableValid = true;
+							break;
+						}
+					}
+
+					if (selectableValid) {
+						self.internal.selectedNode = targetNode;
+						self.internal.selectedNodeData = data;
+						targetNode.classList.add("selected");
+					}
+				}
+			}
+
+			/**
+			 * A method that triggers collapsing or expanding of a node.
+			 * @param {object} self The TreeView instance
+			 * @param {HTMLElement} targetNode The node that has the data-item attribute.
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function handleLeafClick(self, targetNode) {
+				var leaves = getChildLeaves(targetNode);
+				if (leaves) {
+					if (leaves.classList.contains('hidden')) {
+						self.expand(targetNode);
+					} else {
+						self.collapse(targetNode);
+					}
+				} else {
+					self.expand(targetNode);
+				}
+			}
+
+			/**
+			 * A method that displays the busy indicator.
+			 * @param {object} self The TreeView instance
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function showBusyIndicator(self) {
+				if (!self.internal.busyIndicatorTimeout || self.internal.busyIndicatorTimeout === null) {
+					self.internal.busyIndicatorTimeout = self.internal.win.setTimeout(function () {
+						self.internal.busyIndicatorWrapper.classList.remove("hidden");
+					}, self.internal.options.busyIndicatorTolerance);
+				}
+
+			}
+
+			/**
+			 * A method that hides the busy indicator.
+			 * @param {object} self The TreeView instance
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function hideBusyIndicator(self) {
+				self.internal.win.clearTimeout(self.internal.busyIndicatorTimeout);
+				self.internal.busyIndicatorTimeout = null;
+				self.internal.busyIndicatorWrapper.classList.add("hidden");
+			}
+
+			/**
+			 * A method that takes the data to display in the treeView and appends the HTML elements to the DOM
+			 * @param {HTMLElement} container The DOM element the data should be rendered to (can also be a leaf element)
+			 * @param {object} data The data that should be appended to the dom
+			 * @param {object} self The TreeView instance
+			 * @fires TreeView#render
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function renderDataToDOM(container, data, self) {
+				if (!container) {
+					container = self.internal.container;
+				}
+				var leaves = [], click;
+
+				forEach(data, function (item) {
+					leaves.push(renderLeaf.call(self, item));
+				});
+
+				if (container !== self.internal.container) {
+					var childContainer = self.internal.doc.createElement('div');
+					childContainer.setAttribute('class', 'tree-child-leaves');
+					childContainer.style.marginLeft = self.internal.options.leafIndentation + "px";
+					container.parentNode.appendChild(childContainer);
+					container = childContainer;
+				}
+
+				container.innerHTML = leaves.map(function (leaf) {
+					return leaf.outerHTML;
+				}).join('');
+
+				forEach(container.querySelectorAll('.tree-leaf-text'), function (node) {
+					if (isMobileTouchDevice) {
+						node.addEventListener("touchstart", clickHandler.bind(self), false);
+						self.internal.eventListeners.push({
+							node: node,
+							event: "touchstart",
+							callback: clickHandler.bind(self)
+						});
+					} else {
+						node.addEventListener("click", clickHandler.bind(self), false);
+						self.internal.eventListeners.push({
+							node: node,
+							event: "click",
+							callback: clickHandler.bind(self)
+						});
+					}
+					node.addEventListener("dblclick", dblClickHandler.bind(self), false);
+					self.internal.eventListeners.push({
+						node: node,
+						event: "dblclick",
+						callback: dblClickHandler.bind(self)
+					});
+				});
+				forEach(container.querySelectorAll('.tree-expando'), function (node) {
+					if (isMobileTouchDevice) {
+						node.addEventListener("touchstart", clickHandler.bind(self), false);
+						self.internal.eventListeners.push({
+							node: node,
+							event: "touchstart",
+							callback: clickHandler.bind(self)
+						});
+					} else {
+						node.addEventListener("click", clickHandler.bind(self), false);
+						self.internal.eventListeners.push({
+							node: node,
+							event: "click",
+							callback: clickHandler.bind(self)
+						});
+					}
+				});
+
+				if (self.internal.initialized === false) {
+					emit(self, 'ready', self);
+					self.internal.initialized = true;
+				}
+
+				//when child leaves were loaded from server or selection or filtering, emit expand event
+				if (container !== self.internal.container && !self.selectInProgress && !self.filterInProgress && !self.expandAllInProgress) {
+					var targetNode = container.parentNode.querySelector('.tree-leaf-content');
+					emit(self, 'expand', {
+						target: targetNode,
+						data: getDataFromNode(targetNode)
+					});
+					hideBusyIndicator(self);
+				}
+				emit(self, 'render', {
+					target: targetNode,
+					data: getDataFromNode(targetNode)
+				});
+				updateScroller(self);
+			}
+
+			/**
+			 * A method that render a single leaf and returns the created HTML elements
+			 * @param {object} item The data that represents the leaf
+			 * @return {HTMLElement} leaf The HTML node that was created
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function renderLeaf(item) {
+
+				if (item.dataID) {
+					var dataID = item.dataID;
+					delete item.dataID;
+				}
+				var leaf = this.internal.doc.createElement('div');
+				var content = this.internal.doc.createElement('div');
+				var text = this.internal.doc.createElement('div');
+				var expando = this.internal.doc.createElement('img');
+				var icon = this.internal.doc.createElement('img');
+
+				switch (item.type) {
+					case types.baseVariable:
+						icon.src = this.internal.options.languagePrefix + this.internal.options.imagePaths.baseVariableImage;
+						break;
+					case types.folder:
+						icon.src = this.internal.options.languagePrefix + this.internal.options.imagePaths.folderImage;
+						break;
+					case types.aggregateFunction:
+						icon.src = this.internal.options.languagePrefix + this.internal.options.imagePaths.aggregateFunctionImage;
+						break;
+				}
+
+				icon.setAttribute('class', 'tree-icon');
+				icon.style.marginLeft = (this.internal.options.fontSize + this.internal.options.expandoOffset) + "px";
+				leaf.setAttribute('class', 'tree-leaf');
+				content.setAttribute('class', 'tree-leaf-content');
+				content.style.height = this.internal.options.fontSize + "px";
+				content.style.paddingTop = this.internal.options.leafPadding + "px";
+				content.style.paddingBottom = this.internal.options.leafPadding + "px";
+				content.setAttribute('data-item', JSON.stringify(item));
+				if (dataID) {
+					content.setAttribute('data-id', dataID);
+				}
+				text.setAttribute('class', 'tree-leaf-text');
+				text.textContent = item.name;
+				if (item.hasChildren) {
+					expando.setAttribute('class', 'tree-expando');
+					expando.style.top = this.internal.options.leafPadding + "px";
+					expando.src = this.internal.options.languagePrefix + this.internal.options.imagePaths.collapsedLeafImage;
+					content.appendChild(expando);
+				}
+				content.appendChild(icon);
+				content.appendChild(text);
+				leaf.appendChild(content);
+				return leaf;
+			}
+
+
+			/**
+			 * A method that shows the information, that no nodes are available under current startAddress
+			 * @param {object} self The TreeView instance
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function showNoNodesAvailable(self) {
+				var message = "The node '" + self.internal.options.startAddress + "' does not have children!";
+				var messageEl = self.internal.doc.createElement("div");
+				messageEl.innerText = message;
+				self.internal.container.appendChild(messageEl);
+			}
+
+
+			/**
+			 * A method that searches for the occurence of a string in nodepaths.
+			 * @param {object} self The TreeView instance
+			 * @param {string} searchString The string to filter for.
+			 * @return {object} results
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function getSearchResults(self, searchString) {
+				var negativeResults = [];
+				var searchResults = [];
+
+				for (var i = 0; i < self.internal.availableAddresses.length; i++) {
+					var aggregateReference = self.internal.availableAddresses[i].aggregateReference;
+					if (aggregateReference) {
+						var aggregatePathString = aggregateReference.substring(aggregateReference.indexOf((aggregateReference.split('.'))[4]));
+					} else {
+						aggregatePathString = '';
+					}
+
+					if (self.internal.availableAddresses[i].address.indexOf(searchString) !== -1 || aggregatePathString.indexOf(searchString) !== -1) {
+						searchResults.push(self.internal.availableAddresses[i]);
+					} else {
+						negativeResults.push(self.internal.availableAddresses[i]);
+					}
+				}
+
+				if (searchString !== '') {
+					return ensureFullPath(searchResults, negativeResults);
+				}
+
+				return {searchResults: searchResults, negativeResults: negativeResults};
+			}
+
+
+			/**
+			 * A method that ensures that the full path of a filtered node is shown in the treeView.
+			 * @param {array} searchResults An array that contains the node addresses that should be displayed.
+			 * @param {array} negativeResults An array that contains the node addresses that should not be displayed.
+			 * @return {object} updatedAddresses
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function ensureFullPath(searchResults, negativeResults) {
+
+				//ensure that the full path is filtered
+				var additionalSearchResults = [];
+				for (var i = 0; i < negativeResults.length; i++) {
+					var negativeResult = negativeResults[i].address;
+					for (var h = 0; h < searchResults.length; h++) {
+						var searchResult = searchResults[h].address;
+						if (searchResult.indexOf(negativeResult) !== -1) {
+							additionalSearchResults.push({
+								additionalResult: negativeResults[i],
+								insertBefore: searchResults[h]
+							});
+						}
+					}
+				}
+
+				for (var j = 0; j < additionalSearchResults.length; j++) {
+					var additionalResult = additionalSearchResults[j].additionalResult;
+					var insertBefore = additionalSearchResults[j].insertBefore;
+
+					searchResults.splice(searchResults.indexOf(insertBefore), 0, additionalResult);
+					negativeResults.splice(negativeResults.indexOf(additionalResult), 1);
+				}
+
+				return {searchResults: searchResults, negativeResults: negativeResults};
+			}
+
+
+			/**
+			 * A method that invokes the expandation of nodes and hides non relevant ones for filtering.
+			 * @param {object} self The TreeView instance
+			 * @param {array} searchResults An array that contains the node addresses that should be displayed.
+			 * @param {array} negativeResults An array that contains the node addresses that should not be displayed.
+			 * @param {string} searchString The string to filter for.
+			 * @param {function} doneCallback The callbacl function that is invoked when the filtering is complete.
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function filterNodes(self, searchResults, negativeResults, searchString, doneCallback) {
+				var nodeExpandations = [];
+
+				for (var h = 0; h < searchResults.length; h++) {
+					var address = searchResults[h].address;
+					var aggregateReference = searchResults[h].aggregateReference;
+
+					var htmlNode = self.internal.doc.querySelector("div[data-item*='\"address\":\"" + address + "\"']");
+					if (htmlNode) {
+						htmlNode.style.display = "";
+					}
+
+					if (searchString !== "") {
+						nodeExpandations.push((function (address, aggregateReference) {
+							var nodeAddresses = buildAddressList(self, address, aggregateReference);
+
+							return new Promise(function (resolve) {
+								expandNodeList(self, nodeAddresses, function () {
+									resolve();
+								});
+							});
+
+						}).bind(self, address, aggregateReference));
+					} else {
+						nodeExpandations.push(function () {
+							return Promise.resolve();
+						});
+					}
+
+				}
+
+				//run promise chain
+				nodeExpandations.reduce(function (prev, curr) {
+					return prev.then(curr);
+				}, Promise.resolve()).then(function () {
+
+					for (var j = 0; j < negativeResults.length; j++) {
+						var address = negativeResults[j].address;
+						var htmlNode = self.internal.doc.querySelector("div[data-item*='\"address\":\"" + address + "\"']");
+						if (htmlNode) {
+							htmlNode.style.display = "none";
+						}
+					}
+					doneCallback();
+				});
+			}
+
+			/**
+			 * A method that builds out of the nodeAddress and aggregateAddress a sequential list of nodes that have to be expanded after each other.
+			 * @param {object} self The TreeView instance
+			 * @param {string} nodePath The address of the node.
+			 * @param {string} aggregatePath The address of the aggregate.
+			 * @return {Array} nodeAddresses
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function buildAddressList(self, nodePath, aggregatePath) {
+
+				var startAddress = self.internal.options.startAddress;
+				var aggregateAddressPrefix = self.internal.options.aggregateAddressPrefix;
+
+
+				var subPath = nodePath.substring(nodePath.indexOf(startAddress) + startAddress.length + 1); //+ 1 cut off first dot
+				var nodeFragments =  subPath.split('.');
+				var nodeAddresses = [];
+
+				if (subPath != "") nodePath = startAddress;
+
+				//build nodeAddresses
+				for (var i = 0; i < nodeFragments.length; i++) {
+					if (nodeFragments[i]) nodePath = nodePath + '.' + nodeFragments[i];
+					nodeAddresses.push(nodePath);
+				}
+
+				if (aggregatePath && aggregatePath.length > 0) {
+					var aggregateSubPath = aggregatePath.substring(aggregatePath.indexOf(aggregateAddressPrefix) + aggregateAddressPrefix.length + 1); //+ 1 cut off first dot
+					var aggregateTemplateName = aggregateSubPath.split('.', 1)[0];
+					aggregateAddressPrefix = aggregateAddressPrefix + '.' + aggregateTemplateName;
+					var aggregateFragments = aggregateSubPath.split('.');
+
+					//build nodeAddresses for aggregates
+					for (var h = 1; h < aggregateFragments.length; h++) {
+						aggregateAddressPrefix = aggregateAddressPrefix + '.' + aggregateFragments[h];
+						nodeAddresses.push(aggregateAddressPrefix);
+					}
+				}
+
+				return nodeAddresses;
+			}
+
+			/**
+			 * A method that expands nodes from a list sequentially.
+			 * @param {object} self The TreeView instance.
+			 * @param {array} nodeAddresses A list of addresses of nodes and aggregates.
+			 * @param {function} doneCallback A callback function that is invoked after all nodes have been expanded.
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function expandNodeList(self, nodeAddresses, doneCallback) {
+				var expandSteps = [];
+				var lastValidHtmlNode = null;
+
+				//push functions for loading nodeAddresses into array
+				for (var h = 0; h < nodeAddresses.length; h++) {
+					var address = nodeAddresses[h];
+
+					expandSteps.push((function (address) {
+						var htmlNode = self.internal.doc.querySelector("div[data-item*='\"address\":\"" + address + "\"']");
+
+						//do not expand last element and ensure htmlNode exists
+						if (address !== nodeAddresses[nodeAddresses.length - 1] && htmlNode !== null) {
+
+							if (address.indexOf(this.internal.options.aggregateAddressPrefix) === -1) {
+								lastValidHtmlNode = htmlNode;
+							}
+
+							self.expand(htmlNode, true);
+							var data = getDataFromNode(htmlNode);
+
+							//if node has children and it's childleaves are not loaded yet, wait for expand event
+							if (data.hasChildren && !getChildLeaves(htmlNode)) {
+								return new Promise(function (resolve) {
+									self.one('render', function () {
+										resolve({relatedNode: htmlNode, lastValidNode: lastValidHtmlNode});
+									});
+								});
+
+							} else {
+								return Promise.resolve({relatedNode: htmlNode, lastValidNode: lastValidHtmlNode});
+							}
+						} else {
+							return Promise.resolve({relatedNode: htmlNode, lastValidNode: lastValidHtmlNode});
+						}
+					}).bind(self, address));
+				}
+
+				//run promise chain
+				expandSteps.reduce(function (prev, curr) {
+					return prev.then(curr);
+				}, Promise.resolve()).then(function (result) {
+					doneCallback(result);
+
+				});
+			}
+
+
+			/**
+			 * A method that fetches all nodes that can be displayed in the treeView and builds an array for tree filtering.
+			 * @param {object} self The TreeView instance.
+			 * @param {function} dataCallback A callback function that is invoked with all the available nodes.
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function fetchAvailableNodeAdresses(self, dataCallback) {
+
+				webMI.data.call("BrowseNodes", {
+					startAddress: self.internal.options.startAddress,
+					endLevel: self.internal.options.searchDepth,
+					vTypes: [opcUATypes.baseVariableDataType, opcUATypes.baseVariable, opcUATypes.folder, opcUATypes.project, opcUATypes.projectVariables, opcUATypes.aggregateTemplate, opcUATypes.aggregateFunction],
+					mapping: ["address:nodeid:splitnamespace", "name:browsename", "type:typedefinition:splitnamespace"],
+					includeStartAddress: false
+				}, buildAddressesArray.bind(self, function (addresses) {
+					var orderedAdresses = [];
+					var lastValidAddress = null;
+
+					for (var i = 0; i < addresses.length; i++) {
+						var address = webMI.escapeHTML(addresses[i]);
+						if (address.indexOf(self.internal.options.aggregateAddressPrefix) === -1) {
+							lastValidAddress = address;
+							orderedAdresses.push({address: address});
+						} else {
+							orderedAdresses.push({address: lastValidAddress, aggregateReference: address});
+						}
+					}
+
+					dataCallback(orderedAdresses);
+				}));
+
+
+			}
+
+			/**
+			 * A method that is used by @link fetchAvailableNodeAdresses as a callback internally.
+			 * @param {function} dataCallback The callback function that is invoked with the processed data.
+			 * @param {object} nodeStructure The node structure delivered from the server.
+			 * @return {Array} addresses
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function buildAddressesArray(dataCallback, nodeStructure) {
+				var addresses = [];
+
+				for (element in nodeStructure) {
+					var nodeEntry = nodeStructure[element];
+
+					if (checkIgnoredProperties(nodeEntry) && opcUATypes.aggregateTemplate.indexOf(nodeEntry["type"]) === -1) {
+						addresses.push(nodeEntry["address"]);
+					}
+
+					if (nodeEntry["childs"] !== null) {
+						addresses = addresses.concat(buildAddressesArray(null, nodeEntry["childs"]));
+					}
+				}
+				if (typeof dataCallback === "function") {
+					dataCallback(addresses);
+				}
+
+				return addresses;
+			}
+
+
+			/**
+			 * A method that requests the node structure from the server
+			 * @param {object} self The TreeView instance
+			 * @param {HTMLElement} referenceNode The node the data is requested for
+			 * @param {string} referenceAddress The node address to get the data for
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function fetchNodeStructure(self, referenceNode, referenceAddress) {
+				if (webMI.getMethodSupport().indexOf("BrowseNodes") == -1) {
+	                return;
+                }
+
+				var startAddress = self.internal.options.startAddress;
+				if (referenceAddress) {
+					startAddress = referenceAddress;
+				} else {
+					var data = getDataFromNode(referenceNode);
+					if (data) {
+						startAddress = data.address;
+					}
+				}
+
+				var aggregateFunction = startAddress.indexOf("AGENT.HISTORY.AGGREGATETEMPLATES.") > -1;
+
+				webMI.data.call("BrowseNodes", {
+					startAddress: startAddress,
+					endLevel: aggregateFunction ? 2 : self.internal.options.navigationDepth,
+					vTypes: [opcUATypes.baseVariableDataType, opcUATypes.baseVariable, opcUATypes.folder, opcUATypes.project, opcUATypes.projectVariables, opcUATypes.aggregateFunctionType, opcUATypes.aggregateTemplate, opcUATypes.aggregateFunction],
+					mapping: ["address:nodeid:splitnamespace", "name:browsename", "type:typedefinition:splitnamespace"],
+					includeStartAddress: false
+				}, parseNodeStructure.bind(self, referenceNode));
+
+			}
+
+			/**
+			 * A method that parses the fetched node structure and requests additional node information
+			 * @param {HTMLElement} referenceNode The node the data is requested for
+			 * @param {object} nodeStructure The node structure returned from the server
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function parseNodeStructure(referenceNode, nodeStructure) {
+
+				// Check if two DB spaces exist
+				var dbspaces = {};
+				for (var property in nodeStructure) {
+
+					if (!isNaN((property.substr(0, property.indexOf('.'))))) dbspaces[(property.substr(0, property.indexOf('.')))] = true; 
+				}
+
+				if (Object.keys(dbspaces).length > 1) {
+					for (var property in nodeStructure) {
+						nodeStructure[property].name = nodeStructure[property].address;
+					}
+				}
+
+				var skipRender = false;
+				var data = [];
+				for (var element in nodeStructure) {
+					var nodeEntry = nodeStructure[element];
+					var dataID = generateDataID();
+					var hasChildren = nodeEntry.childs != null;
+
+					// check for custom var types
+					// (any opcUATypes.projectVariable ... is like a ... opcUATypes.baseVariable)
+					var projectVariableName = false;
+
+					// Workaround für alte Portalversionen, wo BrowseNodes noch kein "type" liefert
+					if (typeof nodeEntry.type == "undefined") {
+						if (hasChildren) nodeEntry.type = "i=61";
+						else nodeEntry.type = "i=62";
+					}
+
+					if(nodeEntry.type.indexOf("VariableTypes.PROJECT") === 0){
+						projectVariableName = nodeEntry.type;
+					}
+
+					switch (nodeEntry.type) {
+						case opcUATypes.baseVariableDataType:
+							data.push({
+									name: nodeEntry.name,
+									address: nodeEntry.address,
+									type: types.baseVariable,
+									hasChildren: hasChildren,
+									children: [],
+									dataID: dataID
+								}
+							);
+							break;
+						case opcUATypes.baseVariable:
+							if (checkIgnoredProperties(nodeEntry)) {
+								data.push({
+										name: nodeEntry.name,
+										address: nodeEntry.address,
+										type: types.baseVariable,
+										hasChildren: hasChildren,
+										children: [],
+										dataID: dataID
+									}
+								);
+							}
+							break;
+						case projectVariableName:
+						    // regard a found custom var type
+						    // (any opcUATypes.projectVariable ... is like a ... opcUATypes.baseVariable)
+							data.push({
+									name: nodeEntry.name,
+									address: nodeEntry.address,
+									type: types.projectVariables,
+									hasChildren: hasChildren,
+									children: [],
+									dataID: dataID
+								}
+							);
+							break;
+						case opcUATypes.folder:
+							data.push({
+								name: nodeEntry.name,
+								address: nodeEntry.address,
+								type: types.folder,
+								hasChildren: hasChildren,
+								children: []
+							});
+							break;
+						case opcUATypes.aggregateTemplate.slice(7):
+							skipRender = true;
+							fetchNodeStructure(this, referenceNode, nodeEntry.address);
+							break;
+						case opcUATypes.aggregateFunction.slice(7):
+							fetchAggregateOptions(nodeEntry, dataID, referenceNode);
+							hasChildren = checkChildren(nodeEntry.childs);
+							data.push({
+								name: nodeEntry.name,
+								address: nodeEntry.address,
+								type: types.aggregateFunction,
+								hasChildren: hasChildren,
+								children: hasChildren ? nodeEntry.childs : [],
+								dataID: dataID
+							});
+							break;
+						case opcUATypes.aggregateFunctionType:
+							break;
+						default:
+							data.push({
+									name: nodeEntry.name,
+									address: nodeEntry.address,
+									type: types.folder,
+									hasChildren: hasChildren,
+									children: []
+								}
+							);
+							break;
+					}
+				}
+
+				if (!skipRender && data.length > 0) {
+					renderDataToDOM(referenceNode, data, this);
+				} else if (data.length === 0 && referenceNode === this.internal.container) {
+					showNoNodesAvailable(this);
+				} else if (data.length > 0) {
+					renderDataToDOM(referenceNode, data, this);
+				}
+			}
+
+
+			/**
+			 * A helper method that checks if there are children that are worth to be displayed in the tree.
+			 * @param {object} children The element of the node structure to check the children for
+			 * @memberOf TreeView
+			 * @private
+			 * (FUNCTION CURRENTLY UNUSED!)
+			 */
+			function checkChildren(children) {
+				var ignoredNodes = [
+					{name: aggregateOptions.offsetUnit, type: opcUATypes.baseVariable},
+					{name: aggregateOptions.offsetValue, type: opcUATypes.baseVariable},
+					{name: aggregateOptions.intervalUnit, type: opcUATypes.baseVariable},
+					{name: aggregateOptions.intervalValue, type: opcUATypes.baseVariable},
+					{name: aggregateOptions.stepped, type: opcUATypes.baseVariable},
+					{name: '*', type: opcUATypes.aggregateFunctionType}];
+				var validChildren = false;
+
+				if (children !== "ondemand") {
+					for (element in children) {
+						var nodeEntry = children[element];
+						var ignoreNode = false;
+						for (var i = 0; i < ignoredNodes.length; i++) {
+							if ((nodeEntry.name == ignoredNodes[i].name || ignoredNodes[i].name == '*') && nodeEntry.type == ignoredNodes[i].type) {
+								ignoreNode = true;
+								break;
+							}
+						}
+						if (!ignoreNode) {
+							validChildren = true;
+							break;
+						}
+					}
+				}
+
+				return validChildren;
+			}
+
+			/**
+			 * A helper method that checks the base variables that should be ignored for displaying
+			 * @param {object} nodeEntry The element of the node structure to be eventually ignored
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function checkIgnoredProperties(nodeEntry) {
+				var isNodeOption = false;
+				for (option in aggregateOptions) {
+					if (aggregateOptions[option] == nodeEntry.name) {
+						isNodeOption = true;
+						break;
+					}
+				}
+				return !isNodeOption;
+			}
+
+
+			/**
+			 * A helper method that gets the options for nodes that represent aggregate functions
+			 * @param {object} nodeEntry The element of the node structure that is an aggregate function
+			 * @param {string} dataID The data-id attribute of the dom node to add the aggregate information to (needed because of asynchronous webMI read)
+			 * @param {HTMLElement} referenceNode The node the data is requested for
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function fetchAggregateOptions(nodeEntry, dataID, referenceNode) {
+				var relatedNodeAddress = getRelatedNodeAddress(referenceNode);
+				var aggregateAddress = nodeEntry.address;
+				var nodeChildren = nodeEntry.childs;
+
+				var aggregateType;
+				webMI.data.call("BrowseNodes", {
+					startAddress: nodeEntry.address,
+					endLevel: 1,
+					vTypes: [opcUATypes.aggregateFunctionType],
+					mapping: ["address:nodeid:splitnamespace", "name:browsename", "type:typedefinition:splitnamespace"],
+					includeStartAddress: false
+				}, function(e) {
+					aggregateType = e[Object.keys(e)[0]].name;
+				webMI.data.read([
+						aggregateAddress + "." + aggregateOptions.intervalValue,
+						aggregateAddress + "." + aggregateOptions.intervalUnit,
+						aggregateAddress + "." + aggregateOptions.offsetValue,
+						aggregateAddress + "." + aggregateOptions.offsetUnit],
+					function (data) {
+						var aggregateData = {'aggregateInfo': {}};
+						aggregateData.aggregateInfo[aggregateOptions.intervalValue] = data[0].value;
+						aggregateData.aggregateInfo[aggregateOptions.intervalUnit] = data[1].value;
+						aggregateData.aggregateInfo[aggregateOptions.offsetValue] = data[2].value;
+						aggregateData.aggregateInfo[aggregateOptions.offsetUnit] = data[3].value;
+						aggregateData.aggregateInfo[aggregateOptions.aggregateType] = aggregateType;
+						aggregateData.aggregateInfo[aggregateOptions.relatedNodeAddress] = relatedNodeAddress;
+						addDataToItem(referenceNode.parentNode.querySelector("div[data-id='" + dataID + "']"), aggregateData);
+					}
+				);
+				});
+			}
+
+
+			/**
+			 * A helper functions that gets the related node address of a html element.
+			 * @param {HTMLElement} referenceNode A html node that has a data-item attribute.
+			 * @return {string} relatedAddress
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function getRelatedNodeAddress(referenceNode) {
+				var currentNode = referenceNode;
+				var relatedAddress = getDataFromNode(currentNode).address;
+
+				while (relatedAddress.indexOf("HISTORY") !== -1) {
+					currentNode = currentNode.parentNode;
+					var nodeData = {};
+					for (var i = 0; i < currentNode.childNodes.length; i++) {
+						nodeData = getDataFromNode(currentNode.childNodes[i]);
+						if (nodeData) {
+							relatedAddress = nodeData.address;
+							break;
+						}
+					}
+				}
+
+				return relatedAddress;
+			}
+
+
+			/**
+			 * A helper method that returns the child leaves of a node.
+			 * @param {HTMLElement} node
+			 * @return {boolean}
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function getChildLeaves(node) {
+				var leaves = node.parentNode.querySelector('.tree-child-leaves');
+				if (leaves) {
+					return leaves;
+				} else {
+					return false;
+				}
+			}
+
+
+			/**
+			 * A helper method that builds a flat array of an array of objects (object-specific)
+			 * @param {array} addresses
+			 * @return {array} flattenedArray
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function flattenAddresses(addresses) {
+				var flattenedArray = [];
+
+				for (var i = 0; i < addresses.length; i++) {
+					flattenedArray.push(addresses[i].address);
+					if (addresses[i].aggregateReference) {
+						flattenedArray.push(addresses[i].aggregateReference);
+					}
+				}
+
+				return flattenedArray;
+			}
+
+
+			/**
+			 * A helper method that generates a unique data-id
+			 * @return {string} id A unique data id
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function generateDataID() {
+				var S4 = function () {
+					return (((1 + Math.random()) * 0x10000) | 0).toString(16).substring(1);
+				};
+				return (S4() + S4() + "-" + S4() + "-" + S4() + "-" + S4() + "-" + S4() + S4() + S4());
+			}
+
+
+			/**
+			 * A helper method for parsing the data-item of a node
+			 * @param {HTMLElement} node The corresponding DOM-node
+			 * @return {string} object The parsed data-item
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function getDataFromNode(node) {
+				if (node) {
+					return JSON.parse(node.getAttribute('data-item'));
+				} else {
+					return undefined;
+				}
+
+			}
+
+
+			/**
+			 * A helper method for adding additional data to the data-item of a node
+			 * @param {object} item The item (object) to be added
+			 * @param {HTMLElement} addData The corresponding DOM-node
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function addDataToItem(item, addData) {
+				var data = JSON.parse(item.getAttribute('data-item'));
+				item.setAttribute('data-item', JSON.stringify(mergeData(data, addData)));
+			}
+
+
+			/**
+			 * A helper method to merge to objects recursively
+			 * @param {object} data The base-object
+			 * @param {object} addData The data to add recursively to the base object
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function mergeData(data, addData) {
+				for (var p in addData) {
+					try {
+						// Property in destination object set; update its value.
+						if (addData[p].constructor === Object) {
+							data[p] = mergeData(data[p], addData[p]);
+						} else {
+							data[p] = addData[p];
+						}
+					} catch (e) {
+						// Property in destination object not set; create it and set its value.
+						data[p] = addData[p];
+					}
+				}
+				return data;
+			}
+
+
+			/**
+			 * A forEach that will work with a NodeList and generic Arrays
+			 * @param {Array} arr The array to iterate over
+			 * @param {function} callback Function that executes for each element. First parameter is element, second is index
+			 * @param {object} scope The context to execute callback with
+			 * @memberOf TreeView
+			 * @private
+			 */
+			function forEach(arr, callback, scope) {
+				var i, len = arr.length;
+				for (i = 0; i < len; i += 1) {
+					callback.call(scope, arr[i], i);
+				}
+			}
+
+			window.TreeView = TreeView;
+		}(window, document));
+
+		//ensure correct types for options
+		var options = {};
+		for (var key in base) {
+			switch (key) {
+				case "renderTo":
+				case "startAddress":
+					options[key] = base[key];
+					break;
+				case "selectableTypes":
+				case "imagePaths":
+					options[key] = JSON.parse(base[key]);
+					break;
+				case "searchDepth":
+				case "fontSize":
+				case "leafPadding":
+				case "leafIndentation":
+				case "busyIndicatorTolerance":
+				case "expandoOffset":
+					options[key] = parseFloat(base[key]);
+					break;
+			}
+
+		}
+
+		return new window.TreeView(options);]]></code>
+</script>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.Pump.VoltageConverter
+NodeClass: Variable
+BrowseName: 1:VoltageConverter
+DisplayName: en|VoltageConverter
+Description: en|VoltageConverter
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

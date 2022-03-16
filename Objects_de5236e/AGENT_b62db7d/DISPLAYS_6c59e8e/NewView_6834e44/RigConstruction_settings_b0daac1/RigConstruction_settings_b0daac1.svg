@@ -1,0 +1,211 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="680" version="1.2" width="1280" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <rect atv:refpx="640" atv:refpy="340" fill="#1f1f1f" height="680" id="id_4" stroke="#0000ff" stroke-width="0" width="1280" x="0" y="0"/>
+ <rect atv:refpx="229.079" atv:refpy="176.952" fill="#2a2c2b" height="277.694" id="id_13" stroke="#0000ff" stroke-width="0" width="338.159" x="60" y="38.105"/>
+ <rect atv:refpx="225.964" atv:refpy="189.431" fill="#242424" height="243.923" id="id_12" stroke="#0000ff" stroke-width="0" width="301.972" x="74.978" y="67.469"/>
+ <rect atv:refpx="233.024" atv:refpy="181.147" fill="#000000" height="243.923" id="id_0" stroke="#0000ff" stroke-width="0" width="301.972" x="82.038" y="59.186"/>
+ <rect atv:refpx="155.324" atv:refpy="90.089" fill="#1f1f1f" height="32" id="id_1" rx="5.44" ry="5.44" stroke="#003399" stroke-linejoin="round" stroke-width="1" width="81" x="114.824" y="74.089"/>
+ <rect atv:refpx="155.123" atv:refpy="136.045" fill="#1f1f1f" height="32" id="id_8" rx="5.44" ry="5.44" stroke="#003399" stroke-linejoin="round" stroke-width="1" width="81" x="114.623" y="120.045"/>
+ <rect atv:refpx="155.244" atv:refpy="182.089" fill="#1f1f1f" height="32" id="id_11" rx="5.44" ry="5.44" stroke="#0000ff" stroke-linejoin="round" stroke-width="1" width="81" x="114.744" y="166.089"/>
+ <text atv:refpx="255.608" atv:refpy="89.66" fill="#ffffff" font-family="Arial" font-size="18" id="id_6" x="214.779" y="99.18">Направление</text>
+ <text atv:refpx="245.205" atv:refpy="135.66" fill="#ffffff" font-family="Arial" font-size="18" id="id_7" x="214.779" y="145.18">Кондуктор</text>
+ <text atv:refpx="253.379" atv:refpy="181.66" fill="#ffffff" font-family="Arial" font-size="18" id="id_9" x="214.779" y="191.18">Тех. колонна</text>
+ <text atv:refpx="254.435" atv:refpy="50.76" fill="#67de43" font-family="Arial" font-size="12" id="id_14" x="147.594" y="55.26">КОНСТРУКЦИЯ СКВАЖИНЫ (ФАКТ)</text>
+ <rect atv:refpx="152.418" atv:refpy="183.295" fill="#1f1f1f" height="32" id="id_15" rx="5.44" ry="5.44" stroke="#0000ff" stroke-linejoin="round" stroke-width="1" width="81" x="114.918" y="212.295"/>
+ <text atv:refpx="261.727" atv:refpy="227.866" fill="#ffffff" font-family="Arial" font-size="18" id="id_17" x="214.953" y="237.386">Экспл. колонна</text>
+ <rect atv:refpx="38.768" atv:refpy="211.774" fill="#1f1f1f" height="32" id="id_18" rx="5.44" ry="5.44" stroke="#0000ff" stroke-linejoin="round" stroke-width="1" width="81" x="115.268" y="258.774"/>
+ <text atv:refpx="245.729" atv:refpy="274.345" fill="#ffffff" font-family="Arial" font-size="18" id="id_20" x="215.303" y="283.865">Хвостовик</text>
+ <foreignObject height="26" id="id_24" width="26" x="344.279" y="80.68">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <img id="direct" src="../../GGD_page/green_button.png"/>
+  </div>
+ </foreignObject>
+ <svg atv:refpx="977.881" atv:refpy="347.555" height="591" id="id_25" width="290" x="832.881" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Test.DrillView" y="52.055"/>
+ <foreignObject height="26" id="id_26" width="26" x="344.279" y="126.68">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <img id="kond" src="../../GGD_page/green_button.png"/>
+  </div>
+ </foreignObject>
+ <foreignObject height="26" id="id_27" width="26" x="344.279" y="172.68">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <img id="techcol" src="../../GGD_page/green_button.png"/>
+  </div>
+ </foreignObject>
+ <foreignObject height="26" id="id_29" width="26" x="344.279" y="218.68">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <img id="excol" src="../../GGD_page/green_button.png"/>
+  </div>
+ </foreignObject>
+ <foreignObject height="26" id="id_31" width="26" x="344.279" y="264.68">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <img id="tail" src="../../GGD_page/green_button.png"/>
+  </div>
+ </foreignObject>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var direct=document.getElementById('direct')
+var kond=document.getElementById('kond')
+var techcol=document.getElementById('techcol')
+var excol=document.getElementById('excol')
+var tail=document.getElementById('tail')
+var opArr=[direct,kond,techcol,excol,tail]
+
+var nodesArr=['AGENT.OBJECTS.RigConstruction.direction.Show',
+			'AGENT.OBJECTS.RigConstruction.conductor.Show',
+			'AGENT.OBJECTS.RigConstruction.obsCol.Show',
+			'AGENT.OBJECTS.RigConstruction.EcsCol.Show',
+			'AGENT.OBJECTS.RigConstruction.tail.Show']
+
+var fastArr=[true,true,true,true,true]
+webMI.data.read(nodesArr,function(e){
+					for(var i=0;i<e.length;i++){
+						if(!e[i].value){
+							opArr[i].setAttribute('src','../../GGD_page/button_gray.png')
+							fastArr[i]=false
+						}
+					}
+				})
+opArr.forEach(function(e,cnt){
+	e.addEventListener('click',function(f){
+		if(fastArr[cnt]){
+			console.log('setting node ',nodesArr[cnt],'to false from')
+			fastArr[cnt]=false
+			opArr[cnt].setAttribute('src','../../GGD_page/button_gray.png')
+			webMI.data.write(nodesArr[cnt],false)
+		}else{
+			console.log('setting node ',nodesArr[cnt],'to true from')
+			fastArr[cnt]=true
+			opArr[cnt].setAttribute('src','../../GGD_page/green_button.png')
+			webMI.data.write(nodesArr[cnt],true)
+		}
+	})
+})]]></script>
+ <svg atv:refpx="644.532" atv:refpy="336.803" height="534" id="id_10" width="150" x="569.532" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.RigConstruction.Insides" y="69.803"/>
+ <svg atv:refpx="149.953" atv:refpy="125.638" height="30" id="id_21" transform="matrix(0.6691,0,0,1,0,0)" width="160" x="144.124" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="122.638">
+  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.conductor"/>
+  <atv:overwrite id="focus_frame" transform="matrix(1.4945,0,0,1,0,0)" width="103.056"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.4945,0,0,1,0,0)" x="72.556"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="input_bg" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="id_0" transform="matrix(1.4945,0,0,1,0,0)" width="105.056"/>
+  <atv:overwrite id="id_2" transform="matrix(1.4945,0,0,1,0,0)" width="107.056"/>
+ </svg>
+ <svg atv:refpx="149.953" atv:refpy="161.402" height="30" id="id_22" transform="matrix(0.6691,0,0,1,0,0)" width="160" x="144.116" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="168.402">
+  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.obsCol"/>
+  <atv:overwrite id="focus_frame" transform="matrix(1.4945,0,0,1,0,0)" width="103.056"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.4945,0,0,1,0,0)" x="72.556"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="input_bg" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="id_0" transform="matrix(1.4945,0,0,1,0,0)" width="105.056"/>
+  <atv:overwrite id="id_2" transform="matrix(1.4945,0,0,1,0,0)" width="107.056"/>
+ </svg>
+ <svg atv:refpx="149.953" atv:refpy="194.914" height="30" id="id_23" transform="matrix(0.6691,0,0,1,0,0)" width="160" x="144.116" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="214.914">
+  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.EcsCol"/>
+  <atv:overwrite id="focus_frame" transform="matrix(1.4945,0,0,1,0,0)" width="103.056"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.4945,0,0,1,0,0)" x="72.556"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="input_bg" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="id_0" transform="matrix(1.4945,0,0,1,0,0)" width="105.056"/>
+  <atv:overwrite id="id_2" transform="matrix(1.4945,0,0,1,0,0)" width="107.056"/>
+ </svg>
+ <svg atv:refpx="149.953" atv:refpy="228.428" height="30" id="id_28" transform="matrix(0.6691,0,0,1,0,0)" width="160" x="144.116" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="259.428">
+  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.tail"/>
+  <atv:overwrite id="focus_frame" transform="matrix(1.4945,0,0,1,0,0)" width="103.056"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.4945,0,0,1,0,0)" x="72.556"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="input_bg" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="id_0" transform="matrix(1.4945,0,0,1,0,0)" width="105.056"/>
+  <atv:overwrite id="id_2" transform="matrix(1.4945,0,0,1,0,0)" width="107.056"/>
+ </svg>
+ <svg atv:refpx="149.953" atv:refpy="93.706" height="30" id="id_30" transform="matrix(0.6691,0,0,1,0,0)" width="160" x="144.116" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="78.706">
+  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.direction"/>
+  <atv:overwrite id="focus_frame" transform="matrix(1.4945,0,0,1,0,0)" width="103.056"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.4945,0,0,1,0,0)" x="72.556"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="input_bg" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="id_0" transform="matrix(1.4945,0,0,1,0,0)" width="105.056"/>
+  <atv:overwrite id="id_2" transform="matrix(1.4945,0,0,1,0,0)" width="107.056"/>
+ </svg>
+ <rect atv:refpx="224.079" atv:refpy="485.451" fill="#2a2c2b" height="277.694" id="id_3" stroke="#0000ff" stroke-width="0" width="338.159" x="60" y="346.604"/>
+ <rect atv:refpx="220.964" atv:refpy="497.93" fill="#242424" height="243.923" id="id_5" stroke="#0000ff" stroke-width="0" width="301.972" x="74.978" y="375.968"/>
+ <rect atv:refpx="228.024" atv:refpy="489.646" fill="#000000" height="243.923" id="id_16" stroke="#0000ff" stroke-width="0" width="301.972" x="82.038" y="367.685"/>
+ <rect atv:refpx="150.324" atv:refpy="398.588" fill="#1f1f1f" height="32" id="id_19" rx="5.44" ry="5.44" stroke="#003399" stroke-linejoin="round" stroke-width="1" width="81" x="114.824" y="382.588"/>
+ <rect atv:refpx="150.123" atv:refpy="444.544" fill="#1f1f1f" height="32" id="id_32" rx="5.44" ry="5.44" stroke="#003399" stroke-linejoin="round" stroke-width="1" width="81" x="114.623" y="428.544"/>
+ <rect atv:refpx="150.244" atv:refpy="490.588" fill="#1f1f1f" height="32" id="id_33" rx="5.44" ry="5.44" stroke="#0000ff" stroke-linejoin="round" stroke-width="1" width="81" x="114.744" y="474.588"/>
+ <text atv:refpx="255.608" atv:refpy="398.159" fill="#ffffff" font-family="Arial" font-size="18" id="id_34" x="214.779" y="407.679">Направление</text>
+ <text atv:refpx="245.205" atv:refpy="444.159" fill="#ffffff" font-family="Arial" font-size="18" id="id_35" x="214.779" y="453.679">Кондуктор</text>
+ <text atv:refpx="257.838" atv:refpy="490.159" fill="#ffffff" font-family="Arial" font-size="18" id="id_36" x="214.779" y="499.679">Тех. колонна</text>
+ <text atv:refpx="256.003" atv:refpy="359.259" fill="#67de43" font-family="Arial" font-size="12" id="id_37" x="147.594" y="363.759">КОНСТРУКЦИЯ СКВАЖИНЫ (ПЛАН)</text>
+ <rect atv:refpx="147.418" atv:refpy="491.794" fill="#1f1f1f" height="32" id="id_38" rx="5.44" ry="5.44" stroke="#0000ff" stroke-linejoin="round" stroke-width="1" width="81" x="114.918" y="520.794"/>
+ <text atv:refpx="261.727" atv:refpy="536.365" fill="#ffffff" font-family="Arial" font-size="18" id="id_39" x="214.953" y="545.885">Экспл. колонна</text>
+ <rect atv:refpx="33.768" atv:refpy="520.273" fill="#1f1f1f" height="32" id="id_40" rx="5.44" ry="5.44" stroke="#0000ff" stroke-linejoin="round" stroke-width="1" width="81" x="115.268" y="567.273"/>
+ <text atv:refpx="245.729" atv:refpy="582.844" fill="#ffffff" font-family="Arial" font-size="18" id="id_41" x="215.303" y="592.364">Хвостовик</text>
+ <svg atv:refpx="144.953" atv:refpy="434.137" height="30" id="id_52" transform="matrix(0.6691,0,0,1,0,0)" width="160" x="144.125" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="431.137">
+  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.fact.conductor"/>
+  <atv:overwrite id="focus_frame" transform="matrix(1.4945,0,0,1,0,0)" width="103.056"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.4945,0,0,1,0,0)" x="72.556"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="input_bg" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="id_0" transform="matrix(1.4945,0,0,1,0,0)" width="105.056"/>
+  <atv:overwrite id="id_2" transform="matrix(1.4945,0,0,1,0,0)" width="107.056"/>
+ </svg>
+ <svg atv:refpx="144.953" atv:refpy="469.901" height="30" id="id_53" transform="matrix(0.6691,0,0,1,0,0)" width="160" x="144.117" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="476.901">
+  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.fact.obsCol"/>
+  <atv:overwrite id="focus_frame" transform="matrix(1.4945,0,0,1,0,0)" width="103.056"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.4945,0,0,1,0,0)" x="72.556"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="input_bg" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="id_0" transform="matrix(1.4945,0,0,1,0,0)" width="105.056"/>
+  <atv:overwrite id="id_2" transform="matrix(1.4945,0,0,1,0,0)" width="107.056"/>
+ </svg>
+ <svg atv:refpx="144.953" atv:refpy="503.413" height="30" id="id_54" transform="matrix(0.6691,0,0,1,0,0)" width="160" x="144.117" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="523.413">
+  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.fact.EcsCol"/>
+  <atv:overwrite id="focus_frame" transform="matrix(1.4945,0,0,1,0,0)" width="103.056"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.4945,0,0,1,0,0)" x="72.556"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="input_bg" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="id_0" transform="matrix(1.4945,0,0,1,0,0)" width="105.056"/>
+  <atv:overwrite id="id_2" transform="matrix(1.4945,0,0,1,0,0)" width="107.056"/>
+ </svg>
+ <svg atv:refpx="149.953" atv:refpy="536.927" height="30" id="id_55" transform="matrix(0.6691,0,0,1,0,0)" width="160" x="144.117" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="567.927">
+  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.fact.tail"/>
+  <atv:overwrite id="focus_frame" transform="matrix(1.4945,0,0,1,0,0)" width="103.056"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.4945,0,0,1,0,0)" x="72.556"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="input_bg" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="id_0" transform="matrix(1.4945,0,0,1,0,0)" width="105.056"/>
+  <atv:overwrite id="id_2" transform="matrix(1.4945,0,0,1,0,0)" width="107.056"/>
+ </svg>
+ <svg atv:refpx="144.953" atv:refpy="402.205" height="30" id="id_56" transform="matrix(0.6691,0,0,1,0,0)" width="160" x="144.117" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.picker_value" y="387.205">
+  <atv:argument name="base" value="AGENT.OBJECTS.RigConstruction.fact.direction"/>
+  <atv:overwrite id="focus_frame" transform="matrix(1.4945,0,0,1,0,0)" width="103.056"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.4945,0,0,1,-79.1272,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.4945,0,0,1,0,0)" x="72.556"/>
+  <atv:overwrite id="blinking_frame" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="input_bg" transform="matrix(1.4945,0,0,1,0,0)" width="75.056"/>
+  <atv:overwrite id="id_0" transform="matrix(1.4945,0,0,1,0,0)" width="105.056"/>
+  <atv:overwrite id="id_2" transform="matrix(1.4945,0,0,1,0,0)" width="107.056"/>
+ </svg>
+</svg>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Rig.WorkStatus.Descent
+NodeClass: Variable
+BrowseName: 1:Descent
+DisplayName: en|Descent
+Description: en|Descent
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition PropertyType

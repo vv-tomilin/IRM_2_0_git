@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.time_display_advanced.en
+NodeClass: Variable
+BrowseName: 1:en
+DisplayName: en|en
+Description: en|en
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.HtmlHelp

@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Большое зубчатое кольцо
+NodeClass: ObjectType
+BrowseName: 1:Большое зубчатое кольцо
+DisplayName: en|Большое зубчатое кольцо
+Description: en|Большое зубчатое кольцо
+IsAbstract: false

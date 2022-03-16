@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ServiceParams.Bit.temp.currentBit
+NodeClass: Variable
+BrowseName: 1:currentBit
+DisplayName: en|currentBit
+Description: en|currentBit
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

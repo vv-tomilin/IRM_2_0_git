@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Stock/Indicators/ATR
+NodeClass: Object
+BrowseName: 1:ATR
+DisplayName: en|ATR
+Description: en|ATR
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

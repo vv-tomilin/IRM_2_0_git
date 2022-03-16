@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.SMTPSERVERS.mail.ru.authentication
+NodeClass: Variable
+BrowseName: 1:authentication
+DisplayName: en|authentication
+Description: en|authentication
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

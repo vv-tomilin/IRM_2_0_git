@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="260" height="30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <desc>Loads a configuration into a chart instance.</desc>
+ <title>Configuration loader</title>
+ <metadata>
+  <atv:parameter defaultvalue="trend1" behavior="mandatory" desc="chart name" valuetype="string" name="chartname"/>
+  <atv:parameter substitute="$FONTCOLOR$" defaultvalue="#000000" behavior="optional" desc="font color" valuetype="color" name="fontColor"/>
+  <atv:parameter config="SYSTEM.SECURITY.RIGHTS" defaultvalue="" behavior="optional" desc="necessary right for export" valuetype="address" name="export_right"/>
+  <atv:gridconfig width="20" enabled="false" height="20" gridstyle="lines"/>
+  <atv:snapconfig width="10" enabled="false" height="10"/>
+ </metadata>
+ <text id="id_0" font-size="14" fill="$FONTCOLOR$" atv:refpy="14.792" atv:refpx="57.953" font-family="Arial" x="4.953" y="19.792">T{Configuration}:</text>
+ <svg id="cbb_configs" width="160" atv:refpy="15" atv:refpx="188.691" height="30" x="100.053" y="0" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Steelblue.combobox"/>
+ <script type="text/ecmascript"><![CDATA[var chartname = webMI.query["chartname"];
+var chart, configurator, configUpdated, configUserUpdated, configNode, configName;
+
+function checkChart() {
+	chart = webMI.trendFactory.getTrendByName(chartname);
+
+	if (!chart) {
+		setTimeout(function() {checkChart()}, 500);
+		return;
+	}
+
+	configurator = new webMI.rootWindow.ConfigHandler();
+	configNode = chart.chart.options.atviseOptions.configNode;
+	configName = chart.chart.options.atviseOptions.configName;
+	loadConfigsForNode(configurator, configName);
+
+	var chartUpdate = chart.control.registerOnUpdatedCallback(function() {
+		if (configUserUpdated) {
+			configUserUpdated = false;
+			return;
+		} else {
+			configNode = chart.chart.options.atviseOptions.configNode;
+			configName = chart.chart.options.atviseOptions.configName;
+			loadConfigsForNode(configurator, configName);
+		}
+	});
+
+	webMI.addOnunload(function() {
+		if (chart && chart.control) chart.control.unregisterOnUpdatedCallback(chartUpdate);
+	});
+}
+
+function loadConfigsForNode(configurator, configName, callback) {
+	chart = webMI.trendFactory.getTrendByName(chartname);
+	if (!chart) {
+		console.log("chart => " + chart);
+		setTimeout(function () {
+			loadConfigsForNode(configurator, configName, callback)
+		}, 500);
+	} else {
+	var loadConfiguration = {
+		"saveName" : chart.chart.options.atviseOptions.saveMethod == "filesystem" ? chart.chart.options.atviseOptions.configFile :  chart.chart.options.atviseOptions.configNode,
+		"saveMethod": chart.chart.options.atviseOptions.saveMethod,
+	}
+	configurator.getConfigsFromNode(loadConfiguration.saveName, loadConfiguration.saveMethod, function(chartConfig){
+		var comboItems = [];
+		for (var i in chartConfig) {
+			comboItems.push({text:i, value:i});
+		}
+
+		webMI.trigger.fire("setItems", comboItems, "cbb_configs");
+		if (configName && configName in chartConfig) {
+			configUpdated = true;
+			webMI.trigger.fire("setSelectedItem", configName, "cbb_configs");
+		}
+			if (typeof callback == "function")
+				callback();
+	});
+}
+}
+
+webMI.addOnload(function() {
+	checkChart();
+});
+
+webMI.trigger.connect("valuechanged", function(e) {
+	if (!chart || !configurator || e.value == "")
+		return;
+
+	if(configName == e.value && !configUpdated){
+		return;
+	}
+
+	if (configUpdated) {
+		configUpdated = false;
+		return;
+	}
+
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Context Menu", {
+		"id":"",
+		onEvent: "immediately"
+	});
+
+	configName = e.value;
+
+	configUserUpdated = true;
+
+	var loadConfiguration = {
+		"saveName": chart.chart.options.atviseOptions.saveMethod == "filesystem" ? chart.chart.options.atviseOptions.configFile : chart.chart.options.atviseOptions.configNode,
+		"saveMethod": chart.chart.options.atviseOptions.saveMethod,
+	}
+
+	configurator.loadConfig(loadConfiguration.saveName, loadConfiguration.saveMethod, configName, function (chartConfig) {
+		/*reset chart*/
+		while(chart.chart.series.length > 0)
+			chart.chart.series[0].remove();
+		while(chart.chart.xAxis.length > 0)
+			chart.chart.xAxis[0].remove();
+		while(chart.chart.yAxis.length > 0)
+			chart.chart.yAxis[0].remove();
+
+		/*update chart*/
+		for (var i = 0; i < chartConfig.xAxis.length; i++)
+			chart.chart.addAxis(chartConfig.xAxis[i], true);
+		for (var i = 0; i < chartConfig.yAxis.length; i++)
+			chart.chart.addAxis(chartConfig.yAxis[i], false);
+		for (var i = 0; i < chartConfig.series.length; i++)
+			chart.chart.addSeries(chartConfig.series[i]);
+
+		chart.chart.options.atviseOptions = chartConfig.atviseOptions;
+		chart.chart.update(chartConfig);
+
+        /** check export rights **/
+		function check_configExportMenu(permission){
+			if(permission && chartConfig.exporting.enabled == true){
+				chart.chart.update({"exporting": {"enabled": true}});
+			} else {
+				chart.chart.update({"exporting": {"enabled": false}});
+			}
+		}
+		var right = (webMI.query["export_right"] == undefined) ? "" : webMI.query["export_right"];
+		if (right.search(/SYSTEM\.SECURITY\.RIGHTS\./) != -1) {
+			right = right.substring(23,right.length); //remove "prefix" SYSTEM.SECURITY.RIGHTS.
+		}
+		if (right != "") {
+			webMI.addEvent(webMI.data, "clientvariableschange", function(e) {
+				var hasRight=false;
+				if (("username" in e) && (e.username != "")) {
+						hasRight = webMI.hasRight(right);
+				}
+				check_configExportMenu(hasRight);
+			});
+		} else {
+			check_configExportMenu(true);
+		}
+
+		chart.control.updated(function(e){
+		    chart.control.stopLiveMode(function() {
+		        chart.control.startLiveMode();
+		    });
+		});
+
+	});
+}, "cbb_configs");]]></script>
+</svg>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="request" type="http.request" trigger="false" relative="false" value=""/>
+  <parameter name="response" type="http.response" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var par = request.getvalues;
+var n = new UaNode("AGENT.OBJECTS." + par["node"]);
+var numvalues = parseInt(par["max"]);
+var data = n.datahistory({
+    endtime: new Date(),
+    numvalues: numvalues
+});
+console.log(data);
+
+
+function NodeData(status, servertime, sourcetime, value, type){
+	this.status=status;
+	this.servertime=servertime;
+	this.sourcetime=sourcetime;
+	this.value=value;
+	this.type=type;
+}
+
+function fromJson(json) {
+	var data = JSON.parse(json);
+	var timeserver = new Date(data.servertime);
+	var timesource = new Date(data.sourcetime);
+	return new NodeData(data.status, timeserver, timesource, data.value, data.type);
+}
+
+function ResponseData(status,continuationpoint,values){
+	this.status=status;
+	this.continuationpoint=continuationpoint;
+	this.values=values;
+}
+
+data.values.forEach(function(nodedata){
+	console.log("status = "+nodedata.status);
+	console.log("servertime = "+nodedata.servertime);
+	console.log("sourcetime = "+nodedata.sourcetime);
+	console.log("value = "+nodedata.value);
+	console.log("type = "+nodedata.type);
+});
+
+/*
+class NodeData(){
+	constructor(status, servertime, sourcetime,value,type){
+		this.status=status;
+		this.servertime=servertime;
+		this.sourcetime=sourcetime;
+		this.value=value;
+		this.type=type;
+	}
+	static fromJson(json) {
+		var data = JSON.parse(json);
+		var timeserver = new Date(data.servertime);
+		var timesource = new Date(data.sourcetime);
+		return new NodeData(data.status, timeserver, timesource, data.value, data.type);
+	}
+}
+*/
+// return web page
+response.write("<html><head><meta charset='utf-8'><title>My Simple Report</title></head><body>");
+// write report body...
+var jsondata=JSON.stringify(data,null,2);
+//response.write(jsondata);
+
+function formatDate(date) {
+  var monthNames = [
+    "Январь", "Февраль", "Март",
+    "Апрель", "Май", "Июнь", "Июль",
+    "Август", "Сентябрь", "Октябрь",
+    "Ноябрь", "Декабрь"
+  ];
+
+  var day = date.getDate();
+  var monthIndex = date.getMonth();
+  var year = date.getFullYear();
+
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var seconds = date.getSeconds();				
+
+  return day + '-' + monthNames[monthIndex] + '-' + year +" "+hours+":"+minutes+":"+seconds;
+}
+
+response.write("<br><h>Hello!!</h>");
+
+data.values.forEach(function(nodedata){
+	response.write("<br>");
+	response.write("<br>status = "+nodedata.status);
+	response.write("<br>servertime = "+formatDate(nodedata.servertime));
+	response.write("<br>sourcetime = "+formatDate(nodedata.sourcetime));
+	//response.write("<br>servertime = "+dateFormat(nodedata.servertime,"dddd,mmmm,yyyy,hh:MM:ss"));// HH:MM:ss"));
+//	response.write("<br>sourcetime = "+nodedata.sourcetime.format("yyyy-mm-dd HH:MM:ss"));
+	response.write("<br>value = "+nodedata.value);
+	response.write("<br>type = "+nodedata.type);
+});
+
+response.write("</body></html>");]]></code>
+</script>

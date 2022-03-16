@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/DataTables/Bootstrap-4-4.0.0
+NodeClass: Object
+BrowseName: 1:Bootstrap-4-4.0.0
+DisplayName: en|Bootstrap-4-4.0.0
+Description: en|Bootstrap-4-4.0.0
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

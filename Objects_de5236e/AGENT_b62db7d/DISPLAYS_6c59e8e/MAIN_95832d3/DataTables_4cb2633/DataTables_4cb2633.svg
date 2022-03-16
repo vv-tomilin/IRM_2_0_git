@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" height="680" width="1280" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg">
+ <defs/>
+ <metadata>
+  <atv:gridconfig height="20" width="20" gridstyle="lines" enabled="false"/>
+  <atv:snapconfig height="10" width="10" enabled="false"/>
+ </metadata>
+ <g atv:refpy="0" atv:insensitive="true" atv:refpx="0" id="id_7">
+  <rect x="0" fill="#2593c2" height="680.00" y="0" width="1280.00" atv:refpy="340" atv:refpx="640" id="id_8"/>
+ </g>
+ <svg x="7.88" height="600" y="57.34" width="800" atv:refpy="311.634" transform="matrix(1.5757,0,0,0.872,0,0)" atv:refpx="642.734" id="table" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.table">
+  <atv:argument value="table" name="tableId"/>
+  <atv:overwrite x="459.78" y="286.099" transform="matrix(0.6346,0,0,1.1468,0,0)" id="label"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[// Definition Konstanten
+var TABLE_OD_GET_DOM_OBJ_TRIGGER = "com.atvise.getDOMObjects";
+var TABLE_OD_INIT_TABLE_TRIGGER = "com.atvise.initializeTable";
+var TABLE_OD_TABLE_LOADED_TRIGGER = "com.atvise.tableLoaded";
+
+var TABLE_ID = "table";
+
+// Definition globale Parameter
+var tableObj = {};
+var tableApiObj = {};
+
+var tableDiv;
+
+webMI.addOnload(function () {
+	var getDOMTriggerObj = {};
+
+	function initTableCallback (tableQDObj) {
+		tableObj = tableQDObj;
+		tableApiObj = tableQDObj.getTable();
+
+		tableQDObj.drawTable([
+			["1", "", "", "3440","Долото","30","30","30","","КНБК"],
+			["2", "1", "x", "4444","Труба","32","62","62","32","Труба"],
+			["3", "2", "xx", "4444","Труба","32","94","94","64","Труба"],
+			["4", "3", "1", "4444","Труба","32","126","94","94","Труба"],
+			["5", "4", "x", "4444","Труба","32","158","94","126","Труба"],
+			["6", "5", "x", "4444","Труба","32","190","94","158","Труба"],
+			["7", "6", "2", "4444","Труба","32","222","94","190","Труба"],
+			["8", "7", "x", "4444","Труба","32","254","94","222","Труба"],
+			["9", "8", "x", "4444","Труба","32","286","94","254","Труба"],
+			["10", "9", "3", "4444","Труба","32","318","94","286","Труба"],
+			["11", "10", "x", "4444","Труба","32","350","94","318","Труба"],
+			["12", "11", "x", "4444","Труба","32","382","94","350","Труба"],
+			["13", "12", "4", "4444","Труба","32","414","94","382","Труба"],
+			["14", "13", "x", "4444","Труба","32","446","94","414","Труба"],
+			["15", "14", "x", "4444","Труба","32","478","94","446","Труба"],
+			["16", "15", "5", "4444","Труба","32","510","94","478","Труба"],
+			["17", "16", "x", "4444","Труба","32","542","94","510","Труба"],
+			["18", "17", "x", "4444","Труба","32","574","94","542","Труба"],
+			["19", "18", "6", "4444","Труба","32","606","94","574","Труба"],
+			["20", "19", "x", "4444","Труба","32","638","94","606","Труба"],
+			["21", "20", "x", "4444","Труба","32","670","94","638","Труба"],
+			["22", "21", "7", "4444","Труба","32","702","94","670","Труба"],
+			["23", "22", "x", "4444","Труба","32","734","94","702","Труба"],
+			["24", "23", "x", "4444","Труба","32","766","94","734","Труба"]
+		]);
+
+		tableDiv.find("#button").click(function() {
+			alert("Clicked button!!");
+		});
+	}
+
+	webMI.trigger.connect(TABLE_OD_TABLE_LOADED_TRIGGER, function (loadedTriggerObj) {
+		var triggerObj = loadedTriggerObj.value;
+		var initTableTriggerObj = {};
+		var tableId = triggerObj.tableId;
+
+		table = triggerObj.table;
+		tableDiv = triggerObj.tableDiv;
+
+		if (tableId === TABLE_ID) {
+
+			initTableTriggerObj.callback = initTableCallback;
+			initTableTriggerObj.config = {
+				"tableElement": table,
+				"tableWrapper": tableDiv,
+				"tableColumns": ["Соединение", "Труба", "Свеча", "Диаметр", "Описание", "Длина", "Низ", "Колонна", "Инстр.", "Тип" ],
+				"tableLabels": {
+				"sInfoEmpty": "T{Empty table}",
+				"sEmptyTable": "T{No data available in table}",
+				},
+				"tableFeatures": {
+					"sDom": "frti",
+					"scrollX": true,
+					"scrollY": true,
+					"scroller": true,
+					"info": true,
+					"bSort": true,
+					"initCompleteCallback": function () {}
+				}
+			};
+
+			webMI.trigger.fire(TABLE_OD_INIT_TABLE_TRIGGER, initTableTriggerObj, tableId);
+		}
+	},"");
+});]]></script>
+ <text fill="#000406" x="513.618" font-size="18" y="22.179" atv:refpy="28.789" transform="matrix(1.7243,0,0,1.6536,-368.7398,-0.4439)" font-family="Arial" atv:refpx="594.48" id="id_3">Ведомость труб</text>
+ <svg x="9.041" height="15" width="165" y="243.75" atv:refpy="603" transform="matrix(2.4242,0,0,2.4,0,0)" atv:refpx="221.918" id="id_9" xlink:href="AGENT.DISPLAYS.AKB.TestVal_long">
+  <atv:argument value="Длина" name="Name"/>
+  <atv:argument value="AGENT.OBJECTS.AKB.Length" name="Value"/>
+  <atv:argument value="м" name="Unit"/>
+ </svg>
+ <svg x="180.965" height="15" width="165" y="243.75" atv:refpy="602.999" transform="matrix(2.4242,0,0,2.4,0,0)" atv:refpx="638.696" id="id_10" xlink:href="AGENT.DISPLAYS.AKB.TestVal_long">
+  <atv:argument value="Общий вес" name="Name"/>
+  <atv:argument value="AGENT.OBJECTS.AKB.Weight" name="Value"/>
+  <atv:argument value="т" name="Unit"/>
+ </svg>
+ <svg x="353.326" height="15" width="165" y="243.75" atv:refpy="602.999" transform="matrix(2.4242,0,0,2.4,0,0)" atv:refpx="1056.535" id="id_11" xlink:href="AGENT.DISPLAYS.AKB.TestVal_long">
+  <atv:argument value="Всего труб" name="Name"/>
+  <atv:argument value="AGENT.OBJECTS.AKB.AllPipes" name="Value"/>
+ </svg>
+ <svg x="51.407" height="30" width="80" y="632.727" atv:refpy="647.727" transform="matrix(2.3804,0,0,1,0,0)" atv:refpx="217.581" id="id_12" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.button">
+  <atv:argument value="T{КНБК}" name="label"/>
+  <atv:overwrite width="182.429" transform="matrix(0.4201,0,0,1,0,0)" id="button_stroke"/>
+  <atv:overwrite x="95.214" transform="matrix(0.4201,0,0,1,0,0)" id="button_label"/>
+  <atv:overwrite x="85.214" transform="matrix(0.4201,0,0,1,0,0)" id="button_symbol"/>
+  <atv:overwrite width="182.429" transform="matrix(0.4201,0,0,1,0,0)" id="button_bg"/>
+  <atv:overwrite width="184.929" transform="matrix(0.4201,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="189.929" transform="matrix(0.4201,0,0,1,0,0)" id="id_0"/>
+ </svg>
+ <svg x="223.927" height="30" width="80" y="632.65" atv:refpy="647.65" transform="matrix(2.3804,0,0,1,0,0)" atv:refpx="628.25" id="id_13" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.button">
+  <atv:argument value="T{Печать}" name="label"/>
+  <atv:overwrite width="182.432" transform="matrix(0.4201,0,0,1,0,0)" id="button_stroke"/>
+  <atv:overwrite x="95.216" transform="matrix(0.4201,0,0,1,0,0)" id="button_label"/>
+  <atv:overwrite x="85.216" transform="matrix(0.4201,0,0,1,0,0)" id="button_symbol"/>
+  <atv:overwrite width="182.432" transform="matrix(0.4201,0,0,1,0,0)" id="button_bg"/>
+  <atv:overwrite width="184.932" transform="matrix(0.4201,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="189.932" transform="matrix(0.4201,0,0,1,0,0)" id="id_0"/>
+ </svg>
+ <svg x="402.594" height="30" width="80" y="632.65" atv:refpy="647.65" transform="matrix(2.3804,0,0,1,0,0)" atv:refpx="1053.549" id="id_14" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.button">
+  <atv:argument value="T{Реестр}" name="label"/>
+  <atv:overwrite width="182.432" transform="matrix(0.4201,0,0,1,0,0)" id="button_stroke"/>
+  <atv:overwrite x="95.216" transform="matrix(0.4201,0,0,1,0,0)" id="button_label"/>
+  <atv:overwrite x="85.216" transform="matrix(0.4201,0,0,1,0,0)" id="button_symbol"/>
+  <atv:overwrite width="182.432" transform="matrix(0.4201,0,0,1,0,0)" id="button_bg"/>
+  <atv:overwrite width="184.932" transform="matrix(0.4201,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="189.932" transform="matrix(0.4201,0,0,1,0,0)" id="id_0"/>
+ </svg>
+ <rect x="0" fill="#000406" height="676.003" y="0" width="1278.885" fill-opacity="0" atv:refpy="338.002" atv:refpx="639.442" id="id_15" stroke-width="4" stroke="#f70cff"/>
+</svg>

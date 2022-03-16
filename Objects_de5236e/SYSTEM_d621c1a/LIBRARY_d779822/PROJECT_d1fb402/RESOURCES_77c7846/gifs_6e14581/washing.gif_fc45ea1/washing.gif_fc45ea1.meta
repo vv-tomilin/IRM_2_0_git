@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/gifs/washing.gif
+NodeClass: Variable
+BrowseName: 1:washing.gif
+DisplayName: en|washing.gif
+Description: en|washing.gif
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Gif

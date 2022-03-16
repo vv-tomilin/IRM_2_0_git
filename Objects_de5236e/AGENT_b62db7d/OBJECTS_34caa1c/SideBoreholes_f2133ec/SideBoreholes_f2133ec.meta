@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.SideBoreholes
+NodeClass: Object
+BrowseName: 1:SideBoreholes
+DisplayName: en|SideBoreholes
+Description: en|SideBoreholes
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

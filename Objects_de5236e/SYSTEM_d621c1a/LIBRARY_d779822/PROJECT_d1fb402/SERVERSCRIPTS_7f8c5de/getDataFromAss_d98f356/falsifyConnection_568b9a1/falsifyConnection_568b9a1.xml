@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="startup" type="startup" trigger="true" relative="false" value=""/>
+  <code><![CDATA[console.log('prefal')
+var connection = new UaNode("AGENT.OBJECTS.Halliburton.connection");
+
+connection.assign({ value: false, status: 200 });
+
+console.log('falsify')]]></code>
+</script>

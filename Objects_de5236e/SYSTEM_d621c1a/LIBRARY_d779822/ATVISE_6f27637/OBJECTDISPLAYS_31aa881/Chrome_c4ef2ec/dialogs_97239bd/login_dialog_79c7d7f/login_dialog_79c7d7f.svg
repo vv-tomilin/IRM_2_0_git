@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns="http://www.w3.org/2000/svg" height="280" xmlns:xlink="http://www.w3.org/1999/xlink" width="430" xmlns:atv="http://webmi.atvise.com/2007/svgext" version="1.2">
+ <defs/>
+ <desc>Simple display that can be used as dialog to login.</desc>
+ <title>Login dialog</title>
+ <metadata>
+  <atv:gridconfig height="20" enabled="true" width="20" gridstyle="lines"/>
+  <atv:snapconfig height="10" enabled="true" width="10"/>
+ </metadata>
+ <rect stroke="none" height="280" atv:refpx="215" width="430" stroke-width="0" id="background" fill="#000000" atv:refpy="140" x="0" y="0"/>
+ <rect stroke="none" height="50" atv:refpx="-186.142" width="390" ry="10" rx="10" stroke-width="0" id="id_13" fill="#444444" atv:refpy="105" x="20" y="150"/>
+ <rect stroke="none" height="50" atv:refpx="215" width="390" ry="10" rx="10" stroke-width="0" id="username_background" fill="#444444" atv:refpy="115" x="20" y="90"/>
+ <svg height="30" atv:refpx="210" width="80" id="ok_button" atv:refpy="235" x="170" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.button" y="220" atv:dynamic="true">
+  <atv:argument value="T{OK}" name="label"/>
+  <atv:argument value="5" name="tabIndex"/>
+ </svg>
+ <svg height="30" atv:refpx="310" width="80" id="cancel_button" atv:refpy="235" x="270" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.button" y="220" atv:dynamic="true">
+  <atv:argument value="T{Cancel}" name="label"/>
+  <atv:argument value="6" name="tabIndex"/>
+ </svg>
+ <svg transform="matrix(1.125,0,0,1,0,0)" height="30" atv:refpx="260" width="160" id="username_input" atv:refpy="115" x="151.111" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.in_out_value" y="100">
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="Yes" name="allowDirectInput"/>
+  <atv:argument value="1" name="tabIndex"/>
+  <atv:overwrite transform="matrix(0.8889,0,0,1,0,0)" id="input_label" x="171.5"/>
+  <atv:overwrite transform="matrix(0.8889,0,0,1,0,0)" width="172" id="input_bg"/>
+  <atv:overwrite transform="matrix(0.8889,0,0,1,0,0)" width="174.5" id="id_2"/>
+  <atv:overwrite transform="matrix(0.8889,0,0,1,0,0)" width="179.5" id="id_0"/>
+ </svg>
+ <svg transform="matrix(1.125,0,0,1,0,0)" height="30" atv:refpx="260" width="160" id="password_input" atv:refpy="175" x="151.111" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.in_out_value" y="160">
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="Yes" name="password"/>
+  <atv:argument value="Yes" name="allowDirectInput"/>
+  <atv:argument value="3" name="tabIndex"/>
+  <atv:overwrite transform="matrix(0.8889,0,0,1,0,0)" id="input_label" x="171.5"/>
+  <atv:overwrite transform="matrix(0.8889,0,0,1,0,0)" width="172" id="input_bg"/>
+  <atv:overwrite transform="matrix(0.8889,0,0,1,0,0)" width="174.5" id="id_2"/>
+  <atv:overwrite transform="matrix(0.8889,0,0,1,0,0)" width="179.5" id="id_0"/>
+ </svg>
+ <text font-family="Arial" atv:refpx="79.5" font-size="16" id="username_label" fill="#ffffff" atv:refpy="113.5" x="34" y="119.5">T{Username}</text>
+ <text font-family="Arial" atv:refpx="78.5" font-size="16" id="password_label" fill="#ffffff" atv:refpy="173.5" x="34" y="179.5">T{Password}</text>
+ <text text-anchor="middle" font-family="Arial" atv:refpx="216" font-size="12" id="status_message" fill="#ffffff" atv:refpy="45" x="216" y="49.5">T{Please enter username and password.}</text>
+ <svg transform="matrix(0.375,0,0,1,0,0)" height="30" atv:refpx="375" width="80" id="username_keyboard" atv:refpy="115" x="960" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.button" y="100" atv:dynamic="true">
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.keyboard" name="symbol"/>
+  <atv:argument value="inherit" name="visibilitySymbol"/>
+  <atv:argument value="hidden" name="visibilityLabel"/>
+  <atv:argument value="2" name="tabIndex"/>
+  <atv:overwrite transform="matrix(2.6667,0,0,1,0,0)" width="22" id="button_stroke"/>
+  <atv:overwrite transform="matrix(2.6667,0,0,1,0,0)" id="button_label" x="15"/>
+  <atv:overwrite transform="matrix(2.6667,0,0,1,0,0)" id="button_symbol" x="5"/>
+  <atv:overwrite transform="matrix(2.6667,0,0,1,0,0)" width="22" id="button_bg"/>
+  <atv:overwrite transform="matrix(2.6667,0,0,1,0,0)" width="24.5" id="id_2"/>
+  <atv:overwrite transform="matrix(2.6667,0,0,1,0,0)" width="29.5" id="id_0"/>
+ </svg>
+ <svg transform="matrix(0.375,0,0,1,0,0)" height="30" atv:refpx="375" width="80" id="password_keyboard" atv:refpy="175" x="960" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.button" y="160" atv:dynamic="true">
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.keyboard" name="symbol"/>
+  <atv:argument value="inherit" name="visibilitySymbol"/>
+  <atv:argument value="hidden" name="visibilityLabel"/>
+  <atv:argument value="4" name="tabIndex"/>
+  <atv:overwrite transform="matrix(2.6667,0,0,1,0,0)" width="22" id="button_stroke"/>
+  <atv:overwrite transform="matrix(2.6667,0,0,1,0,0)" id="button_label" x="15"/>
+  <atv:overwrite transform="matrix(2.6667,0,0,1,0,0)" id="button_symbol" x="5"/>
+  <atv:overwrite transform="matrix(2.6667,0,0,1,0,0)" width="22" id="button_bg"/>
+  <atv:overwrite transform="matrix(2.6667,0,0,1,0,0)" width="24.5" id="id_2"/>
+  <atv:overwrite transform="matrix(2.6667,0,0,1,0,0)" width="29.5" id="id_0"/>
+ </svg>
+ <svg transform="matrix(0.6667,0,0,0.6667,0,0)" visibility="hidden" height="60" atv:refpx="40" width="60" id="status_symbol" atv:refpy="45" x="30" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.60x60.prohibition_sign_grey" y="37.5"/>
+ <script type="text/ecmascript"><![CDATA[var trigger_username = "com.atvise.login.username";
+var trigger_password = "com.atvise.login.password";
+var username = "";
+var password = "";
+
+webMI.addOnload(function(e) {
+	webMI.trigger.fire("setValue", "", "username_input");
+	webMI.trigger.fire("setValue", "", "password_input");
+});
+
+webMI.trigger.connect("valuechanged", function(e) {
+	username = e.value;
+}, "username_input");
+
+webMI.trigger.connect("valuechanged", function(e) {
+	password = e.value;
+}, "password_input");
+
+webMI.trigger.connect(trigger_password, function(e) {
+	password = e.value;
+	webMI.trigger.fire("setValue", e.value, "password_input");
+});
+
+webMI.trigger.connect(trigger_username, function(e) {
+	username = e.value;
+	webMI.trigger.fire("setValue", e.value, "username_input");
+});
+
+webMI.trigger.connect("clicked", function(e) {
+	webMI.display.closeWindow();
+}, "cancel_button");
+
+webMI.trigger.connect("clicked", function(e) {
+	//put webMI login to the end of the callstack to receive correct data from triggers before
+	setTimeout(function () {
+	webMI.data.login(username, password, function(e) {
+		if (e[""].hasOwnProperty("username") && e[""].username){
+			webMI.display.closeWindow();
+		} else if (e[""].hasOwnProperty("username")) {
+			webMI.gfx.setText("status_message", "T{Login failed! Username/password wrong.}");
+			webMI.gfx.setVisible("status_symbol", null);
+		} else if (e[""].hasOwnProperty("error")) {
+			webMI.gfx.setText("status_message", "T{Login failed! Username/password wrong.}");
+			webMI.gfx.setVisible("status_symbol", null);
+		} else {
+			webMI.display.closeWindow();
+		}
+	});
+	},0);
+}, "ok_button");
+
+webMI.trigger.connect("clicked", function(e) {
+	webMI.query.trigger = trigger_username;
+	webMI.query.password = "No";
+	webMI.query.value = "";
+	webMI.display.openWindow({display:"SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.keyboard.keyboard",extern:false,height:250,menubar:false,modal:true,movable:true,resizable:false,scrollbars:false,status:false,title:"T{Keyboard}",toolbar:false,width:550,query:webMI.query});
+}, "username_keyboard");
+
+webMI.trigger.connect("clicked", function(e) {
+	webMI.query.trigger = trigger_password;
+	webMI.query.password = "Yes";
+	webMI.query.value = "";
+	webMI.display.openWindow({display:"SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Chrome.keyboard.keyboard",extern:false,height:250,menubar:false,modal:true,movable:true,resizable:false,scrollbars:false,status:false,title:"T{Keyboard}",toolbar:false,width:550,query:webMI.query});
+}, "password_keyboard");]]></script>
+</svg>

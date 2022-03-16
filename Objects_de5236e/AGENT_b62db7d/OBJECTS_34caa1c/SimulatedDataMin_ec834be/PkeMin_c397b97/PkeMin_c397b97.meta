@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.SimulatedDataMin.PkeMin
+NodeClass: Variable
+BrowseName: 1:PkeMin
+DisplayName: en|PkeMin
+Description: en|PkeMin
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

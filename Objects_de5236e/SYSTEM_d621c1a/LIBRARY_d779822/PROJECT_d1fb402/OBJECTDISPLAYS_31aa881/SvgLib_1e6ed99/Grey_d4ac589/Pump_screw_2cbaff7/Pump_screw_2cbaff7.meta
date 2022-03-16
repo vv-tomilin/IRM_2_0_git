@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Grey.Pump_screw
+NodeClass: Variable
+BrowseName: 1:Pump_screw
+DisplayName: en|Pump_screw
+Description: en|Pump_screw
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

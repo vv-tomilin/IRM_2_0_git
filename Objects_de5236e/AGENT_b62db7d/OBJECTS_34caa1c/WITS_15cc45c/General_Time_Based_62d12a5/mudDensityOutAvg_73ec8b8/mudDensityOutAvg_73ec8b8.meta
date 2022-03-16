@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.General_Time_Based.mudDensityOutAvg
+NodeClass: Variable
+BrowseName: 1:mudDensityOutAvg
+DisplayName: en|mudDensityOutAvg
+Description: en|mudDensityOutAvg
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

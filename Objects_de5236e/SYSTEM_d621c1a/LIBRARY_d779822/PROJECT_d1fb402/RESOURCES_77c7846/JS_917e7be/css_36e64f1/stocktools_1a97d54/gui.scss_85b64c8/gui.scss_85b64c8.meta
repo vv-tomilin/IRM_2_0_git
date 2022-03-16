@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/css/stocktools/gui.scss
+NodeClass: Variable
+BrowseName: 1:gui.scss
+DisplayName: en|gui.scss
+Description: en|gui.scss
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

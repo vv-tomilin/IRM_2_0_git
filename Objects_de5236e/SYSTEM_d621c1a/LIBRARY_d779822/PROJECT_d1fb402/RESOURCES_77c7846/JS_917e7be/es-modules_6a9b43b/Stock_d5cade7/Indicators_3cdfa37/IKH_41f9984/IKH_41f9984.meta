@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Stock/Indicators/IKH
+NodeClass: Object
+BrowseName: 1:IKH
+DisplayName: en|IKH
+Description: en|IKH
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" height="1016" width="1790" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.2">
+ <defs/>
+ <metadata>
+  <atv:gridconfig height="20" width="20" enabled="false" gridstyle="lines"/>
+  <atv:snapconfig height="10" width="10" enabled="false"/>
+ </metadata>
+ <g atv:refpy="0" atv:insensitive="true" atv:refpx="0" id="id_0" transform="matrix(1,0,0,1,0,0)">
+  <rect x="0" height="1016.00" atv:refpy="508" width="1790.00" fill="#000406" atv:refpx="895" id="id_1" y="0"/>
+ </g>
+ <svg x="0" height="400" atv:refpy="507.992" width="400" atv:refpx="894.987" id="id_2" xlink:href="AGENT.DISPLAYS.NewView.RigCharts_depth" transform="matrix(4.475,0,0,2.54,0,0)" y="0">
+  <atv:argument name="series1series_interpolation" value="line"/>
+  <atv:argument name="series1series_address" value="AGENT.OBJECTS.IVE50.DMEA"/>
+  <atv:argument name="series1series_color" value="#eb0037"/>
+  <atv:argument name="series1series_name" value="T{Факт}"/>
+  <atv:argument name="series2series_interpolation" value="line"/>
+  <atv:argument name="series2series_address" value="AGENT.OBJECTS.IVE50.DBTM"/>
+  <atv:argument name="series2series_color" value="#ece500"/>
+  <atv:argument name="series2series_name" value="T{Положение долота}"/>
+  <atv:argument name="yAxis1yAxis_opposite" value="left"/>
+  <atv:argument name="gatviseOptions_mode" value="history"/>
+  <atv:argument name="xAxisxAxis_gridLineColor" value="#5e5e5e"/>
+  <atv:argument name="yAxis1yAxis_gridLineColor" value="#5e5e5e"/>
+  <atv:argument name="yAxis1yAxis_gridLineWidth" value="1"/>
+  <atv:argument name="yAxis1yAxis_crosshair_width" value="1"/>
+  <atv:argument name="yAxis1yAxis_crosshair_color" value="#eeeeee"/>
+  <atv:argument name="xAxisxAxis_crosshair_width" value="1"/>
+  <atv:argument name="xAxisxAxis_crosshair_color" value="#eeeeee"/>
+  <atv:argument name="yAxis1yAxis_crosshair_snap" value="false"/>
+  <atv:argument name="yAxis1yAxis_lineColor" value=""/>
+  <atv:argument name="series1series_xAxis" value="0"/>
+  <atv:argument name="series2series_xAxis" value="0"/>
+  <atv:overwrite x="702" id="label" transform="matrix(0.2004,0,0,0.3937,16.1281,0)" y="518"/>
+  <atv:overwrite height="1014" width="1788" id="border" transform="matrix(0.2235,0,0,0.3937,0,0)"/>
+  <atv:overwrite height="1016" width="1790" id="id_3" transform="matrix(0.2235,0,0,0.3937,0,0)"/>
+ </svg>
+</svg>

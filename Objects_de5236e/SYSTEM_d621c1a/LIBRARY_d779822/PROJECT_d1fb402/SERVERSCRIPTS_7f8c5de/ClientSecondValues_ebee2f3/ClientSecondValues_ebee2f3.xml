@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="interval" type="interval" trigger="true" relative="false" value="" offset="00:00:00" interval="00:01:00"/>
+  <code><![CDATA[var nodeClientSecondValuesConnected = new UaNode("AGENT.OBJECTS.Support.ClientSecondValuesConnected");
+if(nodeClientSecondValuesConnected.value) return;
+//console.log("script ClientSecondValues");
+//console.log("interval = ", interval);
+
+var t = new TCPClient();
+try{
+	t.connect("localhost", 6000);
+	console.log("ClientSecondValues: connected...");
+	nodeClientSecondValuesConnected.assign({value: true});
+
+//	var request = "getnextsecondvalues";
+//	t.send(request);
+//	console.log("send ok..");
+	while(1){
+		var response_content = t.receive(100000);
+		
+		if(response_content.length > 1) {
+			//parse and print XML content to console
+			try {
+				//console.log("XML");
+				var docXML = new XMLDoc(response_content, "string");
+					
+				var node = docXML.root.first("node");
+					
+				for (; node; node = node.next("node")) {
+					var xnodeid = node.first("idnode");
+					//var xservertime = node.first("servertime");
+					var xvalue = node.first("value");
+					var xstatus = node.first("status");
+					if(xnodeid.first(XMLDoc.TEXT_NODE).content!="nodata"){
+						var nodeidstr = xnodeid.first(XMLDoc.TEXT_NODE).content;
+						//var servertimestr = xservertime.first(XMLDoc.TEXT_NODE).content;
+						var valuestr = xvalue.first(XMLDoc.TEXT_NODE).content;
+						var statusstr = xstatus.first(XMLDoc.TEXT_NODE).content;
+							
+						//console.log(nodeidstr);
+						////console.log(servertimestr);
+						//console.log(valuestr);
+						//console.log(statusstr);	
+						try{
+							var nnode = new UaNode(nodeidstr);
+							nnode.assign({value: Number(valuestr)});
+						}
+						catch(e){
+							//console.log("ClientSecondValues Error: Cannot assign value for ",nodeidstr);
+						}
+							
+					} 
+//						else {
+//							console.log("XML = ",xnodeid.first(XMLDoc.TEXT_NODE).content);
+//						}						
+				}				
+					
+			}		
+			catch(e){
+				console.log("ClientSecondValues Error: Cannot parse XML!!",e);
+			}					
+		}
+		else {
+//			console.log("ClientSecondValues: no content received");
+			break;
+		}
+	}	
+	t.close();
+	nodeClientSecondValuesConnected.assign({value: false});
+}
+catch(e){
+	nodeClientSecondValuesConnected.assign({value: false});
+//	console.log("ClientSecondValues: соединение не установлено = "+e);
+}
+finally {
+	if(!!t){
+		t.close();
+	}
+}
+
+	
+/*	
+
+//receive till no more data available
+var tmp;
+while(tmp != "")
+{
+	tmp = t.receive(50000);
+	response_content += tmp;
+}
+
+if(response_content.length > 1) {
+	//parse and print XML content to console
+	console.log("receiving = ", response_content);
+}
+else
+	console.log("no content received");
+*/]]></code>
+</script>

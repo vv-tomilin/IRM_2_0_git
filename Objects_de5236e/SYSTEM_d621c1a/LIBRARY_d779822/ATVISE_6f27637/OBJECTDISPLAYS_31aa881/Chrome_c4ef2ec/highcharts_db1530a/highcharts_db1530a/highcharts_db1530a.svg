@@ -1,0 +1,792 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="400" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" height="400">
+ <defs/>
+ <desc>Draws a highcharts instance</desc>
+ <title>Chart container</title>
+ <metadata>
+  <atv:parameter name="trendName" defaultvalue="trend1" valuetype="string" behavior="mandatory" desc="chart name"/>
+  <atv:parameter name="trendGroup" defaultvalue="group1" valuetype="string" behavior="mandatory" desc="chart group"/>
+  <atv:parameter config="mixed;live;history" name="gatviseOptions_mode" defaultvalue="mixed" valuetype="enum" behavior="mandatory" desc="chart mode"/>
+  <atv:parameter behavior="optional" desc="skip default modules" name="skipDefaultModules" substitute="" valuetype="bool" defaultvalue="false"/>
+  <atv:parameter behavior="optional" desc="additional modules" name="additionalModules" substitute="" valuetype="string" defaultvalue=""/>
+  <atv:parameter name="gatviseOptions_configNode" defaultvalue="" valuetype="address" behavior="optional" desc="configuration node"/>
+  <atv:parameter name="gatviseOptions_configName" defaultvalue="" valuetype="string" behavior="optional" desc="configuration name"/>
+  <atv:parameter name="gatviseOptions_source" defaultvalue="opcUA" valuetype="string" behavior="optional" desc="datasource"/>
+  <atv:parameter name="gtitle_text" defaultvalue="" valuetype="string" behavior="optional" desc="chart title"/>
+  <atv:parameter name="gchart_animation" defaultvalue="false" substitute="" valuetype="bool" behavior="optional" desc="animations"/>
+  <atv:parameter name="gatviseOptions_enableCursor1" defaultvalue="false" substitute="" valuetype="bool" behavior="optional" desc="measurement cursor 1"/>
+  <atv:parameter name="gatviseOptions_enableCursor2" defaultvalue="false" substitute="" valuetype="bool" behavior="optional" desc="measurement cursor 2"/>
+  <atv:parameter name="gshowTooltip" defaultvalue="false" substitute="" valuetype="bool" behavior="optional" desc="tooltips"/>
+  <atv:parameter name="gshowExportMenu" defaultvalue="true" substitute="" valuetype="bool" behavior="optional" desc="export menu"/>
+  <atv:parameter config="SYSTEM.SECURITY.RIGHTS" name="export_right" defaultvalue="" valuetype="address" behavior="optional" desc="necessary right for export"/>
+  <atv:parameter name="guseLocalTime" defaultvalue="false" substitute="" valuetype="bool" behavior="optional" desc="local time"/>
+  <atv:parameter name="gatviseOptions_disableDownSampling" defaultvalue="true" substitute="" valuetype="bool" behavior="optional" desc="disable downsampling"/>
+  <atv:parameter name="yAxis1yAxis_id" valuetype="string" behavior="optional" group="Y-Axis-1" desc="id"/>
+  <atv:parameter name="yAxis2yAxis_id" valuetype="string" behavior="optional" group="Y-Axis-2" desc="id"/>
+  <atv:parameter name="yAxis3yAxis_id" valuetype="string" behavior="optional" group="Y-Axis-3" desc="id"/>
+  <atv:parameter name="yAxis4yAxis_id" valuetype="string" behavior="optional" group="Y-Axis-4" desc="id"/>
+  <atv:parameter name="yAxis1yAxis_title_text" defaultvalue="" valuetype="string" behavior="optional" group="Y-Axis-1" desc="title"/>
+  <atv:parameter name="yAxis2yAxis_title_text" defaultvalue="" valuetype="string" behavior="optional" group="Y-Axis-2" desc="title"/>
+  <atv:parameter name="yAxis3yAxis_title_text" defaultvalue="" valuetype="string" behavior="optional" group="Y-Axis-3" desc="title"/>
+  <atv:parameter name="yAxis4yAxis_title_text" defaultvalue="" valuetype="string" behavior="optional" group="Y-Axis-4" desc="title"/>
+  <atv:parameter name="yAxis1yAxis_visible" defaultvalue="true" valuetype="bool" behavior="optional" group="Y-Axis-1" desc="visibility"/>
+  <atv:parameter name="yAxis2yAxis_visible" defaultvalue="true" valuetype="bool" behavior="optional" group="Y-Axis-2" desc="visibility"/>
+  <atv:parameter name="yAxis3yAxis_visible" defaultvalue="true" valuetype="bool" behavior="optional" group="Y-Axis-3" desc="visibility"/>
+  <atv:parameter name="yAxis4yAxis_visible" defaultvalue="true" valuetype="bool" behavior="optional" group="Y-Axis-4" desc="visibility"/>
+  <atv:parameter name="yAxis1yAxis_min" valuetype="number" behavior="optional" group="Y-Axis-1" desc="minimum"/>
+  <atv:parameter name="yAxis2yAxis_min" valuetype="number" behavior="optional" group="Y-Axis-2" desc="minimum"/>
+  <atv:parameter name="yAxis3yAxis_min" valuetype="number" behavior="optional" group="Y-Axis-3" desc="minimum"/>
+  <atv:parameter name="yAxis4yAxis_min" valuetype="number" behavior="optional" group="Y-Axis-4" desc="minimum"/>
+  <atv:parameter name="yAxis1yAxis_max" valuetype="number" behavior="optional" group="Y-Axis-1" desc="maximum"/>
+  <atv:parameter name="yAxis2yAxis_max" valuetype="number" behavior="optional" group="Y-Axis-2" desc="maximum"/>
+  <atv:parameter name="yAxis3yAxis_max" valuetype="number" behavior="optional" group="Y-Axis-3" desc="maximum"/>
+  <atv:parameter name="yAxis4yAxis_max" valuetype="number" behavior="optional" group="Y-Axis-4" desc="maximum"/>
+  <atv:parameter name="yAxis1yAxis_lineWidth" defaultvalue="0" valuetype="number" behavior="optional" group="Y-Axis-1" desc="axis line width"/>
+  <atv:parameter name="yAxis2yAxis_lineWidth" defaultvalue="0" valuetype="number" behavior="optional" group="Y-Axis-2" desc="axis line width"/>
+  <atv:parameter name="yAxis3yAxis_lineWidth" defaultvalue="0" valuetype="number" behavior="optional" group="Y-Axis-3" desc="axis line width"/>
+  <atv:parameter name="yAxis4yAxis_lineWidth" defaultvalue="0" valuetype="number" behavior="optional" group="Y-Axis-4" desc="axis line width"/>
+  <atv:parameter name="yAxis1yAxis_lineColor" defaultvalue="#ccd6eb" valuetype="color" behavior="optional" group="Y-Axis-1" desc="axis color"/>
+  <atv:parameter name="yAxis2yAxis_lineColor" defaultvalue="#ccd6eb" valuetype="color" behavior="optional" group="Y-Axis-2" desc="axis color"/>
+  <atv:parameter name="yAxis3yAxis_lineColor" defaultvalue="#ccd6eb" valuetype="color" behavior="optional" group="Y-Axis-3" desc="axis color"/>
+  <atv:parameter name="yAxis4yAxis_lineColor" defaultvalue="#ccd6eb" valuetype="color" behavior="optional" group="Y-Axis-4" desc="axis color"/>
+  <atv:parameter config="left;right" name="yAxis1yAxis_opposite" defaultvalue="left" valuetype="enum" behavior="optional" group="Y-Axis-1" desc="axis position"/>
+  <atv:parameter config="left;right" name="yAxis2yAxis_opposite" defaultvalue="left" valuetype="enum" behavior="optional" group="Y-Axis-2" desc="axis position"/>
+  <atv:parameter config="left;right" name="yAxis3yAxis_opposite" defaultvalue="left" valuetype="enum" behavior="optional" group="Y-Axis-3" desc="axis position"/>
+  <atv:parameter config="left;right" name="yAxis4yAxis_opposite" defaultvalue="left" valuetype="enum" behavior="optional" group="Y-Axis-4" desc="axis position"/>
+  <atv:parameter name="yAxis1yAxis_labels_enabled" defaultvalue="true" valuetype="bool" behavior="optional" group="Y-Axis-1" desc="axis label"/>
+  <atv:parameter name="yAxis2yAxis_labels_enabled" defaultvalue="true" valuetype="bool" behavior="optional" group="Y-Axis-2" desc="axis label"/>
+  <atv:parameter name="yAxis3yAxis_labels_enabled" defaultvalue="true" valuetype="bool" behavior="optional" group="Y-Axis-3" desc="axis label"/>
+  <atv:parameter name="yAxis4yAxis_labels_enabled" defaultvalue="true" valuetype="bool" behavior="optional" group="Y-Axis-4" desc="axis label"/>
+  <atv:parameter config="left;center;right" name="yAxis1yAxis_labels_align" defaultvalue="right" valuetype="enum" behavior="optional" group="Y-Axis-1" desc="axis label alignment"/>
+  <atv:parameter config="left;center;right" name="yAxis2yAxis_labels_align" defaultvalue="right" valuetype="enum" behavior="optional" group="Y-Axis-2" desc="axis label alignment"/>
+  <atv:parameter config="left;center;right" name="yAxis3yAxis_labels_align" defaultvalue="right" valuetype="enum" behavior="optional" group="Y-Axis-3" desc="axis label alignment"/>
+  <atv:parameter config="left;center;right" name="yAxis4yAxis_labels_align" defaultvalue="right" valuetype="enum" behavior="optional" group="Y-Axis-4" desc="axis label alignment"/>
+  <atv:parameter name="yAxis1yAxis_labels_format" defaultvalue="{value}" valuetype="string" behavior="optional" group="Y-Axis-1" desc="label format"/>
+  <atv:parameter name="yAxis2yAxis_labels_format" defaultvalue="{value}" valuetype="string" behavior="optional" group="Y-Axis-2" desc="label format"/>
+  <atv:parameter name="yAxis3yAxis_labels_format" defaultvalue="{value}" valuetype="string" behavior="optional" group="Y-Axis-3" desc="label format"/>
+  <atv:parameter name="yAxis4yAxis_labels_format" defaultvalue="{value}" valuetype="string" behavior="optional" group="Y-Axis-4" desc="label format"/>
+  <atv:parameter name="yAxis1yAxis_crosshair" defaultvalue="false" valuetype="bool" behavior="optional" group="Y-Axis-1" desc="crosshair enabled"/>
+  <atv:parameter name="yAxis2yAxis_crosshair" defaultvalue="false" valuetype="bool" behavior="optional" group="Y-Axis-2" desc="crosshair enabled"/>
+  <atv:parameter name="yAxis3yAxis_crosshair" defaultvalue="false" valuetype="bool" behavior="optional" group="Y-Axis-3" desc="crosshair enabled"/>
+  <atv:parameter name="yAxis4yAxis_crosshair" defaultvalue="false" valuetype="bool" behavior="optional" group="Y-Axis-4" desc="crosshair enabled"/>
+  <atv:parameter name="yAxis1yAxis_crosshair_snap" defaultvalue="true" valuetype="bool" behavior="optional" group="Y-Axis-1" desc="crosshair snap"/>
+  <atv:parameter name="yAxis2yAxis_crosshair_snap" defaultvalue="true" valuetype="bool" behavior="optional" group="Y-Axis-2" desc="crosshair snap"/>
+  <atv:parameter name="yAxis3yAxis_crosshair_snap" defaultvalue="true" valuetype="bool" behavior="optional" group="Y-Axis-3" desc="crosshair snap"/>
+  <atv:parameter name="yAxis4yAxis_crosshair_snap" defaultvalue="true" valuetype="bool" behavior="optional" group="Y-Axis-4" desc="crosshair snap"/>
+  <atv:parameter name="yAxis1yAxis_crosshair_width" valuetype="number" behavior="optional" group="Y-Axis-1" desc="crosshair width"/>
+  <atv:parameter name="yAxis2yAxis_crosshair_width" valuetype="number" behavior="optional" group="Y-Axis-2" desc="crosshair width"/>
+  <atv:parameter name="yAxis3yAxis_crosshair_width" valuetype="number" behavior="optional" group="Y-Axis-3" desc="crosshair width"/>
+  <atv:parameter name="yAxis4yAxis_crosshair_width" valuetype="number" behavior="optional" group="Y-Axis-4" desc="crosshair width"/>
+  <atv:parameter name="yAxis1yAxis_crosshair_color" valuetype="color" behavior="optional" group="Y-Axis-1" desc="crosshair color"/>
+  <atv:parameter name="yAxis2yAxis_crosshair_color" valuetype="color" behavior="optional" group="Y-Axis-2" desc="crosshair color"/>
+  <atv:parameter name="yAxis3yAxis_crosshair_color" valuetype="color" behavior="optional" group="Y-Axis-3" desc="crosshair color"/>
+  <atv:parameter name="yAxis4yAxis_crosshair_color" valuetype="color" behavior="optional" group="Y-Axis-4" desc="crosshair color"/>
+  <atv:parameter config="Solid;ShortDash;ShortDot;ShortDashDot;ShortDashDotDot;Dot;Dash;LongDash;DashDot;LongDashDot;LongDashDotDot" name="yAxis1yAxis_crosshair_dashStyle" defaultvalue="Solid" valuetype="enum" behavior="optional" group="Y-Axis-1" desc="crosshair type"/>
+  <atv:parameter config="Solid;ShortDash;ShortDot;ShortDashDot;ShortDashDotDot;Dot;Dash;LongDash;DashDot;LongDashDot;LongDashDotDot" name="yAxis2yAxis_crosshair_dashStyle" defaultvalue="Solid" valuetype="enum" behavior="optional" group="Y-Axis-2" desc="crosshair type"/>
+  <atv:parameter config="Solid;ShortDash;ShortDot;ShortDashDot;ShortDashDotDot;Dot;Dash;LongDash;DashDot;LongDashDot;LongDashDotDot" name="yAxis3yAxis_crosshair_dashStyle" defaultvalue="Solid" valuetype="enum" behavior="optional" group="Y-Axis-3" desc="crosshair type"/>
+  <atv:parameter config="Solid;ShortDash;ShortDot;ShortDashDot;ShortDashDotDot;Dot;Dash;LongDash;DashDot;LongDashDot;LongDashDotDot" name="yAxis4yAxis_crosshair_dashStyle" defaultvalue="Solid" valuetype="enum" behavior="optional" group="Y-Axis-4" desc="crosshair type"/>
+  <atv:parameter name="yAxis1yAxis_tickInterval" valuetype="number" behavior="optional" group="Y-Axis-1" desc="tick interval"/>
+  <atv:parameter name="yAxis2yAxis_tickInterval" valuetype="number" behavior="optional" group="Y-Axis-2" desc="tick interval"/>
+  <atv:parameter name="yAxis3yAxis_tickInterval" valuetype="number" behavior="optional" group="Y-Axis-3" desc="tick interval"/>
+  <atv:parameter name="yAxis4yAxis_tickInterval" valuetype="number" behavior="optional" group="Y-Axis-4" desc="tick interval"/>
+  <atv:parameter name="yAxis1yAxis_minorTickInterval" valuetype="number" behavior="optional" group="Y-Axis-1" desc="minor tick interval"/>
+  <atv:parameter name="yAxis2yAxis_minorTickInterval" valuetype="number" behavior="optional" group="Y-Axis-2" desc="minor tick interval"/>
+  <atv:parameter name="yAxis3yAxis_minorTickInterval" valuetype="number" behavior="optional" group="Y-Axis-3" desc="minor tick interval"/>
+  <atv:parameter name="yAxis4yAxis_minorTickInterval" valuetype="number" behavior="optional" group="Y-Axis-4" desc="minor tick interval"/>
+  <atv:parameter name="yAxis1yAxis_gridLineWidth" defaultvalue="1" valuetype="number" behavior="optional" group="Y-Axis-1" desc="grid width"/>
+  <atv:parameter name="yAxis2yAxis_gridLineWidth" defaultvalue="1" valuetype="number" behavior="optional" group="Y-Axis-2" desc="grid width"/>
+  <atv:parameter name="yAxis3yAxis_gridLineWidth" defaultvalue="1" valuetype="number" behavior="optional" group="Y-Axis-3" desc="grid width"/>
+  <atv:parameter name="yAxis4yAxis_gridLineWidth" defaultvalue="1" valuetype="number" behavior="optional" group="Y-Axis-4" desc="grid width"/>
+  <atv:parameter name="yAxis1yAxis_gridLineColor" defaultvalue="#e6e6e6" valuetype="color" behavior="optional" group="Y-Axis-1" desc="grid color"/>
+  <atv:parameter name="yAxis2yAxis_gridLineColor" defaultvalue="#e6e6e6" valuetype="color" behavior="optional" group="Y-Axis-2" desc="grid color"/>
+  <atv:parameter name="yAxis3yAxis_gridLineColor" defaultvalue="#e6e6e6" valuetype="color" behavior="optional" group="Y-Axis-3" desc="grid color"/>
+  <atv:parameter name="yAxis4yAxis_gridLineColor" defaultvalue="#e6e6e6" valuetype="color" behavior="optional" group="Y-Axis-4" desc="grid color"/>
+  <atv:parameter name="yAxis1yAxis_minorGridLineWidth" defaultvalue="1" valuetype="number" behavior="optional" group="Y-Axis-1" desc="minor grid width"/>
+  <atv:parameter name="yAxis2yAxis_minorGridLineWidth" defaultvalue="1" valuetype="number" behavior="optional" group="Y-Axis-2" desc="minor grid width"/>
+  <atv:parameter name="yAxis3yAxis_minorGridLineWidth" defaultvalue="1" valuetype="number" behavior="optional" group="Y-Axis-3" desc="minor grid width"/>
+  <atv:parameter name="yAxis4yAxis_minorGridLineWidth" defaultvalue="1" valuetype="number" behavior="optional" group="Y-Axis-4" desc="minor grid width"/>
+  <atv:parameter name="yAxis1yAxis_minorGridLineColor" defaultvalue="#f2f2f2" valuetype="color" behavior="optional" group="Y-Axis-1" desc="minor grid color"/>
+  <atv:parameter name="yAxis2yAxis_minorGridLineColor" defaultvalue="#f2f2f2" valuetype="color" behavior="optional" group="Y-Axis-2" desc="minor grid color"/>
+  <atv:parameter name="yAxis3yAxis_minorGridLineColor" defaultvalue="#f2f2f2" valuetype="color" behavior="optional" group="Y-Axis-3" desc="minor grid color"/>
+  <atv:parameter name="yAxis4yAxis_minorGridLineColor" defaultvalue="#f2f2f2" valuetype="color" behavior="optional" group="Y-Axis-4" desc="minor grid color"/>
+  <atv:parameter name="xAxisxAxis_title_text" defaultvalue="" valuetype="string" behavior="optional" group="X-Axis" desc="title"/>
+  <atv:parameter name="xAxisxAxis_timeSpan" defaultvalue="60" valuetype="number" behavior="optional" group="X-Axis" desc="timespan"/>
+  <atv:parameter config="second(s);minute(s);hour(s);day(s);week(s);month(s)" name="xAxisxAxis_timeSpanUnit" defaultvalue="second(s)" valuetype="enum" behavior="optional" group="X-Axis" desc="timespan unit"/>
+  <atv:parameter name="xAxisxAxis_lineWidth" defaultvalue="1" valuetype="number" behavior="optional" group="X-Axis" desc="axis line width"/>
+  <atv:parameter name="xAxisxAxis_lineColor" defaultvalue="#ccd6eb" valuetype="color" behavior="optional" group="X-Axis" desc="axis color"/>
+  <atv:parameter config="bottom;top" name="xAxisxAxis_opposite" defaultvalue="bottom" valuetype="enum" behavior="optional" group="X-Axis" desc="axis position"/>
+  <atv:parameter name="xAxisxAxis_labels_enabled" defaultvalue="true" valuetype="bool" behavior="optional" group="X-Axis" desc="axis label"/>
+  <atv:parameter config="left;center;right" name="xAxisxAxis_labels_align" valuetype="enum" behavior="optional" group="X-Axis" desc="axis label alignment"/>
+  <atv:parameter name="xAxisxAxis_crosshair" defaultvalue="false" valuetype="bool" behavior="optional" group="X-Axis" desc="crosshair enabled"/>
+  <atv:parameter name="xAxisxAxis_crosshair_snap" defaultvalue="false" valuetype="bool" behavior="optional" group="X-Axis" desc="crosshair snap"/>
+  <atv:parameter name="xAxisxAxis_crosshair_width" valuetype="number" behavior="optional" group="X-Axis" desc="crosshair width"/>
+  <atv:parameter name="xAxisxAxis_crosshair_color" valuetype="color" behavior="optional" group="X-Axis" desc="crosshair color"/>
+  <atv:parameter config="Solid;ShortDash;ShortDot;ShortDashDot;ShortDashDotDot;Dot;Dash;LongDash;DashDot;LongDashDot;LongDashDotDot" name="xAxisxAxis_crosshair_dashStyle" defaultvalue="Solid" valuetype="enum" behavior="optional" group="X-Axis" desc="crosshair type"/>
+  <atv:parameter config="linear;datetime;logarithmic" name="xAxisxAxis_type" defaultvalue="datetime" valuetype="enum" behavior="optional" group="X-Axis" desc="xAxis type"/>
+  <atv:parameter name="xAxisxAxis_dateTimeLabelFormats_format" defaultvalue="%H:%M:%S" valuetype="string" behavior="optional" group="X-Axis" desc="date time format"/>
+  <atv:parameter name="xAxisxAxis_tickInterval" defaultvalue="10000" valuetype="number" behavior="optional" group="X-Axis" desc="tick interval"/>
+  <atv:parameter name="xAxisxAxis_minorTickInterval" valuetype="number" behavior="optional" group="X-Axis" desc="minor tick interval"/>
+  <atv:parameter name="xAxisxAxis_gridLineWidth" defaultvalue="1" valuetype="number" behavior="optional" group="X-Axis" desc="grid line width"/>
+  <atv:parameter name="xAxisxAxis_gridLineColor" defaultvalue="#e6e6e6" valuetype="color" behavior="optional" group="X-Axis" desc="grid line color"/>
+  <atv:parameter name="xAxisxAxis_minorGridLineWidth" defaultvalue="1" valuetype="number" behavior="optional" group="X-Axis" desc="minor grid width"/>
+  <atv:parameter name="xAxisxAxis_minorGridLineColor" defaultvalue="#f2f2f2" valuetype="color" behavior="optional" group="X-Axis" desc="minor grid color"/>
+  <atv:parameter name="series1series_address" valuetype="address" behavior="optional" group="Serie 1" desc="address"/>
+  <atv:parameter name="series2series_address" valuetype="address" behavior="optional" group="Serie 2" desc="address"/>
+  <atv:parameter name="series3series_address" valuetype="address" behavior="optional" group="Serie 3" desc="address"/>
+  <atv:parameter name="series4series_address" valuetype="address" behavior="optional" group="Serie 4" desc="address"/>
+  <atv:parameter name="series5series_address" valuetype="address" behavior="optional" group="Serie 5" desc="address"/>
+  <atv:parameter name="series6series_address" valuetype="address" behavior="optional" group="Serie 6" desc="address"/>
+  <atv:parameter name="series7series_address" valuetype="address" behavior="optional" group="Serie 7" desc="address"/>
+  <atv:parameter name="series8series_address" valuetype="address" behavior="optional" group="Serie 8" desc="address"/>
+  <atv:parameter name="series9series_address" valuetype="address" behavior="optional" group="Serie 9" desc="address"/>
+  <atv:parameter name="series10series_address" valuetype="address" behavior="optional" group="Serie 10" desc="address"/>
+  <atv:parameter config="line;spline;step" name="series1series_interpolation" defaultvalue="line" valuetype="enum" behavior="optional" group="Serie 1" desc="interpolation"/>
+  <atv:parameter config="line;spline;step" name="series2series_interpolation" defaultvalue="line" valuetype="enum" behavior="optional" group="Serie 2" desc="interpolation"/>
+  <atv:parameter config="line;spline;step" name="series3series_interpolation" defaultvalue="line" valuetype="enum" behavior="optional" group="Serie 3" desc="interpolation"/>
+  <atv:parameter config="line;spline;step" name="series4series_interpolation" defaultvalue="line" valuetype="enum" behavior="optional" group="Serie 4" desc="interpolation"/>
+  <atv:parameter config="line;spline;step" name="series5series_interpolation" defaultvalue="line" valuetype="enum" behavior="optional" group="Serie 5" desc="interpolation"/>
+  <atv:parameter config="line;spline;step" name="series6series_interpolation" defaultvalue="line" valuetype="enum" behavior="optional" group="Serie 6" desc="interpolation"/>
+  <atv:parameter config="line;spline;step" name="series7series_interpolation" defaultvalue="line" valuetype="enum" behavior="optional" group="Serie 7" desc="interpolation"/>
+  <atv:parameter config="line;spline;step" name="series8series_interpolation" defaultvalue="line" valuetype="enum" behavior="optional" group="Serie 8" desc="interpolation"/>
+  <atv:parameter config="line;spline;step" name="series9series_interpolation" defaultvalue="line" valuetype="enum" behavior="optional" group="Serie 9" desc="interpolation"/>
+  <atv:parameter config="line;spline;step" name="series10series_interpolation" defaultvalue="line" valuetype="enum" behavior="optional" group="Serie 10" desc="interpolation"/>
+  <atv:parameter name="series1series_name" valuetype="trstring" behavior="optional" group="Serie 1" desc="name"/>
+  <atv:parameter name="series2series_name" valuetype="trstring" behavior="optional" group="Serie 2" desc="name"/>
+  <atv:parameter name="series3series_name" valuetype="trstring" behavior="optional" group="Serie 3" desc="name"/>
+  <atv:parameter name="series4series_name" valuetype="trstring" behavior="optional" group="Serie 4" desc="name"/>
+  <atv:parameter name="series5series_name" valuetype="trstring" behavior="optional" group="Serie 5" desc="name"/>
+  <atv:parameter name="series6series_name" valuetype="trstring" behavior="optional" group="Serie 6" desc="name"/>
+  <atv:parameter name="series7series_name" valuetype="trstring" behavior="optional" group="Serie 7" desc="name"/>
+  <atv:parameter name="series8series_name" valuetype="trstring" behavior="optional" group="Serie 8" desc="name"/>
+  <atv:parameter name="series9series_name" valuetype="trstring" behavior="optional" group="Serie 9" desc="name"/>
+  <atv:parameter name="series10series_name" valuetype="trstring" behavior="optional" group="Serie 10" desc="name"/>
+  <atv:parameter name="series1series_dataArchive" defaultvalue="" valuetype="string" behavior="optional" group="Serie 1" desc="data archive"/>
+  <atv:parameter name="series2series_dataArchive" defaultvalue="" valuetype="string" behavior="optional" group="Serie 2" desc="data archive"/>
+  <atv:parameter name="series3series_dataArchive" defaultvalue="" valuetype="string" behavior="optional" group="Serie 3" desc="data archive"/>
+  <atv:parameter name="series4series_dataArchive" defaultvalue="" valuetype="string" behavior="optional" group="Serie 4" desc="data archive"/>
+  <atv:parameter name="series5series_dataArchive" defaultvalue="" valuetype="string" behavior="optional" group="Serie 5" desc="data archive"/>
+  <atv:parameter name="series6series_dataArchive" defaultvalue="" valuetype="string" behavior="optional" group="Serie 6" desc="data archive"/>
+  <atv:parameter name="series7series_dataArchive" defaultvalue="" valuetype="string" behavior="optional" group="Serie 7" desc="data archive"/>
+  <atv:parameter name="series8series_dataArchive" defaultvalue="" valuetype="string" behavior="optional" group="Serie 8" desc="data archive"/>
+  <atv:parameter name="series9series_dataArchive" defaultvalue="" valuetype="string" behavior="optional" group="Serie 9" desc="data archive"/>
+  <atv:parameter name="series10series_dataArchive" defaultvalue="" valuetype="string" behavior="optional" group="Serie 10" desc="data archive"/>
+  <atv:parameter name="series1series_lineWidth" defaultvalue="2" valuetype="number" behavior="optional" group="Serie 1" desc="line width"/>
+  <atv:parameter name="series2series_lineWidth" defaultvalue="2" valuetype="number" behavior="optional" group="Serie 2" desc="line width"/>
+  <atv:parameter name="series3series_lineWidth" defaultvalue="2" valuetype="number" behavior="optional" group="Serie 3" desc="line width"/>
+  <atv:parameter name="series4series_lineWidth" defaultvalue="2" valuetype="number" behavior="optional" group="Serie 4" desc="line width"/>
+  <atv:parameter name="series5series_lineWidth" defaultvalue="2" valuetype="number" behavior="optional" group="Serie 5" desc="line width"/>
+  <atv:parameter name="series6series_lineWidth" defaultvalue="2" valuetype="number" behavior="optional" group="Serie 6" desc="line width"/>
+  <atv:parameter name="series7series_lineWidth" defaultvalue="2" valuetype="number" behavior="optional" group="Serie 7" desc="line width"/>
+  <atv:parameter name="series8series_lineWidth" defaultvalue="2" valuetype="number" behavior="optional" group="Serie 8" desc="line width"/>
+  <atv:parameter name="series9series_lineWidth" defaultvalue="2" valuetype="number" behavior="optional" group="Serie 9" desc="line width"/>
+  <atv:parameter name="series10series_lineWidth" defaultvalue="2" valuetype="number" behavior="optional" group="Serie 10" desc="line width"/>
+  <atv:parameter name="series1series_color" defaultvalue="#ccd6eb" valuetype="color" behavior="optional" group="Serie 1" desc="color"/>
+  <atv:parameter name="series2series_color" defaultvalue="#7cb5ec" valuetype="color" behavior="optional" group="Serie 2" desc="color"/>
+  <atv:parameter name="series3series_color" defaultvalue="#434348" valuetype="color" behavior="optional" group="Serie 3" desc="color"/>
+  <atv:parameter name="series4series_color" defaultvalue="#90ed7d" valuetype="color" behavior="optional" group="Serie 4" desc="color"/>
+  <atv:parameter name="series5series_color" defaultvalue="#f7a35c" valuetype="color" behavior="optional" group="Serie 5" desc="color"/>
+  <atv:parameter name="series6series_color" defaultvalue="#8085e9" valuetype="color" behavior="optional" group="Serie 6" desc="color"/>
+  <atv:parameter name="series7series_color" defaultvalue="#f15c80" valuetype="color" behavior="optional" group="Serie 7" desc="color"/>
+  <atv:parameter name="series8series_color" defaultvalue="#e4d354" valuetype="color" behavior="optional" group="Serie 8" desc="color"/>
+  <atv:parameter name="series9series_color" defaultvalue="#2b908f" valuetype="color" behavior="optional" group="Serie 9" desc="color"/>
+  <atv:parameter name="series10series_color" defaultvalue="#90ed7d" valuetype="color" behavior="optional" group="Serie 10" desc="color"/>
+  <atv:parameter config="Solid;ShortDash;ShortDot;ShortDashDot;ShortDashDotDot;Dot;Dash;LongDash;DashDot;LongDashDot;LongDashDotDot" name="series1series_dashStyle" defaultvalue="Solid" valuetype="enum" behavior="optional" group="Serie 1" desc="dash style"/>
+  <atv:parameter config="Solid;ShortDash;ShortDot;ShortDashDot;ShortDashDotDot;Dot;Dash;LongDash;DashDot;LongDashDot;LongDashDotDot" name="series2series_dashStyle" defaultvalue="Solid" valuetype="enum" behavior="optional" group="Serie 2" desc="dash style"/>
+  <atv:parameter config="Solid;ShortDash;ShortDot;ShortDashDot;ShortDashDotDot;Dot;Dash;LongDash;DashDot;LongDashDot;LongDashDotDot" name="series3series_dashStyle" defaultvalue="Solid" valuetype="enum" behavior="optional" group="Serie 3" desc="dash style"/>
+  <atv:parameter config="Solid;ShortDash;ShortDot;ShortDashDot;ShortDashDotDot;Dot;Dash;LongDash;DashDot;LongDashDot;LongDashDotDot" name="series4series_dashStyle" defaultvalue="Solid" valuetype="enum" behavior="optional" group="Serie 4" desc="dash style"/>
+  <atv:parameter config="Solid;ShortDash;ShortDot;ShortDashDot;ShortDashDotDot;Dot;Dash;LongDash;DashDot;LongDashDot;LongDashDotDot" name="series5series_dashStyle" defaultvalue="Solid" valuetype="enum" behavior="optional" group="Serie 5" desc="dash style"/>
+  <atv:parameter config="Solid;ShortDash;ShortDot;ShortDashDot;ShortDashDotDot;Dot;Dash;LongDash;DashDot;LongDashDot;LongDashDotDot" name="series6series_dashStyle" defaultvalue="Solid" valuetype="enum" behavior="optional" group="Serie 6" desc="dash style"/>
+  <atv:parameter config="Solid;ShortDash;ShortDot;ShortDashDot;ShortDashDotDot;Dot;Dash;LongDash;DashDot;LongDashDot;LongDashDotDot" name="series7series_dashStyle" defaultvalue="Solid" valuetype="enum" behavior="optional" group="Serie 7" desc="dash style"/>
+  <atv:parameter config="Solid;ShortDash;ShortDot;ShortDashDot;ShortDashDotDot;Dot;Dash;LongDash;DashDot;LongDashDot;LongDashDotDot" name="series8series_dashStyle" defaultvalue="Solid" valuetype="enum" behavior="optional" group="Serie 8" desc="dash style"/>
+  <atv:parameter config="Solid;ShortDash;ShortDot;ShortDashDot;ShortDashDotDot;Dot;Dash;LongDash;DashDot;LongDashDot;LongDashDotDot" name="series9series_dashStyle" defaultvalue="Solid" valuetype="enum" behavior="optional" group="Serie 9" desc="dash style"/>
+  <atv:parameter config="Solid;ShortDash;ShortDot;ShortDashDot;ShortDashDotDot;Dot;Dash;LongDash;DashDot;LongDashDot;LongDashDotDot" name="series10series_dashStyle" defaultvalue="Solid" valuetype="enum" behavior="optional" group="Serie 10" desc="dash style"/>
+  <atv:parameter name="series1series_marker_enabled" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 1" desc="marker"/>
+  <atv:parameter name="series2series_marker_enabled" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 2" desc="marker"/>
+  <atv:parameter name="series3series_marker_enabled" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 3" desc="marker"/>
+  <atv:parameter name="series4series_marker_enabled" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 4" desc="marker"/>
+  <atv:parameter name="series5series_marker_enabled" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 5" desc="marker"/>
+  <atv:parameter name="series6series_marker_enabled" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 6" desc="marker"/>
+  <atv:parameter name="series7series_marker_enabled" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 7" desc="marker"/>
+  <atv:parameter name="series8series_marker_enabled" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 8" desc="marker"/>
+  <atv:parameter name="series9series_marker_enabled" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 9" desc="marker"/>
+  <atv:parameter name="series10series_marker_enabled" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 10" desc="marker"/>
+  <atv:parameter name="series1series_visible" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 1" desc="visibility"/>
+  <atv:parameter name="series2series_visible" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 2" desc="visibility"/>
+  <atv:parameter name="series3series_visible" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 3" desc="visibility"/>
+  <atv:parameter name="series4series_visible" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 4" desc="visibility"/>
+  <atv:parameter name="series5series_visible" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 5" desc="visibility"/>
+  <atv:parameter name="series6series_visible" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 6" desc="visibility"/>
+  <atv:parameter name="series7series_visible" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 7" desc="visibility"/>
+  <atv:parameter name="series8series_visible" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 8" desc="visibility"/>
+  <atv:parameter name="series9series_visible" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 9" desc="visibility"/>
+  <atv:parameter name="series10series_visible" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 10" desc="visibility"/>
+  <atv:parameter name="series1series_nonStop" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 1" desc="nonstop"/>
+  <atv:parameter name="series2series_nonStop" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 2" desc="nonstop"/>
+  <atv:parameter name="series3series_nonStop" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 3" desc="nonstop"/>
+  <atv:parameter name="series4series_nonStop" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 4" desc="nonstop"/>
+  <atv:parameter name="series5series_nonStop" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 5" desc="nonstop"/>
+  <atv:parameter name="series6series_nonStop" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 6" desc="nonstop"/>
+  <atv:parameter name="series7series_nonStop" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 7" desc="nonstop"/>
+  <atv:parameter name="series8series_nonStop" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 8" desc="nonstop"/>
+  <atv:parameter name="series9series_nonStop" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 9" desc="nonstop"/>
+  <atv:parameter name="series10series_nonStop" defaultvalue="true" valuetype="bool" behavior="optional" group="Serie 10" desc="nonstop"/>
+  <atv:parameter config="AnnotationCount;Average;Count;Delta;DeltaBounds;DurationBad;DurationGood;DurationInStateNonZero;DurationInStateZero;End;EndBound;Interpolative;Maximum;Maximum2;MaximumActualTime;MaximumActualTime2;Minimum;Minimum2;MinimumActualTime;MinimumActualTime2;NumberOfTransitions;PercentBad;PercentGood;Range;Range2;Sampled;StandardDeviationPopulation;StandardDeviationSample;Start;StartBound;TimeAverage;TimeAverage2;Total;Total2;VariancePopulation;VarianceSample;WorstQuality;WorstQuality2" name="series1series_aggregate_aggregate" defaultvalue="" valuetype="enum" behavior="optional" group="Serie 1" desc="aggregate"/>
+  <atv:parameter config="AnnotationCount;Average;Count;Delta;DeltaBounds;DurationBad;DurationGood;DurationInStateNonZero;DurationInStateZero;End;EndBound;Interpolative;Maximum;Maximum2;MaximumActualTime;MaximumActualTime2;Minimum;Minimum2;MinimumActualTime;MinimumActualTime2;NumberOfTransitions;PercentBad;PercentGood;Range;Range2;Sampled;StandardDeviationPopulation;StandardDeviationSample;Start;StartBound;TimeAverage;TimeAverage2;Total;Total2;VariancePopulation;VarianceSample;WorstQuality;WorstQuality2" name="series2series_aggregate_aggregate" defaultvalue="" valuetype="enum" behavior="optional" group="Serie 2" desc="aggregate"/>
+  <atv:parameter config="AnnotationCount;Average;Count;Delta;DeltaBounds;DurationBad;DurationGood;DurationInStateNonZero;DurationInStateZero;End;EndBound;Interpolative;Maximum;Maximum2;MaximumActualTime;MaximumActualTime2;Minimum;Minimum2;MinimumActualTime;MinimumActualTime2;NumberOfTransitions;PercentBad;PercentGood;Range;Range2;Sampled;StandardDeviationPopulation;StandardDeviationSample;Start;StartBound;TimeAverage;TimeAverage2;Total;Total2;VariancePopulation;VarianceSample;WorstQuality;WorstQuality2" name="series3series_aggregate_aggregate" defaultvalue="" valuetype="enum" behavior="optional" group="Serie 3" desc="aggregate"/>
+  <atv:parameter config="AnnotationCount;Average;Count;Delta;DeltaBounds;DurationBad;DurationGood;DurationInStateNonZero;DurationInStateZero;End;EndBound;Interpolative;Maximum;Maximum2;MaximumActualTime;MaximumActualTime2;Minimum;Minimum2;MinimumActualTime;MinimumActualTime2;NumberOfTransitions;PercentBad;PercentGood;Range;Range2;Sampled;StandardDeviationPopulation;StandardDeviationSample;Start;StartBound;TimeAverage;TimeAverage2;Total;Total2;VariancePopulation;VarianceSample;WorstQuality;WorstQuality2" name="series4series_aggregate_aggregate" defaultvalue="" valuetype="enum" behavior="optional" group="Serie 4" desc="aggregate"/>
+  <atv:parameter config="AnnotationCount;Average;Count;Delta;DeltaBounds;DurationBad;DurationGood;DurationInStateNonZero;DurationInStateZero;End;EndBound;Interpolative;Maximum;Maximum2;MaximumActualTime;MaximumActualTime2;Minimum;Minimum2;MinimumActualTime;MinimumActualTime2;NumberOfTransitions;PercentBad;PercentGood;Range;Range2;Sampled;StandardDeviationPopulation;StandardDeviationSample;Start;StartBound;TimeAverage;TimeAverage2;Total;Total2;VariancePopulation;VarianceSample;WorstQuality;WorstQuality2" name="series5series_aggregate_aggregate" defaultvalue="" valuetype="enum" behavior="optional" group="Serie 5" desc="aggregate"/>
+  <atv:parameter config="AnnotationCount;Average;Count;Delta;DeltaBounds;DurationBad;DurationGood;DurationInStateNonZero;DurationInStateZero;End;EndBound;Interpolative;Maximum;Maximum2;MaximumActualTime;MaximumActualTime2;Minimum;Minimum2;MinimumActualTime;MinimumActualTime2;NumberOfTransitions;PercentBad;PercentGood;Range;Range2;Sampled;StandardDeviationPopulation;StandardDeviationSample;Start;StartBound;TimeAverage;TimeAverage2;Total;Total2;VariancePopulation;VarianceSample;WorstQuality;WorstQuality2" name="series6series_aggregate_aggregate" defaultvalue="" valuetype="enum" behavior="optional" group="Serie 6" desc="aggregate"/>
+  <atv:parameter config="AnnotationCount;Average;Count;Delta;DeltaBounds;DurationBad;DurationGood;DurationInStateNonZero;DurationInStateZero;End;EndBound;Interpolative;Maximum;Maximum2;MaximumActualTime;MaximumActualTime2;Minimum;Minimum2;MinimumActualTime;MinimumActualTime2;NumberOfTransitions;PercentBad;PercentGood;Range;Range2;Sampled;StandardDeviationPopulation;StandardDeviationSample;Start;StartBound;TimeAverage;TimeAverage2;Total;Total2;VariancePopulation;VarianceSample;WorstQuality;WorstQuality2" name="series7series_aggregate_aggregate" defaultvalue="" valuetype="enum" behavior="optional" group="Serie 7" desc="aggregate"/>
+  <atv:parameter config="AnnotationCount;Average;Count;Delta;DeltaBounds;DurationBad;DurationGood;DurationInStateNonZero;DurationInStateZero;End;EndBound;Interpolative;Maximum;Maximum2;MaximumActualTime;MaximumActualTime2;Minimum;Minimum2;MinimumActualTime;MinimumActualTime2;NumberOfTransitions;PercentBad;PercentGood;Range;Range2;Sampled;StandardDeviationPopulation;StandardDeviationSample;Start;StartBound;TimeAverage;TimeAverage2;Total;Total2;VariancePopulation;VarianceSample;WorstQuality;WorstQuality2" name="series8series_aggregate_aggregate" defaultvalue="" valuetype="enum" behavior="optional" group="Serie 8" desc="aggregate"/>
+  <atv:parameter config="AnnotationCount;Average;Count;Delta;DeltaBounds;DurationBad;DurationGood;DurationInStateNonZero;DurationInStateZero;End;EndBound;Interpolative;Maximum;Maximum2;MaximumActualTime;MaximumActualTime2;Minimum;Minimum2;MinimumActualTime;MinimumActualTime2;NumberOfTransitions;PercentBad;PercentGood;Range;Range2;Sampled;StandardDeviationPopulation;StandardDeviationSample;Start;StartBound;TimeAverage;TimeAverage2;Total;Total2;VariancePopulation;VarianceSample;WorstQuality;WorstQuality2" name="series9series_aggregate_aggregate" defaultvalue="" valuetype="enum" behavior="optional" group="Serie 9" desc="aggregate"/>
+  <atv:parameter config="AnnotationCount;Average;Count;Delta;DeltaBounds;DurationBad;DurationGood;DurationInStateNonZero;DurationInStateZero;End;EndBound;Interpolative;Maximum;Maximum2;MaximumActualTime;MaximumActualTime2;Minimum;Minimum2;MinimumActualTime;MinimumActualTime2;NumberOfTransitions;PercentBad;PercentGood;Range;Range2;Sampled;StandardDeviationPopulation;StandardDeviationSample;Start;StartBound;TimeAverage;TimeAverage2;Total;Total2;VariancePopulation;VarianceSample;WorstQuality;WorstQuality2" name="series10series_aggregate_aggregate" defaultvalue="" valuetype="enum" behavior="optional" group="Serie 10" desc="aggregate"/>
+  <atv:parameter name="series1series_aggregate_interval" defaultvalue="" valuetype="number" behavior="optional" group="Serie 1" desc="aggregate interval"/>
+  <atv:parameter name="series2series_aggregate_interval" defaultvalue="" valuetype="number" behavior="optional" group="Serie 2" desc="aggregate interval"/>
+  <atv:parameter name="series3series_aggregate_interval" defaultvalue="" valuetype="number" behavior="optional" group="Serie 3" desc="aggregate interval"/>
+  <atv:parameter name="series4series_aggregate_interval" defaultvalue="" valuetype="number" behavior="optional" group="Serie 4" desc="aggregate interval"/>
+  <atv:parameter name="series5series_aggregate_interval" defaultvalue="" valuetype="number" behavior="optional" group="Serie 5" desc="aggregate interval"/>
+  <atv:parameter name="series6series_aggregate_interval" defaultvalue="" valuetype="number" behavior="optional" group="Serie 6" desc="aggregate interval"/>
+  <atv:parameter name="series7series_aggregate_interval" defaultvalue="" valuetype="number" behavior="optional" group="Serie 7" desc="aggregate interval"/>
+  <atv:parameter name="series8series_aggregate_interval" defaultvalue="" valuetype="number" behavior="optional" group="Serie 8" desc="aggregate interval"/>
+  <atv:parameter name="series9series_aggregate_interval" defaultvalue="" valuetype="number" behavior="optional" group="Serie 9" desc="aggregate interval"/>
+  <atv:parameter name="series10series_aggregate_interval" defaultvalue="" valuetype="number" behavior="optional" group="Serie 10" desc="aggregate interval"/>
+  <atv:parameter config="s;m;h;d;M" name="series1series_aggregate_unit" defaultvalue="" valuetype="enum" behavior="optional" group="Serie 1" desc="aggregate unit"/>
+  <atv:parameter config="s;m;h;d;M" name="series2series_aggregate_unit" defaultvalue="" valuetype="enum" behavior="optional" group="Serie 2" desc="aggregate unit"/>
+  <atv:parameter config="s;m;h;d;M" name="series3series_aggregate_unit" defaultvalue="" valuetype="enum" behavior="optional" group="Serie 3" desc="aggregate unit"/>
+  <atv:parameter config="s;m;h;d;M" name="series4series_aggregate_unit" defaultvalue="" valuetype="enum" behavior="optional" group="Serie 4" desc="aggregate unit"/>
+  <atv:parameter config="s;m;h;d;M" name="series5series_aggregate_unit" defaultvalue="" valuetype="enum" behavior="optional" group="Serie 5" desc="aggregate unit"/>
+  <atv:parameter config="s;m;h;d;M" name="series6series_aggregate_unit" defaultvalue="" valuetype="enum" behavior="optional" group="Serie 6" desc="aggregate unit"/>
+  <atv:parameter config="s;m;h;d;M" name="series7series_aggregate_unit" defaultvalue="" valuetype="enum" behavior="optional" group="Serie 7" desc="aggregate unit"/>
+  <atv:parameter config="s;m;h;d;M" name="series8series_aggregate_unit" defaultvalue="" valuetype="enum" behavior="optional" group="Serie 8" desc="aggregate unit"/>
+  <atv:parameter config="s;m;h;d;M" name="series9series_aggregate_unit" defaultvalue="" valuetype="enum" behavior="optional" group="Serie 9" desc="aggregate unit"/>
+  <atv:parameter config="s;m;h;d;M" name="series10series_aggregate_unit" defaultvalue="" valuetype="enum" behavior="optional" group="Serie 10" desc="aggregate unit"/>
+  <atv:parameter name="series1series_xAxis" valuetype="string" behavior="optional" group="Serie 1" desc="x-axis"/>
+  <atv:parameter name="series2series_xAxis" valuetype="string" behavior="optional" group="Serie 2" desc="x-axis"/>
+  <atv:parameter name="series3series_xAxis" valuetype="string" behavior="optional" group="Serie 3" desc="x-axis"/>
+  <atv:parameter name="series4series_xAxis" valuetype="string" behavior="optional" group="Serie 4" desc="x-axis"/>
+  <atv:parameter name="series5series_xAxis" valuetype="string" behavior="optional" group="Serie 5" desc="x-axis"/>
+  <atv:parameter name="series6series_xAxis" valuetype="string" behavior="optional" group="Serie 6" desc="x-axis"/>
+  <atv:parameter name="series7series_xAxis" valuetype="string" behavior="optional" group="Serie 7" desc="x-axis"/>
+  <atv:parameter name="series8series_xAxis" valuetype="string" behavior="optional" group="Serie 8" desc="x-axis"/>
+  <atv:parameter name="series9series_xAxis" valuetype="string" behavior="optional" group="Serie 9" desc="x-axis"/>
+  <atv:parameter name="series10series_xAxis" valuetype="string" behavior="optional" group="Serie 10" desc="x-axis"/>
+  <atv:parameter name="series1series_yAxis" valuetype="string" behavior="optional" group="Serie 1" desc="y-axis"/>
+  <atv:parameter name="series2series_yAxis" valuetype="string" behavior="optional" group="Serie 2" desc="y-axis"/>
+  <atv:parameter name="series3series_yAxis" valuetype="string" behavior="optional" group="Serie 3" desc="y-axis"/>
+  <atv:parameter name="series4series_yAxis" valuetype="string" behavior="optional" group="Serie 4" desc="y-axis"/>
+  <atv:parameter name="series5series_yAxis" valuetype="string" behavior="optional" group="Serie 5" desc="y-axis"/>
+  <atv:parameter name="series6series_yAxis" valuetype="string" behavior="optional" group="Serie 6" desc="y-axis"/>
+  <atv:parameter name="series7series_yAxis" valuetype="string" behavior="optional" group="Serie 7" desc="y-axis"/>
+  <atv:parameter name="series8series_yAxis" valuetype="string" behavior="optional" group="Serie 8" desc="y-axis"/>
+  <atv:parameter name="series9series_yAxis" valuetype="string" behavior="optional" group="Serie 9" desc="y-axis"/>
+  <atv:parameter name="series10series_yAxis" valuetype="string" behavior="optional" group="Serie 10" desc="y-axis"/>
+  <atv:parameter name="gatviseOptions_configFile" defaultvalue="" valuetype="string" behavior="optional" desc="configuration filename"/>
+  <atv:parameter config="Multiple nodes;Single node;File system" name="gatviseOptions_saveMethod" defaultvalue="Multiple nodes" valuetype="enum" behavior="optional" desc="saving method"/>
+  <atv:parameter name="gatviseOptions_saveCompressed" defaultvalue="true" valuetype="bool" behavior="optional" desc="compression"/>
+  <atv:gridconfig width="20" gridstyle="lines" enabled="true" height="20"/>
+  <atv:snapconfig width="10" enabled="true" height="10"/>
+ </metadata>
+ <foreignObject x="0" atv:bindbr="1,1" width="400" height="400" atv:bindtl="0,0" y="0" id="id_3">
+  <div xmlns="http://www.w3.org/1999/xhtml" style="width:100%;height:100%">
+   <div style="width:100%; height:100%;" id="highcharts_container"/>
+  </div>
+ </foreignObject>
+ <rect x="1" stroke="#000000" atv:bindbr="1,1" width="398" fill="#ffffff" atv:refpx="200" height="398" atv:bindtl="0,0" y="1" atv:refpy="200" stroke-width="1" id="border"/>
+ <text x="29.5" atv:bindbr="0.5,0.5" font-family="Arial" fill="#000000" atv:refpx="200" font-size="72" atv:bindtl="0.5,0.5" y="211" atv:refpy="186.5" id="label">Highcharts</text>
+ <script type="text/ecmascript"><![CDATA[webMI.libraryLoader.load(["other/lz-string.min.js"], [], function (e) {
+
+    webMI.gfx.setVisible("label", false);
+    webMI.gfx.setVisible("border", false);
+    var queryParams = webMI.query;
+	var skipModules = webMI.query["skipDefaultModules"] == "true" ? true : false;
+	var additionalModules = webMI.query["additionalModules"].split(",");
+
+	//Map input of saving method to parameter names
+    if (queryParams["gatviseOptions_saveMethod"] == "Multiple nodes") queryParams["gatviseOptions_saveMethod"] = "multiple";
+    else if (queryParams["gatviseOptions_saveMethod"] == "File system") queryParams["gatviseOptions_saveMethod"] = "filesystem";
+    else queryParams["gatviseOptions_saveMethod"] = "single";
+    var initialLoadingConfig = {
+        "saveName": webMI.query["gatviseOptions_saveMethod"] == "filesystem" ? webMI.query["gatviseOptions_configFile"] : webMI.query["gatviseOptions_configNode"],
+        "saveMethod": webMI.query["gatviseOptions_saveMethod"],
+        "saveCompressed": webMI.query["gatviseOptions_saveCompressed"],
+    }
+
+    var chartDiv = document.getElementById("highcharts_container");
+    var trend;
+
+    var serverTimeOffset = 0;
+
+    var generalProperties = [
+        {name: "title_text"},
+        {name: "chart_animation", type: "boolean"},
+        {name: "atviseOptions_configNode"},
+        {name: "atviseOptions_configFile"},
+        {name: "atviseOptions_configName"},
+        {name: "atviseOptions_saveMethod"},
+        {name: "atviseOptions_saveCompressed", type: "boolean"},
+        {name: "atviseOptions_mode"},
+        {name: "atviseOptions_source"},
+        {name: "atviseOptions_enableCursor1", type: "boolean"},
+        {name: "atviseOptions_enableCursor2", type: "boolean"},
+        {name: "atviseOptions_disableDownSampling", type: "boolean"}
+    ];
+    var yAxisProperties = [
+        {name: "yAxis_id"},
+        {name: "yAxis_title_text"},
+        {name: "yAxis_visible", type: "boolean"},
+        {name: "yAxis_min"},
+        {name: "yAxis_max"},
+        {name: "yAxis_lineWidth"},
+        {name: "yAxis_lineColor"},
+        {name: "yAxis_labels_enabled", type: "boolean"},
+        {name: "yAxis_labels_align"},
+        {name: "yAxis_labels_format"},
+        {name: "yAxis_crosshair", type: "switch"},
+        {name: "yAxis_crosshair_snap", type: "boolean"},
+        {name: "yAxis_crosshair_width"},
+        {name: "yAxis_crosshair_color"},
+        {name: "yAxis_crosshair_dashStyle"},
+        {name: "yAxis_gridLineWidth"},
+        {name: "yAxis_gridLineColor"},
+        {name: "yAxis_tickInterval"},
+        {name: "yAxis_minorGridLineWidth"},
+        {name: "yAxis_minorGridLineColor"},
+        {name: "yAxis_minorTickInterval"},
+        {name: "yAxis_opposite", type: "boolean"}
+    ];
+    var seriesProperties = [
+        {name: "series_address"},
+        {name: "series_name"},
+        {name: "series_dataArchive"},
+        {name: "series_dataArchive2"},
+        {name: "series_type"},
+        {name: "series_step", type: "boolean"},
+        {name: "series_lineWidth"},
+        {name: "series_color"},
+        {name: "series_dashStyle"},
+        {name: "series_visible", type: "boolean"},
+        {name: "series_yAxis"},
+        {name: "series_marker_enabled", type: "boolean"},
+        {name: "series_nonStop", type: "boolean"},
+        {name: "series_aggregate_aggregate"},
+        {name: "series_aggregate_interval"},
+        {name: "series_aggregate_unit"}
+    ];
+
+    var xAxisProperties = [
+        {name: "xAxis_title_text"},
+        {name: "xAxis_timeSpan"},
+        {name: "xAxis_timeSpanUnit"},
+        {name: "xAxis_tickInterval"},
+        {name: "xAxis_lineWidth"},
+        {name: "xAxis_lineColor"},
+        {name: "xAxis_labels_enabled", type: "boolean"},
+        {name: "xAxis_labels_align"},
+        {name: "xAxis_crosshair", type: "switch"},
+        {name: "xAxis_crosshair_snap", type: "boolean"},
+        {name: "xAxis_crosshair_width"},
+        {name: "xAxis_crosshair_color"},
+        {name: "xAxis_crosshair_dashStyle"},
+        {name: "xAxis_type"},
+        {name: "xAxis_dateTimeLabelFormats_format"},
+        {name: "xAxis_gridLineWidth"},
+        {name: "xAxis_gridLineColor"},
+        {name: "xAxis_minorGridLineWidth"},
+        {name: "xAxis_minorGridLineColor"},
+        {name: "xAxis_minorTickInterval"},
+        {name: "xAxis_opposite", type: "boolean"}
+    ];
+
+	// Is a series configured and a y-axis attached?
+    var activeYAxis = [];
+    for (s = 1; s <= 10; s++) {
+        if (queryParams["series" + s + "series_address"] && queryParams["series" + s + "series_yAxis"]) {
+            var yAxisId = queryParams["series" + s + "series_yAxis"];
+            var allAxisIds = [queryParams["yAxis1yAxis_id"], queryParams["yAxis2yAxis_id"], queryParams["yAxis3yAxis_id"], queryParams["yAxis4yAxis_id"]];
+            if (allAxisIds.indexOf(yAxisId) != -1 && yAxisId != "" && yAxisId != undefined) {
+                activeYAxis.push(allAxisIds.indexOf(yAxisId));
+            } else if (yAxisId >= 0 && yAxisId <= 3) {
+                activeYAxis.push(parseInt(yAxisId));
+            } else {
+                console.warn("Invalid yAxis id (" + yAxisId + ")");
+            }
+        }
+    }
+
+    var timeRangeUnits = [
+        {text: "second(s)", value: "1"},
+        {text: "minute(s)", value: "60"},
+        {text: "hour(s)", value: "3600"},
+        {text: "day(s)", value: "86400"},
+        {text: "week(s)", value: "604800"},
+        {text: "month(s)", value: "2592000"},
+    ];
+
+    /* Convert unit text to unit value */
+    var type = 0;
+    while (webMI.query["xAxisxAxis_timeSpanUnit"] != timeRangeUnits[type].text)
+        type++;
+    webMI.query["xAxisxAxis_timeSpanUnit"] = timeRangeUnits[type].value;
+
+    var Configvar_Without_ID_Allowed_On_Parameter = [];
+    activeYAxis.forEach(function (item) {
+        Configvar_Without_ID_Allowed_On_Parameter["yAxis" + (item + 1) + "yAxis_id"] = "yAxis" + (item + 1) + "yAxis_crosshair";
+    });
+
+    /* Translate AxisOpposite left = false, others = true */
+    /* and return highchart compatible boolan (=string)   */
+    var nAxisTranslate = [
+        {name: "xAxisxAxis_opposite"},
+        {name: "yAxis1yAxis_opposite"},
+        {name: "yAxis2yAxis_opposite"},
+        {name: "yAxis3yAxis_opposite"},
+        {name: "yAxis4yAxis_opposite"}
+    ];
+    for (nAxis in nAxisTranslate) {
+        webMI.query[nAxisTranslate[nAxis].name] = isAxisOpposite(webMI.query[nAxisTranslate[nAxis].name]);
+
+        function isAxisOpposite(axis) {
+            if (axis == "right" || axis == "top") {
+                return "true";
+            }
+            return "false";
+        }
+    }
+
+    /** check export rights **/
+    var right = (webMI.query["export_right"] == undefined) ? "" : webMI.query["export_right"];
+    if (right.search(/SYSTEM\.SECURITY\.RIGHTS\./) != -1) {
+        right = right.substring(23, right.length); //remove "prefix" SYSTEM.SECURITY.RIGHTS.
+    }
+
+    var hasRight = false;
+    if (right != "") {
+        webMI.addEvent(webMI.data, "clientvariableschange", function (e) {
+            hasRight = false;
+            if (("username" in e) && (e.username != "")) {
+                hasRight = webMI.hasRight(right);
+            }
+
+            if (typeof trend != "undefined") {
+                if (trendInstance.chart.userOptions.exporting.enabled == true) {
+                    trendInstance.chart.update({"exporting": {"enabled": true}});
+                } else {
+                    trendInstance.chart.update({"exporting": {"enabled": false}});
+                }
+            }
+        });
+    }
+
+    webMI.addEvent(webMI.data, "servertimeoffsetchanged", function (offset) {
+        serverTimeOffset = offset;
+    });
+
+    webMI.addOnload(function () {
+        webMI.data.loadScript("highcharts/helpers/confighandler.js", function () {
+            var configurator = new webMI.rootWindow.ConfigHandler();
+            //no highcharts setting found for: configurationId, enableCursor1, enableCursor2, showTooltip, showExportMenu, useLocalTime, disableDownSampling
+            var trendConfig = createConfig(configurator, "g", generalProperties, 1);
+
+            //no highcharts setting found for position
+            var yAxisConfig = createConfig(configurator, "yAxis", yAxisProperties, 4, "id");
+            if (yAxisConfig.yAxis && yAxisConfig.yAxis.length > 0) {
+                Object.assign(trendConfig, yAxisConfig);
+            }
+
+            prepareSeries(10);
+            var seriesConfig = createConfig(configurator, "series", seriesProperties, 10, "address");
+            if (seriesConfig.series && seriesConfig.series.length > 0) {
+                Object.assign(trendConfig, seriesConfig);
+            }
+
+            //no highcharts setting found for: xaxisPosition
+            var xAxisConfig = createConfig(configurator, "xAxis", xAxisProperties, 1);
+            Object.assign(trendConfig, xAxisConfig);
+
+            if (initialLoadingConfig.saveName == "" || trendConfig.atviseOptions.configName == "") {
+                createTrend(trendConfig);
+            } else {
+                configurator.loadConfig(initialLoadingConfig.saveName, initialLoadingConfig.saveMethod, trendConfig.atviseOptions.configName, function (chartConfig) {
+                    chartConfig = typeof chartConfig == 'undefined' ? {} : chartConfig;
+                    for (var item in trendConfig) {
+                        if (!(item in chartConfig)) {
+                            chartConfig[item] = trendConfig[item];
+                        }
+                    }
+
+                    // use builder settings for configNode and configName
+                    chartConfig.atviseOptions.configNode = trendConfig.atviseOptions.configNode;
+                    // chartConfig.atviseOptions.configName = trendConfig.atviseOptions.configName; [Issue-ID: 10259]
+
+                    //check marker for wrong initialization (old cfg / wrong setup)
+                    for (seriesNumber in chartConfig.series) {
+                        if (typeof chartConfig.series[seriesNumber].marker.enabled === 'undefined' || chartConfig.series[seriesNumber].marker.enabled === null) {
+                            chartConfig.series[seriesNumber].marker.enabled = false;
+                        }
+                    }
+
+                    createTrend(chartConfig);
+                });
+            }
+        });
+    });
+
+    function combineTimeSpanWithUnit(options) {
+        if (typeof options.trendConfig.xAxis[0] != "undefined") {
+            /* case of old config - ignore timeSpanUnit */
+            var timeRange = options.trendConfig.xAxis[0].timeSpan;
+        } else {
+            var timeRange = webMI.query["xAxisxAxis_timeSpan"] * webMI.query["xAxisxAxis_timeSpanUnit"];
+        }
+
+        if (typeof options.trendConfig.xAxis[0] != "undefined" && typeof options.trendConfig.xAxis[0].timeSpanUnit != "undefined") {
+            timeRange = options.trendConfig.xAxis[0].timeSpan * options.trendConfig.xAxis[0].timeSpanUnit;
+        }
+        return timeRange;
+    }
+
+    function createTrend(trendConfig) {
+        var options = {
+            trendName: webMI.query.trendName,
+            trendGroup: webMI.query.trendGroup,
+            trendConfig: trendConfig
+        };
+
+		options["skipDefaultModules"] = skipModules;
+		if (additionalModules != "")
+			options["additionalModules"] = additionalModules;
+
+        if (trendConfig.atviseOptions.mode == "history") {
+            var to = (new Date()).valueOf() + serverTimeOffset;
+            var from = to - combineTimeSpanWithUnit(options) * 1000;
+
+            trendConfig.xAxis.min = from;
+            trendConfig.xAxis.max = to;
+        }
+
+        webMI.trendFactory.createTrend(chartDiv, options,
+            function (trendInstance) {
+                trend = trendInstance;
+
+                if (trendConfig.atviseOptions.mode !== 'history') {
+                    trendInstance.control.startLiveMode();
+                } else {
+                    trendInstance.control.loadHistory();
+                }
+
+                var oldIsLegendEnabled = false;
+                if (trendInstance.chart.legend != undefined && trendInstance.chart.legend.options != undefined && trendInstance.chart.legend.options.enabled == true) oldIsLegendEnabled = true;
+
+                trendInstance.chart.update({
+                    "exporting": {
+                        "enabled": true,
+                        "menuItemDefinitions": {
+                            "printChart": {
+                                "onclick": function () {
+                                    trendInstance.chart.update({"legend": {"enabled": true}});
+                                    trendInstance.control.setExportOptions(trendInstance.chart.options);
+                                    this.print();
+                                    trendInstance.control.unsetExportOptions(trendInstance.chart.options);
+                                    trendInstance.chart.update({"legend": {"enabled": oldIsLegendEnabled}});
+                                }
+                            }
+                        }
+                    }
+                });
+                trendInstance.chart.update({
+                    "exporting": {
+                        "enabled": true,
+                        "menuItemDefinitions": {
+                            "downloadPNG": {
+                                "onclick": function () {
+                                    trendInstance.chart.update({"legend": {"enabled": true}});
+                                    trendInstance.control.setExportOptions(trendInstance.chart.options);
+                                    this.exportChartLocal();
+                                    trendInstance.control.unsetExportOptions(trendInstance.chart.options);
+                                    trendInstance.chart.update({"legend": {"enabled": oldIsLegendEnabled}});
+                                }
+                            }
+                        }
+                    }
+                });
+                trendInstance.chart.update({
+                    "exporting": {
+                        "enabled": true,
+                        "menuItemDefinitions": {
+                            "downloadJPEG": {
+                                "onclick": function () {
+                                    trendInstance.chart.update({"legend": {"enabled": true}});
+                                    trendInstance.control.setExportOptions(trendInstance.chart.options);
+                                    this.exportChartLocal({type: "image/jpeg"});
+                                    trendInstance.control.unsetExportOptions(trendInstance.chart.options);
+                                    trendInstance.chart.update({"legend": {"enabled": oldIsLegendEnabled}});
+                                }
+                            }
+                        }
+                    }
+                });
+                trendInstance.chart.update({
+                    "exporting": {
+                        "enabled": true,
+                        "menuItemDefinitions": {
+                            "downloadPDF": {
+                                "onclick": function () {
+                                    trendInstance.chart.update({"legend": {"enabled": true}});
+                                    trendInstance.control.setExportOptions(trendInstance.chart.options);
+                                    this.exportChartLocal({type: "application/pdf"});
+                                    trendInstance.control.unsetExportOptions(trendInstance.chart.options);
+                                    trendInstance.chart.update({"legend": {"enabled": oldIsLegendEnabled}});
+                                }
+                            }
+                        }
+                    }
+                });
+                trendInstance.chart.update({
+                    "exporting": {
+                        "enabled": true,
+                        "menuItemDefinitions": {
+                            "downloadSVG": {
+                                "onclick": function () {
+                                    trendInstance.chart.update({"legend": {"enabled": true}});
+                                    trendInstance.control.setExportOptions(trendInstance.chart.options);
+                                    this.exportChartLocal({type: "image/svg+xml"});
+                                    trendInstance.control.unsetExportOptions(trendInstance.chart.options);
+                                    trendInstance.chart.update({"legend": {"enabled": oldIsLegendEnabled}});
+                                }
+                            }
+                        }
+                    }
+                });
+
+				if (!trendInstance.chart.options.exporting.buttons.contextButton.menuItems.includes("downloadXLSX")) trendInstance.chart.options.exporting.buttons.contextButton.menuItems.push("downloadXLSX");
+
+                /** check rights on export **/
+                function check_builderExportMenu(permission) {
+                    if (permission && webMI.query['gshowExportMenu'] == "true") {
+                        trendInstance.chart.update({"exporting": {"enabled": true}});
+                    } else {
+                        trendInstance.chart.update({"exporting": {"enabled": false}});
+                    }
+                }
+
+                function check_configExportMenu(permission) {
+                    if (permission && trendInstance.chart.userOptions.exporting.enabled == true) {
+                        trendInstance.chart.update({"exporting": {"enabled": true}});
+                    } else {
+                        trendInstance.chart.update({"exporting": {"enabled": false}});
+                    }
+                }
+
+                if (typeof trendInstance.chart.userOptions.exporting != "undefined") {
+                    check_configExportMenu(right != "" ? hasRight : true);
+                } else {
+                    check_builderExportMenu(right != "" ? hasRight : true);
+                }
+
+                if (trend.chart.options.exporting) {
+                    var items = trend.chart.options.exporting.buttons.contextButton.menuItems;
+                    var index = items.indexOf("viewData");
+                    if (index > -1)
+                        items.splice(index, 1);
+					index = items.indexOf("openInCloud");
+                    if (index > -1)
+                        items.splice(index, 1);
+					index = items.indexOf("viewFullscreen");
+                    if (index > -1)
+                        items.splice(index, 1);
+                }
+            }
+        );
+    }
+
+    function createConfig(configurator, type, properties, nrObjects, identifier) {
+        var confObj = {};
+
+        if (!identifier)
+            nrObjects = 1;
+
+        var keysToIgnore = getKeysToIgnore(type, properties, nrObjects);
+
+        for (var i = 1; i <= nrObjects; i++) {
+
+            var CrossQuery = false;
+            if (typeof Configvar_Without_ID_Allowed_On_Parameter[type + i + type + "_" + identifier] !== "undefined") {
+                CrossQuery = queryParams[Configvar_Without_ID_Allowed_On_Parameter[type + i + type + "_" + identifier]];
+            }
+
+            if (!identifier || queryParams[type + i + type + "_" + identifier] || CrossQuery !== false) {
+                var arrayIdx;
+                if (identifier) {
+                    arrayIdx = i - 1;
+                }
+
+                for (var j = 0; j < properties.length; ++j) {
+                    var key = properties[j].name;
+                    var prefix = nrObjects > 1 ? type + i : type;
+                    var keyOK = isKeyOK(prefix + key, keysToIgnore);
+
+                    if (keyOK) {
+                        var val = nrObjects > 1 ? queryParams[type + i + properties[j].name] : queryParams[type + properties[j].name];
+                        if (properties[j].type && (properties[j].type == "boolean" || properties[j].type == "switch")) {
+                            val = val.toLowerCase() == "true";
+                        } else {
+                            if (val != "" && !isNaN(val)) {
+                                val = parseInt(val);
+                            }
+                        }
+
+
+                        if (keysToIgnore.indexOf(key) == -1) {
+                            var confSubObj = configurator.createConfigObject(key, val);
+                            configurator.merger(confObj, confSubObj, arrayIdx);
+                        }
+                    }
+                }
+            }
+        }
+
+        return confObj;
+    }
+
+    function getKeysToIgnore(type, properties, nrObjects) {
+        var keysToIgnore = [];
+        for (var i = 0; i < properties.length; ++i) {
+            if (properties[i].type == "switch") {
+                for (var j = 1; j <= nrObjects; ++j) {
+                    var queryParamKey = nrObjects > 1 ? type + j + properties[i].name : type + properties[i].name;
+                    var queryParamValue = queryParams[queryParamKey];
+                    queryParamValue = queryParamValue.toLowerCase() == "true";
+                    if (!queryParamValue) {
+                        keysToIgnore.push(queryParamKey);
+                    }
+                }
+            }
+        }
+        return keysToIgnore;
+    }
+
+    function isKeyOK(key, keysToIgnore) {
+        for (var i = 0; i < keysToIgnore.length; ++i) {
+            var ignoreKey = keysToIgnore[i];
+            if (key != ignoreKey && key.indexOf(ignoreKey) == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    function prepareSeries(nrObjects) {
+        for (var i = 1; i <= nrObjects; i++) {
+            var interpolation = queryParams["series" + i + "series_interpolation"].toLowerCase();
+            queryParams["series" + i + "series_type"] = interpolation;
+            queryParams["series" + i + "series_step"] = "false";
+
+            if (interpolation == "step") {
+                queryParams["series" + i + "series_type"] = "line";
+                queryParams["series" + i + "series_step"] = "true";
+            }
+        }
+    }
+
+});]]></script>
+</svg>

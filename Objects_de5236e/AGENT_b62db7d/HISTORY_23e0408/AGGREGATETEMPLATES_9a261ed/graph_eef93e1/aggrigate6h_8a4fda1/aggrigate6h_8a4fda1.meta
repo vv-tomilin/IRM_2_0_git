@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.HISTORY.AGGREGATETEMPLATES.graph.aggrigate6h
+NodeClass: Object
+BrowseName: 1:aggrigate6h
+DisplayName: en|aggrigate6h
+Description: en|aggrigate6h
+EventNotifier: 0
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.AggregateFunction
+Reference: forward HasComponent i=2342
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Aggregates

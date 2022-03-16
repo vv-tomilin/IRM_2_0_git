@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.PumpBlock1.Discrete.DInput
+NodeClass: Variable
+BrowseName: 1:DInput
+DisplayName: en|DInput
+Description: en|DInput
+DataType: Byte
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

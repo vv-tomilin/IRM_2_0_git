@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nodeTdsTorqueStr" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.TDS.TDSTorque"/>
+  <code><![CDATA[var retObj = call("Auto.MinQuad", {nodeStr: nodeTdsTorqueStr, countsec: 10});//
+if(Math.abs(retObj.angle) > 30)
+	return true;
+else
+	return false;]]></code>
+</script>

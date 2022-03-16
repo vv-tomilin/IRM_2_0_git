@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+	<metadata>
+		<priority>0</priority>
+	</metadata>
+	<code><![CDATA[/**
+ * Code for the highcharts opt xaxis object display
+ * ----------------------------------------
+ * This script supports the display to show and edit x-axis options for the chart.
+ */
+
+
+/**
+ * DECLARATION SECTION
+ */
+var activeAxis = 0;
+var chart = webMI.trendFactory.getTrendByName(webMI.query.chartname);
+var chartname = webMI.query.chartname;
+var configHandler = new webMI.rootWindow.ConfigHandler;
+var errors = [];
+errors[1] = "More then " + numAxis + " x-axis are not supported.";
+errors[2] = "More then " + numAxis + " x-axis are found in configuration.";
+var inputDefaults = {
+	"xAxis_title_text": "T{X-Axis}",
+	"xAxis_min": 0,
+	"xAxis_max": 0,
+	"xAxis_timeSpan": 60,
+	"xAxis_timeSpanUnit": "1",
+	"xAxis_tickInterval": 10000,
+	"xAxis_minorTickInterval": 10000,
+	"xAxis_crosshair_width": 0,
+	"xAxis_crosshair_snap": true,
+	"xAxis_opposite-true": "T{top}",
+	"xAxis_opposite-false": "T{bottom}",
+	"xAxis_labels_align-left": "T{left}",
+	"xAxis_labels_align-right": "T{right}",
+	"xAxis_labels_align-center": "T{center}",
+	"xAxis_labels_format": "{value:%H:%M:%S}",
+	"xAxis_lineColor": "#000000",
+	"xAxis_crosshair_color": "#ff0000",
+	"xAxis_gridLineColor": "#888888",
+	"xAxis_minorGridLineColor": "#eeeeee",
+	"xAxis_gridLineWidth": 1,
+	"xAxis_minorGridLineWidth": 1,
+	"xAxis_crosshair_dashStyle-Dash": "T{dashed}",
+	"xAxis_crosshair_dashStyle-Dot": "T{dotted}",
+	"xAxis_crosshair_dashStyle-Solid": "T{solid}"
+};
+var numAxis = 6;
+var options = chart.chart.options;
+var timeSpanUnits = [
+	{text: "T{second(s)}", value: "1"},
+	{text: "T{minute(s)}", value: "60"},
+	{text: "T{hour(s)}", value: "3600"},
+	{text: "T{day(s)}", value: "86400"},
+	{text: "T{week(s)}", value: "604800"},
+	{text: "T{month(s)}", value: "2592000"},
+];
+var triggerEnabled = true;
+var updateEnabled = true;
+var xAxis = [];
+
+
+/**
+ * UI SETUP SECTION
+ * Since only one time axis is currently supported, the creation and deletion of additional axes is deactivated.
+ */
+webMI.trigger.fire("com.atvise.setActive", false, "btn_add");
+webMI.trigger.fire("com.atvise.setActive", false, "btn_delete");
+webMI.trigger.fire("setItems", timeSpanUnits, "xAxis_timeSpanUnit");
+
+
+/**
+ * RUNTIME SECTION
+ * Runtime code has to be executed after onload to take care all other resources are ready
+ * Triggers for every input element
+ */
+webMI.addOnload(function () {
+	for (var key in inputDefaults)
+		webMI.trigger.connect("valuechanged", function (e) {
+			processInput(e.context, e.value, activeAxis)
+		}, key);
+
+	for (var i = 0; i < numAxis; i++)
+		webMI.trigger.connect("valuechanged", function (e) {
+			activeAxis = e.value;
+			readOptions();
+		}, "axisSelector" + i);
+
+	readOptions();
+
+	var updateCb = chart.control.registerOnUpdatedCallback(function () {
+		if (!updateEnabled)
+			return;
+
+		readOptions();
+	});
+	webMI.addOnunload(function () {
+		if (chart && chart.control) chart.control.unregisterOnUpdatedCallback(updateCb);
+	});
+});
+
+
+/**
+ * FUNCTION SECTION
+ */
+
+/**
+ * Axis functions
+ * @param options
+ */
+function addAxis(options) {
+	if (xAxis.length > numAxis) {
+		console.warn(errors[1]);
+		return;
+	}
+
+	if (typeof options == "undefined")
+		options = {};
+
+	chart.chart.addAxis(options, true);
+
+	updateEnabled = false;
+	chart.control.updated(function () {
+		updateEnabled = true;
+	});
+
+	activeAxis = xAxis.length;
+	webMI.trigger.fire("radioClicked_g0", {
+		name: webMI.gfx.getText("axisSelector" + activeAxis + "_radiobutton_label"),
+		value: activeAxis
+	});
+}
+
+function removeAxis() {
+	if (xAxis.length == 1)
+		return;
+
+	if (options.xAxis[activeAxis]) {
+		var index = options.xAxis[activeAxis].index;
+		chart.chart.xAxis[index].remove();
+
+		updateEnabled = false;
+		chart.control.updated(function () {
+			updateEnabled = true;
+		});
+	}
+
+	--activeAxis;
+	webMI.trigger.fire("radioClicked_g0", {
+		name: webMI.gfx.getText("axisSelector" + activeAxis + "_radiobutton_label"),
+		value: activeAxis
+	});
+}
+
+function axisManager(xAxis) {
+	for (var i = 0; i < xAxis.length; i++) {
+		if (i < numAxis) {
+			var name = (xAxis[i] != "") ? xAxis[i] : "T{X-Axis}";
+			webMI.gfx.setText("axisSelector" + i + "_radiobutton_label", name + " [" + i + "]");
+		} else {
+			console.warn(errors[2]);
+		}
+	}
+}
+
+/**
+ * Read options
+ */
+function readOptions() {
+	triggerEnabled = false;
+
+	var mappedOptions = configHandler.mapToAtviseId(options);
+	xAxis = [];
+
+	/* Search configured x-axis */
+	var i = 0;
+	while (typeof options.xAxis[i] != "undefined") {
+		if (options.xAxis[i]["title"] && options.xAxis[i]["title"]["text"])
+			xAxis.push(options.xAxis[i]["title"]["text"]);
+		else
+			xAxis.push("");
+		i++;
+	}
+
+	var extremes = chart.chart.xAxis[activeAxis].getExtremes();
+
+	/* Set values for current active axis */
+	for (var key in inputDefaults) {
+		var value = inputDefaults[key];
+
+		/* build radio button group key */
+		var isRadio = false;
+		var keyValue = key.split("-");
+		if (keyValue.length == 2) {
+			isRadio = true;
+			key = keyValue[0];
+			keyValue = keyValue[1];
+		}
+
+		var optionsKey = "xAxis" + activeAxis + "_" + key;
+
+		if (isRadio) {
+			if (typeof mappedOptions[optionsKey] != "undefined")
+				value = inputDefaults[key + "-" + mappedOptions[optionsKey]];
+			else
+				setOptions(key, keyValue, activeAxis);
+			webMI.trigger.fire("radioClicked_" + key, {name: value});
+			continue;
+		}
+
+		if (key == "xAxis_dateTimeLabelFormats")
+			mappedOptions[optionsKey] = JSON.stringify(options.xAxis[activeAxis]["dateTimeLabelFormats"]);
+
+		if (typeof mappedOptions[optionsKey] != "undefined")
+			value = mappedOptions[optionsKey];
+		else if (key != "xAxis_min" && key != "xAxis_max")
+			setOptions(key, value, activeAxis);
+
+		if (key == "xAxis_min")
+			webMI.trigger.fire("com.atvise.datepicker_" + key, extremes.min);
+		else if (key == "xAxis_max")
+			webMI.trigger.fire("com.atvise.datepicker_" + key, extremes.max);
+		else if (key == "xAxis_crosshair_width" || key == "xAxis_crosshair_snap")
+			webMI.trigger.fire("setChecked", value, key);
+		else if (key.search(/color/ig) > -1)
+			webMI.trigger.fire("valuechanged_" + key, {hex: value})
+		else if (key == "xAxis_timeSpanUnit") {
+			/* new highchart init with empty value */
+			if (typeof value == "undefined" || value == "")
+				value = 1;
+			var type = 0;
+			while (value != timeSpanUnits[type].value)
+				type++;
+			webMI.trigger.fire("setSelectedItem", timeSpanUnits[type].text, key)
+		}
+		else
+			webMI.trigger.fire("setValue", value, key);
+	}
+
+	axisManager(xAxis);
+	triggerEnabled = true;
+}
+
+/**
+ * Write options
+ * @param key
+ * @param value
+ * @param identifier
+ */
+function setOptions(key, value, identifier) {
+	if (value == "true") value = true;
+	else if (value == "false") value = false;
+
+	if (key == "xAxis_dateTimeLabelFormats") {
+		try {
+			value = JSON.parse(value);
+		} catch (ex) {
+			console.warn("date / time format error: " + ex)
+		}
+		;
+	}
+
+	if (options.xAxis[identifier]) {
+		var optionsObj = configHandler.createConfigObject(key.slice(6, key.length), value);
+		var index = options.xAxis[identifier].index;
+		chart.chart.xAxis[index].update(optionsObj);
+
+		var extremes = chart.chart.xAxis[activeAxis].getExtremes();
+		if (key == "xAxis_min")
+			chart.chart.xAxis[activeAxis].setExtremes(value, extremes.max);
+		else if (key == "xAxis_max") {
+			chart.chart.xAxis[activeAxis].setExtremes(extremes.min, value);
+		} else if (key == "xAxis_timeSpan" || key == "xAxis_timeSpanUnit") {
+			if (chart.chart["_downsamplingEnabled"]) {
+				chart.control.stopLiveMode(function () {
+					updateTimeSpan();
+					chart.control.startLiveMode();
+				});
+			} else {
+				updateTimeSpan();
+			}
+
+			function updateTimeSpan() {
+				var min = extremes.max - options.xAxis[activeAxis].timeSpan * options.xAxis[activeAxis].timeSpanUnit * 1000;
+				chart.chart.xAxis[activeAxis].setExtremes(min, extremes.max);
+				optionsObj = configHandler.createConfigObject("min", min);
+				chart.chart.xAxis[index].update(optionsObj);
+			}
+		}
+		updateEnabled = false;
+		if (key != "xAxis_min" && key != "xAxis_max") {
+			chart.control.updated(function () {
+				updateEnabled = true;
+			});
+		}
+	}
+}
+
+function processInput(key, value, identifier) {
+	if (typeof key == "undefined" || typeof value == "undefined")
+		return;
+
+	if (key == "xAxis_timeSpan") {
+	} else if (key == "xAxis_min") {
+	} else if (key == "xAxis_max") {
+	} else if (key == "xAxis_title_text") {
+		webMI.gfx.setText("axisSelector" + activeAxis + "_radiobutton_label", value + " [" + identifier + "]");
+	} else if (key == "xAxis_crosshair_width") {
+		if (value == "true") {
+			webMI.gfx.setVisible("label_snapping", true);
+			webMI.gfx.setVisible("xAxis_crosshair_snap", true);
+		} else {
+			webMI.gfx.setVisible("label_snapping", false);
+			webMI.gfx.setVisible("xAxis_crosshair_snap", false);
+		}
+	}
+
+	if (!triggerEnabled)
+		return;
+
+	setOptions(key, value, identifier);
+}
+
+
+/**
+ * TRIGGER SECTION
+ */
+
+/* Triggers to add and remove x-axis */
+webMI.trigger.connect("clicked", function (e) {
+	addAxis()
+}, "btn_add");
+
+webMI.trigger.connect("clicked", function (e) {
+	removeAxis()
+}, "btn_delete");
+
+]]></code>
+</script>

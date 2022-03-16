@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Canvasius.CanvImage
+NodeClass: Variable
+BrowseName: 1:CanvImage
+DisplayName: en|CanvImage
+Description: en|CanvImage
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

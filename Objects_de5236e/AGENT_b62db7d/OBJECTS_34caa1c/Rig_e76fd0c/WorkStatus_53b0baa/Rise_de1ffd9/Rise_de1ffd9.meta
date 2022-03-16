@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Rig.WorkStatus.Rise
+NodeClass: Variable
+BrowseName: 1:Rise
+DisplayName: en|Rise
+Description: en|Rise
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition PropertyType

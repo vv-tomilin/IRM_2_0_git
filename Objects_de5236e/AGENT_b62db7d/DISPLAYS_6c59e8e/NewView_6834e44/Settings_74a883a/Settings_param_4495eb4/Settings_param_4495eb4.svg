@@ -1,0 +1,390 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="1740" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg" version="1.2" height="1016" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:gridconfig width="20" gridstyle="lines" enabled="true" height="20"/>
+  <atv:snapconfig width="10" enabled="true" height="10"/>
+ </metadata>
+ <g id="id_0" atv:insensitive="true" atv:refpx="0" atv:refpy="0">
+  <rect width="1740.00" id="id_8" fill="#000406" atv:refpx="870" height="1016.00" y="0" atv:refpy="508" x="0"/>
+ </g>
+ <rect width="1740" id="id_4" stroke-width="4" stroke="#09222e" fill="none" atv:refpx="870" height="1016" y="0" atv:refpy="508" x="0"/>
+ <text font-family="Arial" id="id_1" transform="matrix(1.6106,0,0,1.3893,-25.4486,-47.6684)" fill="#cfcfcf" atv:refpx="123.014" font-size="16" y="141.94" atv:refpy="143.285" x="46.176">Месторождение</text>
+ <text font-family="Arial" id="id_2" transform="matrix(1.6106,0,0,1.3893,-25.4486,-66.5994)" fill="#cfcfcf" atv:refpx="67.054" font-size="16" y="190.566" atv:refpy="191.912" x="45.676">Куст</text>
+ <text font-family="Arial" id="id_3" transform="matrix(1.6106,0,0,1.3893,-25.4486,-85.5303)" fill="#cfcfcf" atv:refpx="93.733" font-size="16" y="239.191" atv:refpy="240.54" x="46.176">Скважина</text>
+ <text font-family="Arial" id="id_7" transform="matrix(1.6106,0,0,1.3893,-25.4486,-28.7375)" fill="#cfcfcf" atv:refpx="86.575" font-size="16" y="93.315" atv:refpy="94.657" x="46.176">Бригада</text>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_13" transform="matrix(1.6106,0,0,1.3893,0,0)" atv:refpx="379.913" height="30" y="88.131" atv:refpy="143.285" x="155.876">
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="AGENT.OBJECTS.Rig.General.FieldName" name="base"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:overwrite id="input_label" transform="matrix(0.6209,0,0,0.7198,0,0)" y="25.09" x="249.201"/>
+  <atv:overwrite width="250.701" id="blinking_frame" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="249.701" id="input_bg" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="252.201" id="id_2" transform="matrix(0.6209,0,0,0.7198,0,0)" height="36.18"/>
+  <atv:overwrite width="257.201" id="id_0" transform="matrix(0.6209,0,0,0.7198,0,0)" height="41.18"/>
+ </svg>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_14" transform="matrix(1.6106,0,0,1.3893,0,0)" atv:refpx="379.913" height="30" y="123.131" atv:refpy="191.912" x="155.876">
+  <atv:argument value="AGENT.OBJECTS.Rig.General.BushName" name="base"/>
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:overwrite id="input_label" transform="matrix(0.6209,0,0,0.7198,0,0)" y="25.09" x="249.201"/>
+  <atv:overwrite width="250.701" id="blinking_frame" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="249.701" id="input_bg" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="252.201" id="id_2" transform="matrix(0.6209,0,0,0.7198,0,0)" height="36.18"/>
+  <atv:overwrite width="257.201" id="id_0" transform="matrix(0.6209,0,0,0.7198,0,0)" height="41.18"/>
+ </svg>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_15" transform="matrix(1.6106,0,0,1.3893,0,0)" atv:refpx="379.913" height="30" y="158.131" atv:refpy="240.54" x="155.876">
+  <atv:argument value="AGENT.OBJECTS.Rig.General.WellName" name="base"/>
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:overwrite id="input_label" transform="matrix(0.6209,0,0,0.7198,0,0)" y="25.09" x="249.201"/>
+  <atv:overwrite width="250.701" id="blinking_frame" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="249.701" id="input_bg" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="252.201" id="id_2" transform="matrix(0.6209,0,0,0.7198,0,0)" height="36.18"/>
+  <atv:overwrite width="257.201" id="id_0" transform="matrix(0.6209,0,0,0.7198,0,0)" height="41.18"/>
+ </svg>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_16" transform="matrix(1.6106,0,0,1.3893,0,0)" atv:refpx="379.913" height="30" y="53.131" atv:refpy="94.657" x="155.876">
+  <atv:argument value="AGENT.OBJECTS.Rig.Brigade.BrigadeName" name="base"/>
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:overwrite id="input_label" transform="matrix(0.6209,0,0,0.7198,0,0)" y="25.09" x="249.201"/>
+  <atv:overwrite width="250.701" id="blinking_frame" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="249.701" id="input_bg" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="252.201" id="id_2" transform="matrix(0.6209,0,0,0.7198,0,0)" height="36.18"/>
+  <atv:overwrite width="257.201" id="id_0" transform="matrix(0.6209,0,0,0.7198,0,0)" height="41.18"/>
+ </svg>
+ <text font-family="Arial" id="id_17" transform="matrix(1.6106,0,0,1.3893,-25.4486,-9.8066)" fill="#cfcfcf" atv:refpx="87.876" font-size="16" y="44.689" atv:refpy="46.03" x="46.176">Буровая</text>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_18" transform="matrix(1.6106,0,0,1.3893,0,0)" atv:refpx="379.913" height="30" y="18.131" atv:refpy="46.03" x="155.876">
+  <atv:argument value="AGENT.OBJECTS.Rig.General.RigName" name="base"/>
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:overwrite id="input_label" transform="matrix(0.6209,0,0,0.7198,0,0)" y="25.09" x="249.201"/>
+  <atv:overwrite width="250.701" id="blinking_frame" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="249.701" id="input_bg" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="252.201" id="id_2" transform="matrix(0.6209,0,0,0.7198,0,0)" height="36.18"/>
+  <atv:overwrite width="257.201" id="id_0" transform="matrix(0.6209,0,0,0.7198,0,0)" height="41.18"/>
+ </svg>
+ <text font-family="Arial" id="id_19" transform="matrix(1.6106,0,0,1.3893,-632.0006,-85.6504)" fill="#cfcfcf" atv:refpx="1109.831" font-size="16" y="239.5" atv:refpy="240.851" x="1039.5">Высота вышки</text>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_20" transform="matrix(1.6106,0,0,1.3893,0,0)" atv:refpx="1373.237" height="30" y="158.354" atv:refpy="240.851" x="772.606">
+  <atv:argument value="AGENT.OBJECTS.Rig.Equipment.RigHeight" name="base"/>
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:overwrite id="input_label" transform="matrix(0.6209,0,0,0.7198,0,0)" y="25.09" x="249.201"/>
+  <atv:overwrite width="250.701" id="blinking_frame" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="249.701" id="input_bg" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="252.201" id="id_2" transform="matrix(0.6209,0,0,0.7198,0,0)" height="36.18"/>
+  <atv:overwrite width="257.201" id="id_0" transform="matrix(0.6209,0,0,0.7198,0,0)" height="41.18"/>
+ </svg>
+ <text font-family="Arial" id="id_21" transform="matrix(1.6106,0,0,1.3893,-632.0006,-46.7736)" fill="#cfcfcf" atv:refpx="1098.77" font-size="16" y="139.642" atv:refpy="140.994" x="1039">Балкон верх</text>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_22" transform="matrix(1.6106,0,0,1.3893,0,0)" atv:refpx="1373.237" height="30" y="86.479" atv:refpy="140.994" x="772.606">
+  <atv:argument value="AGENT.OBJECTS.Rig.Equipment.GalleryTop" name="base"/>
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:overwrite id="input_label" transform="matrix(0.6209,0,0,0.7198,0,0)" y="25.09" x="249.201"/>
+  <atv:overwrite width="250.701" id="blinking_frame" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="249.701" id="input_bg" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="252.201" id="id_2" transform="matrix(0.6209,0,0,0.7198,0,0)" height="36.18"/>
+  <atv:overwrite width="257.201" id="id_0" transform="matrix(0.6209,0,0,0.7198,0,0)" height="41.18"/>
+ </svg>
+ <text font-family="Arial" id="id_23" transform="matrix(1.6106,0,0,1.3893,-632.0006,-65.7046)" fill="#cfcfcf" atv:refpx="1091.612" font-size="16" y="188.268" atv:refpy="189.622" x="1039.5">Балкон низ</text>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_24" transform="matrix(1.6106,0,0,1.3893,0,0)" atv:refpx="1373.237" height="30" y="121.479" atv:refpy="189.622" x="772.606">
+  <atv:argument value="AGENT.OBJECTS.Rig.Equipment.GalleryBottom" name="base"/>
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:overwrite id="input_label" transform="matrix(0.6209,0,0,0.7198,0,0)" y="25.09" x="249.201"/>
+  <atv:overwrite width="250.701" id="blinking_frame" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="249.701" id="input_bg" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="252.201" id="id_2" transform="matrix(0.6209,0,0,0.7198,0,0)" height="36.18"/>
+  <atv:overwrite width="257.201" id="id_0" transform="matrix(0.6209,0,0,0.7198,0,0)" height="41.18"/>
+ </svg>
+ <text font-family="Arial" id="id_25" transform="matrix(1.6106,0,0,1.3893,-632.0006,-9.733)" fill="#cfcfcf" atv:refpx="1075.995" font-size="16" y="44.5" atv:refpy="45.859" x="1039.5">Широта</text>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_26" transform="matrix(1.6106,0,0,1.3893,0,0)" atv:refpx="1373.237" height="30" y="18" atv:refpy="45.859" x="772.606">
+  <atv:argument value="AGENT.OBJECTS.Rig.General.Coordinates.Latitude" name="base"/>
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:overwrite id="input_label" transform="matrix(0.6209,0,0,0.7198,0,0)" y="25.09" x="249.201"/>
+  <atv:overwrite width="250.701" id="blinking_frame" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="249.701" id="input_bg" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="252.201" id="id_2" transform="matrix(0.6209,0,0,0.7198,0,0)" height="36.18"/>
+  <atv:overwrite width="257.201" id="id_0" transform="matrix(0.6209,0,0,0.7198,0,0)" height="41.18"/>
+ </svg>
+ <text font-family="Arial" id="id_27" transform="matrix(1.6106,0,0,1.3893,-632.0006,-28.6639)" fill="#cfcfcf" atv:refpx="1078.598" font-size="16" y="93.126" atv:refpy="94.485" x="1039.5">Долгота</text>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_28" transform="matrix(1.6106,0,0,1.3893,0,0)" atv:refpx="1373.237" height="30" y="53" atv:refpy="94.485" x="772.606">
+  <atv:argument value="AGENT.OBJECTS.Rig.General.Coordinates.Longitude" name="base"/>
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:overwrite id="input_label" transform="matrix(0.6209,0,0,0.7198,0,0)" y="25.09" x="249.201"/>
+  <atv:overwrite width="250.701" id="blinking_frame" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="249.701" id="input_bg" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="252.201" id="id_2" transform="matrix(0.6209,0,0,0.7198,0,0)" height="36.18"/>
+  <atv:overwrite width="257.201" id="id_0" transform="matrix(0.6209,0,0,0.7198,0,0)" height="41.18"/>
+ </svg>
+ <text font-family="Arial" id="id_30" transform="matrix(1.6106,0,0,1.3893,-325.4099,-28.7375)" fill="#cfcfcf" atv:refpx="589.537" font-size="16" y="93.315" atv:refpy="94.657" x="536.91">Подрядчик</text>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_31" transform="matrix(1.6106,0,0,1.3893,0,0)" atv:refpx="871.163" height="30" y="53.131" atv:refpy="94.657" x="460.876">
+  <atv:argument value="AGENT.OBJECTS.Rig.General.Contract.OrgContractor" name="base"/>
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:overwrite id="input_label" transform="matrix(0.6209,0,0,0.7198,0,0)" y="25.09" x="249.201"/>
+  <atv:overwrite width="250.701" id="blinking_frame" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="249.701" id="input_bg" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="252.201" id="id_2" transform="matrix(0.6209,0,0,0.7198,0,0)" height="36.18"/>
+  <atv:overwrite width="257.201" id="id_0" transform="matrix(0.6209,0,0,0.7198,0,0)" height="41.18"/>
+ </svg>
+ <text font-family="Arial" id="id_32" transform="matrix(1.6106,0,0,1.3893,-325.4099,-9.8066)" fill="#cfcfcf" atv:refpx="579.777" font-size="16" y="44.689" atv:refpy="46.03" x="536.91">Заказчик</text>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_33" transform="matrix(1.6106,0,0,1.3893,0,0)" atv:refpx="871.163" height="30" y="18.131" atv:refpy="46.03" x="460.876">
+  <atv:argument value="AGENT.OBJECTS.Rig.General.Contract.OrgCustomer" name="base"/>
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:overwrite id="input_label" transform="matrix(0.6209,0,0,0.7198,0,0)" y="25.09" x="249.201"/>
+  <atv:overwrite width="250.701" id="blinking_frame" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="249.701" id="input_bg" transform="matrix(0.6209,0,0,0.7198,0,0)" height="34.18"/>
+  <atv:overwrite width="252.201" id="id_2" transform="matrix(0.6209,0,0,0.7198,0,0)" height="36.18"/>
+  <atv:overwrite width="257.201" id="id_0" transform="matrix(0.6209,0,0,0.7198,0,0)" height="41.18"/>
+ </svg>
+ <text font-family="Arial" id="id_5" transform="matrix(1.6106,0,0,1.3893,-18.318,-159.0777)" fill="#cfcfcf" atv:refpx="54.076" font-size="16" y="428.125" atv:refpy="429.469" x="34">Max</text>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_6" transform="matrix(0.6,0,0,1.3893,0,0)" atv:refpx="142.004" height="30" y="295.113" atv:refpy="430.843" x="156.667">
+  <atv:argument value="AGENT.OBJECTS.SimulatedDataMax.DrillSpeed" name="base"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:argument value="1" name="postDecimal"/>
+  <atv:overwrite id="input_label" transform="matrix(1.6667,0,0,0.7198,0,0)" y="25.089" x="87.5"/>
+  <atv:overwrite width="89" id="blinking_frame" transform="matrix(1.6667,0,0,0.7198,0,0)" height="34.179"/>
+  <atv:overwrite width="88" id="input_bg" transform="matrix(1.6667,0,0,0.7198,0,0)" height="34.179"/>
+  <atv:overwrite width="90.5" id="id_2" transform="matrix(1.6667,0,0,0.7198,0,0)" height="36.179"/>
+  <atv:overwrite width="95.5" id="id_0" transform="matrix(1.6667,0,0,0.7198,0,0)" height="41.179"/>
+ </svg>
+ <text font-family="Arial" id="id_9" transform="matrix(1.6106,0,0,1.3893,-18.318,-140.148)" fill="#cfcfcf" atv:refpx="51.473" font-size="16" y="379.5" atv:refpy="380.841" x="34.5">Min</text>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_10" transform="matrix(0.5938,0,0,1.3893,0,0)" atv:refpx="142.504" height="30" y="259.123" atv:refpy="380.841" x="160">
+  <atv:argument value="AGENT.OBJECTS.SimulatedDataMin.DrillSpeed" name="base"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:argument value="1" name="postDecimal"/>
+  <atv:overwrite id="input_label" transform="matrix(1.6842,0,0,0.7198,0,0)" y="25.089" x="86.5"/>
+  <atv:overwrite width="88" id="blinking_frame" transform="matrix(1.6842,0,0,0.7198,0,0)" height="34.179"/>
+  <atv:overwrite width="87" id="input_bg" transform="matrix(1.6842,0,0,0.7198,0,0)" height="34.179"/>
+  <atv:overwrite width="89.5" id="id_2" transform="matrix(1.6842,0,0,0.7198,0,0)" height="36.179"/>
+  <atv:overwrite width="94.5" id="id_0" transform="matrix(1.6842,0,0,0.7198,0,0)" height="41.179"/>
+ </svg>
+ <text font-family="Arial" id="id_11" fill="#cfcfcf" atv:refpx="113.609" font-size="22" y="344.5" atv:refpy="338.5" x="65">Проходка м/ч</text>
+ <text font-family="Arial" id="id_12" transform="matrix(1.6106,0,0,1.3893,-201.498,-159.0777)" fill="#cfcfcf" atv:refpx="354.076" font-size="16" y="428.125" atv:refpy="429.469" x="334">Max</text>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_29" transform="matrix(0.6,0,0,1.3893,0,0)" atv:refpx="388.004" height="30" y="295.113" atv:refpy="430.843" x="666.667">
+  <atv:argument value="AGENT.OBJECTS.SimulatedDataMax.WeightOnBit" name="base"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:argument value="1" name="postDecimal"/>
+  <atv:overwrite id="input_label" transform="matrix(1.6667,0,0,0.7198,0,0)" y="25.09" x="87.5"/>
+  <atv:overwrite width="89" id="blinking_frame" transform="matrix(1.6667,0,0,0.7198,0,0)" height="34.179"/>
+  <atv:overwrite width="88" id="input_bg" transform="matrix(1.6667,0,0,0.7198,0,0)" height="34.179"/>
+  <atv:overwrite width="90.5" id="id_2" transform="matrix(1.6667,0,0,0.7198,0,0)" height="36.179"/>
+  <atv:overwrite width="95.5" id="id_0" transform="matrix(1.6667,0,0,0.7198,0,0)" height="41.179"/>
+ </svg>
+ <text font-family="Arial" id="id_34" transform="matrix(1.6106,0,0,1.3893,-201.498,-140.148)" fill="#cfcfcf" atv:refpx="351.473" font-size="16" y="379.5" atv:refpy="380.841" x="334.5">Min</text>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_35" transform="matrix(0.5938,0,0,1.3893,0,0)" atv:refpx="357.498" height="30" y="259.123" atv:refpy="380.841" x="673.627">
+  <atv:argument value="AGENT.OBJECTS.SimulatedDataMin.WeightOnBit" name="base"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:argument value="1" name="postDecimal"/>
+  <atv:overwrite id="input_label" transform="matrix(1.6841,0,0,0.7198,0,0)" y="25.09" x="86.508"/>
+  <atv:overwrite width="88.008" id="blinking_frame" transform="matrix(1.6841,0,0,0.7198,0,0)" height="34.179"/>
+  <atv:overwrite width="87.008" id="input_bg" transform="matrix(1.6841,0,0,0.7198,0,0)" height="34.179"/>
+  <atv:overwrite width="89.508" id="id_2" transform="matrix(1.6841,0,0,0.7198,0,0)" height="36.179"/>
+  <atv:overwrite width="94.508" id="id_0" transform="matrix(1.6841,0,0,0.7198,0,0)" height="41.179"/>
+ </svg>
+ <text font-family="Arial" id="id_36" fill="#cfcfcf" atv:refpx="407.253" font-size="22" y="344.5" atv:refpy="338.5" x="324.5">Нагрузка на долото тс</text>
+ <text font-family="Arial" id="id_37" transform="matrix(1.6106,0,0,1.3893,-409.102,-159.0777)" fill="#cfcfcf" atv:refpx="694.076" font-size="16" y="428.125" atv:refpy="429.469" x="674">Max</text>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_38" transform="matrix(0.6,0,0,1.3893,0,0)" atv:refpx="642.004" height="30" y="295.113" atv:refpy="430.843" x="1223.333">
+  <atv:argument value="AGENT.OBJECTS.SimulatedDataMax.DiffPressure" name="base"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:argument value="1" name="postDecimal"/>
+  <atv:overwrite id="input_label" transform="matrix(1.6667,0,0,0.7198,0,0)" y="25.09" x="87.5"/>
+  <atv:overwrite width="89" id="blinking_frame" transform="matrix(1.6667,0,0,0.7198,0,0)" height="34.179"/>
+  <atv:overwrite width="88" id="input_bg" transform="matrix(1.6667,0,0,0.7198,0,0)" height="34.179"/>
+  <atv:overwrite width="90.5" id="id_2" transform="matrix(1.6667,0,0,0.7198,0,0)" height="36.179"/>
+  <atv:overwrite width="95.5" id="id_0" transform="matrix(1.6667,0,0,0.7198,0,0)" height="41.179"/>
+ </svg>
+ <text font-family="Arial" id="id_39" transform="matrix(1.6106,0,0,1.3893,-409.102,-140.148)" fill="#cfcfcf" atv:refpx="691.473" font-size="16" y="379.5" atv:refpy="380.841" x="674.5">Min</text>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_40" transform="matrix(0.5938,0,0,1.3893,0,0)" atv:refpx="582.504" height="30" y="259.123" atv:refpy="380.841" x="1237.802">
+  <atv:argument value="AGENT.OBJECTS.SimulatedDataMin.DiffPressure" name="base"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:argument value="1" name="postDecimal"/>
+  <atv:overwrite id="input_label" transform="matrix(1.6841,0,0,0.7198,0,0)" y="25.09" x="86.508"/>
+  <atv:overwrite width="88.008" id="blinking_frame" transform="matrix(1.6841,0,0,0.7198,0,0)" height="34.179"/>
+  <atv:overwrite width="87.008" id="input_bg" transform="matrix(1.6841,0,0,0.7198,0,0)" height="34.179"/>
+  <atv:overwrite width="89.508" id="id_2" transform="matrix(1.6841,0,0,0.7198,0,0)" height="36.179"/>
+  <atv:overwrite width="94.508" id="id_0" transform="matrix(1.6841,0,0,0.7198,0,0)" height="41.179"/>
+ </svg>
+ <text font-family="Arial" id="id_41" fill="#cfcfcf" atv:refpx="753.908" font-size="22" y="344.5" atv:refpy="338.5" x="664.5">Перепад давления МПа</text>
+ <text font-family="Arial" id="id_47" transform="matrix(1.6106,0,0,1.3893,-616.706,-159.0777)" fill="#cfcfcf" atv:refpx="1034.076" font-size="16" y="428.125" atv:refpy="429.469" x="1014">Max</text>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_48" transform="matrix(0.6,0,0,1.3893,0,0)" atv:refpx="1092.004" height="30" y="295.113" atv:refpy="430.843" x="1790">
+  <atv:argument value="AGENT.OBJECTS.SimulatedDataMax.TDSTorque" name="base"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:argument value="1" name="postDecimal"/>
+  <atv:overwrite id="input_label" transform="matrix(1.6667,0,0,0.7198,0,0)" y="25.09" x="87.5"/>
+  <atv:overwrite width="89" id="blinking_frame" transform="matrix(1.6667,0,0,0.7198,0,0)" height="34.179"/>
+  <atv:overwrite width="88" id="input_bg" transform="matrix(1.6667,0,0,0.7198,0,0)" height="34.179"/>
+  <atv:overwrite width="90.5" id="id_2" transform="matrix(1.6667,0,0,0.7198,0,0)" height="36.179"/>
+  <atv:overwrite width="95.5" id="id_0" transform="matrix(1.6667,0,0,0.7198,0,0)" height="41.179"/>
+ </svg>
+ <text font-family="Arial" id="id_49" transform="matrix(1.6106,0,0,1.3893,-616.706,-140.148)" fill="#cfcfcf" atv:refpx="1031.473" font-size="16" y="379.5" atv:refpy="380.841" x="1014.5">Min</text>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_50" transform="matrix(0.5938,0,0,1.3893,0,0)" atv:refpx="1092.504" height="30" y="259.123" atv:refpy="380.841" x="1810.385">
+  <atv:argument value="AGENT.OBJECTS.SimulatedDataMin.TDSTorque" name="base"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:argument value="1" name="postDecimal"/>
+  <atv:overwrite id="input_label" transform="matrix(1.6841,0,0,0.7198,0,0)" y="25.09" x="86.508"/>
+  <atv:overwrite width="88.008" id="blinking_frame" transform="matrix(1.6841,0,0,0.7198,0,0)" height="34.179"/>
+  <atv:overwrite width="87.008" id="input_bg" transform="matrix(1.6841,0,0,0.7198,0,0)" height="34.179"/>
+  <atv:overwrite width="89.508" id="id_2" transform="matrix(1.6841,0,0,0.7198,0,0)" height="36.179"/>
+  <atv:overwrite width="94.508" id="id_0" transform="matrix(1.6841,0,0,0.7198,0,0)" height="41.179"/>
+ </svg>
+ <text font-family="Arial" id="id_51" fill="#cfcfcf" atv:refpx="1072.13" font-size="22" y="344.5" atv:refpy="338.5" x="1025">Момент СВП</text>
+ <text font-family="Arial" id="id_52" transform="matrix(1.6106,0,0,1.3893,-805.992,-159.0777)" fill="#cfcfcf" atv:refpx="1344.076" font-size="16" y="428.125" atv:refpy="429.469" x="1324">Max</text>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_53" transform="matrix(0.6,0,0,1.3893,0,0)" atv:refpx="1302.004" height="30" y="295.113" atv:refpy="430.843" x="2306.666">
+  <atv:argument value="AGENT.OBJECTS.SimulatedDataMax.TDSSpeed" name="base"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:argument value="1" name="postDecimal"/>
+  <atv:overwrite id="input_label" transform="matrix(1.6667,0,0,0.7198,0,0)" y="25.09" x="87.5"/>
+  <atv:overwrite width="89" id="blinking_frame" transform="matrix(1.6667,0,0,0.7198,0,0)" height="34.179"/>
+  <atv:overwrite width="88" id="input_bg" transform="matrix(1.6667,0,0,0.7198,0,0)" height="34.179"/>
+  <atv:overwrite width="90.5" id="id_2" transform="matrix(1.6667,0,0,0.7198,0,0)" height="36.179"/>
+  <atv:overwrite width="95.5" id="id_0" transform="matrix(1.6667,0,0,0.7198,0,0)" height="41.179"/>
+ </svg>
+ <text font-family="Arial" id="id_54" transform="matrix(1.6106,0,0,1.3893,-805.992,-140.148)" fill="#cfcfcf" atv:refpx="1341.473" font-size="16" y="379.5" atv:refpy="380.841" x="1324.5">Min</text>
+ <svg width="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" id="id_55" transform="matrix(0.5938,0,0,1.3893,0,0)" atv:refpx="1302.504" height="30" y="259.123" atv:refpy="380.841" x="2332.446">
+  <atv:argument value="AGENT.OBJECTS.SimulatedDataMin.TDSSpeed" name="base"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:argument value="1" name="postDecimal"/>
+  <atv:overwrite id="input_label" transform="matrix(1.6841,0,0,0.7198,0,0)" y="25.09" x="86.508"/>
+  <atv:overwrite width="88.008" id="blinking_frame" transform="matrix(1.6841,0,0,0.7198,0,0)" height="34.179"/>
+  <atv:overwrite width="87.008" id="input_bg" transform="matrix(1.6841,0,0,0.7198,0,0)" height="34.179"/>
+  <atv:overwrite width="89.508" id="id_2" transform="matrix(1.6841,0,0,0.7198,0,0)" height="36.179"/>
+  <atv:overwrite width="94.508" id="id_0" transform="matrix(1.6841,0,0,0.7198,0,0)" height="41.179"/>
+ </svg>
+ <text font-family="Arial" id="id_56" fill="#cfcfcf" atv:refpx="1405.405" font-size="22" y="344.5" atv:refpy="338.5" x="1324.5">Обороты СВП об/мин</text>
+ <svg width="40" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.rocker_switch_small" id="id_43" transform="matrix(0,1,-1,0,0,0)" atv:refpx="230" height="80" y="-270" atv:refpy="380" x="360">
+  <atv:argument value="AGENT.OBJECTS.SimulatedDataMin.DrillSpeed" name="base"/>
+  <atv:argument value="0" name="min"/>
+  <atv:argument value="5" name="max"/>
+ </svg>
+ <svg width="40" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.rocker_switch_small" id="id_44" transform="matrix(0,1,-1,0,0,0)" atv:refpx="230" height="80" y="-270" atv:refpy="430" x="410">
+  <atv:argument value="AGENT.OBJECTS.SimulatedDataMax.DrillSpeed" name="base"/>
+  <atv:argument value="6" name="min"/>
+  <atv:argument value="10" name="max"/>
+ </svg>
+ <svg width="40" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.rocker_switch_small" id="id_45" transform="matrix(0,1,-1,0,0,0)" atv:refpx="530" height="80" y="-570" atv:refpy="380" x="360">
+  <atv:argument value="AGENT.OBJECTS.SimulatedDataMin.WeightOnBit" name="base"/>
+  <atv:argument value="0" name="min"/>
+  <atv:argument value="5" name="max"/>
+ </svg>
+ <svg width="40" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.rocker_switch_small" id="id_46" transform="matrix(0,1,-1,0,0,0)" atv:refpx="530" height="80" y="-570" atv:refpy="430" x="410">
+  <atv:argument value="AGENT.OBJECTS.SimulatedDataMax.WeightOnBit" name="base"/>
+  <atv:argument value="6" name="min"/>
+  <atv:argument value="10" name="max"/>
+ </svg>
+ <svg width="40" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.rocker_switch_small" id="id_57" transform="matrix(0,1,-1,0,0,0)" atv:refpx="870" height="80" y="-910" atv:refpy="380" x="360">
+  <atv:argument value="AGENT.OBJECTS.SimulatedDataMin.DiffPressure" name="base"/>
+  <atv:argument value="0" name="min"/>
+  <atv:argument value="5" name="max"/>
+ </svg>
+ <svg width="40" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.rocker_switch_small" id="id_58" transform="matrix(0,1,-1,0,0,0)" atv:refpx="870" height="80" y="-910" atv:refpy="430" x="410">
+  <atv:argument value="AGENT.OBJECTS.SimulatedDataMax.DiffPressure" name="base"/>
+  <atv:argument value="6" name="min"/>
+  <atv:argument value="10" name="max"/>
+ </svg>
+ <svg width="40" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.rocker_switch_small" id="id_59" transform="matrix(0,1,-1,0,0,0)" atv:refpx="1210" height="80" y="-1250" atv:refpy="380" x="360">
+  <atv:argument value="AGENT.OBJECTS.SimulatedDataMin.TDSTorque" name="base"/>
+  <atv:argument value="0" name="min"/>
+  <atv:argument value="5" name="max"/>
+ </svg>
+ <svg width="40" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.rocker_switch_small" id="id_60" transform="matrix(0,1,-1,0,0,0)" atv:refpx="1210" height="80" y="-1250" atv:refpy="430" x="410">
+  <atv:argument value="AGENT.OBJECTS.SimulatedDataMax.TDSTorque" name="base"/>
+  <atv:argument value="6" name="min"/>
+  <atv:argument value="10" name="max"/>
+ </svg>
+ <svg width="40" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.rocker_switch_small" id="id_61" transform="matrix(0,1,-1,0,0,0)" atv:refpx="1520" height="80" y="-1560" atv:refpy="380" x="360">
+  <atv:argument value="AGENT.OBJECTS.SimulatedDataMin.TDSSpeed" name="base"/>
+  <atv:argument value="0" name="min"/>
+  <atv:argument value="5" name="max"/>
+ </svg>
+ <svg width="40" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.rocker_switch_small" id="id_62" transform="matrix(0,1,-1,0,0,0)" atv:refpx="1520" height="80" y="-1560" atv:refpy="430" x="410">
+  <atv:argument value="AGENT.OBJECTS.SimulatedDataMax.TDSSpeed" name="base"/>
+  <atv:argument value="6" name="min"/>
+  <atv:argument value="10" name="max"/>
+ </svg>
+ <svg width="80" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.button" id="id_42" transform="matrix(4,0,0,1.6667,0,0)" atv:refpx="199.999" height="30" y="305.994" atv:refpy="534.99" x="10">
+  <atv:argument value="T{Загрузить план бурения}" name="label"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:overwrite width="312" id="button_stroke" transform="matrix(0.25,0,0,0.6,0,0)" height="42.001"/>
+  <atv:overwrite id="button_label" transform="matrix(0.25,0,0,0.6,0,0)" y="29.501" x="160"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.25,0,0,0.6,0,0)" y="15.001" x="150"/>
+  <atv:overwrite width="312" id="button_bg" transform="matrix(0.25,0,0,0.6,0,0)" height="42.001"/>
+  <atv:overwrite width="314.5" id="id_2" transform="matrix(0.25,0,0,0.6,0,0)" height="44.501"/>
+  <atv:overwrite width="319.5" id="id_0" transform="matrix(0.25,0,0,0.6,0,0)" height="49.501"/>
+ </svg>
+ <svg width="80" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.button" id="id_67" transform="matrix(4,0,0,1.6667,0,0)" atv:refpx="199.999" height="30" y="347.993" atv:refpy="604.989" x="10">
+  <atv:argument value="T{Загрузить профиль (План)}" name="label"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:overwrite width="312" id="button_stroke" transform="matrix(0.25,0,0,0.6,0,0)" height="42.001"/>
+  <atv:overwrite id="button_label" transform="matrix(0.25,0,0,0.6,0,0)" y="29.501" x="160"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.25,0,0,0.6,0,0)" y="15.001" x="150"/>
+  <atv:overwrite width="312" id="button_bg" transform="matrix(0.25,0,0,0.6,0,0)" height="42.001"/>
+  <atv:overwrite width="314.5" id="id_2" transform="matrix(0.25,0,0,0.6,0,0)" height="44.501"/>
+  <atv:overwrite width="319.5" id="id_0" transform="matrix(0.25,0,0,0.6,0,0)" height="49.501"/>
+ </svg>
+ <svg width="80" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.button" id="id_68" transform="matrix(4,0,0,1.6667,0,0)" atv:refpx="199.999" height="30" y="383.992" atv:refpy="664.99" x="10">
+  <atv:argument value="T{Загрузить профиль(Факт)}" name="label"/>
+  <atv:argument value="20" name="fontSize"/>
+  <atv:overwrite width="312" id="button_stroke" transform="matrix(0.25,0,0,0.6,0,0)" height="42.001"/>
+  <atv:overwrite id="button_label" transform="matrix(0.25,0,0,0.6,0,0)" y="29.501" x="160"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.25,0,0,0.6,0,0)" y="15.001" x="150"/>
+  <atv:overwrite width="312" id="button_bg" transform="matrix(0.25,0,0,0.6,0,0)" height="42.001"/>
+  <atv:overwrite width="314.5" id="id_2" transform="matrix(0.25,0,0,0.6,0,0)" height="44.501"/>
+  <atv:overwrite width="319.5" id="id_0" transform="matrix(0.25,0,0,0.6,0,0)" height="49.501"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[document.getElementById('id_42').addEventListener('click', function() {
+		webMI.display.openWindow({
+			display: "AGENT.DISPLAYS.Test.Csv",
+			extern: false,
+			height: 1080,
+			width: 1920,
+			menubar: false,
+			modal: false,
+			movable: true,
+			resizable: false,
+			scrollbars: false,
+			status: false,
+			title: "Загрузка данных по плану бурения",
+			toolbar: false,
+			query: webMI.query
+		});
+})
+document.getElementById('id_67').addEventListener('click', function() {
+		webMI.display.openWindow({
+			display: "AGENT.DISPLAYS.Test.Csv_Profile",
+			extern: false,
+			height: 1080,
+			width: 1920,
+			menubar: false,
+			modal: false,
+			movable: true,
+			resizable: false,
+			scrollbars: false,
+			status: false,
+			title: "Загрузка данных по плану бурения",
+			toolbar: false,
+			query: webMI.query
+		});
+})
+document.getElementById('id_68').addEventListener('click', function() {
+		webMI.display.openWindow({
+			display: "AGENT.DISPLAYS.Test.Csv_profile_fact",
+			extern: false,
+			height: 1080,
+			width: 1920,
+			menubar: false,
+			modal: false,
+			movable: true,
+			resizable: false,
+			scrollbars: false,
+			status: false,
+			title: "Загрузка данных по плану бурения",
+			toolbar: false,
+			query: webMI.query
+		});
+})]]></script>
+</svg>

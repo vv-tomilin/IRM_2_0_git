@@ -1,0 +1,10 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"Slowdown".Value_Init.RelMirrorInput
+NodeClass: Variable
+BrowseName: 1:RelMirrorInput
+DisplayName: en|RelMirrorInput
+Description: en|RelMirrorInput
+DataType: String
+ValueRank: 1
+AccessLevel: 7
+Reference: forward HasModellingRule Shared
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Mirror.Relative.Input

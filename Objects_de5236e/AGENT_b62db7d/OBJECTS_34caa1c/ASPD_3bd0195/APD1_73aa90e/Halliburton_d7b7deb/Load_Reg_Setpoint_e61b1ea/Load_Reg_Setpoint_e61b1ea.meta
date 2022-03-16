@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.APD1.Halliburton.Load_Reg_Setpoint
+NodeClass: Variable
+BrowseName: 1:Load_Reg_Setpoint
+DisplayName: en|Load_Reg_Setpoint
+Description: en|Load_Reg_Setpoint
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

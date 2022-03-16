@@ -1,0 +1,10 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Turbine.Display
+NodeClass: Variable
+BrowseName: 1:Display
+DisplayName: en|Display
+Description: en|Display
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule Shared
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

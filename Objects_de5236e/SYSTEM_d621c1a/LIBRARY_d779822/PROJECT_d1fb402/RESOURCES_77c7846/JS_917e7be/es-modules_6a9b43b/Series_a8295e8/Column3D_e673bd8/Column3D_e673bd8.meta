@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/Column3D
+NodeClass: Object
+BrowseName: 1:Column3D
+DisplayName: en|Column3D
+Description: en|Column3D
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

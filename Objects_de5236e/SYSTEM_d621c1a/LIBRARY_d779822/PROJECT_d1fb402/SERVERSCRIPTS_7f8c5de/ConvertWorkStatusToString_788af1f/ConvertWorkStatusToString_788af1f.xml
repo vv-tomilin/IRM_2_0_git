@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="value" type="number" trigger="false" relative="false" value=""/>
+  <code><![CDATA[if (value == 0){
+	return "T{Не определен}";
+}
+if (value == 1){
+	return "ПВ";
+}	
+if (value == 2) {
+	return "НПВ";
+}	
+if (value == 3){
+	return "ВМР";
+}	
+// ПВ	
+if (value == 4){
+	return "Бурение";
+}	
+if (value == 5){
+	return "СПО";
+}
+if (value == 6){
+	return "Наращивание";
+}
+if (value == 7){
+	return "Расширение";
+}
+if (value == 8){
+	return "Крепление";
+}
+if (value == 9){
+	return "Вспом. работы";
+}
+// Бурение	
+if (value == 10 || value == 100){
+	return "Бурение";
+}
+if (value == 11){
+	return "Бурение: Отбор керна";
+}
+if (value == 12){
+	return "Бурение: КНБК";
+}
+// Вспомогательные работы	
+if (value == 13){
+	return "Вспом. работы: ПЗР";
+}
+if (value == 14){
+	return "Вспом. работы: Обработка раствора";
+}
+if (value == 15){
+	return "Вспом. работы: Проработка";
+}
+if (value == 16){
+	return "Вспом. работы: Снятие замеров";
+}
+if (value == 17){
+	return "Вспом. работы: Промывка";
+}
+if (value == 18){
+	return "Вспом. работы: Прокачка пачки";
+}
+if (value == 19){
+	return "Вспом. работы: Тест на приток";
+}
+if (value == 20){
+	return "Вспом. работы: Монтаж ПВО";
+}
+if (value == 21){
+	return "Вспом. работы: Демонтаж ПВО";
+}
+if (value == 22){
+	return "Вспом. работы: Монтаж ФА";
+}
+if (value == 23){
+	return "Вспом. работы: Демонтаж ФА";
+}
+if (value == 24){
+	return "Вспом. работы: Фрезерование окна";
+}			
+if (value == 25){
+	return "Вспом. работы: Разбуривание НЦС";
+}
+if (value == 26){
+	return "Вспом. работы: Разбуривание оснастки";
+}
+if (value == 27){
+	return "Вспом. работы: Разбуривание ЦК";
+}
+if (value == 28){
+	return "Вспом. работы: Опрессовка";
+}
+if (value == 29){
+	return "Вспом. работы: ГИС (на кабеле)";
+}
+if (value == 30){
+	return "Вспом. работы: ГИС (на трубах)";
+}
+if (value == 31){
+	return "Вспом. работы: Ориентирование КО";
+}
+if (value == 32){
+	return "Вспом. работы: УТЗ";
+}
+if (value == 33){
+	return "Вспом. работы: Чистка ЦСГО/ЕБ";
+}
+if (value == 34){
+	return "Вспом. работы: Прочие работы";
+}
+// Крепление
+if (value == 35){
+	return "Крепление: ПЗР";
+}
+if (value == 36){
+	return "Крепление: Промывка";
+}
+if (value == 37){
+	return "Крепление: Спуск колонны";
+}
+if (value == 38){
+	return "Крепление: Цементирование";
+}
+if (value == 39){
+	return "Крепление: Активация оснастки";
+}
+if (value == 40){
+	return "Крепление: ОЗЦ";
+}
+if (value == 41){
+	return "Крепление: Оборудование устья";
+}
+if (value == 42){
+	return "Крепление: Прочие работы";
+}
+// НПВ				
+if (value == 43){
+	return "НПВ: БРАК";
+}
+if (value == 44){
+	return "НПВ: АВАРИЯ";
+}
+if (value == 45){
+	return "НПВ: ПРОСТОЙ НСАД";
+}
+if (value == 46){
+	return "НПВ: ПОДРЯДЧИКИ";
+}
+if (value == 47){
+	return "НПВ: МЕТЕО";
+}
+if (value == 48){
+	return "НПВ: ПРОЧЕЕ";
+}]]></code>
+</script>

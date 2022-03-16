@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1790" xmlns:atv="http://webmi.atvise.com/2007/svgext" height="1016" version="1.2" xmlns="http://www.w3.org/2000/svg">
+ <defs/>
+ <metadata>
+  <atv:gridconfig gridstyle="lines" width="20" height="20" enabled="true"/>
+  <atv:snapconfig width="10" height="10" enabled="true"/>
+ </metadata>
+ <g atv:insensitive="true" transform="matrix(1.0287,0,0,1,0,0)" id="id_0" atv:refpx="0" atv:refpy="0">
+  <rect fill="#000406" y="0" width="1740.00" x="0" height="1016.00" id="id_9" atv:refpx="870" atv:refpy="508"/>
+ </g>
+ <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.xAxis" y="10" width="60" x="10" height="965" id="id_1" atv:refpx="40" atv:refpy="492.5"/>
+ <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.GtiChart" y="10" width="340" x="70" height="965" id="id_2" atv:refpx="240" atv:refpy="492.5">
+  <atv:argument name="chartname" value="skpb1"/>
+  <atv:argument name="ChartBase1" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel1"/>
+  <atv:argument name="ChartBase2" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel2"/>
+  <atv:argument name="ChartTitle1" value="Объем емкости 1"/>
+  <atv:argument name="Unit1" value="м³"/>
+  <atv:argument name="ChartTitle2" value="Объем емкости 2"/>
+  <atv:argument name="Unit2" value="м³"/>
+  <atv:argument name="MinVal1" value="0"/>
+  <atv:argument name="MaxVal1" value="10"/>
+  <atv:argument name="MinVal2" value="0"/>
+  <atv:argument name="MaxVal2" value="100"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.GtiChart" y="10" width="340" x="410" height="965" id="id_6" atv:refpx="580.001" atv:refpy="492.5">
+  <atv:argument name="chartname" value="skpb2"/>
+  <atv:argument name="ChartBase1" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel3"/>
+  <atv:argument name="ChartBase2" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel4"/>
+  <atv:argument name="ChartTitle1" value="Объем емкости 3"/>
+  <atv:argument name="Unit1" value="м³"/>
+  <atv:argument name="ChartTitle2" value="Объем емкости 4"/>
+  <atv:argument name="Unit2" value="м³"/>
+  <atv:argument name="Color1" value="#55aaff"/>
+  <atv:argument name="Color2" value="#ffff7f"/>
+  <atv:argument name="MinVal1" value="0"/>
+  <atv:argument name="MaxVal1" value="10"/>
+  <atv:argument name="MinVal2" value="0"/>
+  <atv:argument name="MaxVal2" value="10"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.GtiChart" y="10" width="340" x="750" height="965" id="id_7" atv:refpx="920.001" atv:refpy="492.5">
+  <atv:argument name="chartname" value="skpb3"/>
+  <atv:argument name="ChartBase1" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel5"/>
+  <atv:argument name="ChartBase2" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel6"/>
+  <atv:argument name="ChartTitle1" value="Объем емкости 5"/>
+  <atv:argument name="Unit1" value="м³"/>
+  <atv:argument name="ChartTitle2" value="Объем емкости 6"/>
+  <atv:argument name="Unit2" value="м³"/>
+  <atv:argument name="Color1" value="#aaff00"/>
+  <atv:argument name="Color2" value="#ffaa7f"/>
+  <atv:argument name="MinVal1" value="0"/>
+  <atv:argument name="MaxVal1" value="10"/>
+  <atv:argument name="MinVal2" value="0"/>
+  <atv:argument name="MaxVal2" value="10"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.GtiChart" y="10" width="340" x="1090" height="965" id="id_10" atv:refpx="1260.001" atv:refpy="492.5">
+  <atv:argument name="chartname" value="skpb4"/>
+  <atv:argument name="ChartBase1" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel7"/>
+  <atv:argument name="ChartBase2" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel8"/>
+  <atv:argument name="ChartTitle1" value="Объем емкости 7"/>
+  <atv:argument name="Unit1" value="м³"/>
+  <atv:argument name="ChartTitle2" value="Объем емкости 8"/>
+  <atv:argument name="Unit2" value="м³"/>
+  <atv:argument name="Color1" value="#aaaaff"/>
+  <atv:argument name="Color2" value="#55ff7f"/>
+  <atv:argument name="MinVal1" value="0"/>
+  <atv:argument name="MaxVal1" value="10"/>
+  <atv:argument name="MinVal2" value="0"/>
+  <atv:argument name="MaxVal2" value="10"/>
+ </svg>
+ <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.GtiChart" y="10" width="340" x="1430" height="965" id="id_11" atv:refpx="1600.001" atv:refpy="492.5">
+  <atv:argument name="chartname" value="skpb5"/>
+  <atv:argument name="ChartBase1" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel1"/>
+  <atv:argument name="ChartBase2" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel2"/>
+  <atv:argument name="ChartTitle1" value="Объем емкости 9"/>
+  <atv:argument name="Unit1" value="м³"/>
+  <atv:argument name="Unit2" value="м³"/>
+  <atv:argument name="ChartTitle2" value="Объем долива"/>
+  <atv:argument name="Color1" value="#ffaa7f"/>
+  <atv:argument name="Color2" value="#ff557f"/>
+  <atv:argument name="MinVal1" value="0"/>
+  <atv:argument name="MaxVal1" value="10"/>
+  <atv:argument name="MinVal2" value="0"/>
+  <atv:argument name="MaxVal2" value="100"/>
+ </svg>
+ <g transform="matrix(1,0,0,1,10,0)" id="id_13" atv:refpx="895" atv:refpy="1000">
+  <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.tool.toolbar" y="985" width="141" x="610" height="30" id="id_12" atv:refpx="680.5" atv:refpy="1000"/>
+  <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.tool.button_back" y="985" width="80" x="650" height="30" id="id_14" atv:refpx="690" atv:refpy="1000"/>
+  <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.tool.button_forward" y="985" width="80" x="740" height="30" id="id_8" atv:refpx="780" atv:refpy="1000"/>
+  <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.tool.picker_date_start" y="985" width="160" x="830" height="30" id="id_15" atv:refpx="910" atv:refpy="1000"/>
+  <svg xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.tool.set_range" y="985" width="160" x="1000" height="30" id="id_16" atv:refpx="1080" atv:refpy="1000"/>
+ </g>
+</svg>

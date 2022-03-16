@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Presentation.APD.PressureParking
+NodeClass: Variable
+BrowseName: 1:PressureParking
+DisplayName: en|PressureParking
+Description: en|PressureParking
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

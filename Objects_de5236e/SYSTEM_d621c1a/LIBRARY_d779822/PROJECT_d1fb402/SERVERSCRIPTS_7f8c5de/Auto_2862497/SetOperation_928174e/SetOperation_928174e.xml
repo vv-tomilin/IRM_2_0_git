@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="oper" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="opertime" type="number" trigger="false" relative="false" value="0"/>
+  <parameter name="npt" type="string" trigger="false" relative="false" value="ПВ"/>
+  <parameter name="subitem" type="string" trigger="false" relative="false" value="БУРЕНИЕ"/>
+  <parameter name="suboper" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="operclr" type="string" trigger="false" relative="false" value="#00FA9A"/>
+  <parameter name="suboperclr" type="string" trigger="false" relative="false" value="#7B68EE"/>
+  <code><![CDATA[var nodeOper = new UaNode("AGENT.OBJECTS.Support.Auto.Operation");
+
+var operObj = {npt: npt, subitem: subitem, oper: oper, suboper: suboper, opertime: opertime, operclr: operclr, suboperclr: suboperclr};
+var operJson = JSON.stringify(operObj);
+//console.log('operJson = ', operJson);
+
+var checkstr = operJson;//npt+';'+subitem+';'+oper+';'+suboper;
+//	console.log('checkstr = ', checkstr);
+if(nodeOper.value != checkstr){ 
+	if(opertime==0){
+		nodeOper.assign({value: checkstr});
+	} else {
+		nodeOper.assign({value: checkstr, sourcetime: opertime});
+	}	
+	console.log('Операция ', call('Auto.GetOperationObj').value);
+}
+
+//console.log('Операция ', call('Auto.GetOperationObj').value);]]></code>
+</script>

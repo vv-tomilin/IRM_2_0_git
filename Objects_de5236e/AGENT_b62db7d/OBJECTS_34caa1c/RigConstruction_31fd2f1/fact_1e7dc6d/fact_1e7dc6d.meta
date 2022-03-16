@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.RigConstruction.fact
+NodeClass: Object
+BrowseName: 1:fact
+DisplayName: en|fact
+Description: en|fact
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

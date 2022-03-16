@@ -1,0 +1,19 @@
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" height="20" xmlns="http://www.w3.org/2000/svg" width="20">
+ <defs/>
+ <metadata>
+  <atv:parameter name="symbolColor" substitute="$SYMBOLCOLOR$" defaultvalue="#000000" valuetype="color" desc="symbol color"/>
+  <atv:gridconfig gridstyle="lines" height="20" enabled="false" width="20"/>
+  <atv:snapconfig height="10" enabled="false" width="10"/>
+ </metadata>
+ <g id="id_0" atv:refpx="10" atv:refpy="10">
+  <title>background</title>
+  <rect y="-1" fill="none" id="canvas_background" atv:refpx="10" height="22" x="-1" atv:refpy="10" width="22"/>
+ </g>
+ <g id="group" atv:refpx="10.014" atv:refpy="10.014">
+  <g id="id_1" atv:refpx="10.321" atv:refpy="10">
+   <path d="M15.508,5.322C15.651,5.48 15.678,5.654 15.591,5.844L9.18,19.581C9.077,19.779 8.911,19.878 8.681,19.878C8.649,19.878 8.594,19.87 8.515,19.854C8.38,19.815 8.279,19.74 8.212,19.629C8.145,19.518 8.127,19.399 8.159,19.273L10.498,9.679L5.677,10.878C5.646,10.886 5.598,10.89 5.535,10.89C5.392,10.89 5.27,10.847 5.167,10.76C5.024,10.641 4.973,10.486 5.012,10.297L7.399,0.501C7.43,0.39 7.494,0.299 7.589,0.228C7.684,0.157 7.795,0.121 7.921,0.121L11.816,0.121C11.966,0.121 12.093,0.171 12.195,0.27C12.298,0.369 12.35,0.485 12.35,0.62C12.35,0.683 12.33,0.755 12.291,0.834L10.26,6.331L14.962,5.167C15.025,5.152 15.073,5.144 15.104,5.144C15.255,5.144 15.389,5.203 15.508,5.322" fill="$SYMBOLCOLOR$" id="svg_1" atv:refpx="10.321" atv:refpy="10"/>
+  </g>
+  <rect stroke="none" y="0.041" fill="none" stroke-width="0" id="id_3" atv:refpx="10.014" x="0.041" height="19.946" atv:refpy="10.014" width="19.946"/>
+ </g>
+ <rect fill-opacity="0.001" stroke="none" y="0" fill="#000000" stroke-width="2" id="clickarea" atv:refpx="10" x="0" height="20" atv:refpy="10" width="20"/>
+</svg>

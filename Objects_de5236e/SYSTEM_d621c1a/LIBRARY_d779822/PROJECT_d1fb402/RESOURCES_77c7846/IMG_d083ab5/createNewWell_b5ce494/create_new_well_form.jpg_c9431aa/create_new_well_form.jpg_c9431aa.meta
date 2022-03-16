@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/IMG/createNewWell/create_new_well_form.jpg
+NodeClass: Variable
+BrowseName: 1:create_new_well_form.jpg
+DisplayName: en|create_new_well_form.jpg
+Description: en|create_new_well_form.jpg
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Jpeg

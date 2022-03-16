@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.CSGO.Heater
+NodeClass: Variable
+BrowseName: 1:Heater
+DisplayName: en|Heater
+Description: en|Heater
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

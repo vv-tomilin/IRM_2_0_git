@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <code><![CDATA[/**
+ * Code for the in_out_time object display
+ * ---------------------------------------
+ * This control allows to enter a time.
+ * In addition the trigger "valuechanged" will be fired.
+ */
+
+
+/**
+ * DECLARATION SECTION
+ */
+ 
+//parameters
+var base = (webMI.query["base"] == undefined) ? "" : webMI.query["base"];
+var min = webMI.query["min"];
+var max = webMI.query["max"];
+var outputNode = webMI.query["outputNode"];
+var consistencyGroup = webMI.query["consistencyGroup"];
+
+//variables
+var now = new Date();
+var _value = { "date": now, "time": now.getTime(), "day": now.getDate(), "month": now.getMonth(), "year": now.getFullYear(), "hours": now.getHours(), "minutes": now.getMinutes(), "seconds": now.getSeconds(), "millis": now.getMilliseconds() };
+var minTime, maxTime;
+var oneSecond = 1000;
+var oneMinute = oneSecond * 60;
+var oneHour = oneMinute * 60;
+
+if (consistencyGroup)
+	var consistencyHandler = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Consistency Handler");
+
+/**
+ * RUNTIME SECTION
+ */
+
+var rightsHandlingProperties = {
+	right: right,
+	checkBaseNodeWriteRight: false,
+	isActivationNodeSet: null,
+	notifierConfiguration: {"id":"outer_border", "node_1": webMI.query["base"], "right_1": "read"},
+	setActiveTrigger: false,
+	handleStatus: false
+};
+
+if (typeof rightsHandling === "function") rightsHandling(rightsHandlingProperties);
+
+//set minimum time
+if (min) {
+	minTime = parseTime(min);
+}
+
+//set maximum time
+if (max) {
+	maxTime = parseTime(max);
+}
+
+//subscribe to node
+if (base != "") {
+	if (consistencyGroup) {
+		consistencyHandler.register(consistencyGroup, base, update);
+	} else {
+		webMI.data.subscribe(base, function(e) {
+			var millis = 0;
+
+			//check if a value is given
+			if (e.value) {
+				millis = e.value;
+
+				//if not number, try to parse
+				if (typeof millis != "number") {
+					millis = parseInt(e.value, 10);
+
+					if (isNaN(millis)) {
+						millis = 0;
+					}
+				}
+			}
+
+			//set new time
+			var newDate = new Date(millis);
+			_value.day = newDate.getDate();
+			_value.month = newDate.getMonth();
+			_value.year = newDate.getFullYear();
+			_value.hours = newDate.getHours();
+			_value.minutes = newDate.getMinutes();
+			_value.seconds = newDate.getSeconds();
+			_value.millis = newDate.getMilliseconds();
+			
+			//set internal time and update display
+			updateDate();
+			updateDisplay();
+		});
+	}
+//no base defined
+} else {
+	//set internal time and display initial value
+	updateDate();
+	updateDisplay();
+}
+
+/**
+ * FUNCTION SECTION
+ */
+
+//set hours, minutes, seconds, millis
+function setField(value, button) {
+	//convert to number if not
+	if (typeof value != "number" || isNaN(value)) {
+		value = parseInt(value, 10);
+		
+		if (isNaN(value)) {
+			value = 0;
+		}
+	}
+
+	_value[button] = value;
+	
+	updateDate();
+	valueUpdated(true);
+	
+	//update displayed values only 
+	if ((base == undefined) || (base == "")) {
+		updateDisplay();
+	}
+}
+
+//parse string to milliseconds
+function parseTime(str) {
+	//parse string in correct format to date object
+	var time = 0;
+	
+	if (typeof str == "string" && str) {
+		var match = str.match(/\d+/g);
+	
+		if (match) {
+			var hours = match[0];
+			var minutes = match[1];
+			var seconds = match[2];
+			var millis = match[3];
+			
+			if (!hours) { hours = 0; }
+			if (!minutes) { minutes = 0; }
+			if (!seconds) { seconds = 0; }
+			if (!millis) { millis = 0; }
+
+			time += hours * oneHour;
+			time += minutes * oneMinute;
+			time += seconds * oneSecond;
+			time += millis * 1;
+		}
+	}
+	
+	return time;
+}
+
+//update display
+function updateDisplay() {
+	webMI.trigger.fire("setValue", _value.hours, "1_hours");
+	webMI.trigger.fire("setValue", _value.minutes, "2_minutes");
+	webMI.trigger.fire("setValue", _value.seconds, "3_seconds");
+	webMI.trigger.fire("setValue", _value.millis, "4_millis");
+}
+
+//set time
+function updateDate() {
+	var time = 0;
+		time += _value.hours * oneHour;
+		time += _value.minutes * oneMinute;
+		time += _value.seconds * oneSecond;
+		time += _value.millis;
+		
+	//check against maxTime
+	if (maxTime && (time > maxTime)) {
+		_value.hours = Math.floor( maxTime / oneHour );
+		_value.minutes = Math.floor( (maxTime % oneHour) / oneMinute );
+		_value.seconds = Math.floor( ((maxTime % oneHour) % oneMinute) / oneSecond );
+		_value.millis = ((maxTime % oneHour) % oneMinute) % oneSecond;
+	//check against minTime
+	} else if (minTime && (time < minTime)) {
+		_value.hours = Math.floor( minTime / oneHour );
+		_value.minutes = Math.floor( (minTime % oneHour) / oneMinute );
+		_value.seconds = Math.floor( ((minTime % oneHour) % oneMinute) / oneSecond );
+		_value.millis = ((minTime % oneHour) % oneMinute) % oneSecond;
+	}
+	
+	_value.date = new Date(_value.year, _value.month, _value.day, _value.hours, _value.minutes, _value.seconds, _value.millis);
+	_value.time = _value.date.getTime();
+	_value.day = _value.date.getDate();
+	_value.month = _value.date.getMonth();
+	_value.year = _value.date.getFullYear();
+	_value.hours = _value.date.getHours();
+	_value.minutes = _value.date.getMinutes();
+	_value.seconds = _value.date.getSeconds();
+	_value.millis = _value.date.getMilliseconds();
+}
+
+//value has been changed by display
+function valueUpdated(fireTrigger) {
+	//update node
+	if (base != "" && !consistencyGroup) {
+		webMI.data.write(base, _value.time);
+	}
+
+	if (outputNode) {
+		webMI.data.write(outputNode, _value.time);
+	}
+	
+	//fire trigger
+	if (fireTrigger) {
+		webMI.trigger.fire("valuechanged", _value.time, "");
+	}
+
+	//update consistency value
+	if (consistencyGroup)
+		consistencyHandler.set(consistencyGroup, base, _value.time);
+}
+
+//update externally by trigger or consistency handler
+function update(value) {
+	var date = new Date(value);
+	_value.day = date.getDate();
+	_value.month = date.getMonth();
+	_value.year = date.getFullYear();
+	_value.hours = date.getHours();
+	_value.minutes = date.getMinutes();
+	_value.seconds = date.getSeconds();
+	_value.millis = date.getMilliseconds();
+
+	updateDate();
+	//valueUpdated(false);
+
+	//update displayed values only
+	if ((base == "") || (base == undefined) || consistencyGroup) {
+		updateDisplay();
+	}
+}
+
+function setActiveLayout() {
+}
+
+function setInactiveLayout() {
+}
+
+/**
+ * TRIGGER SECTION
+ */
+
+//connect to valuechanged-triggers
+webMI.trigger.connect("valuechanged", function(e) { setField(e.value, "hours"); }, "1_hours");
+webMI.trigger.connect("valuechanged", function(e) { setField(e.value, "minutes"); }, "2_minutes");
+webMI.trigger.connect("valuechanged", function(e) {	setField(e.value, "seconds"); }, "3_seconds");
+webMI.trigger.connect("valuechanged", function(e) {	setField(e.value, "millis"); }, "4_millis");
+
+//connect to updateDate-trigger
+webMI.trigger.connect("updateDate", function(e) {
+	var date = new Date(e.value);
+	_value.day = date.getDate();
+	_value.month = date.getMonth();
+	_value.year = date.getFullYear();
+});
+
+//connect to setValue-trigger
+webMI.trigger.connect("setValue", function(e) {
+	update(e.value);
+});]]></code>
+</script>

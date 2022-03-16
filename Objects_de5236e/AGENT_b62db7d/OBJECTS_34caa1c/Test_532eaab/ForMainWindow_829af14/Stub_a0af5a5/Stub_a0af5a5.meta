@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.ForMainWindow.Stub
+NodeClass: Variable
+BrowseName: 1:Stub
+DisplayName: en|Stub
+Description: en|Stub
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="800" height="60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <desc>This control is the minimal version of the dashboard top frame</desc>
+ <title>Dashboard topframe (800x60)</title>
+ <defs>
+  <linearGradient id="linear_21" y1="-7.18755e-05" y2="1.58424" x1="-0.0150911" gradientUnits="objectBoundingBox" x2="-0.0150911">
+   <stop offset="0" stop-color="#c9c9c9"/>
+   <stop offset="0.7117903930131004" stop-color="#000000"/>
+  </linearGradient>
+  <linearGradient id="linear_37" y1="0.0149254" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#ffffff" stop-opacity="0.392156862745098"/>
+   <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="linear_48" y1="0.0149254" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#ffffff" stop-opacity="0.392156862745098"/>
+   <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="linear_49" y1="0.0149254" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#ffffff" stop-opacity="0.392156862745098"/>
+   <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+  </linearGradient>
+ </defs>
+ <metadata>
+  <atv:parameter substitute="$FONTCOLOR$" defaultvalue="SYSTEM.GLOBALS.atvFontColor" desc="font color" behavior="optional" valuetype="global" name="fontColor"/>
+  <atv:parameter substitute="$FILLCOLOR$" defaultvalue="SYSTEM.GLOBALS.atvFillColor" desc="background color" behavior="optional" valuetype="global" name="fillColor"/>
+  <atv:gridconfig width="10" enabled="true" height="10" gridstyle="lines"/>
+  <atv:snapconfig width="5" enabled="true" height="5"/>
+ </metadata>
+ <rect id="id_14" stroke-linecap="butt" width="800" fill="$FILLCOLOR$" stroke="#575757" atv:refpy="30.254" atv:refpx="401.174" height="60" stroke-width="0" y="0" x="0"/>
+ <path id="id_33" d="M0,0" fill="#000088" stroke="#0000ff" atv:refpy="59.436" atv:refpx="355.987" stroke-width="2"/>
+ <svg id="id_29" width="80" transform="matrix(0.525,0,0,1.4,0,0)" atv:refpy="30.001" atv:refpx="621" height="30" y="6.429" x="1142.857" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button_open_display">
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.hmi.historylist" name="display"/>
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.history" name="symbol"/>
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.history" name="symbolPressed"/>
+  <atv:argument value="hidden" name="visibilityLabel"/>
+  <atv:argument value="inherit" name="visibilitySymbol"/>
+  <atv:argument value="-999999" name="tabIndex"/>
+  <atv:overwrite id="button_symbol_pressed" transform="matrix(1.7778,0,0,0.6667,0,0)" y="12.5" x="12.5"/>
+  <atv:overwrite id="id_2" width="39.5" transform="matrix(1.7778,0,0,0.6667,0,0)" height="39.5"/>
+  <atv:overwrite id="id_0" width="44.5" transform="matrix(1.7778,0,0,0.6667,0,0)" height="44.5"/>
+  <atv:argument value="#ffffff" name="extraBorderColor"/>
+  <atv:overwrite id="id_6" width="40" transform="matrix(1.9048,0,0,0.7143,0,0)" height="40"/>
+  <atv:overwrite id="button_label" transform="matrix(1.9048,0,0,0.7143,0,0)" x="21" y="25.5"/>
+  <atv:overwrite id="button_symbol" transform="matrix(1.9048,0,0,0.7143,0,0)" x="11" y="11"/>
+  <atv:overwrite id="button_stroke" width="38" transform="matrix(1.9048,0,0,0.7143,0,0)" height="38"/>
+  <atv:overwrite id="button_bg" width="40" transform="matrix(1.9048,0,0,0.7143,0,0)" height="40"/>
+  <atv:overwrite id="outer_frame" width="42" transform="matrix(1.9048,0,0,0.7143,0,0)" height="42"/>
+ </svg>
+ <svg id="id_15" width="168" atv:refpy="30" atv:refpx="440" height="45" y="7.5" x="410" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.button_group_alarm"/>
+ <rect id="id_27" ry="2.829" width="140" font-size="10" fill="#ffffff" stroke="none" atv:refpy="99.231" atv:refpx="1187.874" height="50" stroke-width="1.542" y="5" x="130" rx="3.111"/>
+ <text id="username_label" font-weight="normal" font-size="10" fill="#575757" atv:refpy="-40.5" atv:refpx="-69.439" font-family="Arial" y="39" x="266.5" text-anchor="end"/>
+ <text id="id_20" font-weight="bold" font-size="10" fill="$FONTCOLOR$" atv:refpy="-11.5" atv:refpx="-709.436" font-family="Arial" y="39" x="134.5">T{User}:</text>
+ <text id="time_label" font-weight="normal" font-size="10" fill="$FONTCOLOR$" atv:refpy="-17.5" atv:refpx="-1363.968" font-family="Arial" y="27" x="266.5" text-anchor="end">10:56</text>
+ <text id="id_19" font-weight="bold" font-size="10" fill="$FONTCOLOR$" atv:refpy="22.287" atv:refpx="148.5" font-family="Arial" y="27" x="134.5">T{Time}:</text>
+ <text id="language_label" font-weight="normal" font-size="10" fill="$FONTCOLOR$" atv:refpy="-29.5" atv:refpx="-955.182" font-family="Arial" y="51" x="266.5" text-anchor="end">T{}</text>
+ <text id="id_25" font-weight="bold" font-size="10" fill="$FONTCOLOR$" atv:refpy="-59.5" atv:refpx="-2201.368" font-family="Arial" y="51" x="134.5">T{Language}:</text>
+ <text id="date_label" font-weight="normal" font-size="10" fill="$FONTCOLOR$" atv:refpy="-13.5" atv:refpx="-1654.757" font-family="Arial" y="15" x="266.5" text-anchor="end">25.02.2011</text>
+ <text id="id_18" font-weight="bold" font-size="10" fill="$FONTCOLOR$" atv:refpy="11.5" atv:refpx="147.5" font-family="Arial" y="15" x="134.5">T{Date}:</text>
+ <svg id="id_11" width="30" transform="matrix(1.5,0,0,1.5,0,0)" atv:refpy="29.998" atv:refpx="282.498" height="30" y="5" x="193.333" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.button_login">
+  <atv:overwrite id="button_symbol" transform="matrix(0.6667,0,0,0.6667,0,0)" x="12.5" y="12.5"/>
+  <atv:overwrite id="button_stroke" width="37.5" transform="matrix(0.6667,0,0,0.6667,0,0)" height="37.5"/>
+  <atv:overwrite id="button_symbol_pressed" transform="matrix(0.6667,0,0,0.6667,0,0)" x="12.5" y="12.5"/>
+  <atv:overwrite id="button_bg" width="37.5" transform="matrix(0.6667,0,0,0.6667,0,0)" height="37.5"/>
+  <atv:overwrite id="id_3" width="39.5" transform="matrix(0.6667,0,0,0.6667,0,0)" height="39.5"/>
+  <atv:overwrite id="id_0" width="44.5" transform="matrix(0.6667,0,0,0.6667,0,0)" height="44.5"/>
+ </svg>
+ <svg id="id_12" width="45" atv:refpy="30" atv:refpx="330.498" height="45" y="7.5" x="336.998" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.button_switch_language"/>
+ <rect id="id_5" ry="2.83" width="98" fill="#ffffff" stroke="none" atv:refpy="99.231" atv:refpx="695.536" height="50" stroke-width="1.542" y="5" x="12" rx="3.031"/>
+ <g id="atvise_logo" atv:refpy="30" atv:refpx="61.154">
+  <svg id="logo" width="80" transform="matrix(0.4279,0,0,0.4279,0,0)" atv:refpy="29.92" atv:refpx="91.572" height="80" y="30.11" x="46.739" atv:dynamic="true" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.atvise_logo"/>
+  <text id="title" font-size="22" transform="matrix(0.6198,0,0,0.6198,21.6953,7.4)" fill="$FONTCOLOR$" atv:refpy="30" atv:refpx="79.685" font-family="Verdana, Arial" y="45.463" x="61.563" atv:dynamic="true">atvise</text>
+ </g>
+ <g id="redu_info" transform="matrix(1,0,0,1,-434.16,-64.6637)" atv:refpy="30" atv:refpx="952.308" visibility="hidden">
+  <g id="id_36" transform="matrix(1,0,0,1,-0.9122,0.5935)" atv:refpy="97.989" atv:refpx="1141.471">
+   <text id="id_31" font-size="8" fill="$FONTCOLOR$" atv:refpy="85.735" atv:refpx="1154.387" font-family="Arial" y="89.235" x="1133.387" text-anchor="start">T{STATUS}:</text>
+   <text id="redu_status" font-weight="bold" font-size="14" fill="$FONTCOLOR$" atv:refpy="103.001" atv:refpx="938.764" font-family="Arial" y="105.235" x="1133.387" text-anchor="start"/>
+  </g>
+  <text id="redu_role" font-weight="bold" font-size="30" fill="$FONTCOLOR$" atv:refpy="306.181" atv:refpx="1199.085" font-family="Arial" y="104.828" x="1103.16"/>
+  <svg id="id_7" width="80" transform="matrix(0.525,0,0,1.4,0,0)" atv:refpy="30.674" atv:refpx="767.789" height="30" y="53.571" x="2251" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button_open_display">
+   <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.redundancy.status" name="display"/>
+   <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.info" name="symbol"/>
+   <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.info" name="symbolPressed"/>
+   <atv:argument value="hidden" name="visibilityLabel"/>
+   <atv:argument value="inherit" name="visibilitySymbol"/>
+   <atv:argument value="-999999" name="tabIndex"/>
+   <atv:overwrite id="button_symbol_pressed" transform="matrix(1.7778,0,0,0.6667,0,0)" y="12.5" x="12.5"/>
+   <atv:overwrite id="id_2" width="39.5" transform="matrix(1.7778,0,0,0.6667,0,0)" height="39.5"/>
+   <atv:overwrite id="id_0" width="44.5" transform="matrix(1.7778,0,0,0.6667,0,0)" height="44.5"/>
+   <atv:overwrite id="id_1" width="42" transform="matrix(1.9048,0,0,0.7143,0,0)" height="42"/>
+   <atv:argument value="#ffffff" name="extraBorderColor"/>
+   <atv:overwrite id="id_6" width="40" transform="matrix(1.9048,0,0,0.7143,0,0)" height="40"/>
+   <atv:overwrite id="button_label" transform="matrix(1.9048,0,0,0.7143,0,0)" x="21" y="25.5"/>
+   <atv:overwrite id="button_symbol" transform="matrix(1.9048,0,0,0.7143,0,0)" x="11" y="11"/>
+   <atv:overwrite id="button_stroke" width="38" transform="matrix(1.9048,0,0,0.7143,0,0)" height="38"/>
+   <atv:overwrite id="button_bg" width="40" transform="matrix(1.9048,0,0,0.7143,0,0)" height="40"/>
+   <atv:overwrite id="outer_frame" width="42" transform="matrix(1.9048,0,0,0.7143,0,0)" height="42"/>
+  </svg>
+ </g>
+ <line id="id_21" y1="3.5" stroke="#D7D7D7" atv:refpy="28.528" atv:refpx="103" y2="56.5" stroke-width="0.5" x1="119.5" x2="119.5"/>
+ <line id="id_23" y1="3.5" stroke="#D7D7D7" atv:refpy="27.546" atv:refpx="254" y2="56.5" stroke-width="0.5" x1="279.5" x2="279.5"/>
+ <line id="id_8" y1="3" stroke="#D7D7D7" atv:refpy="27.046" atv:refpx="360.499" y2="56" stroke-width="0.5" x1="395.999" x2="395.999"/>
+ <line id="id_9" y1="3.5" stroke="#D7D7D7" atv:refpy="27.546" atv:refpx="543.5" y2="56.5" stroke-width="0.5" x1="589" x2="589"/>
+ <script type="text/ecmascript"><![CDATA[var tabHandler = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tab Handler");
+
+webMI.addEvent("atvise_logo", "click", function(e) {
+var id = "atvise_logo";
+var value = true;
+return function(value) {
+	var names = tabHandler.getParentIFrameNames();
+	for (var i=0;i<names.length;i++){
+		var NN;
+		webMI.trigger.fire("com.atvise.getDefaultDisplay_"+(NN=names[i]),function(display,url){
+			if (url != undefined)
+				webMI.display.openUrl(url, webMI.query,NN);
+			else if (display != undefined)
+				webMI.display.openDisplay(display, webMI.query,NN);
+		});
+	}
+} (value);
+});
+
+webMI.addEvent(webMI.data, "clientvariableschange", function(e) {
+	webMI.gfx.setText("username_label", (e.username) ? e.username : "");
+});
+
+function updateTime() {
+	var time = new Date();
+	webMI.gfx.setText("date_label", webMI.sprintf("%02d",time.getDate()) + "." + webMI.sprintf("%02d",time.getMonth()+1) + "." + time.getFullYear());
+	webMI.gfx.setText("time_label", webMI.sprintf("%02d",time.getHours()) + ":" + webMI.sprintf("%02d",time.getMinutes()));
+}
+
+webMI.addOnload(function() {
+	updateTime();
+	var updateDateTime = setInterval( function() { updateTime(); },60000);
+});
+
+var reduinfoInitialized = false;
+webMI.addEvent(webMI.data, "serverstatechange", function() {
+	if (reduinfoInitialized)
+		return;
+
+	reduinfoInitialized = true;
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Redundancy PopUp", {"display":"SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.redundancy.warning_dialog"});
+	webMI.gfx.setVisible("redu_info", null);
+	webMI.data.subscribe("AGENT.REDUNDANCY.role", function(e) {
+		webMI.gfx.setText("redu_role", e.value.charAt(0));
+	});
+
+    webMI.data.subscribe("AGENT.REDUNDANCY.status", function(e) {
+		e.value = getStatusTranslation(e.value);
+		webMI.gfx.setText("redu_status", e.value);
+	});
+});
+
+function getStatusTranslation(text) {
+    var statustext;
+    switch(text) {
+        case "Active":
+            statustext = "T{Active}";
+            break;
+        case "Passive":
+            statustext = "T{Passive}";
+            break;
+        case "SOP":
+            statustext = "T{SOP}";
+            break;
+        case "SNOP":
+            statustext = "T{SNOP}";
+            break;
+        default:
+            statustext = text;
+    }
+
+    return statustext;
+}
+
+]]></script>
+</svg>

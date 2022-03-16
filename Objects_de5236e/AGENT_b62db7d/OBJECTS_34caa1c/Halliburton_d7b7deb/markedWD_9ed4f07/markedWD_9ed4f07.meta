@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Halliburton.markedWD
+NodeClass: Variable
+BrowseName: 1:markedWD
+DisplayName: en|markedWD
+Description: en|markedWD
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

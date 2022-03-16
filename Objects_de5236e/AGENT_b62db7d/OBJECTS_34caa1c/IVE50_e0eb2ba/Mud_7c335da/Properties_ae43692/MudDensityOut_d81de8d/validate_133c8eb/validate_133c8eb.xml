@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="mudDensity" type="node.value" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.IVE50.Mud.Properties.mudDensityOut"/>
+  <parameter name="currentDensity" type="node.value" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.ServiceParams.Mud.currentMud.density"/>
+  <parameter name="isWits" type="node.value" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.WITS_RUNNING.GTI"/>
+  <code><![CDATA[function returnValid() {
+	try {
+		var validVar = new UaNode("AGENT.OBJECTS.IVE50.Mud.Properties.MudDensityOut")
+		var validValue = 0	
+		
+		if (isWits) {
+			validValue = mudDensity || 0
+		} else {
+			validValue = parseFloat(currentDensity.replace(/[^0-9.]/g, ""))
+		}
+		
+		validVar.assign({value: validValue})
+	}
+	catch(error) {
+		console.log("Validate densityOUT:", error.message || error)
+	}
+}
+
+returnValid()]]></code>
+</script>

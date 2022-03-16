@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.SMTPSERVERS.mail.ru
+NodeClass: Object
+BrowseName: 1:mail.ru
+DisplayName: en|mail.ru
+Description: en|mail.ru
+EventNotifier: 0
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.SmtpServer

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/pathfinder.js.map
+NodeClass: Variable
+BrowseName: 1:pathfinder.js.map
+DisplayName: en|pathfinder.js.map
+Description: en|pathfinder.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

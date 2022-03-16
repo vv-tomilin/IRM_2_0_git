@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.OilfieldBoard.numberOfRigs
+NodeClass: Variable
+BrowseName: 1:numberOfRigs
+DisplayName: en|numberOfRigs
+Description: en|numberOfRigs
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

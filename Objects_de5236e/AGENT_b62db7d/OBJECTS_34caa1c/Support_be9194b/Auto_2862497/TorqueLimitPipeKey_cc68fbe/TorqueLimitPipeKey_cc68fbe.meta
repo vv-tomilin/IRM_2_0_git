@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.TorqueLimitPipeKey
+NodeClass: Variable
+BrowseName: 1:TorqueLimitPipeKey
+DisplayName: en|TorqueLimitPipeKey
+Description: en|TorqueLimitPipeKey
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

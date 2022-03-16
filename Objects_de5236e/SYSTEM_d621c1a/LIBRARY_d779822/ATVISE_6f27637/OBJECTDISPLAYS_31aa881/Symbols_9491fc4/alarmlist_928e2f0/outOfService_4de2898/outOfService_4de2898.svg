@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" height="20" xmlns="http://www.w3.org/2000/svg" width="20">
+ <defs/>
+ <metadata>
+  <atv:parameter name="symbolColor" substitute="$SYMBOLCOLOR$" defaultvalue="#000000" behavior="optional" valuetype="color" desc="symbol color"/>
+  <atv:gridconfig gridstyle="lines" height="1" enabled="true" width="1"/>
+  <atv:snapconfig height="1" enabled="false" width="1"/>
+ </metadata>
+ <g id="group" atv:refpx="10" atv:refpy="10">
+  <rect stroke="none" y="0" ry="2.009" fill="$SYMBOLCOLOR$" stroke-width="0" id="id_0" atv:refpx="10" height="20" x="0" atv:refpy="10" width="20" rx="2.009"/>
+  <circle stroke="#FFFFFF" fill="none" cx="9.96" stroke-width="2" id="id_1" atv:refpx="9.96" r="7.104" cy="10.046" atv:refpy="10.046" stroke-linejoin="round" stroke-linecap="round"/>
+  <line stroke="#FFFFFF" x1="15.089" x2="5.331" y1="5.152" stroke-width="2" id="id_12" atv:refpx="5.333" atv:refpy="-70.124" stroke-linejoin="round" stroke-linecap="round" y2="14.548"/>
+ </g>
+ <rect fill-opacity="0.001" stroke="none" y="0" fill="#000000" stroke-width="2" id="clickarea" atv:refpx="10" x="0" height="20" atv:refpy="10" width="20"/>
+</svg>

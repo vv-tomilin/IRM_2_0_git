@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="1015" version="1.2" width="1850" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="true" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <g atv:insensitive="true" atv:refpx="0" atv:refpy="0" id="id_0">
+  <rect atv:refpx="925" atv:refpy="507.5" fill="#1f1f1f" height="1015.00" id="id_1" width="1850.00" x="0" y="0"/>
+ </g>
+ <foreignObject height="244.137" id="id_2" width="384.984" x="732.508" y="293.881">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <style>
+#buttonContainer > *{
+	margin: .3rem;
+}
+</style>
+   <div id="buttonContainer" style="display:flex;justify-content:center;align-items:center;flex-direction:column"/>
+  </div>
+ </foreignObject>
+ <foreignObject height="46.949" id="settingsButton" width="384" x="733" y="574.322">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <button class="button__label-dark" data-settings="settings" style="width:100%;text-align:center;display:flex;justify-content:center;align-items:center;">
+    <span/>
+    <span>Настройки сервисов</span>
+   </button>
+  </div>
+ </foreignObject>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[webMI.libraryLoader.load([], ["CSS/main.css"], function(e) {})
+var container = document.getElementById("buttonContainer");
+var settingsButton = document.getElementById("settingsButton");
+var settingsButtonUnder = document.getElementById("settingsButtonUnder");
+var buttonClass = "button__label-dark";
+
+var buttons = [
+	{
+		label: "Растворный сервис", // label
+		dataset: "choice", // choice
+		datasetValue: "Mud", //variable name
+		class: buttonClass // class
+	},
+	{
+		label: "Долотный сервис",
+		dataset: "choice",
+		datasetValue: "Bit",
+		class: buttonClass
+	},
+	{
+		label: "ННБ",
+		dataset: "choice",
+		datasetValue: "NNB",
+		class: buttonClass
+	},
+	{
+		label: "Цементаж",
+		dataset: "choice",
+		datasetValue: "Concrete",
+		class: buttonClass
+	}
+];
+
+function createButton(data) {
+
+	return "<button style='width:100%;' class=" + data.class + " data-" + data.dataset + "=" + data.datasetValue + ">" + data.label + "</button>"
+}
+
+function fillContainer() {
+	for (i in buttons) {
+		container.insertAdjacentHTML("beforeend", createButton(buttons[i]));
+	}
+}
+
+fillContainer();
+
+container.addEventListener("click", function(e) {
+	if (e.target.dataset.choice) { //&& (e.target.dataset.choice != "Concrete")) {
+		webMI.display.openDisplay("AGENT.DISPLAYS.NewView.Services.Service", { type: e.target.dataset.choice }, "main_frame");
+	}
+		
+	else if(e.target.dataset.choice) {
+		webMI.display.openDisplay("AGENT.DISPLAYS.NewView.Services.ComingSoon", {}, "main_frame");
+	}
+		
+})
+
+//settingsButton.addEventListener("click", function() {
+//	openForm();
+//});
+
+settingsButton.addEventListener("click", function() {
+	openForm();
+});
+
+function openForm() {
+	webMI.display.openWindow({
+		display: "AGENT.DISPLAYS.NewView.Services.Form",
+		extern: false,
+		height: 600,
+		width: 500,
+		menubar: false,
+		modal: true,
+		movable: false,
+		resizable: false,
+		scrollbars: false,
+		status: false,
+		title: "Настройка сервисов",
+		toolbar: false,
+		query: webMI.query
+	});
+}
+]]></script>
+</svg>

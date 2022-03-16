@@ -1,0 +1,278 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" width="1790" xmlns="http://www.w3.org/2000/svg" height="1016">
+ <defs/>
+ <metadata>
+  <atv:gridconfig width="20" height="20" enabled="false" gridstyle="lines"/>
+  <atv:snapconfig width="5" height="5" enabled="true"/>
+ </metadata>
+ <g atv:insensitive="true" id="id_8" atv:refpx="0" atv:refpy="0">
+  <rect id="id_9" y="0" width="1790.00" atv:refpx="895" atv:refpy="508" fill="#000406" height="1016.00" x="0"/>
+ </g>
+ <svg id="id_26" y="6.667" width="155" atv:refpx="695.996" atv:refpy="62.5" transform="matrix(1.4968,0,0,1.5,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="387.5">
+  <atv:argument value="Вес на крюке" name="cardLabel"/>
+  <atv:argument value="тс" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook" name="base"/>
+ </svg>
+ <svg id="id_28" y="6.667" width="155" atv:refpx="937.38" atv:refpy="62.5" transform="matrix(1.4968,0,0,1.5,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="547.845">
+  <atv:argument value="Нагрузка на долото" name="cardLabel"/>
+  <atv:argument value="тс" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Drawworks.LoadOnBit" name="base"/>
+ </svg>
+ <svg id="id_29" y="6.667" width="155" atv:refpx="1177.377" atv:refpy="62.5" transform="matrix(1.4968,0,0,1.5,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="708.19">
+  <atv:argument value="Положение крюка" name="cardLabel"/>
+  <atv:argument value="м" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition" name="base"/>
+ </svg>
+ <svg id="id_31" y="198.095" width="80" atv:refpx="507.5" atv:refpy="312.5" transform="matrix(1.3125,0,0,1.3125,0,0)" height="80" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.StatusCompare" x="346.667">
+  <atv:argument value="БН 1" name="Label"/>
+ </svg>
+ <svg id="id_32" y="285.714" width="80" atv:refpx="507.5" atv:refpy="427.501" transform="matrix(1.3125,0,0,1.3125,0,0)" height="80" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.StatusCompare" x="346.667">
+  <atv:argument value="БН 2" name="Label"/>
+ </svg>
+ <svg id="id_33" y="173.333" width="155" atv:refpx="697.381" atv:refpy="312.5" transform="matrix(1.4968,0,0,1.5,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="387.5">
+  <atv:argument value="Ходы 1" name="cardLabel"/>
+  <atv:argument value="ход/мин" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Mud.Pump.StrokePump1" name="base"/>
+ </svg>
+ <svg id="id_34" y="250" width="155" atv:refpx="697.381" atv:refpy="427.5" transform="matrix(1.4968,0,0,1.5,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="387.5">
+  <atv:argument value="Ходы 2" name="cardLabel"/>
+  <atv:argument value="ход/мин" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Mud.Pump.StrokePump2" name="base"/>
+ </svg>
+ <svg id="id_36" y="250" width="155" atv:refpx="937.365" atv:refpy="427.5" transform="matrix(1.4968,0,0,1.5,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="547.835">
+  <atv:argument value="Сумма ходов" name="cardLabel"/>
+  <atv:argument value="ход/мин" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Mud.Pump.SumStrokePumps" name="base"/>
+ </svg>
+ <svg id="id_37" y="173.333" width="155" atv:refpx="1417.363" atv:refpy="312.5" transform="matrix(1.4968,0,0,1.5,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="868.52">
+  <atv:argument value="Расход на входе" name="cardLabel"/>
+  <atv:argument value="л/с" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Mud.FlowInput" name="base"/>
+ </svg>
+ <svg id="id_38" y="250" width="155" atv:refpx="1417.385" atv:refpy="427.5" transform="matrix(1.4968,0,0,1.5,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="868.534">
+  <atv:argument value="Поток на выходе" name="cardLabel"/>
+  <atv:argument value="л/с" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Mud.FlowOutput" name="base"/>
+ </svg>
+ <svg id="id_41" y="173.333" width="155" atv:refpx="1177.377" atv:refpy="312.5" transform="matrix(1.4968,0,0,1.5,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="708.19">
+  <atv:argument value="Расход БН 1" name="cardLabel"/>
+  <atv:argument value="л/с" name="cardUnit"/>
+ </svg>
+ <svg id="id_42" y="250" width="155" atv:refpx="1177.377" atv:refpy="427.5" transform="matrix(1.4968,0,0,1.5,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="708.19">
+  <atv:argument value="Расход БН 2" name="cardLabel"/>
+  <atv:argument value="л/с" name="cardUnit"/>
+ </svg>
+ <svg id="id_3" y="173.333" width="155" atv:refpx="937.365" atv:refpy="312.5" transform="matrix(1.4968,0,0,1.5,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="547.835">
+  <atv:argument value="Давл. в манифольде" name="cardLabel"/>
+  <atv:argument value="МПа" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold" name="base"/>
+ </svg>
+ <svg id="id_35" y="6.667" width="155" atv:refpx="1417.375" atv:refpy="62.5" transform="matrix(1.4968,0,0,1.5,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="868.534">
+  <atv:argument value="Скорость СПО" name="cardLabel"/>
+  <atv:argument value="м/с" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Drawworks.HookSpeed" name="base"/>
+ </svg>
+ <svg id="id_43" y="7.619" width="80" atv:refpx="507.501" atv:refpy="62.499" transform="matrix(1.3125,0,0,1.3125,0,0)" height="80" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.StatusCompare" x="346.667">
+  <atv:argument value="Лебедка" name="Label"/>
+ </svg>
+ <line id="id_0" x1="445" atv:refpx="1120" atv:refpy="125" stroke="#b254b2" stroke-width="2" y2="125" y1="125" x2="1795"/>
+ <line id="id_1" x1="445" atv:refpx="1120" atv:refpy="250.5" stroke="#b254b2" stroke-width="2" y2="250" y1="250" x2="1795"/>
+ <line id="id_2" x1="570" atv:refpx="570" atv:refpy="510" stroke="#b254b2" stroke-width="2" y2="1020" y1="0" x2="570"/>
+ <svg id="id_5" y="875" width="155" atv:refpx="635.649" atv:refpy="650" transform="matrix(0.7097,0,0,0.7143,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="817.273">
+  <atv:argument value="Момент машключа 1" name="cardLabel"/>
+  <atv:argument value="кН.м" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Tool.MachineKeyTorque1" name="base"/>
+ </svg>
+ <svg id="id_6" y="874.983" width="155" atv:refpx="875.617" atv:refpy="649.987" transform="matrix(0.7097,0,0,0.7143,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="1155.418">
+  <atv:argument value="Момент гидроключа" name="cardLabel"/>
+  <atv:argument value="кН.м" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Tool.HydrokeyTorque" name="base"/>
+ </svg>
+ <svg id="id_7" y="875" width="155" atv:refpx="755.646" atv:refpy="650" transform="matrix(0.7097,0,0,0.7143,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="986.364">
+  <atv:argument value="Момент машключа 2" name="cardLabel"/>
+  <atv:argument value="кН.м" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Tool.MachineKeyTorque1" name="base"/>
+ </svg>
+ <text id="id_16" y="660" atv:refpx="473.84" atv:refpy="655.5" font-family="Arial Black" font-size="28" fill="#8a8a8a" x="455">Ключи</text>
+ <svg id="id_23" y="90" width="155" atv:refpx="695.994" atv:refpy="187.5" transform="matrix(1.4968,0,0,1.5,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="387.494">
+  <atv:argument value="Момент ВСП" name="cardLabel"/>
+  <atv:argument value="кН.м" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.TDS.TDSTorque" name="base"/>
+ </svg>
+ <svg id="id_24" y="90" width="155" atv:refpx="937.374" atv:refpy="187.5" transform="matrix(1.4968,0,0,1.5,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="547.836">
+  <atv:argument value="Обороты ВСП" name="cardLabel"/>
+  <atv:argument value="об/мин" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.TDS.TDSSpeed" name="base"/>
+ </svg>
+ <svg id="id_30" y="102.857" width="80" atv:refpx="507.5" atv:refpy="187.499" transform="matrix(1.3125,0,0,1.3125,0,0)" height="80" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.StatusCompare" x="346.667">
+  <atv:argument value="ВСП" name="Label"/>
+ </svg>
+ <line id="id_39" x1="445" atv:refpx="1120" atv:refpy="490.5" stroke="#b254b2" stroke-width="2" y2="490" y1="490" x2="1795"/>
+ <line id="id_40" x1="445" atv:refpx="1120" atv:refpy="615.5" stroke="#b254b2" stroke-width="2" y2="615" y1="615" x2="1795"/>
+ <text id="id_44" y="729" atv:refpx="490.566" atv:refpy="724.5" font-family="Arial Black" font-size="32" fill="#8a8a8a" x="485">БР</text>
+ <svg id="id_45" y="973" width="155" atv:refpx="635.654" atv:refpy="720" transform="matrix(0.7097,0,0,0.7143,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="817.273">
+  <atv:argument value="Плотность 1" name="cardLabel"/>
+  <atv:argument value="мг/см³" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Mud.Properties.DensityVolume1" name="base"/>
+ </svg>
+ <svg id="id_46" y="973" width="155" atv:refpx="995.647" atv:refpy="720" transform="matrix(0.7097,0,0,0.7143,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="1324.545">
+  <atv:argument value="Температура" name="cardLabel"/>
+  <atv:argument value="°C" name="cardUnit"/>
+ </svg>
+ <svg id="id_47" y="973" width="155" atv:refpx="755.651" atv:refpy="720" transform="matrix(0.7097,0,0,0.7143,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="986.364">
+  <atv:argument value="Плотность 2" name="cardLabel"/>
+  <atv:argument value="мг/см³" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Mud.Properties.DensityVolume2" name="base"/>
+ </svg>
+ <text id="id_48" y="824" atv:refpx="474.057" atv:refpy="819.5" font-family="Arial Black" font-size="32" fill="#8a8a8a" x="460.5">Газы</text>
+ <line id="id_49" x1="445" atv:refpx="1120" atv:refpy="755.5" stroke="#b254b2" stroke-width="2" y2="755" y1="755" x2="1795"/>
+ <svg id="id_50" y="1070.979" width="155" atv:refpx="634.982" atv:refpy="789.985" transform="matrix(0.7097,0,0,0.7143,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardVal" x="817.247">
+  <atv:argument value="Сероводород 1" name="cardLabel"/>
+  <atv:argument value="мг/м³" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Mud.Properties.HydroSulfide1" name="base"/>
+ </svg>
+ <svg id="id_51" y="1070.979" width="155" atv:refpx="754.979" atv:refpy="789.985" transform="matrix(0.7097,0,0,0.7143,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardVal" x="986.332">
+  <atv:argument value="Сероводород 2" name="cardLabel"/>
+  <atv:argument value="мг/м³" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Mud.Properties.HydroSulfide2" name="base"/>
+ </svg>
+ <svg id="id_52" y="1154.977" width="155" atv:refpx="634.982" atv:refpy="849.984" transform="matrix(0.7097,0,0,0.7143,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardVal" x="817.247">
+  <atv:argument value="Загазованность 1" name="cardLabel"/>
+  <atv:argument value="%" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Mud.Properties.NKPR1" name="base"/>
+ </svg>
+ <svg id="id_57" y="1154.977" width="155" atv:refpx="755" atv:refpy="850" transform="matrix(0.7097,0,0,0.7143,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardVal" x="986.332">
+  <atv:argument value="Загазованность 2" name="cardLabel"/>
+  <atv:argument value="%" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Mud.Properties.NKPR2" name="base"/>
+ </svg>
+ <svg id="id_58" y="1154.977" width="155" atv:refpx="875" atv:refpy="850" transform="matrix(0.7097,0,0,0.7143,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardVal" x="1155.418">
+  <atv:argument value="Загазованность 3" name="cardLabel"/>
+  <atv:argument value="%" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Mud.Properties.NKPR3" name="base"/>
+ </svg>
+ <svg id="id_59" y="1154.977" width="155" atv:refpx="995" atv:refpy="850" transform="matrix(0.7097,0,0,0.7143,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardVal" x="1324.503">
+  <atv:argument value="Загазованность 4" name="cardLabel"/>
+  <atv:argument value="%" name="cardUnit"/>
+ </svg>
+ <svg id="id_60" y="1154.977" width="155" atv:refpx="1115" atv:refpy="850" transform="matrix(0.7097,0,0,0.7143,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardVal" x="1493.589">
+  <atv:argument value="Загазованность 5" name="cardLabel"/>
+  <atv:argument value="%" name="cardUnit"/>
+ </svg>
+ <svg id="id_61" y="1154.977" width="155" atv:refpx="1234.999" atv:refpy="850" transform="matrix(0.7097,0,0,0.7143,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardVal" x="1662.674">
+  <atv:argument value="Загазованность 6" name="cardLabel"/>
+  <atv:argument value="%" name="cardUnit"/>
+ </svg>
+ <svg id="id_62" y="1154.977" width="155" atv:refpx="1355" atv:refpy="850" transform="matrix(0.7097,0,0,0.7143,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardVal" x="1831.76">
+  <atv:argument value="Загазованность 7" name="cardLabel"/>
+  <atv:argument value="%" name="cardUnit"/>
+ </svg>
+ <svg id="id_63" y="1154.977" width="155" atv:refpx="1474.999" atv:refpy="850" transform="matrix(0.7097,0,0,0.7143,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardVal" x="2000.845">
+  <atv:argument value="Загазованность 8" name="cardLabel"/>
+  <atv:argument value="%" name="cardUnit"/>
+ </svg>
+ <line id="id_64" x1="445" atv:refpx="1120" atv:refpy="885.5" stroke="#b254b2" stroke-width="2" y2="885" y1="885" x2="1795"/>
+ <svg id="id_65" y="6.667" width="155" atv:refpx="1657.374" atv:refpy="62.499" transform="matrix(1.4968,0,0,1.5,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="1028.862">
+  <atv:argument value="Скорость проходки" name="cardLabel"/>
+  <atv:argument value="м/ч" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Well.DrillSpeed" name="base"/>
+ </svg>
+ <svg id="id_66" y="1154.977" width="155" atv:refpx="1595" atv:refpy="850" transform="matrix(0.7097,0,0,0.7143,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardVal" x="2169.931">
+  <atv:argument value="Загазованность 9" name="cardLabel"/>
+  <atv:argument value="%" name="cardUnit"/>
+ </svg>
+ <svg id="id_67" y="1147.977" width="155" atv:refpx="1714.999" atv:refpy="845" transform="matrix(0.7097,0,0,0.7143,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardVal" x="2339.016">
+  <atv:argument value="Загазованность 10" name="cardLabel"/>
+  <atv:argument value="%" name="cardUnit"/>
+ </svg>
+ <line id="id_68" x1="444.993" atv:refpx="444.993" atv:refpy="510" stroke="#b254b2" stroke-width="2" y2="1020" y1="0" x2="444.993"/>
+ <svg id="id_69" y="973" width="155" atv:refpx="875.651" atv:refpy="720" transform="matrix(0.7097,0,0,0.7143,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="1155.455">
+  <atv:argument value="Плотность 3" name="cardLabel"/>
+  <atv:argument value="мг/см³" name="cardUnit"/>
+ </svg>
+ <text id="id_70" y="959" atv:refpx="491.188" atv:refpy="950" font-family="Arial Black" font-size="32" fill="#8a8a8a" x="465.5">Емк.</text>
+ <svg id="id_71" y="498.478" width="50" atv:refpx="634.998" atv:refpy="952.513" transform="matrix(2.2,0,0,1.7854,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.VolumeMud" x="263.636">
+  <atv:argument value="Объем 1" name="Label"/>
+  <atv:argument value="м³" name="Unit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel1" name="base"/>
+ </svg>
+ <svg id="id_72" y="498.489" width="50" atv:refpx="754.998" atv:refpy="952.514" transform="matrix(2.2,0,0,1.7854,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.VolumeMud" x="318.181">
+  <atv:argument value="Объем 2" name="Label"/>
+  <atv:argument value="м³" name="Unit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel2" name="base"/>
+ </svg>
+ <svg id="id_73" y="498.488" width="50" atv:refpx="875.001" atv:refpy="952.512" transform="matrix(2.2,0,0,1.7854,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.VolumeMud" x="372.727">
+  <atv:argument value="Объем 3" name="Label"/>
+  <atv:argument value="м³" name="Unit"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel3" name="base"/>
+ </svg>
+ <svg id="id_74" y="498.489" width="50" atv:refpx="994.998" atv:refpy="952.513" transform="matrix(2.2,0,0,1.7854,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.VolumeMud" x="427.272">
+  <atv:argument value="" name="Label"/>
+  <atv:argument value="м³" name="Unit"/>
+ </svg>
+ <svg id="id_75" y="498.489" width="50" atv:refpx="1114.997" atv:refpy="952.514" transform="matrix(2.2,0,0,1.7854,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.VolumeMud" x="481.817">
+  <atv:argument value="" name="Label"/>
+  <atv:argument value="м³" name="Unit"/>
+ </svg>
+ <svg id="id_76" y="498.489" width="50" atv:refpx="1234.999" atv:refpy="952.512" transform="matrix(2.2,0,0,1.7854,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.VolumeMud" x="536.363">
+  <atv:argument value="" name="Label"/>
+  <atv:argument value="м³" name="Unit"/>
+ </svg>
+ <svg id="id_77" y="498.489" width="50" atv:refpx="1354.997" atv:refpy="952.513" transform="matrix(2.2,0,0,1.7854,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.VolumeMud" x="590.908">
+  <atv:argument value="" name="Label"/>
+  <atv:argument value="м³" name="Unit"/>
+ </svg>
+ <svg id="id_78" y="498.489" width="50" atv:refpx="1474.999" atv:refpy="952.513" transform="matrix(2.2,0,0,1.7854,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.VolumeMud" x="645.454">
+  <atv:argument value="" name="Label"/>
+  <atv:argument value="м³" name="Unit"/>
+ </svg>
+ <svg id="id_79" y="498.489" width="50" atv:refpx="1594.998" atv:refpy="952.514" transform="matrix(2.2,0,0,1.7854,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.VolumeMud" x="699.999">
+  <atv:argument value="" name="Label"/>
+  <atv:argument value="м³" name="Unit"/>
+ </svg>
+ <svg id="id_80" y="498.489" width="50" atv:refpx="1714.998" atv:refpy="952.513" transform="matrix(2.2,0,0,1.7854,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.VolumeMud" x="754.545">
+  <atv:argument value="" name="Label"/>
+  <atv:argument value="м³" name="Unit"/>
+ </svg>
+ <svg id="id_4" y="0" width="440" atv:refpx="220" atv:refpy="510" height="1020" xlink:href="AGENT.DISPLAYS.NewView.RigView" x="0">
+  <atv:argument value="AGENT.OBJECTS.IVE50.Tool.ToolPosition" name="ToolPosition"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Well.WellDepth" name="WellDepth"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition" name="HookPosition"/>
+ </svg>
+ <line id="id_10" x1="445" atv:refpx="1120" atv:refpy="685.5" stroke="#b254b2" stroke-width="2" y2="685" y1="685" x2="1795"/>
+ <svg id="id_11" y="380.952" width="80" atv:refpx="507.5" atv:refpy="552.501" transform="matrix(1.3125,0,0,1.3125,0,0)" height="80" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.StatusCompare" x="346.667">
+  <atv:argument value="АПД" name="Label"/>
+  <atv:argument value="AGENT.OBJECTS.Presentation.APD.SubStatusASPD" name="base"/>
+ </svg>
+ <svg id="id_12" y="333.333" width="155" atv:refpx="696" atv:refpy="552.5" transform="matrix(1.4968,0,0,1.5,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardStatusRig" x="387.5">
+  <atv:argument value="АСПД статус" name="Label"/>
+  <atv:argument value="AGENT.OBJECTS.Presentation.APD.WorkStatis" name="base"/>
+  <atv:argument value="AGENT.OBJECTS.Presentation.APD.SubStatusASPD" name="subStatusASPD"/>
+  <atv:argument value="AGENT.OBJECTS.Presentation.APD.SubStatusDrill" name="subStatusDrill"/>
+ </svg>
+ <svg id="id_13" y="333.333" width="155" atv:refpx="937.365" atv:refpy="552.5" transform="matrix(1.4968,0,0,1.5,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="547.835">
+  <atv:argument value="Правый раб. контур" name="cardLabel"/>
+  <atv:argument value="МПа" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.Presentation.APD.PressureRightContour" name="base"/>
+ </svg>
+ <svg id="id_14" y="333.333" width="155" atv:refpx="1177.363" atv:refpy="552.5" transform="matrix(1.4968,0,0,1.5,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="708.177">
+  <atv:argument value="Левый раб. контур" name="cardLabel"/>
+  <atv:argument value="МПа" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.Presentation.APD.PressureLeftСontour" name="base"/>
+ </svg>
+ <svg id="id_15" y="333.333" width="155" atv:refpx="1417.364" atv:refpy="552.5" transform="matrix(1.4968,0,0,1.5,0,0)" height="70" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardValFloat" x="868.52">
+  <atv:argument value="Стояночный тормоз" name="cardLabel"/>
+  <atv:argument value="МПа" name="cardUnit"/>
+  <atv:argument value="AGENT.OBJECTS.Presentation.APD.PressureParking" name="base"/>
+ </svg>
+ <svg id="id_17" y="380.952" width="80" atv:refpx="1592.5" atv:refpy="552.501" transform="matrix(1.3125,0,0,1.3125,0,0)" height="80" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.StatusCompare" x="1173.333">
+  <atv:argument value="ОРБ" name="Label"/>
+  <atv:argument value="AGENT.OBJECTS.Presentation.APD.MSEworks" name="base"/>
+ </svg>
+ <svg id="id_18" y="0" width="100" atv:refpx="1920" atv:refpy="115" transform="matrix(2.3,0,0,2.3,0,0)" height="100" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.gauge" x="784.783">
+  <atv:argument value="#09222e" name="fill"/>
+  <atv:argument value="T{Давл. в манифольде}" name="label"/>
+  <atv:argument value="AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold" name="base"/>
+  <atv:argument value="2" name="decimalPositions"/>
+ </svg>
+</svg>

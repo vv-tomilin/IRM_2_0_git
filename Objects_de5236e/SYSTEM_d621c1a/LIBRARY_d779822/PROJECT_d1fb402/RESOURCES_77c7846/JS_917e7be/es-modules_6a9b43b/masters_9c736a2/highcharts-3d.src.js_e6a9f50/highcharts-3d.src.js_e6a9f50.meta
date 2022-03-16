@@ -1,0 +1,10 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/masters/highcharts-3d.src.js
+NodeClass: Variable
+BrowseName: 1:highcharts-3d.src.js
+DisplayName: en|highcharts-3d.src.js
+Description: en|highcharts-3d.src.js
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Javascript
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Javascript.Compress

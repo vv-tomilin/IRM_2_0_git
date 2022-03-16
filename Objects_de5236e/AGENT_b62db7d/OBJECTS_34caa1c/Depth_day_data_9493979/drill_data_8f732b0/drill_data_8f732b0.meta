@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Depth_day_data.drill_data
+NodeClass: Variable
+BrowseName: 1:drill_data
+DisplayName: en|drill_data
+Description: en|drill_data
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

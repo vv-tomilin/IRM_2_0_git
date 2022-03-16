@@ -1,0 +1,11 @@
+NodeId: ns=1;s=AGENT.OBJECTS.SimulatedData.double_3
+NodeClass: Variable
+BrowseName: 1:double_3
+DisplayName: en|double_3
+Description: en|double_3
+DataType: Double
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.AGGREGATETEMPLATES.AT1
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.datavalues

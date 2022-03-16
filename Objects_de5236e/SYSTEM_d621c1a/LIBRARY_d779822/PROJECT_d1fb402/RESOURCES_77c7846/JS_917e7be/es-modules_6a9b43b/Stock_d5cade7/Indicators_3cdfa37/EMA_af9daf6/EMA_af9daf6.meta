@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Stock/Indicators/EMA
+NodeClass: Object
+BrowseName: 1:EMA
+DisplayName: en|EMA
+Description: en|EMA
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

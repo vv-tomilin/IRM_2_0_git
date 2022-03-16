@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.PumpBlock2.Discrete.FanBlowerElectric.RunHoursMs
+NodeClass: Variable
+BrowseName: 1:RunHoursMs
+DisplayName: en|RunHoursMs
+Description: en|RunHoursMs
+DataType: UInt64
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

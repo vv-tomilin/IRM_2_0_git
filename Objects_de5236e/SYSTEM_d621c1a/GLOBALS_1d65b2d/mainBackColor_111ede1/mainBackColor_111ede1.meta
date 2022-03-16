@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.GLOBALS.mainBackColor
+NodeClass: Variable
+BrowseName: 1:mainBackColor
+DisplayName: en|mainBackColor
+Description: en|mainBackColor
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.GlobalVariable

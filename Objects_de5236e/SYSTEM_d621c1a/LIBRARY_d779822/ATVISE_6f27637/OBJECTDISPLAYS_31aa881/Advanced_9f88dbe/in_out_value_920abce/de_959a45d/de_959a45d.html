@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta content="text/html; charset=windows-1252" http-equiv="content-type">
+<title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Beschreibung</h1>
+<p>Dieses Steuerelement kann sowohl als Eingabe- & Ausgabeelement als auch als reines Ausgabeelement verwendet werden. Mit Hilfe einer Statusanzeige in Form eines zus&auml;tzlichen Rahmens kann zudem auch ein negativer Status des aktuellen Wertes und ein zus&auml;tzlich definierter Alarm dargestellt werden. Die Farben und Blinkintervalle werden in globalen Listen definiert.</p>
+<p>Dar&uuml;ber hinaus wird der Trigger "valuechanged" bei erfolgten Wert&auml;nderungen gefeuert.</p>
+<p>Grunds&auml;tzlich k&ouml;nnen folgende Parametergruppen unabh&auml;ngig vom Eingabemodus verwendet werden:
+<ul>
+  <li>Schrift</li>
+  <li>Darstellung</li>
+  <li>Sicherheit</li>
+  <li>Optionen</li>
+</ul>
+Die verbliebenen Parametergruppen h&auml;ngen vom jeweiligen Eingabemodus ab.
+<h1>Eingabemodi</h1>
+<ol>
+	<li><b>Number: </b>Der Eingabemodus "Number" erlaubt die Eingabe von "-",  ",",  ".",  "0-9" und ber&uuml;cksichtigt zus&auml;tzlich folgende Parametergruppen:
+		<ul>
+			<li>Number Format</li>
+			<li>Limits</li>
+			<li>Enum List Modus</li>
+		</ul>
+	</li>
+	<li><b>Boolean: </b>Der Eingabemodus "Boolean" erlaubt die Eingabe von "true", "false", "1", "0" und ber&uuml;cksichtigt zus&auml;tzlich folgende Parametergruppe:
+		<ul>
+			<li>Enum List Modus</li>
+		</ul>
+	</li>
+	<li><b>String: </b>Der Eingabemodus "String" erlaubt die Eingabe aller Zeichen und ber&uuml;cksichtigt zus&auml;tzlich folgende Parametergruppe:
+		<ul>
+			<li>Enum List Modus</li>
+		</ul>
+	</li>
+	<li><b>Password: </b> Der Eingabemodus "Password" erlaubt die Eingabe aller Zeichen ber&uuml;cksichtigt keine zus&auml;tzlichen Parametergruppen.</li>
+	<p><b>Achtung: Falls ein Zeichen eingegeben wird, welches nicht dem Eingabemodus entspricht, dann wird eine Warnung in der Konsole ausgegeben und der Wert wird nicht gesetzt.</b></p>
+	<p>N&auml;here Details zu den Parametergruppen befinden sich im n&auml;chsten Abschnitt.</p>
+</ol>
+<h1>Parameter</h1>
+<p><b>Achtung: </b>Falls es sowohl die M&ouml;glichkeit gibt einen Wert direkt &uuml;ber einen Parameter zu setzen und auch &uuml;ber eine Adresse zu setzen, dann wird immer bei Angabe beider Werte, derjenige von der Adresse gesetzt.</p>
+<ol>
+	<li>Ohne Parametergruppe
+		<ul>
+			<li><span class="parameter">base</span>: Diese Adresse wird gesetzt.</li>
+			<li><span class="parameter">Alarmadresse</span>: Optional zus&auml;tzliche Adresse eines Alarms, welcher angezeigt werden soll.</li>
+			<li><span class="parameter">Eingabemodus</span>: Hier werden die oben beschriebenen Eingabemodi bestimmt.</li>
+			<li><span class="parameter">direkte Eingabe erlauben</span>: Auswahl zwischen direkter Eingabe und Eingabe &uuml;ber SVG Tastatur.</li>
+			<li><span class="parameter">Status&uuml;berwachung aktivieren</span>: Schaltet die Anzeige des aktuellen Wertestatus ein oder aus.</li>
+			<li><span class="parameter">Statustrigger feuern</span>: Statt der Statusanzeige kann auch ein hier definierter Trigger global gefeuert werden.</li>
+		</ul>
+	</li>
+	<br>
+	<li>Parametergruppe: <b>Zahlenformatierung</b>
+		<ul>
+			<li><span class="parameter">angezeigte Einheit</span>: Diese Einheit wird zus&auml;tzlich zum Wert angezeigt.</li>
+			<li><span class="parameter">Zeichen anzeigen</span>: Bestimmt, ob das jeweilige Vorzeichen angezeigt werden soll oder nicht.</li>
+			<li><span class="parameter">f&uuml;hrende Nullen</span>: Anzahl der Stellen links vom Dezimalkomma (Beispiel: Bei einer Einstellung von 3 wird der Wert 11 als 011 angezeigt).</li>
+			<li><span class="parameter">Nachkommastellen</span>: Anzahl der Stellen rechts vom Dezimalkomma.</li>
+			<li><span class="parameter">Position des Kommas</span>: Wandelt den Wert durch Dividieren durch 10 um (Beispiel: Bei einer Einstellung von 2 wird der Wert 2000 als 20,00 angezeigt).</li>
+		</ul>
+	</li>
+	<br>
+	<li>Parametergruppe: <b>Enum List Modus</b>
+		<ul>
+			<li><span class="parameter">enum Liste</span>: Globale Liste, die den anzuzeigenden Wert definiert.</li>		</ul>
+		<p>Ist eine "enum Liste" festgelegt, wird der Wert, sofern vorhanden, aus der globalen Liste entnommen.</p>
+		<p>Beispiel</span>:</p>
+		<ul>
+			<li>Hinzuf&uuml;gen einer globalen Liste (z.&nbsp;B. "mylist") zu den globalen Parametern</li>
+			<li>Geben Sie "1" in die Spalte "Schl&uuml;ssel" der ersten Zeile und einen zugeh&ouml;rigen Wert (z.&nbsp;B. 10) in die Spalte "Wert" der ersten Zeile ein.</li>
+			<li>eben Sie "2" in die Spalte "Schl&uuml;ssel" der zweiten Zeile und einen zugeh&ouml;rigen Wert (z.&nbsp;B. 20) in die Spalte "Wert" der zweiten Zeile ein usw.</li>
+			<li>W&auml;hlen Sie Ihre oben definierte globale Liste (z.&nbsp;B. "mylist") als Wert des Parameters &bdquo;enum Liste" aus.</li>
+			<li>Dadurch wird bewirkt, dass das "Ein-/Ausgabeelement Zahl" den Wert auf 10 setzt, wenn "base" = 1, bzw. auf 20, wenn "base"= 2, usw.</li>
+			</ul>
+	</li>
+	<br>
+	<li>Parametergruppe: <b>Schrift</b>
+		<ul>
+			<li><span class="parameter">Schriftart</span>: Schriftart, die auf den Wert angewendet wird (Standard: Arial).</li>
+			<li><span class="parameter">Gr&ouml;&szlig;e</span>: Schriftgr&ouml;&szlig;e, die auf den Wert angewendet wird (Standard: 12).</li>
+			<li><span class="parameter">Farbe</span>: Farbe, die auf den Wert angewendet wird (Standard: Globaler Parameter <i>atvFontColor</i>)</li>
+			</ul>
+	</li>
+	<br>
+	<li>Parametergruppe: <b>Darstellung</b>
+		<ul>
+			<li><span class="parameter">F&uuml;llfarbe</span>: F&uuml;llfarbe von Hintergrundfl&auml;chen (Standard: Globaler Parameter <i>atvFillColor</i>)</li>
+			<li><span class="parameter">F&uuml;llfarbe Wertefeld</span>: F&uuml;llfarbe des Wertefelds (Standard: wei&szlig;)</li>
+			<li><span class="parameter">F&uuml;llfarbe Wertefeld nicht editierbar</span>: F&uuml;llfarbe des Wertefelds, wenn nicht editierbar (Standard: hellgrau)</li>
+			<li><span class="parameter">F&uuml;llfarbe Wertefeld inaktiv</span>: F&uuml;llfarbe des Wertefelds, wenn nicht aktiv (Standard: dunkelgrau)</li>
+			<li><span class="parameter">Fokus Konturfarbe</span>: Konturfarbe, wenn das Element den Fokus erh&auml;lt.</li>
+			<li><span class="parameter">Rahmenfarbe</span>: Farbe des Rahmens um das Steuerelement (Standard: Globaler Parameter <i>atvBorderColor</i>).</li>
+			<li><span class="parameter">Statushinweis</span>: Spezifiziert die Darstellung des Status &uuml;ber eine definierte globale Liste (Standard: Globaler Parameter <i>atvStatusIndication</i>)</li>
+			<li><span class="parameter">Alarmhinweis</span>: Spezifiziert die Darstellung des Alarms &uuml;berber eine definierte globale Liste (Standard: Globaler Parameter <i>atvAlarmIndication</i>)</li>
+			</ul>
+	</li>
+	<br>
+	<li>Parametergruppe: <b>Limits</b>
+		<ul>
+			<li><span class="parameter">Unteres Limit unterschritten (off=kein Limit)</span>: Wert  f&uuml;r Unteres Limit unterschritten&nbsp;(Standard: off, d.&nbsp;h. kein Limit)			</li>
+			<li><span class="parameter">Unteres Limit erreicht (off=kein Limit)</span>: Wert  f&uuml;r Unteres Limit erreicht&nbsp;(Standard: off, d.&nbsp;h. kein Limit)			</li>
+			<li><span class="parameter">Oberes Limit erreicht (off=kein Limit)</span>: Wert f&uuml;r Oberes Limit  erreicht&nbsp;(Standard: off, d.&nbsp;h. kein Limit) </li>
+			<li><span class="parameter">Oberes Limit &uuml;berschritten (off=kein Limit)</span>: Wert  f&uuml;r Oberes Limit &uuml;berschritten&nbsp;(Standard: off, d.&nbsp;h. kein Limit)			</li>
+			<li><span class="parameter">Farbe f&uuml;r Unteres Limit unterschritten</span>: F&uuml;llfarbe , wenn " Unteres Limit unterschritten" &gt;=&nbsp;Wert (Standard: rot).</li>
+			<li><span class="parameter">Farbe f&uuml;r Unteres Limit erreicht</span>: F&uuml;llfarbe , wenn Unteres Limit unterschritten" &lt;&nbsp;Wert &lt;= "Unteres Limit erreicht" (Standard: gelb).</li>
+			<li><span class="parameter">Farbe f&uuml;r Oberes Limit erreicht</span>: F&uuml;llfarbe , wenn " Oberes Limit erreicht" &lt;=&nbsp;Wert &lt; "Oberes Limit &uuml;berschritten" (Standard: gelb).</li>			<li><span class="parameter">Farbe f&uuml;r Oberes Limit &uuml;berschritten</span>: F&uuml;llfarbe , wenn " Oberes Limit &uuml;berschritten" &lt;=&nbsp;Wert (Standard: rot).</li>
+			<li><span class="parameter">Minimum</span>: Untere Grenze des Werts (Standard: off, d.&nbsp;h. kein Limit).</li>
+			<li><span class="parameter">Maximum</span>: Obere Grenze des Werts (Standard: off, d.&nbsp;h. kein Limit).</li>
+			<li><span class="parameter">Adresse f&uuml;r Minimum</span>: Adresse, der das Minimum entnommen wird; setzt den Parameter "Minimum" au&szlig;er Kraft.</li>
+			<li><span class="parameter">Adresse f&uuml;r Maximum</span>: Adresse, der das Maximum entnommen wird; setzt den Parameter "Maximum" au&szlig;er Kraft.</li>
+			<li><span class="parameter">Adresse f&uuml;r Unteres Limit unterschritten</span>: Adresse, der "Unteres Limit unterschritten" entnommen wird; setzt den Parameter "Unteres Limit unterschritten" au&szlig;er Kraft.</li>			<li><span class="parameter">Adresse f&uuml;r Unteres Limit erreicht</span>: Adresse, der "Unteres Limit erreicht" entnommen wird; setzt den Parameter "Unteres Limit erreicht" au&szlig;er Kraft.</li>
+			<li><span class="parameter">Adresse f&uuml;r Oberes Limit erreicht</span>: Adresse, der "Oberes Limit erreicht" entnommen wird; setzt den Parameter "Oberes Limit erreicht" au&szlig;er Kraft.</li>			<li><span class="parameter">Adresse f&uuml;r Oberes Limit &uuml;berschritten</span>: Adresse, der "Oberes Limit &uuml;berschritten" entnommen wird; setzt den Parameter "Oberes Limit &uuml;berschritten" au&szlig;er Kraft.</li>
+			</ul>
+	</li>
+	<br>
+	<li>Parametergruppe: <b>Sicherheit</b>
+		<ul>
+			<li><span class="parameter">editierbar</span>: Bei der Einstellung "No" werden die Werte nur angezeigt, aber es kann nichts eingegeben werden (Standard: Yes).</li>
+			<li><span class="parameter">Ben&ouml;tigtes Recht</span>: Der Benutzer muss &uuml;ber dieses Recht verf&uuml;gen, um dieses Steuerelement aktivieren, d.&nbsp;h. Werte eingeben zu k&ouml;nnen.</li>
+			<li><span class="parameter">Aktivierungsadresse</span>: Stimmt der Wert dieser Adresse mit dem "Aktivierungswert" &uuml;berein, ist das Steuerelement aktiv, so dass es als Eingabefeld verwendet werden kann.</li>
+			<li><span class="parameter">Aktivierungswert</span>:  Wert, von dem das Steuerelement aktiviert wird.</li>
+		</ul>
+		<p><b>Achtung</span>:  Wenn nur die Aktivierungsadresse bzw. der Aktivierungswert angegeben wird, dann ist das Steuerelement aktiv, da diese beiden Parameter nur gemeinsam funktionieren.</b></p>
+	</li>
+	<br>
+	<li>Parametergruppe: <b>Optionen</b>
+		<ul>
+			<li><span class="parameter">alternative Ausgabeadresse</span>: Sofern festgelegt, wird nur diese Adresse gesetzt (nicht dagegen "base").</li>
+			<li><span class="parameter">Konsistenzgruppe</span>: Name der Konsistenzgruppe.</li>
+			<li><span class="parameter">Tab-Index</span>: Bestimmt die Reihenfolge, in der mit der Tabulatortaste zwischen den einzelnen Object Displays gewechselt werden kann.</li>
+			<li><span class="parameter">Tooltip</span>:  Zeigt eine Tooltip Box mit dem eingegebenen Text an (Standard HTML-Elemente k&ouml;nnen auch eingegeben werden).</li>
+			<li><span class="parameter">Text bei Fokus markieren</span>:  Markiert den Text, wenn die direkte Eingabe erlaubt ist.</li>
+		</ul>
+		<p><b>Achtung: </b> Die alternative Ausgabeadresse funktioniert nur, wenn keine Konsistenzgruppe angegeben ist.</b></p>
+	</li>
+	<br>
+</ol>
+</body>
+</html>

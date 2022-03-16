@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta content="text/html; charset=windows-1252" http-equiv="content-type">
+	<title>Tile for Bar Graphs HelpShowed Series</title>
+	<style> #parameter {
+		font-weight: bold;
+	} </style>
+</head>
+<body>
+<h1>Description</h1>
+<p>The display shows up to 25 process values in a bar chart</p>
+<p>An additional border indicates the current value's negative state or an additionally defined alarm.
+	The colors and blinking intervals are defined in global lists.</p>
+
+<h1>Parameters</h1>
+<ul>
+	<li><span class="parameter">base</span>: Address used for ouput and status monitoring.</li>
+	<li><span class="parameter">alarm address</span>: Optional address used for alarm monitoring.</li>
+</ul>
+
+<p>View settings:</p>
+<ul>
+	<li><span class="parameter">title</span>: Title of the tile displayed.</li>
+	<li><span class="parameter">unit</span>: This unit is displayed in addition to the value.</li>
+	<li><span class="parameter">decimal</span>: Number of digits to the right of the decimal point (default: 0).</li>
+	<li><span class="parameter">font family title</span>: Font family which will be applied to the title</li>
+	<li><span class="parameter">font size title</span>: Font size which will be applied to the title (default: 12).</li>
+	<li><span class="parameter">displayed series (0 = all)</span>:Number of maximum displayed series (default: 0).</li>
+	<li><span class="parameter">minimum</span>: Lower limits of the displayed values.</li>
+	<li><span class="parameter">maximum</span>: Upper limit of the displayed values.</li>
+	<li><span class="parameter">sorting</span>: Selection of the sort order (default: no sorting).</li>
+	<li><span class="parameter">orientation</span>:Alignment of the diagram.</li>
+</ul>
+
+<p>Behavior on click:</p>
+<ul>
+	<li><span class="parameter">enable click event</span>: Activation of processing a click on the tile.</li>
+	<li><span class="parameter">enable click on content</span>: Additional recognization of a click on the tiles content.</li>
+	<li><span class="parameter">targetdisplay</span>: Display to be opened when recognizing a click.</li>
+	<li><span class="parameter">linked element</span>: Element to be monitored for external click events (ID of the element).</li>
+</ul>
+
+<p>Status:</p>
+<ul>
+	<li><span class="parameter">enable status monitoring</span>: Switch monitoring of current value status on or off.</li>
+	<li><span class="parameter">fire status trigger</span>: Instead of the status display a here defined trigger can be fired globally.</li>
+</ul>
+
+<p>Apperance:</p>
+<ul>
+	<li><span class="parameter">background color</span>: Background color (default: global parameter <i>atvFillColor</i>)</li>
+	<li><span class="parameter">text color</span>: Text color (default: global parameter <i>atvFontColor</i>)</li>
+	<li><span class="parameter">border color</span>: Border color (default: global parameter <i>atvBorderColor</i>)	</li>
+	<li><span class="parameter">deactivation color</span>: Deactivation color (default: global parameter <i>atvInactiveColor</i>) </li>
+	<li><span class="parameter">status indication</span>: Specify the status' display through a defined global list (default: global parameter <i>atvStatusIndication</i>)</li>
+	<li><span class="parameter">alarm indication</span>: Specify the alarm's display through a defined global list (default: global parameter <i>atvAlarmIndication</i>)</li>
+</ul>
+
+<p>Options:</p>
+<ul>
+	<li><span class="parameter">tooltip</span>: Displays a tooltip box with the entered text (standard HTML-Elements can be entered)</li>
+</ul>
+
+<p>Security:</p>
+<ul>
+	<li><span class="parameter">necessary right</span>: the user must have this right to activate this control, i.e. to enter values.</li>
+	<li><span class="parameter">activation address</span>: if the value of this address equals to "activation value", then the control will be active, i.e. can be used as input field.</li>
+	<li><span class="parameter">activation value</span>: value which activates the control.</li>
+</ul>
+
+<p>Series *:</p>
+<ul>
+	<li><span class="parameter">Name</span>: Configures the name of displayed series</li>
+	<li><span class="parameter">Adress</span>: Configures adress for the datapoints</li>
+	<li><span class="parameter">Color</span>: Configures the color of barchart</li>
+</ul>
+
+<h1></h1>
+<br>
+</body>
+</html>

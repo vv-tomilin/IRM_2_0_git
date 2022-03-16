@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Stock/Indicators/DMI
+NodeClass: Object
+BrowseName: 1:DMI
+DisplayName: en|DMI
+Description: en|DMI
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

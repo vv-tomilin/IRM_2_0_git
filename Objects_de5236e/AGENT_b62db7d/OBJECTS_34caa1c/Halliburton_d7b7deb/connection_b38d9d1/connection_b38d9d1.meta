@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Halliburton.connection
+NodeClass: Variable
+BrowseName: 1:connection
+DisplayName: en|connection
+Description: en|connection
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

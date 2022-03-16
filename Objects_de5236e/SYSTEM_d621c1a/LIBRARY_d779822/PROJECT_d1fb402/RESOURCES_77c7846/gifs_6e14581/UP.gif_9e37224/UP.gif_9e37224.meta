@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/gifs/UP.gif
+NodeClass: Variable
+BrowseName: 1:UP.gif
+DisplayName: en|UP.gif
+Description: en|UP.gif
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Gif

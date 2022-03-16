@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.Test.left-gauge
+NodeClass: Variable
+BrowseName: 1:left-gauge
+DisplayName: en|left-gauge
+Description: en|left-gauge
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.HISTORY.AGGREGATETEMPLATES.ATDurationInStateNonZero.RunHours
+NodeClass: Object
+BrowseName: 1:RunHours
+DisplayName: en|RunHours
+Description: en|RunHours
+EventNotifier: 0
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.AggregateFunction
+Reference: forward HasComponent i=11308
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Aggregates

@@ -1,0 +1,566 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="1000" width="1000" xmlns="http://www.w3.org/2000/svg" version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:parameter defaultvalue="" behavior="optional" valuetype="address" name="Plan" group="Data"/>
+  <atv:parameter defaultvalue="true" behavior="optional" valuetype="bool" name="dark mode" group="Appearance"/>
+  <atv:parameter defaultvalue="" behavior="optional" valuetype="address" name="Plan loaded" group="Data"/>
+  <atv:parameter defaultvalue="" behavior="optional" valuetype="address" name="Fact" group="Data"/>
+  <atv:parameter defaultvalue="" behavior="optional" valuetype="address" name="Tool position" group="Data"/>
+  <atv:parameter defaultvalue="" behavior="mandatory" valuetype="number" name="width" group="Scale"/>
+  <atv:parameter defaultvalue="" behavior="mandatory" valuetype="number" name="height" group="Scale"/>
+  <atv:gridconfig height="20" width="20" gridstyle="lines" enabled="false"/>
+  <atv:snapconfig height="10" width="10" enabled="false"/>
+ </metadata>
+ <foreignObject height="1000" y="0" id="id_3" atv:bindbr="1,1" width="1000" atv:bindtl="0,0" x="0">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <div id="chart-container" style="width:100%; height:100%;"/>
+  </div>
+ </foreignObject>
+ <script type="text/ecmascript"><![CDATA[var dd_chart;
+var series_plan_xlsx = [];
+var scaleState = false;
+var scaledFactData;
+var unscaledFactData;
+var scaledToolPosData;
+var unscaledToolPosData;
+var oppositeXAxisMax;
+
+// Распределение цветов
+var operations = {
+  // Бурение
+  Бурение: "#FF00FF",
+  "Отбор керна": "#95E06C",
+  КНБК: "#95E06C",
+  // ПВ
+  СПО: "#95E06C",
+  Наращивание: "#95E06C",
+  Расширение: "#95E06C",
+  // НПВ
+  Брак: "#EF9CDA",
+  Авария: "#F7567C",
+  "Простой НСАД": "#F7567C",
+  Подрядчики: "#F7567C",
+  Метео: "#F7567C",
+  Прочее: "#F7567C",
+  // КРЕПЛЕНИЕ
+  ПЗР: "#95E06C",
+  Промывка: "#95E06C",
+  "Спуск колонны": "#95E06C",
+  Цементирование: "#95E06C",
+  "Активация оснастки": "#95E06C",
+  ОЗЦ: "#95E06C",
+  "Оборудование устья": "#95E06C",
+  "Прочие работы": "#95E06C",
+  // ВСПОМОГАТЕЛЬНЫЕ РАБОТЫ
+  ПЗР: "#95E06C",
+  "Фрезерование окна": "#95E06C",
+  "Обработка раствора": "#95E06C",
+  "Разбуривание НЦС": "#95E06C",
+  Проработка: "#95E06C",
+  "Разбурив. оснастки": "#95E06C",
+  "Снятие замеров": "#95E06C",
+  "Разбуривание ЦК": "#95E06C",
+  Промывка: "#95E06C",
+  Опрессовка: "#95E06C",
+  "Прокачка пачки": "#95E06C",
+  "ГИС (на кабеле)": "#95E06C",
+  "Тест на приток": "#95E06C",
+  "ГИС (на трубах)": "#95E06C",
+  "Монтаж ПВО": "#95E06C",
+  "Ориентирование КО": "#95E06C",
+  "Демонтаж ПВО": "#95E06C",
+  УТЗ: "#95E06C",
+  "Монтаж ФА": "#95E06C",
+  "Чистка ЦСГО/ЕБ": "#95E06C",
+  "Демонтаж ФА": "#95E06C",
+  "Прочие работы": "#95E06C",
+};
+
+function loadDataUpdate(path, target, axis, scalingDependence) {
+  var filter = {
+    type: ["v:1"],
+    address: ["g:" + path],
+  };
+
+  webMI.data.queryFilter(filter, function (e) {
+    var dataPoints = e.result
+      .map(function (point) {
+        return [+point.value.toFixed(2), Math.trunc(point.timestamp)];
+      })
+      .reverse();
+
+    if (target) {
+      target.update({
+        data: dataPoints,
+      });
+    }
+
+    if (axis) {
+      oppositeXAxisMax =
+        dataPoints.length > 2
+          ? Math.round(
+              (dataPoints[dataPoints.length - 1][1] - dataPoints[0][1]) / (24 * 3600 * 1000)
+            )
+          : 1;
+      axis.update({
+        max: oppositeXAxisMax,
+      });
+    }
+    var start = dataPoints[0][1];
+    function convertDate(points) {
+      return points.map(function (arr, idx) {
+        return idx == 0
+          ? [arr[0], 0]
+          : [arr[0], +(Math.abs(start - arr[1]) / (24 * 3600 * 1000)).toFixed(2)];
+      });
+    }
+    if (scalingDependence == "FACT") {
+      unscaledFactData = dataPoints.slice();
+      scaledFactData = convertDate(dataPoints);
+    } else if (scalingDependence == "TOOL POSITION") {
+      unscaledToolPosData = dataPoints.slice();
+      scaledToolPosData = convertDate(dataPoints);
+    }
+  });
+}
+
+webMI.addOnload(function (e) {
+  return (function () {
+    var topWindow = parent;
+    webMI.data.loadScript("/highcharts/highcharts.js", function (url, alreadyLoaded) {
+      webMI.data.loadScript("/highcharts/modules/timeline.js", function (url, alreadyLoaded) {
+        initChart();
+      });
+    });
+
+    function initChart() {
+      var params = webMI.query;
+      var container = document.getElementById("chart-container"),
+        operationsTimeline = top.document.createElement("div"),
+        depthDayChart = top.document.createElement("div");
+      webMI.gfx.setScaledEvents(container, true);
+      container.append(operationsTimeline);
+      container.append(depthDayChart);
+      var dark_mode = {
+        colors: ["#90ee7e", "#f45b5b", "#EAD94C", "#2b908f", "#7798BF"],
+        chart: {
+          backgroundColor: "#2a2a2b",
+        },
+        title: {
+          style: {
+            color: "#E0E0E3",
+            textTransform: "uppercase",
+            fontSize: "20px",
+          },
+        },
+        subtitle: {
+          style: {
+            color: "#E0E0E3",
+            textTransform: "uppercase",
+          },
+        },
+        xAxis: {
+          gridLineColor: "#707073",
+          labels: {
+            style: {
+              color: "#E0E0E3",
+            },
+          },
+          lineColor: "#707073",
+          minorGridLineColor: "#505053",
+          tickColor: "#707073",
+          title: {
+            style: {
+              color: "#A0A0A3",
+            },
+          },
+        },
+        yAxis: {
+          gridLineColor: "#707073",
+          labels: {
+            style: {
+              color: "#E0E0E3",
+            },
+          },
+          lineColor: "#707073",
+          minorGridLineColor: "#505053",
+          tickColor: "#707073",
+          tickWidth: 1,
+          title: {
+            style: {
+              color: "#A0A0A3",
+            },
+          },
+        },
+        tooltip: {
+          backgroundColor: "rgba(0, 0, 0, 0.85)",
+          style: {
+            color: "#F0F0F0",
+          },
+        },
+        plotOptions: {
+          series: {
+            dataLabels: {
+              color: "#F0F0F3",
+              style: {
+                fontSize: "13px",
+              },
+            },
+            marker: {
+              lineColor: "#333",
+            },
+          },
+          boxplot: {
+            fillColor: "#505053",
+          },
+          candlestick: {
+            lineColor: "white",
+          },
+          errorbar: {
+            color: "white",
+          },
+        },
+        legend: {
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          itemStyle: {
+            color: "#E0E0E3",
+          },
+          itemHoverStyle: {
+            color: "#FFF",
+          },
+          itemHiddenStyle: {
+            color: "#606063",
+          },
+          title: {
+            style: {
+              color: "#C0C0C0",
+            },
+          },
+        },
+        credits: {
+          style: {
+            color: "#666",
+          },
+        },
+        labels: {
+          style: {
+            color: "#707073",
+          },
+        },
+        drilldown: {
+          activeAxisLabelStyle: {
+            color: "#F0F0F3",
+          },
+          activeDataLabelStyle: {
+            color: "#F0F0F3",
+          },
+        },
+        navigation: {
+          buttonOptions: {
+            symbolStroke: "#DDDDDD",
+            theme: {
+              fill: "#505053",
+            },
+          },
+        },
+        rangeSelector: {
+          buttonTheme: {
+            fill: "#505053",
+            stroke: "#000000",
+            style: {
+              color: "#CCC",
+            },
+            states: {
+              hover: {
+                fill: "#707073",
+                stroke: "#000000",
+                style: {
+                  color: "white",
+                },
+              },
+              select: {
+                fill: "#000003",
+                stroke: "#000000",
+                style: {
+                  color: "white",
+                },
+              },
+            },
+          },
+          inputBoxBorderColor: "#505053",
+          inputStyle: {
+            backgroundColor: "#333",
+            color: "silver",
+          },
+          labelStyle: {
+            color: "silver",
+          },
+        },
+        navigator: {
+          handles: {
+            backgroundColor: "#666",
+            borderColor: "#AAA",
+          },
+          outlineColor: "#CCC",
+          maskFill: "rgba(255,255,255,0.1)",
+          series: {
+            color: "#7798BF",
+            lineColor: "#A6C7ED",
+          },
+          xAxis: {
+            gridLineColor: "#505053",
+          },
+        },
+        scrollbar: {
+          barBackgroundColor: "#808083",
+          barBorderColor: "#808083",
+          buttonArrowColor: "#CCC",
+          buttonBackgroundColor: "#606063",
+          buttonBorderColor: "#606063",
+          rifleColor: "#FFF",
+          trackBackgroundColor: "#404043",
+          trackBorderColor: "#404043",
+        },
+      };
+      topWindow.Highcharts.setOptions({
+        lang: {
+          months: [
+            "Январь",
+            "Февраль",
+            "Март",
+            "Апрель",
+            "Май",
+            "Июнь",
+            "Июль",
+            "Август",
+            "Сентябрь",
+            "Октябрь",
+            "Ноябрь",
+            "Декабрь",
+          ],
+          shortMonths: [
+            "Янв",
+            "Фев",
+            "Мар",
+            "Апр",
+            "Май",
+            "Июн",
+            "Июл",
+            "Авг",
+            "Сен",
+            "Окт",
+            "Ноя",
+            "Дек",
+          ],
+          weekdays: [
+            "Воскресенье",
+            "Понедельник",
+            "Вторник",
+            "Среда",
+            "Четверг",
+            "Пятница",
+            "Суббота",
+          ],
+        },
+      });
+
+      function processParse(data) {
+        return data.map(function (arr) {
+          return [arr[0], +arr[1], +arr[2], +arr[3], +arr[4]];
+        });
+      }
+      var options = {
+        chart: {
+          renderTo: depthDayChart,
+          width: params["width"],
+          height: params["height"],
+        },
+        credits: { enabled: false },
+        title: {
+          text: "",
+        },
+        yAxis: {
+          title: { text: "Глубина, м" },
+          reversed: true,
+        },
+
+        xAxis: [
+          {
+            crosshair: true,
+            type: "datetime",
+            title: { text: "Время бурения, дата", align: "high" },
+          },
+          {
+            crosshair: true,
+            title: { text: "Время бурения, дни", align: "high" },
+            opposite: true,
+          },
+        ],
+
+        legend: {},
+        tooltip: {
+          //  formatter: function(tooltip){console.log(tooltip)},
+        },
+        plotOptions: {
+          series: {
+            stickyTracking: false,
+            marker: {
+              enabled: false,
+            },
+          },
+        },
+
+        series: [
+          {
+            name: "План",
+            xAxis: 1,
+            keys: ["operation", "sink", "y", "time", "x"],
+            data: [],
+            zIndex: 1,
+            tooltip: {
+              headerFormat: '<span style="font-size:10px">Сутки: {point.x}</span><br/>',
+              pointFormat:
+                "<span style='color:{point.color}'>●</span> {series.name}: <b>{point.y}</b><br/>{point.operation}<br/>Время на операцию: {point.time} ч",
+              valueSuffix: " м",
+            },
+          },
+          {
+            name: "Факт",
+            keys: ["y", "x"],
+            data: [],
+            zIndex: 1,
+            tooltip: {
+              valueSuffix: " м",
+            },
+          },
+          {
+            name: "Положение долота",
+            keys: ["y", "x"],
+            data: [],
+            lineWidth: 1,
+            zIndex: 1,
+            tooltip: {
+              valueSuffix: " м",
+            },
+          },
+          // {
+          //   name: "Операция",
+          //   type: "timeline",
+          //   dataLabels: { enabled: false },
+          //   keys: ["x", "description", "color"],
+          //   data: series_operations_data,
+          //   tooltip: {
+          //     pointFormat:
+          //       '<span style="color:{point.color}">●</span> {series.name}: {point.description}<br/>',
+          //   },
+          //   showInLegend: false,
+          //   opacity: 0,
+          //   zIndex: 0,
+          // },
+        ],
+      };
+
+      dd_chart = new topWindow.Highcharts.Chart(
+        params["dark mode"] == "true" ? topWindow.Highcharts.merge(options, dark_mode) : options,
+        function (chart) {
+          var loadBTN, planBTN;
+          webMI.data.subscribeBlock([params["Plan"], params["Plan loaded"]], [], function (e) {
+            if (e[1].value) {
+              chart.series[0].show();
+              series_plan_xlsx = processParse(JSON.parse(e[0].value));
+              chart.series[0].update({
+                data: series_plan_xlsx,
+              });
+              planBTN = chart.renderer
+                .button("Изменить масштаб")
+                .attr({
+                  id: "plan_scale_btn",
+                  zIndex: 1,
+                })
+                .align({
+                  verticalAlign: "bottom",
+                  x: 10,
+                  y: -50,
+                })
+                .on("click", function () {
+                  if (scaleState) {
+                    scaleState = !scaleState;
+                    chart.xAxis[1].update({ max: oppositeXAxisMax });
+                    chart.series[1].update({
+                      xAxis: 0,
+                      data: unscaledFactData,
+                      tooltip: {
+                        headerFormat: '<span style="font-size: 10px">{point.key}</span><br/>',
+                      },
+                    });
+                    chart.series[2].update({
+                      xAxis: 0,
+                      data: unscaledToolPosData,
+                      tooltip: {
+                        headerFormat: '<span style="font-size: 10px">{point.key}</span><br/>',
+                      },
+                    });
+                  } else {
+                    scaleState = !scaleState;
+                    chart.xAxis[1].update({
+                      max: series_plan_xlsx[series_plan_xlsx.length - 1][4],
+                    });
+                    chart.series[1].update({
+                      xAxis: 1,
+                      data: scaledFactData,
+                      tooltip: {
+                        headerFormat: '<span style="font-size:10px">Сутки: {point.x}</span><br/>',
+                      },
+                    });
+                    chart.series[2].update({
+                      xAxis: 1,
+                      data: scaledToolPosData,
+                      tooltip: {
+                        headerFormat: '<span style="font-size:10px">Сутки: {point.x}</span><br/>',
+                      },
+                    });
+                  }
+                })
+                .add();
+            } else {
+              chart.series[0].hide();
+              loadBTN = chart.renderer
+                .button("Загрузить план")
+                .attr({
+                  id: "upload_data",
+                  zIndex: 2,
+                })
+                .align({
+                  verticalAlign: "bottom",
+                  x: 10,
+                  y: -50,
+                })
+                .on("click", function () {
+                  webMI.trigger.fire("upload_data");
+                })
+                .add();
+            }
+          });
+          if (params["Fact"]) {
+            loadDataUpdate(params["Fact"], chart.series[1], chart.xAxis[1], "FACT");
+          }
+          if (params["Tool position"]) {
+            loadDataUpdate(params["Tool position"], chart.series[2], false, "TOOL POSITION");
+          }
+          webMI.trigger.connect("UpdateChartAfterUploadData", function (e) {
+            webMI.data.call("ProcessPlanData", {}, function (response) {
+              series_plan_xlsx = processParse(response);
+              dd_chart.series[0].update({
+                data: series_plan_xlsx,
+              });
+              loadBTN.fadeOut();
+            });
+          });
+        }
+      );
+    }
+  })();
+});
+]]></script>
+</svg>

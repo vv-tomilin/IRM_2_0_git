@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/BU3000/bu-3000_front.png
+NodeClass: Variable
+BrowseName: 1:bu-3000_front.png
+DisplayName: en|bu-3000_front.png
+Description: en|bu-3000_front.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

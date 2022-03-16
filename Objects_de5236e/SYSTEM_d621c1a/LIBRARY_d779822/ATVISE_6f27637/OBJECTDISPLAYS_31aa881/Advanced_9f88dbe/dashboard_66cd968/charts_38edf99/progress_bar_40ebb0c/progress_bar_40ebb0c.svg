@@ -1,0 +1,498 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="150" height="130" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <desc>Displays a process value in a progress bar</desc>
+ <title>Progress bar</title>
+ <metadata>
+  <atv:parameter defaultvalue="" behavior="mandatory" desc="node address" valuetype="address" name="base"/>
+  <atv:parameter defaultvalue="" behavior="optional" desc="alarm address" valuetype="address" name="alarm"/>
+  <atv:parameter config="Yes;No" defaultvalue="Yes" behavior="optional" desc="enable status monitoring" valuetype="enum" name="statusEnabled"/>
+  <atv:parameter defaultvalue="" behavior="optional" desc="fire status trigger" valuetype="string" name="statusTrigger"/>
+  <atv:parameter behavior="optional" desc="unit" valuetype="trstring" name="unit"/>
+  <atv:parameter defaultvalue="0" behavior="optional" desc="post decimals" valuetype="address" name="postDecimals"/>
+  <atv:parameter defaultvalue="0" behavior="optional" desc="minimum" valuetype="number" name="min"/>
+  <atv:parameter defaultvalue="100" behavior="optional" desc="maximum" valuetype="number" name="max"/>
+  <atv:parameter defaultvalue="#b7b7b7" behavior="optional" desc="color inactive" group="Appearance" valuetype="color" name="colorInactive"/>
+  <atv:parameter substitute="$TEXT_COLOR$" defaultvalue="SYSTEM.GLOBALS.atvFontColor" behavior="optional" desc="text color" group="Appearance" valuetype="global" name="textColor"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvStatusIndication" behavior="optional" desc="status indication" group="Appearance" valuetype="global" name="statusIndication"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvAlarmIndication" behavior="optional" desc="alarm indication" group="Appearance" valuetype="global" name="alarmIndication"/>
+  <atv:parameter defaultvalue="#7cb5ec" behavior="optional" desc="bar color" group="Appearance" valuetype="color" name="barColor"/>
+  <atv:parameter defaultvalue="#ffffff" behavior="optional" desc="bar background color" group="Appearance" valuetype="color" name="barBackgroundColor"/>
+  <atv:parameter defaultvalue="#d7d7d7" behavior="optional" desc="bar border color" group="Appearance" valuetype="color" name="barBorderColor"/>
+  <atv:parameter defaultvalue="1" behavior="optional" desc="bar border width" group="Appearance" valuetype="number" name="barBorderWidth"/>
+  <atv:parameter behavior="optional" desc="address for minimum" group="Options" valuetype="address" name="nodeMin"/>
+  <atv:parameter behavior="optional" desc="address for maximum" group="Options" valuetype="address" name="nodeMax"/>
+  <atv:parameter config="SYSTEM.SECURITY.RIGHTS" defaultvalue="" behavior="optional" desc="necessary right" group="Security" valuetype="address" name="right"/>
+  <atv:parameter defaultvalue="" behavior="optional" desc="activation address" group="Security" valuetype="address" name="activeNode"/>
+  <atv:parameter defaultvalue="off" behavior="optional" desc="activation value" group="Security" valuetype="string" name="activeValue"/>
+  <atv:gridconfig width="20" enabled="false" height="20" gridstyle="lines"/>
+  <atv:snapconfig width="10" enabled="false" height="10"/>
+ </metadata>
+ <rect id="border" stroke-linecap="butt" width="149" fill="#ffffff" stroke="#000000" atv:bindbr="1,1" atv:refpy="65" height="129" atv:refpx="75" stroke-width="1" x="0.5" y="0.5" fill-opacity="0" atv:bindtl="0,0" visibility="visible"/>
+ <g id="id_0" transform="matrix(0.8333,0,0,0.7222,0,0)" atv:refpy="0" atv:refpx="0" atv:insensitive="true">
+  <rect id="id_1" width="180.00" fill="#fffcfd" atv:refpy="90" height="180.00" atv:refpx="90" x="0" y="0"/>
+ </g>
+ <foreignObject id="fo_container" width="148" atv:bindbr="1,1" height="128" x="1" y="1" atv:bindtl="0,0">
+  <div style="width:100%; height:100%;" xmlns="http://www.w3.org/1999/xhtml">
+   <div id="highcharts_container" style="width:100%; height:100%;"/>
+  </div>
+ </foreignObject>
+ <text id="main_label" font-size="20" fill="#575757" atv:bindbr="0.5,0.5" atv:refpy="56.127" atv:refpx="75" font-family="Arial" x="75" y="63.627" atv:bindtl="0.5,0.5" visibility="visible" text-anchor="middle">Dashboard</text>
+ <text id="sub_label" font-size="16" fill="#575757" atv:bindbr="0.5,0.5" atv:refpy="108.679" atv:refpx="-524.123" font-family="Arial" x="75" y="82.373" atv:bindtl="0.5,0.5" visibility="visible" text-anchor="middle">Progress bar</text>
+ <script type="text/ecmascript"><![CDATA[// Id definitions
+var MAIN_LABEL_ID = "main_label";
+var SUB_LABEL_ID = "sub_label";
+var BORDER_ID = "border";
+var HIGHCHARTS_CONTAINER_ID = "highcharts_container";
+
+// Trigger definitions
+var OPEN_DISPLAY_TRIGGER = "com.atvise.dashboard.openDisplay";
+var SHOW_HIDE_BLINKING_FRAME_TRIGGER = "com.atvise.dashboard.showHideBlinkingFrame";
+var SET_BLINKING_FRAME_STROKE_TRIGGER = "com.atvise.dashboard.setBlinkingFrameStroke";
+var SET_ACTIVE_TRIGGER = "com.atvise.dashboard.setActive";
+var SET_INACTIVE_TRIGGER = "com.atvise.dashboard.setInactive";
+
+// Color Definitions
+var BLINKING_FRAME_COLOR_INACTIVE = "#000000";
+
+webMI.addOnload(function () {
+	var queryParams = webMI.query;
+	var chartDiv = document.getElementById(HIGHCHARTS_CONTAINER_ID);
+
+	var options = {};
+	var categoryName = "dummy";
+	var barObj = {};
+	var backgroundObj = {};
+
+	// Query parameters
+	var base = queryParams["base"];
+	var unit = queryParams["unit"] || "";
+	var nodeMin = queryParams["nodeMin"];
+	var nodeMax = queryParams["nodeMax"];
+	var min = nodeMin || queryParams["min"];
+	var max = nodeMax || queryParams["max"];
+	var postDecimalFactor = Math.pow(10, queryParams["postDecimals"]);
+	var right = queryParams["right"] || "";
+	var activeNode = queryParams["activeNode"] || "";
+	var activeValue = queryParams["activeValue"] || "";
+	var alarmIndication = queryParams["alarmIndication"];
+	var statusIndication = queryParams["statusIndication"];
+	var colorInactive = queryParams["colorInactive"];
+	var statusEnabled = queryParams["statusEnabled"];
+	var statusTrigger = queryParams["statusTrigger"];
+	var alarmAddress = queryParams["alarm"];
+	var textColor = queryParams["textColor"];
+	var barColor = queryParams["barColor"];
+	var barBackgroundColor = queryParams["barBackgroundColor"];
+	var barBorderColor = queryParams["barBorderColor"];
+	var barBorderWidth = queryParams["barBorderWidth"];
+
+	var active = false;
+	var hasRight = false;
+	var nodeIsActive = false;
+	var activeIndicators = {};
+	var currentIndicator = "";
+	var minMaxDefined;
+
+	var statusLabels = {};
+	statusLabels.Good = "";
+	statusLabels.Bad = "BAD";
+	statusLabels.Uncertain = "UNCERTAIN";
+	statusLabels.Unknown = "UNKNOWN";
+
+	var trendConfig;
+
+
+	function round(value) {
+		return Math.round(value * postDecimalFactor) / postDecimalFactor;
+	}
+
+	function sortAsc(prev, next) {
+		return prev.y - next.y;
+	}
+
+	function sortDesc (prev, next) {
+		return next.y - prev.y;
+	}
+
+	function formatLabels () {
+		var label = "";
+
+		if (this.point) {
+			var statusLabel = getStatusLabel(this.point.status);
+			label = round(this.y) + " " + unit;
+
+			if (statusLabel !== statusLabels.Good) {
+				label += " (" + statusLabel + ")";
+			}
+		} else {
+			label = round(this.value) + " " + unit;
+		}
+
+		return label;
+	};
+
+	// Activate and deactivate display
+	function deActivate() {
+		if (right != "") {
+			if ((String(activeValue) != "") && (activeNode != "")) {
+				active = (nodeIsActive && hasRight);
+			} else {
+				active = hasRight;
+			}
+		} else {
+			if ((String(activeValue) != "") && (activeNode != "")) {
+				active = nodeIsActive;
+			} else {
+				active = true;
+			}
+		}
+
+		if (active) {
+			webMI.trigger.fire(SET_ACTIVE_TRIGGER, "", "");
+			setIndicator();
+		} else {
+			webMI.trigger.fire(SET_INACTIVE_TRIGGER, "", "");
+		}
+	}
+
+	// Set indicator
+	function setIndicator() {
+		if (currentIndicator != "" || !active)
+			return;
+
+		if (activeIndicators["trigger"]) {
+			currentIndicator = "trigger";
+		} else if (activeIndicators["status"]) {
+			currentIndicator = "status";
+		} else if (activeIndicators["alarm"]) {
+			currentIndicator = "alarm";
+		} else {
+			currentIndicator = "";
+			return;
+		}
+
+		if (active) {
+			webMI.trigger.fire(SET_BLINKING_FRAME_STROKE_TRIGGER, activeIndicators[currentIndicator].color, "");
+			webMI.trigger.fire(SHOW_HIDE_BLINKING_FRAME_TRIGGER, null, "");
+		}
+
+		var interval = activeIndicators[currentIndicator].interval;
+		setTimeout(function() {
+			if (active) {
+				webMI.trigger.fire(SHOW_HIDE_BLINKING_FRAME_TRIGGER, false, "");
+			}
+			setTimeout(function() {
+				currentIndicator = "";
+				setIndicator();
+			}, interval);
+		}, interval);
+	}
+
+	function getStatusLabel (status) {
+		var label = "";
+
+		if (isGood(status)) {
+			label = statusLabels.Good;
+		} else if (isBad(status)) {
+			label = statusLabels.Bad;
+		} else if (isUncertain(status)) {
+			label = statusLabels.Uncertain;
+		} else {
+			label = statusLabels.Unknown;
+		}
+
+
+		return label;
+	}
+
+	function isUndefined(status) {
+		return typeof status === "undefined";
+	}
+
+	function isGood (status) {
+		return !isUndefined(status) && (status == 0 || (status & 0xC0000000).toString(16) == 0);
+	}
+
+	function isUncertain (status) {
+		return !isUndefined(status) && ((status & 0xC0000000).toString(16) == 40000000);
+	}
+
+	function isBad (status) {
+		return !isUndefined(status) && ((status & 0x80000000).toString(16) != 0);
+	}
+
+
+	// Status handling
+	function handleStatus(status) {
+		if (statusEnabled != "Yes")
+			return;
+
+		if (statusTrigger != "") {
+			webMI.trigger.fire(statusTrigger, status);
+		} else {
+			if (typeof statusIndication["ItemStatusBad"] == "undefined")
+				statusIndication = {"ItemStatusBad": {color: "#ffff00", interval: "250"}};
+
+			if (isGood(status))				//Good value state
+				delete activeIndicators["status"];
+			else if (isBad(status))			//Bad value state
+				activeIndicators["status"] = {color: statusIndication["ItemStatusBad"].color, interval: parseInt(statusIndication["ItemStatusBad"].interval)};
+			else if (isUncertain(status))	//Uncertain value state
+				activeIndicators["status"] = {color: statusIndication["ItemStatusBad"].color, interval: parseInt(statusIndication["ItemStatusBad"].interval)};
+			else							//Unknown value state
+				activeIndicators["status"] = {color: statusIndication["ItemStatusBad"].color, interval: parseInt(statusIndication["ItemStatusBad"].interval)};
+
+			setIndicator();
+		}
+	}
+
+	// Alarm handling
+	function initAlarm(address) {
+		if (alarmIndication == "")
+			alarmIndication = {};
+	
+		if (typeof alarmIndication["AlarmStatusOnUnacknowledged"] == "undefined")
+			alarmIndication["AlarmStatusOnUnacknowledged"] = {color: "#ff0000", interval: "250"};
+	
+		if (typeof alarmIndication["AlarmStatusOnAcknowledged"] == "undefined")
+			alarmIndication["AlarmStatusOnAcknowledged"] = {color: "#ff0000", interval: "500"};
+	
+		if (typeof alarmIndication["AlarmStatusOffUnacknowledged"] == "undefined")
+			alarmIndication["AlarmStatusOffUnacknowledged"] = {color: "#ff0000", interval: "750"};
+	
+		if (typeof alarmIndication["AlarmStatusOnOffUnacknowledged"] == "undefined")
+			alarmIndication["AlarmStatusOnOffUnacknowledged"] = {color: "#ff0000", interval: "1500"};
+	
+		webMI.alarm.subscribe(address, function(e) {
+			if (e.state == 1)
+				activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOnUnacknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOnUnacknowledged"].interval)};
+			else if (e.state == 2)
+				activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOnAcknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOnAcknowledged"].interval)};
+			else if (e.state == 3)
+				activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOffUnacknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOffUnacknowledged"].interval)};
+			else if (e.state == 5)
+				activeIndicators["alarm"] = {color: alarmIndication["AlarmStatusOnOffUnacknowledged"].color, interval: parseInt(alarmIndication["AlarmStatusOnOffUnacknowledged"].interval)};
+			else
+				delete activeIndicators["alarm"];
+
+			setIndicator();
+		});
+	}
+
+
+	function createChart() {
+		min = round(parseFloat(min, 10));
+		max = round(parseFloat(max, 10));
+
+		// Add 1% of maximum value because right border will not be displayed
+		trendConfig.yAxis.max = max + max * 0.01;
+		trendConfig.yAxis.min = min;
+
+		trendConfig.plotOptions.series.threshold = min;
+
+		barObj.color = barColor;
+		barObj.borderWidth = barBorderWidth;
+		barObj.borderColor = barBorderColor;
+		barObj.data = [];
+
+		backgroundObj.grouping = false;
+		backgroundObj.borderWidth = barBorderWidth;
+		backgroundObj.borderColor = barBorderColor;
+		backgroundObj.color = barBackgroundColor;
+		backgroundObj.dataLabels = {};
+		backgroundObj.dataLabels.enabled = false;
+		backgroundObj.data = [{}];
+		backgroundObj.data[0].y = max
+		backgroundObj.data[0].status = 0
+
+		trendConfig.series.push(backgroundObj, barObj);
+		trendConfig.yAxis.tickPositioner =  function() {
+			return [min, max];
+		}
+
+		webMI.trendFactory.createTrend(chartDiv, options, function (trendInstance) {
+			var chart = trendInstance.chart;
+
+			// Remove "prefix" SYSTEM.SECURITY.RIGHTS
+			if (right.search(/SYSTEM\.SECURITY\.RIGHTS\./) != -1) {
+				right = right.substring(23,right.length); 
+			}
+
+			// Right handling
+			if (right != "") {
+				webMI.addEvent(webMI.data, "clientvariableschange", function(e) {
+					hasRight = false;
+					if (("username" in e) && (e.username != "")) {
+							hasRight = webMI.hasRight(right);
+					}
+					deActivate();
+				});
+			}
+
+			// Check active node and value
+			if ((activeNode != "") && (String(activeValue) != "")) {
+				webMI.data.subscribe(activeNode, function(e) {
+					var nodeActiveValue = e.value;
+					if (typeof nodeActiveValue == "boolean") {
+						nodeIsActive = (String(nodeActiveValue) == activeValue);
+					} else if (typeof nodeActiveValue == "number") {
+						try {
+							var temp = parseFloat(activeValue);
+							nodeIsActive = (nodeActiveValue == temp);
+						} catch(e) {
+							nodeIsActive = false;
+						}
+					} else {
+						nodeIsActive = (nodeActiveValue == activeValue);
+					}
+
+					deActivate();
+				});
+			} else {
+				deActivate();
+			}
+
+			// Blinking trigger
+			webMI.trigger.connect("com.atvise.setBlinking", function(e) {
+				if (e.value == "none"){
+					delete activeIndicators["trigger"];
+				} else {
+					activeIndicators["trigger"] = {color: e.value, interval: 500};
+				}	
+				setIndicator();
+			});
+
+
+			// Open display trigger
+			webMI.trigger.connect(OPEN_DISPLAY_TRIGGER, function (triggerObj) {
+				if (active) {
+					webMI.display.openDisplay(triggerObj.value);
+				}
+			}, "");
+
+			if (alarmAddress) {
+				initAlarm(alarmAddress);
+			}
+
+			deActivate();
+			chartDiv.style.visiblity = "visible";
+
+			webMI.data.subscribe(base, function(node) {
+				var seriesObj = {};
+				seriesObj.y = node.value;
+				seriesObj.status = node.status;
+
+				chart.series[1].update({
+					data: [seriesObj]
+				}, true);
+
+				handleStatus(node.status);
+			});
+		});
+	}
+
+	webMI.gfx.setVisible(MAIN_LABEL_ID, false);
+	webMI.gfx.setVisible(SUB_LABEL_ID, false);
+	webMI.gfx.setVisible(BORDER_ID, false);
+
+	options.trendName = chartDiv.id.split("_highcharts_container")[0];
+	options.trendGroup = "";
+	options.trendConfig = {};
+
+	trendConfig = options.trendConfig;
+
+	trendConfig.chart = {};
+	trendConfig.title = {};
+	trendConfig.xAxis = {};
+	trendConfig.xAxis.labels = {};
+	trendConfig.yAxis = {};
+	trendConfig.yAxis.labels = {};
+	trendConfig.tooltip = {};
+	trendConfig.plotOptions = {};
+	trendConfig.plotOptions.bar = {};
+	trendConfig.plotOptions.series = {};
+	trendConfig.plotOptions.series.states = {};
+	trendConfig.plotOptions.series.states.hover = {};
+	trendConfig.plotOptions.bar.dataLabels = {};
+	trendConfig.legend = {};
+	trendConfig.series = [];
+	trendConfig.credits = {};
+	trendConfig.exporting = {};
+
+	trendConfig.chart.type = "bar"
+	trendConfig.chart.zoomType = "";
+	trendConfig.title.text = "";
+	trendConfig.chart.panning = false;
+
+
+	trendConfig.xAxis.type = "category";
+	trendConfig.xAxis.title = "";
+	trendConfig.xAxis.labels.enabled = false;
+	trendConfig.xAxis.lineWidth = 0;
+	trendConfig.xAxis.gridLineWidth = 0;
+	trendConfig.xAxis.minorGridLineWidth = 0;
+	trendConfig.xAxis.majorGridLineWidth = 0;
+	trendConfig.xAxis.lineColor = "transparent";
+	trendConfig.xAxis.tickLength = 0;
+	trendConfig.xAxis.minorTickLength = 0;
+	trendConfig.xAxis.majorTickLength = 0;
+	trendConfig.xAxis.categories = [categoryName];
+
+	trendConfig.yAxis.title = "";
+	trendConfig.yAxis.lineWidth = 0;
+	trendConfig.yAxis.gridLineWidth = 0;
+	trendConfig.yAxis.minorGridLineWidth = 0;
+	trendConfig.yAxis.majorGridLineWidth = 0;
+	trendConfig.yAxis.lineColor = "transparent";
+	trendConfig.yAxis.tickLength = 0;
+	trendConfig.yAxis.minorTickLength = 0;
+	trendConfig.yAxis.majorTickLength = 0;
+	trendConfig.yAxis.labels.formatter = formatLabels
+
+	trendConfig.plotOptions.bar.dataLabels.enabled = true;
+	trendConfig.plotOptions.bar.dataLabels.align = "right";
+	trendConfig.plotOptions.bar.dataLabels.formatter = formatLabels;
+	trendConfig.plotOptions.bar.dataLabels.color = textColor;
+
+
+	trendConfig.tooltip.enabled = true;
+
+	trendConfig.legend.enabled = false;
+	trendConfig.credits.enabled = false;
+	trendConfig.exporting.enabled = false;
+	trendConfig.plotOptions.series.states.hover.enabled = false;
+	trendConfig.plotOptions.series.enableMouseTracking = false;
+
+
+	options.trendConfig.atviseOptions = {
+		configNode: "",
+		configName: "",
+		mode: "",
+		source: "opcUA",
+		enableCursor1: false,
+		enableCursor2: false,
+		disableDownSampling: true
+	};
+
+	if (base && min && max) {
+		if (nodeMin || nodeMax) {
+			webMI.data.read([nodeMin, nodeMax], function (nodes) {
+				if (typeof nodes[0].value === "number") {
+					min = nodes[0].value;
+				}
+
+				if (typeof nodes[1].value === "number") {
+					max = nodes[1].value;
+				}
+
+				createChart();
+			});
+		} else {
+			createChart();
+		}
+	} else {
+		webMI.trigger.fire(SET_INACTIVE_TRIGGER, "", "");
+	}
+});]]></script>
+</svg>

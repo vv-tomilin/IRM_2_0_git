@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.General_Time_Based.wellIdentifier
+NodeClass: Variable
+BrowseName: 1:wellIdentifier
+DisplayName: en|wellIdentifier
+Description: en|wellIdentifier
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

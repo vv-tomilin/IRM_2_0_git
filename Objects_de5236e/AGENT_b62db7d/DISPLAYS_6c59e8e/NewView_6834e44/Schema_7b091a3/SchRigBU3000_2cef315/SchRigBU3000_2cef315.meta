@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.Schema.SchRigBU3000
+NodeClass: Variable
+BrowseName: 1:SchRigBU3000
+DisplayName: en|SchRigBU3000
+Description: en|SchRigBU3000
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

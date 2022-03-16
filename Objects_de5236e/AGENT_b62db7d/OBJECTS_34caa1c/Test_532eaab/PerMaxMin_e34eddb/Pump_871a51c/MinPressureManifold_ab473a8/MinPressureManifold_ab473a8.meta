@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.Pump.MinPressureManifold
+NodeClass: Variable
+BrowseName: 1:MinPressureManifold
+DisplayName: en|MinPressureManifold
+Description: en|MinPressureManifold
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

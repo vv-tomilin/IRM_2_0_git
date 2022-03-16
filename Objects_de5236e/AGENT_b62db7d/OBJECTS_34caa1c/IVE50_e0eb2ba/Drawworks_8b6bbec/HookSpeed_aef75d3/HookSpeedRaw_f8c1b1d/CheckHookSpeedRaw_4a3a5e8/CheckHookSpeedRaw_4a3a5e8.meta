@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Drawworks.HookSpeed.HookSpeedRaw.CheckHookSpeedRaw
+NodeClass: Variable
+BrowseName: 1:CheckHookSpeedRaw
+DisplayName: en|CheckHookSpeedRaw
+Description: en|CheckHookSpeedRaw
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

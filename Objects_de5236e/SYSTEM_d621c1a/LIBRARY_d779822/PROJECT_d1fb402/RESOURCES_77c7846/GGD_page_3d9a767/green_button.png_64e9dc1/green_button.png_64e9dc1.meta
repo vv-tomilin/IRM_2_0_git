@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/GGD_page/green_button.png
+NodeClass: Variable
+BrowseName: 1:green_button.png
+DisplayName: en|green_button.png
+Description: en|green_button.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

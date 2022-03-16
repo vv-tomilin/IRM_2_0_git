@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.Schema.Sch2
+NodeClass: Variable
+BrowseName: 1:Sch2
+DisplayName: en|Sch2
+Description: en|Sch2
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

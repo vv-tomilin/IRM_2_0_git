@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.Mud_Tank_Volumes.<_spare_5_>
+NodeClass: Variable
+BrowseName: 1:<_spare_5_>
+DisplayName: en|<_spare_5_>
+Description: en|<_spare_5_>
+DataType: Int64
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType

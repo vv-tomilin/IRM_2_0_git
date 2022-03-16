@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/RigView/geos/gneis.jpg
+NodeClass: Variable
+BrowseName: 1:gneis.jpg
+DisplayName: en|gneis.jpg
+Description: en|gneis.jpg
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Jpeg

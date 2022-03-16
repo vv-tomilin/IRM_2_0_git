@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.PressManifoldLimit
+NodeClass: Variable
+BrowseName: 1:PressManifoldLimit
+DisplayName: en|PressManifoldLimit
+Description: en|PressManifoldLimit
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

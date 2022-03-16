@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS
+NodeClass: Object
+BrowseName: 1:WITS
+DisplayName: en|WITS
+Description: en|WITS
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

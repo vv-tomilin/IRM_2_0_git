@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="240" version="1.2" width="90" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:parameter behavior="optional" defaultvalue="AGENT.OBJECTS.SimulatedData.double_1" name="address" valuetype="address"/>
+  <atv:gridconfig enabled="true" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <image atv:refpx="45.178" atv:refpy="198.994" height="480" id="id_drilling" transform="matrix(0.5,0,0,0.5,0,0)" width="180" x="0" xlink:href="../../gifs/drilling.gif" y="0"/>
+ <g atv:refpx="42.964" atv:refpy="205.881" id="id_washing" transform="matrix(0.5,0,0,0.5,485.757,12.0105)">
+  <g atv:refpx="-881.514" atv:refpy="215.979" id="id_8">
+   <image atv:refpx="-881.514" atv:refpy="215.979" height="480" id="id_3" width="180" x="-971.514" xlink:href="../../gifs/washing.gif" y="-24.021"/>
+  </g>
+ </g>
+ <image atv:refpx="44.084" atv:refpy="176.653" height="480" id="id_up" transform="matrix(0.5,0,0,0.5,0,0)" width="180" x="0" xlink:href="../../gifs/UP.gif" y="0"/>
+ <image atv:refpx="44.852" atv:refpy="182.869" height="480" id="id_down" transform="matrix(0.5,0,0,0.5,0,0)" width="180" x="0" xlink:href="../../gifs/DOWN.gif" y="0"/>
+ <g atv:refpx="45" atv:refpy="120" id="pipe" transform="matrix(1,0,0,1,226.3124,119.9391)">
+  <g atv:refpx="-181.312" atv:refpy="0.061" id="id_1">
+   <image atv:refpx="-181.312" atv:refpy="0.061" height="480" id="id_0" transform="matrix(0.5,0,0,0.5,0,0)" width="180" x="-452.625" xlink:href="../../gifs/build_up.gif" y="-239.878"/>
+  </g>
+ </g>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[
+/*
+webMI.data.subscribe("AGENT.OBJECTS.Support.Auto.Operation", function(e) {
+var id = "id_drilling";
+var value = JSON.parse(e.value);
+
+if (value.oper == "БУРЕНИЕ")
+	webMI.gfx.setVisible(id, true);
+else
+	webMI.gfx.setVisible(id, false);
+});
+webMI.data.subscribe("AGENT.OBJECTS.Support.Auto.Operation", function(e) {
+var id = "id_washing";
+var value = JSON.parse(e.value);
+
+if (value.oper == "ПРОМЫВКА" || value.oper == "ПРОРАБОТКА")
+	webMI.gfx.setVisible(id, true);
+else
+	webMI.gfx.setVisible(id, false);
+});
+webMI.data.subscribe("AGENT.OBJECTS.Support.Auto.Operation", function(e) {
+var id = "id_down";
+var value = JSON.parse(e.value);
+webMI.gfx.setVisible(id, false);
+});
+
+webMI.data.subscribe("AGENT.OBJECTS.Support.Auto.Operation", function(e) {
+var id = "id_up";
+var value = JSON.parse(e.value);
+
+if ((value.oper == "СПО") || value.oper == "Неопределенный" || value.oper == "Постановка" || value.oper == "ШАБЛОНИРОВКА")
+	webMI.gfx.setVisible(id, true);
+else
+	webMI.gfx.setVisible(id, false);
+
+});
+
+webMI.data.subscribe("AGENT.OBJECTS.Support.Auto.Operation", function(e) {
+var id = "pipe";
+var value = JSON.parse(e.value);
+if (value.oper == "На клиньях")
+	webMI.gfx.setVisible(id, true);
+else
+	webMI.gfx.setVisible(id, false);
+
+});
+
+*/
+
+var arrays = {
+	drilling: ["БУРЕНИЕ"],
+	washing: ["ПРОМЫВКА", "ПРОРАБОТКА"],
+	up: ["СПО", "Неопределенный", "Постановка","ШАБЛОНИРОВКА"],
+	build: ["На клиньях"]
+}
+
+ids = ["id_up", "id_drilling", "id_washing", "pipe", "id_down"]
+
+ids.map(function(id) {
+	webMI.gfx.setVisible(id, false)
+})
+
+webMI.data.subscribe("AGENT.OBJECTS.Support.Auto.Operation", function(e) {
+	var value = JSON.parse(e.value)
+	
+	if (arrays.drilling.includes(value)) {
+		id = "id_drilling"
+	}
+	else if (arrays.washing.includes(value)) {
+		id = "id_washing"
+	}
+	else if (arrays.up.includes(value)) {
+		id = "id_up"
+	}
+	else if (arrays.build.includes(value)) {
+		id = "pipe"
+	}
+	else {
+		id = "id_up"
+	}
+	
+	webMI.gfx.setVisible(id, true);
+})]]></script>
+</svg>

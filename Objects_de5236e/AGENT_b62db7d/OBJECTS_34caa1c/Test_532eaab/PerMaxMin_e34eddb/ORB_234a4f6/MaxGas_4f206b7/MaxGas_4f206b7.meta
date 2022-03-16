@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.ORB.MaxGas
+NodeClass: Variable
+BrowseName: 1:MaxGas
+DisplayName: en|MaxGas
+Description: en|MaxGas
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

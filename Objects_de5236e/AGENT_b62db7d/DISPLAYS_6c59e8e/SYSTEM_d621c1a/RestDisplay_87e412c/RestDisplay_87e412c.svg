@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" width="1280" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" height="680" xmlns:cc="http://creativecommons.org/ns#" xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:gridconfig width="20" enabled="false" height="20" gridstyle="lines"/>
+  <atv:snapconfig width="10" enabled="false" height="10"/>
+ </metadata>
+ <rect id="id_1" width="250.753" fill="#000088" stroke="#0000ff" atv:refpy="250.411" height="69.173" stroke-width="2" atv:refpx="646.811" x="521.435" y="215.824"/>
+ <text id="output" font-size="26" fill="#000088" atv:refpy="419.787" atv:refpx="119.573" font-family="Arial" x="48.073" y="424.287">placeholder for Response</text>
+ <text id="id_2" font-size="26" fill="#ffffff" atv:refpy="256.277" atv:refpx="631.213" font-family="Arial" x="617.713" y="260.777">Click</text>
+ <rect id="id_0" width="248.865" stroke-opacity="0.156863" fill="#ffffff" stroke="#0000ff" atv:refpy="250.879" height="67.087" stroke-width="2" atv:refpx="646.97" x="522.538" y="217.335" fill-opacity="0.701961"/>
+ <script type="text/ecmascript"><![CDATA[webMI.addEvent("id_1", "click", function(e) {
+var id = "id_1";
+var value = true;
+return function(value) {
+	var url = "https://httpbin.org/get?Parameter1=WertParameter1";
+	var params = "&parameter2=WertParameter1";
+
+	xmlHttp = new XMLHttpRequest();
+		xmlHttp.open('GET', url, true);
+		xmlHttp.onreadystatechange = function () {
+
+		if (xmlHttp.readyState == 4) {
+			//console.log(xmlHttp.responseText);
+			webMI.gfx.setText("output", xmlHttp.responseText);
+		}
+	};
+
+	xmlHttp.send(params);
+} (value);
+});
+
+webMI.addEvent("id_0", "click", function(e) {
+var id = "id_0";
+var value = true;
+return function(value) {
+	var url = "https://httpbin.org/get?Parameter1=WertParameter1";
+	var params = "&parameter2=WertParameter1";
+
+	xmlHttp = new XMLHttpRequest();
+		xmlHttp.open('GET', url, true);
+		xmlHttp.onreadystatechange = function () {
+
+		if (xmlHttp.readyState == 4) {
+			//console.log(xmlHttp.responseText);
+			webMI.gfx.setText("output", xmlHttp.responseText);
+		}
+	};
+
+	xmlHttp.send(params);
+} (value);
+});
+
+]]></script>
+</svg>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <code><![CDATA[var cp = new ChildProcess("powershell", {
+    args: ['-executionpolicy RemoteSigned','-file', 'd:/Pers/Serg/Work/RIGINTEL/IR-Master/atvise-ir-master/PSsend.ps1'],
+    workingDir: 'd:/Pers/Serg/Work/RIGINTEL/IR-Master/atvise-ir-master/',
+    env: {}
+}); 
+console.log("cpp = ",cp.execAsync());
+console.log("Data:", cp.stdOut);]]></code>
+</script>

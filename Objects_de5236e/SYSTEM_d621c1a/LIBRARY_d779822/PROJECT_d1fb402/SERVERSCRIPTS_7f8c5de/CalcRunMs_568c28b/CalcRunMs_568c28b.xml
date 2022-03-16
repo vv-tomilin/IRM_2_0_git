@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nsourcenode" type="string" trigger="false" relative="false" value=""/>
+  <code><![CDATA[//var run_hourss = new UaNode("SYSTEM.GLOBALS.run_hours_access");
+//if(run_hourss.value != "true")	return;
+//console.log("Start CalcRunMs");
+
+var countTimes = 3;
+var sourcenode = new UaNode(nsourcenode);
+//console.log(sourcenode);
+var timeend = new Date();
+var timestart = new Date(timeend.valueOf() - countTimes * 60000);
+var countval = 1;
+
+//console.log("timestart = ", timestart);
+//console.log("timeend = ", timeend);
+//var to = new Date().getTime();
+//var from = to-countMin*60*1000;
+/*
+var resultDurationInStateNonZero = history.query({
+	type:["v:1"],
+	timestamp:["n:>=" + timestart + "<"+timeend],
+	//address:["g:"+nsourcenode],
+	address:["g:AGENT.OBJECTS.TBool"],
+	aggregate:["v:DurationInStateNonZero"],
+	interval:["v:1"],
+	unit:["v:h"],
+	numrows:["v:2"]
+});
+*/
+/*
+var resultDurationInStateNonZero = sourcenode.datahistory({
+   starttime: new Date(2019, 01, 15),
+   endtime: new Date(),
+   aggregate: UaNode.AGGREGATEFUNCTION_DURATIONINSTATENONZERO,
+   samplinginterval: 60000
+});
+*/
+
+var resultDurationInStateNonZero = sourcenode.datahistory({
+	starttime: timestart, 
+    endtime: timeend,
+    //numvalues: countval,
+    aggregate: UaNode.AGGREGATEFUNCTION_DURATIONINSTATENONZERO,
+    samplinginterval: 60000
+});
+
+//console.log(resultDurationInStateNonZero);
+//console.log("resultDurationInStateNonZero.values length = ", resultDurationInStateNonZero.values.length);
+
+var i=0;
+//var count = resultDurationInStateNonZero.values.length;
+//console.log("resultDurationInStateNonZero.values count = ", count);
+if(!!resultDurationInStateNonZero.values){
+	resultDurationInStateNonZero.values.forEach(function(item, i) {
+		//console.log(++i+" item.value = "+item.value);
+		
+		var runmsnode = new UaNode(nsourcenode+".RunHoursMs");	
+		var summs = runmsnode.value+item.value+1000 ;
+		var res = runmsnode.assign({value: summs});		
+	});
+}]]></code>
+</script>

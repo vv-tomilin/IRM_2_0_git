@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/indicators/mfi.js.map
+NodeClass: Variable
+BrowseName: 1:mfi.js.map
+DisplayName: en|mfi.js.map
+Description: en|mfi.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

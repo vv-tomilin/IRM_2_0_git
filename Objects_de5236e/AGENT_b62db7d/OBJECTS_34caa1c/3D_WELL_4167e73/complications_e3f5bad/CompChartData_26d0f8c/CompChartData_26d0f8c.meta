@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.3D_WELL.complications.CompChartData
+NodeClass: Variable
+BrowseName: 1:CompChartData
+DisplayName: en|CompChartData
+Description: en|CompChartData
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

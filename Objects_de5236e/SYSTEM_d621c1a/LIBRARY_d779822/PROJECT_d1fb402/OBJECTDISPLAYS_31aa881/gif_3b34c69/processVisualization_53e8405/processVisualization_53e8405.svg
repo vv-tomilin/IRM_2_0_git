@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="240" version="1.2" width="90" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="true" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <svg atv:refpx="45" atv:refpy="120" height="240" id="id_0" width="90" x="0" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.gif.GiffSwitchTest" y="0"/>
+</svg>

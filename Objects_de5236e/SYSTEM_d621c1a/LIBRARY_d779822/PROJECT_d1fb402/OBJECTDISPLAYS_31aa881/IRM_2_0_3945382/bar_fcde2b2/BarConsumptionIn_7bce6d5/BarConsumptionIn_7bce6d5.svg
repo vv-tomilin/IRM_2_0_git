@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="255.2" version="1.2" width="100" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient gradientUnits="objectBoundingBox" id="linear_3" x1="0.547945" x2="0.534247" y1="1.47945" y2="0.0684932">
+   <stop offset="0" stop-color="#6699ff"/>
+   <stop offset="0.5604170000000001" stop-color="#6699ff"/>
+   <stop offset="0.7677079999999999" stop-color="#ffe70c"/>
+   <stop offset="1" stop-color="#ff0000"/>
+  </linearGradient>
+ </defs>
+ <metadata>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Переменная привязки" name="NodeToDisplay(base)" substitute="" valuetype="address"/>
+  <atv:parameter behavior="optional" desc="Максимум на шкале" name="MaxOfRange" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="1" desc="Строка 1" name="St1" substitute="$ST1$" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="2" desc="Строка 1" name="St2" substitute="$ST2$" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="3" desc="Строка с ед. измерения" name="St3" substitute="$ST3$" valuetype="string"/>
+  <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <rect atv:refpx="43.846" atv:refpy="136.337" fill="#303e49" height="181.135" id="id_1" stroke="#1f1f1f" stroke-linejoin="miter" stroke-width="0" width="35.039" x="30.167" y="74.072"/>
+ <rect atv:refpx="43.806" atv:refpy="135.866" fill="url(#linear_3)" height="163.815" id="id_3" stroke="none" stroke-linejoin="miter" stroke-width="0" width="21.068" x="37.111" y="82.755"/>
+ <rect atv:refpx="47.111" atv:refpy="80.668" fill="#1f1f1f" height="157.933" id="id_6" stroke="#1f1f1f" stroke-linejoin="miter" stroke-width="4.804" width="17" x="39" y="85.188"/>
+ <rect atv:refpx="43.611" atv:refpy="137.681" fill="none" height="165.849" id="id_0" stroke="#1f1f1f" stroke-linejoin="miter" stroke-width="5.01" width="24.159" x="35.359" y="82.212"/>
+ <foreignObject height="17.258" id="id_4" width="90.023" x="4.152" y="0.338">
+  <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8;text-align:center" xmlns="http://www.w3.org/1999/xhtml">
+   <p id="firstStroke" style="margin:0">Надпись</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="17.258" id="id_5" width="106.442" x="-2.672" y="16.528">
+  <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8;text-align:center" xmlns="http://www.w3.org/1999/xhtml">
+   <p id="SecondString" style="margin:0">Надпись</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="17.258" id="id_7" width="90.023" x="4.945" y="30.885">
+  <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8;text-align:center" xmlns="http://www.w3.org/1999/xhtml">
+   <p id="thirdString" style="margin:0">Надпись</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="22.446" id="id_15" width="67.729" x="14.562" y="48.99">
+  <div style="width:100%;height:100%;color:white; font-size:1rem;text-align:center;font-size:0.7rem" xmlns="http://www.w3.org/1999/xhtml">
+   <p id="number" style="margin:0">0000</p>
+  </div>
+ </foreignObject>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[//webMI.addOnload(function () { 
+var max;
+var value;
+webMI.data.read(webMI.query['MaxOfRange'], function(e) {
+	max = Number(e.value); 
+	webMI.data.subscribe(webMI.query["NodeToDisplay(base)"], function(e) {   
+  var id = "id_6";
+  if(!e.value) {
+	value = 0;
+	} 
+  value = e.value;
+  
+
+  webMI.gfx.setScaleY(id, webMI.translate(value, 0, max, 1, 0));
+  });
+  })
+
+
+webMI.data.subscribe(webMI.query["NodeToDisplay(base)"], function(e) {
+  document.getElementById('number').innerHTML = e.value < 0 ? e.value = 0 : Number(e.value).toFixed(1)
+  });
+
+  document.getElementById('firstStroke').innerHTML = webMI.query["St1"]
+  document.getElementById('SecondString').innerHTML = webMI.query["St2"]
+  document.getElementById('thirdString').innerHTML = webMI.query["St3"]
+ 
+
+
+
+
+ ]]></script>
+</svg>

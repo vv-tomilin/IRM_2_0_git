@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+	<metadata>
+		<priority>0</priority>
+	</metadata>
+	<code><![CDATA[/**
+ * Code for the highcharts button start end object display
+ * ----------------------------------------
+ * This script supports the display to set the time for axis
+ */
+
+
+/**
+ * DECLARATION SECTION
+ */
+var activeAxis = webMI.query["xAxisIndex"];
+var chartname = webMI.query["chartname"];
+var chart, updatedUserMin, updatedUserMax, updatedMin, updatedMax;
+
+
+/**
+ * RUNTIME SECTION
+ * Runtime code has to be executed after onload to take care all other resources are ready
+ */
+webMI.addOnload(function () {
+	checkChart();
+});
+
+
+/**
+ * FUNCTION SECTION
+ */
+function checkChart() {
+	chart = webMI.trendFactory.getTrendByName(chartname);
+	if (!chart) {
+		setTimeout(function () {
+			checkChart()
+		}, 100);
+		return;
+	}
+
+	var extremes = chart.chart.xAxis[activeAxis].getExtremes();
+	if (isNaN(extremes.min)) {
+		setTimeout(function () {
+			checkChart()
+		}, 100);
+		return;
+	}
+
+	updatedMin = true;
+	updatedMax = true;
+	var extremes = chart.chart.xAxis[activeAxis].getExtremes();
+	webMI.trigger.fire("com.atvise.datepicker_starttime" + chartname, extremes.min);
+	webMI.trigger.fire("com.atvise.datepicker_endtime" + chartname, extremes.max);
+
+	var chartUpdate = chart.control.registerOnUpdatedCallback(updateDatePicker);
+
+	var lockUpdateDatePicker = false;
+
+	function updateDatePicker() {
+		var extremes = chart.chart.xAxis[activeAxis].getExtremes();
+		if (isNaN(extremes.min) && !lockUpdateDatePicker) {
+			lockUpdateDatePicker = true;
+			updatePickerID = setTimeout(function () {
+				updateDatePicker();
+				lockUpdateDatePicker = false;
+			}, 100);
+			return;
+		} else if (!lockUpdateDatePicker) {
+			if (updatedUserMin) {
+				updatedUserMin = false;
+				return;
+			} else {
+				updatedMin = true;
+				webMI.trigger.fire("com.atvise.datepicker_starttime" + chartname, extremes.min);
+			}
+
+			if (updatedUserMax) {
+				updatedUserMax = false;
+				return;
+			} else {
+				updatedMax = true;
+				webMI.trigger.fire("com.atvise.datepicker_endtime" + chartname, extremes.max);
+			}
+		}
+	}
+
+	webMI.addOnunload(function () {
+		if (chart && chart.control) chart.control.unregisterOnUpdatedCallback(chartUpdate);
+	});
+}
+
+
+/**
+ * TRIGGER SECTION
+ */
+webMI.trigger.connect("valuechanged", function (e) {
+	if (!chart || e.value < 1)
+		return;
+
+	if (updatedMin) {
+		updatedMin = false;
+		return;
+	}
+
+	updatedUserMin = true;
+
+	starttime = e.value;
+	var extremes = chart.chart.xAxis[activeAxis].getExtremes();
+	chart.chart.xAxis[activeAxis].setExtremes(e.value, extremes.max);
+	chart.chart.xAxis[activeAxis].options.min = e.value;
+	chart.chart.xAxis[activeAxis].options.max = extremes.max;
+
+	if (chart.control.isLiveModeRunning()) chart.control.stopLiveMode();
+	var oldMode = chart.chart.options.atviseOptions.mode;
+	chart.control.setMode("history");
+	chart.control.updated(function () {
+		chart.control.setMode(oldMode);
+	});
+}, "dp_start");
+
+webMI.trigger.connect("valuechanged", function (e) {
+	if (!chart || e.value < 1)
+		return;
+
+	if (updatedMax) {
+		updatedMax = false;
+		return;
+	}
+
+	updatedUserMax = true;
+
+	endtime = e.value;
+	var extremes = chart.chart.xAxis[activeAxis].getExtremes();
+	chart.chart.xAxis[activeAxis].setExtremes(extremes.min, e.value);
+	chart.chart.xAxis[activeAxis].options.min = extremes.min;
+	chart.chart.xAxis[activeAxis].options.max = e.value;
+
+	if (chart.control.isLiveModeRunning()) chart.control.stopLiveMode();
+	var oldMode = chart.chart.options.atviseOptions.mode;
+	chart.control.setMode("history");
+	chart.control.updated(function () {
+		chart.control.setMode(oldMode);
+	});
+}, "dp_end");]]></code>
+</script>

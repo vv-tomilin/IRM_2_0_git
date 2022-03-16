@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/tilemap.js.map
+NodeClass: Variable
+BrowseName: 1:tilemap.js.map
+DisplayName: en|tilemap.js.map
+Description: en|tilemap.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

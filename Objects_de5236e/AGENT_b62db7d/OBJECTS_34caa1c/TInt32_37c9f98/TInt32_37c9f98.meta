@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.TInt32
+NodeClass: Variable
+BrowseName: 1:TInt32
+DisplayName: en|TInt32
+Description: en|TInt32
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="80" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="30" version="1.2">
+ <defs/>
+ <desc>Steps back on the x-axis</desc>
+ <title>Button back</title>
+ <metadata>
+  <atv:parameter defaultvalue="trend1" desc="chart name" behavior="mandatory" valuetype="string" name="chartname"/>
+  <atv:parameter defaultvalue="0" desc="x-axis index" behavior="optional" valuetype="string" name="xAxisIndex"/>
+  <atv:parameter defaultvalue="100" desc="step in percent" behavior="optional" valuetype="string" name="stepPercent"/>
+  <atv:gridconfig width="20" enabled="false" gridstyle="lines" height="20"/>
+  <atv:snapconfig width="10" enabled="false" height="10"/>
+ </metadata>
+ <svg width="80" atv:bindbr="0,1" visibility="$BUTTONSVISIBLE$" y="0" x="0" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" atv:refpy="15" atv:bindtl="0,1" atv:refpx="40" height="30" id="btn_back">
+  <atv:argument value="" name="label"/>
+  <atv:argument value="hidden" name="visibilityLabel"/>
+  <atv:argument value="inherit" name="visibilitySymbol"/>
+  <atv:argument value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.rewind" name="symbol"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[//var chartname = webMI.query.chartname;
+//var chart;
+var activeAxis = webMI.query["xAxisIndex"];
+
+webMI.trigger.connect("clicked", function(e) {
+
+//	var chart = webMI.trendFactory.getTrendByName(chartname);
+//	if (!chart)
+//		return;
+		
+	console.log("btn_back:clicked");
+	webMI.trigger.fire("stopCharts",'');	
+/*	var allcharts = webMI.trendFactory.getAllTrends();
+	allcharts.forEach(function(chart, i, arr) {
+//		if (item.control.isLiveModeRunning()) item.control.stopLiveMode();
+//		var oldMode = chart.chart.options.atviseOptions.mode;
+		chart.control.stopLiveMode();
+
+		chart.control.setMode("history");
+//			chart.control.updated(function() {
+//			chart.control.setMode(oldMode);
+//		});		
+		chart.control.updated();
+	});
+*/	
+	setTimeout(function() {	
+		var allcharts = webMI.trendFactory.getAllTrends();		
+		allcharts.forEach(function(chart, i, arr) {
+			var extremes = chart.chart.xAxis[activeAxis].getExtremes();
+			console.log("before btn_back extremes: min - "+strDate(extremes.min)+", max = "+strDate(extremes.max));
+			var difference = (extremes.max - extremes.min) * webMI.query["stepPercent"] / 100;
+			chart.chart.xAxis[activeAxis].setExtremes(extremes.min - difference, extremes.max - difference);
+			chart.chart.xAxis[activeAxis].options.min = extremes.min - difference;
+			chart.chart.xAxis[activeAxis].options.max = extremes.max - difference;
+			console.log("after btn_back extremes: min - "+strDate(extremes.min - difference)+", max = "+strDate(extremes.max - difference));
+			console.log("after btn_back options: min - "+strDate(chart.chart.xAxis[activeAxis].options.min)+", max = "+strDate(chart.chart.xAxis[activeAxis].options.max));
+			chart.control.updated();
+
+//var myseries = chart.chart.series;
+/*	
+			chart.chart.series.forEach(function(serie,i,arr){
+				chart.chart.serie.update({					
+						"type": "step"					
+					},true);
+			});			
+*/			
+/*
+			for(var i=0; i < chart.chart.series.length; i++){					
+					//chart.chart.series[i].type="step";
+					chart.chart.series[i].update({					
+						color: "#000000"					
+					},true);				
+				}			
+*/			
+	/*		
+			if(oldMode == "mixed"){
+				//chart.chart.options.atviseOptions.mode = "mixed";
+				chart.control.setMode("mixed");
+				chart.control.startLiveMode();
+			}
+	*/		
+		});	
+	}, 100);
+		
+		
+
+	
+/*	var extremes = chart.chart.xAxis[activeAxis].getExtremes();
+	console.log("before btn_back extremes: min - "+strDate(extremes.min)+", max = "+strDate(extremes.max));
+	var difference = (extremes.max - extremes.min) * webMI.query["stepPercent"] / 100;
+	chart.chart.xAxis[activeAxis].setExtremes(extremes.min - difference, extremes.max - difference);
+	chart.chart.xAxis[activeAxis].options.min = extremes.min - difference;
+	chart.chart.xAxis[activeAxis].options.max = extremes.max - difference;
+	console.log("after btn_back extremes: min - "+strDate(extremes.min - difference)+", max = "+strDate(extremes.max - difference));
+	console.log("after btn_back options: min - "+strDate(chart.chart.xAxis[activeAxis].options.min)+", max = "+strDate(chart.chart.xAxis[activeAxis].options.max));
+*/
+
+	//chart.control.stopLiveMode();
+	
+//	chart.control.updated();
+/*
+	if (chart.control.isLiveModeRunning()) chart.control.stopLiveMode();
+	var oldMode = chart.chart.options.atviseOptions.mode;
+	chart.control.setMode("history");
+	chart.control.updated(function() {
+		chart.control.setMode(oldMode);
+	});
+*/
+//	chart.control.updated(function(){
+//		console.log("btn_back updated");
+//	});
+}, "btn_back");
+
+
+function strDate(datenum){
+	 var dateObj=new Date();
+	 dateObj.setTime(datenum);
+	 var year = dateObj.getFullYear();
+	 
+	 var month = dateObj.getMonth();
+	 if(String(month).length < 2){
+		month = '0' + String(month);
+	 }
+	 var day = dateObj.getDate();
+	 if(String(day).length < 2){
+		day = '0' + String(day);
+	 }
+	 
+	 var hour = dateObj.getHours();
+	 if(String(hour).length < 2){
+		hour = '0' + String(hour);
+	 }
+	 var minute = dateObj.getMinutes();
+	 if(String(minute).length < 2){
+		minute = '0' + String(minute);
+	 }
+	 var second = dateObj.getSeconds();
+	 if(String(second).length < 2){
+		second = '0' + String(second);
+	 }
+	 return(day+"-"+month+"-"+year+" "+hour+":"+minute+":"+second);
+	// return(hour+":"+minute+":"+second);
+}
+
+/*
+var chartname = webMI.query.chartname;
+var chart;
+var activeAxis = webMI.query["xAxisIndex"];
+
+webMI.trigger.connect("clicked", function(e) {
+
+	var chart = webMI.trendFactory.getTrendByName(chartname);
+	if (!chart)
+		return;
+
+	var extremes = chart.chart.xAxis[activeAxis].getExtremes();
+	var difference = (extremes.max - extremes.min) * webMI.query["stepPercent"] / 100;
+	chart.chart.xAxis[activeAxis].setExtremes(extremes.min - difference, extremes.max - difference);
+	chart.chart.xAxis[activeAxis].options.min = extremes.min - difference;
+	chart.chart.xAxis[activeAxis].options.max = extremes.max - difference;
+
+	if (chart.control.isLiveModeRunning()) chart.control.stopLiveMode();
+	var oldMode = chart.chart.options.atviseOptions.mode;
+	chart.control.setMode("history");
+	chart.control.updated(function() {
+		chart.control.setMode(oldMode);
+	});
+}, "btn_back");
+*/]]></script>
+</svg>

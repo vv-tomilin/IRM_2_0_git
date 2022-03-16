@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Drawworks.HookPosition.talkanat.diam
+NodeClass: Variable
+BrowseName: 1:diam
+DisplayName: en|diam
+Description: en|diam
+DataType: Int16
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

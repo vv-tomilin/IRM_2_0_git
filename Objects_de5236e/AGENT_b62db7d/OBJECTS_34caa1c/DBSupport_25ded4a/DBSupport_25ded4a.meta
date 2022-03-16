@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.DBSupport
+NodeClass: Object
+BrowseName: 1:DBSupport
+DisplayName: en|DBSupport
+Description: en|DBSupport
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

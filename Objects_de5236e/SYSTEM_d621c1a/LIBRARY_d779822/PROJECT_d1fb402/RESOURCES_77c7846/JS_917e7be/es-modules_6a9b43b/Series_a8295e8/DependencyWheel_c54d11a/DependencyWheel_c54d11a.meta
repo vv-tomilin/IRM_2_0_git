@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/DependencyWheel
+NodeClass: Object
+BrowseName: 1:DependencyWheel
+DisplayName: en|DependencyWheel
+Description: en|DependencyWheel
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,1 @@
+{"npt":"ПВ","group":"СПО СПУСК","oper":"СПО","suboper":"быстрый спуск","opertime":0,"operclr":"#B58F76","suboperclr":"#700404"}

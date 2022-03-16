@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Extensions/Themes
+NodeClass: Object
+BrowseName: 1:Themes
+DisplayName: en|Themes
+Description: en|Themes
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

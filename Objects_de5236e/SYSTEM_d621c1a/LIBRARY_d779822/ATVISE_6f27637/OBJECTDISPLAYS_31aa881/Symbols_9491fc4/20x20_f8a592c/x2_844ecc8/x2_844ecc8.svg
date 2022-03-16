@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" height="20" xmlns="http://www.w3.org/2000/svg" width="20">
+ <defs/>
+ <metadata>
+  <atv:parameter desc="symbol color" behavior="optional" defaultvalue="#000000" name="symbolColor" substitute="$SYMBOLCOLOR$" valuetype="color"/>
+  <atv:gridconfig gridstyle="lines" height="1" enabled="true" width="1"/>
+  <atv:snapconfig height="1" enabled="false" width="1"/>
+ </metadata>
+ <polygon stroke-width="0" fill="$SYMBOLCOLOR$" font-variant="normal" stroke="#000000" atv:refpx="10.034" fill-opacity="1" points="17.791,16.386 16.378,17.795 10.023,11.422 3.663,17.764 2.251,16.348 8.611,10.006 2.256,3.633 3.67,2.223 10.025,8.597 16.385,2.255 17.797,3.671 11.437,10.013" font-weight="normal" stroke-miterlimit="10.433" font-stretch="normal" text-anchor="start" id="symbol_checked" atv:refpy="10" fill-rule="evenodd" atv:dynamic="true"/>
+ <script type="text/ecmascript"><![CDATA[
+
+]]></script>
+</svg>

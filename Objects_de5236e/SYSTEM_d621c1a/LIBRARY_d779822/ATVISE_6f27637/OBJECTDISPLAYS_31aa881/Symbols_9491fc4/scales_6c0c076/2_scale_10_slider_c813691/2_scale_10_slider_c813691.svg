@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" height="102" xmlns="http://www.w3.org/2000/svg" width="40">
+ <defs/>
+ <desc>Slider scale with 10 units.</desc>
+ <title>Slider scale - 10</title>
+ <metadata>
+  <atv:parameter desc="scale color" behavior="optional" defaultvalue="#ffffff" name="scaleColor" substitute="$SCALECOLOR$" valuetype="color"/>
+  <atv:parameter desc="small scale color" behavior="optional" defaultvalue="#ffffff" name="scaleColorSmall" substitute="$SCALECOLORSMALL$" valuetype="color"/>
+  <atv:gridconfig gridstyle="lines" height="20" enabled="false" width="20"/>
+  <atv:snapconfig height="10" enabled="false" width="10"/>
+ </metadata>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.435" stroke="none" atv:refpx="15.335" height="1" x="0.152" y="60.6" id="id_1" atv:refpy="61.6" width="5"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.435" stroke="none" atv:refpx="-69.688" height="1" x="0.152" y="30.3" id="id_4" atv:refpy="-158.7" width="5"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.435" stroke="none" atv:refpx="-101.572" height="1" x="0.152" y="80.8" id="id_5" atv:refpy="-168.2" width="5"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.435" stroke="none" atv:refpx="-164.58" height="1" x="0.152" y="10.1" id="id_7" atv:refpy="-432.9" width="5"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.435" stroke="none" atv:refpx="-195.704" height="1" x="0.152" y="70.7" id="id_8" atv:refpy="-456.3" width="5"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.435" stroke="none" atv:refpx="-227.589" height="1" x="0.152" y="90.9" id="id_9" atv:refpy="-574.1" width="5"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.435" stroke="none" atv:refpx="-188.113" height="1" x="0.152" y="20.2" id="id_10" atv:refpy="-452.8" width="5"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.435" stroke="none" atv:refpx="-197.223" height="1" x="0.152" y="40.4" id="id_11" atv:refpy="-470.6" width="5"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-15.837" height="1" x="0.152" y="101" id="id_2" atv:refpy="-40" width="5"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-31.827" height="1" x="0.152" y="0" id="id_3" atv:refpy="-163" width="5"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-132.332" height="1" x="0.152" y="50.5" id="id_6" atv:refpy="-314.5" width="5"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="2.42" id="id_18" atv:refpy="-160.58" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="4.34" id="id_21" atv:refpy="-158.66" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="6.26" id="id_22" atv:refpy="-156.74" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="8.18" id="id_23" atv:refpy="-154.82" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="12.52" id="id_24" atv:refpy="-150.48" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="14.44" id="id_25" atv:refpy="-148.56" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="16.36" id="id_26" atv:refpy="-146.64" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="18.28" id="id_27" atv:refpy="-144.72" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="22.62" id="id_28" atv:refpy="-140.38" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="24.54" id="id_29" atv:refpy="-138.46" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="26.46" id="id_30" atv:refpy="-136.54" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="28.38" id="id_31" atv:refpy="-134.62" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="32.72" id="id_32" atv:refpy="-130.28" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="34.64" id="id_33" atv:refpy="-128.36" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="36.56" id="id_34" atv:refpy="-126.44" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="38.48" id="id_35" atv:refpy="-124.52" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="42.82" id="id_36" atv:refpy="-120.18" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="44.74" id="id_37" atv:refpy="-118.26" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="46.66" id="id_38" atv:refpy="-116.34" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="48.58" id="id_39" atv:refpy="-114.42" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="52.92" id="id_40" atv:refpy="-110.08" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="54.84" id="id_41" atv:refpy="-108.16" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="56.76" id="id_42" atv:refpy="-106.24" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="58.68" id="id_43" atv:refpy="-104.32" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="63.02" id="id_44" atv:refpy="-99.98" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="64.94" id="id_45" atv:refpy="-98.06" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="66.86" id="id_46" atv:refpy="-96.14" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="68.78" id="id_47" atv:refpy="-94.22" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="73.12" id="id_48" atv:refpy="-89.88" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="75.04" id="id_49" atv:refpy="-87.96" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="76.96" id="id_50" atv:refpy="-86.04" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="78.88" id="id_51" atv:refpy="-84.12" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="83.22" id="id_52" atv:refpy="-79.78" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="85.14" id="id_53" atv:refpy="-77.86" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="87.06" id="id_54" atv:refpy="-75.94" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="88.98" id="id_55" atv:refpy="-74.02" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="93.32" id="id_56" atv:refpy="-69.68" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="95.24" id="id_57" atv:refpy="-67.76" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="97.16" id="id_58" atv:refpy="-65.84" width="3"/>
+ <rect fill="$SCALECOLORSMALL$" stroke-width="1.64" stroke="none" atv:refpx="-36.678" height="0.5" x="2.152" y="99.08" id="id_59" atv:refpy="-63.92" width="3"/>
+ <rect fill="$SCALECOLOR$" stroke-width="1.435" stroke="none" atv:refpx="45.183" height="1" x="22" y="60.6" id="id_60" atv:refpy="61.6" width="10"/>
+ <rect fill="$SCALECOLOR$" stroke-width="1.435" stroke="none" atv:refpx="-39.84" height="1" x="22" y="30.3" id="id_61" atv:refpy="-158.7" width="10"/>
+ <rect fill="$SCALECOLOR$" stroke-width="1.435" stroke="none" atv:refpx="-71.724" height="1" x="22" y="80.8" id="id_62" atv:refpy="-168.2" width="10"/>
+ <rect fill="$SCALECOLOR$" stroke-width="1.435" stroke="none" atv:refpx="-134.732" height="1" x="22" y="10.1" id="id_63" atv:refpy="-432.9" width="10"/>
+ <rect fill="$SCALECOLOR$" stroke-width="1.435" stroke="none" atv:refpx="-165.856" height="1" x="22" y="70.7" id="id_64" atv:refpy="-456.3" width="10"/>
+ <rect fill="$SCALECOLOR$" stroke-width="1.435" stroke="none" atv:refpx="-197.741" height="1" x="22" y="90.9" id="id_65" atv:refpy="-574.1" width="10"/>
+ <rect fill="$SCALECOLOR$" stroke-width="1.435" stroke="none" atv:refpx="-158.265" height="1" x="22" y="20.2" id="id_66" atv:refpy="-452.8" width="10"/>
+ <rect fill="$SCALECOLOR$" stroke-width="1.435" stroke="none" atv:refpx="-167.375" height="1" x="22" y="40.4" id="id_67" atv:refpy="-470.6" width="10"/>
+ <rect fill="$SCALECOLOR$" stroke-width="1.64" stroke="none" atv:refpx="-102.484" height="1" x="22" y="50.5" id="id_70" atv:refpy="-314.5" width="10"/>
+</svg>

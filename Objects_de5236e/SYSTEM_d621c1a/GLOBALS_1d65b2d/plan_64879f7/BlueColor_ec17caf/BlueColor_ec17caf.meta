@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.GLOBALS.plan.BlueColor
+NodeClass: Variable
+BrowseName: 1:BlueColor
+DisplayName: en|BlueColor
+Description: en|BlueColor
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.GlobalVariable

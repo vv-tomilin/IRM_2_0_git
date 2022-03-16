@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.Pump.BoosterPump
+NodeClass: Variable
+BrowseName: 1:BoosterPump
+DisplayName: en|BoosterPump
+Description: en|BoosterPump
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

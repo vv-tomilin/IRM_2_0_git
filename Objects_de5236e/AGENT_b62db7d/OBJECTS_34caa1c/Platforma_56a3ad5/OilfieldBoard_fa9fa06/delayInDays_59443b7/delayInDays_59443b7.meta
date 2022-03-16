@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Platforma.OilfieldBoard.delayInDays
+NodeClass: Variable
+BrowseName: 1:delayInDays
+DisplayName: en|delayInDays
+Description: en|delayInDays
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

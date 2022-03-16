@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" version="1.2" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" height="80" width="80">
+ <defs/>
+ <metadata>
+  <atv:parameter name="base" desc="baseValue" defaultvalue="" valuetype="address" behavior="mandatory"/>
+  <atv:parameter name="Label" desc="Label" defaultvalue="Label" substitute="#LABEL#" valuetype="address" behavior="optional"/>
+  <atv:gridconfig enabled="false" height="20" gridstyle="lines" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <circle cy="40" atv:refpy="40" fill="#6e6e6e" atv:refpx="40" stroke-width="10" r="40" id="id_5" stroke="#09222e" cx="40"/>
+ <text x="40" atv:refpy="40" fill="#d0d0d0" font-family="Arial Black" atv:refpx="40" id="id_6" y="47" text-anchor="middle" font-size="14">#LABEL#</text>
+ <script type="text/ecmascript"><![CDATA[
+webMI.data.subscribe(webMI.query["base"], function(e) {
+var id = "id_5";
+var value = e.value;
+if (value == "0")
+	webMI.gfx.setFill(id, "#6e6e6e");
+if (value == "1")
+	webMI.gfx.setFill(id, "#136e13");
+if (value == "2")
+	webMI.gfx.setFill(id, "#ff5849");
+
+});
+]]></script>
+</svg>

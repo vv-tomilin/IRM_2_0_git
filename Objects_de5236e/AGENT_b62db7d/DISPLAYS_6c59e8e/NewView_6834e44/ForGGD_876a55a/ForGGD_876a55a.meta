@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.ForGGD
+NodeClass: Object
+BrowseName: 1:ForGGD
+DisplayName: en|ForGGD
+Description: en|ForGGD
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

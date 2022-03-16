@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.TUInt32
+NodeClass: Variable
+BrowseName: 1:TUInt32
+DisplayName: en|TUInt32
+Description: en|TUInt32
+DataType: UInt32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

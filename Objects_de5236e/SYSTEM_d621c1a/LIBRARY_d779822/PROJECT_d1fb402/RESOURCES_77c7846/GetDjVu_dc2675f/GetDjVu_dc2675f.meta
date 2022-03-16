@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/GetDjVu
+NodeClass: Variable
+BrowseName: 1:GetDjVu
+DisplayName: en|GetDjVu
+Description: en|GetDjVu
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

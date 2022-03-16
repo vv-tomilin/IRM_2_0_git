@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ServiceParams.Bit.temp
+NodeClass: Object
+BrowseName: 1:temp
+DisplayName: en|temp
+Description: en|temp
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

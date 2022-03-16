@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.getDataFromAss.falsifyConnection
+NodeClass: Variable
+BrowseName: 1:falsifyConnection
+DisplayName: en|falsifyConnection
+Description: en|falsifyConnection
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

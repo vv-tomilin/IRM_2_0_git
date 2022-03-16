@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/oldie.js.map
+NodeClass: Variable
+BrowseName: 1:oldie.js.map
+DisplayName: en|oldie.js.map
+Description: en|oldie.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

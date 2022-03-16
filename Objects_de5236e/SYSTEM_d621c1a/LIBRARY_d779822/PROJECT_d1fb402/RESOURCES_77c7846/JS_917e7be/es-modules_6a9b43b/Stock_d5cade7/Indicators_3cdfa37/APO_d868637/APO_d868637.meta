@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Stock/Indicators/APO
+NodeClass: Object
+BrowseName: 1:APO
+DisplayName: en|APO
+Description: en|APO
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

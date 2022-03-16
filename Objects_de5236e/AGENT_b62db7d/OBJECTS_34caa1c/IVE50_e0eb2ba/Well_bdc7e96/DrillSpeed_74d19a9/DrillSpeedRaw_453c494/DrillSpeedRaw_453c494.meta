@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Well.DrillSpeed.DrillSpeedRaw
+NodeClass: Variable
+BrowseName: 1:DrillSpeedRaw
+DisplayName: en|DrillSpeedRaw
+Description: en|DrillSpeedRaw
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AKB.DateTime.Length
+NodeClass: Variable
+BrowseName: 1:Length
+DisplayName: en|Length
+Description: en|Length
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

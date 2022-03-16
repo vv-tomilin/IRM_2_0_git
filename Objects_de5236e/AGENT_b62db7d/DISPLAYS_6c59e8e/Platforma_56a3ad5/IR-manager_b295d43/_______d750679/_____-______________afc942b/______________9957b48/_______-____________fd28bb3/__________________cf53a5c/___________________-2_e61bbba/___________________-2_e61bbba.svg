@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" height="1000" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="580" version="1.2" xmlns="http://www.w3.org/2000/svg">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="true" height="20" gridstyle="lines" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <svg height="160" atv:refpx="308.9" atv:refpy="91.238" id="id_6" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.show_value" x="177.778" transform="matrix(1.125,0,0,0.625,0,0)" y="80" width="160">
+  <atv:argument name="title" value="T{ОЭДК}"/>
+  <atv:argument name="unit" value="T{%}"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.WellpadBoard.OEDK"/>
+  <atv:argument name="outputMode" value="number"/>
+  <atv:overwrite height="100" id="clickarea_display" transform="matrix(0.8889,0,0,1.6,0,0)" width="180"/>
+  <atv:overwrite id="sub_label" x="90" transform="matrix(0.8889,0,0,1.6,0,0)" y="79.2"/>
+  <atv:overwrite id="main_label" x="90" transform="matrix(0.8889,0,0,1.6,0,0)" y="60.5"/>
+  <atv:overwrite id="value_label" x="90" transform="matrix(0.8889,0,0,1.6,0,0)" y="64.5"/>
+  <atv:overwrite height="70" id="blinking_frame" transform="matrix(0.8889,0,0,1.6,0,0)" width="170"/>
+  <atv:overwrite id="title" x="90" transform="matrix(0.8889,0,0,1.6,0,0)"/>
+  <atv:overwrite height="98" id="background" transform="matrix(0.8889,0,0,1.6,0,0)" width="178"/>
+ </svg>
+ <svg height="160" atv:refpx="110.001" atv:refpy="87.513" id="id_0" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.show_value" x="17.778" transform="matrix(1.125,0,0,0.625,0,0)" y="80" width="160">
+  <atv:argument name="title" value="T{Буровой подрядчик}"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.WellpadBoard.rigContractor"/>
+  <atv:overwrite height="100" id="clickarea_display" transform="matrix(0.8889,0,0,1.6,0,0)" width="180"/>
+  <atv:overwrite id="sub_label" x="90" transform="matrix(0.8889,0,0,1.6,0,0)" y="79.2"/>
+  <atv:overwrite id="main_label" x="90" transform="matrix(0.8889,0,0,1.6,0,0)" y="60.5"/>
+  <atv:overwrite id="value_label" x="90" transform="matrix(0.8889,0,0,1.6,0,0)" y="64.5"/>
+  <atv:overwrite height="70" id="blinking_frame" transform="matrix(0.8889,0,0,1.6,0,0)" width="170"/>
+  <atv:overwrite id="title" x="90" transform="matrix(0.8889,0,0,1.6,0,0)"/>
+  <atv:overwrite height="98" id="background" transform="matrix(0.8889,0,0,1.6,0,0)" width="178"/>
+ </svg>
+ <svg height="160" atv:refpx="290.001" atv:refpy="297.65" id="id_1" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.show_value" x="5.926" transform="matrix(3.375,0,0,0.6875,0,0)" y="378.043" width="160">
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.WellpadBoard.serviceContractor"/>
+  <atv:argument name="title" value="T{Сервисные подрядчики}"/>
+  <atv:overwrite height="110" id="clickarea_display" transform="matrix(0.2963,0,0,1.4545,0,0)" width="540"/>
+  <atv:overwrite id="sub_label" x="270" transform="matrix(0.2963,0,0,1.4545,0,0)" y="84.2"/>
+  <atv:overwrite id="main_label" x="270" transform="matrix(0.2963,0,0,1.4545,0,0)" y="65.5"/>
+  <atv:overwrite id="value_label" x="270" transform="matrix(0.2963,0,0,1.4545,0,0)" y="69.5"/>
+  <atv:overwrite height="80" id="blinking_frame" transform="matrix(0.2963,0,0,1.4545,0,0)" width="530"/>
+  <atv:overwrite id="title" x="270" transform="matrix(0.2963,0,0,1.4545,0,0)"/>
+  <atv:overwrite height="108" id="background" transform="matrix(0.2963,0,0,1.4545,0,0)" width="538"/>
+ </svg>
+ <svg height="160" atv:refpx="292.001" atv:refpy="437.886" id="id_4" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.progress_bar" x="5.926" transform="matrix(3.375,0,0,0.6875,0,0)" y="543.213" width="160">
+  <atv:argument name="title" value="T{Проходка}"/>
+  <atv:argument name="max" value="2900"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.WellpadBoard.totalPass"/>
+  <atv:argument name="unit" value="T{м}"/>
+  <atv:argument name="barColor" value="#37ec00"/>
+  <atv:overwrite height="110" id="clickarea_display" transform="matrix(0.2963,0,0,1.4545,0,0)" width="540"/>
+  <atv:overwrite height="80" id="blinking_frame" transform="matrix(0.2963,0,0,1.4545,0,0)" width="530"/>
+  <atv:overwrite id="sub_label" x="270" transform="matrix(0.2963,0,0,1.4545,0,0)" y="84.246"/>
+  <atv:overwrite id="main_label" x="270" transform="matrix(0.2963,0,0,1.4545,0,0)" y="65.5"/>
+  <atv:overwrite id="chart" x="1.415" transform="matrix(1.0469,0,0,0.8951,0,0)" y="40.625"/>
+  <atv:overwrite id="title" x="270" transform="matrix(0.2963,0,0,1.4545,0,0)"/>
+  <atv:overwrite height="108" id="background" transform="matrix(0.2963,0,0,1.4545,0,0)" width="538"/>
+ </svg>
+ <svg height="160" atv:refpx="290" atv:refpy="740.69" id="id_7" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.donut_chart" x="5.926" transform="matrix(3.375,0,0,3.125,0,0)" y="154.898" width="160">
+  <atv:argument name="series1Address" value="AGENT.OBJECTS.Platforma.WellpadBoard.PV"/>
+  <atv:argument name="series2Address" value="AGENT.OBJECTS.Platforma.WellpadBoard.NPV"/>
+  <atv:argument name="series1Name" value="T{ПВ}"/>
+  <atv:argument name="series2Name" value="T{НПВ}"/>
+  <atv:argument name="title" value="T{НПВ / ПВ}"/>
+  <atv:argument name="series2Color" value="#F4442E"/>
+  <atv:overwrite height="500" id="clickarea_display" transform="matrix(0.2963,0,0,0.32,0,0)" width="540"/>
+  <atv:overwrite height="470" id="blinking_frame" transform="matrix(0.2963,0,0,0.32,0,0)" width="530"/>
+  <atv:overwrite id="sub_label" x="270" transform="matrix(0.2963,0,0,0.32,0,0)" y="279.246"/>
+  <atv:overwrite id="main_label" x="270" transform="matrix(0.2963,0,0,0.32,0,0)" y="260.5"/>
+  <atv:overwrite id="chart" x="1.415" transform="matrix(1.0469,0,0,1.1569,0,0)" y="6.915"/>
+  <atv:overwrite id="title" x="270" transform="matrix(0.2963,0,0,0.32,0,0)"/>
+  <atv:overwrite height="498" id="background" transform="matrix(0.2963,0,0,0.32,0,0)" width="538"/>
+ </svg>
+ <svg height="160" atv:refpx="110" atv:refpy="205.201" id="id_2" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.show_value" x="17.778" transform="matrix(1.125,0,0,0.625,0,0)" y="248.322" width="160">
+  <atv:argument name="title" value="T{Вертикальных}"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.WellpadBoard.verticalWell"/>
+  <atv:overwrite height="100" id="clickarea_display" transform="matrix(0.8889,0,0,1.6,0,0)" width="180"/>
+  <atv:overwrite id="sub_label" x="90" transform="matrix(0.8889,0,0,1.6,0,0)" y="79.2"/>
+  <atv:overwrite id="main_label" x="90" transform="matrix(0.8889,0,0,1.6,0,0)" y="60.5"/>
+  <atv:overwrite id="value_label" x="90" transform="matrix(0.8889,0,0,1.6,0,0)" y="64.5"/>
+  <atv:overwrite height="70" id="blinking_frame" transform="matrix(0.8889,0,0,1.6,0,0)" width="170"/>
+  <atv:overwrite id="title" x="90" transform="matrix(0.8889,0,0,1.6,0,0)"/>
+  <atv:overwrite height="98" id="background" transform="matrix(0.8889,0,0,1.6,0,0)" width="178"/>
+ </svg>
+ <svg height="160" atv:refpx="290.94" atv:refpy="205" id="id_3" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.show_value" x="178.614" transform="matrix(1.125,0,0,0.625,0,0)" y="248" width="160">
+  <atv:argument name="title" value="T{Наклонно-направленных}"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.WellpadBoard.directionalWell"/>
+  <atv:overwrite height="100" id="clickarea_display" transform="matrix(0.8889,0,0,1.6,0,0)" width="180"/>
+  <atv:overwrite id="sub_label" x="90" transform="matrix(0.8889,0,0,1.6,0,0)" y="79.2"/>
+  <atv:overwrite id="main_label" x="90" transform="matrix(0.8889,0,0,1.6,0,0)" y="60.5"/>
+  <atv:overwrite id="value_label" x="90" transform="matrix(0.8889,0,0,1.6,0,0)" y="64.5"/>
+  <atv:overwrite height="70" id="blinking_frame" transform="matrix(0.8889,0,0,1.6,0,0)" width="170"/>
+  <atv:overwrite id="title" x="90" transform="matrix(0.8889,0,0,1.6,0,0)"/>
+  <atv:overwrite height="98" id="background" transform="matrix(0.8889,0,0,1.6,0,0)" width="178"/>
+ </svg>
+ <svg height="160" atv:refpx="471" atv:refpy="205" id="id_5" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.show_value" x="338.667" transform="matrix(1.125,0,0,0.625,0,0)" y="248" width="160">
+  <atv:argument name="title" value="T{Горизонтальных}"/>
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.WellpadBoard.horizontalWell"/>
+  <atv:overwrite height="100" id="clickarea_display" transform="matrix(0.8889,0,0,1.6,0,0)" width="180"/>
+  <atv:overwrite id="sub_label" x="90" transform="matrix(0.8889,0,0,1.6,0,0)" y="79.2"/>
+  <atv:overwrite id="main_label" x="90" transform="matrix(0.8889,0,0,1.6,0,0)" y="60.5"/>
+  <atv:overwrite id="value_label" x="90" transform="matrix(0.8889,0,0,1.6,0,0)" y="64.5"/>
+  <atv:overwrite height="70" id="blinking_frame" transform="matrix(0.8889,0,0,1.6,0,0)" width="170"/>
+  <atv:overwrite id="title" x="90" transform="matrix(0.8889,0,0,1.6,0,0)"/>
+  <atv:overwrite height="98" id="background" transform="matrix(0.8889,0,0,1.6,0,0)" width="178"/>
+ </svg>
+ <svg height="160" atv:refpx="471" atv:refpy="100" id="id_8" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.show_value" x="338.667" transform="matrix(1.125,0,0,0.625,0,0)" y="80" width="160">
+  <atv:argument name="base" value="AGENT.OBJECTS.Platforma.WellpadBoard.operationalWell"/>
+  <atv:argument name="title" value="T{Эксплуатационных}"/>
+  <atv:overwrite height="100" id="clickarea_display" transform="matrix(0.8889,0,0,1.6,0,0)" width="180"/>
+  <atv:overwrite id="sub_label" x="90" transform="matrix(0.8889,0,0,1.6,0,0)" y="79.2"/>
+  <atv:overwrite id="main_label" x="90" transform="matrix(0.8889,0,0,1.6,0,0)" y="60.5"/>
+  <atv:overwrite id="value_label" x="90" transform="matrix(0.8889,0,0,1.6,0,0)" y="64.5"/>
+  <atv:overwrite height="70" id="blinking_frame" transform="matrix(0.8889,0,0,1.6,0,0)" width="170"/>
+  <atv:overwrite id="title" x="90" transform="matrix(0.8889,0,0,1.6,0,0)"/>
+  <atv:overwrite height="98" id="background" transform="matrix(0.8889,0,0,1.6,0,0)" width="178"/>
+ </svg>
+ <text font-family="Arial" atv:refpx="-5681.344" atv:refpy="-508.33" font-size="40" id="id_9" x="61" fill="#ffffff" y="36.5" font-weight="bold">Кустовая площадка А-2</text>
+ <script type="text/ecmascript"><![CDATA[webMI.trigger.fire('zoomToWellpad', {parent : "140296", subparent : "1761430", target: 'Кустовая площадка А-2'})]]></script>
+</svg>

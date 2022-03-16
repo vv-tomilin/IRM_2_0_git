@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.SvgFlow.Grey.pipe_peristaltic
+NodeClass: Variable
+BrowseName: 1:pipe_peristaltic
+DisplayName: en|pipe_peristaltic
+Description: en|pipe_peristaltic
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

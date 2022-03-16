@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Platforma.Level
+NodeClass: Variable
+BrowseName: 1:Level
+DisplayName: en|Level
+Description: en|Level
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.ORB.MinTemperature
+NodeClass: Variable
+BrowseName: 1:MinTemperature
+DisplayName: en|MinTemperature
+Description: en|MinTemperature
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg" width="100" height="100">
+ <defs/>
+ <title>Clock Combined</title>
+ <desc>This control displays the current client time and date.</desc>
+ <metadata>
+  <atv:parameter name="base" valuetype="address" behavior="hidden"/>
+  <atv:parameter group="Appearance" substitute="$FONTCOLOR$" defaultvalue="SYSTEM.GLOBALS.irmFontColor" name="fontColor" desc="font color" valuetype="global" behavior="optional"/>
+  <atv:parameter group="Appearance" substitute="$FILLCOLOR$" defaultvalue="SYSTEM.GLOBALS.irmFillColor" name="fillColor" desc="fill color" valuetype="global" behavior="optional"/>
+  <atv:parameter group="Appearance" substitute="$BORDERCOLOR$" defaultvalue="SYSTEM.GLOBALS.irmBorderColor" name="borderColor" desc="border color" valuetype="global" behavior="optional"/>
+  <atv:parameter group="Appearance" substitute="$SPOINTER$" defaultvalue="SYSTEM.GLOBALS.atvAccent1" name="pointerColor" desc="seconds-pointer color" valuetype="global" behavior="optional"/>
+  <atv:parameter group="Appearance" substitute="$SYMBOLCOLOR$" defaultvalue="SYSTEM.GLOBALS.irmSymbolColor" name="symbolColor" desc="symbol color" valuetype="global" behavior="optional"/>
+  <atv:parameter substitute="$VISIBILITYDATE$" config="visible=inherit;hidden=hidden" defaultvalue="inherit" name="visibilityDate" desc="visibility date" valuetype="enum" behavior="optional"/>
+  <atv:parameter substitute="$VISIBILITYDIGITALTIME$" config="visible=inherit;hidden=hidden" defaultvalue="hidden" name="visibilityDigitalTime" desc="visibility digital time" valuetype="enum" behavior="optional"/>
+  <atv:gridconfig gridstyle="lines" enabled="true" width="2" height="2"/>
+  <atv:snapconfig enabled="true" width="2" height="2"/>
+ </metadata>
+ <g atv:refpy="0" atv:refpx="0" id="id_0" atv:insensitive="true">
+  <rect atv:refpy="50" fill="#09222e" atv:refpx="50" id="id_1" width="100.00" height="100.00" y="0" x="0"/>
+ </g>
+ <circle atv:refpy="50.058" fill="$FILLCOLOR$" atv:refpx="50" cx="50" stroke-width="0.5" id="id_102" cy="50.058" stroke="$BORDERCOLOR$" r="49.5"/>
+ <circle atv:refpy="50.058" fill="$FILLCOLOR$" atv:refpx="50" cx="50" stroke-width="1" id="id_103" cy="50.058" stroke="none" r="47"/>
+ <!-- <circle atv:refpy="50.058" fill="#ffffff" atv:refpx="50" cx="50" stroke-width="1" id="id_103" cy="50.058" stroke="none" r="47"/>-->
+ <text atv:refpy="61.4" fill="$FONTCOLOR$" atv:refpx="50.5" font-size="7" font-family="Arial" id="date" text-anchor="middle" visibility="$VISIBILITYDATE$" y="64.4" x="50.5">01.02.2011</text>
+ <text atv:refpy="68.9" fill="$FONTCOLOR$" atv:refpx="50.5" font-size="7" font-family="Arial" id="time" text-anchor="middle" visibility="$VISIBILITYDIGITALTIME$" y="71.9" x="50.5">12:20</text>
+ <rect atv:refpy="50.058" fill="$SYMBOLCOLOR$" atv:refpx="50" stroke-width="1" id="minute" width="2" height="25.169" y="24.889" stroke="none" x="49"/>
+ <rect atv:refpy="50.058" fill="$SYMBOLCOLOR$" atv:refpx="50" stroke-width="1" id="hour" width="2" height="18" y="32.058" stroke="none" x="49"/>
+ <path atv:refpy="50.058" fill="$SPOINTER$" atv:refpx="50" id="second" stroke="none" d="M49,44.058L50,29.058L51,44.058Z"/>
+ <circle atv:refpy="50.058" fill="$FILLCOLOR$" atv:refpx="50" cx="50" stroke-width="0.5" id="id_104" cy="50.058" stroke="#FFFFFF" r="6.5"/>
+ <g atv:refpy="50.058" atv:refpx="50" transform="matrix(0.8188,0,0,0.8188,9.3023,9.1203)" id="id_112">
+  <g atv:refpy="94.509" atv:refpx="332.516" transform="matrix(0.6156,0,0,0.6156,-154.9032,-11.56)" id="id_501">
+   <g atv:refpy="44.805" atv:refpx="338.317" id="id_485">
+    <line atv:refpy="44.805" x1="337.848" fill="none" atv:refpx="338.317" id="id_9" y1="49.28" y2="40.33" stroke-miterlimit="10" stroke="#BEBEBE" x2="338.785"/>
+   </g>
+   <g atv:refpy="45.714" atv:refpx="344.054" id="id_486">
+    <line atv:refpy="45.714" x1="343.121" fill="none" atv:refpx="344.054" id="id_13" y1="50.115" y2="41.313" stroke-miterlimit="10" stroke="#BEBEBE" x2="344.988"/>
+   </g>
+   <g atv:refpy="47.218" atv:refpx="349.666" id="id_487">
+    <line atv:refpy="47.218" x1="348.277" fill="none" atv:refpx="349.666" id="id_20" y1="51.497" y2="42.938" stroke-miterlimit="10" stroke="#BEBEBE" x2="351.055"/>
+   </g>
+   <g atv:refpy="49.299" atv:refpx="355.089" id="id_488">
+    <line atv:refpy="49.299" x1="353.26" fill="none" atv:refpx="355.089" id="id_21" y1="53.41" y2="45.188" stroke-miterlimit="10" stroke="#BEBEBE" x2="356.918"/>
+   </g>
+   <g atv:refpy="100" atv:refpx="332.515" id="id_489">
+    <line atv:refpy="55.1" x1="362.494" fill="none" atv:refpx="365.138" id="id_22" y1="58.741" y2="51.459" stroke-miterlimit="10" stroke="#BEBEBE" x2="367.781"/>
+    <line atv:refpy="144.9" x1="297.25" fill="none" atv:refpx="299.894" id="id_23" y1="148.541" y2="141.259" stroke-miterlimit="10" stroke="#BEBEBE" x2="302.537"/>
+   </g>
+   <g atv:refpy="100" atv:refpx="332.515" id="id_490">
+    <line atv:refpy="58.756" x1="366.643" fill="none" atv:refpx="369.652" id="id_24" y1="62.101" y2="55.411" stroke-miterlimit="10" stroke="#BEBEBE" x2="372.662"/>
+    <line atv:refpy="141.244" x1="292.369" fill="none" atv:refpx="295.379" id="id_25" y1="144.589" y2="137.899" stroke-miterlimit="10" stroke="#BEBEBE" x2="298.389"/>
+   </g>
+   <g atv:refpy="100" atv:refpx="332.515" id="id_491">
+    <line atv:refpy="62.864" x1="370.416" fill="none" atv:refpx="373.759" id="id_26" y1="65.875" y2="59.852" stroke-miterlimit="10" stroke="#BEBEBE" x2="377.102"/>
+    <line atv:refpy="137.137" x1="287.928" fill="none" atv:refpx="291.27" id="id_27" y1="140.148" y2="134.125" stroke-miterlimit="10" stroke="#BEBEBE" x2="294.613"/>
+   </g>
+   <g atv:refpy="100" atv:refpx="332.516" id="id_492">
+    <line atv:refpy="67.377" x1="373.775" fill="none" atv:refpx="377.415" id="id_6" y1="70.023" y2="64.732" stroke-miterlimit="10" stroke="#BEBEBE" x2="381.055"/>
+    <line atv:refpy="132.623" x1="283.977" fill="none" atv:refpx="287.615" id="id_7" y1="135.268" y2="129.977" stroke-miterlimit="10" stroke="#BEBEBE" x2="291.254"/>
+   </g>
+   <g atv:refpy="100" atv:refpx="332.515" id="id_493">
+    <line atv:refpy="77.427" x1="379.107" fill="none" atv:refpx="383.216" id="id_8" y1="79.258" y2="75.595" stroke-miterlimit="10" stroke="#BEBEBE" x2="387.326"/>
+    <line atv:refpy="122.573" x1="277.703" fill="none" atv:refpx="281.813" id="id_11" y1="124.405" y2="120.742" stroke-miterlimit="10" stroke="#BEBEBE" x2="285.924"/>
+   </g>
+   <g atv:refpy="100" atv:refpx="332.516" id="id_494">
+    <line atv:refpy="82.85" x1="381.02" fill="none" atv:refpx="385.299" id="id_12" y1="84.241" y2="81.458" stroke-miterlimit="10" stroke="#BEBEBE" x2="389.578"/>
+    <line atv:refpy="117.15" x1="275.453" fill="none" atv:refpx="279.732" id="id_14" y1="118.542" y2="115.759" stroke-miterlimit="10" stroke="#BEBEBE" x2="284.012"/>
+   </g>
+   <g atv:refpy="100" atv:refpx="332.516" id="id_495">
+    <line atv:refpy="88.46" x1="382.4" fill="none" atv:refpx="386.801" id="id_34" y1="89.397" y2="87.524" stroke-miterlimit="10" stroke="#BEBEBE" x2="391.203"/>
+    <line atv:refpy="111.54" x1="273.828" fill="none" atv:refpx="278.228" id="id_15" y1="112.476" y2="110.604" stroke-miterlimit="10" stroke="#BEBEBE" x2="282.629"/>
+   </g>
+   <g atv:refpy="100.001" atv:refpx="332.516" id="id_496">
+    <line atv:refpy="94.2" x1="383.236" fill="none" atv:refpx="387.711" id="id_16" y1="94.67" y2="93.729" stroke-miterlimit="10" stroke="#BEBEBE" x2="392.186"/>
+    <line atv:refpy="105.801" x1="272.846" fill="none" atv:refpx="277.321" id="id_37" y1="106.272" y2="105.33" stroke-miterlimit="10" stroke="#BEBEBE" x2="281.795"/>
+   </g>
+   <line atv:refpy="105.802" x1="383.236" fill="none" atv:refpx="387.711" id="id_38" y1="105.332" y2="106.271" stroke-miterlimit="10" stroke="#BEBEBE" x2="392.186"/>
+   <line atv:refpy="94.198" x1="272.846" fill="none" atv:refpx="277.321" id="id_39" y1="93.729" y2="94.668" stroke-miterlimit="10" stroke="#BEBEBE" x2="281.795"/>
+   <line atv:refpy="111.539" x1="382.4" fill="none" atv:refpx="386.801" id="id_40" y1="110.604" y2="112.474" stroke-miterlimit="10" stroke="#BEBEBE" x2="391.203"/>
+   <line atv:refpy="88.461" x1="273.828" fill="none" atv:refpx="278.229" id="id_41" y1="87.526" y2="89.396" stroke-miterlimit="10" stroke="#BEBEBE" x2="282.631"/>
+   <line atv:refpy="117.15" x1="381.02" fill="none" atv:refpx="385.299" id="id_42" y1="115.761" y2="118.54" stroke-miterlimit="10" stroke="#BEBEBE" x2="389.578"/>
+   <line atv:refpy="82.85" x1="275.453" fill="none" atv:refpx="279.732" id="id_43" y1="81.46" y2="84.239" stroke-miterlimit="10" stroke="#BEBEBE" x2="284.012"/>
+   <line atv:refpy="122.573" x1="379.105" fill="none" atv:refpx="383.216" id="id_44" y1="120.744" y2="124.403" stroke-miterlimit="10" stroke="#BEBEBE" x2="387.326"/>
+   <line atv:refpy="77.427" x1="277.703" fill="none" atv:refpx="281.814" id="id_45" y1="75.597" y2="79.256" stroke-miterlimit="10" stroke="#BEBEBE" x2="285.926"/>
+   <line atv:refpy="132.623" x1="373.775" fill="none" atv:refpx="377.415" id="id_47" y1="129.979" y2="135.266" stroke-miterlimit="10" stroke="#BEBEBE" x2="381.055"/>
+   <line atv:refpy="67.378" x1="283.975" fill="none" atv:refpx="287.615" id="id_48" y1="64.734" y2="70.022" stroke-miterlimit="10" stroke="#BEBEBE" x2="291.256"/>
+   <line atv:refpy="137.136" x1="370.416" fill="none" atv:refpx="373.76" id="id_51" y1="134.126" y2="140.146" stroke-miterlimit="10" stroke="#BEBEBE" x2="377.104"/>
+   <line atv:refpy="62.864" x1="287.928" fill="none" atv:refpx="291.272" id="id_52" y1="59.854" y2="65.874" stroke-miterlimit="10" stroke="#BEBEBE" x2="294.615"/>
+   <line atv:refpy="70.449" x1="366.641" fill="none" atv:refpx="68.291" id="id_53" y1="137.9" y2="144.587" stroke-miterlimit="10" stroke="#BEBEBE" x2="372.662"/>
+   <line atv:refpy="58.757" x1="292.367" fill="none" atv:refpx="295.379" id="id_54" y1="55.413" y2="62.1" stroke-miterlimit="10" stroke="#BEBEBE" x2="298.391"/>
+   <line atv:refpy="144.899" x1="362.492" fill="none" atv:refpx="365.138" id="id_55" y1="141.26" y2="148.539" stroke-miterlimit="10" stroke="#BEBEBE" x2="367.783"/>
+   <line atv:refpy="55.1" x1="297.248" fill="none" atv:refpx="299.894" id="id_56" y1="51.461" y2="58.74" stroke-miterlimit="10" stroke="#BEBEBE" x2="302.539"/>
+   <g atv:refpy="49.299" atv:refpx="309.941" id="id_497">
+    <line atv:refpy="49.299" x1="308.111" fill="none" atv:refpx="309.941" id="id_57" y1="45.188" y2="53.409" stroke-miterlimit="10" stroke="#BEBEBE" x2="311.771"/>
+   </g>
+   <g atv:refpy="47.217" atv:refpx="315.365" id="id_498">
+    <line atv:refpy="47.217" x1="313.975" fill="none" atv:refpx="315.365" id="id_58" y1="42.938" y2="51.496" stroke-miterlimit="10" stroke="#BEBEBE" x2="316.756"/>
+   </g>
+   <g atv:refpy="45.714" atv:refpx="320.976" id="id_499">
+    <line atv:refpy="45.713" x1="320.041" fill="none" atv:refpx="320.976" id="id_59" y1="41.313" y2="50.114" stroke-miterlimit="10" stroke="#BEBEBE" x2="321.912"/>
+   </g>
+   <g atv:refpy="44.804" atv:refpx="326.714" id="id_500">
+    <line atv:refpy="44.804" x1="326.244" fill="none" atv:refpx="326.714" id="id_60" y1="40.329" y2="49.279" stroke-miterlimit="10" stroke="#BEBEBE" x2="327.184"/>
+   </g>
+  </g>
+  <g atv:refpy="100" atv:refpx="332.515" transform="matrix(0.6156,0,0,0.6156,-154.9032,-11.56)" id="id_504">
+   <g atv:refpy="151.162" atv:refpx="302.399" id="id_502">
+    <polygon atv:refpy="151.162" fill="$SYMBOLCOLOR$" atv:refpx="302.399" id="id_61" points="297.783,156.157 307.016,144.167 301.248,158.157 &#x9;&#x9;&#x9;&#x9;&#x9;"/>
+   </g>
+   <g atv:refpy="48.837" atv:refpx="362.632" id="id_503">
+    <polygon atv:refpy="24.271" fill="$SYMBOLCOLOR$" atv:refpx="65.253" id="id_62" points="358.016,55.833 363.783,41.842 367.248,43.842 &#x9;&#x9;&#x9;&#x9;&#x9;"/>
+   </g>
+  </g>
+  <g atv:refpy="100" atv:refpx="332.515" transform="matrix(0.6156,0,0,0.6156,-154.9032,-11.56)" id="id_507">
+   <g atv:refpy="130.116" atv:refpx="281.353" id="id_505">
+    <polygon atv:refpy="130.116" fill="$SYMBOLCOLOR$" atv:refpx="281.353" id="id_63" points="274.357,131.268 288.348,125.5 276.357,134.732 &#x9;&#x9;&#x9;&#x9;&#x9;"/>
+   </g>
+   <g atv:refpy="69.884" atv:refpx="383.679" id="id_506">
+    <polygon atv:refpy="69.884" fill="$SYMBOLCOLOR$" atv:refpx="383.679" id="id_64" points="376.684,74.5 388.674,65.268 390.674,68.732 &#x9;&#x9;&#x9;&#x9;&#x9;"/>
+   </g>
+  </g>
+  <g atv:refpy="17.884" atv:refpx="-1.163" transform="matrix(0.6156,0,0,0.6156,-154.9032,-11.56)" id="id_510">
+   <polygon atv:refpy="69.884" fill="$SYMBOLCOLOR$" atv:refpx="281.353" id="id_69" points="276.357,65.268 288.348,74.5 274.357,68.732 &#x9;&#x9;&#x9;&#x9;"/>
+  </g>
+  <g atv:refpy="130.116" atv:refpx="383.678" transform="matrix(0.6156,0,0,0.6156,-154.9032,-11.56)" id="id_511">
+   <polygon atv:refpy="130.116" fill="$SYMBOLCOLOR$" atv:refpx="383.678" id="id_70" points="376.682,125.5 390.674,131.268 388.674,134.732 &#x9;&#x9;&#x9;&#x9;"/>
+  </g>
+  <g atv:refpy="155.965" atv:refpx="332.517" transform="matrix(0.6156,0,0,0.6156,-154.9032,-11.56)" id="id_513">
+   <line atv:refpy="150.701" x1="353.258" fill="none" atv:refpx="355.089" id="id_71" y1="146.591" y2="154.811" stroke-miterlimit="10" stroke="#BEBEBE" x2="356.92"/>
+   <line atv:refpy="152.783" x1="348.273" fill="none" atv:refpx="349.665" id="id_72" y1="148.503" y2="157.063" stroke-miterlimit="10" stroke="#BEBEBE" x2="351.057"/>
+   <line atv:refpy="154.287" x1="343.117" fill="none" atv:refpx="344.053" id="id_73" y1="149.886" y2="158.688" stroke-miterlimit="10" stroke="#BEBEBE" x2="344.99"/>
+   <line atv:refpy="155.195" x1="337.846" fill="none" atv:refpx="338.317" id="id_74" y1="150.72" y2="159.669" stroke-miterlimit="10" stroke="#BEBEBE" x2="338.787"/>
+   <line atv:refpy="155.195" x1="327.184" fill="none" atv:refpx="326.714" id="id_75" y1="150.721" y2="159.669" stroke-miterlimit="10" stroke="#BEBEBE" x2="326.244"/>
+   <line atv:refpy="154.287" x1="321.91" fill="none" atv:refpx="320.976" id="id_76" y1="149.886" y2="158.688" stroke-miterlimit="10" stroke="#BEBEBE" x2="320.041"/>
+   <line atv:refpy="152.783" x1="316.754" fill="none" atv:refpx="315.365" id="id_77" y1="148.503" y2="157.063" stroke-miterlimit="10" stroke="#BEBEBE" x2="313.975"/>
+   <line atv:refpy="150.702" x1="311.771" fill="none" atv:refpx="309.942" id="id_78" y1="146.59" y2="154.813" stroke-miterlimit="10" stroke="#BEBEBE" x2="308.113"/>
+   <g atv:refpy="158.5" atv:refpx="332.516" id="id_512">
+    <polygon atv:refpy="158.5" fill="$SYMBOLCOLOR$" atv:refpx="332.516" id="id_79" points="332.516,150.999 334.516,166 330.516,166 &#x9;&#x9;&#x9;&#x9;&#x9;"/>
+   </g>
+  </g>
+  <g atv:refpy="100" atv:refpx="332.515" transform="matrix(0.6156,0,0,0.6156,-154.9032,-11.56)" id="id_516">
+   <g atv:refpy="48.838" atv:refpx="302.399" id="id_514">
+    <polygon atv:refpy="48.838" fill="$SYMBOLCOLOR$" atv:refpx="302.399" id="id_80" points="301.248,41.843 307.016,55.833 297.783,43.843 &#x9;&#x9;&#x9;&#x9;&#x9;"/>
+   </g>
+   <g atv:refpy="151.162" atv:refpx="362.632" id="id_515">
+    <polygon atv:refpy="151.162" fill="$SYMBOLCOLOR$" atv:refpx="362.632" id="id_81" points="358.016,144.167 367.248,156.158 363.783,158.158 &#x9;&#x9;&#x9;&#x9;&#x9;"/>
+   </g>
+  </g>
+  <g atv:refpy="41.5" atv:refpx="332.516" transform="matrix(0.6156,0,0,0.6156,-154.9032,-11.56)" id="id_518">
+   <g atv:refpy="41.5" atv:refpx="332.516" id="id_517">
+    <polygon atv:refpy="41.5" fill="$SYMBOLCOLOR$" atv:refpx="332.516" id="id_82" points="334.516,34 332.516,49 330.516,34 &#x9;&#x9;&#x9;&#x9;&#x9;"/>
+   </g>
+  </g>
+  <g atv:refpy="48" atv:refpx="-8.5" transform="matrix(0.6156,0,0,0.6156,-154.9032,-11.56)" id="id_508">
+   <polygon atv:refpy="100" fill="$SYMBOLCOLOR$" atv:refpx="274.016" id="id_67" points="266.516,98 281.516,100 266.516,102 &#x9;&#x9;&#x9;&#x9;&#x9;"/>
+  </g>
+  <g atv:refpy="50" atv:refpx="85.633" transform="matrix(-0.6156,0,0,0.6156,254.3169,-11.56)" id="id_107">
+   <polygon atv:refpy="50.538" fill="$SYMBOLCOLOR$" atv:refpx="79.542" id="id_108" points="266.271,98.947 281.271,100.947 266.271,102.947"/>
+  </g>
+ </g>
+ <text atv:refpy="-331.342" fill="$FONTCOLOR$" atv:refpx="-243.908" font-size="10" font-family="Arial" id="id_113" text-anchor="middle" y="14.4" x="50">12</text>
+ <text atv:refpy="-251.831" fill="$FONTCOLOR$" atv:refpx="-150.392" font-size="10" font-family="Arial" id="id_114" text-anchor="middle" y="93.911" x="50">6</text>
+ <text atv:refpy="-292.184" fill="$FONTCOLOR$" atv:refpx="-111.07" font-size="10" font-family="Arial" id="id_115" text-anchor="middle" y="53.558" x="89.322">3</text>
+ <text atv:refpy="-292.184" fill="$FONTCOLOR$" atv:refpx="-189.595" font-size="10" font-family="Arial" id="id_116" text-anchor="middle" y="53.558" x="10.797">9</text>
+ <text atv:refpy="-312.472" fill="$FONTCOLOR$" atv:refpx="-115.765" font-size="10" font-family="Arial" id="id_117" text-anchor="middle" y="33.27" x="84.627">2</text>
+ <text atv:refpy="-325.743" fill="$FONTCOLOR$" atv:refpx="-130.833" font-size="10" font-family="Arial" id="id_118" text-anchor="middle" y="19.999" x="69.559">1</text>
+ <text atv:refpy="-325.76" fill="$FONTCOLOR$" atv:refpx="-252.908" font-size="10" font-family="Arial" id="id_119" text-anchor="middle" y="19.982" x="29.102">11</text>
+ <text atv:refpy="-311.726" fill="$FONTCOLOR$" atv:refpx="-278.671" font-size="10" font-family="Arial" id="id_120" text-anchor="middle" y="34.016" x="15.237">10</text>
+ <text atv:refpy="-271.676" fill="$FONTCOLOR$" atv:refpx="-183.545" font-size="10" font-family="Arial" id="id_121" text-anchor="middle" y="74.066" x="16.847">8</text>
+ <text atv:refpy="-256.557" fill="$FONTCOLOR$" atv:refpx="-169.917" font-size="10" font-family="Arial" id="id_122" text-anchor="middle" y="89.185" x="30.475">7</text>
+ <text atv:refpy="-257.777" fill="$FONTCOLOR$" atv:refpx="-130.426" font-size="10" font-family="Arial" id="id_123" text-anchor="middle" y="87.965" x="69.966">5</text>
+ <text atv:refpy="-273.421" fill="$FONTCOLOR$" atv:refpx="-116.968" font-size="10" font-family="Arial" id="id_124" text-anchor="middle" y="72.321" x="83.424">4</text>
+ <script type="text/ecmascript"><![CDATA[var timeOn = webMI.query["visibilityDigitalTime"];
+var dateOn = webMI.query["visibilityDate"];
+
+// set the time and date depending on the display parameters "timeOn" and "dateOn"
+(function setDateTime() {
+	var today = new Date();
+	var h = today.getHours();
+	var m = today.getMinutes();
+	var s = today.getSeconds();
+	var std="";
+	var min="";
+	var dat="";
+
+	if (timeOn == "inherit") {
+		std=h.toString();
+		while(std.length < 2) std = "0" + std;
+		min=m.toString();
+		while(min.length < 2) min = "0" + min;
+
+		webMI.gfx.setText("time",std+":"+min);
+	}
+	if (dateOn == "inherit") {
+		dat="."+today.getFullYear().toString();
+		var x=today.getMonth()+1;
+		dat=x.toString()+dat;
+		while(dat.length < 7) dat = "0" + dat;
+		dat=today.getDate().toString()+"."+dat;
+		while(dat.length < 10) dat = "0" + dat;
+
+		webMI.gfx.setText("date",dat);
+	}
+
+	if (m < 10) {
+		webMI.gfx.setText("m1", "0");
+		webMI.gfx.setText("m2", m.toString().substring(0,1));
+	} else {
+		webMI.gfx.setText("m1", m.toString().substring(0,1));
+		webMI.gfx.setText("m2", m.toString().substring(1,2));
+	}
+	if (h < 10) {
+		webMI.gfx.setText("h1", "0");
+		webMI.gfx.setText("h2", h.toString().substring(0,1));
+	} else {
+		webMI.gfx.setText("h1", h.toString().substring(0,1));
+		webMI.gfx.setText("h2", h.toString().substring(1,2));
+	}
+	webMI.gfx.setText("time", std+":"+min);
+	webMI.gfx.setRotation("hour", webMI.translate(h * 30 + m/2, 0, 359, 0, 359));
+	webMI.gfx.setRotation("minute", webMI.translate(m, 0, 60, 0, 360));
+	webMI.gfx.setRotation("second", webMI.translate(s, 0, 60, 0, 360));
+
+	setTimeout(setDateTime,1000);
+})();]]></script>
+</svg>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.GtiTrendCfgs.GtiTrendCfg1
+NodeClass: Variable
+BrowseName: 1:GtiTrendCfg1
+DisplayName: en|GtiTrendCfg1
+Description: en|GtiTrendCfg1
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

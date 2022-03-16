@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/masters
+NodeClass: Object
+BrowseName: 1:masters
+DisplayName: en|masters
+Description: en|masters
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

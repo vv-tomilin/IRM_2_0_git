@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.SKPB
+NodeClass: Object
+BrowseName: 1:SKPB
+DisplayName: en|SKPB
+Description: en|SKPB
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

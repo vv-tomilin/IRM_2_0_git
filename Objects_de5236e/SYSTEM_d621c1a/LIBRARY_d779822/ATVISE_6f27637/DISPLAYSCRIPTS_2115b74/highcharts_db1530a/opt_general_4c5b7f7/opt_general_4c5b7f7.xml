@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+	<metadata>
+		<priority>0</priority>
+	</metadata>
+	<code><![CDATA[/**
+ * Code for the highcharts opt general object display
+ * ----------------------------------------
+ * This script supports the display to show and edit general options of the chart configuration.
+ */
+
+
+/**
+ * DECLARATION SECTION
+ */
+var activeSeries = webMI.query.activeSeries;
+var boostEnabled = false;
+var chart = webMI.trendFactory.getTrendByName(webMI.query.chartname);
+var chartname = webMI.query.chartname;
+var configHandler = new webMI.rootWindow.ConfigHandler;
+var highcharts = chart.chart.renderTo.ownerDocument.defaultView["Highcharts"];
+var inputDefaults = {
+	"title_text": "",
+	"tooltip_enabled": true,
+	"exporting_enabled": true,
+	"chartTheme": "",
+	"source": "atvise",
+	"mode-live": "T{live only}",
+	"mode-history": "T{archive only}",
+	"mode-mixed": "T{mixed}",
+	"global_useUTC-true": "T{UTC}",
+	"global_useUTC-false": "T{local}",
+	"disableDownSampling": false
+};
+var triggerEnabled = false;
+var updateEnabled = true;
+
+/* check boost state */
+if (typeof chart.chart.options.boost != "undefined") {
+	if (chart.chart.options.boost.enabled) {
+		boostEnabled = chart.chart.options.boost.enabled;
+	}
+}
+
+
+/**
+ * RUNTIME SECTION
+ * Runtime code has to be executed after onload to take care all other resources are ready
+ */
+webMI.addOnload(function () {
+
+	// get datasources an fill box
+	var sources = chart.control.getRegisteredSources();
+	for (var i = 0; i < sources.length; i++)
+		webMI.trigger.fire("addItem", {text: sources[i], value: sources[i]}, "source");
+	webMI.trigger.fire("setSelectedItem", chart.chart.options.atviseOptions.source, "source");
+
+	readOptions();
+
+	var updateCb = chart.control.registerOnUpdatedCallback(function () {
+		if (!updateEnabled)
+			return;
+
+		readOptions();
+	});
+
+	if (boostEnabled) {
+		webMI.gfx.setVisible("downsampling", false);
+	} else {
+		webMI.gfx.setVisible("boosting", false);
+	}
+
+	webMI.addOnunload(function () {
+		if (chart && chart.control) chart.control.unregisterOnUpdatedCallback(updateCb);
+	});
+
+});
+
+
+/**
+ * FUNCTION SECTION
+ */
+
+/**
+ * Read options
+ */
+function readOptions() {
+	triggerEnabled = false;
+
+	if ((!chart.chart.title || typeof chart.chart.title.textStr == "undefined") && inputDefaults["title_text"] != "")
+		setOptions("title_text", inputDefaults["title_text"]);
+
+	if (chart.chart.title && chart.chart.title.textStr)
+		webMI.trigger.fire("setValue", chart.chart.title.textStr, "title_text");
+
+	var marker1 = chart.control.isMeasuringCursor1Visible();
+	var marker2 = chart.control.isMeasuringCursor2Visible();
+	webMI.trigger.fire("setChecked", marker1, "marker1");
+	webMI.trigger.fire("setChecked", marker2, "marker2");
+
+	webMI.trigger.fire("setChecked", chart.chart.tooltip.options.enabled, "tooltip_enabled");
+
+	if (chart.chart.options.exporting && typeof chart.chart.options.exporting.enabled == "undefined")
+		webMI.trigger.fire("setChecked", inputDefaults["exporting_enabled"], "exporting_enabled");
+	else if (!chart.chart.options.exporting)
+		webMI.trigger.fire("setChecked", false, "exporting_enabled");
+	else
+		webMI.trigger.fire("setChecked", chart.chart.options.exporting.enabled, "exporting_enabled");
+
+	webMI.trigger.fire("setValue", Math.round(1 / chart.chart.options.atviseOptions.liveModeFrameRate * 1000), "interval");
+
+	// source
+	webMI.trigger.fire("setSelectedItem", chart.chart.options.atviseOptions.source, "source");
+	webMI.trigger.fire("radioClicked_mode", {name: inputDefaults["mode-" + chart.chart.options.atviseOptions.mode]});
+	var options = highcharts.getOptions();
+	webMI.trigger.fire("radioClicked_global_useUTC", {name: inputDefaults["global_useUTC-" + options.global.useUTC]});
+	webMI.trigger.fire("setChecked", !chart.chart.options.atviseOptions.disableDownSampling, "downsampling");
+
+	triggerEnabled = true;
+}
+
+/**
+ * Write options
+ * @param key
+ * @param value
+ */
+function setOptions(key, value) {
+	if (value == "true") value = true;
+	else if (value == "false") value = false;
+
+	var optionsObj = configHandler.createConfigObject(key, value);
+	chart.chart.update(optionsObj);
+	updateEnabled = false;
+	chart.control.updated(function () {
+		updateEnabled = true;
+	});
+}
+
+function changeMode(mode) {
+	if (!triggerEnabled)
+		return;
+
+	chart.chart.options.atviseOptions.mode = mode;
+	updateEnabled = false;
+	chart.control.updated(function () {
+		updateEnabled = true;
+	});
+}
+
+function processInput(key, value) {
+	if (typeof key == "undefined" || typeof value == "undefined")
+		return;
+
+	if (!triggerEnabled)
+		return;
+
+	setOptions(key, value);
+}
+
+
+/**
+ * TRIGGER SECTION
+ * TODO: Triggers for chartthemes
+ */
+webMI.trigger.connect("valuechanged", function (e) {
+	processInput("title_text", e.value)
+}, "title_text");
+
+webMI.trigger.connect("valuechanged", function (e) {
+	if (!triggerEnabled)
+		return;
+
+	if (e.value == "true")
+		chart.control.showMeasuringCursor1();
+	else
+		chart.control.hideMeasuringCursor1();
+}, "marker1");
+
+webMI.trigger.connect("valuechanged", function (e) {
+	if (!triggerEnabled)
+		return;
+
+	if (e.value == "true")
+		chart.control.showMeasuringCursor2();
+	else
+		chart.control.hideMeasuringCursor2();
+}, "marker2");
+
+webMI.trigger.connect("valuechanged", function (e) {
+	if (!triggerEnabled)
+		return;
+
+	var value = (e.value == "true") ? true : false;
+	chart.chart.tooltip.update({enabled: value});
+
+	//Set tooltip options for each configured series
+	var i = 0;
+	while (typeof chart.chart.series[i] != "undefined") {
+		chart.chart.series[i].update({tooltip: {enabled: value}});
+		i++;
+	}
+
+	updateEnabled = false;
+	chart.control.updated(function () {
+		updateEnabled = true;
+	});
+}, "tooltip_enabled");
+
+webMI.trigger.connect("valuechanged", function (e) {
+	processInput("exporting_enabled", e.value)
+}, "exporting_enabled");
+
+webMI.trigger.connect("valuechanged", function (e) {
+	if (!triggerEnabled)
+		return;
+
+	chart.chart.options.atviseOptions.liveModeFrameRate = 1000 / e.value;
+
+	if (chart.control.isLiveModeRunning()) {
+		chart.control.stopLiveMode(function () {
+			chart.control.startLiveMode();
+		});
+	}
+
+	updateEnabled = false;
+	chart.control.updated(function () {
+		updateEnabled = true;
+	});
+}, "interval");
+
+webMI.trigger.connect("valuechanged", function (e) {
+	if (!triggerEnabled)
+		return;
+
+	chart.chart.options.atviseOptions.source = e.value;
+	updateEnabled = false;
+	chart.control.updated(function () {
+		updateEnabled = true;
+	});
+}, "source");
+
+webMI.trigger.connect("valuechanged", function (e) {
+	changeMode("live")
+}, "mode-live");
+
+webMI.trigger.connect("valuechanged", function (e) {
+	changeMode("history")
+}, "mode-history");
+
+webMI.trigger.connect("valuechanged", function (e) {
+	changeMode("mixed")
+}, "mode-mixed");
+
+webMI.trigger.connect("valuechanged", function (e) {
+	highcharts.setOptions({global: {useUTC: true}})
+}, "global_useUTC-true");
+
+webMI.trigger.connect("valuechanged", function (e) {
+	highcharts.setOptions({global: {useUTC: false}})
+}, "global_useUTC-false");
+
+webMI.trigger.connect("valuechanged", function (e) {
+	if (!triggerEnabled)
+		return;
+
+	chart.chart.options.atviseOptions.disableDownSampling = (e.value == "false") ? true : false;
+	updateEnabled = false;
+	chart.control.updated(function () {
+		updateEnabled = true;
+	});
+}, "downsampling");
+]]></code>
+</script>

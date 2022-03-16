@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="date" type="number" trigger="false" relative="false" value=""/>
+  <code><![CDATA[	var y = date.getFullYear();
+	var m=date.getMonth()+1;
+	var d=date.getDate();
+		
+	var hour = date.getHours();
+	var min = date.getMinutes();
+	var sec = date.getSeconds();
+		
+	if(String(m).length < 2)
+		m = '0' + String(m);
+	if(String(d).length < 2)
+		d = '0' + String(d);	
+			
+ 	if(String(hour).length < 2)
+		hour = '0' + String(hour);
+	if(String(min).length < 2)
+		min = '0' + String(min);
+	if(String(sec).length < 2)
+		sec = '0' + String(sec);
+	return d+"-"+m+"-"+y+" "+hour+":"+min+":"+sec;]]></code>
+</script>

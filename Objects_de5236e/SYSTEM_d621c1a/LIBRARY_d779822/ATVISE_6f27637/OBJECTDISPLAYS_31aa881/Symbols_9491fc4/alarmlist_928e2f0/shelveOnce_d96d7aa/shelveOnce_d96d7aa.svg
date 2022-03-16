@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" height="20" xmlns="http://www.w3.org/2000/svg" width="20">
+ <defs/>
+ <metadata>
+  <atv:parameter name="symbolColor" substitute="$SYMBOLCOLOR$" defaultvalue="#000000" behavior="optional" valuetype="color" desc="symbol color"/>
+  <atv:gridconfig gridstyle="lines" height="1" enabled="true" width="1"/>
+  <atv:snapconfig height="1" enabled="false" width="1"/>
+ </metadata>
+ <g id="group" atv:refpx="10" atv:refpy="10">
+  <rect stroke="none" y="0" ry="2.009" fill="$SYMBOLCOLOR$" stroke-width="0" id="id_0" atv:refpx="10" height="20" x="0" atv:refpy="10" width="20" rx="2.009"/>
+  <polyline stroke="none" fill="#FFFFFF" points="8.481,3.473 8.481,10.504 14.41,6.989 8.481,3.473" stroke-width="2" id="id_15" atv:refpx="-16.316" atv:refpy="-8.901"/>
+  <line stroke="#FFFFFF" x1="15.965" x2="15.976" y1="3.663" stroke-width="2" id="id_6" atv:refpx="16.421" atv:refpy="6.951" stroke-linejoin="round" stroke-linecap="round" y2="10.19"/>
+  <line stroke="#FFFFFF" x1="3.666" x2="11" y1="7.026" stroke-width="2" id="id_11" atv:refpx="7.859" atv:refpy="6.696" stroke-linejoin="round" stroke-linecap="round" y2="7.041"/>
+  <line stroke="#FFFFFF" x1="8.541" x2="8.537" y1="3.318" stroke-width="1" id="id_12" atv:refpx="8.539" atv:refpy="-74.204" stroke-linejoin="round" stroke-linecap="round" y2="10.468"/>
+  <line stroke="#FFFFFF" x1="8.379" x2="14.724" y1="3.126" stroke-width="1" id="id_13" atv:refpx="11.551" atv:refpy="-39.474" stroke-linejoin="round" stroke-linecap="round" y2="7.044"/>
+  <line stroke="#FFFFFF" x1="8.425" x2="14.65" y1="10.601" stroke-width="1" id="id_14" atv:refpx="11.537" atv:refpy="-33.332" stroke-linejoin="round" stroke-linecap="round" y2="6.889"/>
+  <line stroke="#FFFFFF" x1="13.366" x2="13.36" y1="12.372" stroke-width="2" id="id_1" atv:refpx="13.771" atv:refpy="14.751" stroke-linejoin="round" stroke-linecap="round" y2="17.013"/>
+  <line stroke="#FFFFFF" x1="13.332" x2="11.355" y1="12.326" stroke-width="2" id="id_2" atv:refpx="93.334" atv:refpy="12.315" stroke-linejoin="round" stroke-linecap="round" y2="12.304"/>
+ </g>
+ <rect fill-opacity="0.001" stroke="none" y="0" fill="#000000" stroke-width="2" id="clickarea" atv:refpx="10" x="0" height="20" atv:refpy="10" width="20"/>
+</svg>

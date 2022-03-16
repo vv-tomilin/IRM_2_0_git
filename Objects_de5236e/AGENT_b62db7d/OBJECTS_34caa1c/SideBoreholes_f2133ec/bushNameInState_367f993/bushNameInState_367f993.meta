@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.SideBoreholes.bushNameInState
+NodeClass: Variable
+BrowseName: 1:bushNameInState
+DisplayName: en|bushNameInState
+Description: en|bushNameInState
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

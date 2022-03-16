@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS
+NodeClass: Object
+BrowseName: 1:JS
+DisplayName: en|JS
+Description: en|JS
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

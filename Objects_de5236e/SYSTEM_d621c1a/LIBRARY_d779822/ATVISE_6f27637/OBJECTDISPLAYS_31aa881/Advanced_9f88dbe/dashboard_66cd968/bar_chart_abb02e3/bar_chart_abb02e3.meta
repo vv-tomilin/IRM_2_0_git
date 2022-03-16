@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dashboard.bar_chart
+NodeClass: Variable
+BrowseName: 1:bar_chart
+DisplayName: en|bar_chart
+Description: en|bar_chart
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

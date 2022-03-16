@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+	<title>Description - Aggregate Manager</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<style>
+		pre {
+			tab-size:2;-moz-tab-size:2;
+		}
+	</style>
+</head>
+<body>
+<h1><span style="" lang="EN-GB">Description - Aggregate Manager</span></h1>
+<span class="Apple-style-span"
+	  style="border-collapse: separate; color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; font-size: medium;">
+<p>
+	The Aggregate Manager Quick Dynamic makes it easy to subscribe to aggregates.
+	The Quick Dynamic makes it easy to subscribe to any node and / or aggregate address.
+	The evaluation of the address type takes place automatically. If the transferred address is an aggregate,
+	the required parameters for the subscription are determined automatically using the function BrowseNodes.
+	The result is optionally passed to a common or two separate function (s) for processing.
+</p>
+</span>
+<h1>Usage:</h1>
+<span class="Apple-style-span"
+	  style="border-collapse: separate; color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; font-size: medium;">
+	<h2>Loading the Aggregate Manager:</h2>
+	<p>
+		The aggregate manager is loaded via webMI.callExtension.
+		The call for loading must be made in the display before the first call of the aggregate manager!
+	</p>
+	<pre>
+		var AggregateManager =
+		webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Aggregate Manager");
+		webMI.addOnunload(function unloadAggregateManager() {
+		  AggregateManager.destroy();
+	      AggregateManager = null;
+        });
+	</pre>
+
+	<h2>Call the aggregate manager:</h2>
+	<p>
+		For a data query with the help of the aggregate manager, the function subscribeNodeOrAggregate should be used.
+		It automatically evaluates the given address (base) and executes the corresponding subscription.
+	</p>
+	<pre>
+		var subscriptionID =
+		AggregateManager.subscribeNodeOrAggregate(base, manageNodeResult, manageAggregateResult);
+	</pre>
+
+	<p>Parameter der Funktion:</p>
+	<ul>
+		<li><strong>base</strong>: node address or aggregate address</li>
+		<li><strong>manageNodeResult</strong>: function to pass the query result to for nodes</li>
+		<li><strong>manageAggregateResult</strong>: function to pass the query result to aggregates</li>
+	</ul>
+	<p>
+		If manageAggregateResult is not set, then both the nodes and aggregates use the manageNodeResult function.
+	</p>
+
+	<h2>Termination of a subscription:</h2>
+	<p>A subscription can be terminated with "webMI.data.unsubscribe", regardless of the type.</p>
+	<pre>
+		webMI.data.unsubscribe(subscriptionID);
+	</pre>
+
+	<h2>Example 1 - Only manageNodeResult defined::</h2>
+	<pre>
+		var AggregateManager =
+			webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Aggregate Manager");
+			webMI.addOnunload(function unloadAggregateManager() {
+			  AggregateManager.destroy();
+			  AggregateManager = null;
+			});
+
+		var base = "AGENT.OBJECTS.x";
+		var subscriptionID =
+			AggregateManager.subscribeNodeOrAggregate(base, manageNodeResult);
+
+		/* Will be executed for node and aggregate addresses */
+		function manageNodeResult(e){
+			var data = e.value;
+			...
+		}
+	</pre>
+	<h2>Example 2 - manageNodeResult and manageAggregateResult defined:</h2>
+	<pre>
+		var AggregateManager =
+			webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Aggregate Manager");
+			webMI.addOnunload(function unloadAggregateManager() {
+			  AggregateManager.destroy();
+			  AggregateManager = null;
+			});
+
+		var base = "AGENT.OBJECTS.x";
+		var subscriptionID =
+			AggregateManager.subscribeNodeOrAggregate(base, manageNodeResult, manageAggregateResult);
+
+		/* Will be executed for node addresses */
+		function manageNodeResult(e){
+			var data = e.value;
+			...
+		}
+
+		/* Will be executed for aggregate addresses */
+		function manageAggregateResult (e){
+			var data = e.value;
+			...
+		}
+	</pre>
+</body>
+</html>

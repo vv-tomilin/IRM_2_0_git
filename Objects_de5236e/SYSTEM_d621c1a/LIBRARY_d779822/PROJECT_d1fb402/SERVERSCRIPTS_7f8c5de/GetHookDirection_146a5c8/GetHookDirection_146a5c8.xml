@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <code><![CDATA[var nodeHookDir = new UaNode("AGENT.OBJECTS.IVE50.Drawworks.HookPosition.HookDirection");
+return nodeHookDir.value; ]]></code>
+</script>

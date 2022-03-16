@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="330" height="16.5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs/>
+ <metadata>
+  <atv:parameter name="base" valuetype="address" behavior="mandatory" defaultvalue="" desc="myBase"/>
+  <atv:parameter name="Label" substitute="#LABEL#" valuetype="string" behavior="mandatory" defaultvalue="Label" desc="Label"/>
+  <atv:parameter name="Unit" substitute="#UN#" valuetype="string" behavior="optional" defaultvalue="" desc="Unit"/>
+  <atv:parameter name="MinVal" valuetype="address" behavior="optional" defaultvalue="0"/>
+  <atv:parameter name="MaxVal" valuetype="address" behavior="optional" defaultvalue="100"/>
+  <atv:parameter name="BarColor" valuetype="color" behavior="optional" defaultvalue="" desc="BarColor"/>
+  <atv:parameter name="BarBackColor" valuetype="color" behavior="optional" defaultvalue="#09222e" desc="BarBackColor"/>
+  <atv:gridconfig width="1" height="1" gridstyle="lines" enabled="true"/>
+  <atv:snapconfig width="1" height="1" enabled="true"/>
+ </metadata>
+ <g atv:refpy="0" atv:refpx="0" atv:insensitive="true" transform="matrix(2.129,0,0,1.65,0,0)" id="id_1">
+  <rect width="155.00" height="10.00" atv:refpy="5" y="0" atv:refpx="77.5" x="0" fill="#09222e" id="id_4"/>
+ </g>
+ <rect width="328" stroke-width="1" height="2" atv:refpy="21" y="14" atv:refpx="164.998" x="1" stroke="#208888" fill="#208888" id="id_0"/>
+ <text font-size="6" atv:refpy="9.968" y="14.468" atv:refpx="68.673" x="62.115" font-family="Arial" transform="matrix(2.6398,0,0,1,-95.2976,0)" fill="#686f35" id="id_2"/>
+ <rect width="330" stroke-width="0" height="2" atv:refpy="21" y="14" atv:refpx="0" x="0" stroke="#0000ff" fill="#00fdfd" id="id_3"/>
+ <text font-size="14" atv:refpy="9" y="12" atv:refpx="16.5" x="7.5" font-family="Arial" fill="#b0b0b0" id="id_6" text-anchor="start">#LABEL#</text>
+ <text font-size="14" atv:refpy="9" y="12" atv:refpx="262.5" x="280.5" font-family="Arial" fill="#c0c0c0" id="id_7" text-anchor="end">000000</text>
+ <text font-size="14" atv:refpy="8.5" y="12" atv:refpx="309.5" x="322" font-family="Arial" fill="#d0d0d0" id="id_8" text-anchor="end">#UN#</text>
+ <script type="text/ecmascript"><![CDATA[
+function isColor(value) {
+	return false;
+//  if(value instanceof Number)
+//    value = value.valueOf(); // Если это объект числа, то берём значение, которое и будет числом
+//  return(!isNaN(parseFloat(value)) && isFinite(value))
+
+}
+
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"2", "id":"id_7", "nodeId":webMI.query["base"]});
+webMI.callExtension("SYSTEM.LIBRARY.PROJECT.QUICKDYNAMICS.MyScale", {"id":"id_3", "maxValue":"100", "maxValueRef":webMI.query["MaxVal"], "minValue":"0", "minValueRef":"", "nodeId":webMI.query["base"], "startScaleX":"1", "startScaleY":"", "stopScaleX":"339", "stopScaleY":""});
+
+
+webMI.addOnload(function () {
+	var barClr = webMI.query["BarColor"];
+	var backClr = webMI.query["BarBackColor"];
+	
+	 webMI.gfx.setFill("id_3", barClr);
+	 webMI.gfx.setFill("id_0", backClr);	
+	 webMI.gfx.setStroke("id_0", backClr);   
+});
+	
+
+
+/*
+var id_0 = "id_0";
+var id_3 = "id_3";
+var mybase = base;//webMI.query["base"];
+if(base.BarColor != ""){
+	if(isColor(base.BarColor)){
+		webMI.gfx.setFill(id_3, base.BarColor);
+	} else {
+		webMI.data.subscribe(base.BarColor, function(e) {
+			var val = e.value;
+			webMI.gfx.setFill(id_3, val);
+		});
+	}
+} else {
+	webMI.data.subscribe(base.BarColor, function(e) {
+		var val = e.value;
+		webMI.gfx.setFill(id_3, val);
+	});
+}
+
+if(base.BarBackColor != ""){
+	if(isColor(base.BarBackColor)){
+		webMI.gfx.setFill(id_0, base.BarBackColor);
+		webMI.gfx.setStroke(id_0, base.BarBackColor);
+	} else {
+		webMI.data.subscribe(base.BarBackColor, function(e) {
+			var val = e.value;
+			webMI.gfx.setFill(id_0, val);
+			webMI.gfx.setStroke(id_0, val);
+		});
+	}
+} else {
+	webMI.data.subscribe(base.BarBackColor, function(e) {
+		var val = e.value;
+		webMI.gfx.setFill(id_0, val);
+		webMI.gfx.setStroke(id_0, val);
+	});
+}
+*/]]></script>
+</svg>

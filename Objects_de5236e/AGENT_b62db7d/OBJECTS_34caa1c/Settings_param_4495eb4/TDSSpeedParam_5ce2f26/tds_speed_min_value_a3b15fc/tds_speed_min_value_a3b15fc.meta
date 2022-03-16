@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Settings_param.TDSSpeedParam.tds_speed_min_value
+NodeClass: Variable
+BrowseName: 1:tds_speed_min_value
+DisplayName: en|tds_speed_min_value
+Description: en|tds_speed_min_value
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

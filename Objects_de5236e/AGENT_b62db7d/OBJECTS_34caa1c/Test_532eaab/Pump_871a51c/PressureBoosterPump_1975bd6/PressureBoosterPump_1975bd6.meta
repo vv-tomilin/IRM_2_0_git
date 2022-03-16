@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.Pump.PressureBoosterPump
+NodeClass: Variable
+BrowseName: 1:PressureBoosterPump
+DisplayName: en|PressureBoosterPump
+Description: en|PressureBoosterPump
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

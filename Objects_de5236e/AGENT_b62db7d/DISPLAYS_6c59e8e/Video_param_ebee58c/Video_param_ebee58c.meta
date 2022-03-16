@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.Video_param
+NodeClass: Variable
+BrowseName: 1:Video_param
+DisplayName: en|Video_param
+Description: en|Video_param
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

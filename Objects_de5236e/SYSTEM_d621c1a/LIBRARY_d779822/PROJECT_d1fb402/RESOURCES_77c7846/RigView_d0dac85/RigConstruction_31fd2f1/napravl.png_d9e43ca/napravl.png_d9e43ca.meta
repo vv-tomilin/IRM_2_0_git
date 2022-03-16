@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/RigView/RigConstruction/napravl.png
+NodeClass: Variable
+BrowseName: 1:napravl.png
+DisplayName: en|napravl.png
+Description: en|napravl.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

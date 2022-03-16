@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ServiceParams.Bit.cols.Kond
+NodeClass: Variable
+BrowseName: 1:Kond
+DisplayName: en|Kond
+Description: en|Kond
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

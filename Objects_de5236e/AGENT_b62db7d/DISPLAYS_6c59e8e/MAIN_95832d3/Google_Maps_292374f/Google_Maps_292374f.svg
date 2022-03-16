@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" width="1280" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext" height="680" xmlns="http://www.w3.org/2000/svg">
+ <defs/>
+ <metadata>
+  <atv:gridconfig width="20" height="20" enabled="false" gridstyle="lines"/>
+  <atv:snapconfig width="10" height="10" enabled="false"/>
+ </metadata>
+ <foreignObject y="37.859" width="714.549" id="map_canvas" height="423.71" x="66.24"/>
+ <text font-size="12" y="547.792" id="id_0" fill="#000088" atv:refpy="543.292" atv:refpx="293.844" x="46.844" font-family="Arial">Put the following line as a script source to the index.htm (->LIBRARY.PROJECT.Resources)</text>
+ <text font-size="12" y="576.582" id="id_1" fill="#000088" atv:refpy="572.082" atv:refpx="307.883" x="46.883" font-family="Arial">&lt;script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false">&lt;/script></text>
+ <text font-size="12" y="519.652" id="id_2" fill="#000088" atv:refpy="515.152" atv:refpx="462.743" x="46.673" font-family="Arial">Copy index.htm (-> LIBRARY.ATVISE.Resources) to the Project folder (-> LIBRARY.ATVISE.Resources) by using "Save content to disc" and "Add Resource"</text>
+ <script type="text/ecmascript"><![CDATA[var google = top.google;
+
+webMI.addOnload(function() {
+	var latlng = new google.maps.LatLng(47.85191,16.53984);
+	var myOptions = {
+		zoom: 17,
+		center: latlng,
+		mapTypeId: google.maps.MapTypeId.SATELLITE
+	};
+	
+	var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+	var marker = new google.maps.Marker({
+		position: latlng,
+		map: map,
+		title: "Certec EDV GmbH"
+	});
+
+	google.maps.event.addListenerOnce(map, 'idle', function() {
+		google.maps.event.trigger(map, 'resize');
+		map.setCenter(latlng);
+	});
+
+});
+]]></script>
+</svg>

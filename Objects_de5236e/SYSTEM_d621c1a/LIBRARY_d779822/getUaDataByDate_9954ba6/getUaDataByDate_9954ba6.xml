@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="strnode" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="datestop" type="number" trigger="false" relative="false" value=""/>
+  <code><![CDATA[//console.log("getUaDataByDate strnode = "+strnode);
+//console.log("getUaDataByDate datestop = "+datestop);
+var resObj;
+//resObj.value = -999.25;
+try{
+var mynode = new UaNode(strnode);
+var itemObj = mynode.datahistory({
+	//starttime: timestart, 
+    endtime: datestop,
+    numvalues: 1,
+    //returnbounds:true 
+    timeout: 10 
+});
+//console.log("getUaDataByDate: itemObj.status = "+itemObj.status);
+if(itemObj.status > 12189696){
+	//resObj.value = mynode.value;	
+	return mynode;
+}
+for(var key in itemObj){
+	var valueObj = itemObj[key];
+	for(var kkey in valueObj){ 
+		resObj = valueObj[kkey]
+		return resObj;
+//		for(var kkkey in valueObj[kkey]){
+//			console.log("kkkey = "+kkkey+ ", val = "+valueObj[kkey][kkkey]);
+//		}
+	}
+}
+}
+catch(e){
+	console.log("Exception = "+e);
+}
+return resObj; 
+/*
+var reObj = {};
+var odbcClient = new ODBCClient();
+odbcClient.source = "DSN=SQLite3 Datasource;";
+try {
+	if (odbcClient.open()) {
+		console.log ("ODBC SQLite report Opend:", odbcClient.info());
+		var wt=call("WinTicksFromSeconds",{us:datestart});
+		
+		var strquery = "SELECT nid.identifier, d.servertime, d.status, d.value \
+				FROM data d, nodeids nid \
+				WHERE d.nodeid=nid.id AND nid.identifier LIKE '"+strnode+"' AND d.servertime <= " + wt +" ORDER BY d.rowid DESC LIMIT 1";
+		console.log("I am here!!!");
+		
+		var callback = {
+			onData : function (rowIdx, row) { 
+				console.log("OnData: ", rowIdx, " ", row);			
+			},
+//			onHead : function(columns) { console.log("OnHead: ", columns); },
+//			onReady : function(num, msg) { console.log("OnReady: ", num, " ", msg); },
+			onError : function(msg) { console.log("OnError: ", msg); }
+		};		
+					
+//		var result = odbcClient.query(strquery,callback);
+		var result = odbcClient.query(strquery);
+		//var arrres = result.split(',');
+		result.forEach(function(item, indx, result){
+			resObj['node'] = item[0];
+			resObj['servertime'] = item[1];
+			resObj['status'] = item[2];
+			resObj['value'] = item[3];
+			
+
+//			item.forEach(function(it,ind,item){						 
+//				console.log ("it "+ ind +" = "+it);		
+//			});
+			
+		});
+	}
+}
+catch(e){
+	console.log ("getUaDataByDate Exception: Cannot open ODBC SQLite");
+}
+finally
+{
+	if (!!odbcClient){
+		odbcClient.close();
+//		console.log ("odbcClient close");
+	}
+}
+*/]]></code>
+</script>

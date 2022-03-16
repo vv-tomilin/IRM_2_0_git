@@ -1,0 +1,9 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"Reg_Direct"
+NodeClass: VariableType
+BrowseName: 1:Reg_Direct
+DisplayName: en|Reg_Direct
+Description: en|Reg_Direct
+IsAbstract: false
+DataType: BaseDataType
+ValueRank: -1
+ValueType: i=0

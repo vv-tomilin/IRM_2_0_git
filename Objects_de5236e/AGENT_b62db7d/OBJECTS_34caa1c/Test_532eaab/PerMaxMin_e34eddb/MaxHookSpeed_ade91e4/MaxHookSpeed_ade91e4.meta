@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.MaxHookSpeed
+NodeClass: Variable
+BrowseName: 1:MaxHookSpeed
+DisplayName: en|MaxHookSpeed
+Description: en|MaxHookSpeed
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

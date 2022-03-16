@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" width="1790" height="1016" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg">
+ <defs/>
+ <metadata>
+  <atv:gridconfig width="20" enabled="true" height="20" gridstyle="lines"/>
+  <atv:snapconfig width="10" enabled="true" height="10"/>
+ </metadata>
+ <svg atv:refpy="472.532" id="id_0" transform="matrix(2.2513,0,0,1.5751,0,0)" width="800" y="0" atv:refpx="900.509" height="600" x="0" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.iframe">
+  <atv:argument name="frameName" value="settings_frame"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.Settings.Settings_param"/>
+  <!-- <atv:argument value="false" name="isDefault"/>-->
+ </svg>
+ <svg atv:refpy="982.5" id="id_1" transform="matrix(1.5625,0,0,1.5,0,0)" width="80" y="640" atv:refpx="102.5" height="30" x="25.6" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.button_open_display">
+  <atv:argument name="label" value="T{Основные}"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.Settings.Settings_param"/>
+  <atv:argument name="frame" value="settings_frame"/>
+  <atv:overwrite id="button_stroke" transform="matrix(0.64,0,0,0.6667,0,0)" width="117" height="37"/>
+  <atv:overwrite id="button_label" transform="matrix(0.64,0,0,0.6667,0,0)" y="27" x="62.5"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.64,0,0,0.6667,0,0)" y="12.5" x="52.5"/>
+  <atv:overwrite id="button_bg" transform="matrix(0.64,0,0,0.6667,0,0)" width="117" height="37"/>
+  <atv:overwrite id="id_2" transform="matrix(0.64,0,0,0.6667,0,0)" width="119.5" height="39.5"/>
+  <atv:overwrite id="id_0" transform="matrix(0.64,0,0,0.6667,0,0)" width="124.5" height="44.5"/>
+ </svg>
+ <svg atv:refpy="982.5" id="id_2" transform="matrix(1.5625,0,0,1.5,0,0)" width="80" y="640" atv:refpx="252.5" height="30" x="121.6" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.button_open_display">
+  <atv:argument name="label" value="T{Параметры}"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.Settings.Set_param"/>
+  <atv:argument name="frame" value="settings_frame"/>
+  <atv:overwrite id="button_stroke" transform="matrix(0.64,0,0,0.6667,0,0)" width="117" height="37"/>
+  <atv:overwrite id="button_label" transform="matrix(0.64,0,0,0.6667,0,0)" y="27" x="62.5"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.64,0,0,0.6667,0,0)" y="12.5" x="52.5"/>
+  <atv:overwrite id="button_bg" transform="matrix(0.64,0,0,0.6667,0,0)" width="117" height="37"/>
+  <atv:overwrite id="id_2" transform="matrix(0.64,0,0,0.6667,0,0)" width="119.5" height="39.5"/>
+  <atv:overwrite id="id_0" transform="matrix(0.64,0,0,0.6667,0,0)" width="124.5" height="44.5"/>
+ </svg>
+ <svg atv:refpy="982.501" id="id_3" transform="matrix(1.5625,0,0,1.5,0,0)" width="80" y="640" atv:refpx="412.5" height="30" x="217.6" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.button_open_display">
+  <atv:argument name="label" value="T{Отчеты}"/>
+  <atv:argument name="display" value="AGENT.DISPLAYS.NewView.Settings.ReportFromToDay"/>
+  <atv:argument name="frame" value="settings_frame"/>
+  <atv:overwrite id="button_stroke" transform="matrix(0.64,0,0,0.6667,0,0)" width="117" height="37"/>
+  <atv:overwrite id="button_label" transform="matrix(0.64,0,0,0.6667,0,0)" y="27" x="62.5"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.64,0,0,0.6667,0,0)" y="12.5" x="52.5"/>
+  <atv:overwrite id="button_bg" transform="matrix(0.64,0,0,0.6667,0,0)" width="117" height="37"/>
+  <atv:overwrite id="id_2" transform="matrix(0.64,0,0,0.6667,0,0)" width="119.5" height="39.5"/>
+  <atv:overwrite id="id_0" transform="matrix(0.64,0,0,0.6667,0,0)" width="124.5" height="44.5"/>
+ </svg>
+</svg>

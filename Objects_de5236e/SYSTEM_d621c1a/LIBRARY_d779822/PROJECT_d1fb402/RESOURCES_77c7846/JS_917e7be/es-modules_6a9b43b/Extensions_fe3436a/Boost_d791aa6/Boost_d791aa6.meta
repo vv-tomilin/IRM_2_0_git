@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Extensions/Boost
+NodeClass: Object
+BrowseName: 1:Boost
+DisplayName: en|Boost
+Description: en|Boost
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Platforma.OilfieldBoard.timeInWedges
+NodeClass: Variable
+BrowseName: 1:timeInWedges
+DisplayName: en|timeInWedges
+Description: en|timeInWedges
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.Properties
+NodeClass: Object
+BrowseName: 1:Properties
+DisplayName: en|Properties
+Description: en|Properties
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

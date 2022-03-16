@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.HISTORY.AGGREGATETEMPLATES.ATDurationInStateNonZero.Sampled1Sec.DurationInStateNonZero
+NodeClass: Object
+BrowseName: 1:DurationInStateNonZero
+DisplayName: en|DurationInStateNonZero
+Description: en|DurationInStateNonZero
+EventNotifier: 0
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.AggregateFunction
+Reference: forward HasComponent i=11308
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.AggrEvrotec

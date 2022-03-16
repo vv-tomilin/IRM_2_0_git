@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nnode" type="node" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.IVE50.Drawworks.HookSpeed.HookSpeedRaw"/>
+  <code><![CDATA[var wellDepth = call('GetVarValue',{varname:'AGENT.OBJECTS.IVE50.Well.WellDepth'});
+var toolPos = call('GetVarValue',{varname:'AGENT.OBJECTS.IVE50.Tool.ToolPosition'});
+var diffWellPos = wellDepth-toolPos;
+/*
+var strOper = call('GetVarValue',{varname:'AGENT.OBJECTS.Support.Auto.Operation'});
+var operObj = JSON.parse(call('GetVarValue',{varname:'AGENT.OBJECTS.Support.Auto.Operation'}));
+*/
+//if(diffWellPos > 0.5 && nnode.value != 0 && operObj.oper != 'БУРЕНИЕ' ){
+if(diffWellPos > 0.5 && nnode.value != 0 ){
+	call('SetVarValue',{varname:'AGENT.OBJECTS.IVE50.Drawworks.HookSpeed',varvalue:nnode.value});
+} else {
+	call('SetVarValue',{varname:'AGENT.OBJECTS.IVE50.Drawworks.HookSpeed',varvalue:0.0});
+}
+/*
+var strOper = call('GetVarValue',{varname:'AGENT.OBJECTS.Support.Auto.Operation'});
+var operObj = JSON.parse(call('GetVarValue',{varname:'AGENT.OBJECTS.Support.Auto.Operation'}));
+//console.log('CheckLoadOnBit');
+if(operObj.oper == 'БУРЕНИЕ' && nnode.value > 0){
+	call('SetVarValue',{varname:'AGENT.OBJECTS.IVE50.Drawworks.LoadOnBit.LoadOnBitFiltered',varvalue:nnode.value});
+} else {
+	call('SetVarValue',{varname:'AGENT.OBJECTS.IVE50.Drawworks.LoadOnBit.LoadOnBitFiltered',varvalue:0.0});
+}
+*/]]></code>
+</script>

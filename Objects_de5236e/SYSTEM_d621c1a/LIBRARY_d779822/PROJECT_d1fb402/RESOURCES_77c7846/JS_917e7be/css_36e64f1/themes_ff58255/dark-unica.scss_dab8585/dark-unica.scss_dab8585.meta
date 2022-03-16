@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/css/themes/dark-unica.scss
+NodeClass: Variable
+BrowseName: 1:dark-unica.scss
+DisplayName: en|dark-unica.scss
+Description: en|dark-unica.scss
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

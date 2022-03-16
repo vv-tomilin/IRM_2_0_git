@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/DotPlot
+NodeClass: Object
+BrowseName: 1:DotPlot
+DisplayName: en|DotPlot
+Description: en|DotPlot
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,164 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="160" height="45" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linear_12" y1="0.970149" y2="-0.0159425" x1="0.119403" gradientUnits="objectBoundingBox" x2="0.119403">
+   <stop offset="0" stop-color="#29394b"/>
+   <stop offset="1" stop-color="#788ba3"/>
+  </linearGradient>
+  <linearGradient id="linear_0" y1="-0.0159425" y2="0.940299" x1="0.776844" gradientUnits="objectBoundingBox" x2="0.776844">
+   <stop offset="0" stop-color="#1a242f"/>
+   <stop offset="1" stop-color="#71849c"/>
+  </linearGradient>
+  <linearGradient id="linear_1" y1="-0.0183441" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#ffffff" stop-opacity="0.2745098039215687"/>
+   <stop offset="0.5515695067264574" stop-color="#ffffff" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="linear_2" y1="1" y2="-0.0183441" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#ffffff" stop-opacity="0.2745098039215687"/>
+   <stop offset="0.5515695067264574" stop-color="#ffffff" stop-opacity="0"/>
+  </linearGradient>
+  <linearGradient id="linear_5" y1="-0.0183441" y2="1" x1="1" gradientUnits="objectBoundingBox" x2="1">
+   <stop offset="0" stop-color="#ffffff" stop-opacity="0.2745098039215687"/>
+   <stop offset="0.5515695067264574" stop-color="#ffffff" stop-opacity="0"/>
+  </linearGradient>
+ </defs>
+ <desc>Contains four buttons that show the main display structure on mouse over.</desc>
+ <title>Group Displaybuttons</title>
+ <metadata>
+  <atv:parameter defaultvalue="#ffffff" desc="stroke color when pressed" group="Appearance" behavior="optional" valuetype="color" name="strokePressed"/>
+  <atv:parameter defaultvalue="content" desc="target frame" behavior="optional" valuetype="string" name="targetFrame"/>
+  <atv:gridconfig width="20" enabled="false" height="20" gridstyle="lines"/>
+  <atv:snapconfig width="10" enabled="false" height="10"/>
+ </metadata>
+ <rect id="id_6" ry="3" width="159.5" fill="url(#linear_12)" stroke="#646464" atv:bindbr="1,1" atv:refpy="23.254" height="44.5" atv:refpx="80" stroke-width="0.5" x="0.25" y="0.25" rx="3" atv:bindtl="0,0" atv:dynamic="true"/>
+ <rect id="id_8" ry="3" width="154.5" fill="url(#linear_0)" stroke="none" atv:bindbr="1,1" atv:refpy="22.5" height="39.5" atv:refpx="80" stroke-width="0.5" x="2.75" y="2.75" rx="3" atv:bindtl="0,0"/>
+ <g id="clickarea_2" transform="matrix(1.074,0,0,1.074,-2.9635,-1.6641)" atv:refpy="22.5" atv:refpx="60.588">
+  <rect id="id_11" ry="3" width="34.452" fill="#495a6f" stroke="none" atv:bindbr="1,1" atv:refpy="23.617" height="34.452" atv:refpx="143.484" stroke-width="0.766" x="41.949" y="5.274" rx="3" atv:bindtl="0,0"/>
+  <svg id="id_4" width="20" transform="matrix(1.5312,0,0,1.5312,0,0)" atv:refpy="30.156" height="20" atv:refpx="232.808" x="28.646" y="4.694" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.folder_user">
+   <atv:argument value="#ffffff" name="symbolColor"/>
+   <atv:argument value="#495a6f" name="symbolColor2"/>
+  </svg>
+  <rect id="button_stroke_2" ry="3" width="34.452" fill="url(#linear_5)" stroke="none" atv:bindbr="1,1" atv:refpy="11.367" height="34.452" atv:refpx="151.138" stroke-width="3.062" x="41.949" y="5.274" rx="3" atv:bindtl="0,0"/>
+ </g>
+ <g id="clickarea_1" transform="matrix(1.074,0,0,1.074,-1.7184,-1.6641)" atv:refpy="22.5" atv:refpx="22.473">
+  <rect id="id_15" ry="3" width="34.452" fill="#495a6f" stroke="none" atv:bindbr="1,1" atv:refpy="23.617" height="34.452" atv:refpx="34.866" stroke-width="0.766" x="5.299" y="5.274" rx="3" atv:bindtl="0,0"/>
+  <svg id="id_1" width="20" transform="matrix(1.5312,0,0,1.5312,0,0)" atv:refpy="45.468" height="20" atv:refpx="29.738" x="4.711" y="4.694" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.folder">
+   <atv:argument value="#ffffff" name="symbolColor"/>
+  </svg>
+  <rect id="button_stroke_1" ry="3" width="34.452" fill="url(#linear_5)" stroke="none" atv:bindbr="1,1" atv:refpy="11.367" height="34.452" atv:refpx="35.728" stroke-width="3.062" x="5.299" y="5.274" rx="3" atv:bindtl="0,0"/>
+ </g>
+ <g id="clickarea_4" transform="matrix(1.074,0,0,1.074,-4.9974,-1.6641)" atv:refpy="22.5" atv:refpx="137.275">
+  <rect id="id_18" ry="3" width="34.452" fill="#495a6f" stroke="none" atv:bindbr="1,1" atv:refpy="37.353" height="34.452" atv:refpx="377.678" stroke-width="0.766" x="115.249" y="5.274" rx="3" atv:bindtl="0,0"/>
+  <svg id="00" width="20" transform="matrix(1.5312,0,0,1.5312,0,0)" atv:refpy="37.812" height="20" atv:refpx="595.306" x="76.517" y="4.694" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.folder_report">
+   <atv:argument value="#ffffff" name="symbolColor"/>
+   <atv:argument value="#495a6f" name="symbolColor2"/>
+  </svg>
+  <rect id="button_stroke_4" ry="3" width="34.452" fill="url(#linear_5)" stroke="none" atv:bindbr="1,1" atv:refpy="11.367" height="34.452" atv:refpx="388.858" stroke-width="3.062" x="115.249" y="5.274" rx="3" atv:bindtl="0,0"/>
+ </g>
+ <g id="clickarea_3" transform="matrix(1.074,0,0,1.074,-3.9055,-1.6641)" atv:refpy="22.5" atv:refpx="99.008">
+  <rect id="id_22" ry="3" width="34.452" fill="#495a6f" stroke="none" atv:bindbr="1,1" atv:refpy="39.316" height="34.452" atv:refpx="385.596" stroke-width="0.766" x="78.6" y="5.274" rx="3" atv:bindtl="0,0"/>
+  <svg id="id_5" width="20" transform="matrix(1.5312,0,0,1.5312,0,0)" atv:refpy="22.5" height="20" atv:refpx="414.058" x="52.582" y="4.694" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.folder_system">
+   <atv:argument value="#ffffff" name="symbolColor"/>
+   <atv:argument value="#495a6f" name="symbolColor2"/>
+  </svg>
+  <rect id="button_stroke_3" ry="3" width="34.452" fill="url(#linear_5)" stroke="none" atv:bindbr="1,1" atv:refpy="11.208" height="34.452" atv:refpx="271.147" stroke-width="3.062" x="78.6" y="5.126" rx="3" atv:bindtl="0,0"/>
+ </g>
+ <script type="text/ecmascript"><![CDATA[var frameName = webMI.query["targetFrame"];
+var strokeNormal = "none";
+var strokePressed = webMI.query["strokePressed"];
+var offset1 = { x: 0, y: 45 };
+var offset2 = { x: 42, y: 45 };
+var offset3 = { x: 80, y: 45 };
+var offset4 = { x: 118, y: 45 };
+
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Main Menu", {"id":"clickarea_1", name: "MAIN", itemsCount: 0, "outputNode":null, "x":offset1.x, "y":offset1.y, onEvent: "mouseover", frameName: frameName});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Main Menu", {"id":"clickarea_1", name: "MAIN", itemsCount: 0, "outputNode":null, "x":offset1.x, "y":offset1.y, onEvent: "click", frameName: frameName});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Main Menu", {"id":"clickarea_2", name: "USER", itemsCount: 0, "outputNode":null, "x":offset2.x, "y":offset2.y, onEvent: "mouseover", frameName: frameName});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Main Menu", {"id":"clickarea_2", name: "USER", itemsCount: 0, "outputNode":null, "x":offset2.x, "y":offset2.y, onEvent: "click", frameName: frameName});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Main Menu", {"id":"clickarea_3", name: "SYSTEM", itemsCount: 0, "outputNode":null, "x":offset3.x, "y":offset3.y, onEvent: "mouseover", frameName: frameName});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Main Menu", {"id":"clickarea_3", name: "SYSTEM", itemsCount: 0, "outputNode":null, "x":offset3.x, "y":offset3.y, onEvent: "click", frameName: frameName});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Main Menu", {"id":"clickarea_4", name: "REPORT", itemsCount: 0, "outputNode":null, "x":offset4.x, "y":offset4.y, onEvent: "mouseover", frameName: frameName});
+webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Open Main Menu", {"id":"clickarea_4", name: "REPORT", itemsCount: 0, "outputNode":null, "x":offset4.x, "y":offset4.y, onEvent: "click", frameName: frameName});
+
+webMI.addEvent("clickarea_1", "mouseover", function(e) {
+var id = "clickarea_1";
+var value = true;
+return function(value) {
+	webMI.gfx.setFill("button_stroke_1", "url(#linear_2)");
+	webMI.gfx.setStroke("button_stroke_1", strokePressed);
+	webMI.gfx.setStrokeWidth("button_stroke_1", 1);
+} (value);
+});
+
+webMI.addEvent("clickarea_1", "mouseout", function(e) {
+var id = "clickarea_1";
+var value = true;
+return function(value) {
+	webMI.gfx.setFill("button_stroke_1", "url(#linear_1)");
+	webMI.gfx.setStroke("button_stroke_1", strokeNormal);
+	webMI.gfx.setStrokeWidth("button_stroke_1", "none");
+} (value);
+});
+
+webMI.addEvent("clickarea_2", "mouseover", function(e) {
+var id = "clickarea_2";
+var value = true;
+return function(value) {
+	webMI.gfx.setFill("button_stroke_2", "url(#linear_2)");
+	webMI.gfx.setStroke("button_stroke_2", strokePressed);
+	webMI.gfx.setStrokeWidth("button_stroke_2", 1);
+} (value);
+});
+
+webMI.addEvent("clickarea_2", "mouseout", function(e) {
+var id = "clickarea_2";
+var value = true;
+return function(value) {
+	webMI.gfx.setFill("button_stroke_2", "url(#linear_1)");
+	webMI.gfx.setStroke("button_stroke_2", strokeNormal);
+	webMI.gfx.setStrokeWidth("button_stroke_2", "none");
+} (value);
+});
+
+webMI.addEvent("clickarea_3", "mouseover", function(e) {
+var id = "clickarea_3";
+var value = true;
+return function(value) {
+	webMI.gfx.setFill("button_stroke_3", "url(#linear_2)");
+	webMI.gfx.setStroke("button_stroke_3", strokePressed);
+	webMI.gfx.setStrokeWidth("button_stroke_3", 1);
+} (value);
+});
+
+webMI.addEvent("clickarea_3", "mouseout", function(e) {
+var id = "clickarea_3";
+var value = true;
+return function(value) {
+	webMI.gfx.setFill("button_stroke_3", "url(#linear_1)");
+	webMI.gfx.setStroke("button_stroke_3", strokeNormal);
+	webMI.gfx.setStrokeWidth("button_stroke_3", "none");
+} (value);
+});
+
+
+webMI.addEvent("clickarea_4", "mouseover", function(e) {
+var id = "clickarea_4";
+var value = true;
+return function(value) {
+	webMI.gfx.setFill("button_stroke_4", "url(#linear_2)");
+	webMI.gfx.setStroke("button_stroke_4", strokePressed);
+	webMI.gfx.setStrokeWidth("button_stroke_4", 1);
+} (value);
+});
+
+
+webMI.addEvent("clickarea_4", "mouseout", function(e) {
+var id = "clickarea_4";
+var value = true;
+return function(value) {
+	webMI.gfx.setFill("button_stroke_4", "url(#linear_1)");
+	webMI.gfx.setStroke("button_stroke_4", strokeNormal);
+	webMI.gfx.setStrokeWidth("button_stroke_4", "none");
+} (value);
+});]]></script>
+</svg>

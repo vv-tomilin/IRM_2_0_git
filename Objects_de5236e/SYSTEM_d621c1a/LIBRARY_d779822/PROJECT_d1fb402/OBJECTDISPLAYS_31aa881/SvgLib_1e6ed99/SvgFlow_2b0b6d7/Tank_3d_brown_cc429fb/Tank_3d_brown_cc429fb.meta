@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.SvgFlow.Tank_3d_brown
+NodeClass: Variable
+BrowseName: 1:Tank_3d_brown
+DisplayName: en|Tank_3d_brown
+Description: en|Tank_3d_brown
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

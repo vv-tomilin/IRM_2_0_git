@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="request" type="http.request" trigger="false" relative="false" value=""/>
+  <code><![CDATA[return call("Logger.GetArchive", {
+});]]></code>
+</script>

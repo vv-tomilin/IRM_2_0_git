@@ -1,0 +1,10 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Stock/Indicators/LinearRegressionSlopes/LinearRegressionSlopes.js
+NodeClass: Variable
+BrowseName: 1:LinearRegressionSlopes.js
+DisplayName: en|LinearRegressionSlopes.js
+Description: en|LinearRegressionSlopes.js
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Javascript
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Javascript.Compress

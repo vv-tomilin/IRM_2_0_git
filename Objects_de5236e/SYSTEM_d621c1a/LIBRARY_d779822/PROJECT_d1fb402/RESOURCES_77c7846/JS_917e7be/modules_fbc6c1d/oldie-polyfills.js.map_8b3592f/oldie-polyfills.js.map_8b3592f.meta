@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/oldie-polyfills.js.map
+NodeClass: Variable
+BrowseName: 1:oldie-polyfills.js.map
+DisplayName: en|oldie-polyfills.js.map
+Description: en|oldie-polyfills.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

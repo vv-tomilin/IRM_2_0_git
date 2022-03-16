@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg" version="1.2" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40">
+ <defs/>
+ <metadata>
+  <atv:parameter valuetype="color" behavior="optional" substitute="$SYMBOLCOLOR$" defaultvalue="#000000" name="symbolColor" desc="symbol color"/>
+  <atv:gridconfig gridstyle="lines" enabled="true" width="1" height="1"/>
+  <atv:snapconfig enabled="true" width="1" height="1"/>
+ </metadata>
+ <path stroke="none" stroke-width="2" d="M30.905,13.38L30.905,28.274C30.905,28.274 38.163,27.446 38.163,20C38.163,12.553 30.905,11.725 30.905,11.725C30.905,11.725 30.905,13.38 30.905,13.38" id="id_0" atv:refpx="65.794" atv:refpy="20.001" fill="$SYMBOLCOLOR$"/>
+ <path stroke="none" stroke-width="2" d="M9.132,13.38L9.132,28.274C9.132,28.274 1.875,27.446 1.875,20C1.875,12.553 9.132,11.725 9.132,11.725C9.132,11.725 9.132,13.38 9.132,13.38" id="id_1" atv:refpx="-6.29" atv:refpy="6.556" fill="$SYMBOLCOLOR$"/>
+ <polygon stroke="$SYMBOLCOLOR$" stroke-width="0.5" id="id_4" points="10.947,10.696 9.132,10.696 9.132,29.303 10.947,29.303" atv:refpx="10.04" atv:refpy="31.176" fill="none"/>
+ <polygon stroke="$SYMBOLCOLOR$" stroke-width="0.5" id="id_5" points="30.905,10.696 29.091,10.696 29.091,29.303 30.905,29.303" atv:refpx="59.444" atv:refpy="20.001" fill="none"/>
+ <rect stroke="none" stroke-width="0.5" id="id_6" x="0.646" y="16.721" atv:refpx="1.583" atv:refpy="37.201" ry="0" width="1.874" fill="$SYMBOLCOLOR$" rx="0" height="6.559"/>
+ <rect stroke="none" stroke-width="0.5" id="id_7" x="37.48" y="16.721" atv:refpx="57.511" atv:refpy="-4.362" ry="0" width="1.874" fill="$SYMBOLCOLOR$" rx="0" height="6.559"/>
+ <path stroke="none" stroke-width="2" d="M19.999,28.412L10.973,28.412L10.973,11.863L19.999,11.863L19.999,15.396L16.849,15.396L16.849,17.27L19.999,17.27Z" id="id_17" atv:refpx="15.486" atv:refpy="20.137" fill="$SYMBOLCOLOR$" fill-rule="evenodd"/>
+ <path stroke="none" stroke-width="2" d="M29.117,11.863L29.117,28.412L16.856,28.412L16.856,17.271L23.408,17.271L23.408,15.397L16.856,15.397L16.856,11.863Z" id="id_18" atv:refpx="22.986" atv:refpy="20.137" fill="$SYMBOLCOLOR$" fill-rule="evenodd"/>
+</svg>

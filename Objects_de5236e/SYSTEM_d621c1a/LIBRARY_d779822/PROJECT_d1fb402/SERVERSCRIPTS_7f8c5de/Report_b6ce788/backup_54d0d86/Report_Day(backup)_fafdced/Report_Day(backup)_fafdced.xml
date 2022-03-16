@@ -1,0 +1,1339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="interval" type="interval" trigger="false" relative="false" value="" startdate="2020-11-16" offset="00:00:00" interval="11:41:00"/>
+  <parameter name="rig_name" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Rig.General.RigName"/>
+  <parameter name="field_name" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Rig.General.FieldName"/>
+  <parameter name="bush_name" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Rig.General.BushName"/>
+  <parameter name="well_name" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Rig.General.WellName"/>
+  <parameter name="brigade_name" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Rig.Brigade.BrigadeName"/>
+  <parameter name="well_depth" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Well.WellDepth"/>
+  <parameter name="apd_running" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.ASPD.APD1.Running"/>
+  <parameter name="apd_mastermode" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.ASPD.APD1.MasterMode"/>
+  <parameter name="apd_modereg" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.ASPD.APD1.ModeReg"/>
+  <parameter name="report_date" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.report_date"/>
+  <parameter name="load_on_bit" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.LoadOnBit"/>
+  <parameter name="flow_input" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.FlowInput"/>
+  <parameter name="tds_speed" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.TDS.TDSSpeed"/>
+  <parameter name="tds_torque" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.TDS.TDSTorque"/>
+  <parameter name="hook_pos" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition"/>
+  <parameter name="pressure_manifold" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold"/>
+  <parameter name="diff_pressure" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Pump.DiffPressure"/>
+  <parameter name="oper_time_wireline" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook.talkanat"/>
+  <parameter name="oper_time_pump1" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Pump.StrokePump1.RunHoursMs"/>
+  <parameter name="oper_time_pump2" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Pump.StrokePump2.RunHoursMs"/>
+  <parameter name="oper_time_drawworks" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook.RunHoursMs"/>
+  <parameter name="rig_operation" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Support.Auto.Operation"/>
+  <code><![CDATA[
+try	{
+console.log('Start report script');
+		var node_rig_name = new UaNode(rig_name);
+		var node_field_name = new UaNode(field_name);
+		var node_bush_name = new UaNode(bush_name);
+		var node_well_name = new UaNode(well_name);
+		var node_brigade_name = new UaNode(brigade_name);
+		
+		var date = new Date(report_date);
+		console.log("to = "+date+", "+Number(date));
+		var to = Number(date);
+		date.setDate(date.getDate()-1);
+		var from = Number(date);
+		console.log("from = "+date+", "+Number(date));
+
+		
+	
+		var y = date.getFullYear();
+		var m=date.getMonth()+1;
+		var d=date.getDate();
+		
+		var hour = date.getHours();
+		var min = date.getMinutes();
+		var sec = date.getSeconds();
+		
+		if(String(m).length < 2)
+			m = '0' + String(m);
+		if(String(d).length < 2)
+			d = '0' + String(d);	
+				
+	 	if(String(hour).length < 2)
+			hour = '0' + String(hour);
+		if(String(min).length < 2)
+			min = '0' + String(min);
+		if(String(sec).length < 2)
+			sec = '0' + String(sec);		
+	 		
+		var start_depth = 0;
+		var stop_depth = 0;
+		var reportfolder = "rigdata/reports/";
+		var strDate = d + "-" + m + "-" + y;
+		var filename = "report_day_" + y + "_" + m + "_" + d + ".csv";
+//		var filename = "report_day_" + strDate + ".csv";
+		
+		
+		var objJSON = {
+			version: "1.0",
+			date: strDate,
+			Operations: {
+				OperationsTitle:'123',
+				TimeDrilling:'',
+				Penetration:'',
+				TimeRotor:'',
+				PenetrationRotor:'',
+				MSPRotor:'',
+				TimeSlide:'',
+				PenetrationSlide:'',
+				MSPSlide:'',
+				TimeReamingFull:'',
+				TimeReamingDescent:'',
+				TimeReamingRise:'',
+				TimeWiperTripFull:'',
+				TimeWiperTripDescent:'',
+				TimeWiperTripRise:'',
+				TimeFlushing:'',
+				TimeRoundTripsFull:'',
+				TimeRoundTripsDescent:'',
+				TimeRoundTripsRise:'',
+				TimeDrillPipeSlips:'',
+				TimeAddingDrillPipe:'',
+				TimeStop:'',
+				TimeUndefined:'',
+			},
+			APD: {
+				APDTitle:'456',
+				APDTimeFull:'',
+				APDTimeDrilling:'',
+				APDTimeDescent:'',
+				APDTimeRise:'',
+				APDBottomHoleStart:'',
+				APDBottomHoleStop:'',
+				APDPenetrationFull:'',
+				APDPenetration:'',
+			},		
+			APDModes: {
+				APDModesTitle:'789',
+				APDTimeModeLoad:'',
+				APDPenetrationModeLoad:'',
+				APDMSPModeLoad:'',
+				APDTimeModePressure:'',
+				APDPenetrationModePressure:'',
+				APDMSPModePressure:'',
+				APDTimeModeSpeed:'',
+				APDPenetrationModeSpeed:'',
+				APDMSPModeSpeed:'',
+				APDTimeModeTorque:'',
+				APDPenetrationModeTorque:'',
+				APDMSPModeTorque:'',			
+			},
+			OperTimeFull:{
+				OTFullTitle:'22',
+				OTWirelineFull:'',
+				OTPump1Full:'',
+				OTPump2Full:'',
+				OTDrawworksFull:'',
+			},
+			OperTimeDay:{
+				OTDayTitle:'33',
+				OTWirelineDay:'',
+				OTPump1Day:'',
+				OTPump2Day:'',
+				OTDrawworksDay:'',
+			}
+		};
+		
+//		var tJSON = JSON.stringify(objJSON);
+//		console.log('JSON = ', tJSON);
+//		return;
+
+
+//		var ofs = new OutputFileStream(filename,'utf8','append');
+		var ofs = new OutputFileStream(reportfolder+filename,'utf8');
+		ofs.open();
+		
+		var strTitle = "\ufeffСуточный отчет"+";Буровая: "+node_rig_name.value+";Бригада: "+node_brigade_name.value+";;;;;;;ООО RIGINTEL";
+		ofs.writeLine(strTitle);
+		ofs.writeLine(";;;;;;;;;");
+		
+		var strRig = "Месторождение: "+node_field_name.value+";Куст: "+node_bush_name.value+";Скважина: "+node_well_name.value+";;;;;;;";
+		ofs.writeLine(strRig);
+		ofs.writeLine(";;;;;;;;;");
+		var strDate = "Дата: "+d+"-"+m+"-"+y+" "+hour+":"+min+":"+sec+";;;;;;;;;";
+		ofs.writeLine(strDate);		
+		ofs.writeLine(";;;;;;;;;");
+	
+		
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
+//		var from = new Date(2021, 0, 12, 23, 0, 0);
+//		var to = new Date(2021, 0, 12, 23, 10, 0);
+		
+//		var from = Number(date);
+//		var to = Number(date.setDate(date.getDate()+1));
+		//var to = Number(date+86400000);		
+		
+//		var to = Number(date);
+//		var from = Number(date-86400000);//date.setDate(date.getDate()-1);
+		
+//		console.log('date from = ',from);
+//		console.log('date to = ',to);
+		
+//		var objectsDir = "AGENT.OBJECTS.";
+//		var exportDir = "rigdata/exports/";
+//		var exportFn = "export_" + new Date().valueOf() + ".csv";
+		
+//		var ofs = new OutputFileStream(exportDir + exportFn, "utf8");
+//		ofs.open();
+
+		var arrobjoperations =[];
+console.log('Start Operations');		
+		var wellDepthStart;
+		var wellDepthStartObj = call("getUaDataByDate",{strnode:well_depth,datestop: from});
+		if(wellDepthStartObj){
+			wellDepthStart = wellDepthStartObj.value;
+			wellDepthStart = Math.round(wellDepthStart*100)/100;	
+			console.log("wellDepthStart = "+wellDepthStart);
+		}
+		var wellDepthStop;
+		var wellDepthStopObj = call("getUaDataByDate",{strnode:well_depth,datestop: to});
+		if(wellDepthStopObj){
+			wellDepthStop = wellDepthStopObj.value;	
+			wellDepthStop = Math.round(wellDepthStop*100)/100;
+			console.log("wellDepthStop = "+wellDepthStopObj.value);
+		}	
+		var fullPenetration = wellDepthStop - wellDepthStart;
+		fullPenetration = Math.round(fullPenetration*100)/100;
+		console.log("full penetration = " + fullPenetration);		
+
+		var fullTimeIrm = 0;		
+		var fullTimeIrmDrilling = 0;
+		var fullTimeIrmDrillingRotor = 0;
+		var fullTimeIrmDrillingSlide = 0;
+		var fullTimeIrmSPO = 0;
+		var fullTimeIrmSPORise = 0;	
+		var fullTimeIrmSPODescent = 0;
+		var fullTimeIrmWashing = 0;	
+		var fullTimeIrmReaming = 0;
+		var fullTimeIrmReamingRise = 0;
+		var fullTimeIrmReamingDescent = 0;
+		var fullTimeIrmDrillPipeSlips = 0;
+		var fullTimeIrmWiperTrip = 0;
+		var fullTimeIrmWiperTripRise = 0;
+		var fullTimeIrmWiperTripDescent = 0;
+		var fullTimeIrmUndfined = 0;
+		var countIrmDrillingRotor = 0
+		var countIrmDrillingSlide = 0;
+		var fullPenetrationIrmDrillingRotor = 0;
+		var fullPenetrationIrmDrillingSlide = 0;
+		var fullTimeIrmStop = 0;
+		
+				
+		var fullTimeApdDrilling = 0;
+		var fullTimeApdRise = 0;
+		var fullTimeApdDescent = 0;
+		var fullApdPenetration = 0;
+		var fullTimeApdModeLoad = 0;
+		var fullTimeApdModePressure = 0;
+		var fullTimeApdModeSpeed = 0;
+		var fullTimeApdModeTorque = 0;
+		var fullPenetrationApdModeLoad = 0;
+		var fullPenetrationApdModePressure = 0;
+		var fullPenetrationApdModeSpeed = 0;
+		var fullPenetrationApdModeTorque = 0;
+		var fullTimeSec = Math.floor((to-from)/1000);
+		var fullTimeApd = 0;
+		var countApdModeLoad = 0;
+		var countApdModePressure = 0;
+		var countApdModeSpeed = 0;
+		var countApdModeTorque = 0;
+	
+// get data from operations
+		var nodeReportOperation = new UaNode("AGENT.OBJECTS.Support.ReportOperation"); // the AGENT.OBJECTS.Support.ReportOperation means the calculate of Operations
+	if (nodeReportOperation.exists()){
+		try {
+		var data_objects = rig_operation;//"Support.Auto.Operation,ASPD.APD1.Running,ASPD.APD1.MasterMode,ASPD.APD1.ModeReg"
+		var nodes =  data_objects.split(',');
+		console.log('nodes = ',nodes);
+		
+		nodes.forEach(function (node) {
+		  var node_instance = new UaNode(node);
+		  console.log('node_instance = ',node_instance);
+		  var data = node_instance
+			.datahistory({ starttime: from, endtime: to })
+			.values.map(function (point) {
+			  return {
+				who:'irm',
+				identifier: node_instance.nodeaddr,//node_instance.browsename,
+				servertime: point.servertime,
+				timestart: point.sourcetime,
+				sourcetime: point.sourcetime,
+				value: point.value,
+			  };
+			});
+			
+		  data.forEach(function (datapoint) {
+			arrobjoperations.push(datapoint);
+		  });
+		  
+		});
+		
+		// Sort by sourcetime 
+		arrobjoperations.sort(function (a, b) {
+			return a.sourcetime - b.sourcetime;
+			//return a.servertime - b.servertime;
+		});
+
+// add first operation		
+		var operationStartObj = call("getUaDataByDate",{strnode:rig_operation,datestop: from});
+		operationStartObj.who ='irm';
+		operationStartObj.identifier = rig_operation;
+		operationStartObj.timestart = operationStartObj.sourcetime; 	
+//		console.log('operationStartObj = ',operationStartObj);
+		arrobjoperations.unshift(operationStartObj);
+
+// calc timestop		
+		if(arrobjoperations.length > 0){
+			for(var i=0;i<arrobjoperations.length;++i){
+				if(i>0 && arrobjoperations[i-1].identifier == rig_operation){
+					arrobjoperations[i-1].timestop = arrobjoperations[i].timestart;
+					arrobjoperations[i-1].timework = arrobjoperations[i-1].timestop - arrobjoperations[i-1].timestart;
+					//arrobjoperations[i-1].depthstop = arrobjoperations[i].depthstart;
+					//arrobjoperations[i-1].penetration = arrobjoperations[i-1].depthstop - arrobjoperations[i-1].depthstart; 
+				}
+			}
+			arrobjoperations[arrobjoperations.length-1].timestop = to;
+			arrobjoperations[arrobjoperations.length-1].timework = arrobjoperations[arrobjoperations.length-1].timestop - arrobjoperations[arrobjoperations.length-1].timestart;
+		}
+/////////////////////////////////////////		
+			
+		
+//////////////////////////////////////////////////////////////////////////////////		
+console.log("start 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111");
+		arrobjoperations.forEach(function(itemObj,index,arrobjoperations){
+			console.log("item: " + index);
+			for(var key in itemObj){
+				var value = itemObj[key];
+				console.log("key = "+key+ ", val = "+value); 
+			}
+		});
+console.log("stop 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111");		
+//////////////////////////////////////////////////////////////////////////////////		
+		}
+		catch(excoper){
+			console.log("Operation exception " + excoper);			
+		}
+	}		
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////			
+/*					
+		var wellDepthStart;
+		var wellDepthStartObj = call("getUaDataByDate",{strnode:well_depth,datestop: from});
+		if(wellDepthStartObj){
+			wellDepthStart = wellDepthStartObj.value;	
+			console.log("wellDepthStart = "+wellDepthStartObj.value);
+		}
+		var wellDepthStop;
+		var wellDepthStopObj = call("getUaDataByDate",{strnode:well_depth,datestop: to});
+		if(wellDepthStopObj){
+			wellDepthStop = wellDepthStopObj.value;	
+			console.log("wellDepthStop = "+wellDepthStopObj.value);
+		}	
+		var fullPenetration = wellDepthStop - wellDepthStart;
+		console.log("full penetration = " + fullPenetration);		
+
+		
+		var fullTimeApdDrilling = 0;
+		var fullTimeApdRise = 0;
+		var fullTimeApdDescent = 0;
+		var fullApdPenetration = 0;
+		var fullTimeApdModeLoad = 0;
+		var fullTimeApdModePressure = 0;
+		var fullTimeApdModeSpeed = 0;
+		var fullTimeApdModeTorque = 0;
+		var fullPenetrationApdModeLoad = 0;
+		var fullPenetrationApdModePressure = 0;
+		var fullPenetrationApdModeSpeed = 0;
+		var fullPenetrationApdModeTorque = 0;
+		var fullTimeSec = Math.floor((to-from)/1000);
+		var fullTimeApd = 0;
+*/		
+/*		
+		var operationStartObj = call("getUaDataByDate",{strnode:rig_operation,datestop: from});
+		operationStartObj.identifier = rig_operation;
+		operationStartObj.timestart = operationStartObj.servertime; 	
+//		console.log('operationStartObj = ',operationStartObj);
+		arrobjoperations.unshift(operationStartObj);
+*/		
+/*		
+		var operationStopObj = call("getUaDataByDate",{strnode:rig_operation,datestop: to});
+		operationStopObj.identifier = rig_operation;
+		operationStopObj.timestart = operationStopObj.servertime; 	
+//		console.log('operationStopObj = ',operationStopObj);
+		arrobjoperations.push(operationStopObj);
+*/			
+			
+//		if(arrobjoperations.length > 0){			
+/*			for(var i=0;i<arrobjoperations.length;++i){
+				if(i>0 && arrobjoperations[i-1].identifier == rig_operation){
+					arrobjoperations[i-1].timestop = arrobjoperations[i].timestart;
+					arrobjoperations[i-1].timework = arrobjoperations[i-1].timestop - arrobjoperations[i-1].timestart;
+					//arrobjoperations[i-1].depthstop = arrobjoperations[i].depthstart;
+					//arrobjoperations[i-1].penetration = arrobjoperations[i-1].depthstop - arrobjoperations[i-1].depthstart; 
+				}
+			}
+			arrobjoperations[arrobjoperations.length-1].timestop = to;
+			arrobjoperations[arrobjoperations.length-1].timework = arrobjoperations[arrobjoperations.length-1].timestop - arrobjoperations[arrobjoperations.length-1].timestart;
+*/			
+			
+/*			
+console.log("start 1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111");
+			arrobjoperations.forEach(function(itemObj,index,arrobjoperations){
+				console.log("item: " + index);
+				for(var key in itemObj){
+					var value = itemObj[key]; 
+					console.log("key = "+key+ ", val = "+value);					
+				}
+			});
+console.log("stop 1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111");			
+*/
+		try {
+// get data from ir-pak	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
+		var arrobjirpak =[];		
+		data_objects = apd_running+','+apd_mastermode+','+apd_modereg;//"ASPD.APD1.Running,ASPD.APD1.MasterMode,ASPD.APD1.ModeReg"
+		nodes =  data_objects.split(',');
+		console.log('nodes = ',nodes);
+		
+		nodes.forEach(function (node) {
+		  var node_instance = new UaNode(node);
+		  console.log('node_instance = ',node_instance);
+		  var data = node_instance
+			.datahistory({ starttime: from, endtime: to })
+			.values.map(function (point) {
+			  return {
+				who:'apd',
+				identifier: node_instance.nodeaddr,//node_instance.browsename,
+				servertime: point.servertime,
+				timestart: point.sourcetime,
+				sourcetime: point.sourcetime,
+				value: point.value,
+				status:point.status
+			  };
+			});
+			
+		  data.forEach(function (datapoint) {
+			if(datapoint.status < 0x40000000)
+				arrobjirpak.push(datapoint);
+		  });
+		  
+		});
+		
+		// Sort by sourcetime 
+		arrobjirpak.sort(function (a, b) {
+		  return a.sourcetime - b.sourcetime;
+		  //return a.servertime - b.servertime;
+		});
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
+
+// Start and stop values ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+		var objRunningStart;
+		var objRunningFinish;
+		var objMasterModeStart;
+		var objModeRegStart;
+				
+		var apdMasterModeStartObj = call("getUaDataByDate",{strnode:apd_mastermode,datestop: from});
+		if(apdMasterModeStartObj){
+			objMasterModeStart = {who:'apd', identifier:apd_mastermode, timestart: from, value: apdMasterModeStartObj.value};					
+		} else {
+			console.log('apdMasterModeStartObj is undefined');
+		}
+	
+		var apdModeRegStartObj = call("getUaDataByDate",{strnode:apd_modereg,datestop: from});
+		if(apdModeRegStartObj){
+			objModeRegStart = {who:'apd', identifier:apd_modereg, timestart: from, value: apdModeRegStartObj.value};
+		} else {
+			console.log('apdModeRegStartObj is undefined');
+		}
+	//start							
+		var apdRunning;
+		var apdRunningStartObj = call("getUaDataByDate",{strnode:apd_running,datestop: from});
+		if(apdRunningStartObj){
+			console.log("apdRunningStart = "+apdRunningStartObj.value);
+			apdRunning = apdRunningStartObj.value;				
+			objRunningStart = {who:'apd', identifier:apd_running, timestart: from, value: apdRunningStartObj.value};	
+			if(objRunningStart.value)
+				arrobjirpak.unshift(objRunningStart);					
+		}
+	// finish			
+		var apdRunningFinishObj = call("getUaDataByDate",{strnode:apd_running,datestop: to});
+		if(apdRunningFinishObj){
+			console.log("objRunningFinish = "+apdRunningFinishObj.value);							
+			if(apdRunningFinishObj.value){
+				objRunningFinish = {who:'apd', identifier:apd_running, timestart: to, value: 0};
+				arrobjirpak.push(objRunningFinish);
+			}					
+		}	
+					
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////			
+	// Calc Start and Stop time for APD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////// 
+		var ir = -1;
+		var imm = -1;
+		var imr = -1;
+		var startindx = -1;
+		var stopindx = -1;
+				
+		function FinishingOper(itemObj,indx){			
+/*			if(arrobjirpak[startindx].identifier==apd_running)
+				console.log("Stop Running index = "+startindx);
+			if(arrobjirpak[startindx].identifier==apd_mastermode)
+				console.log("Stop MasterMode index = "+startindx);
+			if(arrobjirpak[startindx].identifier==apd_modereg)
+				console.log("Stop ModeReg index = "+startindx);	
+*/							
+			arrobjirpak[startindx].timestop = itemObj.timestart; 
+			arrobjirpak[startindx].timework = arrobjirpak[startindx].timestop - arrobjirpak[startindx].timestart;
+			stopindx = indx;
+		}
+				
+		arrobjirpak.forEach(function(itemObj,index,arrobjirpak){
+//			console.log("index = "+index);
+			if(itemObj.identifier==apd_running){						 
+				if(itemObj.value){		//Runnung = true
+//					console.log("Start Running");
+					apdRunning=true;
+					startindx = index;
+					//var valMM=getLastValueByDate(apd_mastermode,itemObj.timestart);
+					var valMMObj=call("getUaDataByDate",{strnode:apd_mastermode,datestop: itemObj.timestart});
+					//console.log("valMMObj = ", valMMObj);
+					if(valMMObj){
+						var valMM=valMMObj.value;
+						if(typeof valMM != 'undefined'){
+							itemObj.mastermode=valMM;
+							if(valMM == 0){
+								//var valMR=getLastValueByDate(apd_modereg,itemObj.timestart);
+								var valMRObj = call("getUaDataByDate",{strnode:apd_modereg,datestop: itemObj.timestart});
+								if(valMRObj){ 
+									var valMR=valMRObj.value;
+									if(typeof valMR != 'undefined'){
+										itemObj.modereg=valMR;
+									}	
+								}
+							}
+						}			
+					}											 
+				} else {				//Running = false
+					apdRunning=false;
+					if(startindx >=0){
+						FinishingOper(itemObj,index);
+					}
+					startindx = -1;						
+				}
+				ir = index;							
+			}				
+			if(itemObj['identifier']==apd_mastermode){
+				if(startindx >=0 && apdRunning){
+					if(arrobjirpak[startindx].identifier != apd_running){
+//						console.log("Start MasterMode");
+						if(itemObj.value == 0){
+							//var valMR=getLastValueByDate(apd_modereg,itemObj.timestart);
+							var valMRObj = call("getUaDataByDate",{strnode:apd_modereg,datestop: itemObj.timestart});							
+							if(valMRObj){							
+								var valMR=valMRObj.value;
+								if(typeof valMR != 'undefined'){
+									itemObj.modereg=valMR;
+								}
+							}	
+						}
+						FinishingOper(itemObj,index);
+						startindx = index;
+					}									
+				}
+				imm=index;
+			}
+			if(itemObj['identifier']==apd_modereg){
+				if(startindx >=0 && apdRunning){
+					if(!(arrobjirpak[startindx].identifier == apd_mastermode && arrobjirpak[startindx].value == 0)){
+//						console.log("Start ModeReg");
+						FinishingOper(itemObj,index);
+						startindx = index;
+					}	
+				}
+				imr=index;
+			}			
+		});
+		}
+		catch(expapd){
+			console.log("APD exception " + excapd);
+		}
+		
+//------------------------------------------------------------------------------------------------------------------------------------
+		
+		var arrobjfull = arrobjoperations.concat(arrobjirpak);
+		arrobjfull.sort(function (a, b) {
+			return a.sourcetime - b.sourcetime;
+		});
+		console.log('arrobjfull length = ',arrobjfull.length);
+//------------------------------------------------------------------------------------------------------------------------------------		
+	
+/*		
+console.log("start 2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222");
+			arrobjfull.forEach(function(itemObj,index,arrobjfull){
+				console.log("item: " + index);
+				for(var key in itemObj){
+					var value = itemObj[key]; 					
+					console.log("key = "+key+ ", val = "+value);					
+				}
+			});			
+console.log("stop 2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222");				
+*/
+//			if(startindx >=0 && !arrobjfull[startindx].hasOwnProperty('timestop')){
+//				arrobjfull[i].timestop = wt;
+//				arrobjfull[i].timework = arrobjfull[i].timestop - arrobjfull[i].timestart;
+//			}
+		var realarrobj = [];
+		try {
+console.log("start 3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333");		
+// add supplement data
+			arrobjfull.forEach(function(itemObj,index,arrobjfull){				
+				if(itemObj.hasOwnProperty('timestop')){
+					console.log("3 item: " + index);
+//					var valDepthStart=call("getUaDataByDate",{strnode:hook_pos,datestop: itemObj.timestop}).value;
+//					var valDepthStop=call("getUaDataByDate",{strnode:hook_pos,datestop: itemObj.timestart}).value;
+					
+//					if(getLastValueByDate(well_depth,itemObj.timestart)!=0){
+//						valDepthStart=getLastValueByDate(well_depth,itemObj.timestart);
+//						valDepthStop =getLastValueByDate(well_depth,itemObj.timestop);
+//					} else {
+//						valDepthStop=getLastValueByDate(hook_pos,itemObj.timestart);						
+//						valDepthStart=getLastValueByDate(hook_pos,itemObj.timestop);						
+//					}					
+					
+					var valDepthStart=call("getUaDataByDate",{strnode:well_depth,datestop: itemObj.timestart}).value;
+					var valDepthStop =0;					
+					if(valDepthStart!=0){						
+						valDepthStop = call("getUaDataByDate",{strnode:well_depth,datestop: itemObj.timestop}).value;
+//						console.log("well_depth");
+					} else {		
+//						console.log("hook_pos");		
+						valDepthStop=call("getUaDataByDate",{strnode:hook_pos,datestop: itemObj.timestart}).value;						
+						valDepthStart=call("getUaDataByDate",{strnode:hook_pos,datestop: itemObj.timestop}).value;						
+					}
+					
+					if(valDepthStart && valDepthStop){						
+						itemObj.depthstart = valDepthStart;
+						itemObj.depthstop = valDepthStop;
+////						console.log('depthstart = '+valDepthStart+', valDepthStop = '+valDepthStop);
+						itemObj.penetration = valDepthStop-valDepthStart;
+						itemObj.drillspeed = (itemObj.penetration/((itemObj.timestop-itemObj.timestart)/1000))*3600;
+						function calcAverageParams(itemObj){
+							itemObj.loadonbit = call('getAverageByDate',{nodeStr:load_on_bit, timestart:itemObj.timestart, timeend:itemObj.timestop});													
+							itemObj.flowinput = call('getAverageByDate',{nodeStr:flow_input, timestart:itemObj.timestart, timeend:itemObj.timestop});						
+							itemObj.tdsspeed = call('getAverageByDate',{nodeStr:tds_speed, timestart:itemObj.timestart, timeend:itemObj.timestop});						
+							itemObj.tdstorque = call('getAverageByDate',{nodeStr:tds_torque, timestart:itemObj.timestart, timeend:itemObj.timestop});	
+							itemObj.pressmanifold = call('getAverageByDate',{nodeStr:pressure_manifold, timestart:itemObj.timestart, timeend:itemObj.timestop});					
+							itemObj.diffpress = call('getAverageByDate',{nodeStr:diff_pressure, timestart:itemObj.timestart, timeend:itemObj.timestop});
+						}
+						if(itemObj.identifier == rig_operation){
+							var operation = itemObj.value;
+							var objJSON = JSON.parse(operation);
+							if(objJSON.oper == "БУРЕНИЕ"){							
+								calcAverageParams(itemObj);								
+							}						
+						} else {						
+							calcAverageParams(itemObj);
+						}						
+					}
+					realarrobj.push(itemObj);
+				}
+				
+				
+//				for(var key in itemObj){
+//					var value = itemObj[key]; 
+//					console.log("key = "+key+ ", val = "+value);
+//				}
+				
+			});		
+console.log("stop 3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333");						
+		}
+		catch(expsupp){
+			console.log("Supplement exception " + expsupp);
+		}
+	
+		try {		
+// Calculate operations
+			ofs.writeLine("Работы:;;;;;;;;;;;;;;;;");
+			var strNaming = "№;Источник;Работа;Режим;Начало;Окончание;Время работы в сек;Время работы;Положение в начале;Положение в конце;Проходка;Скорость;Нагрузка;Расход;Обороты;Момент;Давление;Перепад";		 
+			ofs.writeLine(strNaming);
+			
+			//console.log("I am here!!!");		
+			//var realindex=0;		
+			realarrobj.forEach(function(itemObj,index,realarrobj){
+				//console.log('itemObj.identifier = ',itemObj.identifier);						
+//				if(!!itemObj.value && itemObj.hasOwnProperty('timestop')){	
+					//realindex++;
+					console.log("4 item: " + index);											
+					var work;
+					var work_mode;
+					var idoper;
+					if(itemObj.identifier==rig_operation){
+						var workObj = JSON.parse(itemObj.value);
+						work = workObj.oper.toUpperCase();						
+						work_mode = workObj.suboper;
+						idoper = workObj.id;
+						fullTimeIrm += itemObj.timework;
+						console.log(work+' '+work_mode+' timework = '+itemObj.timework+' fullTimeIrm = '+fullTimeIrm);						
+						switch(work){
+							case 'БУРЕНИЕ':
+								fullTimeIrmDrilling+=itemObj.timework;
+								switch(work_mode){
+									case 'ротором':
+										fullTimeIrmDrillingRotor+=itemObj.timework;
+										fullPenetrationIrmDrillingRotor += itemObj.penetration;
+										countIrmDrillingRotor++;
+										break;
+									case 'слайдом':
+										fullTimeIrmDrillingSlide+=itemObj.timework;
+										fullPenetrationIrmDrillingSlide += itemObj.penetration;
+										countIrmDrillingSlide++;
+										break;
+								}
+								break;
+							case 'СПО':
+								fullTimeIrmSPO+=itemObj.timework;
+								switch(work_mode){
+									case 'подъем':
+									case 'медленный подъем':
+									case 'быстрый подъем':
+									case 'подъем с вращением':
+									case 'подъем от забоя с вращением':
+									case 'медленный подъем с вращением':
+									case 'медленный подъем от забоя с вращением':
+									case 'медленный подъем от забоя с циркуляцией без вращения':
+										fullTimeIrmSPORise+=itemObj.timework;
+										break;
+									case 'спуск':
+									case 'быстрый спуск':
+									case 'быстрый спуск с вращением':
+									case 'быстрый спуск к забою с вращением':
+									case 'медленный спуск':
+									case 'медленный спуск с вращением':
+									case 'медленный спуск к забою с вращением':
+										fullTimeIrmSPODescent+=itemObj.timework;
+										break;
+								}
+								break;		
+							case 'ПРОМЫВКА':
+								fullTimeIrmWashing+=itemObj.timework;
+								console.log('fullTimeIrmWashing = '+fullTimeIrmWashing);
+								break;
+							case 'ПРОРАБОТКА':
+								fullTimeIrmReaming+=itemObj.timework;
+								switch(work_mode){
+									case 'при подъеме':
+										fullTimeIrmReamingRise+=itemObj.timework;
+										break;
+									case 'при спуске':
+									case 'при спуске над забоем':
+										fullTimeIrmReamingDescent+=itemObj.timework;
+										break;
+								}
+								break;
+							case 'ШАБЛОНИРОВКА':
+								fullTimeIrmWiperTrip+=itemObj.timework;
+								switch(work_mode){
+									case 'при подъеме':
+									case 'при подъеме над забоем':
+										fullTimeIrmWiperTripRise+=itemObj.timework;
+										break;
+									case 'при спуске':
+									case 'при спуске над забоем':
+										fullTimeIrmWiperTripDescent+=itemObj.timework;
+										break;
+								}
+								break;
+							case 'НА КЛИНЬЯХ':
+								fullTimeIrmDrillPipeSlips+=itemObj.timework;
+								break;
+							case 'ПОСТАНОВКА':
+								fullTimeIrmDrillPipeSlips+=itemObj.timework;
+								break;
+							case 'СНЯТИЕ':
+								fullTimeIrmDrillPipeSlips+=itemObj.timework;
+								break;		
+							case 'ОСТАНОВКА':
+								fullTimeIrmStop+=itemObj.timework;
+								break;	
+							case 'НЕОПРЕДЕЛЕННЫЙ':
+								fullTimeIrmUndfined+=itemObj.timework;
+								break;
+						}						
+					}													
+					if(itemObj.identifier==apd_running){						 
+						if(itemObj.value == 1){    //бурение							 
+							fullTimeApd +=itemObj.timework;
+							fullApdPenetration += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;							
+							if(itemObj.mastermode == 0){
+								work = "Бурение";
+								fullTimeApdDrilling += itemObj.timework;
+								if(itemObj.modereg == 0){
+									work_mode = "По нагрузке";
+									fullTimeApdModeLoad += itemObj.timestop - itemObj.timestart;
+									fullPenetrationApdModeLoad += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+									countApdModeLoad++;
+								}
+								if(itemObj.modereg == 1){
+									work_mode = "По давлению";
+									fullTimeApdModePressure += itemObj.timestop - itemObj.timestart;
+									fullPenetrationApdModePressure += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+									countApdModePressure++;
+								}
+								if(itemObj.modereg == 2){
+									work_mode = "По скорости";
+									fullTimeApdModeSpeed += itemObj.timestop - itemObj.timestart;
+									fullPenetrationApdModeSpeed += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+									countApdModeSpeed++;
+								}
+								if(itemObj.modereg == 3){
+									work_mode = "По моменту";
+									fullTimeApdModeTorque += itemObj.timestop - itemObj.timestart;
+									fullPenetrationApdModeTorque += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+									countApdModeTorque++;
+								}
+							} 
+							if(itemObj.mastermode == 1){
+								work = "СПО";
+								work_mode = "Спуск";
+								fullTimeApdDescent +=itemObj.timework;
+								//fullTimeApd +=itemObj.timework;
+							}
+							if(itemObj.mastermode == 2){
+								work = "СПО";
+								work_mode = "Подъем";
+								fullTimeApdRise +=itemObj.timework;
+								//fullTimeApd +=itemObj.timework;
+							}							
+						} 													
+					}			
+					if(itemObj.identifier==apd_mastermode){ 
+						if(itemObj.value == 0){    //бурение
+							fullTimeApdDrilling += itemObj.timework; //itemObj.timestop - itemObj.timestart;
+							fullTimeApd +=itemObj.timework;
+							fullApdPenetration += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+							work = "Бурение";
+							if(itemObj.modereg == 0){
+								work_mode = "По нагрузке";
+								fullTimeApdModeLoad += itemObj.timestop - itemObj.timestart;
+								fullPenetrationApdModeLoad += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+								countApdModeLoad++;
+							}
+							if(itemObj.modereg == 1){
+								work_mode = "По давлению";
+								fullTimeApdModePressure += itemObj.timestop - itemObj.timestart;
+								fullPenetrationApdModePressure += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+								countApdModePressure++;
+							}
+							if(itemObj.modereg == 2){
+								work_mode = "По скорости";
+								fullTimeApdModeSpeed += itemObj.timestop - itemObj.timestart;
+								fullPenetrationApdModeSpeed += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+								countApdModeSpeed++;
+							}
+							if(itemObj.modereg == 3){
+								work_mode = "По моменту";
+								fullTimeApdModeTorque += itemObj.timestop - itemObj.timestart;
+								fullPenetrationApdModeTorque += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+								countApdModeTorque++;
+							}
+						} 
+						if(itemObj.value == 1){    //спуск
+							fullTimeApdDescent += itemObj.timework; //itemObj.timestop - itemObj.timestart;
+							fullTimeApd +=itemObj.timework;
+							work = "СПО";
+							work_mode = "Спуск";
+						}
+						if(itemObj.value == 2){    //подъем
+							fullTimeApdRise += itemObj.timework; //itemObj.timestop - itemObj.timestart;
+							fullTimeApd +=itemObj.timework;
+							work = "СПО";
+							work_mode = "Подъем";
+						}							
+					}
+					if(itemObj.identifier==apd_modereg){
+						work = "Бурение";
+						fullTimeApdDrilling += itemObj.timework;
+						fullApdPenetration += itemObj.penetration;
+						if(itemObj.value == 0){    //нагрузка
+							work_mode = "По нагрузке";
+							fullTimeApdModeLoad += itemObj.timework; //itemObj.timestop - itemObj.timestart;
+							fullTimeApd +=itemObj.timework;
+							fullPenetrationApdModeLoad += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+							countApdModeLoad++;
+						} 
+						if(itemObj.value == 1){    //давление
+							work_mode = "По давлению";
+							fullTimeApdModePressure += itemObj.timework; //itemObj.timestop - itemObj.timestart;
+							fullTimeApd +=itemObj.timework;
+							fullPenetrationApdModePressure += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+							countApdModePressure++;
+						}
+						if(itemObj.value == 2){    //скорость
+							work_mode = "По скорости";
+							fullTimeApdModeSpeed += itemObj.timework; //itemObj.timestop - itemObj.timestart;
+							fullTimeApd +=itemObj.timework;
+							fullPenetrationApdModeSpeed += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+							countApdModeSpeed++;
+						}		
+						if(itemObj.value == 3){    //момент
+							work_mode = "По моменту";
+							fullTimeApdModeTorque += itemObj.timework; //itemObj.timestop - itemObj.timestart;
+							fullTimeApd +=itemObj.timework;
+							fullPenetrationApdModeTorque += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+							countApdModeTorque++;
+						}					
+					}
+					
+// Prepare strings for operations	
+				
+					var timework = itemObj.timework; //itemObj.timestop - itemObj.timestart;
+					var datestart = new Date(itemObj.timestart);
+					var datestop = new Date(itemObj.timestop);
+//					console.log('datestart = '+datestart+', datestop = '+datestop);
+					//console.log('secstart = '+datestart.getSeconds()+', secstop = '+datestop.getSeconds());
+//					var datestart = new Date(call("SecondsFromWinTicks",{wt:itemObj.timestart})*1000);
+//					var datestop = new Date(call("SecondsFromWinTicks",{wt:itemObj.timestop})*1000);
+					var yearStart = datestart.getFullYear();
+					var monthStart=datestart.getMonth()+1;
+					if(String(monthStart).length < 2)
+						monthStart = '0' + String(monthStart);
+					var dayStart=datestart.getDate();
+					if(String(dayStart).length < 2)
+						dayStart = '0' + String(dayStart);
+						
+					var hoursStart = datestart.getHours();	
+					if(String(hoursStart).length < 2)
+						hoursStart = '0' + String(hoursStart);
+					var minutesStart = datestart.getMinutes();	
+					if(String(minutesStart).length < 2)
+						minutesStart = '0' + String(minutesStart);
+					var secondsStart = datestart.getSeconds();	
+					if(String(secondsStart).length < 2)
+						secondsStart = '0' + String(secondsStart);	
+							
+			
+					var yearStop = datestop.getFullYear();
+					var monthStop=datestop.getMonth()+1;
+					if(String(monthStop).length < 2)
+						monthStop = '0' + String(monthStop);
+					var dayStop=datestop.getDate();
+					if(String(dayStop).length < 2)
+						dayStop = '0' + String(dayStop);
+						
+					var hoursStop = datestop.getHours();	
+					if(String(hoursStop).length < 2)
+						hoursStop = '0' + String(hoursStop);
+					var minutesStop = datestop.getMinutes();	
+					if(String(minutesStop).length < 2)
+						minutesStop = '0' + String(minutesStop);
+					var secondsStop = datestop.getSeconds();	
+					if(String(secondsStop).length < 2)
+						secondsStop = '0' + String(secondsStop);	
+						
+					var strdatestart = dayStart+"-"+monthStart+"-"+yearStart+" "+hoursStart+":"+minutesStart+":"+secondsStart;
+					var strdatestop = dayStop+"-"+monthStop+"-"+yearStop+" "+hoursStop+":"+minutesStop+":"+secondsStop;
+//					var strdatestart = dayStart+"-"+monthStart+"-"+yearStart+" "+datestart.getHours()+":"+datestart.getMinutes()+":"+datestart.getSeconds();
+//					var strdatestop = dayStop+"-"+monthStop+"-"+yearStop+" "+datestop.getHours()+":"+datestop.getMinutes()+":"+datestop.getSeconds();
+					
+//					console.log('strdatestart = '+strdatestart+', strdatestop = '+strdatestop);					
+					
+					var tDepthstart = Math.round((itemObj.depthstart)*100)/100;
+					if(isNaN(tDepthstart)) tDepthstart='-'; 					
+					var tDepthstop = Math.round((itemObj.depthstop)*100)/100;
+					if(isNaN(tDepthstop)) tDepthstop='-';
+					var tPenetration = Math.round((itemObj.penetration)*100)/100;
+					if(isNaN(tPenetration)) tPenetration='-';
+					var tDrillspeed = Math.round((itemObj.drillspeed)*100)/100;
+					if(isNaN(tDrillspeed)) tDrillspeed='-';
+					var tLoadonbit = Math.round((itemObj.loadonbit)*100)/100;
+					if(isNaN(tLoadonbit)) tLoadonbit='-';
+					var tFlowinput = Math.round((itemObj.flowinput)*100)/100;
+					if(isNaN(tFlowinput)) tFlowinput='-';
+					var tTdsspeed = Math.round((itemObj.tdsspeed)*100)/100;
+					if(isNaN(tTdsspeed)) tTdsspeed='-';
+					var tTdstorque = Math.round((itemObj.tdstorque)*100)/100;
+					if(isNaN(tTdstorque)) tTdstorque='-';
+					var tPressmanifold = Math.round((itemObj.pressmanifold)*100)/100;
+					if(isNaN(tPressmanifold)) tPressmanifold='-';
+					var tDiffpress = Math.round((itemObj.diffpress)*100)/100; 					
+					if(isNaN(tDiffpress)) tDiffpress='-';
+						
+					var strToFile = index +";"
+						+itemObj.who+";"
+						+work+";"
+						+work_mode+";"
+						+strdatestart+";"
+						+strdatestop+";"
+						+Math.floor(timework/1000)+";"
+						+call("Sec2Date",{sec:(timework/1000)})+";"
+						+tDepthstart+";"
+						+tDepthstop+";"
+						+tPenetration+";"
+						+tDrillspeed+";"
+						+tLoadonbit+";"
+						+tFlowinput+";"
+						+tTdsspeed+";"
+						+tTdstorque+";"
+						+tPressmanifold+";"
+						+tDiffpress;	
+								
+/*					var strToFile = index +";"
+						+itemObj.who+";"
+						+work+";"
+						+work_mode+";"
+						+strdatestart+";"
+						+strdatestop+";"
+						+Math.floor(timework/1000)+";"
+						+call("Sec2Date",{sec:(timework/1000)})+";"
+						+isNaN(tDepthstart)?'-':tDepthstart+";"
+						+isNaN(tDepthstop)?'-':tDepthstop+";"
+						+isNaN(tPenetration)?'-':tPenetration+";"
+						+isNaN(tDrillspeed)?'-':tDrillspeed+";"
+						+isNaN(tLoadonbit)?'-':tLoadonbit+";"
+						+isNaN(tFlowinput)?'-':tFlowinput+";"
+						+isNaN(tTdsspeed)?'-':tTdsspeed+";"
+						+isNaN(tTdstorque)?'-':tTdstorque+";"
+						+isNaN(tPressmanifold)?'-':tPressmanifold+";"
+						+isNaN(tDiffpress)?'-':tDiffpress;
+*/						
+//					var strToFile = index++ +";"+work+";"+work_mode+";"+strdatestart+";"+strdatestop+";"+Math.floor(timework/1000)+";"+call("Sec2Date",{sec:(timework/1000)})+";"+itemObj.depthstart.toFixed(1)+";"+itemObj.depthstop.toFixed(1)+";"+itemObj.penetration.toFixed(1)+";"+itemObj.drillspeed.toFixed(1)+";"+itemObj.loadonbit.toFixed(1)+";"+itemObj.flowinput+";"+itemObj.tdsspeed.toFixed(1)+";"+itemObj.tdstorque.toFixed(1)+";"+itemObj.pressmanifold+";"+itemObj.diffpress.toFixed(1);
+//					var strToFile = index++ +";"+work+";"+work_mode+";"+strdatestart+";"+strdatestop+";"+Math.floor(timework/1000)+";"+call("Sec2Date",{sec:(Math.floor(timework/1000))})+";"+itemObj.depthstart+";"+itemObj.depthstop+";"+itemObj.penetration+";"+itemObj.drillspeed+";"+itemObj.loadonbit+";"+itemObj.flowinput+";"+itemObj.tdsspeed+";"+itemObj.tdstorque+";"+itemObj.pressmanifold+";"+itemObj.diffpress;
+					//var strToFile = index++ +";"+work+";"+work_mode+";"+datestart+";"+datestop+";"+Math.floor(timework/10000000)+";"+call("Sec2Date",{sec:(Math.floor(timework/10000000))})+";"+Math.ceil(itemObj.depthstart*100)/100+";"+Math.ceil(itemObj.depthstop*100)/100+";"+Math.ceil(itemObj.penetration*100)/100+";"+Math.ceil(itemObj.drillspeed*100)/100+";"+Math.ceil(itemObj.loadonbit*100)/100+";"+Math.ceil(itemObj.flowinput*100)/100+";"+Math.ceil(itemObj.tdsspeed*100)/100+";"+Math.ceil(itemObj.tdstorque*100)/100;
+//					var newStr = strToFile.replace(/./g, ',');
+					//var newStr = strToFile.replace('.', ',');
+					//var strToFile = index++ +";"+work+";"+work_mode+";"+datestart+";"+datestop+";"+Math.floor(timework/10000000)+";"+call("Sec2Date",{sec:(Math.floor(timework/10000000))})+";"+(itemObj.depthstart).toFixed(1)+";"+(itemObj.depthstop).toFixed(1)+";"+(itemObj.penetration).toFixed(1)+";"+(itemObj.drillspeed).toFixed(1)+";"+(itemObj.loadonbit).toFixed(1)+";"+(itemObj.flowinput).toFixed(1)+";"+(itemObj.tdsspeed).toFixed(1)+";"+(itemObj.tdstorque).toFixed(1);
+					console.log(strToFile);
+					//console.log(newStr);
+					ofs.writeLine(strToFile);
+//				}	
+			});	
+			
+/*			
+		} else {		
+			console.log("Don't have any records!!");
+		}
+*/		
+		}
+		catch(excform){
+			console.log("Forming exception " + excform);
+		}
+		try {
+// Prepare strings to write	
+		console.log("Time: "+Math.floor((to-from)/1000));
+		if (nodeReportOperation.exists()){
+			console.log("fullTimeIrm: "+fullTimeIrm);		
+			console.log("fullTimeIrmDrilling: "+fullTimeIrmDrilling);
+			console.log("fullTimeIrmDrillingRotor: "+fullTimeIrmDrillingRotor);
+			console.log("fullTimeIrmDrillingSlide: "+fullTimeIrmDrillingSlide);
+			console.log("fullTimeIrmSPO: "+fullTimeIrmSPO);
+			console.log("fullTimeIrmSPORise: "+fullTimeIrmSPORise);	
+			console.log("fullTimeIrmSPODescent: "+fullTimeIrmSPODescent);
+			console.log("fullTimeIrmWashing: "+fullTimeIrmWashing);	
+			console.log("fullTimeIrmReaming: "+fullTimeIrmReaming);
+			console.log("fullTimeIrmReamingRise: "+fullTimeIrmReamingRise);
+			console.log("fullTimeIrmReamingDescent: "+fullTimeIrmReamingDescent);
+			console.log("fullTimeIrmDrillPipeSlips: "+fullTimeIrmDrillPipeSlips);
+			console.log("fullTimeIrmWiperTrip: "+fullTimeIrmWiperTrip);
+			console.log("fullTimeIrmWiperTripRise: "+fullTimeIrmWiperTripRise);
+			console.log("fullTimeIrmWiperTripDescent: "+fullTimeIrmWiperTripDescent);
+			console.log("fullTimeIrmUndfined: "+fullTimeIrmUndfined);
+			console.log("fullTimeIrmStop: "+fullTimeIrmStop);
+		}
+		
+		console.log("fullTimeApd: "+fullTimeApd);	
+		console.log("fullTimeApdDrilling: "+fullTimeApdDrilling);
+		console.log("fullTimeApdModeLoad: "+fullTimeApdModeLoad);
+		console.log("fullTimeApdModePressure: "+fullTimeApdModePressure);
+		console.log("fullTimeApdModeSpeed: "+fullTimeApdModeSpeed);
+		console.log("fullTimeApdModeTorque: "+fullTimeApdModeTorque);
+		console.log("fullTimeApdDescent: "+fullTimeApdDescent);
+		console.log("fullTimeApdRise: "+fullTimeApdRise);
+		console.log("wellDepthStart: "+wellDepthStart);
+		console.log("wellDepthStop: "+wellDepthStop);
+		console.log("penetration: "+(wellDepthStop-wellDepthStart));
+		console.log("fullApdPenetration: "+fullApdPenetration);
+		console.log("fullPenetrationApdModeLoad: "+fullPenetrationApdModeLoad);
+		console.log("fullPenetrationApdModePressure: "+fullPenetrationApdModePressure);
+		console.log("fullPenetrationApdModeSpeed: "+fullPenetrationApdModeSpeed);
+		console.log("fullPenetrationApdModeTorque: "+fullPenetrationApdModeTorque);
+		
+		if (nodeReportOperation.exists()){
+			var averageSpeedIrmDrillingRotor = ((fullPenetrationIrmDrillingRotor/(fullTimeIrmDrillingRotor/1000))*3600).toFixed(1);
+			console.log("averageSpeedIrmDrillingRotor = ",averageSpeedIrmDrillingRotor);
+			var averageSpeedIrmDrillingSlide = ((fullPenetrationIrmDrillingSlide/(fullTimeIrmDrillingSlide/1000))*3600).toFixed(1);
+			console.log("averageSpeedIrmDrillingSlide = ",averageSpeedIrmDrillingSlide);
+			var fullPenetrationIrmDrilling = fullPenetrationIrmDrillingRotor+fullPenetrationIrmDrillingSlide;
+		}
+				
+		var averageSpeedApdLoad = ((fullPenetrationApdModeLoad/(fullTimeApdModeLoad/1000))*3600).toFixed(1);
+		console.log("averageSpeedApdLoad = ",averageSpeedApdLoad);
+		var averageSpeedApdPressure = ((fullPenetrationApdModePressure/(fullTimeApdModePressure/1000))*3600).toFixed(1);
+		console.log("averageSpeedApdPressure = ",averageSpeedApdPressure);
+		var averageSpeedApdSpeed = ((fullPenetrationApdModeSpeed/(fullTimeApdModeSpeed/1000))*3600).toFixed(1);
+		console.log("averageSpeedApdSpeed = ",averageSpeedApdSpeed);
+		var averageSpeedApdTorque = ((fullPenetrationApdModeTorque/(fullTimeApdModeTorque/1000))*3600).toFixed(1);
+		console.log("averageSpeedApdTorque = ",averageSpeedApdTorque);				
+		
+		ofs.writeLine(";;;;;;;;;;");
+		ofs.writeLine(";;;;;;;;;;");
+		function calcPrct(allTime, apdTime) {
+		// calc percentage
+			if(allTime==0)
+				return 0;		
+			return Math.floor((apdTime / allTime) * 100);
+		}		
+		
+		if (nodeReportOperation.exists()){
+			var strTimeDrilling = call("Sec2Date",{sec:Math.floor(fullTimeIrmDrilling/1000)});		
+			var strPenetration = fullPenetrationIrmDrilling;
+			var strTimeRotor = call("Sec2Date",{sec:Math.floor(fullTimeIrmDrillingRotor/1000)});
+			var strPenetrationRotor = fullPenetrationIrmDrillingRotor; 
+			var strMSPRotor = isNaN(averageSpeedIrmDrillingRotor)?'0':averageSpeedIrmDrillingRotor;		
+			var strTimeSlide = call("Sec2Date",{sec:Math.floor(fullTimeIrmDrillingSlide/1000)});
+			var strPenetrationSlide = fullPenetrationIrmDrillingSlide;
+			var strMSPSlide = isNaN(averageSpeedIrmDrillingSlide)?'0':averageSpeedIrmDrillingSlide;
+			var strTimeReamingFull = call("Sec2Date",{sec:Math.floor(fullTimeIrmReaming/1000)});
+			var strTimeReamingDescent = call("Sec2Date",{sec:Math.floor(fullTimeIrmReamingDescent/1000)});
+			var strTimeReamingRise = call("Sec2Date",{sec:Math.floor(fullTimeIrmReamingRise/1000)});
+			var strTimeWiperTripFull = call("Sec2Date",{sec:Math.floor(fullTimeIrmWiperTrip/1000)});
+			var strTimeWiperTripDescent = call("Sec2Date",{sec:Math.floor(fullTimeIrmWiperTripDescent/1000)});
+			var strTimeWiperTripRise = call("Sec2Date",{sec:Math.floor(fullTimeIrmWiperTripRise/1000)});
+			var strTimeFlushing = call("Sec2Date",{sec:Math.floor(fullTimeIrmWashing/1000)});
+			var strTimeRoundTripsFull = call("Sec2Date",{sec:Math.floor(fullTimeIrmSPO/1000)});
+			var strTimeRoundTripsDescent = call("Sec2Date",{sec:Math.floor(fullTimeIrmSPODescent/1000)});
+			var strTimeRoundTripsRise = call("Sec2Date",{sec:Math.floor(fullTimeIrmSPORise/1000)});
+			var strTimeDrillPipeSlips = call("Sec2Date",{sec:Math.floor(fullTimeIrmDrillPipeSlips/1000)});
+			var strTimeUndefined = call("Sec2Date",{sec:Math.floor(fullTimeIrmUndfined/1000)});
+			var strTimeStop = call("Sec2Date",{sec:Math.floor(fullTimeIrmStop/1000)});
+			
+			var strNamingIrmFull = "ИТОГО:;Общее время(ч:м:с);Бурение(ч:м:с);Проходка;Ротором(ч:м:с);Проходка ротором(м);МСП ротором(м/ч);Слайдом(ч:м:с);Проходка слайдом(м);МСП слайдом(м/ч);Проработка(ч:м:с);Проработка спуск(ч:м:с);Проработка подъем(ч:м:с);Шаблонировка(ч:м:с);Шаблонировка спуск(ч:м:с);Шаблонировка подъем(ч:м:с);Промывка(ч:м:с);СПО(ч:м:с);СПО спуск(ч:м:с);СПО подъем(ч:м:с);На клиньях(ч:м:с);Остановка(ч:м:с);Неопределенность(ч:м:с)";
+			ofs.writeLine(strNamingIrmFull);			
+			
+			objJSON.Operations.OperationsTitle = "Операции:;Бурение(ч:м:с);Проходка;Ротором(ч:м:с);Проходка ротором(м);МСП ротором(м/ч);Слайдом(ч:м:с);Проходка слайдом(м);МСП слайдом(м/ч);Проработка(ч:м:с);Проработка спуск(ч:м:с);Проработка подъем(ч:м:с);Шаблонировка(ч:м:с);Шаблонировка спуск(ч:м:с);Шаблонировка подъем(ч:м:с);Промывка(ч:м:с);СПО(ч:м:с);СПО спуск(ч:м:с);СПО подъем(ч:м:с);На клиньях(ч:м:с);Наращивание(ч:м:с);Остановка(ч:м:с);Неопределенность(ч:м:с)";
+			objJSON.Operations.TimeDrilling = strTimeDrilling;
+			objJSON.Operations.Penetration = strPenetration;
+			objJSON.Operations.TimeRotor = strTimeRotor;
+			objJSON.Operations.PenetrationRotor = strPenetrationRotor;
+			objJSON.Operations.MSPRotor = strMSPRotor;
+			objJSON.Operations.TimeSlide = strTimeSlide;
+			objJSON.Operations.PenetrationSlide = strPenetrationSlide;
+			objJSON.Operations.MSPSlide = strMSPSlide;
+			objJSON.Operations.TimeReamingFull = strTimeReamingFull;
+			objJSON.Operations.TimeReamingDescent = strTimeReamingDescent;
+			objJSON.Operations.TimeReamingRise = strTimeReamingRise;
+			objJSON.Operations.TimeWiperTripFull = strTimeWiperTripFull;
+			objJSON.Operations.TimeWiperTripDescent = strTimeWiperTripDescent;
+			objJSON.Operations.TimeWiperTripRise = strTimeWiperTripRise;
+			objJSON.Operations.TimeFlushing = strTimeFlushing; 
+			objJSON.Operations.TimeRoundTripsFull = strTimeRoundTripsFull;
+			objJSON.Operations.TimeRoundTripsDescent = strTimeRoundTripsDescent;
+			objJSON.Operations.TimeRoundTripsRise = strTimeRoundTripsRise;
+			objJSON.Operations.TimeDrillPipeSlips = strTimeDrillPipeSlips;
+			objJSON.Operations.TimeAddingDrillPipe = '-';
+			objJSON.Operations.TimeStop = strTimeStop;			
+			objJSON.Operations.TimeUndefined = strTimeUndefined;
+						
+			var strToFileIrmFull = ";"
+								+call("Sec2Date",{sec:Math.floor(fullTimeIrm/1000)})+";"
+								+strTimeDrilling+" ("+calcPrct(fullTimeIrm, fullTimeIrmDrilling)+"%);"
+								+strPenetration+" ("+calcPrct(fullPenetration, fullPenetrationIrmDrilling)+"%);"
+								+strTimeRotor+" ("+calcPrct(fullTimeIrm, fullTimeIrmDrillingRotor)+"%);"
+								+strPenetrationRotor+" ("+calcPrct(fullPenetration, fullPenetrationIrmDrillingRotor)+"%);"
+								+strMSPRotor+";"
+								+strTimeSlide+" ("+calcPrct(fullTimeIrm, fullTimeIrmDrillingSlide)+"%);"
+								+strPenetrationSlide+" ("+calcPrct(fullPenetration, fullPenetrationIrmDrillingSlide)+"%);"
+								+strMSPSlide+";"
+								+strTimeReamingFull+" ("+calcPrct(fullTimeIrm, fullTimeIrmReaming)+"%);"
+								+strTimeReamingDescent+" ("+calcPrct(fullTimeIrm, fullTimeIrmReamingDescent)+"%);"
+								+strTimeReamingRise+" ("+calcPrct(fullTimeIrm, fullTimeIrmReamingRise)+"%);"
+								+strTimeWiperTripFull+" ("+calcPrct(fullTimeIrm, fullTimeIrmWiperTrip)+"%);"
+								+strTimeWiperTripDescent+" ("+calcPrct(fullTimeIrm, fullTimeIrmWiperTripDescent)+"%);"
+								+strTimeWiperTripRise+" ("+calcPrct(fullTimeIrm, fullTimeIrmWiperTripRise)+"%);"
+								+strTimeFlushing+" ("+calcPrct(fullTimeIrm, fullTimeIrmWashing)+"%);"
+								+strTimeRoundTripsFull+" ("+calcPrct(fullTimeIrm, fullTimeIrmSPO)+"%);"
+								+strTimeRoundTripsDescent+" ("+calcPrct(fullTimeIrm, fullTimeIrmSPODescent)+"%);"
+								+strTimeRoundTripsRise+" ("+calcPrct(fullTimeIrm, fullTimeIrmSPORise)+"%);"
+								+strTimeDrillPipeSlips+" ("+calcPrct(fullTimeIrm, fullTimeIrmDrillPipeSlips)+"%);"
+								+strTimeStop+" ("+calcPrct(fullTimeIrm, fullTimeIrmStop)+"%);"							
+								+strTimeUndefined+" ("+calcPrct(fullTimeIrm, fullTimeIrmUndfined)+"%);"
+								;
+								
+								
+			console.log(strToFileIrmFull);
+			ofs.writeLine(strToFileIrmFull);
+						
+		}
+		ofs.writeLine(";;;;;;;;;;");
+		
+		var strAPDTimeFull = call("Sec2Date",{sec:Math.floor(fullTimeApd/1000)});
+		var strAPDTimeDrilling = call("Sec2Date",{sec:Math.floor(fullTimeApdDrilling/1000)});
+		var strAPDTimeDescent = call("Sec2Date",{sec:Math.floor(fullTimeApdDescent/1000)});
+		var strAPDTimeRise = call("Sec2Date",{sec:Math.floor(fullTimeApdRise/1000)});
+		var strAPDBottomHoleStart = wellDepthStart;
+		var strAPDBottomHoleStop = wellDepthStop;
+		var strAPDPenetrationFull = fullPenetration;
+		var strAPDPenetration = Math.round(fullApdPenetration*100)/100;
+		 		
+		var strNamingFull = "АПД итого:;Общее время(ч:м:с);Время АПД(ч:м:с);Время бурения АПД(ч:м:с);Время спуска АПД(ч:м:с);Время подъема АПД(ч:м:с);Забой в начале(м);Забой в конце(м);Проходка всего(м);Проходка АПД(м)";		
+		ofs.writeLine(strNamingFull);
+		
+		objJSON.APD.APDTitle = "АПД итого:;Время АПД(ч:м:с);Время бурения АПД(ч:м:с);Время спуска АПД(ч:м:с);Время подъема АПД(ч:м:с);Забой в начале(м);Забой в конце(м);Проходка всего(м);Проходка АПД(м)";
+		objJSON.APD.APDTimeFull = strAPDTimeFull;
+		objJSON.APD.APDTimeDrilling = strAPDTimeDrilling;
+		objJSON.APD.APDTimeDescent = strAPDTimeDescent;
+		objJSON.APD.APDTimeRise = strAPDTimeRise;		
+		objJSON.APD.APDBottomHoleStart = strAPDBottomHoleStart;		
+		objJSON.APD.APDBottomHoleStop = strAPDBottomHoleStop;
+		objJSON.APD.APDPenetrationFull = strAPDPenetrationFull;
+		objJSON.APD.APDPenetration = strAPDPenetration;
+
+			
+//		var strToFileFull = ";"+call("Sec2Date",{sec:Math.floor((to-from)/1000)})+";"+call("Sec2Date",{sec:Math.floor(fullTimeApd/1000)})+";"+call("Sec2Date",{sec:Math.floor(fullTimeApdDrilling/1000)})+";"+call("Sec2Date",{sec:Math.floor(fullTimeApdDescent/1000)})+";"+call("Sec2Date",{sec:Math.floor(fullTimeApdRise/1000)})+";"+Math.round((wellDepthStart)*100)/100+";"+Math.round((wellDepthStop)*100)/100 +";"+Math.round((wellDepthStop-wellDepthStart)*100)/100+";"+Math.round(fullApdPenetration*100)/100;
+		var strToFileFull = ";"
+							+call("Sec2Date",{sec:Math.floor((to-from)/1000)})+";"
+							+strAPDTimeFull+" ("+calcPrct((to-from), fullTimeApd)+"%);"
+							+strAPDTimeDrilling+" ("+calcPrct(fullTimeApd, fullTimeApdDrilling)+"%);"
+							+strAPDTimeDescent+" ("+calcPrct(fullTimeApd, fullTimeApdDescent)+"%);"
+							+strAPDTimeRise+" ("+calcPrct(fullTimeApd, fullTimeApdRise)+"%);"
+							+strAPDBottomHoleStart+";"
+							+strAPDBottomHoleStop+";"
+							+strAPDPenetrationFull+";"
+							+strAPDPenetration+" ("+calcPrct((wellDepthStop-wellDepthStart), fullApdPenetration)+"%);";
+							
+		console.log(strToFileFull);
+		ofs.writeLine(strToFileFull);
+		ofs.writeLine(";;;;;;;;;;");	
+		
+		var strAPDTimeModeLoad = call("Sec2Date",{sec:Math.floor(fullTimeApdModeLoad/1000)});
+		var strAPDPenetrationModeLoad = Math.round(fullPenetrationApdModeLoad*100)/100;
+		var strAPDMSPModeLoad = isNaN(averageSpeedApdLoad)?'0':averageSpeedApdLoad;
+		var strAPDTimeModePressure = call("Sec2Date",{sec:Math.floor(fullTimeApdModePressure/1000)});
+		var strAPDPenetrationModePressure = Math.round(fullPenetrationApdModePressure*100)/100;
+		var strAPDMSPModePressure = isNaN(averageSpeedApdPressure)?'0':averageSpeedApdPressure;
+		var strAPDTimeModeSpeed = call("Sec2Date",{sec:Math.floor(fullTimeApdModeSpeed/1000)});
+		var strAPDPenetrationModeSpeed = Math.round(fullPenetrationApdModeSpeed*100)/100;
+		var strAPDMSPModeSpeed = isNaN(averageSpeedApdSpeed)?'0':averageSpeedApdSpeed;
+		var strAPDTimeModeTorque = call("Sec2Date",{sec:Math.floor(fullTimeApdModeTorque/1000)});
+		var strAPDPenetrationModeTorque =   Math.round(fullPenetrationApdModeTorque*100)/100;
+		var strAPDMSPModeTorque = isNaN(averageSpeedApdTorque)?'0':averageSpeedApdTorque; 
+				
+		var strNamingModes = "АПД режимы:;Время по Нагрузке(ч:м:с);Проходка по нагрузке(м);МСП по нагрузке(м/ч);Время по Давлению(ч:м:с);Проходка по Давлению(м);МСП по давлению(м/ч);Время по Скорости(ч:м:с);Проходка поскорости(м);МСП по скорости(м/ч);Время по Моменту(ч:м:с);Проходка по Моменту(м);МСП по моменту(м/ч);";
+		ofs.writeLine(strNamingModes);
+		
+		objJSON.APDModes.APDModesTitle = "АПД режимы:;Время по Нагрузке(ч:м:с);Проходка по нагрузке(м);МСП по нагрузке(м/ч);Время по Давлению(ч:м:с);Проходка по Давлению(м);МСП по давлению(м/ч);Время по Скорости(ч:м:с);Проходка поскорости(м);МСП по скорости(м/ч);Время по Моменту(ч:м:с);Проходка по Моменту(м);МСП по моменту(м/ч);";
+		objJSON.APDModes.APDTimeModeLoad = strAPDTimeModeLoad;
+		objJSON.APDModes.APDPenetrationModeLoad = strAPDPenetrationModeLoad;
+		objJSON.APDModes.APDMSPModeLoad = strAPDMSPModeLoad;
+		objJSON.APDModes.APDTimeModePressure = strAPDTimeModePressure;
+		objJSON.APDModes.APDPenetrationModePressure = strAPDPenetrationModePressure;
+		objJSON.APDModes.APDMSPModePressure = strAPDMSPModePressure; 
+		objJSON.APDModes.APDTimeModeSpeed = strAPDTimeModeSpeed;
+		objJSON.APDModes.APDPenetrationModeSpeed = strAPDPenetrationModeSpeed;
+		objJSON.APDModes.APDMSPModeSpeed = strAPDMSPModeSpeed;
+		objJSON.APDModes.APDTimeModeTorque = strAPDTimeModeTorque;
+		objJSON.APDModes.APDPenetrationModeTorque = strAPDPenetrationModeTorque;
+		objJSON.APDModes.APDMSPModeTorque = strAPDMSPModeTorque;
+		
+//		var strToFileModes = ";"+call("Sec2Date",{sec:Math.floor(fullTimeApdModeLoad/1000)})+";"+Math.round((fullPenetrationApdModeLoad)*100)/100+";"+call("Sec2Date",{sec:Math.floor(fullTimeApdModePressure/1000)})+";"+Math.round((fullPenetrationApdModePressure)*100)/100 +";"+call("Sec2Date",{sec:Math.floor(fullTimeApdModeSpeed/1000)})+";"+Math.round((fullPenetrationApdModeSpeed)*100)/100 +";"+call("Sec2Date",{sec:Math.floor(fullTimeApdModeTorque/1000)})+";"+Math.round((fullPenetrationApdModeTorque)*100)/100 +";";
+		var strToFileModes = ";"
+								+strAPDTimeModeLoad+" ("+calcPrct(fullTimeApd, fullTimeApdModeLoad)+"%);"
+								+strAPDPenetrationModeLoad+" ("+calcPrct(fullApdPenetration, fullPenetrationApdModeLoad)+"%);"
+								+strAPDMSPModeLoad+";"
+								+strAPDTimeModePressure+" ("+calcPrct(fullTimeApd, fullTimeApdModePressure)+"%);"
+								+strAPDPenetrationModePressure+" ("+calcPrct(fullApdPenetration, fullPenetrationApdModePressure)+"%);"
+								+strAPDMSPModePressure+";"
+								+strAPDTimeModeSpeed+" ("+calcPrct(fullTimeApd, fullTimeApdModeSpeed)+"%);"
+								+strAPDPenetrationModeSpeed+" ("+calcPrct(fullApdPenetration, fullPenetrationApdModeSpeed)+"%);"
+								+strAPDMSPModeSpeed+";"
+								+strAPDTimeModeTorque+" ("+calcPrct(fullTimeApd, fullTimeApdModeTorque)+"%);"
+								+strAPDPenetrationModeTorque+" ("+calcPrct(fullApdPenetration, fullPenetrationApdModeTorque)+"%);"
+								+strAPDMSPModeTorque+";"
+								;
+								
+		console.log(strToFileModes);
+		ofs.writeLine(strToFileModes);
+		}
+		catch(exccalc){
+			console.log("Calculation exception " + exccalc);
+		}
+		try {
+// Наработка		
+		ofs.writeLine(";;;;;;;;;;");	
+		
+		var strOperTimeTitle = ";Талевый канат(тм);Буровой насос 1(ч);Буровой насос 2(ч);Лебедка(ч);;;;;;";
+		ofs.writeLine(strOperTimeTitle);	
+		
+		var OTWireline = (call('getUaDataByDate',{strnode:oper_time_wireline,datestop:to}).value - call('getUaDataByDate',{strnode:oper_time_wireline,datestop:from}).value);	
+		var OTPump1 = (call('getUaDataByDate',{strnode:oper_time_pump1,datestop:to}).value - call('getUaDataByDate',{strnode:oper_time_pump1,datestop:from}).value)/3600000;	
+		var OTPump2 = (call('getUaDataByDate',{strnode:oper_time_pump2,datestop:to}).value - call('getUaDataByDate',{strnode:oper_time_pump2,datestop:from}).value)/3600000;
+		var OTDrawworks = (call('getUaDataByDate',{strnode:oper_time_drawworks,datestop:to}).value - call('getUaDataByDate',{strnode:oper_time_drawworks,datestop:from}).value)/3600000;
+		
+		objJSON.OperTimeDay.OTDayTitle = "Наработка суточная:;Талевый канат(тм);Буровой насос 1(ч);Буровой насос 2(ч);Лебедка(ч)";
+		objJSON.OperTimeDay.OTWirelineDay = OTWireline;
+		objJSON.OperTimeDay.OTPump1Day = OTPump1;
+		objJSON.OperTimeDay.OTPump2Day = OTPump2
+		objJSON.OperTimeDay.OTDrawworksDay = OTDrawworks;
+				
+		
+		var strOperTime = "Наработка суточная:"+";"+Math.ceil(OTWireline)+";"+Math.ceil(OTPump1)+";"+Math.ceil(OTPump2)+";"+Math.ceil(OTDrawworks)+";;;;;;";
+				
+		ofs.writeLine(strOperTime);
+		
+		//ofs.writeLine(";;;;;;;;;");
+		
+		//ofs.writeLine(strOperTimeTitle);
+		OTWireline = call('getUaDataByDate',{strnode:oper_time_wireline,datestop:to}).value;	
+		OTPump1 = call('getUaDataByDate',{strnode:oper_time_pump1,datestop:to}).value/3600000;	
+		OTPump2 = call('getUaDataByDate',{strnode:oper_time_pump2,datestop:to}).value/3600000;
+		OTDrawworks = call('getUaDataByDate',{strnode:oper_time_drawworks,datestop:to}).value/3600000;
+		
+		strOperTime = "Наработка общая:"+";"+Math.ceil(OTWireline)+";"+Math.ceil(OTPump1)+";"+Math.ceil(OTPump2)+";"+Math.ceil(OTDrawworks)+";;;;;;";
+		
+		objJSON.OperTimeFull.OTFullTitle = "Наработка общая:;Талевый канат(тм);Буровой насос 1(ч);Буровой насос 2(ч);Лебедка(ч)";
+		objJSON.OperTimeFull.OTWirelineFull = OTWireline;
+		objJSON.OperTimeFull.OTPump1Full = OTPump1;
+		objJSON.OperTimeFull.OTPump2Full = OTPump2
+		objJSON.OperTimeFull.OTDrawworksFull = OTDrawworks;		
+				
+		ofs.writeLine(strOperTime);
+		ofs.writeLine(";;;;;;;;;");
+		}
+		catch(excopertime){
+			console.log("Opertime exception " + excopertime);
+		}
+		ofs.close();
+		
+		
+		var strJSON = JSON.stringify(objJSON);
+		console.log('JSON = ', strJSON);
+		
+		var nodeJSONReport = new UaNode("AGENT.OBJECTS.Rig.Reports.JSONReportDay");
+		nodeJSONReport.assign({value: strJSON});	
+		
+		call("reqToNodeServer", {csvname: filename});			
+}
+catch (exp)
+{
+	console.log("Full Exception " + exp);
+	if (exp.indexOf('No Data') > -1)
+		return 0; // ok
+	return undefined;
+}
+finally
+{
+//		if (!!ofs && ofs.opened == true)
+
+	if (!!ofs){
+		ofs.close();
+		
+//			console.log ("ofs close");
+	}
+	
+}]]></code>
+</script>

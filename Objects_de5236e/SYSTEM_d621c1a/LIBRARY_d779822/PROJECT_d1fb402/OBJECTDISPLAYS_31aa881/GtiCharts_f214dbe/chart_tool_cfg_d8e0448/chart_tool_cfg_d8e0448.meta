@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.chart_tool_cfg
+NodeClass: Variable
+BrowseName: 1:chart_tool_cfg
+DisplayName: en|chart_tool_cfg
+Description: en|chart_tool_cfg
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

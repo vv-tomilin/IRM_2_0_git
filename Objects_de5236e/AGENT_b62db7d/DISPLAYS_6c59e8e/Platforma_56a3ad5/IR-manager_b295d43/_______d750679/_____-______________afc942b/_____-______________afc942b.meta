@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.Platforma.IR-manager.Регион.Ханты-Мансийский АО
+NodeClass: Variable
+BrowseName: 1:Ханты-Мансийский АО
+DisplayName: en|Ханты-Мансийский АО
+Description: en|Ханты-Мансийский АО
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Settings_param.TDSTorqueParam.tds_torque_max_value
+NodeClass: Variable
+BrowseName: 1:tds_torque_max_value
+DisplayName: en|tds_torque_max_value
+Description: en|tds_torque_max_value
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.RawData

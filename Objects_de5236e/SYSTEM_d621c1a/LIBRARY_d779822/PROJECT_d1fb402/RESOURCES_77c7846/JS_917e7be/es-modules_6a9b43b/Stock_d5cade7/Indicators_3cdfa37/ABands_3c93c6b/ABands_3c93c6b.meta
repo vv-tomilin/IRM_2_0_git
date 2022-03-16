@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Stock/Indicators/ABands
+NodeClass: Object
+BrowseName: 1:ABands
+DisplayName: en|ABands
+Description: en|ABands
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

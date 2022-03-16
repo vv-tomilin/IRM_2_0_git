@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.MinHookSpeed
+NodeClass: Variable
+BrowseName: 1:MinHookSpeed
+DisplayName: en|MinHookSpeed
+Description: en|MinHookSpeed
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

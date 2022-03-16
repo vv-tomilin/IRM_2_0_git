@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/VariablePie
+NodeClass: Object
+BrowseName: 1:VariablePie
+DisplayName: en|VariablePie
+Description: en|VariablePie
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

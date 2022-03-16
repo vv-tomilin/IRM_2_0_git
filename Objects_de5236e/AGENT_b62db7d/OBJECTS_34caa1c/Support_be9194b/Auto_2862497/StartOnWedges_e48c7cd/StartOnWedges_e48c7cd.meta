@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.StartOnWedges
+NodeClass: Variable
+BrowseName: 1:StartOnWedges
+DisplayName: en|StartOnWedges
+Description: en|StartOnWedges
+DataType: UInt64
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.RawData

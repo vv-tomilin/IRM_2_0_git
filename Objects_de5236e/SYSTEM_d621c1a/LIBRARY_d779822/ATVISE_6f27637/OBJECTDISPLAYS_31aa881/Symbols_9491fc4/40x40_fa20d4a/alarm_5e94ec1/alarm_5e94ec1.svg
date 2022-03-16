@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg y="0px" height="40" id="Ebene_1" xmlns:atv="http://webmi.atvise.com/2007/svgext" enable-background="new 0 0 40 40" version="1.1" width="40" xml:space="preserve" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" x="0px">
+ <defs/>
+ <metadata>
+  <atv:parameter desc="symbol color" substitute="$SYMBOLCOLOR$" defaultvalue="#000000" valuetype="color" name="symbolColor" behavior="optional"/>
+  <atv:parameter desc="reflexion color" defaultvalue="#FFFFFF" valuetype="color" name="reflectionColor" behavior="optional"/>
+  <atv:gridconfig enabled="false" height="20" gridstyle="lines" width="20"/>
+  <atv:snapconfig enabled="false" height="1" width="1"/>
+ </metadata>
+ <g atv:refpy="20" atv:refpx="20" id="id_0">
+  <rect atv:refpy="21.611" ry="1.239" atv:refpx="84.282" y="2.823" height="9.361" stroke="$SYMBOLCOLOR$" id="id_3" width="1.897" stroke-width="1" fill="none" rx="0.948" x="19.325"/>
+  <rect atv:refpy="25.832" ry="1.239" atv:refpx="47.36" y="9.52" height="9.361" transform="matrix(0.866,-0.5,0.5,0.866,0,0)" stroke="$SYMBOLCOLOR$" id="id_4" width="1.897" stroke-width="1" fill="none" rx="0.948" x="5.521"/>
+  <rect atv:refpy="98.711" ry="1.239" atv:refpx="12.889" y="1.087" height="9.361" transform="matrix(-0,-1,1,-0,0,0)" stroke="$SYMBOLCOLOR$" id="id_6" width="1.897" stroke-width="1" fill="none" rx="0.948" x="-22.608"/>
+  <rect atv:refpy="61.788" ry="1.239" atv:refpx="16.38" y="8.949" height="9.361" transform="matrix(0.5044,-0.8635,0.8635,0.5044,0,0)" stroke="$SYMBOLCOLOR$" id="id_8" width="1.897" stroke-width="1" fill="none" rx="0.948" x="-9.545"/>
+  <rect atv:refpy="25.833" ry="1.239" atv:refpx="124.706" y="-10.48" height="9.361" transform="matrix(-0.866,-0.5,-0.5,0.866,0,0)" stroke="$SYMBOLCOLOR$" id="id_16" width="1.897" stroke-width="1" fill="none" rx="0.948" x="-29.119"/>
+  <rect atv:refpy="55.555" ry="1.239" atv:refpx="157.005" y="-38.913" height="9.361" transform="matrix(0,-1,-1,0,0,0)" stroke="$SYMBOLCOLOR$" id="id_17" width="1.897" stroke-width="1" fill="none" rx="0.948" x="-22.609"/>
+  <rect atv:refpy="38.337" ry="1.239" atv:refpx="149.87" y="-25.592" height="9.361" transform="matrix(-0.5044,-0.8635,-0.8635,0.5044,0,0)" stroke="$SYMBOLCOLOR$" id="id_19" width="1.897" stroke-width="1" fill="none" rx="0.948" x="-29.723"/>
+  <path atv:refpy="33.102" atv:refpx="65.599" stroke="none" id="id_20" stroke-width="1" fill="$SYMBOLCOLOR$" d="M11.998,25.719L11.998,21.534L12.003,21.534L11.998,21.494L12.21,19.659L12.812,17.975L13.756,16.49L14.995,15.251L16.479,14.307L18.164,13.705L19.998,13.494L21.833,13.705L23.516,14.307L25.001,15.251L26.241,16.49L27.184,17.975L27.787,19.659L27.997,21.494L27.994,21.534L27.997,21.534L27.997,25.719L15.69,25.719L15.826,24.638L16.009,23.247L16.198,21.792L16.367,20.353L16.495,19.012L16.559,17.85L16.534,16.947L16.4,16.385L16.132,16.245L14.78,17.079L14.098,18.035L13.806,18.877L13.408,20.384L13.07,22.119L12.96,23.649L13.007,24.784L13.039,25.719Z" fill-rule="evenodd"/>
+  <path atv:refpy="71.926" atv:refpx="50.007" stroke="none" id="id_21" stroke-width="1" fill="$SYMBOLCOLOR$" d="M8.405,30.923L11.998,30.923L11.998,22.058L13.082,22.058L13.07,22.119L12.96,23.649L13.007,24.784L13.059,26.306L13.113,27.95L13.159,29.452L13.192,30.547L13.204,30.971L13.123,31.377L13.702,30.868L14.823,29.364L15.564,26.902L15.671,25.884L15.826,24.638L16.009,23.247L16.161,22.058L28,22.058L28,30.923L31.592,30.923L31.592,37.676L8.405,37.676Z" fill-rule="evenodd"/>
+ </g>
+</svg>

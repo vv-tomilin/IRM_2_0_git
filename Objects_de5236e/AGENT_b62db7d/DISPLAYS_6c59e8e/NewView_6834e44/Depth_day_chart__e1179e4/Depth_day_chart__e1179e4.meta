@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.Depth_day_chart 
+NodeClass: Variable
+BrowseName: 1:Depth_day_chart 
+DisplayName: en|Depth_day_chart 
+Description: en|Depth_day_chart 
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

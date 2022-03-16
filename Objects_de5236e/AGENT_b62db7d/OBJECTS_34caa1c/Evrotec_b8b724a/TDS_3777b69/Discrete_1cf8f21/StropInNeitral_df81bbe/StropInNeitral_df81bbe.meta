@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.TDS.Discrete.StropInNeitral
+NodeClass: Variable
+BrowseName: 1:StropInNeitral
+DisplayName: en|StropInNeitral
+Description: en|StropInNeitral
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Recomendations.DrillSpeed
+NodeClass: Object
+BrowseName: 1:DrillSpeed
+DisplayName: en|DrillSpeed
+Description: en|DrillSpeed
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

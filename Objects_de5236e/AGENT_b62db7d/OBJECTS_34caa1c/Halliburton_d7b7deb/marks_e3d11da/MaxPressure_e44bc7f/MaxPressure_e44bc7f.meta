@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Halliburton.marks.MaxPressure
+NodeClass: Variable
+BrowseName: 1:MaxPressure
+DisplayName: en|MaxPressure
+Description: en|MaxPressure
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

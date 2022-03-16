@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.APD1.Slide.Torque.Right_Max_Current
+NodeClass: Variable
+BrowseName: 1:Right_Max_Current
+DisplayName: en|Right_Max_Current
+Description: en|Right_Max_Current
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

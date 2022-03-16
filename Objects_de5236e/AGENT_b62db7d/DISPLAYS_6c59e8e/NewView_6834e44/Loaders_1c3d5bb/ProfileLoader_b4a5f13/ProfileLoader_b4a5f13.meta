@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.Loaders.ProfileLoader
+NodeClass: Variable
+BrowseName: 1:ProfileLoader
+DisplayName: en|ProfileLoader
+Description: en|ProfileLoader
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

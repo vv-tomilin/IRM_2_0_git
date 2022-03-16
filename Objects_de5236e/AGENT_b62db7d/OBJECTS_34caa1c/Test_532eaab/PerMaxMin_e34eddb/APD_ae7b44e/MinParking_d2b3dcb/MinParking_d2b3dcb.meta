@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.APD.MinParking
+NodeClass: Variable
+BrowseName: 1:MinParking
+DisplayName: en|MinParking
+Description: en|MinParking
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

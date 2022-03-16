@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.MENUSCRIPTS.call_ReqToNodeServer
+NodeClass: Variable
+BrowseName: 1:call_ReqToNodeServer
+DisplayName: en|call_ReqToNodeServer
+Description: en|call_ReqToNodeServer
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

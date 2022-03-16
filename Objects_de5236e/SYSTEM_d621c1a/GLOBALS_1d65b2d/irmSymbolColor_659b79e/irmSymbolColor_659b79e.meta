@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.GLOBALS.irmSymbolColor
+NodeClass: Variable
+BrowseName: 1:irmSymbolColor
+DisplayName: en|irmSymbolColor
+Description: en|irmSymbolColor
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.GlobalVariable

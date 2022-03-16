@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/graph-react/external-scripts
+NodeClass: Object
+BrowseName: 1:external-scripts
+DisplayName: en|external-scripts
+Description: en|external-scripts
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Болт главного подшипника
+NodeClass: ObjectType
+BrowseName: 1:Болт главного подшипника
+DisplayName: en|Болт главного подшипника
+Description: en|Болт главного подшипника
+IsAbstract: false

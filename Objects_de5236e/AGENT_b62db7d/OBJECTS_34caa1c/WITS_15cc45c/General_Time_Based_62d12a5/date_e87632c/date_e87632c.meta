@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.General_Time_Based.date
+NodeClass: Variable
+BrowseName: 1:date
+DisplayName: en|date
+Description: en|date
+DataType: Int64
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType

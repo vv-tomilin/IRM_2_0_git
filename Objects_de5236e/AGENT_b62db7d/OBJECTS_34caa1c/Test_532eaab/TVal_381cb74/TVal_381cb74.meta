@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.TVal
+NodeClass: Variable
+BrowseName: 1:TVal
+DisplayName: en|TVal
+Description: en|TVal
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

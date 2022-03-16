@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.MAIN.TestCharts
+NodeClass: Variable
+BrowseName: 1:TestCharts
+DisplayName: en|TestCharts
+Description: en|TestCharts
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

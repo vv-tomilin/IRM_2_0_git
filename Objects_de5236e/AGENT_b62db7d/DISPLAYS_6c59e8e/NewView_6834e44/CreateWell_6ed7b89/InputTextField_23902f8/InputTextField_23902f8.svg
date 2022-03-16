@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="31" version="1.2" width="600" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:parameter behavior="mandatory" defaultvalue="" name="name" substitute="$NAME$" valuetype="string"/>
+  <atv:parameter behavior="mandatory" defaultvalue="" desc="Путь до переменной" name="varPath" valuetype="address"/>
+  <atv:parameter behavior="mandatory" defaultvalue="" name="inputID" valuetype="string"/>
+  <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <svg atv:refpx="496.922" atv:refpy="51.358" height="31" id="id_9" text-anchor="middle" transform="matrix(3.7495,0,0,1.0573,0,0)" width="80" x="80.288" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.FlatComponents.EditableLabel" y="0">
+  <atv:argument name="fontColor" value="#ffffff"/>
+  <atv:argument name="controlTextColor" value="#000000"/>
+  <atv:argument name="controlTintColor" value="#ffffff"/>
+  <atv:argument name="editingBorderColor" value="#ffffff"/>
+  <atv:argument name="editingBackgroundColor" value="#ffffff"/>
+  <atv:argument name="focusStrokeColor" value="#ffffff"/>
+  <atv:argument name="fillColorInactive" value="#ffffff"/>
+  <atv:argument name="fill" value="#ffffff"/>
+  <atv:argument name="controlEditingBackgroundColor" value="#ffffff"/>
+  <atv:argument name="controlActiveBackgroundColor" value="#ffffff"/>
+  <atv:argument name="controlBackgroundColor" value="#ffffff"/>
+  <atv:argument name="validation" value="String"/>
+  <atv:argument name="base" prefix="base"/>
+  <atv:overwrite id="input_label" transform="matrix(0.2667,0,0,0.9458,0,0)" x="149.98" y="22.388"/>
+  <atv:overwrite height="31.776" id="input_bg" transform="matrix(0.2667,0,0,0.9458,0,0)" width="298.96"/>
+  <atv:overwrite height="48.276" id="blinking_frame" transform="matrix(0.2667,0,0,0.9458,0,0)" width="372.286"/>
+ </svg>
+ <line atv:refpx="143.508" atv:refpy="29.465" id="id_0" stroke="#c4c4c4" stroke-linecap="round" stroke-width="1" x1="3.881" x2="287.134" y1="27.965" y2="27.965"/>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var varPathConfig = {
+    id: webMI.query["inputID"],
+    varPath: webMI.query["varPath"]
+};
+
+setTimeout(function(){
+	webMI.trigger.fire("varPath", varPathConfig);
+}, 0);
+
+/*
+var stateVarConfig = {
+	id: webMI.query["inputID"],
+	stateVar: webMI.query["stateVar"]
+};
+
+setTimeout(function () {
+    webMI.trigger.fire("stateVar", stateVarConfig);
+}, 0);
+
+var textField = parent.document.querySelector("div[data-text]");
+console.log(textField);
+*/]]></script>
+ <text atv:refpx="31" atv:refpy="14.984" fill="#ffffff" font-family="Arial" font-size="18" id="id_3" text-anchor="start" x="4.5" y="19.984">$NAME$</text>
+</svg>

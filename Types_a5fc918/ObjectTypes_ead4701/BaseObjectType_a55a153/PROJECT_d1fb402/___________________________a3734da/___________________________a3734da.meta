@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Втулка главного подшипника
+NodeClass: ObjectType
+BrowseName: 1:Втулка главного подшипника
+DisplayName: en|Втулка главного подшипника
+Description: en|Втулка главного подшипника
+IsAbstract: false

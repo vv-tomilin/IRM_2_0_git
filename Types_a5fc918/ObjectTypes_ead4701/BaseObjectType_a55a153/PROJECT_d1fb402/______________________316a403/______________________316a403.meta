@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Выпускной трубопровод
+NodeClass: ObjectType
+BrowseName: 1:Выпускной трубопровод
+DisplayName: en|Выпускной трубопровод
+Description: en|Выпускной трубопровод
+IsAbstract: false

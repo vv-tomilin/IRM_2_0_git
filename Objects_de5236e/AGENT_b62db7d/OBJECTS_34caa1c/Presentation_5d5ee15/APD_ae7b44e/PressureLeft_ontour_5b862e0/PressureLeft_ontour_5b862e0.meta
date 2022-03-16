@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Presentation.APD.PressureLeftСontour
+NodeClass: Variable
+BrowseName: 1:PressureLeftСontour
+DisplayName: en|PressureLeftСontour
+Description: en|PressureLeftСontour
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Set_var.tool_position
+NodeClass: Object
+BrowseName: 1:tool_position
+DisplayName: en|tool_position
+Description: en|tool_position
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

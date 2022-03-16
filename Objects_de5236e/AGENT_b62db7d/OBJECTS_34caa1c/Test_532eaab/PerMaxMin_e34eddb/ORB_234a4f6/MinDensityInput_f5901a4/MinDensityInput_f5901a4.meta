@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.ORB.MinDensityInput
+NodeClass: Variable
+BrowseName: 1:MinDensityInput
+DisplayName: en|MinDensityInput
+Description: en|MinDensityInput
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

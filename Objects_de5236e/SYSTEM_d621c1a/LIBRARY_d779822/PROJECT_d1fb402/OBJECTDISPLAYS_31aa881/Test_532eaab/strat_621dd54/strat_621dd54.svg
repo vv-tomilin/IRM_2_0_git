@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="500" height="580" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+ <defs/>
+ <metadata>
+  <atv:gridconfig width="20" height="20" gridstyle="lines" enabled="false"/>
+  <atv:snapconfig width="10" height="10" enabled="false"/>
+ </metadata>
+ <foreignObject x="0" width="499.915" height="580" id="id_1" y="0">
+  <div id="strat" style="width:100%;height:100%;" xmlns="http://www.w3.org/1999/xhtml">
+   <style>
+	.tooltip{
+	}
+	.tooltip::after {
+		background: rgba(0, 51, 153, 0.8);
+		border-radius: 0px 3px 3px 3px;
+		box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+		color: #FFF;
+		content: attr(data-tooltip); 
+		opacity: 0; 
+		padding: 3px 7px;
+		position: absolute;
+		visibility: hidden; 
+		transition: all 0.4s ease-in-out; 
+		margin-left:20px;
+		margin-top:15px;
+		font-size:0.8em;
+		font-family:Arial;
+	}
+		
+	.tooltip:hover::after {
+		opacity: 1; 
+		visibility: visible;
+	}
+</style>
+  </div>
+ </foreignObject>
+ <script type="text/ecmascript"><![CDATA[webMI.data.subscribe("AGENT.OBJECTS.Test.ForMainWindow.strat",function(e){
+	var res=JSON.parse(e.value)
+	//console.log(res)
+	webMI.data.read("AGENT.OBJECTS.Depth_day_data.plan_data",function(val){
+		var max = JSON.parse(val.value);
+		max=max[max.length-1].vD
+		res.forEach(function(f,cnt){
+			var h=(parseInt(f.end)-parseInt(f.start))/max*100
+			//console.log(h)
+			var str="<div class='tooltip'  style='width:17%;height:"+h+"%; "
+			if(cnt%2==0){
+				str=str+"background-color:#2A2C2B;"
+			}
+			else{
+				str=str+"background-color:#003399;"
+			}
+			var tt=f.name+" начало:"+f.start+" конец:"+f.end
+			str=str+"' data-tooltip='"+tt +"'></div>"
+			//console.log(str)
+			document.getElementById("strat").insertAdjacentHTML('beforeend',str)
+		})
+	})
+})]]></script>
+</svg>

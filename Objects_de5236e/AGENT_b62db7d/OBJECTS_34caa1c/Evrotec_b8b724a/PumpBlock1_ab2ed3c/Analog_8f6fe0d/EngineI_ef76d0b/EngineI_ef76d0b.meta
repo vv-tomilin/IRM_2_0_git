@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.PumpBlock1.Analog.EngineI
+NodeClass: Variable
+BrowseName: 1:EngineI
+DisplayName: en|EngineI
+Description: en|EngineI
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

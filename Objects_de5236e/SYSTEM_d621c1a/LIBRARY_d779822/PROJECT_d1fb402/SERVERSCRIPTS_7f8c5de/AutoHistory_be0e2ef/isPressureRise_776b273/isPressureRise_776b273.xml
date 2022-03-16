@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nodePressureStr" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold"/>
+  <parameter name="nodeDiffPressure" type="node" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Support.Auto.DiffPressureValue"/>
+  <parameter name="nodePressureLimit" type="node" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Support.Auto.PressureLimit"/>
+  <parameter name="nodeTimeoutPressureLow" type="node" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Support.Auto.TimeoutPressureLow"/>
+  <code><![CDATA[//var nodePress = new UaNode(nodePressureStr);
+//console.log('Pressure = ', new UaNode(nodePressureStr).value);
+
+var retObj = call("AutoHistory.MinQuad", {nodeStr: nodePressureStr, countSec: 40});
+			
+//var nodeAnglePressure = new UaNode("AGENT.OBJECTS.Support.Auto.SPPAAngle"); 
+//nodeAnglePressure.assign({value: retObj.angle});
+var pressureLow = call('GetVarValue',{varname: 'AGENT.OBJECTS.Support.Auto.PressureLow'});
+//console.log('PressureLow = ',pressureLow);
+
+//console.log('Pressure angle = ',retObj.angle);
+//console.log('Pressure diffVal = ',retObj.diffVal);
+//console.log('Pressure avrVal  = ',retObj.avrVal);
+
+//console.log('Pressure startVal  = ',retObj.startVal);
+//console.log('Pressure stopVal  = ',retObj.stopVal);
+
+//var average = call('Auto.GetAverage',{nodeStr:nodePressureStr, countSec:90});
+//console.log('Pressure average = ',average);
+
+if(retObj.avrVal < nodePressureLimit.value){
+	call('Auto.FixVarValue',{varname: 'AGENT.OBJECTS.Support.Auto.PressureLow',varvalue: true});
+	return false;
+} else {
+//	var ntimeout = call('Auto.getNodeTimeout',{nodestr: 'AGENT.OBJECTS.Support.Auto.PressureLow'});
+//	console.log('timeout = ',ntimeout);
+//	console.log('TimeoutPressureLow = ',nodeTimeoutPressureLow.value);
+//	if(ntimeout > nodeTimeoutPressureLow.value){
+//	if(Math.abs(average - retObj.avrVal) < nodePressureLimit.value){
+	if(pressureLow){
+		if(retObj.angle < 3 && retObj.diffVal < nodePressureLimit.value){
+			call('SetVarValue',{varname: 'AGENT.OBJECTS.Support.Auto.PressureLow',varvalue: false});	
+		} else {
+			return false;
+		}
+	}
+}
+/*
+if(call('GetVarValue',{varname: 'AGENT.OBJECTS.Support.Auto.PressureLow'}) && Math.abs(average - retObj.avrVal)< nodePressureLimit.value){
+	call('SetVarValue',{varname: 'AGENT.OBJECTS.Support.Auto.PressureLow',varvalue: false});
+} else {
+	return false;
+}
+*/
+/*
+if(retObj.diffVal > retObj.avrVal && retObj.angle >10){
+	call('setTimeoutToAnalyse',{node:nodePressureStr,timeout: 120});
+}
+*/
+
+//var nodeisPressRise = new UaNode('AGENT.OBJECTS.Support.Auto.isPressureRise');
+//console.log('pressure angle = ',retObj.angle);
+//console.log('pressure difference = ',retObj.diffVal);
+//console.log('pressure average = ',retObj.avrVal);
+
+if(retObj.angle > 3 && retObj.diffVal > nodeDiffPressure.value && retObj.avrVal > nodePressureLimit.value){
+//	nodeisPressRise.assign({value: true});
+	return true;
+} 
+//else if(retObj.angle < -3 && Math.abs(retObj.diffVal) > nodeDiffPressure.value){
+//	nodeisPressRise.assign({value: false});
+//	console.log('isPressureRise = ',false);
+//}
+
+return false;]]></code>
+</script>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="request" type="http.request" trigger="false" relative="false" value=""/>
+  <code><![CDATA[if (!("fn" in request.getvalues)) {
+	throw "Function missing";
+}
+
+var fileOperations = call("Utilities.FileOperations");
+
+switch (request.getvalues.fn) {
+	case "GetArchiveFiles":
+		return fileOperations.getArchiveFiles(
+			request.getvalues.directoryTypes,
+			request.getvalues.archiveTypes,
+			request.getvalues.archiveName
+			);
+	case "GetArchives":
+		var archives = fileOperations.getArchives(request.getvalues.directoryTypes);
+		return archives;
+	case "GetDirectories":
+		return fileOperations.getDirectories(request.getvalues.directoryTypes);
+	case "GetFileSystemStatistics":
+		var result = [];
+		var fs = new FileSystem();
+		var dirs = fileOperations.getDirectories();
+		
+		dirs.forEach(function(dir) {
+			if (dir.error != -1) {
+				result.push({
+					dir: dir.type,
+					capacity: fs.capacity(dir.path),
+					freeSpace: fs.freeSpace(dir.path)
+				});
+			}
+		});
+		
+		return result;
+	default:
+		throw "Requested function unknown";
+}]]></code>
+</script>

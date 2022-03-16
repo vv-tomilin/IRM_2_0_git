@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Set_var.tool_position.listener
+NodeClass: Variable
+BrowseName: 1:listener
+DisplayName: en|listener
+Description: en|listener
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

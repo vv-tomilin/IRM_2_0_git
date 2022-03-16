@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRM_2_0.Left_Menu
+NodeClass: Object
+BrowseName: 1:Left_Menu
+DisplayName: en|Left_Menu
+Description: en|Left_Menu
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

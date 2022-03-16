@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="450" version="1.2" width="69" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <foreignObject height="450" id="id_0" width="69" x="0" y="0">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <script src="../../highcharts/highcharts.js"/>
+   <script src="../../highcharts/series-label.js"/>
+   <script src="../../highcharts/accessibility.js"/>
+   <script src="../../highcharts/bullet.js"/>
+   <figure class="highcharts-figure" style="margin:0">
+    <div id="APDHPContainer"/>
+   </figure>
+  </div>
+ </foreignObject>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var hookPosChart = Highcharts.chart(document.getElementById('APDHPContainer'), {
+  chart: {
+      marginTop: 40,
+      height:450,
+      width:69,
+      inverted: false,
+      marginLeft: 0,
+      type: 'bullet',
+      backgroundColor:'rgba(0,0,0,0)'
+  },
+  title: {
+      text:'',
+      style:{
+        lineHeight:0
+      }
+  },
+  title: {
+    text: null
+},
+  legend: {
+    enabled: false
+},
+  xAxis: {
+    labels:{
+      enabled:false
+    },
+    tickPosition:'inside',
+    tickWidth:0
+  },
+  yAxis: {
+      tickPosition:'inside',
+      tickWidth:1,
+      tickInterval:5,
+      tickColor:'#000',
+      gridLineWidth: 0,
+      min:-1,
+      max:30,
+      labels:{
+        x:30,
+        y:-1
+      },
+      tickInterval:1,
+      plotBands: [{
+          from: -2,
+          to: 0,
+          color: '#ffb75a'
+      }, {
+          from: 0,
+          to: 29,
+          color: '#00c439'
+      }, {
+          from: 29,
+          to: 30,
+          color: '#ffb75a'
+      }],
+      title: null
+  },
+  plotOptions: {
+    series: {
+        pointPadding: 0.25,
+        borderWidth: 0,
+        color: '#000',
+        targetOptions: {
+            width: '200%'
+        }
+    }
+},
+credits: {
+    enabled: false
+},
+exporting: {
+    enabled: false
+},
+  series: [{
+      data: [{
+          target: 7
+      }]
+  }],
+  tooltip: {
+      pointFormat: '<b>{point.y}</b> (with target at {point.target})'
+  }
+});
+
+webMI.data.read(["AGENT.OBJECTS.ASPD.Drawworks.HookBlock.Position.Limit_High_Warning","AGENT.OBJECTS.ASPD.Drawworks.HookBlock.Position.Limit_Low_Warning"],function(e){
+	//console.log(e[1].value,e[0].value)
+	var down=Math.floor(e[1].value)
+	var top=Math.floor(e[0].value)
+	hookPosChart.update({
+		yAxis:{
+			min:down-1,
+			max:top+1,
+			plotBands:[{
+				from: down-1,
+				to: down,
+				color: '#ffb75a'
+			}, 
+			{
+				from: down,
+				to: top,
+				color: '#00c439'
+			}, 
+			{
+				from: top,
+				to: top+1,
+				color: '#ffb75a'
+			}]
+		}
+		})
+	
+})
+webMI.data.subscribe("AGENT.OBJECTS.ASPD.Drawworks.HookBlock.Position.Value.Ing",function(e){
+	hookPosChart.update({series:[{data:[{target:e.value}]}]})
+})
+]]></script>
+</svg>

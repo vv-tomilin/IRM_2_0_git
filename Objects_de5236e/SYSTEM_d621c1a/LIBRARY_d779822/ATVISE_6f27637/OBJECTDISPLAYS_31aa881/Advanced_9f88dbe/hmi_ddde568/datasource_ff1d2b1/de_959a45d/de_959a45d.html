@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+  <title>Datasource - Hilfe DE</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Beschreibung</h1>
+<p>
+Das Display stellt den Verbindungsstatus zwischen dem atvise Server und den Datenquellen sowie die Konfiguration der Datenquelle dar. <br /><br />
+Im Standalone-Betrieb wird der Verbindungsstatus eines atvise Servers angezeigt, im Redundanz-Betrieb die Verbindungsstatus beider atvise Server.
+</p>
+
+<h1>Parameter</h1>
+<p>
+	<ul>
+	  <li><span class="parameter">Datenquelle</span>: Name der Datenquelle</li>
+	  <li><span class="parameter">Textfarbe</span>: Farbe, die auf die Beschriftung und Werte angewendet wird (Standard: Globaler Parameter <i>atvFontColor</i>)</li>
+	  <li><span class="parameter">F&uuml;llfarbe</span>: F&uuml;llfarbe von Hintergrundfl&auml;chen (Standard: Globaler Parameter <i>atvFillColor</i>)</li>
+	  <li><span class="parameter">Rahmenfarbe</span>: Farbe von Rahmen um Objekte (Standard: Globaler Parameter <i>atvBorderColor</i>)</li>
+	</ul>
+</p>
+
+<h1>M&ouml;gliche Zust&auml;nde und Darstellung</h1>
+<p>
+	<ul>
+		<li>Eine konfigurierte Verbindung wird durch eine graue Linie zwischen dem Server und dem URL-Konnektor der jeweiligen Verbindung dargestellt. Wird &uuml;ber eine solche auch aktuell kommuniziert, 
+		dann werden sie gr&uuml;n dargestellt.</li>
+		<li>Ist keine URL konfiguriert, wird keine Linie gezeichnet und der URL-Konnektor ist grau.</li>
+		<li>Kann keine Verbindung &uuml;ber die URL aufgebaut werden, wird keine Linie gezeichnet und der Konnektor ist rot.</li>
+		<li>Der Verbindungsstatus zu einer URL wird im Textfeld neben dem URL-Konnektor angegeben.<br />M&ouml;gliche Werte sind "Connected", "LostConnection" und "NotConnected" wenn eine URL konfiguriert ist oder "-" wenn keine URL konfiguriert ist.</li>
+		<li>Der Verbindungsstatus der gesamten Datenquelle wird durch den Konnektor am Server dargestellt.<br />Kann sich der Server &uuml;ber mindestens eine URL verbinden, ist der Konnektor gr&uuml;n. Ist der Konnektor rot, kann sich der Server &uuml;ber keine URL verbinden und es werden keine Daten empfangen.</li>
+		<li>Wenn im Redundanz-Betrieb zu einem atvise Server keine Verbindung aufgebaut werden kann, wird dieser mit einem grauen Rechteck &uuml;berlagert.</li>
+	</ul>
+</p>
+</body>
+</html>

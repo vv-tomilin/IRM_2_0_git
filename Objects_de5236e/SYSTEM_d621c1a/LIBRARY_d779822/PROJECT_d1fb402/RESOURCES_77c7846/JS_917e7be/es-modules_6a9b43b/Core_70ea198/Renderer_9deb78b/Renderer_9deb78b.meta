@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Core/Renderer
+NodeClass: Object
+BrowseName: 1:Renderer
+DisplayName: en|Renderer
+Description: en|Renderer
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:svg="http://www.w3.org/2000/svg" height="158.01601" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" inkscape:version="1.0beta1 (d07a077, 2019-11-03)" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="162.52975" sodipodi:docname="Tank_3d_v5_brown.svg" id="svg667">
+ <defs id="defs661"/>
+ <sodipodi:namedview inkscape:zoom="0.35" id="base" inkscape:window-y="23" inkscape:cy="358.61293" inkscape:cx="852.85713" inkscape:pageshadow="2" inkscape:window-maximized="0" inkscape:pageopacity="0.0" showgrid="false" bordercolor="#666666" pagecolor="#ffffff" inkscape:window-height="951" inkscape:document-units="mm" inkscape:document-rotation="0" borderopacity="1.0" inkscape:current-layer="layer1" inkscape:window-width="1644" inkscape:window-x="182"/>
+ <metadata id="metadata664">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+  <atv:gridconfig height="20" enabled="false" gridstyle="lines" width="20"/>
+  <atv:snapconfig height="10" enabled="false" width="10"/>
+ </metadata>
+ <g inkscape:groupmode="layer" atv:refpy="79.085" atv:refpx="81.265" transform="translate(119.81845,-53.283663)" id="layer1" inkscape:label="Слой 1">
+  <g atv:refpy="132.368" atv:refpx="-38.554" transform="matrix(1.6252976,0,0,1.5788496,-119.81845,53.283663)" id="g738">
+   <g atv:refpy="50" atv:refpx="50" id="frame">
+    <rect height="100" y="0" x="0" atv:refpy="50" atv:refpx="50" fill="none" width="100" id="rect713"/>
+   </g>
+   <g atv:refpy="50.09" atv:refpx="50" id="shape">
+    <path inkscape:connector-curvature="0" d="M75.157,25.25C75.157,11.522 64.102,0.327 50.43,0.097C36.359,-0.14 24.843,11.749 24.843,25.822L24.843,66.865C24.843,68.19 25.37,69.463 26.307,70.401L50,94.094L73.693,70.401C74.631,69.463 75.157,68.192 75.157,66.865Z" atv:refpy="47.094" atv:refpx="50" fill="#c78163" id="path716"/>
+    <rect height="18.25" y="81.833" x="44.342999" atv:refpy="90.958" atv:refpx="50" fill="#c78163" width="11.314" id="rect718"/>
+    <rect height="2" y="98" x="42" atv:refpy="99" atv:refpx="50" fill="#c78163" width="16" id="rect720"/>
+   </g>
+   <g atv:refpy="50.444" atv:refpx="50" id="dark">
+    <path inkscape:connector-curvature="0" d="M74.45,25.25C74.45,11.908 63.708,1.028 50.418,0.804C36.743,0.573 25.55,12.128 25.55,25.806L25.55,66.616C25.55,67.942 26.077,69.214 27.014,70.152L50,93.136L72.985,70.151C73.923,69.213 74.449,67.942 74.449,66.615L74.449,25.25Z" atv:refpy="46.968" atv:refpx="50" fill="#947365" id="path723"/>
+    <rect height="18.25" y="81.833" x="45.049999" atv:refpy="90.958" atv:refpx="50" fill="#947365" width="9.8999996" id="rect725"/>
+   </g>
+   <g atv:refpy="51.154" atv:refpx="49.999" id="light">
+    <path inkscape:connector-curvature="0" d="M73.035,25.25C73.035,12.254 62.217,1.736 49.112,2.231C36.646,2.702 26.964,13.341 26.964,25.816L26.964,66.116C26.964,67.442 27.491,68.714 28.427,69.652L50,91.222L71.571,69.651C72.509,68.713 73.035,67.442 73.035,66.115Z" atv:refpy="46.718" atv:refpx="49.999" fill="#de9c5f" id="path728"/>
+    <rect height="18.25" y="81.833" x="46.464001" atv:refpy="90.958" atv:refpx="50" fill="#de9c5f" width="7.0710001" id="rect730"/>
+   </g>
+   <g atv:refpy="51.562" atv:refpx="50" id="hlight">
+    <rect height="18.25" y="81.833" x="47.525002" atv:refpy="90.958" atv:refpx="50" fill="#fbbc5a" width="4.9499998" id="rect733"/>
+    <path inkscape:connector-curvature="0" d="M71.975,25C71.975,12.602 61.655,2.569 49.153,3.041C37.261,3.49 28.025,13.639 28.025,25.54L28.025,65.866C28.025,67.192 28.552,68.464 29.488,69.402L50,89.911L70.51,69.401C71.448,68.463 71.974,67.192 71.974,65.865L71.974,25Z" atv:refpy="46.468" atv:refpx="50" fill="#fbbc5a" id="path735"/>
+   </g>
+  </g>
+ </g>
+</svg>

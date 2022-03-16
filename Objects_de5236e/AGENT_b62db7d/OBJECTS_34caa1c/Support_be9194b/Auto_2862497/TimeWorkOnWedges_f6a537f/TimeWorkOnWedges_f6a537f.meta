@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.TimeWorkOnWedges
+NodeClass: Variable
+BrowseName: 1:TimeWorkOnWedges
+DisplayName: en|TimeWorkOnWedges
+Description: en|TimeWorkOnWedges
+DataType: UInt64
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.APD1.Halliburton.Speed_Drill_Setpoint
+NodeClass: Variable
+BrowseName: 1:Speed_Drill_Setpoint
+DisplayName: en|Speed_Drill_Setpoint
+Description: en|Speed_Drill_Setpoint
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

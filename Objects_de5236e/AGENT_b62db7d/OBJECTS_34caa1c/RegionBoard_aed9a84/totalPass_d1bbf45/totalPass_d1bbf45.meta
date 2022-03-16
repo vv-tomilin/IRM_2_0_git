@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.RegionBoard.totalPass
+NodeClass: Variable
+BrowseName: 1:totalPass
+DisplayName: en|totalPass
+Description: en|totalPass
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

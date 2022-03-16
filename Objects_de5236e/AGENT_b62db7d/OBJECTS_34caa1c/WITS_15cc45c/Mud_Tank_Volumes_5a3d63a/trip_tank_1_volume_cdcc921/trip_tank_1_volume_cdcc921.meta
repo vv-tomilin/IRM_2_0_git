@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.Mud_Tank_Volumes.trip_tank_1_volume
+NodeClass: Variable
+BrowseName: 1:trip_tank_1_volume
+DisplayName: en|trip_tank_1_volume
+Description: en|trip_tank_1_volume
+DataType: Int64
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType

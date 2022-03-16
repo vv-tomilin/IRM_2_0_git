@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/indicators/keltner-channels.js.map
+NodeClass: Variable
+BrowseName: 1:keltner-channels.js.map
+DisplayName: en|keltner-channels.js.map
+Description: en|keltner-channels.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

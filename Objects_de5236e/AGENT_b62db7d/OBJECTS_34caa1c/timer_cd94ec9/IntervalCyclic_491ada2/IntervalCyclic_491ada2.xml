@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="node" type="node" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.timer.active"/>
+  <code><![CDATA[var timeInterval = 1.0;
+
+if(node.value==1) {
+	// get actual time values of the Nodes in Structure AGENT.OBJECTS.timer.active
+	var sec = new UaNode("AGENT.OBJECTS.timer.sec").value;
+	var min = new UaNode("AGENT.OBJECTS.timer.min").value;
+	var hour = new UaNode("AGENT.OBJECTS.timer.hour").value;
+	
+
+	// call timer function
+	timer();
+	
+	function timer() {
+	  // Main Timer
+	
+	  sec = ++sec;
+	
+	  if (sec == 60) {
+		min = ++min;
+		sec = 0;
+	  }
+	
+	  if (min == 60) {
+		min = 0;
+		hour = ++hour;
+	  }
+	  
+		
+		var secV = new UaNode("AGENT.OBJECTS.timer.sec");
+		secV.value=sec;
+		
+		var minV = new UaNode("AGENT.OBJECTS.timer.min");
+		minV.value=min;
+		
+		var hourV = new UaNode("AGENT.OBJECTS.timer.hour");
+		hourV.value=hour;
+	
+		
+			// output for analyzing in atvise server Logger
+			//console.log("sec ",sec);
+			//console.log("min ",min);
+			//console.log("hour ",hour);
+	}
+
+
+	// Call Script again for creating a Interval processing as long as timer.active Value is 1
+	execute("AGENT.OBJECTS.timer.IntervalCyclic", {}, {delay: timeInterval, priority: 10});
+}]]></code>
+</script>

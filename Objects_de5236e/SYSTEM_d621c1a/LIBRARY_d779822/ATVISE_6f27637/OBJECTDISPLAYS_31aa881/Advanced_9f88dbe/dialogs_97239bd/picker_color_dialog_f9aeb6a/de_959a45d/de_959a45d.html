@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Beschreibung</h1>
+<p>Dieses Display kann als Dialogfeld zur Generierung einer Farbe im Hexadezimalformat verwendet werden.</p>
+<p>Farben k&ouml;nnen auf unterschiedliche Weise generiert werden, durch Klicken auf die Grundfarben im Kreis oben, durch manuelles Einstellen der RGB/HSV-Werte oder einfach durch Eingeben einer Farbe im Hexadezimalformat. Die aktuelle Farbe wird oben im inneren Kreis angezeigt. Die ausgew&auml;hlte Standardfarbe kann &uuml;ber den Parameter &quot;Farbe&quot; definiert werden.</p>
+<p>Um den Wert der Farbe im Display abzurufen, das dieses Dialogfeld ge&ouml;ffnet hat, muss der Trigger &quot;valuechanged_&quot; mit dem Namensparameter verbunden werden (z.&nbsp;B. &quot;valuechanged_myColorPicker&quot;). In der Regel wird dieses Display als Dialogfeld verwendet, Weitere Informationen finden Sie unter dem Display &quot;Eingabeelement Farbe&quot;.</p>
+<h1>Parameter</h1>
+<p>Es gibt vier Parameter:</p>
+<ul>
+  <li><span class="parameter">Name</span>: eindeutiger Name zur Identifizierung dieses Displays (mandatorisch)</li>
+  <li><span class="parameter">Farbe</span>: anfangs angezeigte Farbe</li>
+  <li><span class="parameter">Textfarbe</span>: Farbe, die auf die Beschriftung angewendet wird (Standard: Globaler Parameter <i>atvFontColor</i>)</li>
+  <li><span class="parameter">Rahmenfarbe</span>: Farbe, die auf Rahmen angewendet wird (Standard: Globaler Parameter <i>atvBorderColor</i>)</li>
+</ul>
+<h1>Beispiele</h1>
+<p>Erstellen Sie ein Display mit einer Schaltfl&auml;che, die das Display dieses Dialogfelds mit dem Namen &quot;myColorPicker&quot; &ouml;ffnet und verbinden Sie den Trigger &quot;valuechanged_myColorPicker&quot; f&uuml;r Wert&auml;nderungen.</p>
+</body>
+</html>

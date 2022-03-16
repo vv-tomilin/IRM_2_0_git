@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.tString
+NodeClass: Variable
+BrowseName: 1:tString
+DisplayName: en|tString
+Description: en|tString
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

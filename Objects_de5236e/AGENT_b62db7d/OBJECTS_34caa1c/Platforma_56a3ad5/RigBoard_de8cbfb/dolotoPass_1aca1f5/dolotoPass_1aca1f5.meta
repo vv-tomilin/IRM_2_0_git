@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Platforma.RigBoard.dolotoPass
+NodeClass: Variable
+BrowseName: 1:dolotoPass
+DisplayName: en|dolotoPass
+Description: en|dolotoPass
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

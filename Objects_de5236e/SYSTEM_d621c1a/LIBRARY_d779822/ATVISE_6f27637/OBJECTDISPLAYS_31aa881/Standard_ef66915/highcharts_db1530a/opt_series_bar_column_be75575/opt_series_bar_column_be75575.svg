@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" height="330" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="560" version="1.2">
+ <defs/>
+ <title>Configuration - Bar/Column</title>
+ <metadata>
+  <atv:gridconfig height="20" gridstyle="lines" width="20" enabled="true"/>
+  <atv:snapconfig height="5" width="5" enabled="true"/>
+ </metadata>
+ <text atv:refpy="233.5" fill="#000000" y="238" text-anchor="end" font-size="12" atv:refpx="130" x="157.5" font-family="Arial" id="id_18">T{Labels}:</text>
+ <text atv:refpy="127.5" fill="#000000" y="132" text-anchor="end" font-size="12" atv:refpx="113.5" x="155.5" font-family="Arial" id="id_40">T{Border color}:</text>
+ <text atv:refpy="198.5" fill="#000000" y="203" text-anchor="end" font-size="12" atv:refpx="103" x="157.5" font-family="Arial" id="id_41">T{Border line width}:</text>
+ <svg atv:refpy="132" y="113" height="30" atv:refpx="230.002" x="288" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.picker_color" width="160" transform="matrix(0.625,0,0,1,0,0)" id="series_borderColor">
+  <atv:argument value="series_borderColor" name="name"/>
+  <atv:argument value="30" name="tabIndex"/>
+  <atv:overwrite x="74.75" transform="matrix(1.6,0,0,1,0,0)" id="id_1"/>
+  <atv:overwrite x="73.5" transform="matrix(1.6,0,0,1,0,0)" id="button_bg"/>
+  <atv:overwrite y="2.75" height="24.5" x="72.5" width="24.5" transform="matrix(1.6,0,0,1,0,0)" id="button_stroke"/>
+  <atv:overwrite x="63.5" transform="matrix(1.6,0,0,1,0,0)" id="input_label"/>
+  <atv:overwrite width="66" transform="matrix(1.6,0,0,1,0,0)" id="input_bg"/>
+  <atv:overwrite width="68" transform="matrix(1.6,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="99.5" transform="matrix(1.6,0,0,1,0,0)" id="id_0"/>
+ </svg>
+ <svg atv:refpy="204" y="184" height="30" atv:refpx="230" x="288" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.picker_value" width="160" transform="matrix(0.625,0,0,1,0,0)" id="series_borderWidth">
+  <atv:argument value="32" name="tabIndex"/>
+  <atv:argument value="0" name="min"/>
+  <atv:overwrite transform="matrix(1.6,0,0,1,-96,0)" id="clickarea_dec"/>
+  <atv:overwrite transform="matrix(1.6,0,0,1,-96,0)" id="clickarea_inc"/>
+  <atv:overwrite x="65.5" transform="matrix(1.6,0,0,1,0,0)" id="input_label"/>
+  <atv:overwrite width="66" transform="matrix(1.6,0,0,1,0,0)" id="input_bg"/>
+  <atv:overwrite width="68" transform="matrix(1.6,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="99.5" transform="matrix(1.6,0,0,1,0,0)" id="id_0"/>
+ </svg>
+ <text atv:refpy="197.5" fill="#000000" y="202" text-anchor="start" font-size="12" atv:refpx="314.5" x="298.5" font-family="Arial" id="id_48">[T{px}]</text>
+ <text atv:refpy="86.5" fill="#000000" y="91" text-anchor="start" font-size="12" atv:refpx="50.84" x="24.5" font-family="Arial" font-weight="bold" id="id_30">T{Styling}:</text>
+ <text atv:refpy="163.5" fill="#000000" y="168" text-anchor="end" font-size="12" atv:refpx="124" x="155.5" font-family="Arial" id="id_0">T{Fill color}:</text>
+ <svg atv:refpy="167" y="148" height="30" atv:refpx="230.002" x="288" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.picker_color" width="160" transform="matrix(0.625,0,0,1,0,0)" id="series_color">
+  <atv:argument value="series_color" name="name"/>
+  <atv:argument value="31" name="tabIndex"/>
+  <atv:overwrite x="74.75" transform="matrix(1.6,0,0,1,0,0)" id="id_1"/>
+  <atv:overwrite x="73.5" transform="matrix(1.6,0,0,1,0,0)" id="button_bg"/>
+  <atv:overwrite y="2.75" height="24.5" x="72.5" width="24.5" transform="matrix(1.6,0,0,1,0,0)" id="button_stroke"/>
+  <atv:overwrite x="63.5" transform="matrix(1.6,0,0,1,0,0)" id="input_label"/>
+  <atv:overwrite width="66" transform="matrix(1.6,0,0,1,0,0)" id="input_bg"/>
+  <atv:overwrite width="68" transform="matrix(1.6,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="99.5" transform="matrix(1.6,0,0,1,0,0)" id="id_0"/>
+ </svg>
+ <svg atv:refpy="268" y="253" height="30" atv:refpx="332.998" x="95.263" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" width="160" transform="matrix(1.9,0,0,1,0,0)" id="series_dataLabels_format">
+  <atv:argument value="String" name="validation"/>
+  <atv:argument value="34" name="tabIndex"/>
+  <atv:overwrite x="295.5" transform="matrix(0.5263,0,0,1,0,0)" id="input_label"/>
+  <atv:overwrite width="296" transform="matrix(0.5263,0,0,1,0,0)" id="blinking_frame"/>
+  <atv:overwrite width="296" transform="matrix(0.5263,0,0,1,0,0)" id="input_bg"/>
+  <atv:overwrite width="298.5" transform="matrix(0.5263,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="303.5" transform="matrix(0.5263,0,0,1,0,0)" id="id_0"/>
+ </svg>
+ <text atv:refpy="268.5" fill="#000000" y="273" text-anchor="end" font-size="12" atv:refpx="113.5" x="156.5" font-family="Arial" id="id_6">T{Label format}:</text>
+ <svg atv:refpy="235" y="219" height="30" atv:refpx="230" x="289.6" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.checkbox" width="160" transform="matrix(0.625,0,0,1,0,0)" id="series_dataLabels_enabled">
+  <atv:argument value="true" name="valueOn"/>
+  <atv:argument value="true" name="outputValueOn"/>
+  <atv:argument value="false" name="outputValueOff"/>
+  <atv:argument value="T{visible}" name="label"/>
+  <atv:argument value="33" name="tabIndex"/>
+  <atv:overwrite transform="matrix(1.6,0,0,1,0,0)" id="checkbox_symbol"/>
+  <atv:overwrite transform="matrix(1.6,0,0,1,0,0)" id="checkbox_bg2"/>
+  <atv:overwrite transform="matrix(1.6,0,0,1,0,0)" id="id_5"/>
+  <atv:overwrite x="92.5" transform="matrix(1.6,0,0,1,0,0)" id="checkbox_item"/>
+  <atv:overwrite width="66" transform="matrix(1.6,0,0,1,0,0)" id="checkbox_bg"/>
+  <atv:overwrite width="68" transform="matrix(1.6,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="99.5" transform="matrix(1.6,0,0,1,0,0)" id="id_0"/>
+ </svg>
+ <text atv:refpy="36.5" fill="#000000" y="41" text-anchor="end" font-size="12" atv:refpx="102.5" x="153.5" font-family="Arial" id="id_4">T{Related x/y-axis}:</text>
+ <svg atv:refpy="35" y="20" height="30" atv:refpx="259" x="189.474" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.combobox" width="160" transform="matrix(0.95,0,0,1,0,0)" id="series_xAxis">
+  <atv:overwrite x="126.75" transform="matrix(1.0526,0,0,1,0,0)" id="id_3"/>
+  <atv:overwrite x="125.5" transform="matrix(1.0526,0,0,1,0,0)" id="button_bg"/>
+  <atv:overwrite x="125.5" transform="matrix(1.0526,0,0,1,0,0)" id="button_stroke"/>
+  <atv:overwrite x="124.5" transform="matrix(1.0526,0,0,1,0,0)" id="id_5"/>
+  <atv:overwrite x="117.5" transform="matrix(1.0526,0,0,1,0,0)" id="combobox_label"/>
+  <atv:overwrite width="118" transform="matrix(1.0526,0,0,1,0,0)" id="combobox_bg"/>
+  <atv:overwrite width="120" transform="matrix(1.0526,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="151.5" transform="matrix(1.0526,0,0,1,0,0)" id="combobox_stroke"/>
+ </svg>
+ <svg atv:refpy="35" y="20" height="30" atv:refpx="414" x="354.737" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.combobox" width="160" transform="matrix(0.95,0,0,1,0,0)" id="series_yAxis">
+  <atv:overwrite x="126.75" transform="matrix(1.0526,0,0,1,0,0)" id="id_3"/>
+  <atv:overwrite x="125.5" transform="matrix(1.0526,0,0,1,0,0)" id="button_bg"/>
+  <atv:overwrite x="125.5" transform="matrix(1.0526,0,0,1,0,0)" id="button_stroke"/>
+  <atv:overwrite x="124.5" transform="matrix(1.0526,0,0,1,0,0)" id="id_5"/>
+  <atv:overwrite x="117.5" transform="matrix(1.0526,0,0,1,0,0)" id="combobox_label"/>
+  <atv:overwrite width="118" transform="matrix(1.0526,0,0,1,0,0)" id="combobox_bg"/>
+  <atv:overwrite width="120" transform="matrix(1.0526,0,0,1,0,0)" id="id_2"/>
+  <atv:overwrite width="151.5" transform="matrix(1.0526,0,0,1,0,0)" id="combobox_stroke"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[var inputDefaults = {
+	"series_xAxis": 0,
+	"series_yAxis": 0,
+	"series_color": "#CCCCCC",
+	"series_borderColor": "#000000",
+	"series_borderWidth": 1,
+	"series_dataLabels_enabled": true,
+	"series_dataLabels_format": "{point.y:.2f}"
+};
+
+var activeSeries = webMI.query.activeSeries;
+var triggerEnabled = true;
+
+var chartname = webMI.query.chartname;
+var chart = webMI.trendFactory.getTrendByName(chartname);
+var options = chart.chart.options;
+var configHandler = new webMI.rootWindow.ConfigHandler;
+
+var xAxes = [];
+var yAxes = [];
+
+//Read options
+function readOptions() {
+	triggerEnabled = false;
+
+	//Search configured axis
+	xAxes = [];
+	yAxes = [];
+
+	var i = 0;
+	while (typeof chart.chart.xAxis[i] != "undefined") {
+		var name = chart.chart.xAxis[i].options.title.text;
+		if (name == "")
+			name = "X-Axis " + i;
+		xAxes.push(name);
+		webMI.trigger.fire("addItem", {text: name, value: i}, "series_xAxis");
+		i++;
+	}
+
+	var i = 0;
+	while (typeof chart.chart.yAxis[i] != "undefined") {
+		var name = chart.chart.yAxis[i].options.title.text;
+		if (name == "")
+			name = "Y-Axis " + i;
+		yAxes.push(name);
+		webMI.trigger.fire("addItem", {text: name, value: i}, "series_yAxis");
+		i++;
+	}
+
+	//Set values for current series
+	var curSeries = chart.chart.series[activeSeries];
+
+	if (typeof curSeries == "undefined")
+		return;
+
+	webMI.trigger.fire("setSelectedItem", curSeries.options.xAxis ? xAxes[curSeries.options.xAxis] : xAxes[0], "series_xAxis");
+	webMI.trigger.fire("setSelectedItem", curSeries.options.yAxis ? yAxes[curSeries.options.yAxis] : yAxes[0], "series_yAxis");
+
+	if (!curSeries.color)
+		setOptions("series_color", inputDefaults["series_color"], activeSeries);
+
+	if (!curSeries.options.borderColor)
+		setOptions("series_borderColor", inputDefaults["series_borderColor"], activeSeries);
+
+	if (!curSeries.options.dataLabels.format)
+		setOptions("series_dataLabels_format", inputDefaults["series_dataLabels_format"], activeSeries);
+
+	webMI.trigger.fire("valuechanged_series_color", {hex: curSeries.color});
+	webMI.trigger.fire("valuechanged_series_borderColor", {hex: curSeries.options.borderColor});
+
+	curSeries.options.borderWidth = typeof curSeries.options.borderWidth != "undefined" ? curSeries.options.borderWidth : 0;
+	webMI.trigger.fire("setValue", curSeries.options.borderWidth, "series_borderWidth");
+
+	webMI.trigger.fire("setChecked", curSeries.options.dataLabels.enabled, "series_dataLabels_enabled");
+	webMI.trigger.fire("setValue", curSeries.options.dataLabels.format, "series_dataLabels_format");
+	triggerEnabled = true;
+}
+
+//Write options
+function setOptions(key, value, identifier) {
+	if (value == "true") value = true;
+	else if (value == "false") value = false;
+
+	if (chart.chart.series[identifier]) {
+		var optionsObj = configHandler.createConfigObject(key.slice(7, key.length), value);
+		chart.chart.series[identifier].update(optionsObj);
+		chart.control.updated();
+	}
+}
+
+//Triggers for every input element
+webMI.addOnload(function() {
+	for (var key in inputDefaults)
+		webMI.trigger.connect("valuechanged", function(e){ processInput(e.context, e.value, activeSeries) }, key);
+
+	readOptions();
+});
+
+function processInput(key, value, identifier) {
+	if (typeof key == "undefined" || typeof value == "undefined")
+		return;
+
+	if (!triggerEnabled)
+		return;
+
+	setOptions(key, value, identifier);
+}
+]]></script>
+</svg>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.OilfieldBoard.industrialSafety
+NodeClass: Variable
+BrowseName: 1:industrialSafety
+DisplayName: en|industrialSafety
+Description: en|industrialSafety
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

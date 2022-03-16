@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg id="svg194" xmlns:cc="http://creativecommons.org/ns#" height="297" width="210" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" sodipodi:docname="compressor_can.svg" version="1.1" inkscape:version="1.0beta1 (d07a077, 2019-11-03)">
+ <defs id="defs188">
+  <linearGradient id="SVGID_1_" class="linear" y2="0.499016" x2="0.999404" x1="0.00294295" gradientUnits="objectBoundingBox" y1="0.499016">
+   <stop stop-color="#6db6ff" offset="0"/>
+   <stop stop-color="#254a70" offset="1"/>
+  </linearGradient>
+  <linearGradient id="SVGID_2_" class="linear" y2="0.499016" x2="0.997057" x1="0.000595855" gradientUnits="objectBoundingBox" y1="0.499016">
+   <stop stop-color="#6db6ff" offset="0"/>
+   <stop stop-color="#254a70" offset="1"/>
+  </linearGradient>
+  <linearGradient id="SVGID_3_" class="linear" y2="0.498973" x2="0.999167" x1="0.000969256" gradientUnits="objectBoundingBox" y1="0.498973">
+   <stop stop-color="#6db6ff" offset="0"/>
+   <stop stop-color="#254a70" offset="1"/>
+  </linearGradient>
+  <linearGradient id="SVGID_4_" class="linear" y2="0.500216" x2="1.00038" x1="-0.000247642" gradientUnits="objectBoundingBox" y1="0.500216">
+   <stop stop-color="#6db6ff" offset="0"/>
+   <stop stop-color="#254a70" offset="1"/>
+  </linearGradient>
+ </defs>
+ <sodipodi:namedview borderopacity="1.0" inkscape:window-width="1314" bordercolor="#666666" inkscape:cy="560" inkscape:zoom="0.35" inkscape:pageopacity="0.0" id="base" inkscape:pageshadow="2" inkscape:window-x="26" inkscape:window-height="639" inkscape:document-rotation="0" inkscape:current-layer="layer1" inkscape:cx="400" showgrid="false" inkscape:document-units="mm" inkscape:window-maximized="0" inkscape:window-y="23" pagecolor="#ffffff"/>
+ <metadata id="metadata191">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+  <atv:gridconfig height="20" width="20" gridstyle="lines" enabled="false"/>
+  <atv:snapconfig height="10" width="10" enabled="false"/>
+ </metadata>
+ <g id="layer1" atv:refpy="149.227" inkscape:groupmode="layer" inkscape:label="Layer 1" atv:refpx="105.833">
+  <g id="g423" transform="matrix(3.3752008,0,0,2.9482143,-62.757946,1.8898828)" atv:refpy="149.227" atv:refpx="105.833">
+   <g id="shape" atv:refpy="49.95" atv:refpx="49.95">
+    <path id="path317" d="M81.3,41.3L81.3,34.699L80.399,34.699L80.399,33.499L80.6,33.499C80.899,33.499 81.1,33.299 81.1,32.999C81.1,32.699 80.899,32.499 80.6,32.499L80.4,32.499L80.4,25C80.4,21.2 76.7,18.1 72.2,18.1L69.6,18.1L69.6,11.8C69.6,7.9 66.5,4.8 62.6,4.8L51.6,4.8L51.6,0L49.5,0L49.5,4.8L41.5,4.8L41.5,0L39.4,0L39.4,4.8L37.7,4.8C33.8,4.8 30.7,7.9 30.7,11.8L30.7,18.1C30.7,18.1 30.7,18.1 30.6,18.1L27.7,18.1C23.2,18.1 19.5,21.2 19.5,25L19.5,32.4L19.3,32.4C19,32.4 18.8,32.6 18.8,32.9C18.8,33.199 19,33.4 19.3,33.4L19.5,33.4L19.5,34.6L18.6,34.6L18.6,41.2L19.5,41.2L19.5,48.6C19,49 18.7,49.6 18.7,50.2L18.7,50.7C18.7,51.4 19,52 19.5,52.3L19.5,59.6C19.5,63.4 23.2,66.5 27.7,66.5L29,66.5L29,83.2C29,85.7 29.6,88 30.5,90.1L30.3,90.1C30.3,90.1 31.7,97.8 24.4,97.8L24.4,99.9L75.699,99.9L75.699,97.8C69.499,97.8 69.499,92.3 69.699,90.6C70.799,88.4 71.499,85.9 71.499,83.2L71.499,80.5L73,80.5C76.2,80.5 78.8,77.9 78.8,74.7L78.8,68.1C78.8,66.9 78.399,65.7 77.7,64.8C79.3,63.5 80.3,61.7 80.3,59.7L80.3,52.4C80.8,52 81.1,51.4 81.1,50.8L81.1,50.3C81.1,49.6 80.8,49 80.3,48.7L80.3,41.3ZM76.5,74.8C76.5,76.7 74.9,78.3 73,78.3L71.4,78.3L71.4,66.7L72.2,66.7C73.4,66.7 74.6,66.5 75.7,66C76.2,66.6 76.5,67.4 76.5,68.2Z" fill="#52a6f9" inkscape:connector-curvature="0" atv:refpy="49.95" atv:refpx="49.95"/>
+   </g>
+   <g id="lineargradient" atv:refpy="52.2" atv:refpx="50">
+    <path id="path325" d="M72.2,66.7L69.3,66.7C64.8,66.7 61.099,63.6 61.099,59.8L61.099,25C61.099,21.2 64.8,18.1 69.3,18.1L72.2,18.1C76.7,18.1 80.4,21.2 80.4,25L80.4,59.8C80.4,63.599 76.7,66.7 72.2,66.7" fill="url(#SVGID_1_)" class="linear" inkscape:connector-curvature="0" atv:refpy="42.4" atv:refpx="70.75"/>
+    <path id="path332" d="M27.8,66.7L30.7,66.7C35.2,66.7 38.9,63.6 38.9,59.8L38.9,25C38.9,21.2 35.199,18.1 30.7,18.1L27.8,18.1C23.3,18.1 19.6,21.2 19.6,25L19.6,59.8C19.6,63.599 23.3,66.7 27.8,66.7" fill="url(#SVGID_2_)" class="linear" inkscape:connector-curvature="0" atv:refpy="42.4" atv:refpx="29.25"/>
+    <path id="path339" d="M69.7,26.8L69.7,11.8C69.7,7.9 66.6,4.8 62.7,4.8L37.7,4.8C33.8,4.8 30.7,7.9 30.7,11.8L30.7,26.8" fill="url(#SVGID_3_)" class="linear" inkscape:connector-curvature="0" atv:refpy="15.8" atv:refpx="50.2"/>
+    <path id="path346" d="M29.9,26.8C29.4,26.8 29,27.2 29,27.7L29,83.3C29,92.3 36.3,99.6 45.3,99.6L55.099,99.6C64.099,99.6 71.399,92.3 71.399,83.3L71.399,27.7C71.399,27.2 70.999,26.8 70.499,26.8" fill="url(#SVGID_4_)" class="linear" inkscape:connector-curvature="0" atv:refpy="63.2" atv:refpx="50.2"/>
+   </g>
+   <g id="light" atv:refpy="47.75" atv:refpx="50">
+    <rect id="rect349" y="35.099998" fill="#6db6ff" height="5.5" x="71.400002" atv:refpy="37.85" width="3.5" atv:refpx="73.15"/>
+    <path id="path351" d="M75.2,41.3L81.3,41.3L81.3,34.699L75.2,34.699C74.9,34.699 74.7,34.9 74.7,35.199L74.7,40.8C74.7,41 74.9,41.3 75.2,41.3" fill="#6db6ff" inkscape:connector-curvature="0" atv:refpy="38" atv:refpx="78"/>
+    <g id="g355" atv:refpy="50.55" atv:refpx="76.3">
+     <path id="path353" d="M80.7,48.3L71.4,48.3L71.4,52.8L80.7,52.8C81,52.8 81.2,52.599 81.2,52.3L81.2,48.8C81.2,48.5 81,48.3 80.7,48.3" fill="#6db6ff" inkscape:connector-curvature="0" atv:refpy="50.55" atv:refpx="76.3"/>
+    </g>
+    <path id="path357" d="M24.8,41.3L18.7,41.3L18.7,34.699L24.8,34.699C25.1,34.699 25.3,34.9 25.3,35.199L25.3,40.8C25.3,41 25.1,41.3 24.8,41.3" fill="#6db6ff" inkscape:connector-curvature="0" atv:refpy="38" atv:refpx="22"/>
+    <path id="path359" d="M28.9,52.8L19.299,52.8C18.999,52.8 18.799,52.599 18.799,52.3L18.799,48.8C18.799,48.5 18.999,48.3 19.299,48.3L28.9,48.3Z" fill="#6db6ff" inkscape:connector-curvature="0" atv:refpy="50.55" atv:refpx="23.85"/>
+    <rect id="rect361" y="35.099998" fill="#6db6ff" height="5.5" x="25.1" atv:refpy="37.85" width="3.9000001" atv:refpx="27.05"/>
+    <rect id="rect363" y="44.400002" fill="#6db6ff" height="16.4" x="58.299999" atv:refpy="52.6" width="11.2" atv:refpx="63.9"/>
+   </g>
+   <g id="dark" atv:refpy="62.8" atv:refpx="55.05">
+    <path id="path366" opacity="0.49" d="M71.3,83.3C70.3,87 63.4,89.8 55.099,89.8L45.3,89.8C37,89.8 30.1,86.9 29.1,83.3L29,83.3C29,92.3 36.3,99.6 45.3,99.6L55.099,99.6C64.099,99.6 71.399,92.3 71.399,83.3Z" fill="#3185d8" inkscape:connector-curvature="0" atv:refpy="91.45" atv:refpx="50.2"/>
+    <path id="path368" d="M29.8,26.8C30.9,26.8 30.8,25.6 30.8,25.6L69.8,25.6C69.8,25.6 69.6,26.8 70.8,26.8Z" fill="#3185d8" inkscape:connector-curvature="0" atv:refpy="26.2" atv:refpx="50.3"/>
+    <path id="path370" d="M80.5,32.5C80.9,32.5 81.1,32.9 81.1,32.9C81.1,32.6 80.899,32.4 80.6,32.4L71.399,32.4C71.399,32.4 80.1,32.5 80.5,32.5" fill="#3185d8" inkscape:connector-curvature="0" atv:refpy="32.65" atv:refpx="76.25"/>
+    <polyline id="polyline372" points="54.4,90.2 54.4,100 46.5,100 46.5,90.2  " fill="#3185d8" atv:refpy="95.1" atv:refpx="50.45"/>
+    <g id="g378" atv:refpy="71.4" atv:refpx="75.1">
+     <path id="path374" d="M76.5,74.8L76.5,68.2C76.5,66.3 74.9,64.7 73,64.7L71.4,64.7L71.4,78.3L73,78.3C74.9,78.3 76.5,76.7 76.5,74.8" fill="#3185d8" inkscape:connector-curvature="0" atv:refpy="71.5" atv:refpx="73.95"/>
+     <path id="path376" d="M73,62.3L71.4,62.3L71.4,64.599L73,64.599C74.9,64.599 76.5,66.199 76.5,68.1L76.5,74.699C76.5,76.6 74.9,78.199 73,78.199L71.4,78.199L71.4,80.499L73,80.499C76.2,80.499 78.8,77.899 78.8,74.699L78.8,68.1C78.8,65 76.2,62.3 73,62.3" fill="#3185d8" inkscape:connector-curvature="0" atv:refpy="71.4" atv:refpx="75.1"/>
+    </g>
+   </g>
+   <g id="shadow" atv:refpy="66.45" atv:refpx="50">
+    <path id="path381" d="M78.4,74.5C78.4,77.7 75.9,80.2 72.7,80.2L71.4,80.2L71.4,80.6L73,80.6C76.2,80.6 78.8,78 78.8,74.8L78.8,68.2Z" fill="#254a70" inkscape:connector-curvature="0" atv:refpy="74.4" atv:refpx="75.1"/>
+    <path id="path383" d="M73.2,64.4L71.5,64.4L71.5,64.6L73,64.6C74.9,64.6 76.5,66.2 76.5,68.1L76.6,69.8L76.6,67.8C76.699,65.9 75.1,64.4 73.2,64.4" fill="#254a70" inkscape:connector-curvature="0" atv:refpy="67.1" atv:refpx="74.052"/>
+    <polyline id="polyline385" points="76.5,36.4 77.5,36.4 77.5,39.6 76.5,39.6  " fill="#254a70" atv:refpy="38" atv:refpx="77"/>
+    <polyline id="polyline387" points="23.5,36.4 22.5,36.4 22.5,39.6 23.5,39.6  " fill="#254a70" atv:refpy="38" atv:refpx="23"/>
+    <path id="path389" d="M54.8,90.4C54.8,90.4 55.4,99 59,99C59,99 56.5,99.5 54.5,99.5L54.5,90.4Z" fill="#254a70" inkscape:connector-curvature="0" atv:refpy="94.95" atv:refpx="56.75"/>
+    <rect id="rect391" y="35.099998" fill="#254a70" height="5.5" x="74.199997" atv:refpy="37.85" width="0.5" atv:refpx="74.45"/>
+    <rect id="rect393" y="35.099998" fill="#254a70" height="5.5" x="25.299999" atv:refpy="37.85" width="0.5" atv:refpx="25.55"/>
+    <path id="path395" d="M71.4,33.4L80.6,33.4C80.9,33.4 81.1,33.199 81.1,32.9C81.1,32.9 81,33.3 80.6,33.3C80.2,33.3 71.5,33.3 71.5,33.3L71.5,33.4Z" fill="#254a70" inkscape:connector-curvature="0" atv:refpy="33.15" atv:refpx="76.25"/>
+    <path id="path397" d="M29,33.2C29,33.2 19.7,33.2 19.4,33.2C19.099,33.2 18.9,32.9 18.9,32.9C18.9,33.2 19.099,33.4 19.4,33.4L29,33.4Z" fill="#254a70" inkscape:connector-curvature="0" atv:refpy="33.15" atv:refpx="23.95"/>
+    <path id="path399" d="M69.6,90.7C66.899,96 61.399,99.6 55.099,99.6L45.3,99.6C38.8,99.6 33.099,95.7 30.499,90.2L30.299,90.2C30.299,90.2 31.699,97.9 24.4,97.9L24.4,100L75.699,100L75.699,97.9C69.399,97.9 69.499,92.4 69.6,90.7" fill="#254a70" inkscape:connector-curvature="0" atv:refpy="95.1" atv:refpx="50.05"/>
+   </g>
+   <g id="hlight" atv:refpy="48.875" atv:refpx="47.85">
+    <g id="g412" atv:refpy="51.9" atv:refpx="40.516">
+     <rect id="rect402" y="95.300003" fill="#a5d2ff" height="2.5" x="46.5" atv:refpy="96.55" width="7.9000001" atv:refpx="50.45"/>
+     <ellipse id="ellipse404" ry="1" cy="21.6" transform="matrix(0.8143,-0.5804,0.5804,0.8143,-8.2678,17.4071)" fill="#a5d2ff" atv:refpy="21.589" rx="1.9" cx="23.1" atv:refpx="23.079"/>
+     <path id="path406" d="M50.7,28L30.9,28C30.299,28 29.7,28.5 29.7,29.2L29.7,84.2C29.7,84.2 29.8,30.8 31.099,29.4C32.4,28 50.7,28 50.7,28" fill="#a5d2ff" inkscape:connector-curvature="0" atv:refpy="56.1" atv:refpx="40.2"/>
+     <path id="path408" d="M53,6.2L59.5,6.3C59.5,6.3 56.6,6.2 53,6.2M34.7,7C33.4,7.9 32.7,9.2 32.9,10.1L32.9,23.6C32.9,23 32.9,14.7 34.1,10.8C34.8,10.8 35.8,10.5 36.6,9.9C37.8,9 38.4,8 38.5,7.3C41.2,6.5 47.9,6.3 53,6.2L37.6,6C36.8,5.9 35.7,6.2 34.7,7" fill="#a5d2ff" inkscape:connector-curvature="0" atv:refpy="14.791" atv:refpx="46.183"/>
+     <polygon id="polygon410" points="39.5,22.4 39.5,10.5 40,8 39.8,10.2 39.8,20.6 " fill="#a5d2ff" atv:refpy="15.2" atv:refpx="39.75"/>
+    </g>
+    <line id="line414" stroke-width="0.5" fill="#a5d2ff" y2="4.6999998" atv:refpy="2.45" x2="39.799999" stroke="#a5d2ff" x1="39.799999" stroke-miterlimit="10" y1="0.2" atv:refpx="40.3"/>
+    <line id="line416" stroke-width="0.5" fill="#a5d2ff" y2="4.6999998" atv:refpy="2.45" x2="49.900002" stroke="#a5d2ff" x1="49.900002" stroke-miterlimit="10" y1="0.2" atv:refpx="50.4"/>
+    <path id="path418" d="M28.9,32.4L19.4,32.4C19.099,32.4 18.9,32.6 18.9,32.9C18.9,32.9 19,32.5 19.4,32.5L20.799,32.4Z" fill="#a5d2ff" inkscape:connector-curvature="0" atv:refpy="32.65" atv:refpx="23.9"/>
+    <path id="path420" d="M76.6,68.3L76.6,74.899C76.6,76.8 75,78.399 73.1,78.399L71.399,78.399L71.399,78.6L73.3,78.6C75.2,78.6 76.8,77 76.8,75.1L76.8,71.399Z" fill="#a5d2ff" inkscape:connector-curvature="0" atv:refpy="73.45" atv:refpx="74.1"/>
+   </g>
+  </g>
+ </g>
+</svg>

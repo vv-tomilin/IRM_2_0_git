@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/RigView/RigConstruction/tehn.png
+NodeClass: Variable
+BrowseName: 1:tehn.png
+DisplayName: en|tehn.png
+Description: en|tehn.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

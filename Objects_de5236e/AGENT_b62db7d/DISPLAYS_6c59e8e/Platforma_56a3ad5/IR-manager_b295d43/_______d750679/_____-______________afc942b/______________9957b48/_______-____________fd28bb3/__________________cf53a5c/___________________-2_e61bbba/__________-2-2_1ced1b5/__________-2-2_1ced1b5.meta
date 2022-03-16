@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.Platforma.IR-manager.Регион.Ханты-Мансийский АО.Месторождения.Орехово-Ермаковское.Кустовые площадки.Кустовая площадка А-2.Скважина А-2-2
+NodeClass: Variable
+BrowseName: 1:Скважина А-2-2
+DisplayName: en|Скважина А-2-2
+Description: en|Скважина А-2-2
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

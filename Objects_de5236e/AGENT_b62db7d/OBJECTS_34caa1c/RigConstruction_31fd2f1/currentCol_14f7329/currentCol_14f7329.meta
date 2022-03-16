@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.RigConstruction.currentCol
+NodeClass: Variable
+BrowseName: 1:currentCol
+DisplayName: en|currentCol
+Description: en|currentCol
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

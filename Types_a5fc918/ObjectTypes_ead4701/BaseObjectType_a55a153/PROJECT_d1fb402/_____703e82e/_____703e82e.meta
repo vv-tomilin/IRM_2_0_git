@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Винт
+NodeClass: ObjectType
+BrowseName: 1:Винт
+DisplayName: en|Винт
+Description: en|Винт
+IsAbstract: false

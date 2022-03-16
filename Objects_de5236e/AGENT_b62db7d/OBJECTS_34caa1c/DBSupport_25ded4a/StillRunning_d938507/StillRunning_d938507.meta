@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.DBSupport.StillRunning
+NodeClass: Variable
+BrowseName: 1:StillRunning
+DisplayName: en|StillRunning
+Description: en|StillRunning
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

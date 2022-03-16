@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.General_Time_Based.tankVolumeActive
+NodeClass: Variable
+BrowseName: 1:tankVolumeActive
+DisplayName: en|tankVolumeActive
+Description: en|tankVolumeActive
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

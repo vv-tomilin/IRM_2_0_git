@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.Pump.CurrentConverter
+NodeClass: Variable
+BrowseName: 1:CurrentConverter
+DisplayName: en|CurrentConverter
+Description: en|CurrentConverter
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

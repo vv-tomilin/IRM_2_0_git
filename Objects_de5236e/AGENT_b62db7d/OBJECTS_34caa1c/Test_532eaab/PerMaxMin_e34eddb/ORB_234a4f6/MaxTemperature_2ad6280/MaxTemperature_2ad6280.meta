@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.ORB.MaxTemperature
+NodeClass: Variable
+BrowseName: 1:MaxTemperature
+DisplayName: en|MaxTemperature
+Description: en|MaxTemperature
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

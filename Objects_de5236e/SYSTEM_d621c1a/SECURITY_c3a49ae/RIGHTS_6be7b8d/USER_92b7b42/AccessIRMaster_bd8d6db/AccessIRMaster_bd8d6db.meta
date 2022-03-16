@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.SECURITY.RIGHTS.USER.AccessIRMaster
+NodeClass: Object
+BrowseName: 1:AccessIRMaster
+DisplayName: en|AccessIRMaster
+Description: en|AccessIRMaster
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

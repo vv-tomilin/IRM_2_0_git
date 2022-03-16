@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.IRM2_2_0.main_2.0
+NodeClass: Variable
+BrowseName: 1:main_2.0
+DisplayName: en|main_2.0
+Description: en|main_2.0
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

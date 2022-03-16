@@ -1,0 +1,10 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Load".New_Limit_Set
+NodeClass: Variable
+BrowseName: 1:New_Limit_Set
+DisplayName: en|New_Limit_Set
+Description: en|New_Limit_Set
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseDataVariableType

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.MSE
+NodeClass: Object
+BrowseName: 1:MSE
+DisplayName: en|MSE
+Description: en|MSE
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

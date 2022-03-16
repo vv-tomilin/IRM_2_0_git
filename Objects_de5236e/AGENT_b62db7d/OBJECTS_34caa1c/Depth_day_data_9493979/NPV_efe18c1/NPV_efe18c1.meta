@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Depth_day_data.NPV
+NodeClass: Variable
+BrowseName: 1:NPV
+DisplayName: en|NPV
+Description: en|NPV
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

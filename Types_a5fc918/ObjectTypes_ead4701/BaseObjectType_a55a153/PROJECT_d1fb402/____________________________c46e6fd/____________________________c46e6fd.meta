@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Подшипник шкива эксцентрика
+NodeClass: ObjectType
+BrowseName: 1:Подшипник шкива эксцентрика
+DisplayName: en|Подшипник шкива эксцентрика
+Description: en|Подшипник шкива эксцентрика
+IsAbstract: false

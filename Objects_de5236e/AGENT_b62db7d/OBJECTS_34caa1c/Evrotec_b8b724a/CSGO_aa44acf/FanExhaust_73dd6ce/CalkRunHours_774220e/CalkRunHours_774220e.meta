@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.CSGO.FanExhaust.CalkRunHours
+NodeClass: Variable
+BrowseName: 1:CalkRunHours
+DisplayName: en|CalkRunHours
+Description: en|CalkRunHours
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

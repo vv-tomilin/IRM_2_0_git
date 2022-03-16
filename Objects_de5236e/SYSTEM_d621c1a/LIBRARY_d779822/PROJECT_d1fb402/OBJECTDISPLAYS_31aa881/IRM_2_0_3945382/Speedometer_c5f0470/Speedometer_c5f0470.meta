@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRM_2_0.Speedometer
+NodeClass: Object
+BrowseName: 1:Speedometer
+DisplayName: en|Speedometer
+Description: en|Speedometer
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

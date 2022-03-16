@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <code><![CDATA[
+/* define some vars */
+var address = "AGENT.HISTORY.atvLogger";
+var nodeClass = "NODECLASS_OBJECT";
+var typeDefinition = "ObjectTypes.ATVISE.ArchiveGroup.Data";
+
+/* get archive infos */
+var archive = _browse(address);
+
+/* create archive if not exists */
+if (Object.keys(archive).length != 1) {
+	var node = new UaNode(address).create({
+		"nodeclass": UaNode[nodeClass],
+		"parent": address.substring(0, address.lastIndexOf('.')),
+		"typedefinition": typeDefinition
+	});
+
+	var partition = new UaNode(address + ".partition_interval");
+	partition.value = "w";
+
+	archive = _browse(address);
+}
+
+/* return archive informations */
+return archive;
+
+
+/**
+ * browse nodes
+ * @param address
+ * @returns {*}
+ * @private
+ */
+function _browse(address) {
+	archive = call("Utilities.BrowseNodes", {
+		"startAddress": address,
+		"endLevel": 0,
+		"includeStartAddress": true
+	});
+	return archive;
+}
+
+]]></code>
+</script>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" height="20" xmlns="http://www.w3.org/2000/svg" width="20">
+ <defs/>
+ <metadata>
+  <atv:parameter desc="symbol color" behavior="optional" defaultvalue="#000000" name="symbolColor" substitute="$SYMBOLCOLOR$" valuetype="color"/>
+  <atv:gridconfig gridstyle="lines" height="1" enabled="true" width="1"/>
+  <atv:snapconfig height="1" enabled="true" width="1"/>
+ </metadata>
+ <line y2="18" x1="2.497" stroke-width="1" stroke="$SYMBOLCOLOR$" atv:refpx="3.5" x2="2.497" y1="3" id="id_0" atv:refpy="10.5"/>
+ <line y2="18" x1="4.936" stroke-width="0.5" stroke="$SYMBOLCOLOR$" atv:refpx="4.5" x2="4.936" y1="14" id="id_1" atv:refpy="16"/>
+ <line y2="18" x1="6.936" stroke-width="0.5" stroke="$SYMBOLCOLOR$" atv:refpx="6.5" x2="6.936" y1="12" id="id_2" atv:refpy="15"/>
+ <line y2="18" x1="8.936" stroke-width="0.5" stroke="$SYMBOLCOLOR$" atv:refpx="8.5" x2="8.936" y1="14" id="id_3" atv:refpy="16"/>
+ <line y2="19" x1="10.948" stroke-width="1" stroke="$SYMBOLCOLOR$" atv:refpx="11.795" x2="10.948" y1="2" id="id_4" atv:refpy="10.5"/>
+ <line y2="18" x1="12.936" stroke-width="0.5" stroke="$SYMBOLCOLOR$" atv:refpx="12.5" x2="12.936" y1="15" id="id_5" atv:refpy="16.5"/>
+ <line y2="17.492" x1="2" stroke-width="1" stroke="$SYMBOLCOLOR$" atv:refpx="10" x2="18" y1="17.492" id="id_7" atv:refpy="17.992"/>
+ <line y2="18" x1="14.936" stroke-width="0.5" stroke="$SYMBOLCOLOR$" atv:refpx="14.5" x2="14.936" y1="14" id="id_8" atv:refpy="16"/>
+ <line y2="18" x1="16.936" stroke-width="0.5" stroke="$SYMBOLCOLOR$" atv:refpx="16.5" x2="16.936" y1="12" id="id_9" atv:refpy="15"/>
+ <text fill="$SYMBOLCOLOR$" font-size="7" font-family="Arial" atv:refpx="13.026" y="6" x="16.5" id="id_10" atv:refpy="1.5">2</text>
+ <text fill="$SYMBOLCOLOR$" font-size="5" font-family="Arial" atv:refpx="12.19" font-weight="bold" text-anchor="middle" y="9" x="10.94" id="id_19" atv:refpy="4.5">&lt; . ></text>
+</svg>

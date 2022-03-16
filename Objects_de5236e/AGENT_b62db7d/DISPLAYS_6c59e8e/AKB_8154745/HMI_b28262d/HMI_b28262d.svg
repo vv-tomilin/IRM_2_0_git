@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg version="1.2" height="680" width="1280" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns="http://www.w3.org/2000/svg">
+ <defs/>
+ <metadata>
+  <atv:gridconfig height="20" width="20" gridstyle="lines" enabled="false"/>
+  <atv:snapconfig height="10" width="10" enabled="true"/>
+ </metadata>
+ <g atv:refpy="0" atv:insensitive="true" atv:refpx="0" id="id_1">
+  <rect fill="#000406" x="0" height="680.00" y="0" width="1280.00" atv:refpy="340" atv:refpx="640" id="id_2"/>
+ </g>
+ <rect fill="#000088" x="-1.79" height="678.287" y="0" fill-opacity="0" width="1283.197" atv:refpy="339.144" atv:refpx="639.808" id="id_3" stroke-width="4" stroke="#ff12ff"/>
+ <svg x="7.006" height="500" y="8.166" width="800" atv:refpy="339.484" transform="matrix(1.2774,0,0,1.315,0,0)" atv:refpx="519.908" id="id_0" xlink:href="AGENT.DISPLAYS.AKB.torque_akb">
+  <atv:overwrite height="657.5" width="1021.914" transform="matrix(0.7828,0,0,0.7605,0,0)" id="highchartsForeignObject"/>
+ </svg>
+ <svg x="740.677" height="70" width="155" y="6.197" atv:refpy="66.476" transform="matrix(1.4041,0,0,1.6136,0,0)" atv:refpx="1148.819" id="id_7" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardVal">
+  <atv:argument value="Момент" name="cardLabel"/>
+  <atv:argument value="AGENT.OBJECTS.AKB.Torque" name="base"/>
+  <atv:argument value="кН.м" name="cardUnit"/>
+ </svg>
+ <svg x="740.688" height="70" width="155" y="86.763" atv:refpy="196.477" transform="matrix(1.4041,0,0,1.6136,0,0)" atv:refpx="1148.82" id="id_8" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardVal">
+  <atv:argument value="Оборот" name="cardLabel"/>
+  <atv:argument value="AGENT.OBJECTS.AKB.Turn" name="base"/>
+ </svg>
+ <svg x="740.688" height="70" width="155" y="167.328" atv:refpy="326.476" transform="matrix(1.4041,0,0,1.6136,0,0)" atv:refpx="1148.819" id="id_9" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.CardVal">
+  <atv:argument value="Скорость" name="cardLabel"/>
+  <atv:argument value="AGENT.OBJECTS.AKB.Speed" name="base"/>
+  <atv:argument value="об/мин" name="cardUnit"/>
+ </svg>
+</svg>

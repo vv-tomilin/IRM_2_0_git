@@ -1,0 +1,1 @@
+{"rows":[{"KNBK":"","load":"","flowInput":"","maxLoad":"","diffPressure":"","minVmex":"","bitNumber":"","descNumber":"","bitDiam":"","bitModel":"","serialNumber":"","mods":"","depthFromTo":"","drillDepth":"6","drillTime":"","mPerHour":"","bitCondition":"","comment":""}]}

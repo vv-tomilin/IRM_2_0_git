@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/indicators/chaikin.js.map
+NodeClass: Variable
+BrowseName: 1:chaikin.js.map
+DisplayName: en|chaikin.js.map
+Description: en|chaikin.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

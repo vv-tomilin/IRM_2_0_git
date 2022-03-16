@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Recomendations.TDSSpeed
+NodeClass: Object
+BrowseName: 1:TDSSpeed
+DisplayName: en|TDSSpeed
+Description: en|TDSSpeed
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

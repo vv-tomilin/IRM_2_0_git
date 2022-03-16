@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewCharts.start_end_time_new
+NodeClass: Variable
+BrowseName: 1:start_end_time_new
+DisplayName: en|start_end_time_new
+Description: en|start_end_time_new
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

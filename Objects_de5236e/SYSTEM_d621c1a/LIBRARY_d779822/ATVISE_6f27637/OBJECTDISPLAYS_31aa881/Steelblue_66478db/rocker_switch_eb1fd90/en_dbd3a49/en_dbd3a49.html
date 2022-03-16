@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Description</h1>
+<p>This button increments or decrements the value of an address like the button increment/decrement.</p>
+<p>In addition the trigger "valuechanged" with the new value (=incremented or decremented value) will be fired.</p>
+<h1>Parameters</h1>
+<p>This control has&nbsp;the following generic parameters:</p>
+<ul>
+  <li><span class="parameter">base</span>: the value of this address will either be incremented or decremented</li>
+  <li><span class="parameter">base</span>:  this address will be set</li>
+  <li><span class="parameter">alarm address</span>: optional additional address of an alarm to be shown.</li>
+  <li><span class="parameter">enable status monitoring</span>: switch monitoring of current value status on or off.</li>
+  <li><span class="parameter">step to increment</span>: value by which the value of "base" will be&nbsp;incremented (default: 1)</li>
+  <li><span class="parameter">step to decrement</span>: value by which the value of "base" will be decremented (default: 1)</li>
+  <li><span class="parameter">interval [ms] (0 = off)</span>: specifies how long (time span) the button must be pressed to automatically change the base's value (default: 150ms, which means that in case the button keeps pressed, every 150ms the value will be changed)</li>
+</ul>
+Font:<br>
+<ul>
+  <li><span class="parameter">family</span>: font family which will be applied to&nbsp;value (default: Arial)</li>
+  <li><span class="parameter">size</span>: font size which will be applied to the&nbsp;value (default: 12)</li>
+  <li><span class="parameter">color</span>: color which will be applied to the&nbsp;value (default: black)</li>
+</ul>
+Appearance:<br>
+<ul>
+  <li><span class="parameter">fill color text</span>: background color of the text (value) (default: grey)</li>
+  <li><span class="parameter">fill color button</span>: fill color of the two buttons (default: black)</li>
+  <li><span class="parameter">fill color arrow</span>: arrow's fill color (default: grey)</li>
+  <li><span class="parameter">fill color when inactive</span>: button's fill color if not active&nbsp;(default: dark grey)</li>
+  <li><span class="parameter">stroke color button pressed</span>: the color of the stroke which will be set when one of the two buttons is pressed (default: white)</li>
+  <li><span class="parameter">focus stroke color</span>: the color of the stroke which will be set when the button is focused (default: white)</li>
+  <li><span class="parameter">status indication</span>: specify the status' display through a defined global list (default: global parameter <i>atvStatusIndication</i>)</li>
+  <li><span class="parameter">alarm indication</span>: specify the alarm's display through a defined global list (default: global parameter <i>atvAlarmIndication</i>)</li>
+</ul>
+Options:<br>
+<ul>
+  <li><span class="parameter">minimum</span>: specifies the lower limit for the value to be changed, i.e. if the current value equals to this minimum, the current value will not be further decremented &nbsp;(default: no minimum specified)</li>
+  <li><span class="parameter">maximum</span>: specifies the upper limit for the value to be changed, i.e. if the current value equals to this maximum, the current value will not be further incremented&nbsp;(default: no maximum specified)</li>
+  <li><span class="parameter">consistency group</span>: name of the consistency group</li>
+  <li><span class="parameter">tab index</span>: defines the order for changing between the object displays by using the tab key</li>
+  <li><span class="parameter">tooltip</span>: displays a tooltip box with the entered text (standard HTML-Elements can be entered)</li>
+</ul>
+Security:
+<ul>
+  <li><span class="parameter">necessary right</span>: the user must have this right to activate this button, i.e. to press one of the two buttons</li>
+  <li><span class="parameter">activation address</span>: if the value of this address equals to "activation value", then the control will be active, i.e. can be pressed</li>
+  <li><span class="parameter">activation value</span>: value which activates the control</li> </ul>
+<div style="margin-left: 40px;">NOTE: The activation of the control can be configured only by the necessary right, or only by the&nbsp;activation address and value or by both. In case both settings are made, the user must have the necessary right and the value of the "activation address" must equal the "activation value"; otherwise the control will not be activated.</div>
+</body>
+</html>

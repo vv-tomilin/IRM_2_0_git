@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Presentation.APD.PressureRightContour
+NodeClass: Variable
+BrowseName: 1:PressureRightContour
+DisplayName: en|PressureRightContour
+Description: en|PressureRightContour
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

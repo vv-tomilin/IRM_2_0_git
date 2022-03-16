@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/Treemap
+NodeClass: Object
+BrowseName: 1:Treemap
+DisplayName: en|Treemap
+Description: en|Treemap
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

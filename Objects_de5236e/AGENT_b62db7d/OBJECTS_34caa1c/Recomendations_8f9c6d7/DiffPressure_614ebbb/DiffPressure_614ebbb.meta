@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Recomendations.DiffPressure
+NodeClass: Object
+BrowseName: 1:DiffPressure
+DisplayName: en|DiffPressure
+Description: en|DiffPressure
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" height="2" xmlns:svg="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" version="1.2" width="108.89" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="false" height="20" width="20" gridstyle="lines"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <g atv:refpy="1.051" id="id_4" atv:refpx="55.002" transform="matrix(1.0102,0,0,1.0506,1.0102,0)">
+  <g inkscape:label="Слой 1" inkscape:groupmode="layer" atv:refpy="1" id="layer1" transform="translate(-22.150234,-76.485123)" atv:refpx="53.445">
+   <line stroke="#0000ff" stroke-width="2" y1="77.485123" y2="77.485123" fill="none" atv:refpy="77.985" id="line29" x2="129.04024" atv:refpx="75.595" class="fil0 str0" style="fill-rule:evenodd;clip-rule:evenodd;image-rendering:optimizeQuality;text-rendering:geometricPrecision;shape-rendering:geometricPrecision" x1="22.150234"/>
+  </g>
+ </g>
+</svg>

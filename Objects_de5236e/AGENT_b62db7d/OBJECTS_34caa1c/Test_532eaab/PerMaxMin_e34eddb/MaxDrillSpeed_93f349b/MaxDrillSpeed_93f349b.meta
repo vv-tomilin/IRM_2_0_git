@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.MaxDrillSpeed
+NodeClass: Variable
+BrowseName: 1:MaxDrillSpeed
+DisplayName: en|MaxDrillSpeed
+Description: en|MaxDrillSpeed
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Beschreibung</h1>
+<p>Dieses Display zeigt einen definierbaren Dialog f&uuml;r Nachrichten, Informationen oder Warnungen an,
+welcher beispielsweise &uuml;ber die Funktion openWindow aufgerufen werden kann.
+Es k&ouml;nnen frei w&auml;hlbare Texte in der Kopfzeile, in der Nachrichtenzeile und f&uuml;r die Schaltfl&auml;che verwendet werden.</br>
+Der Schaltfl&auml;che kann zus&auml;tzlich eine Trigger-Funktion &uuml;bergeben werden.
+Wenn kein Triggername &uuml;bergeben wird, wird als Standardfunktion f&uuml;r die Schaltfl&auml;che das Fenster geschlossen.</p>
+<h1>Parameter</h1>
+<p>Folgende Parameter stehen zur Verf&uuml;gung:</p>
+Kopfzeile:<br/>
+<ul>
+	<li><span class="parameter">Text</span>: Text in der Kopfzeile des Dialogs.</li>
+	<li><span class="parameter">Schriftart</span>: Schriftart der Kopfzeile.</li>
+	<li><span class="parameter">Schriftgr&ouml;&szlig;e</span>: Schriftgr&ouml;&szlig;e der Kopfzeile in Pixel.</li>
+	<li><span class="parameter">Schriftst&auml;rke</span>: Schriftst&auml;rke der Kopfzeile.</li>
+	<li><span class="parameter">Horizontale Ausrichtung</span>: Horizontale Ausrichtung der Kopfzeile.</li>
+	<li><span class="parameter">Vertikale Ausrichtung</span>: Vertikale Ausrichtung der Kopfzeile.</li>
+</ul>
+Nachricht:<br/>
+<ul>
+	<li><span class="parameter">Nachricht</span>: Nachrichten-Text</li>
+	<li><span class="parameter">Schriftart</span>: Schriftart des Texts.</li>
+	<li><span class="parameter">Schriftgr&ouml;&szlig;e</span>: Schriftgr&ouml;&szlig;e des Texts.</li>
+	<li><span class="parameter">Schriftst&auml;rke</span>: Schriftst&auml;rke des Texts.</li>
+	<li><span class="parameter">Horizontale Ausrichtung</span>: Horizontale Ausrichtung des Texts.</li>
+	<li><span class="parameter">Vertikale Ausrichtung</span>: Vertikale Ausrichtung des Texts.</li>
+</ul>
+Buttons:<br/>
+<ul>
+	<li><span class="parameter">Text</span>: Text der Schaltfl&auml;che</li>
+	<li><span class="parameter">Aktion</span>: Trigger-Funktion der Schaltfl&auml;che</li>
+	<li><span class="parameter">Schriftgr&ouml;&szlig;e</span>: Schriftgr&ouml;&szlig;e der Schaltfl&auml;chen.</li>
+</ul>
+Symbol:<br/>
+<ul>
+	<li><span class="parameter">Symbol</span>: Adresse des anzuzeigenden Symbols.</li>
+	<li><span class="parameter">Symbolfarbe</span>: Farbe des zu verwendenden Symbols (Standard: Globaler Parameter <i>atvSymbolColor</i>)</li>
+</ul>
+Darstellung:<br/>
+<ul>
+	<li><span class="parameter">background color</span>: Color of the display's background.</li>
+</ul>
+<h1>Beispiel</h1>
+<p>Aufruf des Dialogs mit Hilfe der openWindow Funktion:</br></br>
+webMI.display.openWindow({display:"SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dialogs.message_dialog", x:0, y:0, width:400, height:160, modal:true, resizable:false, movable:true, scrollbars:false, menubar:false, status:false, toolbar:false, query: {headline:"Meine &Uuml;berschrift", msg1:"Meine Nachricht in Zeile 1"}});
+</p>
+</body>
+</html>

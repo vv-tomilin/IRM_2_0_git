@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="421.17" version="1.2" width="253.16" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:parameter behavior="optional" defaultvalue="AGENT.OBJECTS.SimulatedData.double_1" desc="Ходы насоса" name="BigBN1" substitute="" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="AGENT.OBJECTS.SimulatedData.double_2" desc="Расход БН1" name="SmallBN1" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Максимальное ограничение " name="MaxBar " valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Минимальное ограничение " name="MinBar" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Макс. боль. парам." name="MaxBig" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Макс.мал.парам." name="MaxSmall" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="true" desc="Видимость ограничений" name="Visability" valuetype="bool"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Максимальное значение внутреннего " name="MaxBarSmall" valuetype="address"/>
+  <atv:parameter behavior="hidden" defaultvalue="" desc="Минимальное значение внутреннего " name="MinBarSmall" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="true" desc="Видимость внутреннего круга " name="VisabilitySmall" valuetype="bool"/>
+  <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <svg atv:refpx="100" atv:refpy="207.507" height="400" id="id_0" width="200" x="0" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Test.test_bar" y="7.507">
+  <atv:argument name="base" prefix="BigBN1"/>
+  <atv:argument name="MaxValue" prefix="MaxBig" value=""/>
+  <atv:argument name="MaxBar" prefix="MaxBar " value=""/>
+  <atv:argument name="MinBar" prefix="MinBar" value=""/>
+  <atv:argument name="Visability" prefix="Visability" value=""/>
+ </svg>
+ <svg atv:refpx="113.81" atv:refpy="208.978" height="400" id="id_1" transform="matrix(0.8525,0,0,0.8785,0,0)" width="200" x="33.506" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Test.test_bar" y="37.879">
+  <atv:argument name="base" prefix="SmallBN1"/>
+  <atv:argument name="MaxValue" prefix="MaxSmall" value=""/>
+  <atv:argument name="MaxBar" prefix="MaxBarSmall" value=""/>
+  <atv:argument name="MinBar" prefix="MinBarSmall" value=""/>
+  <atv:argument name="Visability" prefix="VisabilitySmall" value=""/>
+ </svg>
+ <rect atv:refpx="198.373" atv:refpy="210.12" fill="#1f1f1f" height="332.934" id="id_9" stroke="none" stroke-width="0" width="16.933" x="189.907" y="43.652"/>
+ <rect atv:refpx="199.682" atv:refpy="24.759" fill="#1f1f1f" height="16" id="id_10" stroke="none" stroke-width="0" width="12.336" x="193.514" y="16.759"/>
+ <rect atv:refpx="200.453" atv:refpy="389.048" fill="#1f1f1f" height="15" id="id_11" stroke="none" stroke-width="0" width="12.336" x="194.285" y="382.994"/>
+ <circle atv:refpx="240.156" atv:refpy="15.663" cx="218.156" cy="15.663" fill="#1ec9ad" id="id_12" r="10" stroke="#0000ff" stroke-width="0"/>
+ <foreignObject height="35.984" id="id_8" width="77.567" x="71.17" y="150.337">
+  <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8" xmlns="http://www.w3.org/1999/xhtml">
+   <p style="margin:0">Расход</p>
+   <br/>
+   <p style="margin:0">БН1 (л/с)</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="27.188" id="id_14" width="64.774" x="72.369" y="188.722">
+  <div style="width:100%;height:100%;color:white; font-size:1.5rem" xmlns="http://www.w3.org/1999/xhtml">
+   <p id="first" style="margin:0">0000</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="17.273" id="id_16" width="135.623" x="0" y="397.273">
+  <div style="width:100%;height:100%; color:white; font-family:Arial;font-size:0.7rem;line-height:0.8" xmlns="http://www.w3.org/1999/xhtml">
+   <p style="margin:0">Ходы (ход/мин)</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="39.663" id="id_17" width="82.846" x="6.515" y="360.169">
+  <div style="width:100%;height:100%;color:white; font-size:1.5rem" xmlns="http://www.w3.org/1999/xhtml">
+   <p id="second" style="margin:0">0000</p>
+  </div>
+ </foreignObject>
+ <foreignObject height="45.581" id="id_2" width="67.172" x="0" y="6.2">
+  <div id="leb" style="width:100%;height:100%;color:white;font-size:1.45rem;font-weight:bold" xmlns="http://www.w3.org/1999/xhtml">
+БН1
+</div>
+ </foreignObject>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[//webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"1", "id":"id_3", "nodeId":webMI.query["BigBN1"]});
+//webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPlaces":"1", "id":"id_7", "nodeId":webMI.query["SmallBN1"]});
+
+//* LAST HOT FIX = 25.02.22
+
+//* FOR = SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.VovaObj.BN1
+
+//* BigBN1 (Ходы нансоса) = AGENT.OBJECTS.IVE50.Mud.Pump.StrokePump1
+
+//* BN_1
+
+var isPumpRun_1 = false;
+var isPumpRun_2 = false;
+
+webMI.data.subscribe(webMI.query["BigBN1"], function (f) {
+
+  pumpDatasRendering(f);
+
+});
+
+webMI.data.subscribe(webMI.query["SmallBN1"], function (d) {
+
+  console.log(d);
+
+  webMI.data.read(webMI.query["BigBN1"], function (e) {
+    pumpDatasRendering(e);
+  });
+
+});
+
+webMI.data.subscribe('AGENT.OBJECTS.IVE50.Mud.Pump.StrokePump2', function (f) {
+
+  console.log(f);
+
+  webMI.data.read(webMI.query["BigBN1"], function (e) {
+    pumpDatasRendering(e);
+  });
+
+});
+
+webMI.data.subscribe("AGENT.OBJECTS.Test.ForMainWindow.APDWorking", function (e) {
+
+  var value = e.value;
+
+  if (value == true) {
+    document.getElementById('leb').style.color = "#1fc9ae";
+  }
+
+  if (value == false) {
+    document.getElementById('leb').style.color = "#36404a";
+  }
+
+
+});
+
+function pumpDatasRendering(event) {
+
+  var bn_1 = event.value;
+
+  try {
+
+    if (bn_1 <= 0) {
+      isPumpRun_1 = false;
+    } else {
+      isPumpRun_1 = true;
+    }
+
+    document.getElementById('second').innerHTML = bn_1.toFixed(1);
+
+    webMI.data.read('AGENT.OBJECTS.IVE50.Mud.Pump.StrokePump2', function (e) {
+
+      var bn_2 = e.value;
+
+      if (bn_2 <= 0) {
+
+        isPumpRun_2 = false;
+
+      } else {
+
+        isPumpRun_2 = true;
+
+      }
+
+      if (!isPumpRun_1) {
+
+        document.getElementById('first').innerHTML = "0.0";
+
+      }
+
+      if (isPumpRun_1 && isPumpRun_2) {
+
+        webMI.data.read('AGENT.OBJECTS.IVE50.Mud.FlowInput', function (e) {
+
+          document.getElementById('first').innerHTML = (e.value / 2).toFixed(1);
+
+        });
+
+      }
+
+      if (isPumpRun_1 && !isPumpRun_2) {
+
+        webMI.data.read('AGENT.OBJECTS.IVE50.Mud.FlowInput', function (e) {
+
+          document.getElementById('first').innerHTML = e.value.toFixed(1);
+
+        });
+      }
+    });
+
+  } catch (err) {
+
+    return console.log("ERROR IN BN1", err);
+
+  }
+}]]></script>
+</svg>

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Stock/Indicators/KeltnerChannels
+NodeClass: Object
+BrowseName: 1:KeltnerChannels
+DisplayName: en|KeltnerChannels
+Description: en|KeltnerChannels
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <code><![CDATA[//console.log("Current WellDepth");
+var timestart = new Date();
+//var timestart = new Date(timeend.valueOf() - 1 * 60000);
+var itemObj = call("getUaDataByDate",{strnode:"AGENT.OBJECTS.ASPD.APD1.Running",datestop: timestart});
+//for(var key in itemObj){
+//	console.log("key = "+key+ ", val = "+itemObj[key]);
+/*	var valueObj = itemObj[key];
+	for(var kkey in valueObj){ 
+		for(var kkkey in valueObj[kkey]){
+			console.log("kkkey = "+kkkey+ ", val = "+valueObj[kkey][kkkey]);
+		}
+	}
+*/	
+//}
+
+console.log("Current APD status = "+itemObj.value);
+console.log("vova")]]></code>
+</script>

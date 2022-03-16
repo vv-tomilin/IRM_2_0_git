@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.Volume.SumTankVolume
+NodeClass: Variable
+BrowseName: 1:SumTankVolume
+DisplayName: en|SumTankVolume
+Description: en|SumTankVolume
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

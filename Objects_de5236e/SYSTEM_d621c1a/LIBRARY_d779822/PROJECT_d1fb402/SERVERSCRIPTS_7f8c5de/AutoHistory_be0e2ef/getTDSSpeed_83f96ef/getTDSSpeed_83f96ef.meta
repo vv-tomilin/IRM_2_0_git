@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.AutoHistory.getTDSSpeed
+NodeClass: Variable
+BrowseName: 1:getTDSSpeed
+DisplayName: en|getTDSSpeed
+Description: en|getTDSSpeed
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

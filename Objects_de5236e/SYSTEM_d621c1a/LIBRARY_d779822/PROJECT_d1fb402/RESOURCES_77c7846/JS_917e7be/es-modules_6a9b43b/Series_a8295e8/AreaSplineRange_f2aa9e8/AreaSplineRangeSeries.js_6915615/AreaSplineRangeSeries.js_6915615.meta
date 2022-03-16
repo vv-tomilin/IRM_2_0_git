@@ -1,0 +1,10 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/AreaSplineRange/AreaSplineRangeSeries.js
+NodeClass: Variable
+BrowseName: 1:AreaSplineRangeSeries.js
+DisplayName: en|AreaSplineRangeSeries.js
+Description: en|AreaSplineRangeSeries.js
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Javascript
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Javascript.Compress

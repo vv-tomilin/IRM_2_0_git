@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <icon type="image/png"></icon>
+    <visible>1</visible>
+    <title>Create Table</title>
+    <description>Create DataTables (www.datatables.net) table.</description>
+  </metadata>
+  <code><![CDATA[/* This Quickdynamic creates an instance of a datatable for version 1.10 (www.datatables.net)
+ * @autor: j.Strodl/JUST
+ *
+ * @parameter {Object} options: Holds table configuration
+ * @property {Function} $: the caller's jquery $ function (if not defined: use the standard view.htm $ function)
+ * @property {Object} tableElement: jquery object of table element
+ * @property {Array} tableColumns: array of column names
+ * @property {Object} tableLabels: object with "sInfoEmpty", "sInfo", "sInfoFiltered" keys
+ * @property {Function||Number} tableWidth: function which returns width as number for px || number for px
+ * @property {Function||Number} tableHeight: function which returns height as number for px || number for px
+ * @property {Object} tableFeatures: table feature object with: "iDisplayLength" - number, "bFilter" - boolean, "bSort" - boolean keys,
+ *   "sDom" - string, "order" - array, "bAutoWidth" - boolean, "bDeferRender" - boolean
+ * @returns a new Table object
+ * For further information please visit http://www.datatables.net
+ */
+var $ = base.$ || top.frames[0].$;
+
+function Table(options) {
+
+    // table configuration
+    var tableElement = options.tableElement;
+    var tableWidth = options.tableWidth;
+    var tableHeight = options.tableHeight;
+    var tableColumns = options.tableColumns;
+    var tableLabels = options.tableLabels;
+    var tableFeatures = options.tableFeatures;
+
+    // data table api object
+    var table = null;
+
+    // store current scroll position
+    var pageScrollPos = 0;
+    var scrollFeature = false;
+
+    var aoColumns = [];
+
+    // loop variable
+    var i;
+
+    // table default options
+    var defaultFeatures = {
+      iDisplayLength: -1,
+      bFilter: true,
+      bSort: true,
+      info: true,
+      sDom: "Bfrti",
+      order: [[0, "asc"]],
+      bAutoWidth: false,
+      bDeferRender: false,
+      scroller: true,
+      scrollY: true,
+      scrollX: false,
+      checkBoxColumns: [],
+      select: false,
+      pdfCustomRenderedColumns: [],
+      buttons: [],
+      initCompleteCallback: null
+    };
+
+    if (!$) {
+        console.error("jQuery API is missing. Check resources...");
+    } else if (!$.fn.dataTable) {
+        console.error("jQuery Datatables API is missing. Check resources...");
+    } else {
+
+        for (i = 0; i < tableColumns.length; i++) {
+            if (typeof tableColumns[i] == "string") {
+                aoColumns.push({ sTitle: tableColumns[i] });
+            } else if (typeof tableColumns[i] == "object") {
+                aoColumns.push(tableColumns[i]);
+            }
+        }
+
+        for (i = 0; i < $.fn.dataTableExt.aoFeatures.length; i++) {
+          if ($.fn.dataTableExt.aoFeatures[i].cFeature == "S") {
+            scrollFeature = false;
+          }
+        }
+
+        if (tableFeatures && typeof tableFeatures == "object") {
+            for (var feature in tableFeatures) {
+                defaultFeatures[feature] = tableFeatures[feature];
+            }
+        } else if (tableFeatures) {
+            console.warn("Default settings for tableFeatures are being used");
+        }
+
+
+      /*******************************************************************************************************************
+       *
+       * Table functions
+       *
+       *******************************************************************************************************************/
+
+        this.drawTable = function(data) {
+           var i;
+           // make coy of table data
+           var tableData = JSON.parse(JSON.stringify(data));
+
+            if (table != null) {
+                table.destroy();
+            }
+
+            for (i = 0; i < tableData.length; i++) {
+              tableData[i] = checkItems(tableData[i]);
+            }
+
+            //Create the DataTables API Object 1.10
+            table = $(tableElement).DataTable({
+                data: tableData, //set tableData
+                columns: aoColumns, //set Column titles
+                scrollY: defaultFeatures["scrollY"], //enable vertical scrolling
+                scrollX: defaultFeatures["scrollX"], //enable horizontal scrolling
+                autoWidth: defaultFeatures["bAutoWidth"],
+                destroy: true,
+                scroller: defaultFeatures["scroller"],
+                scrollCollapse: defaultFeatures["scroller"],
+                dom: defaultFeatures["sDom"],
+                paging: defaultFeatures["iDisplayLength"] > -1,
+                ordering: defaultFeatures["bSort"],
+                searching: defaultFeatures["bFilter"],
+                order: defaultFeatures["order"],
+                pageLength: defaultFeatures["iDisplayLength"],
+                search: {
+                  smart: false
+                },
+                info: defaultFeatures["info"],
+                columnDefs: [
+                    {
+                        orderable: false,
+                        className: "select-checkbox",
+                        targets: defaultFeatures["checkBoxColumns"]
+                    }
+                ],
+                select: defaultFeatures["select"],
+                deferRender: defaultFeatures["bDeferRender"],
+                language: tableLabels,
+                buttons: defaultFeatures["buttons"],
+                initComplete: function(settings, json) {
+                    var apiObj = this.api();
+                    var selectedRow = null;
+                    var scrollHead = tableElement.parent().siblings("div.dataTables_scrollHead");
+                    var headerLabels = scrollHead.find("span");
+
+                    if (defaultFeatures.initCompleteCallback) {
+                      defaultFeatures.initCompleteCallback();
+                    }
+
+                    apiObj.columns().search("");
+                    // Set default value for filters to clear cached filter values [SUPP-5568]
+                    var tableFooter = $(this).parents().parent().siblings(".dataTables_scrollFoot");
+
+                    if (tableFooter.length > 0) {
+                        tableFooter.find("input").val("");
+                    }
+
+                    $("div.dataTables_scrollBody").scroll(function(e) {
+                        pageScrollPos = $("div.dataTables_scrollBody").scrollTop();
+                    });
+
+                    if (defaultFeatures["info"]) {
+                      tableElement.parent().css("border-bottom-width", "0px");
+                    }
+
+                    resizeTable(apiObj, tableWidth, tableHeight);
+
+                },
+                drawCallback: function(oSettings) {
+                    // WORKAROUND for cell has no border bug - on iOS 8.1 and above and Firefox ESR 31.8.0 and above
+                    $(oSettings.nTableWrapper).find("td:empty").html("&nbsp;");
+
+                    if ($(oSettings.nTable).width() < $(oSettings.nTableWrapper).width()) {
+                        $(oSettings.nTable).width($(oSettings.nTableWrapper).width());
+                        this.fnAdjustColumnSizing(false);
+                    }
+
+                    if ($("#processing_overlay").length) {
+                        $("#processing_overlay").hide();
+                    }
+                },
+            });
+
+
+        };
+
+        this.getTable = function() {
+            return table;
+        };
+
+        this.addRowClass = function(index, className) {
+            $(table.row(index).node()).addClass(className);
+        };
+
+        this.adjustColumnWidths = function() {
+            table.columns.adjust();
+        };
+
+        this.getSelected = function() {
+            return table.rows('.selected');
+        };
+
+        this.redrawTable = function(data) {
+            var tableData = JSON.parse(JSON.stringify(data));
+
+            table.clear(tableData.length == 0);
+            for (var i = 0; i < tableData.length; i++) {
+                tableData[i] = checkItems(tableData[i]);
+            }
+            table.rows.add(tableData).draw(false);
+            this.resizeTable();
+        };
+
+        this.updateTable = function(value, row, column) {
+            table.cell(row, column).data(value).draw();
+        };
+
+        this.addRow = function(rowArray) {
+            var rowData = JSON.parse(JSON.stringify(rowArray));
+            return table.row.add(checkItems(rowData)).draw();
+        };
+
+        this.deleteRow = function(index) {
+            table.row(index).remove().draw();
+        };
+
+        this.getRowsCount = function() {
+            return table.rows().count();
+        };
+
+        this.getRow = function(element) {
+            return table.row(element.parents("tr")[0]).data();
+        };
+
+        this.getCell = function(row, column) {
+            return table.cell(row, column).data();
+        };
+
+        this.filter = function(value, index) {
+            table.columns(index).search(value).draw();
+        };
+
+        this.toggleDetails = function(row, content, upImage, downImage) {
+            if (table.row(row).child.isShown()) {
+                $(row).find("img").prop("src", downImage);
+                table.row(row).child.hide();
+            } else {
+                $(row).find("img").prop("src", upImage);
+                table.row(row).child(content, "info_row").show();
+            }
+        };
+
+        this.destroy = function() {
+            table.destroy();
+            $(tableElement).empty();
+        };
+
+        this.getColumnIndex = function(column) {
+          var index = -1;
+
+          if (column) {
+            index = table.column(column).index('data');
+          }
+
+          return index;
+        };
+
+        this.getScrollRow = function() {
+            if (!scrollFeature) {
+                return -1;
+            }
+
+            var scroller = table.settings().oScroller.dom.scroller;
+            var scrollPx = $(scroller).scrollTop();
+            return table.settings().oScroller.fnPixelsToRow(scrollPx);
+        };
+
+        this.scrollToRow = function(rowIndex) {
+            if (!scrollFeature) {
+                return;
+            }
+
+            table.settings().oScroller.fnScrollToRow(rowIndex, false);
+
+            /*workaround for show header on bottom*/
+            $(table.settings().nTHead).parent().css("top", "0px");
+        };
+
+        this.setColumnVisible = function(index, visbility) {
+            if (typeof visbility == "undefined") {
+                var visbility = !table.column(index).visible();
+            }
+
+            table.column(index).visible(visbility);
+        };
+
+        this.resizeTable = function() {
+          resizeTable(table, tableWidth, tableHeight);
+        };
+
+        $(window).resize(function() {
+            if (!/Mobi/.test(navigator.userAgent) && table != null && table.settings() != null) {
+                resizeTable(table, tableWidth, tableHeight);
+            }
+        });
+    }
+}
+
+
+/*******************************************************************************************************************
+ *
+ * Helper functions
+ *
+*******************************************************************************************************************/
+
+/**
+ * Checks given table items for undefined items and replaces them with an empty string
+ * @param {String[]} rowData The row data to check
+ * @returns {String[]}
+ */
+function checkItems(rowData) {
+
+  for (var i = 0; i < rowData.length; i++) {
+    if (typeof rowData[i] == "undefined") {
+      rowData[i] = "";
+    }
+  }
+
+  return rowData;
+}
+
+
+/**
+ * Resize the table according to the given parameters.
+ * @param {Object} table: table object
+ * @param {Function||Number} _width: function which returns width as number for px || number for px
+ * @param {Function||Number} _height: function which returns height as number for px || number for px
+ * Resizing:
+ *   set width and height of table
+ */
+function resizeTable(table, _width, _height) {
+    var wrapper = $(table.settings()[0].nTableWrapper);
+    var tableEle = $(table.table().node());
+    var scrollBody = null;
+    var width = 0;
+    var height = 0;
+
+    if (typeof _width === "function") {
+        width = _width();
+    } else if (typeof _width === "number") {
+        width = _width;
+    } else if (typeof _width === "string") {
+        console.warn(
+            "Possible types for tableWidth are number or function. Given type is string, which is currently being parsed width parseInt."
+        );
+        width = parseInt(_width, 10);
+        if (isNaN(width)) {
+            return;
+        }
+    }
+
+    if (typeof _height === "function") {
+        height = _height() - getRemainingHeight(wrapper);
+    } else if (typeof _height === "number") {
+        height = _height - getRemainingHeight(wrapper);
+    } else if (typeof _height === "string") {
+        console.warn(
+            "Possible types for tableHeight are number or function. Given type is string, which is currently being parsed width parseInt."
+        );
+        height = parseInt(_height, 10);
+        if (isNaN(height)) {
+            return;
+        }
+
+        height = height - getRemainingHeight(wrapper);
+    }
+
+    scrollBody = wrapper.find(".dataTables_scrollBody");
+    height = _height() - getRemainingHeight(wrapper);
+
+    scrollBody.height(height);
+    table.columns.adjust().draw();
+
+    width = _width() - getScrollbarWidth(wrapper);
+    tableEle.width(width);
+}
+
+
+/**
+ *
+ * @param calculates remaining table content height
+ * @returns {number}
+ */
+function getRemainingHeight(wrapper) {
+  var header = wrapper.find(".dataTables_scrollHead").outerHeight() || 0;
+  var info = wrapper.find(".dataTables_info").outerHeight() || 0;
+  var buttons = wrapper.find(".dataTables_buttons").outerHeight() || 0;
+  var pagination = wrapper.find(".dataTables_paginate").outerHeight() || 0;
+  var scrollFootInner = wrapper.find(".dataTables_scrollFootInner").outerHeight() || 0;
+  var filter = wrapper.find(".dataTables_filter").outerHeight() || 0;
+
+  return header + info + buttons + pagination + scrollFootInner + filter;
+}
+
+/**
+ *
+ * @param calculates y Axis scrollbar width
+ * @returns {number}
+ */
+function getScrollbarWidth(wrapper) {
+  var scrollBody = wrapper.find(".dataTables_scrollBody")[0];
+  var scrollBarWidth = scrollBody.offsetWidth - scrollBody.clientWidth;
+
+  return scrollBarWidth;
+}
+
+return new Table(base);]]></code>
+</script>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Recomendations.mAxis
+NodeClass: Variable
+BrowseName: 1:mAxis
+DisplayName: en|mAxis
+Description: en|mAxis
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

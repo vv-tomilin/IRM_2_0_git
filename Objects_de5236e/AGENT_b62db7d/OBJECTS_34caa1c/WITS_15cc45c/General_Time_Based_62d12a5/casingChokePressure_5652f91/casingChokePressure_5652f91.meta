@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.General_Time_Based.casingChokePressure
+NodeClass: Variable
+BrowseName: 1:casingChokePressure
+DisplayName: en|casingChokePressure
+Description: en|casingChokePressure
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

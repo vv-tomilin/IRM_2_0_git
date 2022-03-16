@@ -1,0 +1,10 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/DataTables/Scroller-1.4.4/css/scroller.bootstrap4.min.css
+NodeClass: Variable
+BrowseName: 1:scroller.bootstrap4.min.css
+DisplayName: en|scroller.bootstrap4.min.css
+Description: en|scroller.bootstrap4.min.css
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Css
+Reference: forward HasProperty ns=1;s=VariableTypes.ATVISE.Resource.Css.Compress

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg id="svg291" xmlns:svg="http://www.w3.org/2000/svg" version="1.1" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:dc="http://purl.org/dc/elements/1.1/" sodipodi:docname="Pipe_blue.svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" inkscape:version="1.0beta1 (d07a077, 2019-11-03)" width="80" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" height="80">
+ <defs id="defs285"/>
+ <sodipodi:namedview inkscape:window-height="951" borderopacity="1.0" inkscape:pageopacity="0.0" bordercolor="#666666" inkscape:document-rotation="0" inkscape:current-layer="layer1" inkscape:document-units="mm" inkscape:window-width="1644" inkscape:window-x="130" inkscape:zoom="0.35" pagecolor="#ffffff" inkscape:cx="970" inkscape:cy="361.42857" inkscape:window-y="23" id="base" inkscape:pageshadow="2" showgrid="false" inkscape:window-maximized="0"/>
+ <metadata id="metadata288">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+  <atv:gridconfig enabled="false" gridstyle="lines" width="20" height="20"/>
+  <atv:snapconfig enabled="false" width="10" height="10"/>
+ </metadata>
+ <g inkscape:label="Слой 1" id="layer1" atv:refpx="40" atv:refpy="40" inkscape:groupmode="layer" transform="matrix(1,0,0,1,150.8125,-52.5387)">
+  <g id="g342" atv:refpx="-110.813" atv:refpy="92.539" transform="matrix(0.8,0,0,0.8,-150.8125,52.538691)">
+   <g id="frame" atv:refpx="50" atv:refpy="50">
+    <rect id="rect327" y="0" fill="none" atv:refpx="50" atv:refpy="50" x="0" width="100" height="100"/>
+   </g>
+   <g id="shape" atv:refpx="50" atv:refpy="50">
+    <rect id="rect330" y="42" fill="#0080d5" atv:refpx="50" atv:refpy="50" x="0" width="100" height="16"/>
+   </g>
+   <g id="dark" atv:refpx="50" atv:refpy="50">
+    <rect id="rect333" y="43" fill="#005f9c" atv:refpx="50" atv:refpy="50" x="0" width="100" height="14"/>
+   </g>
+   <g id="light" atv:refpx="50" atv:refpy="50">
+    <rect id="rect336" y="45" fill="#2098e8" atv:refpx="50" atv:refpy="50" x="0" width="100" height="10"/>
+   </g>
+   <g id="hlight" atv:refpx="50" atv:refpy="50">
+    <rect id="rect339" y="46.5" fill="#82ccff" atv:refpx="50" atv:refpy="50" x="0" width="100" height="7"/>
+   </g>
+  </g>
+ </g>
+</svg>

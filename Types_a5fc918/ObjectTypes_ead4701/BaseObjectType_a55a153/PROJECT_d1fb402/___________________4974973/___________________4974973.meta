@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Стальная проволока
+NodeClass: ObjectType
+BrowseName: 1:Стальная проволока
+DisplayName: en|Стальная проволока
+Description: en|Стальная проволока
+IsAbstract: false

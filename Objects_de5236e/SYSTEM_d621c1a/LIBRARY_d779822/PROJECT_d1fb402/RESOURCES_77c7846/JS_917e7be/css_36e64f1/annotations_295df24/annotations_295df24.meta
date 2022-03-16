@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/css/annotations
+NodeClass: Object
+BrowseName: 1:annotations
+DisplayName: en|annotations
+Description: en|annotations
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

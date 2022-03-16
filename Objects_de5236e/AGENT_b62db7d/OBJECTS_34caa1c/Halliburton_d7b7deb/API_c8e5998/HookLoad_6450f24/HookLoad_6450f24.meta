@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Halliburton.API.HookLoad
+NodeClass: Variable
+BrowseName: 1:HookLoad
+DisplayName: en|HookLoad
+Description: en|HookLoad
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

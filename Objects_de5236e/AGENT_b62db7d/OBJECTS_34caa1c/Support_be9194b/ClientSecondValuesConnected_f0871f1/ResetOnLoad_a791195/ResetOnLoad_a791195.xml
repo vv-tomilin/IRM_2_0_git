@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="reset" type="startup" trigger="true" relative="false" value=""/>
+  <code><![CDATA[var nodeClientSecondValuesConnected = new UaNode("AGENT.OBJECTS.Support.ClientSecondValuesConnected");
+nodeClientSecondValuesConnected.assign({value: false});]]></code>
+</script>

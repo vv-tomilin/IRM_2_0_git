@@ -1,0 +1,10 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"Reg_Differencial".Reg
+NodeClass: Variable
+BrowseName: 1:Reg
+DisplayName: en|Reg
+Description: en|Reg
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.PROJECT.VT_"Reg_Direct"

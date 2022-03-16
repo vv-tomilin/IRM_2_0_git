@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.Condition2
+NodeClass: Variable
+BrowseName: 1:Condition2
+DisplayName: en|Condition2
+Description: en|Condition2
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

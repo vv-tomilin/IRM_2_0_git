@@ -1,0 +1,175 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="200" version="1.2" xmlns="http://www.w3.org/2000/svg" height="200" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:parameter valuetype="address" desc="Вес на крюке" behavior="optional" name="HookWeight" defaultvalue="AGENT.OBJECTS.SimulatedData.double_1"/>
+  <atv:parameter valuetype="number" desc="Макс. вес на крюке" behavior="optional" name="MaxHookWeight" defaultvalue="10"/>
+  <atv:parameter valuetype="address" desc="Нагрузка на долото " behavior="optional" name="DrilLoad" defaultvalue="AGENT.OBJECTS.SimulatedData.double_2"/>
+  <atv:parameter valuetype="number" desc="Макс нагрузка на долто" behavior="optional" name="MaxDrill" substitute="" defaultvalue="10"/>
+  <atv:parameter valuetype="address" desc="Положение крюка" behavior="optional" name="PositionHook" defaultvalue="AGENT.OBJECTS.SimulatedData.double_3"/>
+  <atv:parameter valuetype="number" desc="Макс. положение крюка" behavior="optional" name="MaxPosition" defaultvalue="10"/>
+  <atv:parameter valuetype="address" desc="Скорость СПО" behavior="optional" name="SPOSpeed" defaultvalue="AGENT.OBJECTS.SimulatedData.double_4"/>
+  <atv:parameter valuetype="number" desc="Макс. скорость СПО" behavior="optional" name="MaxSPOSpeed" defaultvalue="10"/>
+  <atv:parameter valuetype="number" desc="Ширина графика" behavior="optional" name="ChartWidth" defaultvalue="200"/>
+  <atv:gridconfig width="20" height="20" gridstyle="lines" enabled="false"/>
+  <atv:snapconfig width="10" height="10" enabled="false"/>
+ </metadata>
+ <foreignObject width="200" id="highchartsForeignObject" atv:bindbr="1,1" y="0.591" height="200" x="1" atv:bindtl="0,0">
+  <div xmlns="http://www.w3.org/1999/xhtml" style="width:100%;height:100%">
+   <div id="container" style="width:100%; height:100%;"/>
+  </div>
+ </foreignObject>
+ <g id="id_2" atv:refpy="0" transform="matrix(4,0,0,4,0,0)" atv:insensitive="true" atv:refpx="0">
+  <rect id="id_3" width="50.00" fill="#0000ff" y="0" atv:refpy="25" height="50.00" x="0" fill-opacity="0" atv:refpx="25"/>
+ </g>
+ <script type="text/ecmascript"><![CDATA[
+var maxValue=[webMI.query["MaxHookWeight"],webMI.query["MaxDrill"],webMI.query["MaxPosition"],webMI.query["MaxSPOSpeed"]]
+console.log("ПередМассивом");
+console.log(maxValue);
+console.log(webMI.query["HookWeight"],webMI.query["DrilLoad"],webMI.query["PositionHook"],webMI.query["SPOSpeed"]);
+var highchartConfig = {
+
+
+    chart: {
+   
+		 backgroundColor:'transparent',
+		margin: [0, 0, 0, 0],
+		height:webMI.query["ChartWidth"],
+		width: webMI.query["ChartWidth"],
+        polar: true,
+       	events:{
+		load: webMI.data.subscribeBlock([
+		webMI.query["HookWeight"],webMI.query["DrilLoad"],webMI.query["PositionHook"],webMI.query["SPOSpeed"]
+		],[],function(e){
+			
+			var series = myChart.series;
+			var LowerData= 92/maxValue[0]*e[0].value+8;
+			var NearLowerData= 92/maxValue[1]*e[1].value+8;
+			var NearUpperData= 92/maxValue[2]*e[2].value+8;
+			var UpData= (92/maxValue[3])*e[3].value+8;
+			console.log(LowerData,NearLowerData,NearUpperData,UpData);
+			series[0].update({ data:[LowerData,NearLowerData,NearUpperData,UpData]});
+			}
+	)
+	
+	},
+        
+    },
+
+    title:{
+        text:''
+    },
+  
+    pane: {
+        startAngle: 0,
+        endAngle: 180,
+        innerSize:"60%"
+    },
+
+    exporting: { enabled: false },
+
+    credits: {
+        enabled: false
+    },
+
+    tooltip: { enabled: false },
+
+    xAxis: {
+	
+        tickInterval: 45,
+        min: 180,
+        max: 360,
+        visible: false
+      
+    },
+
+    yAxis: {
+        min: 0, 
+        max: 100,
+        visible: false
+    },
+
+    plotOptions: {
+        series: {
+			
+            type:"column",
+            pointStart: 0,
+            pointInterval: 45,
+            groupPadding: 0.02
+        },
+        column: {
+            pointPadding: 0.09,
+            groupPadding: 0,
+            zones:[
+            {   
+                //цвет до 10 
+                value: 11,
+                color:  '#323d46' 
+             },
+			  {
+				value:60,
+				color:'#1691ff'
+			 },
+			 {
+                value: 80,
+                color: 'yellow'
+                
+			 },
+			
+            {
+            value: 100,
+                color:'red'
+            }]
+        }
+    },
+    legend: {
+        enabled: false
+    },
+    series: [{
+        type: 'column',
+        data: [] ,
+        enabled: false
+    }],
+    
+    
+
+   
+};
+
+webMI.addOnload(function(e) {
+var id = "left";
+var value = true;
+return function(value) {
+	var topWindow = parent;
+	if (topWindow.Highcharts == undefined){
+		webMI.data.loadScript("https://code.highcharts.com/highcharts.js",function(url, alreadyLoaded){
+			webMI.data.loadScript("https://code.highcharts.com/highcharts-more.js",function(url, alreadyLoaded){
+				webMI.data.loadScript("https://code.highcharts.com/modules/exporting.js",function(url, alreadyLoaded){
+					webMI.data.loadScript("https://code.highcharts.com/modules/export-data.js",function(url, alreadyLoaded){
+						webMI.data.loadScript("https://code.highcharts.com/modules/accessibility.js",function(url, alreadyLoaded){
+					initChart();
+						});	
+					});	
+				});		
+			});	
+		});	
+	} else {
+		initChart();
+	}
+
+	function initChart(){
+		topWindow.Highcharts.setOptions({
+			global: {
+				useUTC: false
+			}
+		});
+
+		var element = document.getElementById('container');
+		myChart = topWindow.Highcharts.chart(element, highchartConfig);
+
+	}
+} (value);
+});
+
+]]></script>
+</svg>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg id="Ebene_1" xml:space="preserve" enable-background="new 0 0 72 72" x="0px" xmlns:atv="http://webmi.atvise.com/2007/svgext" y="0px" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="40">
+ <defs/>
+ <metadata>
+  <atv:parameter valuetype="color" behavior="optional" substitute="$SYMBOLCOLOR$" defaultvalue="#000000" name="symbolColor" desc="symbol color"/>
+  <atv:gridconfig gridstyle="lines" enabled="false" width="20" height="20"/>
+  <atv:snapconfig enabled="false" width="10" height="10"/>
+ </metadata>
+ <path d="M27.238,7.556L27.238,12.27C29.735,14.412 31.325,17.585 31.325,21.125C31.325,27.564 26.089,32.8 19.651,32.8C13.213,32.8 7.977,27.563 7.977,21.125C7.977,17.944 9.257,15.06 11.328,12.953L11.328,7.998C6.988,10.759 4.1,15.611 4.1,21.125C4.1,29.701 11.076,36.679 19.652,36.679C28.226,36.679 35.204,29.701 35.204,21.125C35.204,15.303 31.986,10.221 27.238,7.556" id="id_0" atv:refpx="19.654" atv:refpy="22.12" fill="$SYMBOLCOLOR$"/>
+ <polygon id="id_1" points="21.77,17.395 17.532,17.395 17.532,3.347 21.77,3.347 21.77,17.395" atv:refpx="19.653" atv:refpy="10.373" fill="$SYMBOLCOLOR$"/>
+</svg>

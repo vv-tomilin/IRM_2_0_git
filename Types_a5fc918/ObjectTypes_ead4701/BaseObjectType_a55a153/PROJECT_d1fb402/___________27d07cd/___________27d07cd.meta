@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Крестовина
+NodeClass: ObjectType
+BrowseName: 1:Крестовина
+DisplayName: en|Крестовина
+Description: en|Крестовина
+IsAbstract: false

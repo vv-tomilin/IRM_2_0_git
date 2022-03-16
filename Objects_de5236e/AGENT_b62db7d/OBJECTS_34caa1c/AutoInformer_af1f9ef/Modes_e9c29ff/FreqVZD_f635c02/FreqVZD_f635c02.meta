@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AutoInformer.Modes.FreqVZD
+NodeClass: Variable
+BrowseName: 1:FreqVZD
+DisplayName: en|FreqVZD
+Description: en|FreqVZD
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

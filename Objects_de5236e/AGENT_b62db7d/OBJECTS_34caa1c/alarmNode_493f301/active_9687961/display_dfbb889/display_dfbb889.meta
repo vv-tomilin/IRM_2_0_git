@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.alarmNode.active.display
+NodeClass: Variable
+BrowseName: 1:display
+DisplayName: en|display
+Description: en|display
+DataType: NodeId
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

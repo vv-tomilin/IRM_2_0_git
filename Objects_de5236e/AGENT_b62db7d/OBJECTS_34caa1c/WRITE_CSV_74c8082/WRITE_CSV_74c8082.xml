@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="interval" type="interval" trigger="false" relative="false" value="" offset="14:52:00"/>
+  <code><![CDATA[var nodes=["AGENT.OBJECTS.float1",
+		"AGENT.OBJECTS.float2", 
+		"AGENT.OBJECTS.float3"];
+
+var date = new Date();
+var y=date.getYear()+1900;
+var m=date.getMonth()+1;
+var d=date.getDate();
+
+var filename = "nodes_" + y + "_" + m + "_" + d + ".csv";
+
+var ofs = new OutputFileStream(filename,'utf8','append');
+ofs.open();
+
+for(var i in nodes)
+{
+	var node = new UaNode(nodes[i]);
+	ofs.writeLine(d + "." + m + "." + y + ";" + 
+		nodes[i] + ";" + 
+		(Math.round(node.value * 100) / 100));
+}
+
+ofs.close();]]></code>
+</script>

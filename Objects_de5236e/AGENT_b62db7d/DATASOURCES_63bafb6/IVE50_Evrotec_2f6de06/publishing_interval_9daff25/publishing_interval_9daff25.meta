@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DATASOURCES.IVE50_Evrotec.publishing_interval
+NodeClass: Variable
+BrowseName: 1:publishing_interval
+DisplayName: en|publishing_interval
+Description: en|publishing_interval
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Settings_param.DiffPressureParam.diff_pressure_params
+NodeClass: Variable
+BrowseName: 1:diff_pressure_params
+DisplayName: en|diff_pressure_params
+Description: en|diff_pressure_params
+DataType: String
+ValueRank: 1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.RawData

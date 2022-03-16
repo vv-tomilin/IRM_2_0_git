@@ -1,0 +1,11 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"APD1"."Speed".Slowdown_High.Value_Init
+NodeClass: Variable
+BrowseName: 1:Value_Init
+DisplayName: en|Value_Init
+Description: en|Value_Init
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseDataVariableType
+Reference: forward HasComponent ns=1;s=VariableTypes.PROJECT.VT_"Slowdown".Value_Init.RelMirrorInput

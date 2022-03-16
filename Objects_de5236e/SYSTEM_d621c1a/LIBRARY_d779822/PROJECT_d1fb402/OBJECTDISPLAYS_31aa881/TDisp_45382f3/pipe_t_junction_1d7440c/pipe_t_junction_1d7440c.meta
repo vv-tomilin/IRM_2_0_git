@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.TDisp.pipe_t_junction
+NodeClass: Variable
+BrowseName: 1:pipe_t_junction
+DisplayName: en|pipe_t_junction
+Description: en|pipe_t_junction
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

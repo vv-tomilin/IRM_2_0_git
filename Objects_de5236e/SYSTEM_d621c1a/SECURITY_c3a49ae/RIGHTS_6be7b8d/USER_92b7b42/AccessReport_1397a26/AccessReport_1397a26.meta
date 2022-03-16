@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.SECURITY.RIGHTS.USER.AccessReport
+NodeClass: Object
+BrowseName: 1:AccessReport
+DisplayName: en|AccessReport
+Description: en|AccessReport
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

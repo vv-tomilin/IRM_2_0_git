@@ -1,0 +1,11 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Drawworks.Brakes.Works.N1.Pressure.Limit_high
+NodeClass: Variable
+BrowseName: 1:Limit_high
+DisplayName: en|Limit_high
+Description: en|Limit_high
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

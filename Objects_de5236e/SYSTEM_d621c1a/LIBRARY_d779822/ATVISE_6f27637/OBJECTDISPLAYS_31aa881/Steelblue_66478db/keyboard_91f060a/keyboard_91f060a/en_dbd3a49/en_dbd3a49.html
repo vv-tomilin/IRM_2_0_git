@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Description</h1>
+<p>The keyboard display offers an on-screen keyboard for string input.</p>
+<p>Simple text input by clicking once on the desired key and complete the input
+by clicking the "EN" key (This will write the current input to the given
+address node "Target"). The "delete" key can be used to delete single
+characters or to remove the whole input by holding it at least for 1 second.
+To abort and escape the input it is necessary to click the "X" button on the
+bottom left corner.</p>
+<p>There are currently two different keyboard layouts that will be supported
+(english, german), which are automatically set depending on the client's
+language.</p>
+<h1>Parameters</h1>
+<p>The following common Parameters exists:</p>
+<ul>
+  <li><span class="parameter">Initial Value</span>: value that will be set initially</li>
+  <li><span class="parameter">Target</span>: address target node to write input to</li>
+  <li><span class="parameter">Tabstop</span>: tabstop that will be used for the TAB key, default is 1</li>
+  <li><span class="parameter">password mode</span>: hides characters and shows stars instead</li>
+  <li><span class="parameter">trigger to be fired</span>: name of the global trigger which will be fired when the input is complete</li>
+</ul>
+<h1>Examples</h1>
+<p>Create a display with a button that opens a window with the keyboard by
+clicking on to it and add the desired target node to the query.</p>
+</body>
+</html>

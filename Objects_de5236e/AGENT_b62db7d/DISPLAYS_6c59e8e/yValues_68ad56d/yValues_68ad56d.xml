@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Value xmlns="http://opcfoundation.org/UA/2011/03/UANodeSet.xsd" xmlns:uax="http://opcfoundation.org/UA/2008/02/Types.xsd">
+	<uax:ListOfDouble>
+		<uax:Double>76</uax:Double>
+		<uax:Double>97</uax:Double>
+		<uax:Double>17</uax:Double>
+		<uax:Double>73</uax:Double>
+		<uax:Double>44</uax:Double>
+		<uax:Double>96</uax:Double>
+		<uax:Double>61</uax:Double>
+		<uax:Double>14</uax:Double>
+		<uax:Double>14</uax:Double>
+		<uax:Double>55</uax:Double>
+	</uax:ListOfDouble>
+</Value>

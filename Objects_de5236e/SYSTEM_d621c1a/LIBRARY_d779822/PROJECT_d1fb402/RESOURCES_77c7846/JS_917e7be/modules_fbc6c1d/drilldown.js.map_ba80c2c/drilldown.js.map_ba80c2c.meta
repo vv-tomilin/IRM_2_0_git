@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/drilldown.js.map
+NodeClass: Variable
+BrowseName: 1:drilldown.js.map
+DisplayName: en|drilldown.js.map
+Description: en|drilldown.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

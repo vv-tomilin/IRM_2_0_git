@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel4
+NodeClass: Variable
+BrowseName: 1:TankLevel4
+DisplayName: en|TankLevel4
+Description: en|TankLevel4
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

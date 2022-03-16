@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Support.Auto.NPVSecondsByOnWedges
+NodeClass: Variable
+BrowseName: 1:NPVSecondsByOnWedges
+DisplayName: en|NPVSecondsByOnWedges
+Description: en|NPVSecondsByOnWedges
+DataType: UInt64
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

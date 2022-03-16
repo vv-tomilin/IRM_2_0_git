@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.SvgFlow.Condensor_brown
+NodeClass: Variable
+BrowseName: 1:Condensor_brown
+DisplayName: en|Condensor_brown
+Description: en|Condensor_brown
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

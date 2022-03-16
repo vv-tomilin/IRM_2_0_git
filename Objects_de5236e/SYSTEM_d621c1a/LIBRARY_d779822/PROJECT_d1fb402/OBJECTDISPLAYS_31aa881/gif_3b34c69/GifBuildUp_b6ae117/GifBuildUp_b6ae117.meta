@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.gif.GifBuildUp
+NodeClass: Variable
+BrowseName: 1:GifBuildUp
+DisplayName: en|GifBuildUp
+Description: en|GifBuildUp
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

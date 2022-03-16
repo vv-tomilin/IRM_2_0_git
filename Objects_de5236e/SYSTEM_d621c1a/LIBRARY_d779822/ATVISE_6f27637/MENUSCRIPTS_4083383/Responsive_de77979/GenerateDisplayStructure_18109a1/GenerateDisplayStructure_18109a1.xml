@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="nodes" type="array" trigger="true" relative="false" value=""/>
+  <parameter name="style" type="string" trigger="false" relative="false" value="Advanced"/>
+  <code><![CDATA[// **************************************************************************************
+// * Creates display structure for responsive light handling
+// * Parameters
+// * style --> Style for default displays, needs to be set to "Advanced", "Chrome", "Standard" or "Steelblue"
+// **************************************************************************************
+
+var serverDisplays = new UaNode(nodes[0]);
+var structure = ["TABLET", "TABLET.Portrait", "TABLET.Landscape", "MOBILE", "MOBILE.Portrait", "MOBILE.Landscape"];
+var menu = ["MAIN", "USER", "SYSTEM", "REPORT"]; 
+var serverRoot = serverDisplays.nodeaddr.split(".")[0];
+var root = serverRoot + ".DISPLAYS";
+var rootNode = new UaNode(root);
+var dispProp = {};
+var defaultHelpMessage = "//The configuration parameters are described in the atvise help section \"Client/Browserside scripting reference -> Configuration\".";
+var styles = ["Advanced", "Chrome", "Standard", "Steelblue"];
+
+if(!rootNode.exists() || serverRoot == "SYSTEM") {
+  throw "\n\nInvalid Element in structure selected - please select Server or any Element in your Serverstructure.";
+} else if (styles.indexOf(style) < 0) {
+  throw '\n\nInvalid style selected - Style needs to be set to "Advanced", "Chrome", "Standard" or "Steelblue"';
+}
+
+function createElement(node, type, useLayout, code){
+	if(type == "folder"){
+		var tmp = new UaNode(node);
+		if(!tmp.exists())
+			tmp.create({
+				nodeclass: UaNode.NODECLASS_OBJECT,
+				parent: node.substr(0, node.lastIndexOf(".")),
+				typedefinition: UaNode.FOLDERTYPE
+			});
+	}
+
+	if(type == "display"){
+		var layout = "";
+		var content = "";
+
+		if(useLayout == true) {
+      var layoutXML = {};
+      var xlinkNamespace = "http://www.w3.org/1999/xlink";
+			var layoutString = node.substr(0, node.lastIndexOf(".")).replace(root, "SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.LAYOUTS.Responsive") + "_Default";
+
+			layout = new UaNode(layoutString);
+			content = layout.value;
+      layoutXML = new XMLDoc(layout.value);
+
+      // search for top display
+      for (var ele = layoutXML.root.first("svg"); ele; ele = ele.next("svg")) {
+      	var href = ele.attribute("href", xlinkNamespace);
+				var newHref = href.replace(/(?:Advanced|Chrome|Standard|Steelblue)/g, style);
+
+      	if (href && href.indexOf("top") > -1) {
+					content = content.replace(href, newHref);
+          break;
+      	}
+			}
+		}
+
+		var tmp = new UaNode(node);
+		if(!tmp.exists())
+			tmp.create({
+				nodeclass:UaNode.NODECLASS_VARIABLE,
+				parent: node.substr(0, node.lastIndexOf(".")),
+				typedefinition: "VariableTypes.ATVISE.Display",
+				reference:UaNode.HASCOMPONENT,
+				datatype:UaNode.XMLELEMENT,
+				valuerank:UaNode.VALUERANK_SCALAR,
+				value: code == null ? content : code
+			});
+	}
+}
+
+for(var i in structure) {
+	createElement(root + "." + structure[i], "folder");
+
+	if(structure[i].indexOf(".") >= 0) {
+		for(var x in menu){
+			createElement(root + "." + structure[i] + "." + menu[x], "folder");
+		}
+		createElement(root + "." + structure[i] + ".Default", "display", true);
+
+		//var width = 0;
+		//var height = 0;
+		var display = new UaNode(root + "." + structure[i] + ".Default");
+		var xmlDoc = new XMLDoc(display.value);
+		var atv = "http://webmi.atvise.com/2007/svgext";
+		
+		dispProp[structure[i]] = [xmlDoc.root.attribute("contentwidth", atv), xmlDoc.root.attribute("contentheight", atv)];
+		//.width = xmlDoc.root.attribute("contentwidth", atv);
+		//dispProp[structure[i]] = "test";//.height = xmlDoc.root.attribute("contentheight", atv);
+
+		/*var displaycode = '<?xml version="1.0" encoding="UTF-8"?>'
+		displaycode += '<svg height="' + Number(height) + '" version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="' + Number(width) + '">'
+		displaycode += '<defs/>';
+		displaycode += '<metadata>';
+		displaycode += '<atv:gridconfig height="20" gridstyle="lines" enabled="false" width="20"/>';
+		displaycode += '<atv:snapconfig height="10" enabled="true" width="10"/>';
+		displaycode += '</metadata>';
+		displaycode += '</svg>';*/
+	}
+}
+
+//Generate Displaysstructure
+
+function browse(nodeid){
+	var node = new UaNode(nodeid);
+	var result = node.browse({
+		direction:UaNode.BROWSEDIRECTION_FORWARD,
+		reference:UaNode.HIERARCHICALREFERENCES,
+		subtype:true,
+		nodeclass:UaNode.NODECLASS_UNSPECIFIED,
+		maxresult:0
+	});
+	
+	for(var i in result){
+		if(result[i].node.displayname != "TABLET" && result[i].node.displayname != "MOBILE"){
+			if(result[i].node.typedefinitionToString() == "Display")
+				create(result[i].node.typedefinitionToString(), result[i].node.nodeaddr, result[i].node.value);
+			if(result[i].node.typedefinitionToString() == "FolderType"){
+				create(result[i].node.typedefinitionToString(), result[i].node.nodeaddr);
+			}
+			browse(result[i].node.nodeaddr);
+		}
+	};
+}
+
+function create(type, address, value){
+	for(var i = 0; i < structure.length ; ){
+		if(structure[i].indexOf(".") >= 0){
+			var tmpAdd = address.replace("DISPLAYS", "DISPLAYS." + structure[i]);
+			if(type == "FolderType"){
+				var tmp = new UaNode(tmpAdd);
+				if(!tmp.exists())
+					tmp.create({
+						nodeclass: UaNode.NODECLASS_OBJECT,
+						parent: tmpAdd.substr(0, tmpAdd.lastIndexOf(".")),
+						typedefinition: UaNode.FOLDERTYPE
+					});
+			}
+	
+			if(type == "Display"){
+				var xml = new XMLDoc(value, "string");
+				var height = xml.root.attribute("height");
+				var width = xml.root.attribute("width");
+				var add = tmpAdd.split(".");
+				value = value.replace('height="' + height + '"', 'height="' + dispProp[add[2] + "." + add[3]][1]/*200*/ + '"').replace('width="' + width + '"', 'width="' + dispProp[add[2] + "." + add[3]][0]/*200*/ + '"');
+
+				var tmp = new UaNode(tmpAdd);
+				if(!tmp.exists())
+					tmp.create({
+						nodeclass:UaNode.NODECLASS_VARIABLE,
+						parent: tmpAdd.substr(0, tmpAdd.lastIndexOf(".")),
+						typedefinition: "VariableTypes.ATVISE.Display",
+						reference:UaNode.HASCOMPONENT,
+						datatype:UaNode.XMLELEMENT,
+						valuerank:UaNode.VALUERANK_SCALAR,
+						value: value
+					});
+			}
+		}
+		i++;
+	}
+};
+
+browse(root);
+
+//Activate responsiveLite option
+var configObj = {};
+var webmicfg = new UaNode("SYSTEM.LIBRARY.ATVISE.RESOURCES/webmicfg.js");
+if(webmicfg.value && webmicfg.value.includes("=")) {
+	var content = webmicfg.value.split("=")[1];
+	var configString = content.replace(" ", "").replace(";", "").replace(defaultHelpMessage, "");
+	
+	try {
+	  configObj = JSON.parse(configString);
+	} catch (ex) {
+		throw "\n\nFailed to parse webmicfg.js. webmicfg.js needs to be in JSON format to make this script work" +
+			"\n\nError message: " +
+			ex.message;
+	
+		return;
+	}
+}
+if(!configObj) {
+	configObj = {}
+}
+if(!configObj.hasOwnProperty("responsiveLite") || configObj.responsiveLite.active !== true) {
+	if(!configObj.hasOwnProperty("responsiveLite")) {
+		configObj.responsiveLite = {}
+	}
+	configObj.responsiveLite.active = true;
+	formattedConfigString = JSON.stringify(configObj, null, "\t").slice(1 , -1);
+	webmicfg.value = "var webMIConfig = {\n" + defaultHelpMessage + formattedConfigString + "};";
+}]]></code>
+</script>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.SMTPSERVERS.mail.ru.security
+NodeClass: Variable
+BrowseName: 1:security
+DisplayName: en|security
+Description: en|security
+DataType: UInt16
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

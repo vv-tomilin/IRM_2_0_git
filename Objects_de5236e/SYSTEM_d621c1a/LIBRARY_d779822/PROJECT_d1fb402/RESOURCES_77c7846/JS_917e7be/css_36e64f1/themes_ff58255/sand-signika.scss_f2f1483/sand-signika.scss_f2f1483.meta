@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/css/themes/sand-signika.scss
+NodeClass: Variable
+BrowseName: 1:sand-signika.scss
+DisplayName: en|sand-signika.scss
+Description: en|sand-signika.scss
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

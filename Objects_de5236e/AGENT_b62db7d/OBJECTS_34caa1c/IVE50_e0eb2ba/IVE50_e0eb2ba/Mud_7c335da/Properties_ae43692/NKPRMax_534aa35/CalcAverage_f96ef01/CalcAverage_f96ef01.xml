@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="val1" type="node.value" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.IVE50.Mud.Properties.NKPR1"/>
+  <parameter name="val2" type="node.value" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.IVE50.Mud.Properties.NKPR2"/>
+  <parameter name="val3" type="node.value" trigger="true" relative="false" value="ns=1;s=AGENT.OBJECTS.IVE50.Mud.Properties.NKPR3"/>
+  <code><![CDATA[var nodeNKPR1 = new UaNode("AGENT.OBJECTS.IVE50.Mud.Properties.NKPR1");
+var nodeNKPR2 = new UaNode("AGENT.OBJECTS.IVE50.Mud.Properties.NKPR2");
+var nodeNKPR3 = new UaNode("AGENT.OBJECTS.IVE50.Mud.Properties.NKPR3");
+
+var avr = Math.max(nodeNKPR1.value, nodeNKPR2.value, nodeNKPR3.value);
+
+var nodeNKPRMax = new UaNode("AGENT.OBJECTS.IVE50.Mud.Properties.NKPRMax");
+var res = nodeNKPRMax.assign({value: avr});
+]]></code>
+</script>

@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="380" version="1.2" width="630" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="true" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <g atv:insensitive="true" atv:refpx="0" atv:refpy="0" id="id_2" transform="matrix(1,0,0,0.95,0,0)">
+  <rect atv:refpx="315" atv:refpy="200" fill="#1f1f1f" height="400.00" id="id_3" width="630.00" x="0" y="0"/>
+ </g>
+ <g atv:refpx="315" atv:refpy="315" id="id_8" transform="matrix(1,0,0,1,15.268,0)">
+  <text atv:refpx="333.167" atv:refpy="318" fill="#ffffff" font-family="Arial" font-size="20" id="id_status" x="307.54" y="322.5">$Статус$</text>
+  <text atv:refpx="244.924" atv:refpy="315" fill="#ffffff" font-family="Arial" font-size="20" id="id_0" x="208.424" y="322.5">Статус :</text>
+ </g>
+ <text atv:refpx="296" atv:refpy="73.964" fill="#ffffff" font-family="Arial" font-size="20" id="id_4" x="66.5" y="81.464">Отправлен запрос на изменение текущих уставок:</text>
+ <foreignObject height="175.814" id="id_limitations_container" width="477.698" x="76.034" y="102.915">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <div id="id_limitations"/>
+  </div>
+ </foreignObject>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[var statusText = document.getElementById("id_status");
+var trigger = "AGENT.OBJECTS.Set_var.SetVarValues";
+var currentNodeAddressArray = ["AGENT.OBJECTS.ASPD.APD1.Speed.Drill.Limit","AGENT.OBJECTS.ASPD.APD1.Load.Drill.Limit","AGENT.OBJECTS.ASPD.APD1.Diff_Pressure.Drill.Limit", "AGENT.OBJECTS.ASPD.APD1.Torque.Limit"];
+var nodeAddressArray = ["AGENT.OBJECTS.Set_var.Drill_speed_limit.Drill_speed_limit_value","AGENT.OBJECTS.Set_var.Load_on_bit_limit.Load_on_bit_limit_value","AGENT.OBJECTS.Set_var.Diff_pressure_limit.Diff_pressure_limit_value","AGENT.OBJECTS.Set_var.TDS_torque_limit.TDS_torque_limit_value"];
+var newNodesArray = ["AGENT.OBJECTS.Set_var.Drill_speed_limit","AGENT.OBJECTS.Set_var.Load_on_bit_limit","AGENT.OBJECTS.Set_var.Diff_pressure_limit","AGENT.OBJECTS.Set_var.TDS_torque_limit"]
+var limitationsContainer = document.getElementById("id_limitations");
+var valueArr = [
+"Скорость проходки м/ч",
+"Нагрузка на долото тс.",
+"Перепад даввления МПА",
+ "Момент ВСП кН/метр."
+]
+webMI.data.read(nodeAddressArray,function(e){
+	newNodesArray.forEach(function(f,cnt){
+		webMI.data.write(f,e[cnt].value)	
+	})
+	webMI.data.read(currentNodeAddressArray,function(f){
+		for(var i = 0;i<valueArr.length;i++){
+			if(e[i].value!=f[i].value){
+				var ins=valueArr[i]
+				limitationsContainer.insertAdjacentHTML("beforeend", "<p style='color:white;'>" + ins + "</p>");
+			}
+		}
+	})
+})
+
+
+function changeStatus(currentStatus) {
+	webMI.gfx.setText(statusText, currentStatus ? currentStatus : webMI.query["status"]);
+}
+
+changeStatus();
+
+
+webMI.data.subscribe(trigger, function(e) {
+	var every=true;
+	var NNA=[]
+	var CNA=[]
+	if (!e.value) {
+		webMI.data.read(currentNodeAddressArray,function(f){
+			f.forEach(function(buf){CNA.push(buf.value)})
+			webMI.data.read(nodeAddressArray,function(p){
+				p.forEach(function(buf){NNA.push(buf.value)})
+				for(var i=0;i<NNA.length;i++){
+					if(NNA[i]!=CNA[i]){console.log('Несоответствие',i); every=false}
+				}
+				if(every){changeStatus("Запрос принят");}else{changeStatus("Запрос отклонён");}
+			})
+		})
+	} else changeStatus("Ожидание");
+
+})
+]]></script>
+</svg>

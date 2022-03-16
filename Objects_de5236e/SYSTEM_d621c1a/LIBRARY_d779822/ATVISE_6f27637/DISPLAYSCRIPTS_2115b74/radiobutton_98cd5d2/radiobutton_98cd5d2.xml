@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <code><![CDATA[/**
+ * Code for the radiobutton object display
+ * ---------------------------------------
+ * The radiobutton switches between two values (equal to the button switch) and can be used as input or output control only. Several radiobuttons can be combined to a radiobutton group where always only one radiobutton can be ticked.
+ * It can be used in the following modes:
+ * 1) only "base" is specified: in this case additionally the "value" has to be set
+ * With this configuration, on each click, the "base" will be set to "value". The radiobutton will be ticked, if the value of "base" equals "value".
+ * 2) "base" and "address to set" are specified:
+ * With this configuration, on each click, the following happens: 
+ * - The radiobutton will be ticked if the value of the "base"&nbsp;equals&nbsp;"value".
+ * - On click "address to set" will be set to "value".
+ * - The radiobutton itself will change the state (ticked or not) only when the "base" is changed (feedback channel).
+ * 3) neither "base" nor &ldquo;address to set&rdquo; are specified:
+ * In this case, the trigger "valuechanged" with the value from "value" will be fired. This trigger can be used to add a Simple Dynamic to this radiobutton which reacts on the trigger and fires a new trigger. This new trigger can then be used by other elements.
+ * An additional border indicates the current value's negative state or an additionally defined alarm. The colors and blinking intervals are defined in global lists.
+ */
+
+
+/**
+ * DECLARATION SECTION
+ */
+
+var selectedItem = null;
+var base = (webMI.query["base"] == undefined) ? "" : webMI.query["base"];
+var setValue = (webMI.query["value"] == undefined) ? "" : webMI.query["value"];
+var outputNode = (webMI.query["outputNode"] == undefined) ? "" : webMI.query["outputNode"];
+var fontColor = webMI.query["fontColor"];
+var strokePressed = webMI.query["strokePressed"];
+var focusStrokeColor = webMI.query["focusStrokeColor"];
+var preselected = webMI.query["preselected"];
+var selectAreaFill = typeof webMI.query["fill"] != "undefined" ? webMI.query["fill"] : webMI.query["selectAreaFill"];
+var selectAreaFillPressed = webMI.query["selectAreaFillPressed"];
+var fillColor = webMI.query["fillColor"];
+var fillColorInactive = webMI.query["fillColorInactive"];
+var tabHandler = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tab Handler");
+var tabIndex = (webMI.query["tabIndex"] == undefined) ? "" : webMI.query["tabIndex"];
+var tooltip = (webMI.query["tooltip"] == undefined) ? "" : webMI.query["tooltip"];
+var consistencyGroup = webMI.query["consistencyGroup"];
+var alarmToSubscribe = webMI.query["alarm"];
+var alarmIndication = webMI.query["alarmIndication"];
+var statusEnabled = webMI.query["statusEnabled"];
+var statusTrigger = webMI.query["statusTrigger"];
+var statusIndication = webMI.query["statusIndication"];
+var right = (webMI.query["right"] == undefined) ? "" : webMI.query["right"];
+var activeValue = (webMI.query["activeValue"] == undefined) ? "" :webMI.query["activeValue"];
+var activeNode = (webMI.query["activeNode"] == undefined) ? "" : webMI.query["activeNode"];
+var curValue;
+var active = false;
+if (consistencyGroup)
+	var consistencyHandler = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Consistency Handler");
+var isActivationNodeSet = activeNode != "" && String(activeValue) != "";
+
+/**
+ * RUNTIME SECTION
+ */
+
+var rightsHandlingProperties = {
+	right: right,
+	checkBaseNodeWriteRight: true,
+	isActivationNodeSet: isActivationNodeSet,
+	notifierConfiguration: {"id":"radiobutton_clickarea", "node_1": webMI.query["base"], "right_1": "read", "node_2": webMI.query["alarm"], "right_2": "readEvent"},
+	setActiveTrigger: true,
+	handleStatus: true
+};
+
+if (typeof rightsHandling === "function") rightsHandling(rightsHandlingProperties);
+
+webMI.gfx.setVisible("radiobutton_symbol", false);
+
+if (alarmToSubscribe != "")
+	initAlarm(alarmToSubscribe);
+
+if (base != "") {
+	if (consistencyGroup) {
+		consistencyHandler.register(consistencyGroup, base, update);
+	} else {
+		webMI.data.subscribe(base, function(e) {
+			curValue = e.value;
+			if (typeof curValue == "boolean") setValue=(setValue=="true"||setValue=="1");
+			if (String(setValue) != "") {
+				if (curValue == setValue) {
+					webMI.gfx.setVisible("radiobutton_symbol", null);
+				} else {
+					webMI.gfx.setVisible("radiobutton_symbol", false);
+				}
+			}
+			if (typeof e.status != "undefined" && typeof handleStatus === "function")
+				handleStatus(e.status);
+		});
+	}
+}
+
+if (preselected == "true" && base == "") {
+	if (active) {
+		var value = (String(setValue) != "") ? setValue : curValue;
+		var name = webMI.gfx.getText("radiobutton_label");
+		webMI.trigger.fire(["radioClicked_"+webMI.query["radiogroupId"]], {name: name, value: value});
+	}
+	preselected = "false";
+}
+
+webMI.addOnload(function() {
+	var doc = document.getElementById("radiobutton_clickarea").ownerDocument;
+	tabHandler.register(tabIndex,keyHandler,doc);
+});
+
+if (tooltip != ""){
+	webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Tooltip", {"auto":"true", "id":"radiobutton_clickarea", "text":tooltip});
+}
+
+/**
+ * FUNCTION SECTION
+ */
+
+function setActiveLayout() {
+	if (typeof webMI.gfx.getX("focus_frame") != "undefined") {
+		webMI.gfx.setFill("radiobutton_bg", selectAreaFill);
+	} else if(typeof(fill) != "undefined") {
+		webMI.gfx.setFill("radiobutton_bg", fill);
+		webMI.gfx.setFill("radiobutton_bg2", fill);
+	}
+}
+
+function setInactiveLayout() {
+	if (typeof webMI.gfx.getX("focus_frame") != "undefined") {
+		webMI.gfx.setFill("radiobutton_bg", fillColorInactive);
+	} else {
+		webMI.gfx.setFill("radiobutton_bg", fillColorInactive);
+		webMI.gfx.setFill("radiobutton_bg2", fillColorInactive);
+	}
+}
+
+function focusTH(){
+	if (active) {
+		if (typeof webMI.gfx.getX("focus_frame") != "undefined") {
+			webMI.gfx.setStroke("focus_frame", focusStrokeColor);
+		} else {
+			webMI.gfx.setStroke("radiobutton_bg", focusStrokeColor);
+			webMI.gfx.setStroke("radiobutton_bg2", focusStrokeColor);
+		}
+	}
+}
+
+function blurTH(){
+	if (active) {
+		if (typeof webMI.gfx.getX("focus_frame") != "undefined") {
+			webMI.gfx.setStroke("focus_frame", "none");
+		} else {
+			webMI.gfx.setStroke("radiobutton_bg", "none");
+			webMI.gfx.setStroke("radiobutton_bg2", "none");
+		}
+	}
+}
+
+function applyTH(){
+	if (active) {
+		var value = (String(setValue) != "") ? setValue : curValue;
+		var name = webMI.gfx.getText("radiobutton_label");
+		webMI.trigger.fire(["radioClicked_"+webMI.query["radiogroupId"]], {name: name, value: value});
+	}
+}
+
+function backTH() {
+}
+
+function arrowTH(dir) {
+}
+
+function keyHandler(keyTH, param2) {
+	if (keyTH == "focus") {
+		focusTH();
+	} else if (keyTH == "blur") {
+		blurTH();
+	} else if (keyTH == "apply") {
+		applyTH();
+	} else if (keyTH == "space") {
+		applyTH();
+	} else if (keyTH == "back") {
+		backTH();
+	} else if (keyTH == "arrow") {
+		arrowTH(param2);
+	} else if (keyTH == "isActive") {
+		return active && param2(document.getElementById("radiobutton_clickarea").parentNode);
+	}
+}
+
+function update(value) {
+	var tmpValue = (String(setValue) != "") ? setValue : curValue;
+
+	if (value == tmpValue) {
+		webMI.trigger.fire("valuechanged", value, "");
+		webMI.gfx.setVisible("radiobutton_symbol", null);
+	} else {
+		webMI.gfx.setVisible("radiobutton_symbol", false);
+	}
+}
+
+function release() {
+	if (active) {
+		if (typeof webMI.gfx.getX("focus_frame") != "undefined") {
+			webMI.gfx.setStroke("focus_frame", "none");
+			webMI.gfx.setFill("radiobutton_bg", selectAreaFill);
+		} else {
+			webMI.gfx.setStroke("radiobutton_bg", "none");
+			webMI.gfx.setStroke("radiobutton_bg2", "none");
+		}
+	}
+}
+
+/**
+ * EVENT SECTION
+ */
+
+webMI.addEvent("radiobutton_clickarea", "click", function(e) {
+	if (active) {
+		tabHandler.setCurrentIndex(keyHandler);
+		var value = (String(setValue) != "") ? setValue : curValue;
+		var name = webMI.gfx.getText("radiobutton_label");
+		webMI.trigger.fire(["radioClicked_"+webMI.query["radiogroupId"]], {name: name, value: value});
+	}
+});
+
+/*
+	Events for optical representation
+*/
+
+webMI.addEvent("radiobutton_clickarea", "mousedown", function(e) {
+	var value = true;
+	return function(value) {
+		if (active) {
+			if (typeof webMI.gfx.getX("focus_frame") != "undefined") {
+				webMI.gfx.setStroke("focus_frame", strokePressed);
+				webMI.gfx.setFill("radiobutton_bg", selectAreaFillPressed);
+			} else {
+				webMI.gfx.setStroke("radiobutton_bg", strokePressed);
+				webMI.gfx.setStroke("radiobutton_bg2", strokePressed);
+			}
+		}
+	} (value);
+});
+
+webMI.addEvent("radiobutton_clickarea", ["mouseup","mouseout"], function(e) {
+	var value = true;
+	return function(value) {
+		release();
+	} (value);
+});
+
+webMI.addEvent("radiobutton_clickarea", "dragstart", function(e) {
+	if (e.preventDefault) {
+		e.preventDefault();
+	}
+});
+
+/**
+ * TRIGGER SECTION
+ */
+
+/**
+ * Radiogroup event that is triggered when an option is clicked
+*/
+
+webMI.trigger.connect("radioClicked_"+webMI.query["radiogroupId"], function(e) {
+	var value = e.value;
+	var name = webMI.gfx.getText("radiobutton_label");
+
+	if (name == value.name) {
+		selectedItem = value;
+
+		if (base == "" || consistencyGroup)
+			webMI.gfx.setVisible("radiobutton_symbol", null);
+
+		webMI.trigger.fire("valuechanged", selectedItem.value, "");
+
+		if (outputNode != "" && !consistencyGroup) {
+			webMI.data.write(outputNode, selectedItem.value);
+		} else {
+			if (base != "" && !consistencyGroup)
+				webMI.data.write(base, selectedItem.value);
+		}
+
+		if (consistencyGroup)
+			consistencyHandler.set(consistencyGroup, base, selectedItem.value);
+	} else {
+		if (base == "" || consistencyGroup)
+			webMI.gfx.setVisible("radiobutton_symbol", false);
+	}
+});
+
+webMI.trigger.connect("com.atvise.setBlinking", function(e){
+	if (e.value == "none"){
+		delete activeIndicators["trigger"];
+	} else {
+		activeIndicators["trigger"] = {color: e.value, interval: 500};
+	}	
+	setIndicator();
+});
+
+webMI.trigger.connect("com.atvise.setActive",function(e){
+	if (e.value){
+		setActivation();
+	}  else {
+		setActivation(true);
+	}
+});]]></code>
+</script>

@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Болт
+NodeClass: ObjectType
+BrowseName: 1:Болт
+DisplayName: en|Болт
+Description: en|Болт
+IsAbstract: false

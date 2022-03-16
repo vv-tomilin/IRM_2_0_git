@@ -1,0 +1,975 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" height="530" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" width="1200">
+ <defs>
+  <linearGradient x1="0" gradientUnits="objectBoundingBox" id="linear_2" x2="0" y2="1.07843" y1="0">
+   <stop offset="0" stop-color="#818181"/>
+   <stop offset="0.8475336322869955" stop-color="#464646"/>
+   <stop offset="0.9372197309417041" stop-color="#000000"/>
+  </linearGradient>
+ </defs>
+ <title>Configuration - Series</title>
+ <rect fill="url(#linear_2)" stroke-width="0" stroke="#000000" height="530" ry="0" atv:refpy="35" width="180" id="filters_bg" atv:refpx="75" y="0" x="0" rx="0"/>
+ <metadata>
+  <atv:gridconfig enabled="true" height="20" width="20" gridstyle="lines"/>
+  <atv:snapconfig enabled="true" height="5" width="5"/>
+ </metadata>
+ <text fill="#ffffff" font-family="Arial" atv:refpy="31.5" font-size="12" id="id_2" atv:refpx="88.221" y="36" font-weight="bold" x="24.5">T{Data set to configure}:</text>
+ <rect fill="none" stroke-width="0.5" stroke="#000000" height="170" atv:refpy="275" width="335" id="id_5" atv:refpx="422.5" y="190" x="255"/>
+ <text fill="#000000" font-family="Arial" atv:refpy="31.5" text-anchor="start" font-size="12" id="id_7" atv:refpx="731.492" y="36" font-weight="bold" x="664.5">T{Data set configuration}:</text>
+ <text fill="#000000" font-family="Arial" atv:refpy="31.5" font-size="12" id="id_8" atv:refpx="256.823" y="36" font-weight="bold" x="205.5">T{Source address}:</text>
+ <text fill="#000000" font-family="Arial" atv:refpy="56.5" text-anchor="end" font-size="12" id="id_16" atv:refpx="315.5" y="61" x="336.672">T{Type}:</text>
+ <text fill="#000000" font-family="Arial" atv:refpy="73.5" text-anchor="end" font-size="12" id="id_35" atv:refpx="768.5" y="78" x="792.5">T{Label}:</text>
+ <text fill="#000000" font-family="Arial" atv:refpy="91.5" text-anchor="end" font-size="12" id="id_37" atv:refpx="304.898" y="96" x="335.398">T{Visibility}:</text>
+ <svg height="30" atv:refpy="55" width="160" id="series_type" atv:refpx="487.514" y="40" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.combobox" x="300.5" transform="matrix(1.2812,0,0,1,0,0)">
+  <atv:argument name="tabIndex" value="50"/>
+  <atv:overwrite id="id_3" transform="matrix(0.7805,0,0,1,0,0)" x="179.742"/>
+  <atv:overwrite id="button_bg" transform="matrix(0.7805,0,0,1,0,0)" x="178.492"/>
+  <atv:overwrite id="button_stroke" transform="matrix(0.7805,0,0,1,0,0)" x="178.492"/>
+  <atv:overwrite id="id_5" transform="matrix(0.7805,0,0,1,0,0)" x="177.492"/>
+  <atv:overwrite id="combobox_label" transform="matrix(0.7805,0,0,1,0,0)" x="170.492"/>
+  <atv:overwrite id="combobox_bg" width="170.992" transform="matrix(0.7805,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="172.992" transform="matrix(0.7805,0,0,1,0,0)"/>
+  <atv:overwrite id="combobox_stroke" width="204.492" transform="matrix(0.7805,0,0,1,0,0)"/>
+ </svg>
+ <svg height="30" atv:refpy="75" width="160" id="series_name" atv:refpx="917.514" y="60" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" x="636.122" transform="matrix(1.2812,0,0,1,0,0)">
+  <atv:argument name="tabIndex" value="51"/>
+  <atv:argument name="validation" value="String"/>
+  <atv:overwrite id="input_label" transform="matrix(0.7805,0,0,1,0,0)" x="196.492"/>
+  <atv:overwrite id="blinking_frame" width="196.992" transform="matrix(0.7805,0,0,1,0,0)"/>
+  <atv:overwrite id="input_bg" width="196.992" transform="matrix(0.7805,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="199.492" transform="matrix(0.7805,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="204.492" transform="matrix(0.7805,0,0,1,0,0)"/>
+ </svg>
+ <svg height="30" atv:refpy="138" width="160" id="selector1" atv:refpx="91" y="125" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.radiobutton" visibility="hidden" x="24" transform="matrix(0.875,0,0,1,0,0)">
+  <atv:argument name="label" value="T{Series}"/>
+  <atv:argument name="radiogroupId" value="g0"/>
+  <atv:argument name="value" value="1"/>
+  <atv:argument name="tabIndex" value="11"/>
+  <atv:overwrite id="radiobutton_symbol" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="radiobutton_bg2" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_1" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="radiobutton_label" transform="matrix(1.1429,0,0,1,0,0)" x="133"/>
+  <atv:overwrite id="radiobutton_bg" width="106" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="108" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="139.5" transform="matrix(1.1429,0,0,1,0,0)"/>
+ </svg>
+ <svg height="30" atv:refpy="173" width="160" id="selector2" atv:refpx="91" y="160" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.radiobutton" visibility="hidden" x="24" transform="matrix(0.875,0,0,1,0,0)">
+  <atv:argument name="label" value="T{Series}"/>
+  <atv:argument name="radiogroupId" value="g0"/>
+  <atv:argument name="value" value="2"/>
+  <atv:argument name="tabIndex" value="12"/>
+  <atv:overwrite id="radiobutton_symbol" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="radiobutton_bg2" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_1" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="radiobutton_label" transform="matrix(1.1429,0,0,1,0,0)" x="133"/>
+  <atv:overwrite id="radiobutton_bg" width="106" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="108" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="139.5" transform="matrix(1.1429,0,0,1,0,0)"/>
+ </svg>
+ <svg height="30" atv:refpy="208" width="160" id="selector3" atv:refpx="91" y="195" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.radiobutton" visibility="hidden" x="24" transform="matrix(0.875,0,0,1,0,0)">
+  <atv:argument name="label" value="T{Series}"/>
+  <atv:argument name="radiogroupId" value="g0"/>
+  <atv:argument name="value" value="3"/>
+  <atv:argument name="tabIndex" value="13"/>
+  <atv:overwrite id="radiobutton_symbol" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="radiobutton_bg2" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_1" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="radiobutton_label" transform="matrix(1.1429,0,0,1,0,0)" x="133"/>
+  <atv:overwrite id="radiobutton_bg" width="106" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="108" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="139.5" transform="matrix(1.1429,0,0,1,0,0)"/>
+ </svg>
+ <svg height="30" atv:refpy="243" width="160" id="selector4" atv:refpx="91" y="230" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.radiobutton" visibility="hidden" x="24" transform="matrix(0.875,0,0,1,0,0)">
+  <atv:argument name="label" value="T{Series}"/>
+  <atv:argument name="radiogroupId" value="g0"/>
+  <atv:argument name="value" value="4"/>
+  <atv:argument name="tabIndex" value="14"/>
+  <atv:overwrite id="radiobutton_symbol" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="radiobutton_bg2" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_1" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="radiobutton_label" transform="matrix(1.1429,0,0,1,0,0)" x="133"/>
+  <atv:overwrite id="radiobutton_bg" width="106" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="108" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="139.5" transform="matrix(1.1429,0,0,1,0,0)"/>
+ </svg>
+ <svg height="30" atv:refpy="278" width="160" id="selector5" atv:refpx="91" y="265" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.radiobutton" visibility="hidden" x="24" transform="matrix(0.875,0,0,1,0,0)">
+  <atv:argument name="label" value="T{Series}"/>
+  <atv:argument name="radiogroupId" value="g0"/>
+  <atv:argument name="value" value="5"/>
+  <atv:argument name="tabIndex" value="15"/>
+  <atv:overwrite id="radiobutton_symbol" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="radiobutton_bg2" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_1" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="radiobutton_label" transform="matrix(1.1429,0,0,1,0,0)" x="133"/>
+  <atv:overwrite id="radiobutton_bg" width="106" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="108" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="139.5" transform="matrix(1.1429,0,0,1,0,0)"/>
+ </svg>
+ <svg height="30" atv:refpy="313" width="160" id="selector6" atv:refpx="91" y="300" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.radiobutton" visibility="hidden" x="24" transform="matrix(0.875,0,0,1,0,0)">
+  <atv:argument name="label" value="T{Series}"/>
+  <atv:argument name="radiogroupId" value="g0"/>
+  <atv:argument name="value" value="6"/>
+  <atv:argument name="tabIndex" value="16"/>
+  <atv:overwrite id="radiobutton_symbol" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="radiobutton_bg2" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_1" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="radiobutton_label" transform="matrix(1.1429,0,0,1,0,0)" x="133"/>
+  <atv:overwrite id="radiobutton_bg" width="106" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="108" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="139.5" transform="matrix(1.1429,0,0,1,0,0)"/>
+ </svg>
+ <svg height="30" atv:refpy="348" width="160" id="selector7" atv:refpx="90" y="335" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.radiobutton" visibility="hidden" x="22.857" transform="matrix(0.875,0,0,1,0,0)">
+  <atv:argument name="label" value="T{Series}"/>
+  <atv:argument name="radiogroupId" value="g0"/>
+  <atv:argument name="value" value="7"/>
+  <atv:argument name="tabIndex" value="17"/>
+  <atv:overwrite id="radiobutton_symbol" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="radiobutton_bg2" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_1" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="radiobutton_label" transform="matrix(1.1429,0,0,1,0,0)" x="133"/>
+  <atv:overwrite id="radiobutton_bg" width="106" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="108" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="139.5" transform="matrix(1.1429,0,0,1,0,0)"/>
+ </svg>
+ <svg height="30" atv:refpy="383" width="160" id="selector8" atv:refpx="90" y="370" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.radiobutton" visibility="hidden" x="22.857" transform="matrix(0.875,0,0,1,0,0)">
+  <atv:argument name="label" value="T{Series}"/>
+  <atv:argument name="radiogroupId" value="g0"/>
+  <atv:argument name="value" value="8"/>
+  <atv:argument name="tabIndex" value="18"/>
+  <atv:overwrite id="radiobutton_symbol" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="radiobutton_bg2" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_1" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="radiobutton_label" transform="matrix(1.1429,0,0,1,0,0)" x="133"/>
+  <atv:overwrite id="radiobutton_bg" width="106" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="108" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="139.5" transform="matrix(1.1429,0,0,1,0,0)"/>
+ </svg>
+ <svg height="30" atv:refpy="418" width="160" id="selector9" atv:refpx="90" y="405" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.radiobutton" visibility="hidden" x="22.857" transform="matrix(0.875,0,0,1,0,0)">
+  <atv:argument name="label" value="T{Series}"/>
+  <atv:argument name="radiogroupId" value="g0"/>
+  <atv:argument name="value" value="9"/>
+  <atv:argument name="tabIndex" value="19"/>
+  <atv:overwrite id="radiobutton_symbol" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="radiobutton_bg2" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_1" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="radiobutton_label" transform="matrix(1.1429,0,0,1,0,0)" x="133"/>
+  <atv:overwrite id="radiobutton_bg" width="106" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="108" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="139.5" transform="matrix(1.1429,0,0,1,0,0)"/>
+ </svg>
+ <svg height="30" atv:refpy="68" width="80" id="btn_add" atv:refpx="55" y="55" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.button" x="22.857" transform="matrix(0.875,0,0,1,0,0)">
+  <atv:argument name="symbol" value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.plus"/>
+  <atv:argument name="label" value="T{Add}"/>
+  <atv:argument name="tabIndex" value="1"/>
+  <atv:overwrite id="button_stroke" width="62" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="button_label" transform="matrix(1.1429,0,0,1,0,0)" x="35"/>
+  <atv:overwrite id="button_symbol" transform="matrix(1.1429,0,0,1,0,0)" x="25"/>
+  <atv:overwrite id="button_bg" width="62" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="64.5" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="69.5" transform="matrix(1.1429,0,0,1,0,0)"/>
+ </svg>
+ <svg height="30" atv:refpy="68" width="80" id="btn_up" atv:refpx="110" y="55" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.button" x="253.333" transform="matrix(0.375,0,0,1,0,0)">
+  <atv:argument name="symbol" value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.arrow_up"/>
+  <atv:argument name="label" value=""/>
+  <atv:argument name="tabIndex" value="2"/>
+  <atv:argument name="visibilityLabel" value="hidden"/>
+  <atv:argument name="visibilitySymbol" value="inherit"/>
+  <atv:argument name="tooltip" value="T{Scroll list up}"/>
+  <atv:overwrite id="button_stroke" width="22" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite id="button_label" transform="matrix(2.6667,0,0,1,0,0)" x="15"/>
+  <atv:overwrite id="button_symbol" transform="matrix(2.6667,0,0,1,0,0)" x="5"/>
+  <atv:overwrite id="button_bg" width="22" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="24.5" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="29.5" transform="matrix(2.6667,0,0,1,0,0)"/>
+ </svg>
+ <svg height="30" atv:refpy="68" width="80" id="btn_down" atv:refpx="144.999" y="55" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.button" x="346.667" transform="matrix(0.375,0,0,1,0,0)">
+  <atv:argument name="symbol" value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.arrow_down"/>
+  <atv:argument name="label" value=""/>
+  <atv:argument name="tabIndex" value="3"/>
+  <atv:argument name="visibilityLabel" value="hidden"/>
+  <atv:argument name="visibilitySymbol" value="inherit"/>
+  <atv:argument name="tooltip" value="T{Scroll list down}"/>
+  <atv:overwrite id="button_stroke" width="22" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite id="button_label" transform="matrix(2.6667,0,0,1,0,0)" x="15"/>
+  <atv:overwrite id="button_symbol" transform="matrix(2.6667,0,0,1,0,0)" x="5"/>
+  <atv:overwrite id="button_bg" width="22" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="24.5" transform="matrix(2.6667,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="29.5" transform="matrix(2.6667,0,0,1,0,0)"/>
+ </svg>
+ <text fill="#000000" font-family="Arial" atv:refpy="190.5" text-anchor="start" font-size="12" id="id_28" atv:refpx="721.73" y="195" font-weight="bold" x="664.555">T{Type configuration}:</text>
+ <svg height="600" atv:refpy="365" width="800" id="type_configuration" atv:refpx="920" y="363.636" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.hmi.iframe" x="914.286" transform="matrix(0.7,0,0,0.55,0,0)">
+  <atv:argument name="display" value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.highcharts.opt_start"/>
+  <atv:argument name="frameName" value="type_configuration"/>
+ </svg>
+ <svg height="30" atv:refpy="90" width="160" id="series_visible" atv:refpx="435" y="75" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.checkbox" x="616" transform="matrix(0.625,0,0,1,0,0)">
+  <atv:argument name="valueOn" value="true"/>
+  <atv:argument name="outputValueOn" value="true"/>
+  <atv:argument name="outputValueOff" value="false"/>
+  <atv:argument name="label" value="T{visible}"/>
+  <atv:argument name="tabIndex" value="52"/>
+  <atv:overwrite id="checkbox_symbol" transform="matrix(1.6,0,0,1,0,0)"/>
+  <atv:overwrite id="checkbox_bg2" transform="matrix(1.6,0,0,1,0,0)"/>
+  <atv:overwrite id="id_5" transform="matrix(1.6,0,0,1,0,0)"/>
+  <atv:overwrite id="checkbox_item" transform="matrix(1.6,0,0,1,0,0)" x="92.5"/>
+  <atv:overwrite id="checkbox_bg" width="66" transform="matrix(1.6,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="68" transform="matrix(1.6,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="99.5" transform="matrix(1.6,0,0,1,0,0)"/>
+ </svg>
+ <svg height="30" atv:refpy="495" width="80" id="btn_delete" atv:refpx="90.001" y="480" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.button" x="11.429" transform="matrix(1.75,0,0,1,0,0)">
+  <atv:argument name="symbol" value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.plus"/>
+  <atv:argument name="label" value="T{Delete selected}"/>
+  <atv:argument name="tabIndex" value="21"/>
+  <atv:overwrite id="button_stroke" width="132" transform="matrix(0.5714,0,0,1,0,0)"/>
+  <atv:overwrite id="button_label" transform="matrix(0.5714,0,0,1,0,0)" x="70"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.5714,0,0,1,0,0)" x="60"/>
+  <atv:overwrite id="button_bg" width="132" transform="matrix(0.5714,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="134.5" transform="matrix(0.5714,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="139.5" transform="matrix(0.5714,0,0,1,0,0)"/>
+ </svg>
+ <svg height="30" atv:refpy="135" width="80" id="btn_address2" atv:refpx="507.501" y="120" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.button" x="206.061" transform="matrix(2.0625,0,0,1,0,0)">
+  <atv:argument name="label" value="T{Upper value address}"/>
+  <atv:argument name="tabIndex" value="30"/>
+  <atv:overwrite id="button_stroke" width="157" transform="matrix(0.4848,0,0,1,0,0)"/>
+  <atv:overwrite id="button_label" transform="matrix(0.4848,0,0,1,0,0)" x="82.5"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.4848,0,0,1,0,0)" x="72.5"/>
+  <atv:overwrite id="button_bg" width="157" transform="matrix(0.4848,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="159.5" transform="matrix(0.4848,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="164.5" transform="matrix(0.4848,0,0,1,0,0)"/>
+ </svg>
+ <svg height="30" atv:refpy="135" width="80" id="btn_address1" atv:refpx="337.499" y="120" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.button" x="123.636" transform="matrix(2.0625,0,0,1,0,0)">
+  <atv:argument name="label" value="T{Lower value address}"/>
+  <atv:argument name="tabIndex" value="31"/>
+  <atv:overwrite id="button_stroke" width="157" transform="matrix(0.4848,0,0,1,0,0)"/>
+  <atv:overwrite id="button_label" transform="matrix(0.4848,0,0,1,0,0)" x="82.5"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.4848,0,0,1,0,0)" x="72.5"/>
+  <atv:overwrite id="button_bg" width="157" transform="matrix(0.4848,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="159.5" transform="matrix(0.4848,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="164.5" transform="matrix(0.4848,0,0,1,0,0)"/>
+ </svg>
+ <svg height="30" atv:refpy="103" width="160" id="selector0" atv:refpx="90" y="90" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.radiobutton" x="22.857" transform="matrix(0.875,0,0,1,0,0)">
+  <atv:argument name="label" value="T{Series}"/>
+  <atv:argument name="radiogroupId" value="g0"/>
+  <atv:argument name="value" value="0"/>
+  <atv:argument name="tabIndex" value="10"/>
+  <atv:argument name="preselected" value="true"/>
+  <atv:overwrite id="radiobutton_symbol" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="radiobutton_bg2" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_1" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="radiobutton_label" transform="matrix(1.1429,0,0,1,0,0)" x="133"/>
+  <atv:overwrite id="radiobutton_bg" width="106" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="108" transform="matrix(1.1429,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="139.5" transform="matrix(1.1429,0,0,1,0,0)"/>
+ </svg>
+ <foreignObject height="160" width="325" id="address_treeview" y="195" x="260">
+  <div xmlns="http://www.w3.org/1999/xhtml" style="width:100%;height:100%" id="address_treeview"/>
+ </foreignObject>
+ <text fill="#000000" font-family="Arial" atv:refpy="111.5" text-anchor="end" font-size="12" id="id_4" atv:refpx="968.234" y="116" x="1009.734">T{Tooltip suffix}:</text>
+ <text fill="#000000" font-family="Arial" atv:refpy="111.5" text-anchor="end" font-size="12" id="id_13" atv:refpx="748.836" y="116" x="791.336">T{Tooltip prefix}:</text>
+ <text fill="#000000" font-family="Arial" atv:refpy="145.5" text-anchor="end" font-size="12" id="id_6" atv:refpx="737.836" y="150" x="791.336">T{Tooltip decimals}:</text>
+ <svg height="30" atv:refpy="145" width="160" id="series_tooltip_valueDecimals" atv:refpx="865" y="130" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.picker_value" x="1304" transform="matrix(0.625,0,0,1,0,0)">
+  <atv:argument name="tabIndex" value="67"/>
+  <atv:argument name="min" value="0"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.6,0,0,1,-96,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.6,0,0,1,-96,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.6,0,0,1,0,0)" x="65.5"/>
+  <atv:overwrite id="input_bg" width="66" transform="matrix(1.6,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="68" transform="matrix(1.6,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="99.5" transform="matrix(1.6,0,0,1,0,0)"/>
+ </svg>
+ <svg height="30" atv:refpy="110" width="160" id="series_tooltip_valueSuffix" atv:refpx="1075" y="95" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" x="1641.6" transform="matrix(0.625,0,0,1,0,0)">
+  <atv:argument name="validation" value="String"/>
+  <atv:argument name="tabIndex" value="65"/>
+  <atv:overwrite id="input_label" transform="matrix(1.6,0,0,1,0,0)" x="91.5"/>
+  <atv:overwrite id="blinking_frame" width="92" transform="matrix(1.6,0,0,1,0,0)"/>
+  <atv:overwrite id="input_bg" width="92" transform="matrix(1.6,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="94.5" transform="matrix(1.6,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="99.5" transform="matrix(1.6,0,0,1,0,0)"/>
+ </svg>
+ <svg height="30" atv:refpy="110" width="160" id="series_tooltip_valuePrefix" atv:refpx="865" y="95" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" x="1304" transform="matrix(0.625,0,0,1,0,0)">
+  <atv:argument name="validation" value="String"/>
+  <atv:argument name="tabIndex" value="66"/>
+  <atv:overwrite id="input_label" transform="matrix(1.6,0,0,1,0,0)" x="91.5"/>
+  <atv:overwrite id="blinking_frame" width="92" transform="matrix(1.6,0,0,1,0,0)"/>
+  <atv:overwrite id="input_bg" width="92" transform="matrix(1.6,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="94.5" transform="matrix(1.6,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="99.5" transform="matrix(1.6,0,0,1,0,0)"/>
+ </svg>
+ <line x1="638" stroke-width="0.5" stroke="#000000" atv:refpy="265" id="id_15" x2="638" y2="510" atv:refpx="635" y1="20"/>
+ <svg height="30" atv:refpy="380" width="160" id="search_input" atv:refpx="507.525" y="365" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.in_out_value" x="412.121" transform="matrix(1.0313,0,0,1,0,0)">
+  <atv:argument name="validation" value="String"/>
+  <atv:overwrite id="input_label" transform="matrix(0.9697,0,0,1,0,0)" x="156.5"/>
+  <atv:overwrite id="blinking_frame" width="158" transform="matrix(0.9697,0,0,1,0,0)"/>
+  <atv:overwrite id="input_bg" width="157" transform="matrix(0.9697,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="159.5" transform="matrix(0.9697,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="164.5" transform="matrix(0.9697,0,0,1,0,0)"/>
+ </svg>
+ <text fill="#000000" font-family="Arial" atv:refpy="379.5" text-anchor="end" font-size="12" id="id_18" atv:refpx="338.344" y="384" x="406.844">T{Search node by name}:</text>
+ <svg height="30" atv:refpy="145" width="160" id="series_zIndex" atv:refpx="1075" y="130" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.picker_value" x="1640" transform="matrix(0.625,0,0,1,0,0)">
+  <atv:argument name="tabIndex" value="68"/>
+  <atv:overwrite id="clickarea_dec" transform="matrix(1.6,0,0,1,-96,0)"/>
+  <atv:overwrite id="clickarea_inc" transform="matrix(1.6,0,0,1,-96,0)"/>
+  <atv:overwrite id="input_label" transform="matrix(1.6,0,0,1,0,0)" x="65.5"/>
+  <atv:overwrite id="input_bg" width="66" transform="matrix(1.6,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="68" transform="matrix(1.6,0,0,1,0,0)"/>
+  <atv:overwrite id="id_0" width="99.5" transform="matrix(1.6,0,0,1,0,0)"/>
+ </svg>
+ <text fill="#000000" font-family="Arial" atv:refpy="146.5" text-anchor="end" font-size="12" id="id_17" atv:refpx="980.469" y="151" x="1007.734">T{z-index}:</text>
+ <text fill="$FONTCOLOR$" font-family="Arial" atv:refpy="464.5" text-anchor="start" font-size="12" id="id_14" atv:refpx="277.923" y="469" font-weight="bold" x="216.5">T{Selected aggregate}:</text>
+ <text fill="$FONTCOLOR$" font-family="Arial" atv:refpy="484.5" text-anchor="end" font-size="12" id="id_9" atv:refpx="400.5" y="489" x="428.5">T{Interval}:</text>
+ <text fill="$FONTCOLOR$" font-family="Arial" atv:refpy="504.5" text-anchor="end" font-size="12" id="id_10" atv:refpx="409" y="509" x="428.5">T{Unit}:</text>
+ <text fill="$FONTCOLOR$" font-family="Arial" atv:refpy="464.5" text-anchor="end" font-size="12" id="id_12" atv:refpx="407.328" y="469" x="428.328">T{Type}:</text>
+ <text fill="$FONTCOLOR$" font-family="Arial" atv:refpy="464.5" text-anchor="start" font-size="12" id="series_aggregate_type" atv:refpx="482" y="469" x="464.5">&lt;type></text>
+ <text fill="$FONTCOLOR$" font-family="Arial" atv:refpy="484.5" text-anchor="start" font-size="12" id="series_aggregate_interval" atv:refpx="490.5" y="489" x="464.5">&lt;interval></text>
+ <text fill="$FONTCOLOR$" font-family="Arial" atv:refpy="504.5" text-anchor="start" font-size="12" id="series_aggregate_unit" atv:refpx="481" y="509" x="464.5">&lt;unit></text>
+ <svg height="30" atv:refpy="170" width="160" id="address_picker" atv:refpx="422.5" y="155" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.picker_address" x="121.791" transform="matrix(2.0938,0,0,1,0,0)">
+  <atv:argument value="No" name="showArchives"/>
+  <atv:argument value="No" name="showAlarms"/>
+  <atv:argument value="No" name="showDisplays"/>
+  <atv:overwrite id="button_stroke" transform="matrix(0.4776,0,0,1,0,0)" x="308.5"/>
+  <atv:overwrite id="id_1" transform="matrix(0.4776,0,0,1,0,0)" x="309.75"/>
+  <atv:overwrite id="button_bg" transform="matrix(0.4776,0,0,1,0,0)" x="308.5"/>
+  <atv:overwrite id="id_5" transform="matrix(0.4776,0,0,1,0,0)" x="307.5"/>
+  <atv:overwrite id="input_label" transform="matrix(0.4776,0,0,1,0,0)" x="301"/>
+  <atv:overwrite id="blinking_frame" width="301" transform="matrix(0.4776,0,0,1,0,0)"/>
+  <atv:overwrite id="addresspicker_bg" width="301" transform="matrix(0.4776,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="303" transform="matrix(0.4776,0,0,1,0,0)"/>
+  <atv:overwrite id="addresspicker_stroke" width="334.5" transform="matrix(0.4776,0,0,1,0,0)"/>
+ </svg>
+ <text fill="$FONTCOLOR$" font-family="Arial" atv:refpy="414.5" text-anchor="end" font-size="12" id="label_data_archive" atv:refpx="363" y="419" x="405.5">T{Data archive}:</text>
+ <svg height="30" atv:refpy="415" width="160" id="data_archive" atv:refpx="507.5" y="400" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.combobox" x="412.121" transform="matrix(1.0313,0,0,1,0,0)">
+  <atv:overwrite id="id_3" transform="matrix(0.9697,0,0,1,0,0)" x="139.75"/>
+  <atv:overwrite id="button_bg" transform="matrix(0.9697,0,0,1,0,0)" x="138.5"/>
+  <atv:overwrite id="button_stroke" transform="matrix(0.9697,0,0,1,0,0)" x="138.5"/>
+  <atv:overwrite id="id_5" transform="matrix(0.9697,0,0,1,0,0)" x="137.5"/>
+  <atv:overwrite id="blinking_frame" width="132" transform="matrix(0.9697,0,0,1,0,0)"/>
+  <atv:overwrite id="combobox_label" transform="matrix(0.9697,0,0,1,0,0)" x="130.5"/>
+  <atv:overwrite id="combobox_bg" width="131" transform="matrix(0.9697,0,0,1,0,0)"/>
+  <atv:overwrite id="id_2" width="133" transform="matrix(0.9697,0,0,1,0,0)"/>
+  <atv:overwrite id="combobox_stroke" width="164.5" transform="matrix(0.9697,0,0,1,0,0)"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[var inputDefaults = {
+	"series_type": "T{line}",
+	"series_visible": true,
+	"series_name": "T{Data}",
+	"series_zIndex": 0,
+	"series_tooltip_valuePrefix": "",
+	"series_tooltip_valueSuffix": "",
+	"series_tooltip_valueDecimals": 2
+};
+
+var seriesTypes = [
+	{text: "T{Line}", value: "line"},
+	{text: "T{Spline}", value: "spline"},
+	{text: "T{Area}", value: "area"},
+	{text: "T{Area} T{with} T{splines}", value: "areaspline"},
+	{text: "T{Two-line area}", value: "arearange"},
+	{text: "T{Two-line area} T{with} T{splines}", value: "areasplinerange"},
+	{text: "T{Column}", value: "column"},
+	//{text: "T{Column area}", value: "columnrange"}
+	//{text: "T{Pie}", value: "pie"}
+];
+
+var activeSeries = 0;
+webMI.query["activeSeries"] = activeSeries;
+
+var jumpToSeries = webMI.query.seriesId ? webMI.query.seriesId : 0;
+
+var activeOffset = 0;
+var addressIndex = 1;
+var addressIsAggregate = false;
+var series = [];
+var triggerEnabled = true;
+var updateEnabled = true;
+var treeViewReady = false;
+
+var chartname = webMI.query.chartname;
+var chart = webMI.trendFactory.getTrendByName(chartname);
+var options = chart.chart.options;
+var configHandler = new webMI.rootWindow.ConfigHandler;
+var curAddress = "";
+var curAggregate = "";
+var curDataArchive = "";
+var errors = [];
+var skipSelection = false;
+var changedByTree = false;
+var lastSeries = 0;
+
+//Initiate treeview for address selection
+var treeView = webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.TreeView", {"busyIndicatorTolerance":"100", "expandoOffset":"3", "fontSize":"12", "id":"address_treeview", "imagePaths":"{\"baseVariableImage\":\"/treeView/icons/baseVariable.svg\",\"folderImage\":\"/treeView/icons/folder.svg\",\"aggregateFunctionImage\":\"/treeView/icons/aggregateFunction.svg\",\"collapsedLeafImage\":\"/treeView/icons/leafCollapsed.svg\",\"expandedLeafImage\":\"/treeView/icons/leafExpanded.svg\"}", "leafIndentation":"15", "leafPadding":"2", "renderTo":"address_treeview", "selectableTypes":"[\"baseVariable\", \"aggregateFunction\"]", "startAddress":"AGENT.OBJECTS"});
+
+// Filter no empty value at start & only empty value for reset a serach
+var filterUsed = false;
+webMI.trigger.connect("valuechanged", function(e){
+	if(typeof e == "undefined" || e.value != "" || filterUsed){
+		treeView.filter(e.value);
+		filterUsed = true;
+	}
+}, "search_input");
+
+var oldAddressValue;
+
+webMI.trigger.connect("valuechanged", function(e){
+     if (!triggerEnabled)
+         return;
+
+     if (webMI.getMethodSupport().indexOf("CheckNodeExists") > -1) {
+         webMI.data.call("CheckNodeExists", {"address": e.value}, function(c) {
+             if(c.result){
+                 readAddress(e);
+             }
+         });
+     } else {
+         readAddress(e);
+     }
+
+     function readAddress(e) {
+         if (e.value != "") {
+             webMI.data.read(e.value, function(e2) {
+                 if (typeof e2.value != "string") {
+                     var curSeries = chart.chart.series[activeSeries];
+
+                     if (typeof curSeries == "undefined")
+                         return;
+
+                     if (addressIndex == 1) {
+                         processInput("series_address", e.value, activeSeries);
+                     } else if (addressIndex == 2) {
+                         processInput("series_address2", e.value, activeSeries);
+                     }
+
+                     oldAddressValue = e.value;
+                     if (!changedByTree) {
+                         if (treeViewReady) {
+                             if (e.value) deactivateAllRadiosButMe(activeSeries);
+                             treeView.selectNode(e.value);
+                         }
+                     } else {
+                         changedByTree = false;
+                     }
+                 } else {
+                     webMI.trigger.fire("setValue", oldAddressValue, "address_picker");
+                 }
+             });
+        }
+	}
+
+	// Since address_picker and tree are always changed together chart.control.updated is only called in tree
+
+}, "address_picker");
+
+webMI.trigger.connect("valuechanged", function(e){
+
+	if (!triggerEnabled)
+		return;
+
+		processInput("series_dataArchive", e.value, activeSeries);
+
+}, "data_archive");
+
+//Series functions
+function addSeries(options) {
+	if (typeof options == "undefined")
+		options = {};
+
+	chart.chart.addSeries(options);
+
+	updateEnabled = false;
+	chart.control.updated(function() {
+		updateEnabled = true;
+	});
+
+	if (typeof options.name != "undefined") {
+		series.push(options.name);
+	} else {
+		var i = 0;
+		var name = "";
+		while (typeof chart.chart.series[i] != "undefined") {
+			name = chart.chart.series[i++]["name"];
+		}
+		series.push(name);
+	}
+
+	if (series.length > 10)
+		scrollButtons(true);
+
+	lastSeries = activeSeries;
+	activeSeries = series.length - 1;
+
+	webMI.trigger.fire("radioClicked_g0", {name: webMI.gfx.getText("selector" + (activeSeries - activeOffset) + "_radiobutton_label"), value: (activeSeries - activeOffset)} );
+}
+
+function removeSeries() {
+	if (series.length == 1 || !chart.chart.series[activeSeries])
+		return;
+
+	chart.chart.series[activeSeries].remove();
+
+	updateEnabled = false;
+	chart.control.updated(function() {
+		updateEnabled = true;
+	});
+
+	if (series.length-1 < 11)
+		scrollButtons(false);
+
+	if (activeSeries > 0)
+		--activeSeries;
+
+	if (activeSeries > 9)
+		scrollSeries("up");
+
+	webMI.trigger.fire("radioClicked_g0", {name: webMI.gfx.getText("selector" + (activeSeries - activeOffset) + "_radiobutton_label"), value: (activeSeries - activeOffset)} );
+}
+
+function scrollSeries(direction) {
+	if (direction == "up" && activeOffset > 0) {
+		--activeOffset;
+	} else if (direction == "down" && activeOffset < (series.length - 10)) {
+		++activeOffset;
+	}
+	seriesManager(series);
+}
+
+function seriesManager(series) {
+	for (var i = 0; i < 10; i++) {
+		var iOffset = i + activeOffset;
+		if (typeof series[iOffset] != "undefined") {
+			webMI.gfx.setVisible("selector" + i, true);
+
+			var name = (series[iOffset] != "") ? series[iOffset] : "Series";
+			webMI.gfx.setText("selector" + i + "_radiobutton_label", name + " [" + iOffset + "]");
+		} else {
+			webMI.gfx.setVisible("selector" + i, false);
+		}
+	}
+
+	if (jumpToSeries != 0) {
+		var i = 0;
+		while (typeof chart.chart.series[i] != "undefined") {
+			if (chart.chart.series[i].options.id == jumpToSeries) {
+				activeSeries = i;
+				jumpToSeries = 0;
+				triggerEnabled = true;
+				break;
+			}
+			i++;
+		}
+		lastSeries = activeSeries;
+	}
+	
+	webMI.trigger.fire("radioClicked_g0", {name: webMI.gfx.getText("selector" + (activeSeries - activeOffset) + "_radiobutton_label"), value: (activeSeries - activeOffset)});
+}
+
+function deactivateAllRadiosButMe(me) {
+	for (var i = 0; i < 10; i++) {
+		if (i != me) webMI.trigger.fire("com.atvise.setActive", false, "selector" + i);
+	}
+}
+
+function activateAllRadios() {
+	for (var i = 0; i < 10; i++) {
+		webMI.trigger.fire("com.atvise.setActive", true, "selector" + i);
+	}
+}
+function scrollButtons(active) {
+	webMI.trigger.fire("com.atvise.setActive", active, "btn_up");
+	webMI.trigger.fire("com.atvise.setActive", active, "btn_down");
+}
+
+//Read options
+function readOptions(action) {
+
+	triggerEnabled = false;
+	series = [];
+	curAggregate = "";
+
+	//Search configured series
+	var i = 0;
+	while (typeof chart.chart.series[i] != "undefined") {
+		var name = chart.chart.series[i]["name"];
+		if (typeof name != "undefined")
+			series.push(name);
+		else
+			series.push("");
+		i++;
+	}
+
+	if (series.length == 0)
+		addSeries();
+
+	if (series.length < 11)
+		scrollButtons(false);
+
+	//Set values for current active series
+	var curSeries = chart.chart.series[activeSeries];
+
+	addressIsAggregate = (curSeries.options.aggregate || curSeries.options.aggregate2) ? true : false;
+
+	if (typeof curSeries == "undefined")
+		return;
+
+	if (!curSeries.tooltipOptions.valueDecimals)
+		setOptions("series_tooltip_valueDecimals", inputDefaults["series_tooltip_valueDecimals"], activeSeries);
+
+	var type = 0;
+	while (curSeries.type != seriesTypes[type].value)
+		type++;
+	
+	webMI.trigger.fire("setSelectedItem", seriesTypes[type].text, "series_type");
+	webMI.trigger.fire("setChecked", curSeries.visible, "series_visible");
+
+	if (action != "registerOnUpdatedCallback") {
+		if (addressIndex == 1 && curSeries.options.aggregate) {
+			webMI.gfx.setText("series_aggregate_type", curSeries.options.aggregate.aggregate);
+			webMI.gfx.setText("series_aggregate_interval",  curSeries.options.aggregate.interval);
+			var unit = curSeries.options.aggregate.unit;
+			unit = (unit == "s") ? "T{second(s)}" : ((unit == "m") ? "T{minute(s)}" : ((unit == "h") ? "T{hour(s)}" : ((unit == "d") ? "T{day(s)}" : "T{month(s)}")));
+			webMI.gfx.setText("series_aggregate_unit", unit);
+			curAggregate = curSeries.options.aggregate.address;
+		} else if (addressIndex == 2 && curSeries.options.aggregate2) {
+			webMI.gfx.setText("series_aggregate_type", curSeries.options.aggregate2.aggregate);
+			webMI.gfx.setText("series_aggregate_interval", curSeries.options.aggregate2.interval);
+			var unit =  curSeries.options.aggregate2.unit;
+			unit = (unit == "s") ? "T{second(s)}" : ((unit == "m") ? "T{minute(s)}" : ((unit == "h") ? "T{hour(s)}" : ((unit == "d") ? "T{day(s)}" : "T{month(s)}")));
+			webMI.gfx.setText("series_aggregate_unit", unit);
+			curAggregate = curSeries.options.aggregate2.address;
+		} else {
+			webMI.gfx.setText("series_aggregate_type", "-");
+			webMI.gfx.setText("series_aggregate_interval", "-");
+			webMI.gfx.setText("series_aggregate_unit", "-");
+		}
+	}
+
+	webMI.trigger.fire("setValue", curSeries.tooltipOptions.valuePrefix ? curSeries.tooltipOptions.valuePrefix : inputDefaults["series_tooltip_valuePrefix"], "series_tooltip_valuePrefix");
+	webMI.trigger.fire("setValue", curSeries.tooltipOptions.valueSuffix ? curSeries.tooltipOptions.valueSuffix : inputDefaults["series_tooltip_valueSuffix"], "series_tooltip_valueSuffix");
+	webMI.trigger.fire("setValue", curSeries.tooltipOptions.valueDecimals ? curSeries.tooltipOptions.valueDecimals : inputDefaults["series_tooltip_valueDecimals"], "series_tooltip_valueDecimals");
+	webMI.trigger.fire("setValue", curSeries.options.zIndex ? curSeries.options.zIndex : 0, "series_zIndex");
+
+	if (action != "registerOnUpdatedCallback") {
+		var address = "";
+		var dataArchive = "";
+		if (addressIndex == 1 && curSeries.options.address) {
+			address = curSeries.options.address;
+			dataArchive = curSeries.options.dataArchive;
+		} else if (addressIndex == 2 && curSeries.options.address2) {
+			address = curSeries.options.address2;
+			dataArchive = curSeries.options.dataArchive2;
+		}
+	
+		curAddress = address;
+		curDataArchive = dataArchive;
+
+		if (address != "")
+			skipSelection = true;
+		if (treeViewReady) {
+			if (address) deactivateAllRadiosButMe(activeSeries);
+			treeView.selectNode(address, curAggregate);
+		}
+	
+		webMI.trigger.fire("setValue", address, "address_picker");
+	}
+
+	if (address != "") {
+		webMI.data.read(address, function(e) {
+			if (typeof e.value != "string") {
+				oldAddressValue = address;
+			}
+		});
+	}
+
+	webMI.trigger.fire("setValue", curSeries.name, "series_name");
+	if (webMI.getMethodSupport().indexOf("BrowseDataArchives") != -1 && address) setDataArchiveOptions(curAddress, addressIsAggregate);
+
+	seriesManager(series);
+	triggerEnabled = true;
+}
+
+//Write options
+function setOptions(key, value, identifier) {
+
+	if(value === "true" || value === true)
+		value = true;
+	if(value === "false" || value === false)
+		value = false
+
+	if (chart.chart.series[identifier]) {
+		if (key == "series_visible") {
+			if (chart.control.isLiveModeRunning())
+				chart.chart.series[identifier].setVisible(value, true);
+			else
+				chart.chart.series[identifier].setVisible(value, false);
+			return;
+		}
+
+		if (key == "series_aggregate_aggregate" && value == "T{[none]}")
+			value = "";
+
+		if (key == "series_dataArchive" && addressIndex == 2) key == "series_dataArchive2";
+
+		var optionsObj = configHandler.createConfigObject(key.slice(7, key.length), value);
+		if(chart.control.isLiveModeRunning()){
+			chart.control.stopLiveMode(function() {
+				chart.chart.series[identifier].update(optionsObj, false, chart.control.startLiveMode);
+			});
+		} else {
+			chart.chart.series[identifier].update(optionsObj);
+		}
+
+		updateEnabled = false;
+		chart.control.updated(function() {
+			updateEnabled = true;
+		});
+
+		if (key == "series_type")
+			readOptions();
+	}
+}
+
+function setDataArchiveOptions(node, isAggregate) {
+	// Fetch data archives of node
+	var dataArchives = webMI.data.call("BrowseDataArchives", {
+		node: node
+	}, function (e) {
+		var dataArchiveOptions = {};
+		var savedArchive; // dataArchive saved in options
+
+		if (addressIndex == 2) savedArchive = chart.chart.series[activeSeries].options.dataArchive2;
+		else savedArchive = chart.chart.series[activeSeries].options.dataArchive;
+
+		savedArchiveInOptions = false;
+		// create new options list
+		dataArchiveOptions[0] = { text: " ", value: "" };
+		var i = 0;		
+		for (var source in e) {
+			i++;
+			dataArchiveOptions[i] = { text: source, value: source };
+			if (savedArchive == source) savedArchiveInOptions = true;
+		}
+		webMI.trigger.fire("setItems", dataArchiveOptions, "data_archive");
+
+		webMI.gfx.setVisible("label_data_archive", true);
+		webMI.gfx.setVisible("data_archive", true);
+		if (i == 1) webMI.trigger.fire("com.atvise.setActive", false, "data_archive");
+		if (savedArchive && savedArchiveInOptions) {
+			webMI.trigger.fire("setSelectedItem", savedArchive, "data_archive");
+		} else {
+			if (i == 1 && !isAggregate) webMI.trigger.fire("setSelectedItem", dataArchiveOptions[1].value, "data_archive");
+			else webMI.trigger.fire("setSelectedItem", " ", "data_archive");
+		}
+	});
+}
+
+//Onload Function
+//Adds triggers for every input element
+//Registers on update callback from trend control
+webMI.addOnload(function() {
+	for (var key in inputDefaults)
+		webMI.trigger.connect("valuechanged", function(e){ processInput(e.context, e.value, activeSeries) }, key);
+
+	webMI.trigger.connect("clicked", function(e) {
+		addressIndex = 1;
+		readOptions();
+
+		webMI.gfx.setFill("btn_address1_button_bg", "#595959");
+		webMI.gfx.setFill("btn_address2_button_bg", "#000000");
+	}, "btn_address1");
+
+	webMI.trigger.connect("clicked", function(e) {
+		addressIndex = 2;
+		readOptions();
+
+		webMI.gfx.setFill("btn_address1_button_bg", "#000000");
+		webMI.gfx.setFill("btn_address2_button_bg", "#595959");
+	}, "btn_address2");
+
+	treeView.on("ready", function(e){
+		treeViewReady = true;
+		if (curAddress != "") {
+			skipSelection = true;
+			treeView.selectNode(curAddress, curAggregate);
+			if (webMI.getMethodSupport().indexOf("BrowseDataArchives") == -1) {
+				webMI.gfx.setVisible("label_data_archive", false);
+				webMI.gfx.setVisible("data_archive", false);
+			} else {
+				setDataArchiveOptions(curAddress, addressIsAggregate);
+			}
+		}
+	});
+
+	treeView.on("select", function(e) {
+	
+		activateAllRadios();
+		
+		if (skipSelection) {
+			skipSelection = false;
+			return;
+		}
+
+		if (!triggerEnabled)
+			return;
+
+		var readAddress = e.data.aggregateInfo ? e.data.aggregateInfo.relatedNodeAddress : e.data.address;
+		webMI.data.read(readAddress, function(e2) {
+
+			if (typeof e2.value != "string") {
+
+				var key = "series_address";
+				if (addressIndex > 1)
+					key = key + addressIndex;
+		
+				var address = e.data.address;
+
+				if (e.data.aggregateInfo) {
+
+					var aggregatePath = address;
+					address = e.data.aggregateInfo.relatedNodeAddress;
+
+					webMI.trigger.fire("setSelectedItem", " ", "data_archive");
+
+					if (addressIndex == 1) {
+						processInput("series_aggregate_aggregate", e.data.aggregateInfo.aggregate, activeSeries);
+						processInput("series_aggregate_interval", e.data.aggregateInfo.interval_value, activeSeries);
+						processInput("series_aggregate_unit", e.data.aggregateInfo.interval_unit, activeSeries);
+						processInput("series_aggregate_address", aggregatePath, activeSeries);
+					} else {
+						processInput("series_aggregate2_aggregate", e.data.aggregateInfo.aggregate, activeSeries);
+						processInput("series_aggregate2_interval", e.data.aggregateInfo.interval_value, activeSeries);
+						processInput("series_aggregate2_unit", e.data.aggregateInfo.interval_unit, activeSeries);
+						processInput("series_aggregate2_address", aggregatePath, activeSeries);
+					}
+					webMI.gfx.setText("series_aggregate_type", e.data.aggregateInfo.aggregate);
+					webMI.gfx.setText("series_aggregate_interval", e.data.aggregateInfo.interval_value);
+					var unit = e.data.aggregateInfo.interval_unit;
+					unit = (unit == "s") ? "T{second(s)}" : ((unit == "m") ? "T{minute(s)}" : ((unit == "h") ? "T{hour(s)}" : ((unit == "d") ? "T{day(s)}" : "T{month(s)}")));
+					webMI.gfx.setText("series_aggregate_unit", unit);
+				} else {
+					if (addressIndex == 1)
+						processInput("series_aggregate", "", activeSeries);
+					else
+						processInput("series_aggregate2", "", activeSeries);
+					webMI.gfx.setText("series_aggregate_type", "-");
+					webMI.gfx.setText("series_aggregate_interval", "-");
+					webMI.gfx.setText("series_aggregate_unit", "-");
+				}
+
+				// Mouseclick etc...
+				if (e.event != null) {
+					changedByTree = true;
+					webMI.trigger.fire("setValue", address, "address_picker");
+					processInput(key, address, activeSeries);
+				}
+
+				if (webMI.getMethodSupport().indexOf("BrowseDataArchives") != -1) setDataArchiveOptions(address, e.data.aggregateInfo);				
+
+				address = address.split(".");
+				webMI.trigger.fire("setValue", address[address.length-1], "series_name");
+
+				if (chart.chart.series[activeSeries].options.marker && typeof chart.chart.series[activeSeries].options.marker.enabled == "undefined") chart.chart.series[activeSeries].options.marker.enabled = false;
+
+				updateEnabled = false;
+				chart.control.updated(function() {
+					updateEnabled = true;
+				});
+
+			}
+		});
+
+	});
+
+	for (var i = 0; i < 10; i++) {
+		webMI.trigger.connect("valuechanged", function(e){
+			if (!triggerEnabled)
+				return;
+
+			activeSeries = parseInt(e.value) + activeOffset;
+			webMI.query["activeSeries"] = activeSeries;
+			
+			if ( lastSeries != activeSeries || (typeof e.value == "number" && e.value == 0) ) {
+				lastSeries = parseInt(activeSeries);	
+				readOptions();
+			}
+		}, "selector" + i);
+	}
+
+	readOptions();
+
+	var updateCb = chart.control.registerOnUpdatedCallback(function(e) {
+		if (!updateEnabled)
+			return;
+		readOptions("registerOnUpdatedCallback");
+	});
+
+	webMI.addOnunload(function() {
+		if (chart && chart.control) chart.control.unregisterOnUpdatedCallback(updateCb);
+	});
+});
+
+function processInput(key, value, identifier) {
+	if (typeof key == "undefined" || typeof value == "undefined")
+		return;
+
+	if (key == "series_name")
+		webMI.gfx.setText("selector" + (activeSeries - activeOffset) + "_radiobutton_label", value + " [" + identifier + "]");
+
+	if (!triggerEnabled)
+		return;
+
+	setOptions(key, value, identifier);
+}
+
+//Triggers to add, remove and scroll series
+webMI.trigger.connect("clicked", function(e) { addSeries() }, "btn_add");
+webMI.trigger.connect("clicked", function(e) { removeSeries() }, "btn_delete");
+webMI.trigger.connect("clicked", function(e) { scrollSeries("up") }, "btn_up");
+webMI.trigger.connect("clicked", function(e) { scrollSeries("down") }, "btn_down");
+
+//Enable/disable input fields
+function enableAreaInputs(e) {
+	webMI.trigger.fire("com.atvise.setActive", e, "btn_address1");
+	webMI.trigger.fire("com.atvise.setActive", e, "btn_address2");
+	if (e) {
+		if (addressIndex == 1) {
+			webMI.gfx.setFill("btn_address1_button_bg", "#595959");
+			webMI.gfx.setFill("btn_address2_button_bg", "#000000");
+		} else {
+			webMI.gfx.setFill("btn_address1_button_bg", "#000000");
+			webMI.gfx.setFill("btn_address2_button_bg", "#595959");
+		}
+	} else {
+		addressIndex = 1;
+	}
+}
+
+function enableAggregateInputs(e) {
+	webMI.trigger.fire("com.atvise.setActive", e, "series_aggregate_type");
+}
+
+enableAreaInputs(false);
+enableAggregateInputs(false);
+
+//Functions of series type selector
+webMI.trigger.fire("setItems", seriesTypes, "series_type");
+
+webMI.trigger.connect("valuechanged", function(e) {
+	enableAggregateInputs(true);
+
+	if (e.value == "bar" || e.value == "column" || e.value == "columnrange") {
+		webMI.display.openDisplay("SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.highcharts.opt_series_bar_column", webMI.query, "type_configuration");
+		enableAreaInputs(false);
+	} else if (e.value == "pie") {
+		webMI.display.openDisplay("SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.highcharts.opt_series_pie", webMI.query, "type_configuration");
+		enableAggregateInputs(false);
+		enableAreaInputs(false);
+	} else if (e.value == "arearange" || e.value == "areasplinerange") {
+		// prevent logarithmic y axes with areas
+		var identifier = chart.chart.series[activeSeries].yAxis.userOptions.index;
+		chart.chart.yAxis[identifier].update({type: "linear"});
+		webMI.display.openDisplay("SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.highcharts.opt_series_line_area", webMI.query, "type_configuration");
+		enableAreaInputs(true);
+	} else {
+		webMI.display.openDisplay("SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Standard.highcharts.opt_series_line_area", webMI.query, "type_configuration");
+		enableAreaInputs(false);
+	}
+}, "series_type");
+]]></script>
+</svg>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/DataTables/DataTables-1.10.16/images/sort_asc.png
+NodeClass: Variable
+BrowseName: 1:sort_asc.png
+DisplayName: en|sort_asc.png
+Description: en|sort_asc.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

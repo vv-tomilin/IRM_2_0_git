@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.CalcDrilling
+NodeClass: Variable
+BrowseName: 1:CalcDrilling
+DisplayName: en|CalcDrilling
+Description: en|CalcDrilling
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

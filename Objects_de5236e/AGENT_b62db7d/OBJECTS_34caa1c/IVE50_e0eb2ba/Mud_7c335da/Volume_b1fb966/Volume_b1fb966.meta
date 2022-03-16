@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.Volume
+NodeClass: Object
+BrowseName: 1:Volume
+DisplayName: en|Volume
+Description: en|Volume
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

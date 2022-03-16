@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+    <title>OD_help</title>
+    <style> #parameter {
+        font-weight: bold;
+    } </style>
+</head>
+<body>
+<h1>Beschreibung</h1>
+<p>Dieses Display erg&auml;nzt die Tabelle um eine Statusleiste mit Seitenavigation und Informationen zum aktuellen
+    Datenstand. Dazu muss das Display in das Display eingef&uuml;gt werden, in dem sich die Tabelle befindet.
+    Eine spezielle Konfiguration, wie f&uuml;r die Tabelle, ist f&uuml;r dieses Display nicht erforderlich.
+    Es muss lediglich der Tabellenname in den Parametern eingestellt werden.
+</p>
+
+<h2>Hinweis</h2>
+<p><b>Ab Version 3.4 werden SVG-Symbole in der Fu&szlig;zeile nicht mehr unterst&uuml;tzt. Bitte verwenden Sie nur mehr Symbole aus der Bibliothek von Font Awesome Free.</b></p>
+
+<h2>Anforderungen</h2>
+<p>Die Tabellenbibliothek erfordert jQuery > 1.7 und wird aktuell mit jQuery > 3.3.x ausgeliefert.</p>
+<p>Um Kompatibilit&auml;tsprobleme zu vermeiden, wird die mitgelieferte jQuery Version nur verwendet, wenn keine bereits
+    vorhandene Version erkannt wird. Sollte daher in einem bestehenden Projekt jQuery bereits verwendet werden, greift
+    die Tabellenbibliothek auf diese zur&uuml;ck. Gehen sie daher sicher, dass in diesem Falle eine jQuery Version > 1.7.x
+    verwendet wird!</p>
+
+<h1>Parameter</h1>
+<p>Die Statusleiste hat die folgenden allgemeinen Parameter:</p>
+<ul>
+    <li><span class="parameter">base</span>: Aktuelle nicht in verwendung </li>
+    <li><span class="parameter">Tabellen-ID</span>: Eindeutiger Tabellenname</li>
+    <li><span class="parameter">Symbol erste Seite</span>: Symbol zum bl&auml;ttern auf die erste Seite (Standard: &lt;i class="fas fa-fast-backward"&gt;&lt;/i&gt;)</li>
+    <li><span class="parameter">Symbol vorige Seite</span>: Symbol zum bl&auml;ttern auf die vorgehende Seite (Standard: &lt;i class="fas fa-step-backward"&gt;&lt;/i&gt;)</li>
+    <li><span class="parameter">Symbol Pause</span>: Symbol f&uuml;r Pause (Standard: &lt;i class="fas fa-pause"&gt;&lt;/i&gt;)</li>
+    <li><span class="parameter">Symbol Stop</span>: Symbol f&uuml;r Stop (Standard: &lt;i class="fas fa-stop"&gt;&lt;/i&gt;)</li>
+    <li><span class="parameter">Symbol n&auml;chste Seite</span>: Symbol zum bl&auml;ttern auf die n&auml;chste Seite (Standard: &lt;i class="fas fa-step-forward"&gt;&lt;/i&gt;) </li>
+    <li><span class="parameter">Symbol letzte Seite</span>: Symbol zum bl&auml;ttern auf die letzte Seite (Standard: &lt;i class="fas fa-fast-forward"&gt;&lt;/i&gt;)</li>
+    <li><span class="parameter">Symbol Seiten laden</span>: Symbol zum laden der n&auml;chsten Seiten im manuellen Modus (Standard: &lt;i class="fas fa-download"&gt;&lt;/i&gt;)</li>
+    <li><span class="parameter">Symbol Suchen</span>: Symbol f&uuml;r Suche (Standard: &lt;i class="fas fa-search"&gt;&lt;/i&gt;)</li>
+
+    <li><span class="parameter">Symbol &Uuml;berlauf</span>: Symbol beim Erreichen des &Uuml;berlaufs (Standard: &lt;i class="fas fa-ban"&gt;&lt;/i&gt; )</li>
+    <li><span class="parameter">Symbol Trigger Modus</span>: Symbol f&uuml;r Trigger Modus (Standard: &lt;i class="fas fa-angle-double-down"&gt;&lt;/i&gt; )</li>
+    <li><span class="parameter">Symbol Continuation Modus</span>: Symbol f&uuml;r fortlaufenden Modus (Standard: &lt;i class="fas fa-cog fa-spin"&gt;&lt;/i&gt; )</li>
+    <li><span class="parameter">Symbol Live Modus</span>: Symbol f&uuml;r live Modus (Standard: &lt;i class="fas fa-sync fa-spin"&gt;&lt;/i&gt; )</li>
+    <li><span class="parameter">Symbol Manueller Modus</span>: Symbol f&uuml;r manuellen Modus (Standard: &lt;i class="fas fa-check"&gt;&lt;/i&gt; )</li>
+    <li><span class="parameter">Symbol Abfrage Abgeschlossen</span>: Symbol beim Erreichen des &Uuml;berlaufs (Standard: &lt;i class="fas fa-download"&gt;&lt;/i&gt; )</li>
+</ul>
+<br>
+</body>
+</html>

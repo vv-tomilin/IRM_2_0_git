@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.12x12
+NodeClass: Object
+BrowseName: 1:12x12
+DisplayName: en|12x12
+Description: en|12x12
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

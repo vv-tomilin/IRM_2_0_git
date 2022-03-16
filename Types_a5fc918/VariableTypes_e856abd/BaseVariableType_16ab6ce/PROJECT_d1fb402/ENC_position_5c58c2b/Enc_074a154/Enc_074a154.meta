@@ -1,0 +1,10 @@
+NodeId: ns=1;s=VariableTypes.PROJECT.VT_"ENC_position".Enc
+NodeClass: Variable
+BrowseName: 1:Enc
+DisplayName: en|Enc
+Description: en|Enc
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseDataVariableType

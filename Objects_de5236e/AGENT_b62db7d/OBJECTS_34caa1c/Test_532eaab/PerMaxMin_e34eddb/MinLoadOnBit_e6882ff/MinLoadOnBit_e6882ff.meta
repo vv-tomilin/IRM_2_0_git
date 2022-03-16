@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.MinLoadOnBit
+NodeClass: Variable
+BrowseName: 1:MinLoadOnBit
+DisplayName: en|MinLoadOnBit
+Description: en|MinLoadOnBit
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

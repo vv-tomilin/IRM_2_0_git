@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.WinTicksFromSeconds
+NodeClass: Variable
+BrowseName: 1:WinTicksFromSeconds
+DisplayName: en|WinTicksFromSeconds
+Description: en|WinTicksFromSeconds
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.APD1.Speed.Descent
+NodeClass: Object
+BrowseName: 1:Descent
+DisplayName: en|Descent
+Description: en|Descent
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

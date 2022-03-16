@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.RegionBoard.NPV
+NodeClass: Variable
+BrowseName: 1:NPV
+DisplayName: en|NPV
+Description: en|NPV
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

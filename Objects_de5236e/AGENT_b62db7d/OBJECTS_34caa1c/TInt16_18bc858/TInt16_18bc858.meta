@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.TInt16
+NodeClass: Variable
+BrowseName: 1:TInt16
+DisplayName: en|TInt16
+Description: en|TInt16
+DataType: Int16
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

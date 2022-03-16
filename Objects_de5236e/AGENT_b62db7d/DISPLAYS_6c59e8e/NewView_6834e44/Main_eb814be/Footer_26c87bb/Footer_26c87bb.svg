@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" height="30" xmlns="http://www.w3.org/2000/svg" version="1.2" width="1920" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <defs>
+  <linearGradient id="linear_2" x1="0" gradientUnits="objectBoundingBox" y1="0" x2="1" y2="1">
+   <stop offset="0" stop-color="#ffffff"/>
+   <stop offset="1" stop-color="#00c800"/>
+  </linearGradient>
+  <linearGradient id="linear_3" x1="0" gradientUnits="objectBoundingBox" y1="0" x2="1" y2="1">
+   <stop offset="0" stop-color="#ffffff"/>
+   <stop offset="1" stop-color="#00c800"/>
+  </linearGradient>
+  <linearGradient id="linear_4" x1="0" gradientUnits="objectBoundingBox" y1="0" x2="1" y2="1">
+   <stop offset="0" stop-color="#ffffff"/>
+   <stop offset="1" stop-color="#c80000"/>
+  </linearGradient>
+  <linearGradient id="linear_0" x1="0" gradientUnits="objectBoundingBox" y1="0" x2="1" y2="1">
+   <stop offset="0" stop-color="#ffffff"/>
+   <stop offset="1" stop-color="#00c800"/>
+  </linearGradient>
+  <linearGradient id="linear_1" x1="0" gradientUnits="objectBoundingBox" y1="0" x2="1" y2="1">
+   <stop offset="0" stop-color="#ffffff"/>
+   <stop offset="1" stop-color="#00c800"/>
+  </linearGradient>
+  <linearGradient id="linear_5" x1="0" gradientUnits="objectBoundingBox" y1="0" x2="1" y2="1">
+   <stop offset="0" stop-color="#ffffff"/>
+   <stop offset="1" stop-color="#c80000"/>
+  </linearGradient>
+  <linearGradient id="linear_6" x1="0" gradientUnits="objectBoundingBox" y1="0" x2="1" y2="1">
+   <stop offset="0" stop-color="#ffffff"/>
+   <stop offset="1" stop-color="#00c800"/>
+  </linearGradient>
+  <linearGradient id="linear_7" x1="0" gradientUnits="objectBoundingBox" y1="0" x2="1" y2="1">
+   <stop offset="0" stop-color="#ffffff"/>
+   <stop offset="1" stop-color="#00c800"/>
+  </linearGradient>
+  <linearGradient id="linear_8" x1="0" gradientUnits="objectBoundingBox" y1="0" x2="1" y2="1">
+   <stop offset="0" stop-color="#ffffff"/>
+   <stop offset="1" stop-color="#c8c800"/>
+  </linearGradient>
+  <linearGradient id="linear_9" x1="0" gradientUnits="objectBoundingBox" y1="0" x2="1" y2="1">
+   <stop offset="0" stop-color="#ffffff"/>
+   <stop offset="1" stop-color="#c80000"/>
+  </linearGradient>
+  <linearGradient id="linear_10" x1="0" gradientUnits="objectBoundingBox" y1="0" x2="1" y2="1">
+   <stop offset="0" stop-color="#ffffff"/>
+   <stop offset="1" stop-color="#00c800"/>
+  </linearGradient>
+  <linearGradient id="linear_11" x1="0" gradientUnits="objectBoundingBox" y1="0" x2="1" y2="1">
+   <stop offset="0" stop-color="#ffffff"/>
+   <stop offset="1" stop-color="#00c800"/>
+  </linearGradient>
+  <linearGradient id="linear_12" x1="0" gradientUnits="objectBoundingBox" y1="0" x2="1" y2="1">
+   <stop offset="0" stop-color="#ffffff"/>
+   <stop offset="1" stop-color="#00c800"/>
+  </linearGradient>
+ </defs>
+ <metadata>
+  <atv:gridconfig height="10" width="10" enabled="true" gridstyle="lines"/>
+  <atv:snapconfig height="1" width="1" enabled="true"/>
+ </metadata>
+ <rect id="id_0" height="30" atv:refpy="15" fill="#09222e" stroke="#b254b2" stroke-width="4" x="0" y="0" atv:refpx="960" width="1920"/>
+ <text id="id_3" atv:refpy="14.5" font-family="Arial" font-size="10" fill="#848480" x="1762.5" y="19" atv:refpx="1846.021">Rigintel @ All Rights Reserved</text>
+ <svg id="id_2" height="30" atv:refpy="13.504" transform="matrix(1.069,-0.0072,0,1.0333,0,0)" x="-86.999" y="-0.164" atv:refpx="15.5" width="203" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.layoutelements.date">
+  <atv:overwrite id="date" transform="matrix(1.0691,0,0,1,-14.0387,0)"/>
+ </svg>
+ <svg id="id_6" height="52" atv:refpy="13.83" transform="matrix(0.7636,0,0,0.4808,0,0)" x="43.219" y="6.24" atv:refpx="124.336" width="203" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.layoutelements.time">
+  <atv:overwrite id="time" transform="matrix(0.6994,0,0,1.0001,61.0285,0)"/>
+ </svg>
+ <line x1="203" id="id_4" y1="0" x2="203" atv:refpy="15" stroke="#b254b2" y2="30" stroke-width="2" atv:refpx="200"/>
+ <line x1="1737" id="id_5" y1="0" x2="1737" atv:refpy="15" stroke="#b254b2" y2="30" stroke-width="2" atv:refpx="1739"/>
+ <svg id="id_7" atv:refpy="15" height="24" x="219" atv:refpx="969" y="3" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.DispTools.KpeProgress" width="1500">
+  <atv:argument name="pak_val" value="AGENT.OBJECTS.Test.MaxMin.ValMax"/>
+  <atv:argument name="rig_val" value="AGENT.OBJECTS.Test.MaxMin.ValMin"/>
+  <atv:argument name="rig_color" value="#ff5500"/>
+ </svg>
+</svg>

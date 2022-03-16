@@ -1,0 +1,502 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+	<metadata>
+		<priority>0</priority>
+	</metadata>
+	<code><![CDATA[/**
+ * Code for the highcharts opt save object display
+ * ----------------------------------------
+ * This script supports the display to load, safe and import the chart configuration.
+ */
+
+
+/**
+ * DECLARATION SECTION
+ */
+var newConfigName;
+var selectedConfigName;
+var chart = webMI.trendFactory.getTrendByName(webMI.query.chartname);
+var chartname = webMI.query.chartname;
+var configurator;
+var configNode = chart.chart.options.atviseOptions.configNode;
+var configFile = chart.chart.options.atviseOptions.configFile;
+var configName = chart.chart.options.atviseOptions.configName;
+var createConfigName;
+var subdisplay = {};
+    subdisplay.display_message = webMI.query.display_message;
+    subdisplay.display_alert = webMI.query.display_message + "_small";
+var newConfigName;
+var options = chart.chart.options;
+var selectedConfigName;
+
+/* Falls neue Eingabe, neuer Aufruf der Auswahlfunktion */
+if (document.getElementById('fileInput'))
+    document.getElementById('fileInput').addEventListener('change', uploadFile, false);
+
+
+/**
+ * RUNTIME SECTION
+ * Runtime code has to be executed after onload to take care all other resources are ready
+ */
+webMI.addOnload(function () {
+    newConfigName = configName ? configName : "";
+
+    if (options.atviseOptions.saveMethod == "multiple") {
+        webMI.gfx.setText("text_method", "T{Save in}: T{Multiple nodes}");
+        webMI.gfx.setText("text_nodeOrFile", "T{Configuration node (sub-nodes will be created automatically)}:");
+        webMI.gfx.setVisible("picker_config_address", true);
+        webMI.gfx.setVisible("picker_config_file", false);
+    } else if (options.atviseOptions.saveMethod == "filesystem") {
+        webMI.gfx.setText("text_method", "T{Save in}: T{Filesystem}");
+        webMI.gfx.setText("text_nodeOrFile", "T{Configuration file (in filesystem)}:");
+        webMI.gfx.setVisible("picker_config_address", false);
+        webMI.gfx.setVisible("picker_config_file", true);
+    } else {
+        webMI.gfx.setText("text_method", "T{Save in}: T{Single node}");
+        webMI.gfx.setText("text_nodeOrFile", "T{Configuration node}:");
+        webMI.gfx.setVisible("picker_config_address", true);
+        webMI.gfx.setVisible("picker_config_file", false);
+    }
+
+    webMI.trigger.fire("setChecked", options.atviseOptions.saveCompressed, "check_compression");
+    webMI.gfx.setVisible("check_compression", (webMI.query.save_changecompression == "true") ? true : false);
+
+    webMI.trigger.connect("valuechanged", function (e) {
+        options.atviseOptions.saveCompressed = (e.value == "true") ? true : false;
+    }, "check_compression");
+
+    webMI.data.loadScript("highcharts/helpers/confighandler.js", function () {
+
+        configurator = new webMI.rootWindow.ConfigHandler();
+
+        webMI.trigger.connect("com.atvise.highcharts.save_confirm", function (e) {
+            saveConfig(configurator);
+            e.value.webMI.display.closeWindow();
+        });
+
+        webMI.trigger.connect("com.atvise.highcharts.create_confirm", function (e) {
+            createConfig(configurator);
+            e.value.webMI.display.closeWindow();
+        });
+
+        webMI.trigger.connect("com.atvise.highcharts.save_abort", function (e) {
+            e.value.webMI.display.closeWindow();
+        });
+
+        webMI.trigger.connect("clicked", function (e) {
+            var loadConfiguration = {
+                "saveName": chart.chart.options.atviseOptions.saveMethod == "filesystem" ? chart.chart.options.atviseOptions.configFile : chart.chart.options.atviseOptions.configNode,
+                "saveMethod": chart.chart.options.atviseOptions.saveMethod,
+            }
+            configurator.getConfigsFromNode(loadConfiguration.saveName, loadConfiguration.saveMethod, function (chartConfig) {
+                if (newConfigName != "" && newConfigName in chartConfig) {
+                    webMI.display.openWindow({
+                        display: subdisplay.display_message,
+                        height: 300,
+                        width: 400,
+                        modal: true,
+                        resizable: false,
+                        movable: true,
+                        scrollbars: false,
+                        menubar: false,
+                        status: false,
+                        toolbar: false,
+                        query: {
+                            headline: "T{Overwrite existing configuration?}",
+                            msg1: "T{Actual configuration name already exist.}",
+                            msg2: "T{Do you want to overwrite the configuration?}",
+                            msg3: "",
+                            btn1: "T{Overwrite}",
+                            btn2: "T{Abort}",
+                            action_btn1: "com.atvise.highcharts.save_confirm",
+                            action_btn2: "com.atvise.highcharts.save_abort"
+                        }
+                    });
+                } else {
+                    saveConfig(configurator);
+                }
+            });
+        }, "btn_save");
+
+        webMI.trigger.connect("clicked", function (e) {
+            var id = "btn_load";
+            var value = true;
+            return function (value) {
+                if (selectedConfigName == undefined || selectedConfigName == "")
+                    return alertInfo("T{Warning}", "T{Please select a configuration!}");
+
+                var loadConfiguration = {
+                    "saveName": chart.chart.options.atviseOptions.saveMethod == "filesystem" ? chart.chart.options.atviseOptions.configFile : chart.chart.options.atviseOptions.configNode,
+                    "saveMethod": chart.chart.options.atviseOptions.saveMethod,
+                }
+                configurator.loadConfig(loadConfiguration.saveName, loadConfiguration.saveMethod, selectedConfigName, function (chartConfig) {
+                    /*reset chart*/
+                    while (chart.chart.series.length > 0)
+                        chart.chart.series[0].remove();
+                    while (chart.chart.xAxis.length > 0)
+                        chart.chart.xAxis[0].remove();
+                    while (chart.chart.yAxis.length > 0)
+                        chart.chart.yAxis[0].remove();
+
+                    /*update chart*/
+                    for (var i = 0; i < chartConfig.xAxis.length; i++)
+                        chart.chart.addAxis(chartConfig.xAxis[i], true);
+                    for (var i = 0; i < chartConfig.yAxis.length; i++)
+                        chart.chart.addAxis(chartConfig.yAxis[i], false);
+                    for (var i = 0; i < chartConfig.series.length; i++)
+                        chart.chart.addSeries(chartConfig.series[i]);
+
+                    chart.chart.options.atviseOptions = chartConfig.atviseOptions;
+
+                    webMI.trigger.fire("setValue", chart.chart.options.atviseOptions.configName, "save_name");
+                    webMI.trigger.fire("setChecked", chart.chart.options.atviseOptions.saveCompressed, "check_compression");
+
+                    chart.chart.update(chartConfig);
+                    chart.control.updated();
+                });
+            }(value);
+        }, "btn_load");
+
+        webMI.trigger.connect("clicked", function (e) {
+            if (createConfigName == undefined || createConfigName == "")
+                return alertInfo("T{Warning}", "T{Please enter a configuration name!}");
+
+            var loadConfiguration = {
+                "saveName": chart.chart.options.atviseOptions.saveMethod == "filesystem" ? chart.chart.options.atviseOptions.configFile : chart.chart.options.atviseOptions.configNode,
+                "saveMethod": chart.chart.options.atviseOptions.saveMethod,
+            }
+            configurator.getConfigsFromNode(loadConfiguration.saveName, loadConfiguration.saveMethod, function (chartConfig) {
+                if (createConfigName in chartConfig) {
+                    webMI.display.openWindow({
+                        display: subdisplay.display_message,
+                        height: 300,
+                        width: 400,
+                        modal: true,
+                        resizable: false,
+                        movable: true,
+                        scrollbars: false,
+                        menubar: false,
+                        status: false,
+                        toolbar: false,
+                        query: {
+                            headline: "T{Overwrite existing configuration?}",
+                            msg1: "T{Actual configuration name already exist.}",
+                            msg2: "T{Do you want to overwrite the configuration?}",
+                            msg3: "",
+                            btn1: "T{Overwrite}",
+                            btn2: "T{Abort}",
+                            action_btn1: "com.atvise.highcharts.create_confirm",
+                            action_btn2: "com.atvise.highcharts.save_abort"
+                        }
+                    });
+                } else {
+                    webMI.trigger.fire("com.atvise.highcharts.getQuickSave", "getState");
+                }
+            });
+        }, "btn_create");
+
+        /* check for unsaved configs */
+        webMI.trigger.connect("com.atvise.highcharts.sendQuickSave", function (e) {
+            if (e.value) {
+                webMI.display.openWindow({
+                    display: subdisplay.display_message,
+                    height: 300,
+                    width: 400,
+                    modal: true,
+                    resizable: false,
+                    movable: true,
+                    scrollbars: false,
+                    menubar: false,
+                    status: false,
+                    toolbar: false,
+                    query: {
+                        headline: "T{Save current configuration?}",
+                        msg1: "T{The current configuration is not saved yet!} T{Do you still want to create the new configuration?}",
+                        btn1: "T{Yes}",
+                        btn2: "T{Abort}",
+                        action_btn1: "com.atvise.highcharts.create_confirm",
+                        action_btn2: "com.atvise.highcharts.save_abort"
+                    }
+                });
+            } else {
+                createConfig(configurator);
+            }
+        });
+
+
+        webMI.trigger.connect("clicked", function (e) {
+            loadConfigsForNode(configurator);
+        }, "btn_refresh");
+
+
+        webMI.trigger.connect("clicked", function (e) {
+            var id = "btn_delete";
+            var value = true;
+            return function (value) {
+                var menuObj = [];
+
+                if (configNode == undefined || configNode == "")
+                    return alertInfo("T{Warning}", "T{Config node required!}");
+
+                if (selectedConfigName == undefined || selectedConfigName == "")
+                    return alertInfo("T{Warning}", "T{Please select a configuration name!}");
+
+                configurator.deleteConfig(configNode, selectedConfigName, chart, function (chartConfig) {
+                    for (var i in chartConfig) {
+                        menuObj.push({text: i, value: i});
+                    }
+
+                    webMI.trigger.fire("setItems", menuObj, "cbb_configs");
+                    webMI.trigger.fire("setSelectedItem", name, "cbb_configs");
+                    chart.control.updated();
+                });
+            }(value);
+        }, "btn_delete");
+
+        webMI.trigger.connect("valuechanged", function (e) {
+            newConfigName = e.value;
+        }, "save_name");
+
+        webMI.trigger.connect("valuechanged", function (e) {
+            createConfigName = e.value;
+        }, "new_name");
+
+        webMI.trigger.connect("valuechanged", function (e) {
+            selectedConfigName = e.value;
+        }, "cbb_configs");
+
+        webMI.trigger.connect("valuechanged", function (e) {
+            configNode = e.value;
+            loadConfigsForNode(configurator);
+        }, "picker_config_address");
+
+        webMI.trigger.connect("valuechanged", function (e) {
+            configFile = e.value;
+            loadConfigsForNode(configurator);
+        }, "picker_config_file");
+
+        webMI.trigger.connect("clicked", function (e) {
+            var id = "json_download";
+            var value = true;
+            return function (value) {
+                if (configNode == undefined)
+                    return alertInfo("T{Warning}", "T{Config node required!}");
+
+                var loadConfiguration = {
+                    "saveName": chart.chart.options.atviseOptions.saveMethod == "filesystem" ? chart.chart.options.atviseOptions.configFile : chart.chart.options.atviseOptions.configNode,
+                    "saveMethod": chart.chart.options.atviseOptions.saveMethod,
+                }
+                configurator.getConfigsFromNode(loadConfiguration.saveName, loadConfiguration.saveMethod, function (chartConfig) {
+                    chartConfig = JSON.stringify(chartConfig);
+                    webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Save As", {
+                        "content": chartConfig,
+                        "name": "highcharts-config.json",
+                        "type": "application/json"
+                    });
+                });
+
+            }(value);
+        }, "json_download");
+
+    });
+
+    webMI.trigger.fire("setValue", newConfigName, "save_name");
+    webMI.trigger.fire("setValue", configNode, "picker_config_address");
+    webMI.trigger.fire("setValue", configFile, "picker_config_file");
+});
+
+
+/**
+ * FUNCTION SECTION
+ */
+function alertInfo(headline, message) {
+    webMI.display.openWindow({
+        display: subdisplay.display_alert,
+        height: 160,
+        width: 400,
+        modal: true,
+        resizable: false,
+        movable: true,
+        scrollbars: false,
+        menubar: false,
+        status: false,
+        toolbar: false,
+        query: {
+            headline: headline,
+            message: message,
+            button: "T{OK}"
+        }
+    });
+}
+
+
+function loadConfigsForNode(configurator, configName) {
+    var loadConfiguration = {
+        "saveName": chart.chart.options.atviseOptions.saveMethod == "filesystem" ? chart.chart.options.atviseOptions.configFile : chart.chart.options.atviseOptions.configNode,
+        "saveMethod": chart.chart.options.atviseOptions.saveMethod,
+    }
+
+    if (chart.chart.options.atviseOptions.saveMethod == "filesystem") {
+        if (configFile != loadConfiguration.saveName) {
+            loadConfiguration.saveName = configFile;
+            chart.chart.options.atviseOptions.configFile = configFile;
+        }
+    } else {
+        if (configNode != loadConfiguration.saveName) {
+            loadConfiguration.saveName = configNode;
+            chart.chart.options.atviseOptions.configNode = configNode;
+        }
+    }
+
+    configurator.getConfigsFromNode(loadConfiguration.saveName, loadConfiguration.saveMethod, function (chartConfig) {
+        var comboItems = [];
+        for (var i in chartConfig) {
+            comboItems.push({text: i, value: i});
+        }
+
+        webMI.trigger.fire("setItems", comboItems, "cbb_configs");
+        if (configName && configName in chartConfig) {
+            webMI.trigger.fire("setSelectedItem", configName, "cbb_configs");
+        }
+    });
+}
+
+function saveConfig(configurator) {
+    var menuObj = [];
+
+    if (chart.chart.options.atviseOptions.saveMethod == "filesystem") {
+        if (configFile == undefined || configFile == "")
+            return alertInfo("T{Warning}", "T{Config file required!}");
+    } else {
+        if (configNode == undefined || configNode == "")
+            return alertInfo("T{Warning}", "T{Config node required!}");
+    }
+
+    if (newConfigName == undefined || newConfigName == "")
+        return alertInfo("T{Warning}", "T{Please enter a valid configuration name!}");
+
+    configurator.saveConfigOrImport({"configNode": configNode, "configName": newConfigName},
+        chart,
+        function (chartConfig) {
+            chart.control.updated();
+            for (var i in chartConfig) {
+                menuObj.push({text: i, value: i});
+            }
+
+            webMI.trigger.fire("setItems", menuObj, "cbb_configs");
+            webMI.trigger.fire("setSelectedItem", name, "cbb_configs");
+
+            chart.chart.options.atviseOptions.configNode = configNode;
+            chart.chart.options.atviseOptions.configName = newConfigName;
+            chart.control.updated();
+        });
+}
+
+function createConfig(configurator) {
+    /*reset chart*/
+    while (chart.chart.series.length > 0)
+        chart.chart.series[0].remove();
+    while (chart.chart.xAxis.length > 1)
+        chart.chart.xAxis[1].remove();
+    while (chart.chart.yAxis.length > 0)
+        chart.chart.yAxis[0].remove();
+
+    var xAxisOptions = {
+        "title": {"text": ""},
+        "timeSpan": 60,
+        "timeSpanUnit": 1,
+        "tickInterval": 10000,
+        "lineWidth": 0,
+        "labels": {
+            "enabled": true,
+            "align": "center"
+        },
+        "crosshair": {
+            "width": 0,
+            "snap": true,
+            "color": "#ff0000",
+            "dashStyle": "Solid"
+        },
+        "type": "datetime",
+        "dateTimeLabelFormats": {
+            "format": "%H:%M:%S"
+        },
+        "gridLineWidth": 1,
+        "gridLineColor": "#888888",
+        "minorGridLineWidth": 1,
+        "minorGridLineColor": "#eeeeee",
+        "minorTickInterval": 10000,
+        "opposite": false
+    };
+
+    chart.chart.xAxis[0].update(xAxisOptions);
+    chart.chart.addAxis({}, false);
+    chart.chart.addSeries();
+
+    chart.chart.options.atviseOptions.configName = createConfigName;
+
+    webMI.trigger.fire("setValue", chart.chart.options.atviseOptions.configName, "save_name");
+
+    if (webMI.rootWindow.atviseDefaults)
+        chart.chart.update(webMI.rootWindow.atviseDefaults);
+    chart.control.updated(function () {
+        saveConfig(configurator);
+    });
+}
+
+function uploadFile(evt) {
+    if (configNode == undefined)
+        return alertInfo("T{Warning}", "T{Config node required!}");
+
+    if (configNode != chart.chart.options.atviseOptions.configNode) {
+        chart.chart.options.atviseOptions.configNode = configNode;
+    }
+
+    var files = evt.target.files;
+    var uploadFile = files[0];
+
+    var reader = new FileReader();
+    reader.onload = function (fileData) {
+        var fileText = fileData.target.result;
+        /* remove line breaks */
+        fileText = fileText.replace(/(\r\n|\n|\r)/gm, "");
+        /* remove multiple spaces */
+        fileText = fileText.replace(/\s\s+/g, ' ');
+        /* remove Tabs */
+        fileText = fileText.replace('\t', '')
+
+        var configImport = JSON.parse(fileText);
+        var keyList = Object.keys(configImport);
+
+        if (keyList.indexOf("default") > -1)
+            configName = "default";
+        else
+            configName = keyList[0];
+
+        saveImport(keyList, configNode, JSON.parse(fileText), function callback() {
+            loadConfigsForNode(configurator, configName);
+        })
+    }
+
+    reader.readAsText(uploadFile);
+}
+
+function saveImport(keyList, configNode, configImport, callback) {
+
+    if (keyList.length > 0) {
+        var key = keyList.shift();
+        if (key != "autosave") {
+            var current = JSON.parse(JSON.stringify(configImport[key]));
+            var configOptions = {"configNode": configNode, "configName": key, "configImport": current};
+            configurator.saveConfigOrImport(configOptions, chart, function () {
+                saveImport(keyList, configNode, configImport, callback);
+            });
+        } else {
+            saveImport(keyList, configNode, configImport, callback);
+        }
+    } else {
+        callback();
+    }
+}
+]]></code>
+</script>

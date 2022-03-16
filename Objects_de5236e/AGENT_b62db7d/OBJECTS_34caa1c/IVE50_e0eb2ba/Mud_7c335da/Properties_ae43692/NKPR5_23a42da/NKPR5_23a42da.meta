@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.Properties.NKPR5
+NodeClass: Variable
+BrowseName: 1:NKPR5
+DisplayName: en|NKPR5
+Description: en|NKPR5
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType

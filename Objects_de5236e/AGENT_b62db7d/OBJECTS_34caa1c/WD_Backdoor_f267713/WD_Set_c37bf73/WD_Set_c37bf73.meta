@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WD_Backdoor.WD_Set
+NodeClass: Variable
+BrowseName: 1:WD_Set
+DisplayName: en|WD_Set
+Description: en|WD_Set
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

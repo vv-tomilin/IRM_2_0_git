@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" height="1016" width="1740" xmlns="http://www.w3.org/2000/svg">
+ <defs/>
+ <metadata>
+  <atv:parameter desc="necessary rights" valuetype="address" config="SYSTEM.SECURITY.RIGHTS" name="right" defaultvalue="" group="Security" behavior="optional"/>
+  <atv:gridconfig enabled="true" gridstyle="lines" height="10" width="10"/>
+  <atv:snapconfig enabled="true" height="5" width="5"/>
+ </metadata>
+ <g atv:insensitive="true" id="id_5" atv:refpy="0" atv:refpx="0">
+  <rect y="0" fill="#000406" id="id_6" x="0" atv:refpy="508" height="1016.00" atv:refpx="870" width="1740.00"/>
+ </g>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.slickgrid.table" transform="matrix(2.6863,0,0,1.4563,0,0)" y="51.891" id="id_Table" x="3.879" atv:refpy="541.588" height="640" atv:refpx="870.002" width="640">
+  <atv:argument value="report_table" name="tableID"/>
+  <atv:argument value="false" name="columnReorder"/>
+  <atv:argument value="false" name="multiselect"/>
+  <atv:argument value="false" name="allowDirectInput"/>
+  <atv:argument value="25" name="row_height"/>
+  <atv:argument value="20" name="row_text_size"/>
+  <atv:argument value="20" name="detail_text_size"/>
+  <atv:argument value="20" name="footer_text_size"/>
+ </svg>
+ <text font-size="26" transform="matrix(2.0838,0,0,1.6793,-581.5584,-2.2818)" y="31.859" fill="#8a8a8a" id="id_0" x="541.092" font-family="Arial" atv:refpy="38.625" font-weight="bold" atv:refpx="821.369">Библиотека документов </text>
+ <svg xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" transform="matrix(2.0838,0,0,1.6793,0,0)" y="5" id="upload_btn" x="737" atv:refpy="35.337" height="30" atv:refpx="1712.46" width="80">
+  <atv:argument value="T{Загрузить}" name="label"/>
+  <atv:overwrite id="id_6" transform="matrix(0.4799,0,0,0.5955,0,0)" height="48.38" width="164.707"/>
+  <atv:overwrite id="button_symbol" transform="matrix(0.4799,0,0,0.5955,0,0)" x="73.353" y="15.19"/>
+  <atv:overwrite id="button_label_2" transform="matrix(0.4799,0,0,0.5955,0,0)" x="83.353" y="36.69"/>
+  <atv:overwrite id="button_label_1" transform="matrix(0.4799,0,0,0.5955,0,0)" x="83.353" y="21.69"/>
+  <atv:overwrite id="button_label" transform="matrix(0.4799,0,0,0.5955,0,0)" x="83.353" y="29.69"/>
+  <atv:overwrite id="button_stroke" transform="matrix(0.4799,0,0,0.5955,0,0)" height="46.38" width="162.707"/>
+  <atv:overwrite id="button_bg" transform="matrix(0.4799,0,0,0.5955,0,0)" height="48.38" width="164.707"/>
+  <atv:overwrite id="outer_frame" transform="matrix(0.4799,0,0,0.5955,0,0)" height="50.38" width="166.707"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[webMI.trigger.connect(
+	"clicked",
+	function(e) {
+		webMI.display.openWindow({
+			display: "SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.UPLOAD.Popup",
+			extern: false,
+			height: 240,
+			width: 540,
+			menubar: false,
+			modal: false,
+			movable: true,
+			resizable: false,
+			scrollbars: false,
+			status: false,
+			title: "Загрузить файл",
+			toolbar: false,
+			query: webMI.query
+		});
+	},
+	"upload_btn"
+);
+
+
+webMI.trigger.connect("refreshDocumentTable",
+	function(e) {
+		//document.location.href = document.location.href;
+		window.location.reload();
+	}
+);
+
+var dataArr=[];
+
+// Calling ServerScript and getting back Directory List of Server Path
+webMI.data.call("ReadDirectory", {"path":"rigdata/documents"}, function(result) {
+	console.log(result);	
+	dataArr=result;	
+});
+
+/*
+function extractDateFromName(filename){
+	var strDate=filename.slice(7, 17);	
+	return strDate;
+}
+
+var right = (webMI.query["right"] == undefined) ? "" : webMI.query["right"];
+if (right.search(/SYSTEM\.SECURITY\.RIGHTS\./) != -1) {
+	right = right.substring(23,right.length); //remove "prefix" SYSTEM.SECURITY.RIGHTS.
+}
+
+var hasRight = false;
+
+if (right != "") {
+	webMI.addEvent(webMI.data, "clientvariableschange", function(e) {
+		hasRight=false;
+		if (("username" in e) && (e.username != "")) {
+				hasRight = webMI.hasRight(right);
+		}
+//		deActivate();
+	});
+}
+*/
+// Filling the Table
+webMI.table.loadResources(function() {
+	var config = [];
+    // *** BEGIN CONFIGURATION SECTION ***
+    config["columns"] = [
+        {id: "id", name: "T{Индекс}", field: "id", sortable: true, width:250, filter: true, visible: true, resizable: false},
+        {id: "names", name: "T{Имя файла}", field: "names", sortable: true, width:1388, filter: true, visible: true, resizable: false},
+//        {id: "names", name: "T{Имя файла}", field: "names", sortable: true, width:470, filter: true, visible: true, resizable: false},  
+//        {id: "dates", name: "T{Дата создания}", field: "dates", sortable: true, width:189, filter: true, visible: true, resizable: false},
+        {id: "butt", name: "T{Скачать}", field: "butt", sortable: false, width:65, filter: false, visible: true, resizable: false,formatter: buttonFormatter, type: "button"}   
+        
+  
+/*
+        {id: "dates", name: "T{Дата создания}", field: "dates", sortable: true, width:190, filter: true, visible: true, resizable: false},
+        {id: "butt", name: "T{Скачать}", field: "butt", sortable: false, width:69, filter: false, visible: true, resizable: false}
+*/        
+    ];
+/*    
+	hasRight = true; //for test only
+	if(hasRight){
+		config["columns"].push({id: "dates", name: "T{Дата создания}", field: "dates", sortable: true, width:190, filter: true, visible: true, resizable: false});
+//		config["columns"].push({id: "butt", name: "T{Скачать}", field: "butt", sortable: false, width:69, filter: false, visible: true, resizable: false});
+		config["columns"].push({id: "butt", name: "T{Скачать}", field: "butt", sortable: false, width:69, filter: false, visible: true, resizable: false,formatter: buttonFormatter, type: "button"});
+	} else {
+		config["columns"].push({id: "dates", name: "T{Дата создания}", field: "dates", sortable: true, width:259, filter: true, visible: true, resizable: false});
+	}    
+*/    
+    config["mode"] = "continue";
+    config["dataRequestFunction"] = function myRequest() {
+        var that = this;
+        var data = {
+			result: []
+        };
+        var elem = {};
+
+		// Looping through data result of server script "ReadDirectory" and creating datas for tables column        
+		for(var i =0; i < dataArr.length; i++) {
+
+			elem["id"] = i;
+			elem["names"] = dataArr[i];
+			//elem["names"] = dataArr[i]+"<button id='" + i + "' class='filename'>" + dataArr[i] + "</button>";
+			elem["dates"] = "05-03-2020";//extractDateFromName(dataArr[i]);
+			
+//			if(hasRight){
+//				elem["butt"] = "<button id='" + dataArr[i] + "' class='reportfilename'>" + "..." + "</button>";
+				elem["butt"] = i;
+//			}			
+			
+
+
+/////////////////////////////////////////////////////////////////////////////////
+/*			row.speed = e[0].value;
+				row.status = e[1].value;
+				row.text = e[2].value;
+				row.display = "<button id='" + index + "' class='display'>Turbine " + index + "</button>";
+				data.result = row;
+				that.addData(data);
+*/				
+/////////////////////////////////////////////////////////////////////////////////			
+			
+			
+			if(dataArr[0]!=undefined) {
+				data.result = elem;
+				that.addData(data);
+			}		
+		}
+		webMI.rootWindow.addEventListener('click', function (e) {
+			if (e.target.className === 'documentfilename') {
+				var filename = e.target.id;
+				var fullfilename = "rigdata/documents/"+filename;
+				var fileUrl = filename, parts, ext = ( parts = fileUrl.split("/").pop().split(".") ).length > 1 ? parts.pop() : "";
+				//alert( ext );
+				
+				if(ext.toLowerCase() == "pdf")
+					webMI.display.openUrl("GetPDF", {"fullreportname":fullfilename,"reportname":filename});
+				else if(ext.toLowerCase() == "csv")
+					webMI.display.openUrl("GetCSV", {"fullreportname":fullfilename,"reportname":filename});	
+				else if(ext.toLowerCase() == "djvu")
+					webMI.display.openUrl("GetDjVu", {"fullreportname":fullfilename,"reportname":filename});
+				else if(ext.toLowerCase() == "doc")
+					webMI.display.openUrl("GetDoc", {"fullreportname":fullfilename,"reportname":filename});	
+				else if(ext.toLowerCase() == "docx")
+					webMI.display.openUrl("GetDocx", {"fullreportname":fullfilename,"reportname":filename});
+				else if(ext.toLowerCase() == "chm")
+					webMI.display.openUrl("GetChm", {"fullreportname":fullfilename,"reportname":filename});	
+				else 
+					webMI.display.openUrl("GetAny", {"fullreportname":fullfilename,"reportname":filename});								
+			}
+		}, false);
+		
+		
+		// #######################################
+    
+    };
+	
+	function buttonFormatter(row, cell, value, columnDef, dataContext) {
+        //var title = value;
+        var fname=dataContext.names;
+//        return "<button id='"+value+"' style='cursor:pointer;' class='display'>Turbine "+value+"</button>";
+        return "<button id='"+fname+"' style='cursor:pointer;' class='documentfilename'>...</button>";
+    }
+
+	// ### END CONFIGURATION SECTION ###
+	webMI.table.register("report_table", "config", config);
+	webMI.table.setReady("report_table", "config");
+});]]></script>
+</svg>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.RegionBoard.technologEfficiency
+NodeClass: Variable
+BrowseName: 1:technologEfficiency
+DisplayName: en|technologEfficiency
+Description: en|technologEfficiency
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

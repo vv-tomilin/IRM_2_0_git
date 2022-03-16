@@ -1,0 +1,10 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.DataGenerator_2
+NodeClass: Variable
+BrowseName: 1:DataGenerator_2
+DisplayName: en|DataGenerator_2
+Description: en|DataGenerator_2
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule Shared
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

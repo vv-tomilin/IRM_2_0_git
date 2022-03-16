@@ -1,0 +1,775 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:atv="http://webmi.atvise.com/2007/svgext" width="1280" height="680" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" version="1.2">
+ <defs/>
+ <metadata>
+  <atv:gridconfig enabled="false" gridstyle="lines" width="20" height="20"/>
+  <atv:snapconfig enabled="false" width="10" height="10"/>
+ </metadata>
+ <rect stroke-width="0" y="0" id="id_4" stroke="#0000ff" fill="#1f1f1f" atv:refpy="340" atv:refpx="640" x="0" width="1280" height="680"/>
+ <foreignObject y="139.847" id="id_3" x="60.416" width="429" height="510.153">
+  <div id="colMain" style="font-family:Lucida Console; background-color:rgb(42,44,43); text-align:center; width:100%;height:100%; padding:5px" xmlns="http://www.w3.org/1999/xhtml">
+   <div id="geo1" style="width:90%; height:14%; margin:auto; margin-bottom:1%; background-color:#141414; border:2px solid black">
+    <table style="width:100%; height:100%">
+     <tr>
+      <td style="width:60%">
+       <h5 style="color:white; padding-bottom:5%; font-weight:normal; margin: 0%">ПОРОДА</h5>
+       <select id="g1name" style="width:90%; text-align-last:center; height:40%;">
+        <option>Алеврит</option>
+        <option>Андезит</option>
+        <option>Аргиллит</option>
+        <option>Базальт</option>
+        <option>Боксит</option>
+        <option>Габбро</option>
+        <option>Галечник</option>
+        <option>Галитит</option>
+        <option>Глина</option>
+        <option>Гнейс</option>
+        <option>Гранит</option>
+        <option>Грейзен</option>
+        <option>Диорит</option>
+        <option>Доломит</option>
+        <option>Дунит</option>
+        <option>Известяк</option>
+        <option>Кварцит</option>
+        <option>Когломерат</option>
+        <option>Кремень</option>
+        <option>Липарит</option>
+        <option>Мрамор</option>
+        <option>Обсидиан</option>
+        <option>Песчаник</option>
+        <option>Сиенит</option>
+        <option>Сланец</option>
+        <option>Торф</option>
+        <option>Трахит</option>
+        <option>Туф</option>
+        <option>Туффит</option>
+        <option>Уголь</option>
+        <option>Фосфорит</option>
+       </select>
+      </td>
+      <td style="width:40%; text-align:right">
+       <h5 style="color:white; font-weight:normal; margin: 0%">ГЛУБИНА(М)</h5>
+       <label style="color: white; font-size:0.5em">Верхний уровень<input id="g1start" type="text" readonly="true" size="5"/>
+       </label>
+       <label style="color: white; font-size:0.5em">Нижний  уровень<input id="g1end" type="text" size="5"/>
+       </label>
+      </td>
+     </tr>
+    </table>
+   </div>
+   <div id="geo2" style="width:90%; height:14%; margin:auto; margin-bottom:1%; background-color:#141414; border:2px solid black">
+    <table style="width:100%; height:100%">
+     <tr>
+      <td style="width:60%">
+       <h5 style="color:white; padding-bottom:5%; font-weight:normal; margin: 0%">ПОРОДА</h5>
+       <select id="g2name" style="width:90%; text-align-last:center; height:40%;">
+        <option>Алеврит</option>
+        <option>Андезит</option>
+        <option>Аргиллит</option>
+        <option>Базальт</option>
+        <option>Боксит</option>
+        <option>Габбро</option>
+        <option>Галечник</option>
+        <option>Галитит</option>
+        <option>Глина</option>
+        <option>Гнейс</option>
+        <option>Гранит</option>
+        <option>Грейзен</option>
+        <option>Диорит</option>
+        <option>Доломит</option>
+        <option>Дунит</option>
+        <option>Известяк</option>
+        <option>Кварцит</option>
+        <option>Когломерат</option>
+        <option>Кремень</option>
+        <option>Липарит</option>
+        <option>Мрамор</option>
+        <option>Обсидиан</option>
+        <option>Песчаник</option>
+        <option>Сиенит</option>
+        <option>Сланец</option>
+        <option>Торф</option>
+        <option>Трахит</option>
+        <option>Туф</option>
+        <option>Туффит</option>
+        <option>Уголь</option>
+        <option>Фосфорит</option>
+       </select>
+      </td>
+      <td style="width:40%; text-align:right">
+       <h5 style="color:white; font-weight:normal; margin: 0%">ГЛУБИНА(М)</h5>
+       <label style="color: white; font-size:0.5em">Верхний уровень<input id="g2start" type="text" readonly="true" size="5"/>
+       </label>
+       <label style="color: white; font-size:0.5em">Нижний  уровень<input id="g2end" type="text" size="5"/>
+       </label>
+      </td>
+     </tr>
+    </table>
+   </div>
+   <div id="geo3" style="width:90%; height:14%; margin:auto; margin-bottom:1%; background-color:#141414; border:2px solid black">
+    <table style="width:100%; height:100%">
+     <tr>
+      <td style="width:60%">
+       <h5 style="color:white; padding-bottom:5%; font-weight:normal; margin: 0%">ПОРОДА</h5>
+       <select id="g3name" style="width:90%; text-align-last:center; height:40%;">
+        <option>Алеврит</option>
+        <option>Андезит</option>
+        <option>Аргиллит</option>
+        <option>Базальт</option>
+        <option>Боксит</option>
+        <option>Габбро</option>
+        <option>Галечник</option>
+        <option>Галитит</option>
+        <option>Глина</option>
+        <option>Гнейс</option>
+        <option>Гранит</option>
+        <option>Грейзен</option>
+        <option>Диорит</option>
+        <option>Доломит</option>
+        <option>Дунит</option>
+        <option>Известяк</option>
+        <option>Кварцит</option>
+        <option>Когломерат</option>
+        <option>Кремень</option>
+        <option>Липарит</option>
+        <option>Мрамор</option>
+        <option>Обсидиан</option>
+        <option>Песчаник</option>
+        <option>Сиенит</option>
+        <option>Сланец</option>
+        <option>Торф</option>
+        <option>Трахит</option>
+        <option>Туф</option>
+        <option>Туффит</option>
+        <option>Уголь</option>
+        <option>Фосфорит</option>
+       </select>
+      </td>
+      <td style="width:40%; text-align:right">
+       <h5 style="color:white; font-weight:normal; margin: 0%">ГЛУБИНА(М)</h5>
+       <label style="color: white; font-size:0.5em">Верхний уровень<input id="g3start" type="text" readonly="true" size="5"/>
+       </label>
+       <label style="color: white; font-size:0.5em">Нижний  уровень<input id="g3end" type="text" size="5"/>
+       </label>
+      </td>
+     </tr>
+    </table>
+   </div>
+   <div id="geo4" style="width:90%; height:14%; margin:auto; margin-bottom:1%; background-color:#141414; border:2px solid black">
+    <table style="width:100%; height:100%">
+     <tr>
+      <td style="width:60%">
+       <h5 style="color:white; padding-bottom:5%; font-weight:normal; margin: 0%">ПОРОДА</h5>
+       <select id="g4name" style="width:90%; text-align-last:center; height:40%;">
+        <option>Алеврит</option>
+        <option>Андезит</option>
+        <option>Аргиллит</option>
+        <option>Базальт</option>
+        <option>Боксит</option>
+        <option>Габбро</option>
+        <option>Галечник</option>
+        <option>Галитит</option>
+        <option>Глина</option>
+        <option>Гнейс</option>
+        <option>Гранит</option>
+        <option>Грейзен</option>
+        <option>Диорит</option>
+        <option>Доломит</option>
+        <option>Дунит</option>
+        <option>Известяк</option>
+        <option>Кварцит</option>
+        <option>Когломерат</option>
+        <option>Кремень</option>
+        <option>Липарит</option>
+        <option>Мрамор</option>
+        <option>Обсидиан</option>
+        <option>Песчаник</option>
+        <option>Сиенит</option>
+        <option>Сланец</option>
+        <option>Торф</option>
+        <option>Трахит</option>
+        <option>Туф</option>
+        <option>Туффит</option>
+        <option>Уголь</option>
+        <option>Фосфорит</option>
+       </select>
+      </td>
+      <td style="width:40%; text-align:right">
+       <h5 style="color:white; font-weight:normal; margin: 0%">ГЛУБИНА(М)</h5>
+       <label style="color: white; font-size:0.5em">Верхний уровень<input id="g4start" type="text" readonly="true" size="5"/>
+       </label>
+       <label style="color: white; font-size:0.5em">Нижний  уровень<input id="g4end" type="text" size="5"/>
+       </label>
+      </td>
+     </tr>
+    </table>
+   </div>
+   <div id="geo5" style="width:90%; height:14%; margin:auto; margin-bottom:1%; background-color:#141414; border:2px solid black">
+    <table style="width:100%; height:100%">
+     <tr>
+      <td style="width:60%">
+       <h5 style="color:white; padding-bottom:5%; font-weight:normal; margin: 0%">ПОРОДА</h5>
+       <select id="g5name" style="width:90%; text-align-last:center; height:40%;">
+        <option>Алеврит</option>
+        <option>Андезит</option>
+        <option>Аргиллит</option>
+        <option>Базальт</option>
+        <option>Боксит</option>
+        <option>Габбро</option>
+        <option>Галечник</option>
+        <option>Галитит</option>
+        <option>Глина</option>
+        <option>Гнейс</option>
+        <option>Гранит</option>
+        <option>Грейзен</option>
+        <option>Диорит</option>
+        <option>Доломит</option>
+        <option>Дунит</option>
+        <option>Известяк</option>
+        <option>Кварцит</option>
+        <option>Когломерат</option>
+        <option>Кремень</option>
+        <option>Липарит</option>
+        <option>Мрамор</option>
+        <option>Обсидиан</option>
+        <option>Песчаник</option>
+        <option>Сиенит</option>
+        <option>Сланец</option>
+        <option>Торф</option>
+        <option>Трахит</option>
+        <option>Туф</option>
+        <option>Туффит</option>
+        <option>Уголь</option>
+        <option>Фосфорит</option>
+       </select>
+      </td>
+      <td style="width:40%; text-align:right">
+       <h5 style="color:white; font-weight:normal; margin: 0%">ГЛУБИНА(М)</h5>
+       <label style="color: white; font-size:0.5em">Верхний уровень<input id="g5start" type="text" readonly="true" size="5"/>
+       </label>
+       <label style="color: white; font-size:0.5em">Нижний  уровень<input id="g5end" type="text" size="5"/>
+       </label>
+      </td>
+     </tr>
+    </table>
+   </div>
+   <div id="geo6" style="width:90%; height:14%; margin:auto; margin-bottom:1%; background-color:#141414; border:2px solid black">
+    <table style="width:100%; height:100%">
+     <tr>
+      <td style="width:60%">
+       <h5 style="color:white; padding-bottom:5%; font-weight:normal; margin: 0%">ПОРОДА</h5>
+       <select id="g6name" style="width:90%; text-align-last:center; height:40%;">
+        <option>Алеврит</option>
+        <option>Андезит</option>
+        <option>Аргиллит</option>
+        <option>Базальт</option>
+        <option>Боксит</option>
+        <option>Габбро</option>
+        <option>Галечник</option>
+        <option>Галитит</option>
+        <option>Глина</option>
+        <option>Гнейс</option>
+        <option>Гранит</option>
+        <option>Грейзен</option>
+        <option>Диорит</option>
+        <option>Доломит</option>
+        <option>Дунит</option>
+        <option>Известяк</option>
+        <option>Кварцит</option>
+        <option>Когломерат</option>
+        <option>Кремень</option>
+        <option>Липарит</option>
+        <option>Мрамор</option>
+        <option>Обсидиан</option>
+        <option>Песчаник</option>
+        <option>Сиенит</option>
+        <option>Сланец</option>
+        <option>Торф</option>
+        <option>Трахит</option>
+        <option>Туф</option>
+        <option>Туффит</option>
+        <option>Уголь</option>
+        <option>Фосфорит</option>
+       </select>
+      </td>
+      <td style="width:40%; text-align:right">
+       <h5 style="color:white; font-weight:normal; margin: 0%">ГЛУБИНА(М)</h5>
+       <label style="color: white; font-size:0.5em">Верхний уровень<input id="g6start" type="text" readonly="true" size="5"/>
+       </label>
+       <label style="color: white; font-size:0.5em">Нижний  уровень<input id="g6end" type="text" size="5"/>
+       </label>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </div>
+ </foreignObject>
+ <foreignObject y="41.586" id="id_5" x="560" width="429" height="610">
+  <div id="col2" style="text-align:center; font-family:Lucida Console; background-color:rgb(42,44,43); width:100%;height:100%; padding:5px; padding-top:6%" xmlns="http://www.w3.org/1999/xhtml">
+   <div id="geo7" style="width:90%; height:11.708%; margin:auto; margin-bottom:1%; background-color:#141414; border:2px solid black">
+    <table style="width:100%; height:100%">
+     <tr>
+      <td style="width:60%">
+       <h5 style="color:white; padding-bottom:5%; font-weight:normal; margin: 0%">ПОРОДА</h5>
+       <select id="g7name" style="width:90%; text-align-last:center; height:40%;">
+        <option>Алеврит</option>
+        <option>Андезит</option>
+        <option>Аргиллит</option>
+        <option>Базальт</option>
+        <option>Боксит</option>
+        <option>Габбро</option>
+        <option>Галечник</option>
+        <option>Галитит</option>
+        <option>Глина</option>
+        <option>Гнейс</option>
+        <option>Гранит</option>
+        <option>Грейзен</option>
+        <option>Диорит</option>
+        <option>Доломит</option>
+        <option>Дунит</option>
+        <option>Известяк</option>
+        <option>Кварцит</option>
+        <option>Когломерат</option>
+        <option>Кремень</option>
+        <option>Липарит</option>
+        <option>Мрамор</option>
+        <option>Обсидиан</option>
+        <option>Песчаник</option>
+        <option>Сиенит</option>
+        <option>Сланец</option>
+        <option>Торф</option>
+        <option>Трахит</option>
+        <option>Туф</option>
+        <option>Туффит</option>
+        <option>Уголь</option>
+        <option>Фосфорит</option>
+       </select>
+      </td>
+      <td style="width:40%; text-align:right">
+       <h5 style="color:white; font-weight:normal; margin: 0%">ГЛУБИНА(М)</h5>
+       <label style="color: white; font-size:0.5em">Верхний уровень<input id="g7start" type="text" readonly="true" size="5"/>
+       </label>
+       <label style="color: white; font-size:0.5em">Нижний  уровень<input id="g7end" type="text" size="5"/>
+       </label>
+      </td>
+     </tr>
+    </table>
+   </div>
+   <div id="geo8" style="width:90%; height:11.708%; margin:auto; margin-bottom:1%; background-color:#141414; border:2px solid black">
+    <table style="width:100%; height:100%">
+     <tr>
+      <td style="width:60%">
+       <h5 style="color:white; padding-bottom:5%; font-weight:normal; margin: 0%">ПОРОДА</h5>
+       <select id="g8name" style="width:90%; text-align-last:center; height:40%;">
+        <option>Алеврит</option>
+        <option>Андезит</option>
+        <option>Аргиллит</option>
+        <option>Базальт</option>
+        <option>Боксит</option>
+        <option>Габбро</option>
+        <option>Галечник</option>
+        <option>Галитит</option>
+        <option>Глина</option>
+        <option>Гнейс</option>
+        <option>Гранит</option>
+        <option>Грейзен</option>
+        <option>Диорит</option>
+        <option>Доломит</option>
+        <option>Дунит</option>
+        <option>Известяк</option>
+        <option>Кварцит</option>
+        <option>Когломерат</option>
+        <option>Кремень</option>
+        <option>Липарит</option>
+        <option>Мрамор</option>
+        <option>Обсидиан</option>
+        <option>Песчаник</option>
+        <option>Сиенит</option>
+        <option>Сланец</option>
+        <option>Торф</option>
+        <option>Трахит</option>
+        <option>Туф</option>
+        <option>Туффит</option>
+        <option>Уголь</option>
+        <option>Фосфорит</option>
+       </select>
+      </td>
+      <td style="width:40%; text-align:right">
+       <h5 style="color:white; font-weight:normal; margin: 0%">ГЛУБИНА(М)</h5>
+       <label style="color: white; font-size:0.5em">Верхний уровень<input id="g8start" type="text" readonly="true" size="5"/>
+       </label>
+       <label style="color: white; font-size:0.5em">Нижний  уровень<input id="g8end" type="text" size="5"/>
+       </label>
+      </td>
+     </tr>
+    </table>
+   </div>
+   <div id="geo9" style="width:90%; height:11.708%; margin:auto; margin-bottom:1%; background-color:#141414; border:2px solid black">
+    <table style="width:100%; height:100%">
+     <tr>
+      <td style="width:60%">
+       <h5 style="color:white; padding-bottom:5%; font-weight:normal; margin: 0%">ПОРОДА</h5>
+       <select id="g9name" style="width:90%; text-align-last:center; height:40%;">
+        <option>Алеврит</option>
+        <option>Андезит</option>
+        <option>Аргиллит</option>
+        <option>Базальт</option>
+        <option>Боксит</option>
+        <option>Габбро</option>
+        <option>Галечник</option>
+        <option>Галитит</option>
+        <option>Глина</option>
+        <option>Гнейс</option>
+        <option>Гранит</option>
+        <option>Грейзен</option>
+        <option>Диорит</option>
+        <option>Доломит</option>
+        <option>Дунит</option>
+        <option>Известяк</option>
+        <option>Кварцит</option>
+        <option>Когломерат</option>
+        <option>Кремень</option>
+        <option>Липарит</option>
+        <option>Мрамор</option>
+        <option>Обсидиан</option>
+        <option>Песчаник</option>
+        <option>Сиенит</option>
+        <option>Сланец</option>
+        <option>Торф</option>
+        <option>Трахит</option>
+        <option>Туф</option>
+        <option>Туффит</option>
+        <option>Уголь</option>
+        <option>Фосфорит</option>
+       </select>
+      </td>
+      <td style="width:40%; text-align:right">
+       <h5 style="color:white; font-weight:normal; margin: 0%">ГЛУБИНА(М)</h5>
+       <label style="color: white; font-size:0.5em">Верхний уровень<input id="g9start" type="text" readonly="true" size="5"/>
+       </label>
+       <label style="color: white; font-size:0.5em">Нижний  уровень<input id="g9end" type="text" size="5"/>
+       </label>
+      </td>
+     </tr>
+    </table>
+   </div>
+   <div id="geo10" style="width:90%; height:11.708%; margin:auto; margin-bottom:1%; background-color:#141414; border:2px solid black">
+    <table style="width:100%; height:100%">
+     <tr>
+      <td style="width:60%">
+       <h5 style="color:white; padding-bottom:5%; font-weight:normal; margin: 0%">ПОРОДА</h5>
+       <select id="g10name" style="width:90%; text-align-last:center; height:40%;">
+        <option>Алеврит</option>
+        <option>Андезит</option>
+        <option>Аргиллит</option>
+        <option>Базальт</option>
+        <option>Боксит</option>
+        <option>Габбро</option>
+        <option>Галечник</option>
+        <option>Галитит</option>
+        <option>Глина</option>
+        <option>Гнейс</option>
+        <option>Гранит</option>
+        <option>Грейзен</option>
+        <option>Диорит</option>
+        <option>Доломит</option>
+        <option>Дунит</option>
+        <option>Известяк</option>
+        <option>Кварцит</option>
+        <option>Когломерат</option>
+        <option>Кремень</option>
+        <option>Липарит</option>
+        <option>Мрамор</option>
+        <option>Обсидиан</option>
+        <option>Песчаник</option>
+        <option>Сиенит</option>
+        <option>Сланец</option>
+        <option>Торф</option>
+        <option>Трахит</option>
+        <option>Туф</option>
+        <option>Туффит</option>
+        <option>Уголь</option>
+        <option>Фосфорит</option>
+       </select>
+      </td>
+      <td style="width:40%; text-align:right">
+       <h5 style="color:white; font-weight:normal; margin: 0%">ГЛУБИНА(М)</h5>
+       <label style="color: white; font-size:0.5em">Верхний уровень<input id="g10start" type="text" readonly="true" size="5"/>
+       </label>
+       <label style="color: white; font-size:0.5em">Нижний  уровень<input id="g10end" type="text" size="5"/>
+       </label>
+      </td>
+     </tr>
+    </table>
+   </div>
+   <div id="geo11" style="width:90%; height:11.708%; margin:auto; margin-bottom:1%; background-color:#141414; border:2px solid black">
+    <table style="width:100%; height:100%">
+     <tr>
+      <td style="width:60%">
+       <h5 style="color:white; padding-bottom:5%; font-weight:normal; margin: 0%">ПОРОДА</h5>
+       <select id="g11name" style="width:90%; text-align-last:center; height:40%;">
+        <option>Алеврит</option>
+        <option>Андезит</option>
+        <option>Аргиллит</option>
+        <option>Базальт</option>
+        <option>Боксит</option>
+        <option>Габбро</option>
+        <option>Галечник</option>
+        <option>Галитит</option>
+        <option>Глина</option>
+        <option>Гнейс</option>
+        <option>Гранит</option>
+        <option>Грейзен</option>
+        <option>Диорит</option>
+        <option>Доломит</option>
+        <option>Дунит</option>
+        <option>Известяк</option>
+        <option>Кварцит</option>
+        <option>Когломерат</option>
+        <option>Кремень</option>
+        <option>Липарит</option>
+        <option>Мрамор</option>
+        <option>Обсидиан</option>
+        <option>Песчаник</option>
+        <option>Сиенит</option>
+        <option>Сланец</option>
+        <option>Торф</option>
+        <option>Трахит</option>
+        <option>Туф</option>
+        <option>Туффит</option>
+        <option>Уголь</option>
+        <option>Фосфорит</option>
+       </select>
+      </td>
+      <td style="width:40%; text-align:right">
+       <h5 style="color:white; font-weight:normal; margin: 0%">ГЛУБИНА(М)</h5>
+       <label style="color: white; font-size:0.5em">Верхний уровень<input id="g11start" type="text" readonly="true" size="5"/>
+       </label>
+       <label style="color: white; font-size:0.5em">Нижний  уровень<input id="g11end" type="text" size="5"/>
+       </label>
+      </td>
+     </tr>
+    </table>
+   </div>
+   <div id="geo12" style="width:90%; height:11.708%; margin:auto; margin-bottom:1%; background-color:#141414; border:2px solid black">
+    <table style="width:100%; height:100%">
+     <tr>
+      <td style="width:60%">
+       <h5 style="color:white; padding-bottom:5%; font-weight:normal; margin: 0%">ПОРОДА</h5>
+       <select id="g12name" style="width:90%; text-align-last:center; height:40%;">
+        <option>Алеврит</option>
+        <option>Андезит</option>
+        <option>Аргиллит</option>
+        <option>Базальт</option>
+        <option>Боксит</option>
+        <option>Габбро</option>
+        <option>Галечник</option>
+        <option>Галитит</option>
+        <option>Глина</option>
+        <option>Гнейс</option>
+        <option>Гранит</option>
+        <option>Грейзен</option>
+        <option>Диорит</option>
+        <option>Доломит</option>
+        <option>Дунит</option>
+        <option>Известяк</option>
+        <option>Кварцит</option>
+        <option>Когломерат</option>
+        <option>Кремень</option>
+        <option>Липарит</option>
+        <option>Мрамор</option>
+        <option>Обсидиан</option>
+        <option>Песчаник</option>
+        <option>Сиенит</option>
+        <option>Сланец</option>
+        <option>Торф</option>
+        <option>Трахит</option>
+        <option>Туф</option>
+        <option>Туффит</option>
+        <option>Уголь</option>
+        <option>Фосфорит</option>
+       </select>
+      </td>
+      <td style="width:40%; text-align:right">
+       <h5 style="color:white; font-weight:normal; margin: 0%">ГЛУБИНА(М)</h5>
+       <label style="color: white; font-size:0.5em">Верхний уровень<input id="g12start" type="text" readonly="true" size="5"/>
+       </label>
+       <label style="color: white; font-size:0.5em">Нижний  уровень<input id="g12end" type="text" size="5"/>
+       </label>
+      </td>
+     </tr>
+    </table>
+   </div>
+   <div id="geo13" style="width:90%; height:11.708%; margin:auto; margin-bottom:1%; background-color:#141414; border:2px solid black">
+    <table style="width:100%; height:100%">
+     <tr>
+      <td style="width:60%">
+       <h5 style="color:white; padding-bottom:5%; font-weight:normal; margin: 0%">ПОРОДА</h5>
+       <select id="g13name" style="width:90%; text-align-last:center; height:40%;">
+        <option>Алеврит</option>
+        <option>Андезит</option>
+        <option>Аргиллит</option>
+        <option>Базальт</option>
+        <option>Боксит</option>
+        <option>Габбро</option>
+        <option>Галечник</option>
+        <option>Галитит</option>
+        <option>Глина</option>
+        <option>Гнейс</option>
+        <option>Гранит</option>
+        <option>Грейзен</option>
+        <option>Диорит</option>
+        <option>Доломит</option>
+        <option>Дунит</option>
+        <option>Известяк</option>
+        <option>Кварцит</option>
+        <option>Когломерат</option>
+        <option>Кремень</option>
+        <option>Липарит</option>
+        <option>Мрамор</option>
+        <option>Обсидиан</option>
+        <option>Песчаник</option>
+        <option>Сиенит</option>
+        <option>Сланец</option>
+        <option>Торф</option>
+        <option>Трахит</option>
+        <option>Туф</option>
+        <option>Туффит</option>
+        <option>Уголь</option>
+        <option>Фосфорит</option>
+       </select>
+      </td>
+      <td style="width:40%; text-align:right">
+       <h5 style="color:white; font-weight:normal; margin: 0%">ГЛУБИНА(М)</h5>
+       <label style="color: white; font-size:0.5em">Верхний уровень<input id="g13start" type="text" readonly="true" size="5"/>
+       </label>
+       <label style="color: white; font-size:0.5em">Нижний  уровень<input id="g13end" type="text" size="5"/>
+       </label>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </div>
+ </foreignObject>
+ <rect stroke-width="0" y="40" id="id_7" fill="#2a2c2b" stroke="#0000ff" atv:refpy="105.5" atv:refpx="274.5" x="60" width="429" height="131"/>
+ <text y="63.584" font-weight="bold" id="id_8" fill="#27e41d" atv:refpy="59.084" font-size="12" atv:refpx="272.189" font-family="Arial" x="213.689">ДАННЫЕ  ГЕОЛОГИИ</text>
+ <text y="94" font-weight="bold" id="id_9" fill="#ffffff" atv:refpy="89.5" font-size="10" atv:refpx="115" font-family="Arial" x="88.5">УДАЛИТЬ</text>
+ <text y="105.194" font-weight="bold" id="id_10" fill="#ffffff" atv:refpy="100.694" font-size="10" atv:refpx="116.257" font-family="Arial" x="89.842">ПОРОДУ</text>
+ <text y="94" font-weight="bold" id="id_11" fill="#ffffff" atv:refpy="89.5" font-size="10" atv:refpx="429.849" font-family="Arial" x="397.5">ДОБАВИТЬ</text>
+ <text y="105.194" font-weight="bold" id="id_12" fill="#ffffff" atv:refpy="100.694" font-size="10" atv:refpx="431.257" font-family="Arial" x="404.842">ПОРОДУ</text>
+ <foreignObject y="112" id="id_13" x="96.922" width="23" height="23">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <button id="geominus" style="width:100%; height:100%; font-weight:bold; padding:0%; background-color:#EB9A63; border:none; color:white;">
+–
+</button>
+  </div>
+ </foreignObject>
+ <foreignObject y="112" id="id_14" x="414.376" width="23" height="23">
+  <div style="width:100%;height:100%" xmlns="http://www.w3.org/1999/xhtml">
+   <button id="geoplus" style="width:100%; height:100%; font-weight:bold; padding:auto; background-color:#EB9A63; border:none; color:white;">
++
+</button>
+  </div>
+ </foreignObject>
+ <rect stroke-width="0" y="40" id="id_15" fill="#2a2c2b" stroke="#0000ff" atv:refpy="78.339" atv:refpx="1142.59" x="1024" width="237.179" height="76.677"/>
+ <text y="69.067" id="id_16" font-weight="bold" fill="#29e31c" font-size="12" atv:refpy="64.567" atv:refpx="1144.88" font-family="Arial" x="1070.88">ГЛУБИНА СКВАЖИНЫ (М)</text>
+ <rect stroke-width="1" y="75.728" id="id_17" fill="#ffffff" stroke="#141414" atv:refpy="85.287" atv:refpx="1149.344" x="1095.172" width="102.344" height="21.119"/>
+ <text y="90.848" id="id_18" font-weight="bold" fill="#000000" font-size="12" atv:refpy="86.348" atv:refpx="1145.533" font-family="Arial" text-anchor="middle" x="1145.533">000000</text>
+ <script type="text/ecmascript"><![CDATA[var gp = document.getElementById("geoplus")
+var gm = document.getElementById("geominus")
+var elements=[]
+var ecnt=0;
+for(var i = 1;i<=13;i++){
+	elements.push(document.getElementById("geo"+i))
+	document.getElementById("g"+i+"end").addEventListener('keyup',function(f){
+		if(f.srcElement.getAttribute('readonly')!='true'){
+			if(f.key=='Backspace'){
+				f.srcElement.value=f.srcElement.value.slice(0,-1)
+			}else if(!isNaN(f.key)){
+			}
+			else{
+				f.srcElement.value=f.srcElement.value.slice(0,-1)
+			}}
+			else{}
+	})
+}
+console.log(elements);
+
+webMI.data.subscribe("AGENT.OBJECTS.Test.ForMainWindow.Geology", function(e) {
+var id = "id_0";
+var val = e.value;
+console.log("f")
+console.log(val)
+if(val==""){
+console.log("u")
+	elements.forEach(function(e,cnt){if(cnt!=0){e.style.display="none"}})
+	document.getElementById("g1start").value=0
+	document.getElementById("g1end").removeAttribute("readonly") //#
+	ecnt=1;
+}else{
+	val = JSON.parse(val)
+	val.forEach(function(e,cnt){
+		//console.log(e)
+		//console.log(cnt)
+		
+		ecnt=cnt+2
+		var b=cnt+1
+		elements[b].style.display="block"
+		document.getElementById("g"+b+"name").value=e.name
+		document.getElementById("g"+b+"start").value=e.start
+		document.getElementById("g"+b+"end").value=e.end
+		document.getElementById("g"+b+"end").setAttribute("readonly",true)
+		//document.getElementById("g"+b+"end").removeEventListener('keyup',function(f){if(f.key=='Backspace'){document.getElementById("g"+b+"end").value=document.getElementById("g"+b+"end").value.slice(0,-1)}else if(!isNaN(f.key)){}else{document.getElementById("g"+b+"end").value=document.getElementById("g"+b+"end").value.slice(0,-1)}})
+		console.log(b)
+		document.getElementById("g"+ecnt+"start").value=e.end
+		document.getElementById("g"+ecnt+"end").value=""
+		document.getElementById("g"+ecnt+"end").removeAttribute("readonly")
+		//document.getElementById("g"+ecnt+"end").addEventListener('keyup',function(f){if(f.key=='Backspace'){document.getElementById("g"+ecnt+"end").value=document.getElementById("g"+ecnt+"end").value.slice(0,-1)}else if(!isNaN(f.key)){}else{document.getElementById("g"+ecnt+"end").value=document.getElementById("g"+ecnt+"end").value.slice(0,-1)}})
+		
+	})
+	for(var i=ecnt;i<13;i++){
+		elements[i].style.display="none"
+	}
+}
+});
+
+gp.addEventListener('click',function(e){
+	var cres=[] 
+	for(var i=1;i<=ecnt;i++){
+		var buf={}
+		buf.name=document.getElementById("g"+i+"name").value
+		buf.start=document.getElementById("g"+i+"start").value
+		buf.end=document.getElementById("g"+i+"end").value
+		cres.push(buf)
+	}
+	console.log(cres)
+	webMI.data.write("AGENT.OBJECTS.Test.ForMainWindow.Geology",JSON.stringify(cres))
+})
+gm.addEventListener('click',function(e){
+	webMI.data.read("AGENT.OBJECTS.Test.ForMainWindow.Geology",function(e){
+	//валидация на 0 есть
+		var val=JSON.parse(e.value)
+		var res=[]
+		for(var i=0;i<val.length-1;i++){
+			res.push(val[i])
+		}
+		if(res.length==0){console.log("her");res=''; webMI.data.write("AGENT.OBJECTS.Test.ForMainWindow.Geology",res)}
+		else{
+		console.log(res)
+		//console.log(val)
+		//console.log(res)
+		webMI.data.write("AGENT.OBJECTS.Test.ForMainWindow.Geology",JSON.stringify(res))
+		}
+	})
+})
+webMI.data.subscribe("AGENT.OBJECTS.Depth_day_data.plan_data", function(e) {
+var id = "id_18";
+var value = JSON.parse(e.value);
+value = value[value.length-1].vD
+webMI.gfx.setText(id, value);
+
+});
+]]></script>
+ <svg y="128.503" id="id_19" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Test.DrillView" atv:refpy="397.825" transform="matrix(0.9081,0,0,0.9383,0,0)" atv:refpx="1127.641" width="290" height="591" x="1096.765"/>
+ <rect stroke-width="0" y="119.431" id="id_20" fill="#1f1f1f" stroke="#0000ff" atv:refpy="399.588" atv:refpx="1066.039" x="989.04" width="150" height="560.315"/>
+</svg>

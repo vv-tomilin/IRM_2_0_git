@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.MaxWeightOnHook
+NodeClass: Variable
+BrowseName: 1:MaxWeightOnHook
+DisplayName: en|MaxWeightOnHook
+Description: en|MaxWeightOnHook
+DataType: UInt32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

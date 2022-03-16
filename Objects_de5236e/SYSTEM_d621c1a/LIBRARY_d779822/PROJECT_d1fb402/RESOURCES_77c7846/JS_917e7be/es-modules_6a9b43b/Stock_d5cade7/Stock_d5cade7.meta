@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Stock
+NodeClass: Object
+BrowseName: 1:Stock
+DisplayName: en|Stock
+Description: en|Stock
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

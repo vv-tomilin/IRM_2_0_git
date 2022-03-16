@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.NewView.tool.picker_date_my
+NodeClass: Variable
+BrowseName: 1:picker_date_my
+DisplayName: en|picker_date_my
+Description: en|picker_date_my
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

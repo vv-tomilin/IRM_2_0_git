@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="14" height="14" xmlns="http://www.w3.org/2000/svg">
+ <defs/>
+ <desc>Steps back on the x-axis</desc>
+ <title>Button back</title>
+ <metadata>
+  <atv:parameter name="chartname" valuetype="string" defaultvalue="trend1" behavior="mandatory" desc="chart name"/>
+  <atv:parameter name="xAxisIndex" valuetype="string" defaultvalue="0" behavior="optional" desc="x-axis index"/>
+  <atv:parameter name="stepPercent" valuetype="string" defaultvalue="100" behavior="optional" desc="step in percent"/>
+  <atv:gridconfig gridstyle="lines" width="1" height="1" enabled="true"/>
+  <atv:snapconfig width="1" height="1" enabled="true"/>
+ </metadata>
+ <svg transform="matrix(0.175,0,0,0.4667,0,0)" visibility="$BUTTONSVISIBLE$" atv:bindtl="0,1" atv:bindbr="0,1" width="80" height="30" y="0" atv:refpy="0" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.button" id="btn_back" atv:refpx="0" x="0">
+  <atv:argument name="label" value=""/>
+  <atv:argument name="visibilityLabel" value="hidden"/>
+  <atv:argument name="visibilitySymbol" value="inherit"/>
+  <atv:argument name="symbol" value="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.12x12.rewind"/>
+  <atv:overwrite transform="matrix(5.7143,0,0,2.1429,0,0)" width="12" height="12" id="id_6"/>
+  <atv:overwrite transform="matrix(5.7143,0,0,2.1429,0,0)" y="1" id="button_symbol" x="1"/>
+  <atv:overwrite transform="matrix(5.7143,0,0,2.1429,0,0)" y="11.5" id="button_label" x="7"/>
+  <atv:overwrite transform="matrix(5.7143,0,0,2.1429,0,0)" width="10" height="10" id="button_stroke"/>
+  <atv:overwrite transform="matrix(5.7143,0,0,2.1429,0,0)" width="12" height="12" id="button_bg"/>
+  <atv:overwrite transform="matrix(5.7143,0,0,2.1429,0,0)" width="14" height="14" id="outer_frame"/>
+ </svg>
+ <script type="text/ecmascript"><![CDATA[var chartname = webMI.query.chartname;
+var chart;
+var activeAxis = webMI.query["xAxisIndex"];
+
+webMI.trigger.connect("clicked", function(e) {
+
+	var chart = webMI.trendFactory.getTrendByName(chartname);
+	if (!chart)
+		return;
+		
+	console.log("btn_back:clicked - "+chartname);	
+	var allcharts = webMI.trendFactory.getAllTrends();
+		allcharts.forEach(function(item, i, arr) {
+//		if (item.control.isLiveModeRunning()) item.control.stopLiveMode();
+		item.control.stopLiveMode();
+		//var oldMode = item.chart.options.atviseOptions.mode;
+		item.control.setMode("history");
+//			chart.control.updated(function() {
+//			chart.control.setMode(oldMode);
+//		});
+	});
+	var extremes = chart.chart.xAxis[activeAxis].getExtremes();
+	console.log("before btn_back extremes: min - "+strDate(extremes.min)+", max = "+strDate(extremes.max));
+	var difference = (extremes.max - extremes.min) * webMI.query["stepPercent"] / 100;
+	chart.chart.xAxis[activeAxis].setExtremes(extremes.min - difference, extremes.max - difference);
+	chart.chart.xAxis[activeAxis].options.min = extremes.min - difference;
+	chart.chart.xAxis[activeAxis].options.max = extremes.max - difference;
+	console.log("after btn_back extremes: min - "+strDate(extremes.min - difference)+", max = "+strDate(extremes.max - difference));
+	console.log("after btn_back options: min - "+strDate(chart.chart.xAxis[activeAxis].options.min)+", max = "+strDate(chart.chart.xAxis[activeAxis].options.max));
+
+
+	//chart.control.stopLiveMode();
+	
+	//chart.control.updated();
+/*
+	if (chart.control.isLiveModeRunning()) chart.control.stopLiveMode();
+	var oldMode = chart.chart.options.atviseOptions.mode;
+	chart.control.setMode("history");
+	chart.control.updated(function() {
+		chart.control.setMode(oldMode);
+	});
+*/
+	chart.control.updated(function(){
+		console.log("btn_back updated");
+	});
+}, "btn_back");
+
+
+function strDate(datenum){
+	 var dateObj=new Date();
+	 dateObj.setTime(datenum);
+	 var year = dateObj.getFullYear();
+	 
+	 var month = dateObj.getMonth();
+	 if(String(month).length < 2){
+		month = '0' + String(month);
+	 }
+	 var day = dateObj.getDate();
+	 if(String(day).length < 2){
+		day = '0' + String(day);
+	 }
+	 
+	 var hour = dateObj.getHours();
+	 if(String(hour).length < 2){
+		hour = '0' + String(hour);
+	 }
+	 var minute = dateObj.getMinutes();
+	 if(String(minute).length < 2){
+		minute = '0' + String(minute);
+	 }
+	 var second = dateObj.getSeconds();
+	 if(String(second).length < 2){
+		second = '0' + String(second);
+	 }
+	 return(day+"-"+month+"-"+year+" "+hour+":"+minute+":"+second);
+	// return(hour+":"+minute+":"+second);
+}
+]]></script>
+</svg>

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.Test.Maximus
+NodeClass: Variable
+BrowseName: 1:Maximus
+DisplayName: en|Maximus
+Description: en|Maximus
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

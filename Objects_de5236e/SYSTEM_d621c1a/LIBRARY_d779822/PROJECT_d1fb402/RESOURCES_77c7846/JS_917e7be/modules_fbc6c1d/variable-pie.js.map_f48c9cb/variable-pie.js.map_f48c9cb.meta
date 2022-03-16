@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/variable-pie.js.map
+NodeClass: Variable
+BrowseName: 1:variable-pie.js.map
+DisplayName: en|variable-pie.js.map
+Description: en|variable-pie.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

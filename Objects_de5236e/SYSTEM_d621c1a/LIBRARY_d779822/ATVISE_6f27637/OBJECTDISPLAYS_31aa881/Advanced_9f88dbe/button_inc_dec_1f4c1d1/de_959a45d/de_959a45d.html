@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Beschreibung</h1>
+<p>&Uuml;ber diese Schaltfl&auml;che wird der Wert einer Adresse erh&ouml;ht oder verringert.</p>
+<p>Dar&uuml;ber hinaus wird der Trigger "valuechanged" mit dem neuen Wert (= erh&ouml;hter oder verringerter Wert) aktiviert.</p>
+<h1>Parameter</h1>
+<p>Dieses Steuerelement hat die folgenden allgemeinen Parameter:</p>
+<ul>
+  <li><span class="parameter">base</span>: Der Wert dieser Adresse wird entweder erh&ouml;ht oder verringert, je nachdem, ob "Schritt" positiv oder negativ ist.</li>
+  <li><span class="parameter">Schrittweite (kann negativ sein)</span>: Der Wert, um den der Wert von "base" ge&auml;ndert wird. Ist er positiv, wird der Wert von "base" erh&ouml;ht, andernfalls wird er verringert (Standard: 1).</li>
+  <li><span class="parameter">Intervall [ms] (0 = aus)</span>: Legt fest, wie lange das Steuerelement bet&auml;tigt werden muss, damit der Wert von "base" automatisch ge&auml;ndert wird (Standard: 150&nbsp;ms, d.&nbsp;h., wird die Schaltfl&auml;che kontinuierlich bet&auml;tigt, wird der Wert alle 150&nbsp;ms ge&auml;ndert).<br>
+	</li>
+</ul>
+Schrift:<br>
+<ul>
+  <li><span class="parameter">Schriftart</span>: Schriftart, die auf die Beschriftung angewendet wird (Standard: Arial)</li>
+  <li><span class="parameter">Gr&ouml;&szlig;e</span>: Schriftgr&ouml;&szlig;e, die auf die Beschriftung angewendet wird (Standard: 12)</li>
+  <li><span class="parameter">Farbe</span>:Farbe, die auf die Beschriftung angewendet wird (Standard: Globaler Parameter <i>atvFontColor</i>)</li>
+</ul>
+Darstellung:<br>
+<ul>
+  <li><span class="parameter">Sichtbarkeit Beschriftung</span>: Bei Einstellung auf "visible" wird der Text "+/-" als Beschriftung angezeigt; bei Einstellung auf "visible" sollte "Sichtbarkeit Symbol" auf &nbsp;"hidden" eingestellt sein (Standard: visible).</li>
+  <li><span class="parameter">Sichtbarkeit Symbol</span>: Bei Einstellung auf "visible" wird das &uuml;ber "Symbol f&uuml;r Erh&ouml;hen" oder "Symbol f&uuml;r Verringern" definierte Symbol angezeigt; bei Einstellung auf "visible" sollte "Sichtbarkeit Beschriftung" auf "hidden" eingestellt sein (Standard: hidden).</li>
+  <li><span class="parameter">Symbol f&uuml;r erh&ouml;hen</span>: zu verwendendes Symbol, wenn "Sichtbarkeit Symbol" auf "visible" eingestellt ist; weitere Symbole k&ouml;nnen ausgew&auml;hlt werden aus "Object Displays (ATVISE)/Symbols/20x20 (Standard: arrow_up)</li>
+  <li><span class="parameter">Symbol f&uuml;r verringern</span>: zu verwendendes Symbol, wenn "Sichtbarkeit Symbol" auf "visible" eingestellt und "Schritt" negativ ist; weitere Symbole k&ouml;nnen ausgew&auml;hlt werden aus "Object Displays (ATVISE)/Symbols/20x20 (Standard: arrow_down)</li>
+  <li><span class="parameter">Symbolfarbe</span>: Farbe des zu verwendenden Symbols (Standard: Globaler Parameter <i>atvSymbolColor</i>)</li>
+  <li><span class="parameter">F&uuml;llfarbe</span>: F&uuml;llfarbe der Schaltfl&auml;che (Standard: Globaler Parameter <i>atvFillColor</i>)</li>
+  <li><span class="parameter">F&uuml;llfarbe wenn inaktiv</span>: F&uuml;llfarbe der nicht aktiven Schaltfl&auml;che&nbsp;(Standard: dunkelgrau)</li>
+  <li><span class="parameter">Konturfarbe wenn gedr&uuml;ckt</span>: Farbe der Kontur, die bei Bet&auml;tigung der Schaltfl&auml;che eingestellt wird (Standard: wei&szlig;)</li>
+  <li><span class="parameter">Fokus Konturfarbe</span>: Farbe der Kontur, die beim Fokus der Schaltfl&auml;che eingestellt wird (Standard: wei&szlig;)</li>
+  <li><span class="parameter">Rahmenfarbe</span>: Farbe des Rahmens um die Schaltfl&auml;che (Standard: Globaler Parameter <i>atvBorderColor</i>)</li>
+  <li><span class="parameter">Farbe Zusatzrahmen</span>: Bei Angabe einer Farbe wird in dieser ein Zusatzrahmen um die Schaltfl&auml;che gebildet. (Standard: none)</li>
+</ul>
+Optionen:<br>
+<ul>
+  <li><span class="parameter">Minimum</span>: Legt das untere Limit f&uuml;r den zu &auml;ndernden Wert fest, d.&nbsp;h., wenn der aktuelle Wert mit diesem Minimum &uuml;bereinstimmt, wird er nicht weiter verringert (Standard: kein Minimum festgelegt).</li>
+  <li><span class="parameter">Maximum</span>: Legt das obere Limit f&uuml;r den zu &auml;ndernden Wert fest, d.&nbsp;h., wenn der aktuelle Wert mit diesem Maximum &uuml;bereinstimmt, wird er nicht weiter erh&ouml;ht (Standard: kein Maximum festgelegt).</li>
+  <li><span class="parameter">Tab-Index</span>: Bestimmt die Reihenfolge, in der mit der Tabulatortaste zwischen den einzelnen Object Displays gewechselt werden kann</li>
+  <li><span class="parameter">Tooltip</span>: Zeigt eine Tooltip Box mit dem eingegebenen Text an (Standard HTML-Elemente k&ouml;nnen auch eingegeben werden)</li> </ul>
+Sicherheit:
+<ul>
+  <li><span class="parameter">Ben&ouml;tigtes Recht</span>: Der Benutzer muss &uuml;ber dieses Recht verf&uuml;gen, um diese Schaltfl&auml;che aktivieren, d.&nbsp;h. bet&auml;tigen zu k&ouml;nnen.</li>
+  <li><span class="parameter">Aktivierungsadresse</span>: Stimmt der Wert dieser Adresse mit dem "Aktivierungswert" &uuml;berein, ist die Schaltfl&auml;che aktiv, so dass sie bet&auml;tigt werden kann.</li>
+  <li><span class="parameter">Aktivierungswert</span>: Wert, von dem die Schaltfl&auml;che aktiviert wird</li>
+</ul>
+<div style="margin-left: 40px;">HINWEIS: Die Aktivierung einer
+Schaltfl&auml;che kann nur &uuml;ber das ben&ouml;tigte Recht
+konfiguriert werden oder nur &uuml;ber die Aktivierungsadresse und den
+Aktivierungswert oder &uuml;ber beide. Werden beide Einstellungen
+vorgenommen, muss der Benutzer das ben&ouml;tigte Recht besitzen und
+der Wert der "Aktivierungsadresse" muss mit dem "Aktivierungswert"
+identisch sein, andernfalls wird die Schaltfl&auml;che nicht aktiviert.
+</div>
+</body>
+</html>

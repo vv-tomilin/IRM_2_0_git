@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="node_id" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="node_value" type="number" trigger="false" relative="false" value=""/>
+  <parameter name="server_time" type="number" trigger="false" relative="false" value=""/>
+  <parameter name="node_status" type="number" trigger="false" relative="false" value=""/>
+  <code><![CDATA[var ODBC_access = new UaNode("SYSTEM.GLOBALS.ODBC_access");
+if(ODBC_access.value != "true")	return;
+//console.log ("ODBC MySQL Open");
+//var strlog = "ODBC MySQL ODBC: node_id = "+node_id+", node_value = "+node_value;
+//console.log (strlog);
+
+var odbcClient = new ODBCClient();
+
+
+//------------details via http://www.connectionstrings.com/ .----------------------------------------------
+//odbcClient.source = "Driver={Microsoft ODBC for Oracle}; Server=127.0.0.1; Uid=NameOfUid; Pwd=password;";
+//odbcClient.source = "DSN=ODBC_Name; User Id=NameOfUid; Password=password; Integrated Security=no;";
+//odbcClient.source = "DSN=ODBC_Name; Integrated Security=yes;";
+//odbcClient.source = "DSN=ODBC_Name; Uid=NameOfUid; Pwd=password;";
+
+
+odbcClient.source = "DSN=MySQL_ODBC_64_sys;";
+//odbcClient.source = "DSN=MySQL_ODBC_64; Uid=Serg; Pwd=rkjylfqr;";
+//odbcClient.source = "Driver={MySQL ODBC 8.0 ANSI Driver}; Server=127.0.0.1; Database=rigintel; Uid=Serg; Pwd=rkjylfqr;";
+
+
+if (odbcClient.open()) {	
+//	console.log ("ODBC MySQL Opend:", odbcClient.info());			//.info -> information of connected datasource
+	try
+	{
+		var strquery = "INSERT INTO node_integer_values (node_id, node_value_integer, server_time, node_status) VALUES ('"+node_id+"', "+node_value+", "+Number(server_time)+", "+Number(node_status)+");";
+		var query = odbcClient.query(strquery);
+	
+		odbcClient.close();
+		return(query);
+	}
+	catch (exp)
+	{
+		console.log("exception = "+exp);
+		if (exp.indexOf('No Data') > -1)
+			return 0; // ok
+
+		return undefined;
+	}
+	finally
+	{
+		if (odbcClient && odbcClient.opened == true)
+			odbcClient.close();
+	}
+}
+else
+	return undefined;]]></code>
+</script>

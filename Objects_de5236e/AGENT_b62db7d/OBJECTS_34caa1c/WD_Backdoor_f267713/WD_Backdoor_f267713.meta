@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WD_Backdoor
+NodeClass: Object
+BrowseName: 1:WD_Backdoor
+DisplayName: en|WD_Backdoor
+Description: en|WD_Backdoor
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,11 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Drawworks.HookSpeed
+NodeClass: Variable
+BrowseName: 1:HookSpeed
+DisplayName: en|HookSpeed
+Description: en|HookSpeed
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.AGGREGATETEMPLATES.ATDurationInStateNonZero
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

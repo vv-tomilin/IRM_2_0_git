@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Depth_day_data.start_date
+NodeClass: Variable
+BrowseName: 1:start_date
+DisplayName: en|start_date
+Description: en|start_date
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

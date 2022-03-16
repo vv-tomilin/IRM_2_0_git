@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.Calc_DrillingPumpConsumption
+NodeClass: Variable
+BrowseName: 1:Calc_DrillingPumpConsumption
+DisplayName: en|Calc_DrillingPumpConsumption
+Description: en|Calc_DrillingPumpConsumption
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

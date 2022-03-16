@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Evrotec.CSGO.FanExhaust
+NodeClass: Variable
+BrowseName: 1:FanExhaust
+DisplayName: en|FanExhaust
+Description: en|FanExhaust
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

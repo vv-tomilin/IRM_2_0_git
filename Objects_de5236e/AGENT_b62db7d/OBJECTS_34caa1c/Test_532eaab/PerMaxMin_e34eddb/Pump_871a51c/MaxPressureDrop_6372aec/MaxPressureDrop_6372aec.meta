@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.Pump.MaxPressureDrop
+NodeClass: Variable
+BrowseName: 1:MaxPressureDrop
+DisplayName: en|MaxPressureDrop
+Description: en|MaxPressureDrop
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

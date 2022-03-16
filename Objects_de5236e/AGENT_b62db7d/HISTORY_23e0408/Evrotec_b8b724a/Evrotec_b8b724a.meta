@@ -1,0 +1,8 @@
+NodeId: ns=1;s=AGENT.HISTORY.Evrotec
+NodeClass: Object
+BrowseName: 1:Evrotec
+DisplayName: en|Evrotec
+Description: en|Evrotec
+EventNotifier: 0
+Reference: forward HasModellingRule Shared
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.ArchiveGroup.Data

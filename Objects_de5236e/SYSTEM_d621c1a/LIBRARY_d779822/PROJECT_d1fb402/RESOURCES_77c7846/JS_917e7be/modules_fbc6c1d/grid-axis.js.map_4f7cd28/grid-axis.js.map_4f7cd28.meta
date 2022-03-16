@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/modules/grid-axis.js.map
+NodeClass: Variable
+BrowseName: 1:grid-axis.js.map
+DisplayName: en|grid-axis.js.map
+Description: en|grid-axis.js.map
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.OctetStream

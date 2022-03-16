@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IconsMintagirov
+NodeClass: Object
+BrowseName: 1:IconsMintagirov
+DisplayName: en|IconsMintagirov
+Description: en|IconsMintagirov
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

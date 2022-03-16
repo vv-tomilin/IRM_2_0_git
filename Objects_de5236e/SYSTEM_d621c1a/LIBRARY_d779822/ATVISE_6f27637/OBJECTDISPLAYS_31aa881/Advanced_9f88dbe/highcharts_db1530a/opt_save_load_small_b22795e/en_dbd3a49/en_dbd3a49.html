@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Description</h1>
+<p>This display allows the user to load and save configurations to a node and also import and export configurations as json-files.</p>
+A node address has to be selected before a configuration can be saved or loaded. If there are any configurations already saved on the node they can be now loaded.</p>
+
+<h1>Options</h1>
+<h2>Settings</h2>
+<ul>
+  <li><span class="parameter">Kompression</span>: Determines whether the data is to be compressed when saving.</li>
+</ul>
+
+<h2>Configuration (save/load)</h2>
+<ul>
+  <li><span class="parameter">Index node</span>: Defines the data point in which the configuration is saved.</li>
+  <li><span class="parameter">Save Konfiguration</span>: Saves the specified configuration.</li>
+  <li><span class="parameter">Load or delete</span>: Loading or deleting the selected configuration. (Reload, refresh the selection).</li>
+  <li><span class="parameter">Create new</span>: Creates a new configuration with the given names.</li>
+</ul>
+
+<h2>Export/Import</h2>
+<ul>
+  <li><span class="parameter">Export</span>: Exports all configurations of the diagram to a json file.</li>
+  <li><span class="parameter">Import</span>: Imports all configurations for the diagram from a json file.</li>
+</ul>
+After one or more configurations are imported from a file, the configuration of your choice has to be loaded to be active.
+
+<h1>Parameters</h1>
+<p>The following parameters define the rights for loading or saving a configuration:</p>
+<ul>
+  <li><span class="parameter">necessary right</span>: the user must have this right for the function to work</li>
+  <li><span class="parameter">activation address</span>: if the value of this address equals to "activation value", then the function will be active</li>
+  <li><span class="parameter">activation value</span>: value which activates the function</li>
+</ul>
+<p>Additionally this control has the following parameters:</p>
+<ul>
+  <li><span class="parameter">font color</span>: color which will be applied to the labels (default: global parameter <i>atvFontColor</i>)</li>
+  <li><span class="parameter">fill color</span>: left sidebar fill color (default: global parameter <i>atvFillColor</i>)</li>
+</ul>
+</body>
+</html>

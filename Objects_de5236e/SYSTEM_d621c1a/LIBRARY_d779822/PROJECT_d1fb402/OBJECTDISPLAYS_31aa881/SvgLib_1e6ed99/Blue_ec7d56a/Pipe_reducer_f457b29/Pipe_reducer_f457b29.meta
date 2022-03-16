@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.SvgLib.Blue.Pipe_reducer
+NodeClass: Variable
+BrowseName: 1:Pipe_reducer
+DisplayName: en|Pipe_reducer
+Description: en|Pipe_reducer
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

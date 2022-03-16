@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="interval" type="interval" trigger="false" relative="false" value="" offset="00:00:00" interval="00:00:10"/>
+  <code><![CDATA[//var cp = new ChildProcess("database\sqlite3.exe", { args: ["-interactive", "-batch", "dbfile.db"] });
+//var cp = new ChildProcess("database\sqlite3.exe", { args: ["-interactive", "-batch", "datavalues_raw.db"] });
+//setTimeout(function() {checkChart()}, 500);
+//var timerId = setTimeout(function(){
+	var cp = new ChildProcess("database/sqlite3.exe");
+	if (cp.execAsync())
+	{
+		cp.write(".open database/datavalues_raw.db\n", { timeout: 2 });
+		cp.write(".tables\n", { timeout: 2 });
+		console.log("Tables: ", cp.stdOut);
+		cp.write("select rowid from data order by rowid desc limit 1;\n", { timeout: 2 });
+		console.log("Last rowid: ", cp.stdOut);
+		cp.write(".mode insert\n", { timeout: 2 });
+		cp.write("select * from data order by rowid desc limit 1;\n", { timeout: 10 });
+		console.log("Data:", cp.stdOut);
+		
+		cp.write(".exit\n");
+		
+	}
+	else
+		console.error("Failed to execute sqlite3.exe!");
+//}, 5000);]]></code>
+</script>

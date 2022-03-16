@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.gif
+NodeClass: Object
+BrowseName: 1:gif
+DisplayName: en|gif
+Description: en|gif
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

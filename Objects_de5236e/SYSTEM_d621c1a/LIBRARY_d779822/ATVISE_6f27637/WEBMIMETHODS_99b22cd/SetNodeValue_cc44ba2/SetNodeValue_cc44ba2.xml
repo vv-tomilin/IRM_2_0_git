@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="request" type="http.request" trigger="false" relative="false" value=""/>
+  <code><![CDATA[/*addressVersion and version can be empty string*/
+var address = request.postvalues.address;
+var addressVersion = request.postvalues.addressVersion;
+var value = request.postvalues.value;
+var version = request.postvalues.version;
+
+var node = (new UaNode(address));
+if (addressVersion != "" && version != "") {
+	var nodeVer = (new UaNode(addressVersion));
+	if (nodeVer.exists()){
+		if (nodeVer.value != version && node.exists()){
+			node.value = value;
+			nodeVer.value = version;
+		}
+	} else if (node.exists()){
+		node.value = value;
+	}
+} else if (node.exists()){
+	node.value = value;
+}]]></code>
+</script>

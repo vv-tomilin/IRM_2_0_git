@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Series/ColumnRange
+NodeClass: Object
+BrowseName: 1:ColumnRange
+DisplayName: en|ColumnRange
+Description: en|ColumnRange
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

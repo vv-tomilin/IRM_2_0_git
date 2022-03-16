@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.Pump.FlowPump2
+NodeClass: Variable
+BrowseName: 1:FlowPump2
+DisplayName: en|FlowPump2
+Description: en|FlowPump2
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType

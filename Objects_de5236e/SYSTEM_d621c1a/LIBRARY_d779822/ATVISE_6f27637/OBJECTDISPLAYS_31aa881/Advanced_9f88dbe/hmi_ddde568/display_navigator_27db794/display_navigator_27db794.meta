@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.hmi.display_navigator
+NodeClass: Variable
+BrowseName: 1:display_navigator
+DisplayName: en|display_navigator
+Description: en|display_navigator
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

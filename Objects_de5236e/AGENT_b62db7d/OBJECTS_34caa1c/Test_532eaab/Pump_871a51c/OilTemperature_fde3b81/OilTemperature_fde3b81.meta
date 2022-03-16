@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.Pump.OilTemperature
+NodeClass: Variable
+BrowseName: 1:OilTemperature
+DisplayName: en|OilTemperature
+Description: en|OilTemperature
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

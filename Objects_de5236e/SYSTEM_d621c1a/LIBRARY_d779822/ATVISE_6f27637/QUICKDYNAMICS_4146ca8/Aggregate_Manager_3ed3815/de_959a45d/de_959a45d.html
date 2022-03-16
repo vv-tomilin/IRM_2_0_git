@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+    <title>Beschreibung - Aggregatmanager</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<style>
+		pre {
+			tab-size:2;-moz-tab-size:2;
+		}
+	</style>
+</head>
+<body>
+<h1><span style="" lang="EN-GB">Beschreibung - Aggregatmanager</span></h1>
+<span class="Apple-style-span"
+      style="border-collapse: separate; color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; font-size: medium;">
+<p>
+	Mit Hilfe der Aggregatmanager Quick Dynamic ist eine vereinfachte Subskription auf Aggregate m&ouml;glich.
+	Die Quick Dynamic erleichtert die Subskription von beliebigen Node- und / oder Aggregatadressen.
+	Die Auswertung des Adresstyps erfolgt automatisch. Ist die &uuml;bergebene Adresse ein Aggregat werden die ben&ouml;tigten
+	Parameter f&uuml;r die Subskription automatisch mit Hilfe der Funktion BrowseNodes ermittelt.
+	Das Ergebnis wird wahlweise an eine gemeinsame oder zwei getrennte Funktion(en) zur Verarbeitung &uuml;bergeben.
+</p>
+</span>
+<h1>Verwendung:</h1>
+<span class="Apple-style-span"
+	  style="border-collapse: separate; color: rgb(0, 0, 0); font-family: Arial; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: 2; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; font-size: medium;">
+	<h2>Laden des Aggregatmanager:</h2>
+	<p>
+		Das Laden des Aggregatmanager erfolgt &uuml;ber webMI.callExtension. Der Aufruf zum Laden muss im Displays vor
+		dem ersten Aufruf des Aggregatmanager erfolgen!
+	</p>
+	<pre>
+		var AggregateManager =
+		webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Aggregate Manager");
+		webMI.addOnunload(function unloadAggregateManager() {
+		  AggregateManager.destroy();
+	      AggregateManager = null;
+        });
+	</pre>
+
+	<h2>Aufruf des Aggregatmanager:</h2>
+	<p>
+		F&uuml;r eine Datenabfrage mit Hilfe des Aggregatmanager ist die Funktion subscribeNodeOrAggregate zu verwenden.
+		Diese wertet automatisch die angegebene Adresse (base) aus und f&uuml;hrt die entsprechende Subskription durch.
+	</p>
+	<pre>
+		var subscriptionID =
+		AggregateManager.subscribeNodeOrAggregate(base, manageNodeResult, manageAggregateResult);
+	</pre>
+
+	<p>Parameter der Funktion:</p>
+	<ul>
+		<li><strong>base</strong>: Nodeadresse oder Aggregateadresse</li>
+		<li><strong>manageNodeResult</strong>: Funktion, der das Abfrageergebnis f&uuml;r Nodes &uuml;bergeben wird</li>
+		<li><strong>manageAggregateResult</strong>: Funktion, der das Abfrageergebnis f&uuml;r Aggregate &uuml;bergeben wird</li>
+	</ul>
+	<p>
+		Wird manageAggregateResult nicht gesetzt, dann wird sowohl f&uuml;r Nodes als auch Aggregate die
+		Funktion manageNodeResult verwendet.
+	</p>
+
+	<h2>Beendigung einer Subskription</h2>
+	<p>Eine Subskription kann mit "webMI.data.unsubscribe", unabh&auml;ngig vom Typ wieder beendet werden.</p>
+	<pre>
+		webMI.data.unsubscribe(subscriptionID);
+	</pre>
+
+	<h2>Beispiel 1 - Nur manageNodeResult definiert:</h2>
+	<pre>
+		var AggregateManager =
+			webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Aggregate Manager");
+			webMI.addOnunload(function unloadAggregateManager() {
+			  AggregateManager.destroy();
+			  AggregateManager = null;
+			});
+
+		var base = "AGENT.OBJECTS.x";
+		var subscriptionID =
+			AggregateManager.subscribeNodeOrAggregate(base, manageNodeResult);
+
+		/* Wird f&uuml;r Node- und Aggregatadressen ausgef&uuml;hrt */
+		function manageNodeResult(e){
+			var data = e.value;
+			...
+		}
+	</pre>
+	<h2>Beispiel 2 - manageNodeResult und manageAggregateResult definiert:</h2>
+	<pre>
+		var AggregateManager =
+			webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Aggregate Manager");
+			webMI.addOnunload(function unloadAggregateManager() {
+			  AggregateManager.destroy();
+			  AggregateManager = null;
+			});
+
+		var base = "AGENT.OBJECTS.x";
+		var subscriptionID =
+			AggregateManager.subscribeNodeOrAggregate(base, manageNodeResult, manageAggregateResult);
+
+		/* Wird f&uuml;r Nodeadressen ausgef&uuml;hrt */
+		function manageNodeResult(e){
+			var data = e.value;
+			...
+		}
+
+		/* Wird f&uuml;r Aggregatadressen ausgef&uuml;hrt */
+		function manageAggregateResult (e){
+			var data = e.value;
+			...
+		}
+	</pre>
+</body>
+</html>

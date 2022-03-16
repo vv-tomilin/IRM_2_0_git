@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Platforma.RigBoard.distribution_NPV
+NodeClass: Variable
+BrowseName: 1:distribution_NPV
+DisplayName: en|distribution_NPV
+Description: en|distribution_NPV
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

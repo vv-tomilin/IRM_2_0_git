@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Well
+NodeClass: Object
+BrowseName: 1:Well
+DisplayName: en|Well
+Description: en|Well
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

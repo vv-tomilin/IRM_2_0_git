@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AKB.Turn
+NodeClass: Variable
+BrowseName: 1:Turn
+DisplayName: en|Turn
+Description: en|Turn
+DataType: UInt16
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

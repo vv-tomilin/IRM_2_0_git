@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.IRTest
+NodeClass: Object
+BrowseName: 1:IRTest
+DisplayName: en|IRTest
+Description: en|IRTest
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

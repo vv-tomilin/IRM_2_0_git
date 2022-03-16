@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.GtiCharts.chart_but_back
+NodeClass: Variable
+BrowseName: 1:chart_but_back
+DisplayName: en|chart_but_back
+Description: en|chart_but_back
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

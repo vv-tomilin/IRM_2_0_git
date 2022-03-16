@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Rig.Equipment
+NodeClass: Object
+BrowseName: 1:Equipment
+DisplayName: en|Equipment
+Description: en|Equipment
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

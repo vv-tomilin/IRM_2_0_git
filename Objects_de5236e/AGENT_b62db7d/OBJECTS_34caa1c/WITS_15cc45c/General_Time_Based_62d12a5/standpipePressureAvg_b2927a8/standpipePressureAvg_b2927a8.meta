@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.WITS.General_Time_Based.standpipePressureAvg
+NodeClass: Variable
+BrowseName: 1:standpipePressureAvg
+DisplayName: en|standpipePressureAvg
+Description: en|standpipePressureAvg
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="cureal" type="node" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Support.Auto.OperationCurr"/>
+  <code><![CDATA[return cureal;]]></code>
+</script>

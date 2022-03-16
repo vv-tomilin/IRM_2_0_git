@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.HISTORY.AGGREGATETEMPLATES.graph.aggrigate5min
+NodeClass: Object
+BrowseName: 1:aggrigate5min
+DisplayName: en|aggrigate5min
+Description: en|aggrigate5min
+EventNotifier: 0
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.AggregateFunction
+Reference: forward HasComponent i=2342
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Aggregates

@@ -1,0 +1,11 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.APD1.No_Emergency_Stop
+NodeClass: Variable
+BrowseName: 1:No_Emergency_Stop
+DisplayName: en|No_Emergency_Stop
+Description: en|No_Emergency_Stop
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasModellingRule New
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

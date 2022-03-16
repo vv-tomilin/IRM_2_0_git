@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.QUICKDYNAMICS.CreateTable
+NodeClass: Variable
+BrowseName: 1:CreateTable
+DisplayName: en|CreateTable
+Description: en|CreateTable
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.QuickDynamic

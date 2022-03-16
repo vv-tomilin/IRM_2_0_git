@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Set_var.Diff_pressure_limit
+NodeClass: Variable
+BrowseName: 1:Diff_pressure_limit
+DisplayName: en|Diff_pressure_limit
+Description: en|Diff_pressure_limit
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

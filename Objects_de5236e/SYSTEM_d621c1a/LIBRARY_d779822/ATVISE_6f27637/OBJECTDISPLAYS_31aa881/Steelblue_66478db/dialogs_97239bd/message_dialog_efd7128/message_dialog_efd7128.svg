@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg width="900" version="1.2" xmlns="http://www.w3.org/2000/svg" height="540" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:atv="http://webmi.atvise.com/2007/svgext">
+ <desc>Adjustable dialog for showing messages.</desc>
+ <title>Message dialog</title>
+ <defs/>
+ <metadata>
+  <atv:parameter desc="Symbol" valuetype="string" substitute="$SYMBOL$" behavior="optional" name="symbol" defaultvalue="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.20x20.info"/>
+  <atv:parameter desc="Text of headline" valuetype="string" substitute="$HEADLINE$" behavior="optional" name="headline" defaultvalue="Head line"/>
+  <atv:parameter desc="Message line 1" valuetype="string" substitute="$MSG1$" behavior="optional" name="msg1" defaultvalue="Message line 1"/>
+  <atv:parameter desc="Message line 2" valuetype="string" substitute="$MSG2$" behavior="optional" name="msg2" defaultvalue=""/>
+  <atv:parameter desc="Message line 3" valuetype="string" substitute="$MSG3$" behavior="optional" name="msg3" defaultvalue=""/>
+  <atv:parameter desc="Text of Button 1" valuetype="string" behavior="optional" name="btn1" defaultvalue="Button One"/>
+  <atv:parameter desc="Text of Button 2" valuetype="string" behavior="optional" name="btn2" defaultvalue="Button Two"/>
+  <atv:parameter desc="Action of Button 1" valuetype="string" behavior="optional" name="action_btn1" defaultvalue=""/>
+  <atv:parameter desc="Action of Button 2" valuetype="string" behavior="optional" name="action_btn2" defaultvalue=""/>
+  <atv:gridconfig width="2" enabled="false" height="2" gridstyle="lines"/>
+  <atv:snapconfig width="2" enabled="false" height="2"/>
+ </metadata>
+ <svg width="80" x="20" y="83.59" height="30" id="button1" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Steelblue.button" atv:refpx="440.998" atv:refpy="299.639" transform="matrix(7.5,0,0,3.3333,0,0)">
+  <atv:argument prefix="btn1" value="" name="label"/>
+  <atv:argument value="36" name="fontSize"/>
+  <atv:overwrite width="592" height="91.999" id="button_stroke" transform="matrix(0.1333,0,0,0.3,0,0)"/>
+  <atv:overwrite x="300" y="54.499" id="button_label" transform="matrix(0.1333,0,0,0.3,0,0)"/>
+  <atv:overwrite x="290" y="39.999" id="button_symbol" transform="matrix(0.1333,0,0,0.3,0,0)"/>
+  <atv:overwrite width="592" height="91.999" id="button_bg" transform="matrix(0.1333,0,0,0.3,0,0)"/>
+  <atv:overwrite width="594.5" height="94.499" id="id_2" transform="matrix(0.1333,0,0,0.3,0,0)"/>
+  <atv:overwrite width="599.5" height="99.499" id="id_0" transform="matrix(0.1333,0,0,0.3,0,0)"/>
+ </svg>
+ <svg width="80" x="20" y="122.55" height="30" id="button2" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Steelblue.button" atv:refpx="156.274" atv:refpy="409.498" transform="matrix(7.5,0,0,3.3333,0,0)">
+  <atv:argument prefix="btn2" value="" name="label"/>
+  <atv:argument value="36" name="fontSize"/>
+  <atv:overwrite width="592" height="91.999" id="button_stroke" transform="matrix(0.1333,0,0,0.3,0,0)"/>
+  <atv:overwrite x="300" y="54.499" id="button_label" transform="matrix(0.1333,0,0,0.3,0,0)"/>
+  <atv:overwrite x="290" y="39.999" id="button_symbol" transform="matrix(0.1333,0,0,0.3,0,0)"/>
+  <atv:overwrite width="592" height="91.999" id="button_bg" transform="matrix(0.1333,0,0,0.3,0,0)"/>
+  <atv:overwrite width="594.5" height="94.499" id="id_2" transform="matrix(0.1333,0,0,0.3,0,0)"/>
+  <atv:overwrite width="599.5" height="99.499" id="id_0" transform="matrix(0.1333,0,0,0.3,0,0)"/>
+ </svg>
+ <text x="27.5" y="131.15" fill="#a5a5a5" font-family="Arial" id="message_line1" atv:refpx="67.463" atv:refpy="127.15" font-size="25">$MSG1$</text>
+ <text x="27.5" y="170.046" fill="#a5a5a5" font-family="Arial" id="message_line2" atv:refpx="67.338" atv:refpy="166.046" font-size="25">$MSG2$</text>
+ <text x="97.204" y="67.46" fill="#a5a5a5" font-family="Arial" id="headline" atv:refpx="170.116" atv:refpy="56.306" font-size="36">$HEADLINE$</text>
+ <text x="27.5" y="208.864" fill="#a5a5a5" font-family="Arial" id="message_line3" atv:refpx="52.063" atv:refpy="204.864" font-size="25">$MSG3$</text>
+ <svg width="20" x="7.017" y="6.592" height="20" xlink:href="$SYMBOL$" id="symbol" atv:refpx="55.086" atv:refpy="53.709" transform="matrix(3.2371,0,0,3.2371,0,0)">
+  <atv:argument value="#a5a5a5" name="symbolColor"/>
+ </svg>
+    <script type="text/ecmascript"><![CDATA[/* set values for portal */
+webMI.gfx.setText(document.getElementById("headline"), webMI.query["headline"]);
+webMI.gfx.setText(document.getElementById("message_line1"), webMI.query["msg1"]);
+webMI.gfx.setText(document.getElementById("message_line2"), webMI.query["msg2"]);
+webMI.gfx.setText(document.getElementById("message_line3"), webMI.query["msg3"]);
+webMI.gfx.setText(document.getElementById("button1_button_label"), webMI.query["btn1"]);
+webMI.gfx.setText(document.getElementById("button2_button_label"), webMI.query["btn2"]);
+webMI.gfx.setFill(document.getElementById("symbol"), webMI.query["symbolColor"]);
+webMI.gfx.setFill(document.getElementById("headline"), webMI.query["fontColor"]);
+webMI.gfx.setFill(document.getElementById("message_line1"), webMI.query["fontColor"]);
+webMI.gfx.setFill(document.getElementById("message_line2"), webMI.query["fontColor"]);
+webMI.gfx.setFill(document.getElementById("message_line3"), webMI.query["fontColor"]);
+webMI.gfx.setFill(document.getElementById("button1_lable"), webMI.query["fontColor"]);
+webMI.gfx.setFill(document.getElementById("button2_lable"), webMI.query["fontColor"]);
+
+if(webMI.query.btn2 == "undefined" && webMI.query.action_btn2 == "undefined") {
+	var button1 = document.getElementById("button1");
+	var button2 = document.getElementById("button2");
+	webMI.gfx.setVisible("button2", false);
+	button1.setAttribute("y", button2.getAttribute("y"));
+}
+
+webMI.trigger.connect("clicked", function(e) {
+	if (typeof webMI.query.action_btn1 == "undefined" || webMI.query.action_btn1 == "")
+		webMI.display.closeWindow();
+	else
+		webMI.trigger.fire(webMI.query.action_btn1, this);
+}, "button1");
+
+webMI.trigger.connect("clicked", function(e) {
+	if (typeof webMI.query.action_btn2 == "undefined" || webMI.query.action_btn2 == "")
+		webMI.display.closeWindow();
+	else
+		webMI.trigger.fire(webMI.query.action_btn2, this);
+}, "button2");
+
+]]></script>
+</svg>

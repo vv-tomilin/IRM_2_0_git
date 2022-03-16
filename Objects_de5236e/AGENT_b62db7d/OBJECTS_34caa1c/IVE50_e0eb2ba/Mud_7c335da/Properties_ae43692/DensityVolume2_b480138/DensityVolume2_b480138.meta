@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.Properties.DensityVolume2
+NodeClass: Variable
+BrowseName: 1:DensityVolume2
+DisplayName: en|DensityVolume2
+Description: en|DensityVolume2
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

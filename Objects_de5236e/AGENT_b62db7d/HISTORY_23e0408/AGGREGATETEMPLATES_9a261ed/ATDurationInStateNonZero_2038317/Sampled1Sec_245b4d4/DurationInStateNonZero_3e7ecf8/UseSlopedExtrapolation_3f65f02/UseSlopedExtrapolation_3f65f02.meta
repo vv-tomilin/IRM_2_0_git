@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.HISTORY.AGGREGATETEMPLATES.ATDurationInStateNonZero.Sampled1Sec.DurationInStateNonZero.UseSlopedExtrapolation
+NodeClass: Variable
+BrowseName: UseSlopedExtrapolation
+DisplayName: en|UseSlopedExtrapolation
+Description: en|UseSlopedExtrapolation
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition PropertyType

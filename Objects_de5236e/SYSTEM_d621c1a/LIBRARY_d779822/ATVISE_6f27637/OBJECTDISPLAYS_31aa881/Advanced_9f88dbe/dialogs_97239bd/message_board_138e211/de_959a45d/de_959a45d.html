@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=windows-1252" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Beschreibung</h1>
+<p>Dieses Display zeigt einen definierbaren Dialog f&uuml;r Nachrichten, Informationen oder Warnungen an,
+  welcher beispielsweise &uuml;ber die Funktion openWindow aufgerufen werden kann.
+  Es k&ouml;nnen frei w&auml;hlbare Texte in der Kopfzeile und f&uuml;r die Schaltfl&auml;chen verwendet werden.</br>
+  Nachrichten k&ouml;nnen &uuml;ber Trigger an das Display &uuml;bermittelt werden.
+  Den beiden Schaltfl&auml;chen k&ouml;nnen zus&auml;tzlich Trigger-Funktionen &uuml;bergeben werden.
+  Wenn keine Triggernamen &uuml;bergeben werden, wird als Standardfunktion f&uuml;r die beiden Schaltfl&auml;chen das Fenster geschlossen.</p>
+<h2>Anforderungen</h2>
+<p>Dieses Display erfordert jQuery, welches als Teil der Tabelle Bibliothek mitgeliefert wird.</p>
+<p>Um Kompatibilit&auml;tsprobleme zu vermeiden, wird die mitgelieferte jQuery Version nur verwendet, wenn keine bereits
+  vorhandene Version erkannt wird. Sollte daher in einem bestehenden Projekt jQuery bereits verwendet werden, greift
+  die Tabellenbibliothek auf diese zur&uuml;ck. Gehen sie daher sicher, dass in diesem Falle eine jQuery Version > 1.7.x
+  verwendet wird!</p>
+<h1>Parameter</h1>
+<p>Es gibt insgesamt 9 Parameter:</p>
+<ul>
+  <li><span class="parameter">Symbol</span>: Adresse des anzuzeigenden Symbols.</li>
+  <li><span class="parameter">Textfarbe</span>: Farbe, die auf die Beschriftung angewendet wird (Standard: Globaler Parameter <i>atvFontColor</i>)</li>
+  <li><span class="parameter">Symbolfarbe</span>: Farbe des zu verwendenden Symbols (Standard: Globaler Parameter <i>atvSymbolColor</i>)</li>
+  <li><span class="parameter">Text der Kopfzeile</span>: Text in der Kopfzeile des Dialogs.</li>
+  <li><span class="parameter">Text Schaltfl&auml;che 1</span>: Text der Schaltfl&auml;che 1</li>
+  <li><span class="parameter">Text Schaltfl&auml;che 2</span>: Text der Schaltfl&auml;che 2</li>
+  <li><span class="parameter">Aktion Schaltfl&auml;che 1</span>: Trigger-Funktion der Schaltfl&auml;che 1</li>
+  <li><span class="parameter">Aktion Schaltfl&auml;che 2</span>: Trigger-Funktion der Schaltfl&auml;che 2</li>
+  <li><span class="parameter">Aktion bei Unload</span>: Trigger-Funktion beim Schlie&szlig;en mit [X]</li>
+</ul>
+<h1>Trigger</h1>
+<li><span class="parameter">com.atvise.message_board_update</span>: F&uuml;gt eine Nachricht zum Board</li>
+<li><span class="parameter">com.atvise.message_board_reset</span>: L&ouml;scht den Inhalt des Boards</li>
+<h1>Beispiel</h1>
+<p>Aufruf des Dialogs mit Hilfe der openWindow Funktion:</br></br>
+  webMI.display.openWindow({display:"SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Advanced.dialogs.message_board", x:0, y:0, height:600, width:800, modal:true, resizable:false, movable:true, scrollbars:false, menubar:false, status:false, toolbar:false, query: {headline:"Meine &Uuml;berschrift"}});
+</p>
+<h1>Beispiel</h1>
+<p>Hinzuf&uuml;gen einer Nachricht:<br><br>
+  webMI.trigger.fire("com.atvise.message_board_update", ["Nachricht Zeile 1", "Nachricht Zeile 2", ..., "Nachricht Zeile n]);
+</p>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="datenum" type="number" trigger="false" relative="false" value=""/>
+  <code><![CDATA[//////////////////////////////////////	
+function strDate(datenum){
+	 var dateObj=new Date();
+	 dateObj.setTime(datenum);
+	 var year = dateObj.getFullYear();
+	 
+	 var month = dateObj.getMonth();
+	 if(String(month).length < 2){
+		month = '0' + String(month);
+	 }
+	 var day = dateObj.getDate();
+	 
+	 var hour = dateObj.getHours();
+	 if(String(hour).length < 2){
+		hour = '0' + String(hour);
+	 }
+	 var minute = dateObj.getMinutes();
+	 if(String(minute).length < 2){
+		minute = '0' + String(minute);
+	 }
+	 var second = dateObj.getSeconds();
+	 if(String(second).length < 2){
+		second = '0' + String(second);
+	 }
+//	 return(day+"-"+month+"-"+year+" "+hour+":"+minute+":"+second);
+	 return(hour+":"+minute+":"+second);
+}
+//////////////////////////////////////]]></code>
+</script>

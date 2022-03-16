@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="30" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" width="203" version="1.2" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <desc>Shows current date.</desc>
+ <title>Date element</title>
+ <defs/>
+ <metadata>
+  <atv:parameter behavior="optional" name="dateFormat" valuetype="string" desc="date format" defaultvalue="%d.%m.%Y"/>
+  <atv:parameter behavior="optional" name="font_family" valuetype="enum" desc="font family" config="Arial;Courier;Tahoma;Verdana" group="Font" defaultvalue="Arial"/>
+  <atv:parameter behavior="optional" group="Font" substitute="$FONTSIZE$" defaultvalue="18" desc="font size" valuetype="number" name="font_size"/>
+  <atv:parameter behavior="optional" group="Font" substitute="$FONTCOLOR$" defaultvalue="SYSTEM.GLOBALS.atvFontColor" desc="font color" valuetype="global" name="globalFontColor"/>
+  <atv:gridconfig height="20" enabled="false" gridstyle="lines" width="20"/>
+  <atv:snapconfig height="10" enabled="false" width="10"/>
+ </metadata>
+ <text font-size="$FONTSIZE$" atv:bindbr="1,1" y="21.5" id="date" text-anchor="end" x="198.5" atv:refpx="114" atv:refpy="15" font-family="Arial" atv:bindtl="0,0" fill="$FONTCOLOR$">02.08.2019</text>
+ <script type="text/ecmascript"><![CDATA[var dateFormat = webMI.query["dateFormat"];
+
+displayDate();
+
+function displayDate() {
+	var date = new Date();
+	var day = ("0" + date.getDate()).slice(-2);
+	var month = ("0"+(date.getMonth()+1)).slice(-2);
+	var year = ("0" + date.getFullYear()).slice(-2);
+	var YEAR = (date.getFullYear()); //.slice(-2);
+
+	var dateString = dateFormat;
+	dateString = dateString.replace(/%Y/, YEAR);
+	dateString = dateString.replace(/%y/, year);
+	dateString = dateString.replace(/%m/, month);
+	dateString = dateString.replace(/%d/, day);
+
+	webMI.gfx.setText("date", dateString);
+	setTimeout(displayDate, 500);
+}
+]]></script>
+</svg>

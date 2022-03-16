@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Stock/Indicators/WilliamsR
+NodeClass: Object
+BrowseName: 1:WilliamsR
+DisplayName: en|WilliamsR
+Description: en|WilliamsR
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.alarmNode.active
+NodeClass: Object
+BrowseName: 1:active
+DisplayName: en|active
+Description: en|active
+EventNotifier: 0
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.AlarmConfiguration

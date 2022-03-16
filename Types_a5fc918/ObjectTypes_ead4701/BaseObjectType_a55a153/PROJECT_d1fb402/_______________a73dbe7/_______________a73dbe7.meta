@@ -1,0 +1,6 @@
+NodeId: ns=1;s=ObjectTypes.PROJECT.PROJECT.Коленчатый вал
+NodeClass: ObjectType
+BrowseName: 1:Коленчатый вал
+DisplayName: en|Коленчатый вал
+Description: en|Коленчатый вал
+IsAbstract: false

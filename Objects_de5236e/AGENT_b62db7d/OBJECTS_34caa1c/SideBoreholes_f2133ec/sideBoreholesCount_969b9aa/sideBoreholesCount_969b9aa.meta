@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.SideBoreholes.sideBoreholesCount
+NodeClass: Variable
+BrowseName: 1:sideBoreholesCount
+DisplayName: en|sideBoreholesCount
+Description: en|sideBoreholesCount
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

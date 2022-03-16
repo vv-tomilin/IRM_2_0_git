@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/BU3000
+NodeClass: Object
+BrowseName: 1:BU3000
+DisplayName: en|BU3000
+Description: en|BU3000
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

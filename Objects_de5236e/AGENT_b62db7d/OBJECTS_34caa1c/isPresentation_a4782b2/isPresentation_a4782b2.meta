@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.isPresentation
+NodeClass: Variable
+BrowseName: 1:isPresentation
+DisplayName: en|isPresentation
+Description: en|isPresentation
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

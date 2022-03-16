@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/RigView/geos/koglomerat.jpg
+NodeClass: Variable
+BrowseName: 1:koglomerat.jpg
+DisplayName: en|koglomerat.jpg
+Description: en|koglomerat.jpg
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Jpeg

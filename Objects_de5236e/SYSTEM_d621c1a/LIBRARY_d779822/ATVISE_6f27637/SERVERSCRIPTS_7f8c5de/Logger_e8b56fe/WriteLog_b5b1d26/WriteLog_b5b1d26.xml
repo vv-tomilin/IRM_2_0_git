@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <parameter name="group" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="subgroup" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="label" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="message" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="user" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="status" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="comment" type="string" trigger="false" relative="false" value=""/>
+  <code><![CDATA[
+/* define some vars */
+var logGroup = _validate(group) ? group : "atvise";
+var logSubgroup = _validate(subgroup) ? subgroup : "Error";
+var logLabel = _validate(label) ? label : "undefined";
+var logMessage = _validate(message) ? message : "";
+var logUser = _validate(user) ? user : "Anonymous";
+var logStatus = _validate(status) ? status : "new";
+var logComment = _validate(comment) ? comment : "";
+
+/* determine timestamp and reference id */
+var occurance = Date.now();
+var reference = occurance + "-" + Math.floor(Math.random() * 8999 + 1000);
+
+/* create a log object */
+var logObject = {};
+logObject.group = logGroup;
+logObject.subgroup = logSubgroup;
+logObject.label = logLabel;
+logObject.message = logMessage;
+logObject.reference = reference;
+logObject.event = [{
+	"occurance": occurance,
+	"user": logUser,
+	"status": logStatus,
+	"comment": logComment
+}];
+
+/* define nessarry nodes */
+var atviseNode = "AGENT.OBJECTS.ATVISE";
+var loggerNode = "AGENT.OBJECTS.ATVISE.Logger";
+var groupNode = loggerNode + "." + logGroup;
+var subNode = groupNode + "." + logSubgroup;
+
+var archiveNode = call("Logger.GetArchive", {})["atvLogger"]["name"];
+var validAtviseNode = call("Logger.BrowseLog", {
+	group: logGroup,
+	subgroup: logSubgroup,
+	path: "true"
+});
+
+if (!validAtviseNode[atviseNode]) {
+	_createFolder(atviseNode, "NODECLASS_OBJECT", "i=61", "FOLDERTYPE");
+}
+if (!validAtviseNode[loggerNode]) {
+	_createNode(loggerNode, "NODECLASS_VARIABLE", "i=62", "STRING", "");
+}
+if (!validAtviseNode[groupNode]) {
+	_createNode(groupNode, "NODECLASS_VARIABLE", "i=62", "STRING", "");
+}
+if (!validAtviseNode[subNode]) {
+	_createNode(subNode, "NODECLASS_VARIABLE", "i=62", "STRING", "", archiveNode);
+}
+
+/* status "atvCreateNodeMode" only creates the node without writing data */
+if (logStatus != "atvCreateNodeMode") {
+
+	/* write log (with wait for reference created) */
+	var now = Date.now();
+	var wait = Date.now() + (validAtviseNode[subNode] ? 0 : 50);
+
+	while (now < wait) {
+		now = Date.now();
+	}
+
+	var writeNode = new UaNode(subNode);
+	writeNode.value = JSON.stringify(logObject);
+
+}
+
+return true;
+
+
+/**
+ * create a folder node
+ * @param address
+ * @param nodeClass
+ * @param typeDefinition
+ * @param dataType
+ * @param value
+ */
+function _createFolder(address, nodeClass, typeDefinition, dataType, value) {
+	new UaNode(address).create({
+		"nodeclass": UaNode[nodeClass],
+		"parent": address.substring(0, address.lastIndexOf('.')),
+		"typedefinition": typeDefinition,
+	});
+}
+
+/**
+ * create a node with optional archiv reference
+ * @param address
+ * @param nodeClass
+ * @param typeDefinition
+ * @param dataType
+ * @param value
+ * @param archiveNode
+ */
+function _createNode(address, nodeClass, typeDefinition, dataType, value, archiveNode) {
+	new UaNode(address).create({
+		"nodeclass": UaNode[nodeClass],
+		"parent": address.substring(0, address.lastIndexOf('.')),
+		"typedefinition": typeDefinition,
+		"datatype": UaNode[dataType],
+		"value": value
+	});
+
+	if (archiveNode) {
+		var dataNode = new UaNode(address);
+		var historyNode = new UaNode(archiveNode);
+		dataNode.addreference(UaNode.HASHISTORICALCONFIGURATION, historyNode);
+	}
+}
+
+/**
+ * simple validation
+ * @param string
+ * @returns {string|*}
+ * @private
+ */
+function _validate(string) {
+	string = string ? string : "";
+	string = string != "" ? string : "";
+	string = string != "undefined" ? string : "";
+	return string;
+}
+
+/* end */
+]]></code>
+</script>

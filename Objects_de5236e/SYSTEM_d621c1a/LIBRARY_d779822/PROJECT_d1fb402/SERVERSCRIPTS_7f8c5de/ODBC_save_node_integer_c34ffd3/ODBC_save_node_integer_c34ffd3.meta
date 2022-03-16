@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.ODBC_save_node_integer
+NodeClass: Variable
+BrowseName: 1:ODBC_save_node_integer
+DisplayName: en|ODBC_save_node_integer
+Description: en|ODBC_save_node_integer
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/gifs/drilling.gif
+NodeClass: Variable
+BrowseName: 1:drilling.gif
+DisplayName: en|drilling.gif
+Description: en|drilling.gif
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Gif

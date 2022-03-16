@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+  <meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+  <title>OD_help</title>
+  <style> .parameter{font-weight:bold;} </style>
+</head>
+<body>
+<h1>Description</h1>
+<p>The radiobutton switches between two values (equal to the button switch) and&nbsp;can be used as input or output control only. Several radiobuttons can be combined to a radiobutton group where always only one radiobutton can be ticked.</p>
+<p>It can be used in the following modes:</p>
+<ol>
+  <li>only "base" is specified: in this case additionally the "value" has to be set</li>
+</ol>
+<div style="margin-left: 40px;">With this configuration, on each click, the "base" will be set to "value". The radiobutton will be ticked, if the value of "base" equals "value".</div>
+<ol start="2">
+  <li>"base" and "address to set" are specified:</li>
+</ol>
+<div style="margin-left: 40px;">With this configuration, on each click, the following happens:<br>
+<ul>
+  <li>The radiobutton will be ticked if the value of the "base"&nbsp;equals&nbsp;"value".</li>
+  <li>On click "address to set" will be set to "value".</li>
+  <li>The radiobutton itself will change the state (ticked or not) only when the "base" is changed (feedback channel).</li>
+</ul>
+</div>
+<ol start="3">
+  <li>neither "base" nor &ldquo;address to set&rdquo; are specified:</li>
+</ol>
+<div style="margin-left: 40px;">In this case, the trigger "valuechanged" with the value from "value" will be fired. This trigger can be used to add a Simple Dynamic to this radiobutton which reacts on the trigger and fires a new trigger. This new trigger can then be used by other elements.</div>
+<p>An additional border indicates the current value's negative state or an additionally defined alarm. The colors and blinking intervals are defined in global lists.</p>
+<h1>Parameters</h1>
+<p>This control has&nbsp;the following generic parameters:</p>
+<ul>
+  <li><span class="parameter">base</span>: depending whether or not "address to set" is specified, the behavior&nbsp;is according to mode 1 and 3 above</li>
+  <li><span class="parameter">alarm address</span>: optional additional address of an alarm to be shown.</li>
+  <li><span class="parameter">radio group id</span>: if you want to combine several radiobuttons to a group, set this parameter for all radiobutton of the group to the same value (e.g. myradiobuttongroup)</li>
+  <li><span class="parameter">label</span>: label of the radiobutton</li>
+  <li><span class="parameter">value</span>: value which defines when the radiobutton is ticked</li>
+  <li><span class="parameter">enable status monitoring</span>:  switch monitoring of current value status on or off.</li>
+  <li><span class="parameter">fire status trigger</span>:  instead of the status display a here defined trigger can be fired globally.</li>
+  </ul>
+Font:<br>
+<ul>
+  <li><span class="parameter">family</span>: font family which will be applied to&nbsp;value (default: Arial)</li>
+  <li><span class="parameter">size</span>: font size which will be applied to the&nbsp;value (default: 12)</li>
+  <li><span class="parameter">color</span>: color which will be applied to the&nbsp;value (default: global parameter <i>atvFontColor</i>)</li>
+  </ul>
+Appearance:<br>
+<ul>
+  <li><span class="parameter">preselect this option</span>: if set to "true", the radiobutton will be ticked on load; otherwise not. This takes only effect if no "base" and no "address to set" are specified.</li>
+  <li><span class="parameter">fill color</span>: fill color of the radiobutton (default: global parameter <i>atvFillColor</i>)</li>
+  <li><span class="parameter">select area fill color</span>: fill color of the select area (default: white)</li>
+  <li><span class="parameter">fill color when inactive</span>: fill color if not active&nbsp;(default: dark grey)</li>
+  <li><span class="parameter">symbol</span>: symbol which is shown if radiobutton is ticked; further symbols can be selected from "Object Displays (ATVISE)/Symbols/20x20 (default: disc)</li>
+  <li><span class="parameter">symbol color</span>: color of the symbol to be used (default: global parameter <i>atvSymbolColor</i>)</li>
+  <li><span class="parameter">stroke color pressed</span>: the color of the stroke which will be set when the radiobutton is clicked (default: white)</li>
+  <li><span class="parameter">focus stroke color</span>: the color of the stroke which will be set when the button is focused (default: white)</li>
+  <li><span class="parameter">border color</span>: color of the border around the control (default: global parameter <i>atvBorderColor</i>)</li>
+  <li><span class="parameter">status indication</span>: specify the status' display through a defined global list (default: global parameter <i>atvStatusIndication</i>)</li>
+  <li><span class="parameter">alarm indication</span>: specify the alarm's display through a defined global list (default: global parameter <i>atvAlarmIndication</i>)</li>
+</ul>
+Options:<br>
+<ul>
+  <li><span class="parameter">address to set</span>: depending whether or not "base" is specified, the behavior&nbsp;is according to mode 2 and 3 above</li>
+  <li><span class="parameter">consistency group</span>: name of the consistency group</li>
+  <li><span class="parameter">tab index</span>: defines the order for changing between the object displays by using the tab key</li>
+  <li><span class="parameter">tooltip</span>: displays a tooltip box with the entered text (standard HTML-Elements can be entered)</li>
+ </ul>
+Security:
+<ul>
+  <li><span class="parameter">necessary right</span>: the user must have this right to activate the radiobutton i.e. to tick the radiobutton</li>
+  <li><span class="parameter">activation address</span>: if the value of this address equals to "activation value", then the&nbsp;radiobutton will be active, i.e. can be pressed</li>
+  <li><span class="parameter">activation value</span>: value which activates the&nbsp;radiobutton</li>
+ </ul>
+<div style="margin-left: 40px;">NOTE: The activation of the radiobutton can be configured only by the necessary right, or only by the&nbsp;activation address and value or by both. In case both settings are made, the user must have the necessary right and the value of the "activation address" must equal the "activation value"; otherwise the&nbsp;radiobutton will not be activated.</div>
+<h1>Example 1</h1>
+For mode 2 as described above assume the following parameters:
+<ul>
+  <li>base: node_feedback</li>
+  <li>value: 1</li>
+  <li>address to set: node_set</li>
+</ul>
+Furthermore assume that the values of "base" and "address to set" are set to 0.<br>
+<ol>
+  <li>With these setting the checkbox will not be ticked.</li>
+  <li>On click, "node_set" will be set to 1 (= "value"); the radiobutton is still not ticked (value of "base" is still different from "value")</li>
+  <li>As soon as "base" is set to 1 (feedback channel from PLC), the&nbsp;radiobutton will now be ticked (value of "base" is now equal to "value")</li>
+</ol>
+<h1>Example 2</h1>
+For mode 2 as described above with a group of radiobuttons assume the following parameters:
+<ul>
+  <li>Radionbutton 1:</li>
+  <ul>
+	<li>base: node_feedback</li>
+	<li>radio group id: mygroup</li>
+	<li>label: eins</li>
+  </ul>
+  <ul>
+	<li>value: 1</li>
+  </ul>
+  <ul>
+	<li>address to set: node_set</li>
+  </ul>
+</ul>
+<ul>
+  <li>Radionbutton 2:</li>
+  <ul>
+	<li>base: node_feedback</li>
+	<li>radio group id: mygroup</li>
+	<li>label: ezwei</li>
+  </ul>
+  <ul>
+	<li>value: 2</li>
+  </ul>
+  <ul>
+	<li>address to set: node_set</li>
+  </ul>
+</ul>
+Furthermore assume that the values of "base" and "address to set" are set to 0.<br>
+<ol>
+  <li>With these setting no checkbox will&nbsp;be ticked.</li>
+  <li>On click on the Radiobutton1, "node_set" will be set to 1 (= "value"); the Radiobutton1 is still not ticked (value of "base" is still different from "value")</li>
+  <li>As soon as "base"of&nbsp;Radiobutton1 is set to 1 (feedback channel from PLC), the Radiobutton1 will now be ticked (value of "base" is now equal to "value")</li>
+  <li>On click on the Radiobutton2, "node_set" will be set to 2 (= "value"); the Radiobutton1 is still&nbsp;ticked (value of "base" is still different from "value")</li>
+  <li>As soon as "base" of Radiobutton2 is set to 2 (feedback channel from PLC), the Radiobutton2 will now be ticked (value of "base" is now equal to "value")</li>
+</ol>
+</body>
+</html>

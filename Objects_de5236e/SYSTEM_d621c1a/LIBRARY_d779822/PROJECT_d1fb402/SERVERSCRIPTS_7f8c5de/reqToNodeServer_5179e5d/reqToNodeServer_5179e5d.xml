@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="WeightOnHook" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook"/>
+  <parameter name="LoadOnBit" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.LoadOnBit"/>
+  <parameter name="HookPosition" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition"/>
+  <parameter name="HookSpeed" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.HookSpeed"/>
+  <parameter name="TDSSpeed" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.TDS.TDSSpeed"/>
+  <parameter name="TDSTorque" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.TDS.TDSTorque"/>
+  <parameter name="PressureManifold" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold"/>
+  <parameter name="DrillSpeed" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Well.DrillSpeed"/>
+  <parameter name="FlowInput" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.FlowInput"/>
+  <parameter name="FlowOutput" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.FlowOutput"/>
+  <parameter name="MachineKeyTorque1" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Tool.MachineKeyTorque1"/>
+  <parameter name="MachineKeyTorque2" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Tool.MachineKeyTorque2"/>
+  <parameter name="HydrokeyTorque" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Tool.HydrokeyTorque"/>
+  <parameter name="StrokePump1" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Pump.StrokePump1"/>
+  <parameter name="StrokePump2" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Pump.StrokePump2"/>
+  <parameter name="DensityVolume1" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Properties.DensityVolume1"/>
+  <parameter name="DensityVolume2" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Properties.DensityVolume2"/>
+  <parameter name="TemperatureVolume" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Properties.TemperatureVolume"/>
+  <parameter name="TankLevel1" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel1"/>
+  <parameter name="TankLevel2" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel2"/>
+  <parameter name="TankLevel3" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Volume.TankLevel3"/>
+  <parameter name="HydroSulfide1" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Properties.HydroSulfide1"/>
+  <parameter name="NKPR1" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Properties.NKPR1"/>
+  <parameter name="csvname" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="irmname" type="string" trigger="false" relative="false" value=""/>
+  <parameter name="BushName" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Rig.General.BushName"/>
+  <parameter name="FieldName" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Rig.General.FieldName"/>
+  <parameter name="RigName" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Rig.General.RigName"/>
+  <parameter name="WellName" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.Rig.General.WellName"/>
+  <code><![CDATA[console.log("reqToNodeServer");
+var fs = new FileSystem();
+var counter = 0;
+while(!fs.isFile(csvname)){
+	//setTimeout(function() { console.log('timeOut 500 mS) }, 500);
+	console.log("reqToNodeServer timeout");
+		if(++counter >100)
+	break;
+}
+
+var tmplt = new Date(csvname.split('.').shift().split('_').filter(function(str) {return str != 'report';}).join('.'));
+var from = new Date(tmplt.setHours(0,0,0));
+var to = new Date(tmplt.setHours(23,59,0))
+
+var target_nodes = [
+			[WeightOnHook, 'Вес на крюке', 'т'],
+			[LoadOnBit, 'Нагрузка на долото', 'т'],
+			[HookPosition, 'Положение крюкоблока', 'м'],
+			[HookSpeed, 'Скорость СПО', 'м/c'],
+			[PressureManifold,'Давление в манифольде', 'п'],
+			[DrillSpeed, 'Скорость проходки', 'м/ч'],
+			[TDSSpeed, 'Обороты СВП', 'м/c'],
+			[TDSTorque, 'Момент СВП', 'т'],
+			[FlowInput, 'Расход на входе', 'л'],
+			[FlowOutput, 'Поток на выходе', 'л'],
+			[MachineKeyTorque1, 'Момент на машключе 1', 'т'],
+			[MachineKeyTorque2, 'Момент на машключе 2', 'т'],
+			[HydrokeyTorque, 'Момент на гидроключе', 'т'],
+			[StrokePump1, 'Ходы на насоса 1', 'т'],
+			[StrokePump2, 'Ходы на насоса 2', 'т'],
+			[DensityVolume1, 'Плотность в ёмкости 1', 'т'],
+			[DensityVolume2, 'Плотность в ёмкости 2', 'т'],
+			[TemperatureVolume, 'Температура ёмкости', 'т'],
+			[TankLevel1, 'Объем ёмкости 1', 'т'],
+			[TankLevel2, 'Объем ёмкости 2', 'т'],
+			[TankLevel3, 'Объем ёмкости 3', 'т'],
+			[HydroSulfide1, 'Сероводород', 'т'],
+			[NKPR1, 'Загазованность', 'т']
+]
+var UaNodes = target_nodes.map(function (param) {
+	var node = new UaNode(param[0])
+	if (node.exists()) {	
+		var raw_data = node.datahistory({starttime: from, endtime: to}).values.map(function(p){
+			return {value : p.value, servertime: p.servertime}
+		})
+		return {
+			name: param[1],
+			unit: param[2],
+			data: raw_data,	
+		}
+	}
+})
+var http = new HTTPClient();
+var body = {
+	//source: 'report_04.12.2020.csv',
+	source: csvname,
+	name: FieldName + " м. " + BushName + " куст " + WellName + " скважина",
+	nodes: UaNodes,
+	params: {starttime: from, endtime: to}
+}
+//console.log(body);
+var res = http.request(
+	{
+		protocol: 'http',
+		hostname: 'localhost',
+		port: 4545,
+		path: '/report',
+		method: 'POST',
+		data: JSON.stringify(body),
+		headers: {
+			"Content-type": "application/json"
+		} 	
+	}
+)]]></code>
+</script>

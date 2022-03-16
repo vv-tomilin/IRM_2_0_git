@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/graph-react/react-app/static
+NodeClass: Object
+BrowseName: 1:static
+DisplayName: en|static
+Description: en|static
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

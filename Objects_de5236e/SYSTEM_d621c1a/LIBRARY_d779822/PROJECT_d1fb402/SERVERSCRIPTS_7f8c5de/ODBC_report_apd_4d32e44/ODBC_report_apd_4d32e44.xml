@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="interval" type="interval" trigger="false" relative="false" value="" startdate="2020-11-16" offset="00:00:00" interval="11:41:00"/>
+  <parameter name="rig_name" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Rig.General.RigName"/>
+  <parameter name="field_name" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Rig.General.FieldName"/>
+  <parameter name="bush_name" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Rig.General.BushName"/>
+  <parameter name="well_name" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Rig.General.WellName"/>
+  <parameter name="brigade_name" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.Rig.Brigade.BrigadeName"/>
+  <parameter name="well_depth" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Well.WellDepth"/>
+  <parameter name="apd_running" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.ASPD.APD1.Running"/>
+  <parameter name="apd_mastermode" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.ASPD.APD1.MasterMode"/>
+  <parameter name="apd_modereg" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.ASPD.APD1.ModeReg"/>
+  <parameter name="report_date" type="node.value" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.report_date"/>
+  <parameter name="load_on_bit" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.LoadOnBit"/>
+  <parameter name="flow_input" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.FlowInput"/>
+  <parameter name="tds_speed" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.TDS.TDSSpeed"/>
+  <parameter name="tds_torque" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.TDS.TDSTorque"/>
+  <parameter name="hook_pos" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.HookPosition"/>
+  <parameter name="pressure_manifold" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Pump.PressureManifold"/>
+  <parameter name="diff_pressure" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Pump.DiffPressure"/>
+  <parameter name="oper_time_wireline" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook.talkanat"/>
+  <parameter name="oper_time_pump1" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Pump.StrokePump1.RunHoursMs"/>
+  <parameter name="oper_time_pump2" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Mud.Pump.StrokePump2.RunHoursMs"/>
+  <parameter name="oper_time_drawworks" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Drawworks.WeightOnHook.RunHoursMs"/>
+  <code><![CDATA[var odbcClient = new ODBCClient();
+
+//------------details via http://www.connectionstrings.com/ .----------------------------------------------
+//odbcClient.source = "Driver={Microsoft ODBC for Oracle}; Server=127.0.0.1; Uid=NameOfUid; Pwd=password;";
+//odbcClient.source = "DSN=ODBC_Name; User Id=NameOfUid; Password=password; Integrated Security=no;";
+//odbcClient.source = "DSN=ODBC_Name; Integrated Security=yes;";
+//odbcClient.source = "DSN=ODBC_Name; Uid=NameOfUid; Pwd=password;";
+
+odbcClient.source = "DSN=SQLite3 Datasource;";
+//odbcClient.source = "DSN=MySQL_ODBC_64; Uid=Serg; Pwd=rkjylfqr;";
+//odbcClient.source = "Driver={MySQL ODBC 8.0 ANSI Driver}; Server=127.0.0.1; Database=rigintel; Uid=Serg; Pwd=rkjylfqr;";
+
+try {
+if (odbcClient.open()) {	
+	console.log ("ODBC SQLite report Opend:", odbcClient.info());			//.info -> information of connected datasource	
+	
+	try	{
+	
+		var node_rig_name = new UaNode(rig_name);
+		var node_field_name = new UaNode(field_name);
+		var node_bush_name = new UaNode(bush_name);
+		var node_well_name = new UaNode(well_name);
+		var node_brigade_name = new UaNode(brigade_name);
+		var newDate = new Date(report_date);
+		newDate.setDate(report_date.getDate()-1);
+		console.log('newDate = ',newDate);
+		var date = new Date(report_date);
+		//console.log("date = "+date+", "+Number(date));	
+		var y = newDate.getFullYear();
+		var m=newDate.getMonth()+1;
+		var d=newDate.getDate();
+		
+//test		
+/*		
+		var OTWireline = call('getUaDataByDate',{strnode:oper_time_wireline,datestop:date}).value;
+			
+		var OTPump1 = call('getUaDataByDate',{strnode:oper_time_pump1,datestop:date}).value/3600000;
+			
+		var OTPump2 = call('getUaDataByDate',{strnode:oper_time_pump2,datestop:date}).value/3600000;
+		
+		var OTDrawworks = call('getUaDataByDate',{strnode:oper_time_drawworks,datestop:date}).value/3600000;
+		
+console.log('OTDrawworks = ',OTDrawworks);
+		return;
+*/		
+//		
+		var hour = date.getHours();
+		var min = date.getMinutes();
+		var sec = date.getSeconds();
+		
+		if(String(m).length < 2)
+			m = '0' + String(m);
+		if(String(d).length < 2)
+			d = '0' + String(d);	
+				
+	 	if(String(hour).length < 2)
+			hour = '0' + String(hour);
+		if(String(min).length < 2)
+			min = '0' + String(min);
+		if(String(sec).length < 2)
+			sec = '0' + String(sec);		
+	 		
+		var start_depth = 0;
+		var stop_depth = 0;
+		var reportfolder = "rigdata/reports/";
+		var filename = "report_apd_" + y + "_" + m + "_" + d + ".csv";
+		
+		
+
+//		var ofs = new OutputFileStream(filename,'utf8','append');
+		var ofs = new OutputFileStream(reportfolder+filename,'utf8');
+		ofs.open();
+		
+		var strTitle = "\ufeffСуточный отчет по работе АПД"+";Буровая: "+node_rig_name.value+";Бригада: "+node_brigade_name.value+";;;;;;;ООО RIGINTEL";
+		ofs.writeLine(strTitle);
+		ofs.writeLine(";;;;;;;;;");
+		
+		var strRig = "Месторождение: "+node_field_name.value+";Куст: "+node_bush_name.value+";Скважина: "+node_well_name.value+";;;;;;;";
+		ofs.writeLine(strRig);
+		ofs.writeLine(";;;;;;;;;");
+		var strDate = "Дата: "+d+"-"+m+"-"+y+" "+hour+":"+min+":"+sec+";;;;;;;;;";
+		ofs.writeLine(strDate);		
+		ofs.writeLine(";;;;;;;;;");
+		
+		var arrobjoperations =[];
+		var callback = {
+			onData : function (rowIdx, row) { 
+				console.log("OnData: ", rowIdx, " ", row);
+				
+				var obj = {};
+				obj.identifier = row[0];
+				obj.timestart = row[1];
+				if(row[0] == apd_running){
+					obj.value = call("byteArrayToLong",{byteArray:call("hexStringToByteArray",{hexstring:row[2].slice(4,6)})});
+				} else {
+					obj.value = call("byteArrayToLong",{byteArray:call("hexStringToByteArray",{hexstring:row[2].slice(4,8)})});
+				}
+				arrobjoperations[rowIdx] = obj; 																
+			},
+//			onHead : function(columns) { console.log("OnHead: ", columns); },
+//			onReady : function(num, msg) { console.log("OnReady: ", num, " ", msg); },
+			onError : function(msg) { console.log("OnError: ", msg); }
+		};
+		
+		
+//		var wty=call("WinTicksFromSeconds",{us:date});
+//		var wt = wty+1*86400*10000000;
+		var wt=call("WinTicksFromSeconds",{us:date});
+		var wty = wt-1*86400*10000000;
+		
+		
+/*		var strquery = "SELECT nid.identifier, d.sourcetime, d.value \
+						FROM data d, nodeids nid \
+						WHERE d.nodeid=nid.id \
+						AND d.status = 0 \
+						AND (nid.identifier LIKE '" + apd_mastermode +"' \
+						OR nid.identifier LIKE '" + apd_modereg + "' \
+						OR nid.identifier LIKE '" + apd_running + "') \
+						AND d.sourcetime <= " + wt + " \
+						AND d.sourcetime > " + wty +" \
+						ORDER BY d.rowid;";	
+*/							
+		var strquery = "SELECT nid.identifier, d.servertime, d.value \
+						FROM data d, nodeids nid \
+						WHERE d.nodeid=nid.id \
+						AND d.status = 0 \
+						AND (nid.identifier LIKE '" + apd_mastermode +"' \
+						OR nid.identifier LIKE '" + apd_modereg + "' \
+						OR nid.identifier LIKE '" + apd_running + "') \
+						AND d.servertime <= " + wt + " \
+						AND d.servertime > " + wty +" \
+						ORDER BY d.rowid;";
+									
+	    //console.log("strquery = "+strquery);	    
+		var query = odbcClient.query(strquery,callback);
+						
+		var wellDepthStart;
+		var wellDepthStartObj = call("getUaDataByDate",{strnode:well_depth,datestop: call("SecondsFromWinTicks",{wt:wty})*1000});
+		if(wellDepthStartObj){
+			wellDepthStart = wellDepthStartObj.value;	
+			console.log("wellDepthStart = "+wellDepthStartObj.value);
+		}
+		var wellDepthStop;
+		var wellDepthStopObj = call("getUaDataByDate",{strnode:well_depth,datestop: call("SecondsFromWinTicks",{wt:wt})*1000});
+		if(wellDepthStopObj){
+			wellDepthStop = wellDepthStopObj.value;	
+			console.log("wellDepthStop = "+wellDepthStopObj.value);
+		}	
+		var fullPenetration = wellDepthStop - wellDepthStart;
+		console.log("full penetration = " + fullPenetration);		
+
+		
+		var fullTimeApdDrilling = 0;
+		var fullTimeApdRise = 0;
+		var fullTimeApdDescent = 0;
+		var fullApdPenetration = 0;
+		var fullTimeApdModeLoad = 0;
+		var fullTimeApdModePressure = 0;
+		var fullTimeApdModeSpeed = 0;
+		var fullTimeApdModeTorque = 0;
+		var fullPenetrationApdModeLoad = 0;
+		var fullPenetrationApdModePressure = 0;
+		var fullPenetrationApdModeSpeed = 0;
+		var fullPenetrationApdModeTorque = 0;
+		var fullTime = 0;
+		var fullTimeApd = 0;
+				
+			
+		if(arrobjoperations.length > 0){
+/*		
+console.log("start 1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111");
+			arrobjoperations.forEach(function(itemObj,index,arrobjoperations){
+				console.log("item: " + index);
+				for(var key in itemObj){
+					var value = itemObj[key]; 
+					if(key == "timestart" || key == "timestop"){
+						//var ts = new Date(call("SecondsFromWinTicks",{wt:obj.timestart})*1000);
+						//console.log("date: ",call("Date2Visual",{date:ts}));
+						console.log("key = "+key+ ", val = " + call("Date2Visual",{date:new Date(call("SecondsFromWinTicks",{wt:value})*1000)}));
+					} else {
+						console.log("key = "+key+ ", val = "+value);
+					}
+				}
+			});
+console.log("stop 1111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111");		
+*/		
+			var objRunningStart;
+			var objRunningFinish;
+			var objMasterModeStart;
+			var objModeRegStart;
+			function getLastValueByDate(strn,dates){
+				var StartObj = call("getUaDataByDate",{strnode:strn,datestop: call("SecondsFromWinTicks",{wt:dates})*1000});			
+				return StartObj.value;
+			}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////			
+			var apdMasterModeStartObj = call("getUaDataByDate",{strnode:apd_mastermode,datestop: call("SecondsFromWinTicks",{wt:wty})*1000});
+			if(apdMasterModeStartObj){
+				objMasterModeStart = {identifier:apd_mastermode, timestart: wty, value: apdMasterModeStartObj.value, depthstart:wellDepthStart};					
+			}
+
+			var apdModeRegStartObj = call("getUaDataByDate",{strnode:apd_modereg,datestop: call("SecondsFromWinTicks",{wt:wty})*1000});
+			if(apdModeRegStartObj){
+				objModeRegStart = {identifier:apd_modereg, timestart: wty, value: apdModeRegStartObj.value, depthstart:wellDepthStart};
+				
+			}
+//start							
+			var apdRunning;
+			var apdRunningStartObj = call("getUaDataByDate",{strnode:apd_running,datestop: Math.round(call("SecondsFromWinTicks",{wt:wty})*1000)});
+			if(apdRunningStartObj){
+				apdRunning = apdRunningStartObj.value;
+/*				if(objMasterModeStart.value == 0)	
+					objRunningStart = {identifier:apd_running, timestart: wty, value: apdRunningStartObj.value, depthstart:wellDepthStart, mastermode:objMasterModeStart.value, modereg:objModeRegStart.value};		
+				else
+					objRunningStart = {identifier:apd_running, timestart: wty, value: apdRunningStartObj.value, depthstart:wellDepthStart, mastermode:objMasterModeStart.value};
+*/				
+				objRunningStart = {identifier:apd_running, timestart: wty, value: apdRunningStartObj.value, depthstart:wellDepthStart};	
+				if(objRunningStart.value)
+					arrobjoperations.unshift(objRunningStart);
+				console.log("apdRunningStart = "+apdRunningStartObj.value);		
+			}
+// finish			
+			var apdRunningFinishObj = call("getUaDataByDate",{strnode:apd_running,datestop: Math.round(call("SecondsFromWinTicks",{wt:wt})*1000)});
+			if(apdRunningFinishObj){
+				//apdRunning = apdRunningStartObj.value;				
+					
+				if(apdRunningFinishObj.value){
+					objRunningFinish = {identifier:apd_running, timestart: wt, value: 0, depthstart:wellDepthStop};
+					arrobjoperations.push(objRunningFinish);
+				}
+				console.log("objRunningFinish = "+apdRunningFinishObj.value);		
+			}
+			
+			
+			
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////			
+			var ir = -1;
+			var imm = -1;
+			var imr = -1;
+			var startindx = -1;
+			var stopindx = -1;
+			
+			function FinishingOper(itemObj){
+/*			
+				if(arrobjoperations[startindx].identifier==apd_running)
+					console.log("Stop Running index = "+startindx);
+				if(arrobjoperations[startindx].identifier==apd_mastermode)
+					console.log("Stop MasterMode index = "+startindx);
+				if(arrobjoperations[startindx].identifier==apd_modereg)
+					console.log("Stop ModeReg index = "+startindx);	
+*/						
+				arrobjoperations[startindx].timestop = itemObj.timestart; 
+				arrobjoperations[startindx].timework = arrobjoperations[startindx].timestop - arrobjoperations[startindx].timestart;
+				//arrobjoperations[startindx].depthstop = itemObj.depthstart;
+				//arrobjoperations[startindx].penetration = arrobjoperations[startindx].depthstop - arrobjoperations[startindx].depthstart;
+				stopindx = index;
+			}
+			
+			arrobjoperations.forEach(function(itemObj,index,arrobjoperations){
+//				console.log("index = "+index);
+				if(itemObj.identifier==apd_running){						 
+					if(itemObj.value){		//Runnung = true
+//						console.log("Start Running");
+						apdRunning=true;
+						startindx = index;
+						var valMM=getLastValueByDate(apd_mastermode,itemObj.timestart);
+						if(typeof valMM != 'undefined'){
+							itemObj.mastermode=valMM;
+							if(valMM == 0){
+								var valMR=getLastValueByDate(apd_modereg,itemObj.timestart);
+								if(typeof valMR != 'undefined'){
+									itemObj.modereg=valMR;
+								}	
+							}
+						}	
+														 
+					} else {				//Running = false
+						apdRunning=false;
+						if(startindx >=0){
+							FinishingOper(itemObj);
+						}
+						startindx = -1;						
+					}
+					ir = index;							
+				}				
+				if(itemObj['identifier']==apd_mastermode){
+					if(startindx >=0 && apdRunning){
+						if(arrobjoperations[startindx].identifier != apd_running){
+//							console.log("Start MasterMode");
+							if(itemObj.value == 0){
+								var valMR=getLastValueByDate(apd_modereg,itemObj.timestart);
+								if(typeof valMR != 'undefined'){
+									itemObj.modereg=valMR;
+								}	
+							}
+							FinishingOper(itemObj);
+							startindx = index;
+						}									
+					}
+					imm=index;
+				}
+				if(itemObj['identifier']==apd_modereg){
+					if(startindx >=0 && apdRunning){
+						//if(arrobjoperations[startindx].identifier == apd_modereg || (arrobjoperations[startindx].identifier == apd_mastermode && arrobjoperations[startindx].value == 0)){
+						//if(arrobjoperations[startindx].identifier == apd_modereg){
+						if(!(arrobjoperations[startindx].identifier == apd_mastermode && arrobjoperations[startindx].value == 0)){
+//							console.log("Start ModeReg");
+							FinishingOper(itemObj);
+							startindx = index;
+						}	
+					}
+					imr=index;
+				}			
+			});	
+/*			
+console.log("start 2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222");
+			arrobjoperations.forEach(function(itemObj,index,arrobjoperations){
+				console.log("item: " + index);
+				for(var key in itemObj){
+					var value = itemObj[key]; 
+					if(key == "timestart" || key == "timestop"){
+						//var ts = new Date(call("SecondsFromWinTicks",{wt:obj.timestart})*1000);
+						//console.log("date: ",call("Date2Visual",{date:ts}));
+						console.log("key = "+key+ ", val = " + call("Date2Visual",{date:new Date(call("SecondsFromWinTicks",{wt:value})*1000)}));
+					} else {
+						console.log("key = "+key+ ", val = "+value);
+					}
+				}
+			});
+			
+console.log("stop 2222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222");				
+*/
+/*			if(startindx >=0 && !arrobjoperations[startindx].hasOwnProperty('timestop')){
+				arrobjoperations[i].timestop = wt;
+				arrobjoperations[i].timework = arrobjoperations[i].timestop - arrobjoperations[i].timestart;
+			}
+*/	
+		
+			arrobjoperations.forEach(function(itemObj,index,arrobjoperations){
+//				console.log("item: " + index);
+				if(itemObj.hasOwnProperty('timestop')){
+					var valDepthStart=0;
+					var valDepthStop =0;
+					if(getLastValueByDate(well_depth,itemObj.timestart)!=0){
+						valDepthStart=getLastValueByDate(well_depth,itemObj.timestart);
+						valDepthStop =getLastValueByDate(well_depth,itemObj.timestop);
+					} else {
+				
+						valDepthStop=getLastValueByDate(hook_pos,itemObj.timestart);
+						
+						valDepthStart=getLastValueByDate(hook_pos,itemObj.timestop);
+						
+					}
+					if(valDepthStart && valDepthStop){						
+						itemObj.depthstart = valDepthStart;
+						itemObj.depthstop = valDepthStop;
+						itemObj.penetration = valDepthStop-valDepthStart;
+						itemObj.drillspeed = (itemObj.penetration/((itemObj.timestop-itemObj.timestart)/10000000))*3600;						
+						itemObj.loadonbit = call('getAverageByDate',{nodeStr:load_on_bit, timestart:call("SecondsFromWinTicks",{wt:itemObj.timestart})*1000, timeend:call("SecondsFromWinTicks",{wt:itemObj.timestop})*1000});						
+						itemObj.flowinput = call('getAverageByDate',{nodeStr:flow_input, timestart:call("SecondsFromWinTicks",{wt:itemObj.timestart})*1000, timeend:call("SecondsFromWinTicks",{wt:itemObj.timestop})*1000});						
+						itemObj.tdsspeed = call('getAverageByDate',{nodeStr:tds_speed, timestart:call("SecondsFromWinTicks",{wt:itemObj.timestart})*1000, timeend:call("SecondsFromWinTicks",{wt:itemObj.timestop})*1000});						
+						itemObj.tdstorque = call('getAverageByDate',{nodeStr:tds_torque, timestart:call("SecondsFromWinTicks",{wt:itemObj.timestart})*1000, timeend:call("SecondsFromWinTicks",{wt:itemObj.timestop})*1000});	
+						itemObj.pressmanifold = call('getAverageByDate',{nodeStr:pressure_manifold, timestart:call("SecondsFromWinTicks",{wt:itemObj.timestart})*1000, timeend:call("SecondsFromWinTicks",{wt:itemObj.timestop})*1000});					
+						itemObj.diffpress = call('getAverageByDate',{nodeStr:diff_pressure, timestart:call("SecondsFromWinTicks",{wt:itemObj.timestart})*1000, timeend:call("SecondsFromWinTicks",{wt:itemObj.timestop})*1000});
+					}
+				}
+/*
+console.log("start 3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333");				
+				for(var key in itemObj){
+					var value = itemObj[key]; 
+					if(key == "timestart" || key == "timestop"){
+						//var ts = new Date(call("SecondsFromWinTicks",{wt:obj.timestart})*1000);
+						//console.log("date: ",call("Date2Visual",{date:ts}));
+						console.log("key = "+key+ ", val = " + call("Date2Visual",{date:new Date(call("SecondsFromWinTicks",{wt:value})*1000)}));
+					} else {
+						console.log("key = "+key+ ", val = "+value);
+					}
+				}
+console.log("stop 3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333");				
+*/				
+			});		
+						
+/*			
+console.log("-----------------------------------------------------------------------------------------------------------------");
+			arrobjoperations.forEach(function(itemObj,index,arrobjoperations){
+				console.log("item: " + index);
+				for(var key in itemObj){
+					var value = itemObj[key]; 
+					if(key == "timestart" || key == "timestop"){
+						//var ts = new Date(call("SecondsFromWinTicks",{wt:obj.timestart})*1000);
+						//console.log("date: ",call("Date2Visual",{date:ts}));
+						console.log("key = "+key+ ", val = " + call("Date2Visual",{date:new Date(call("SecondsFromWinTicks",{wt:value})*1000)}));
+					} else if(key == "")
+						console.log("key = "+key+ ", val = "+value);
+				}
+			});
+console.log("-----------------------------------------------------------------------------------------------------------------");		
+*/
+			ofs.writeLine("Работы:;;;;;;;;;;;;;;;;");
+			var strNaming = "№;Работа;Режим;Начало;Окончание;Время работы в сек;Время работы;Положение в начале;Положение в конце;Проходка;Скорость;Нагрузка;Расход;Обороты;Момент;Давление;Перепад";		 
+			ofs.writeLine(strNaming);
+			
+			//console.log("I am here!!!");		
+			var index=0;		
+			arrobjoperations.forEach(function(itemObj,index,arrobjoperations){						
+				if(itemObj.hasOwnProperty('timestop')){												
+					var work;
+					var work_mode;			
+					if(itemObj.identifier==apd_running){						 
+						if(itemObj.value == 1){    //бурение							 
+							fullTimeApd +=itemObj.timework;
+							fullApdPenetration += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;							
+							if(itemObj.mastermode == 0){
+								work = "Бурение";
+								fullTimeApdDrilling += itemObj.timework;
+								if(itemObj.modereg == 0){
+									work_mode = "По нагрузке";
+									fullTimeApdModeLoad += itemObj.timestop - itemObj.timestart;
+									fullPenetrationApdModeLoad += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+								}
+								if(itemObj.modereg == 1){
+									work_mode = "По давлению";
+									fullTimeApdModePressure += itemObj.timestop - itemObj.timestart;
+									fullPenetrationApdModePressure += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+								}
+								if(itemObj.modereg == 2){
+									work_mode = "По скорости";
+									fullTimeApdModeSpeed += itemObj.timestop - itemObj.timestart;
+									fullPenetrationApdModeSpeed += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+								}
+								if(itemObj.modereg == 3){
+									work_mode = "По моменту";
+									fullTimeApdModeTorque += itemObj.timestop - itemObj.timestart;
+									fullPenetrationApdModeTorque += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+								}
+							} 
+							if(itemObj.mastermode == 1){
+								work = "СПО";
+								work_mode = "Спуск";
+								fullTimeApdDescent +=itemObj.timework;
+								//fullTimeApd +=itemObj.timework;
+							}
+							if(itemObj.mastermode == 2){
+								work = "СПО";
+								work_mode = "Подъем";
+								fullTimeApdRise +=itemObj.timework;
+								//fullTimeApd +=itemObj.timework;
+							}							
+						} 													
+					}			
+					if(itemObj.identifier==apd_mastermode){ 
+						if(itemObj.value == 0){    //бурение
+							fullTimeApdDrilling += itemObj.timework; //itemObj.timestop - itemObj.timestart;
+							fullTimeApd +=itemObj.timework;
+							fullApdPenetration += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+							work = "Бурение";
+							if(itemObj.modereg == 0){
+								work_mode = "По нагрузке";
+								fullTimeApdModeLoad += itemObj.timestop - itemObj.timestart;
+								fullPenetrationApdModeLoad += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+							}
+							if(itemObj.modereg == 1){
+								work_mode = "По давлению";
+								fullTimeApdModePressure += itemObj.timestop - itemObj.timestart;
+								fullPenetrationApdModePressure += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+							}
+							if(itemObj.modereg == 2){
+								work_mode = "По скорости";
+								fullTimeApdModeSpeed += itemObj.timestop - itemObj.timestart;
+								fullPenetrationApdModeSpeed += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+							}
+							if(itemObj.modereg == 3){
+								work_mode = "По моменту";
+								fullTimeApdModeTorque += itemObj.timestop - itemObj.timestart;
+								fullPenetrationApdModeTorque += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+							}
+						} 
+						if(itemObj.value == 1){    //спуск
+							fullTimeApdDescent += itemObj.timework; //itemObj.timestop - itemObj.timestart;
+							fullTimeApd +=itemObj.timework;
+							work = "СПО";
+							work_mode = "Спуск";
+						}
+						if(itemObj.value == 2){    //подъем
+							fullTimeApdRise += itemObj.timework; //itemObj.timestop - itemObj.timestart;
+							fullTimeApd +=itemObj.timework;
+							work = "СПО";
+							work_mode = "Подъем";
+						}							
+					}
+					if(itemObj.identifier==apd_modereg){
+						work = "Бурение";
+						fullTimeApdDrilling += itemObj.timework;
+						fullApdPenetration += itemObj.penetration;
+						if(itemObj.value == 0){    //нагрузка
+							work_mode = "По нагрузке";
+							fullTimeApdModeLoad += itemObj.timework; //itemObj.timestop - itemObj.timestart;
+							fullTimeApd +=itemObj.timework;
+							fullPenetrationApdModeLoad += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+						} 
+						if(itemObj.value == 1){    //давление
+							work_mode = "По давлению";
+							fullTimeApdModePressure += itemObj.timework; //itemObj.timestop - itemObj.timestart;
+							fullTimeApd +=itemObj.timework;
+							fullPenetrationApdModePressure += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+						}
+						if(itemObj.value == 2){    //скорость
+							work_mode = "По скорости";
+							fullTimeApdModeSpeed += itemObj.timework; //itemObj.timestop - itemObj.timestart;
+							fullTimeApd +=itemObj.timework;
+							fullPenetrationApdModeSpeed += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+						}		
+						if(itemObj.value == 3){    //момент
+							work_mode = "По моменту";
+							fullTimeApdModeTorque += itemObj.timework; //itemObj.timestop - itemObj.timestart;
+							fullTimeApd +=itemObj.timework;
+							fullPenetrationApdModeTorque += itemObj.penetration; //itemObj.depthstop - itemObj.depthstart;
+						}					
+					}
+					var timework = itemObj.timework; //itemObj.timestop - itemObj.timestart;
+					var datestart = new Date(call("SecondsFromWinTicks",{wt:itemObj.timestart})*1000);
+					var datestop = new Date(call("SecondsFromWinTicks",{wt:itemObj.timestop})*1000);
+					var strdatestart = datestart.getHours()+":"+datestart.getMinutes()+":"+datestart.getSeconds();
+					var strdatestop = datestop.getHours()+":"+datestop.getMinutes()+":"+datestop.getSeconds();
+					
+					//var strNaming = "№;Осн. работа;Работа;Начало;Окончание;Время работы в сек;Время работы;Забой в начале;Забой в конце;Проходка";			
+					var strToFile = index++ +";"+work+";"+work_mode+";"+strdatestart+";"+strdatestop+";"+Math.floor(timework/10000000)+";"+call("Sec2Date",{sec:(Math.floor(timework/10000000))})+";"+itemObj.depthstart+";"+itemObj.depthstop+";"+itemObj.penetration+";"+itemObj.drillspeed+";"+itemObj.loadonbit+";"+itemObj.flowinput+";"+itemObj.tdsspeed+";"+itemObj.tdstorque+";"+itemObj.pressmanifold+";"+itemObj.diffpress;
+					//var strToFile = index++ +";"+work+";"+work_mode+";"+datestart+";"+datestop+";"+Math.floor(timework/10000000)+";"+call("Sec2Date",{sec:(Math.floor(timework/10000000))})+";"+Math.ceil(itemObj.depthstart*100)/100+";"+Math.ceil(itemObj.depthstop*100)/100+";"+Math.ceil(itemObj.penetration*100)/100+";"+Math.ceil(itemObj.drillspeed*100)/100+";"+Math.ceil(itemObj.loadonbit*100)/100+";"+Math.ceil(itemObj.flowinput*100)/100+";"+Math.ceil(itemObj.tdsspeed*100)/100+";"+Math.ceil(itemObj.tdstorque*100)/100;
+//					var newStr = strToFile.replace(/./g, ',');
+					//var newStr = strToFile.replace('.', ',');
+					//var strToFile = index++ +";"+work+";"+work_mode+";"+datestart+";"+datestop+";"+Math.floor(timework/10000000)+";"+call("Sec2Date",{sec:(Math.floor(timework/10000000))})+";"+(itemObj.depthstart).toFixed(1)+";"+(itemObj.depthstop).toFixed(1)+";"+(itemObj.penetration).toFixed(1)+";"+(itemObj.drillspeed).toFixed(1)+";"+(itemObj.loadonbit).toFixed(1)+";"+(itemObj.flowinput).toFixed(1)+";"+(itemObj.tdsspeed).toFixed(1)+";"+(itemObj.tdstorque).toFixed(1);
+					console.log(strToFile);
+					//console.log(newStr);
+					ofs.writeLine(strToFile);
+				}	
+			});	
+		} else {
+		
+			console.log("Don't have any records!!");
+		}
+		
+		console.log("Time: "+Math.floor((wt-wty)/10000000));
+		console.log("fullTimeApd: "+fullTimeApd);	
+		console.log("fullTimeApdDrilling: "+fullTimeApdDrilling);
+		console.log("fullTimeApdDescent: "+fullTimeApdDescent);
+		console.log("fullTimeApdRise: "+fullTimeApdRise);
+		console.log("wellDepthStart: "+wellDepthStart);
+		console.log("wellDepthStop: "+wellDepthStop);
+		console.log("penetration: "+(wellDepthStop-wellDepthStart));
+		console.log("fullApdPenetration: "+fullApdPenetration);
+
+		
+		//console.log("wt = "+wt);
+		//console.log("wty = "+wty);
+				
+		
+		ofs.writeLine(";;;;;;;;;");
+		ofs.writeLine(";;;;;;;;;");
+		
+		
+// 		
+		var strNamingFull = "ИТОГО:;Время;Время АПД;Время бурения АПД;Время спуска АПД;Время подъема АПД;Забой в начале;Забой в конце;Проходка всего;Проходка АПД";		
+		ofs.writeLine(strNamingFull);	
+//		var strToFileFull = ";"+call("Sec2Date",{sec:Math.floor((wt-wty)/10000000)})+";"+call("Sec2Date",{sec:Math.floor(fullTimeApd/10000000)})+";"+call("Sec2Date",{sec:Math.floor(fullTimeApdDrilling/10000000)})+";"+call("Sec2Date",{sec:Math.floor(fullTimeApdDescent/10000000)})+";"+call("Sec2Date",{sec:Math.floor(fullTimeApdRise/10000000)})+";"+wellDepthStart+";"+wellDepthStop+";"+(wellDepthStop-wellDepthStart)+";"+fullApdPenetration;
+
+		var strToFileFull = ";"
+							+call("Sec2Date",{sec:Math.floor((wt-wty)/10000000)})+";"
+							+call("Sec2Date",{sec:Math.floor(fullTimeApd/10000000)})+" ("+calcPrct((wt-wty), fullTimeApd)+"%);"
+							+call("Sec2Date",{sec:Math.floor(fullTimeApdDrilling/10000000)})+" ("+calcPrct(fullTimeApd, fullTimeApdDrilling)+"%);"
+							+call("Sec2Date",{sec:Math.floor(fullTimeApdDescent/10000000)})+" ("+calcPrct(fullTimeApd, fullTimeApdDescent)+"%);"
+							+call("Sec2Date",{sec:Math.floor(fullTimeApdRise/10000000)})+" ("+calcPrct(fullTimeApd, fullTimeApdRise)+"%);"
+							+wellDepthStart+";"
+							+wellDepthStop+";"
+							+(wellDepthStop-wellDepthStart)+";"
+							+fullApdPenetration+" ("+calcPrct((wellDepthStop-wellDepthStart), fullApdPenetration)+"%);";
+								
+		console.log(strToFileFull);
+		ofs.writeLine(strToFileFull);
+		ofs.writeLine(";;;;;;;;;");	
+		var strNamingModes = "ИТОГО:;Время по Нагрузке;Проходка по нагрузке;Время по Давлению;Проходка по Давлению;Время по Скорости;Проходка поскорости;Время по Моменту;Проходка по Моменту;";
+		ofs.writeLine(strNamingModes);
+//		var strToFileModes = ";"+call("Sec2Date",{sec:Math.floor(fullTimeApdModeLoad/10000000)})+";"+fullPenetrationApdModeLoad+";"+call("Sec2Date",{sec:Math.floor(fullTimeApdModePressure/10000000)})+";"+fullPenetrationApdModePressure+";"+call("Sec2Date",{sec:Math.floor(fullTimeApdModeSpeed/10000000)})+";"+fullPenetrationApdModeSpeed+";"+call("Sec2Date",{sec:Math.floor(fullTimeApdModeTorque/10000000)})+";"+fullPenetrationApdModeTorque+";";
+		
+		var strToFileModes = ";"
+								+call("Sec2Date",{sec:Math.floor(fullTimeApdModeLoad/10000000)})+" ("+calcPrct(fullTimeApd, fullTimeApdModeLoad)+"%);"
+								+fullPenetrationApdModeLoad+" ("+calcPrct(fullApdPenetration, fullPenetrationApdModeLoad)+"%);"
+								+call("Sec2Date",{sec:Math.floor(fullTimeApdModePressure/10000000)})+" ("+calcPrct(fullTimeApd, fullTimeApdModePressure)+"%);"
+								+fullPenetrationApdModePressure+" ("+calcPrct(fullApdPenetration, fullPenetrationApdModePressure)+"%);"
+								+call("Sec2Date",{sec:Math.floor(fullTimeApdModeSpeed/10000000)})+" ("+calcPrct(fullTimeApd, fullTimeApdModeSpeed)+"%);"
+								+fullPenetrationApdModeSpeed+" ("+calcPrct(fullApdPenetration, fullPenetrationApdModeSpeed)+"%);"
+								+call("Sec2Date",{sec:Math.floor(fullTimeApdModeTorque/10000000)})+" ("+calcPrct(fullTimeApd, fullTimeApdModeTorque)+"%);"
+								+fullPenetrationApdModeTorque+" ("+calcPrct(fullApdPenetration, fullPenetrationApdModeTorque)+"%);";
+								
+		console.log(strToFileModes);
+		ofs.writeLine(strToFileModes);
+		
+// Percentage calculating
+/*
+		
+		ofs.writeLine(";;;;;;;;;");
+		var strNamingPercentage = "ИТОГО:;Время АПД(%);Время бурения АПД(%);Время спуска АПД(%);Время подъема АПД(%);Проходка АПД(%)";
+		ofs.writeLine(strNamingPercentage);
+		var strToFilePercentage = ";"+calcPrct((wt-wty), fullTimeApd)+"%;"+calcPrct(fullTimeApd, fullTimeApdDrilling)+"%;"+calcPrct(fullTimeApd, fullTimeApdDescent)+"%;"+calcPrct(fullTimeApd, fullTimeApdRise)+"%;"+calcPrct((wellDepthStop-wellDepthStart), fullApdPenetration)+"%";
+		ofs.writeLine(strToFilePercentage);
+		ofs.writeLine(";;;;;;;;;");
+		var strNamingPercentage2 = "ИТОГО:;Время по Нагрузке(%);Проходка по нагрузке(%);Время по Давлению(%);Проходка по Давлению(%);Время по Скорости(%);Проходка поскорости(%);Время по Моменту(%);Проходка по Моменту;(%)";
+		ofs.writeLine(strNamingPercentage2);
+		var strToFilePercentage2 = ";"+calcPrct(fullTimeApd, fullTimeApdModeLoad)+"%;"+calcPrct(fullApdPenetration, fullPenetrationApdModeLoad)+"%;"+calcPrct(fullTimeApd, fullTimeApdModePressure)+"%;"+calcPrct(fullApdPenetration, fullPenetrationApdModePressure)+"%;"+calcPrct(fullTimeApd, fullTimeApdModeSpeed)+"%;"+calcPrct(fullApdPenetration, fullPenetrationApdModeSpeed)+"%;"+calcPrct(fullTimeApd, fullTimeApdModeTorque)+"%;"+calcPrct(fullApdPenetration, fullPenetrationApdModeTorque)+"%;";
+		ofs.writeLine(strToFilePercentage2);
+*/
+		function calcPrct(allTime, apdTime) {
+		// calc percentage
+			if(allTime==0)
+				return 0;		
+			return Math.floor((apdTime / allTime) * 100);
+		}
+// Наработка		
+		ofs.writeLine(";;;;;;;;;");	
+		
+		var strOperTimeTitle = ";Талевый канат(тм);Буровой насос 1(ч);Буровой насос 2(ч);Лебедка(ч);;;;;";
+		ofs.writeLine(strOperTimeTitle);	
+		
+		var OTWireline = (call('getUaDataByDate',{strnode:oper_time_wireline,datestop:date}).value - call('getUaDataByDate',{strnode:oper_time_wireline,datestop:newDate}).value);	
+		var OTPump1 = (call('getUaDataByDate',{strnode:oper_time_pump1,datestop:date}).value - call('getUaDataByDate',{strnode:oper_time_pump1,datestop:newDate}).value)/3600000;	
+		var OTPump2 = (call('getUaDataByDate',{strnode:oper_time_pump2,datestop:date}).value - call('getUaDataByDate',{strnode:oper_time_pump2,datestop:newDate}).value)/3600000;
+		var OTDrawworks = (call('getUaDataByDate',{strnode:oper_time_drawworks,datestop:date}).value - call('getUaDataByDate',{strnode:oper_time_drawworks,datestop:newDate}).value)/3600000;
+		
+		var strOperTime = "Наработка суточная:"+";"+Math.ceil(OTWireline)+";"+Math.ceil(OTPump1)+";"+Math.ceil(OTPump2)+";"+Math.ceil(OTDrawworks)+";;;;;";
+				
+		ofs.writeLine(strOperTime);
+		
+		//ofs.writeLine(";;;;;;;;;");
+		
+		//ofs.writeLine(strOperTimeTitle);
+		OTWireline = call('getUaDataByDate',{strnode:oper_time_wireline,datestop:date}).value;	
+		OTPump1 = call('getUaDataByDate',{strnode:oper_time_pump1,datestop:date}).value/3600000;	
+		OTPump2 = call('getUaDataByDate',{strnode:oper_time_pump2,datestop:date}).value/3600000;
+		OTDrawworks = call('getUaDataByDate',{strnode:oper_time_drawworks,datestop:date}).value/3600000;
+		
+		strOperTime = "Наработка общая:"+";"+Math.ceil(OTWireline)+";"+Math.ceil(OTPump1)+";"+Math.ceil(OTPump2)+";"+Math.ceil(OTDrawworks)+";;;;;";
+				
+		ofs.writeLine(strOperTime);
+		ofs.writeLine(";;;;;;;;;");
+		
+//////////////////////////////////////////////////////////				
+		
+		//call("reqToNodeServer", {csvname: filename}); 
+		
+	}
+	catch (exp)
+	{
+		console.log("ODBC_report_apd Exception" + exp);
+		if (exp.indexOf('No Data') > -1)
+			return 0; // ok
+		return undefined;
+	}
+	finally
+	{
+//		if (!!ofs && ofs.opened == true)
+		if (!!ofs){
+			ofs.close();
+//			console.log ("ofs close");
+		}
+	}
+}
+}
+catch(e){
+	console.log ("ODBC_report_apd Exception: Cannot open ODBC SQLite");
+} 
+finally
+{
+	if (!!odbcClient){
+		odbcClient.close();
+//		console.log ("odbcClient close");
+	}
+}]]></code>
+</script>

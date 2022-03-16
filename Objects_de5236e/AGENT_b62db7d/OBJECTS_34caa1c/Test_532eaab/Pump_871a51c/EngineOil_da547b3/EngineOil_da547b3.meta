@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.Pump.EngineOil
+NodeClass: Variable
+BrowseName: 1:EngineOil
+DisplayName: en|EngineOil
+Description: en|EngineOil
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

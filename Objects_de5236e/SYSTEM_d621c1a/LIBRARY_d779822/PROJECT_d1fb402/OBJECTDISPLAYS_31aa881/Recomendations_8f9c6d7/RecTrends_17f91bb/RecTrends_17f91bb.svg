@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="1015" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink" width="1850" xmlns="http://www.w3.org/2000/svg" version="1.2">
+ <defs/>
+ <metadata>
+  <atv:gridconfig gridstyle="lines" height="20" enabled="false" width="20"/>
+  <atv:snapconfig height="10" enabled="true" width="10"/>
+ </metadata>
+ <g atv:refpy="0" id="id_13" atv:refpx="0" atv:insensitive="true" transform="matrix(0.9635,0,0,0.9398,0,0)">
+  <rect atv:refpy="540" x="0" height="1080.00" id="id_14" atv:refpx="960" width="1920.00" y="0" fill="#09222e"/>
+ </g>
+ <svg atv:refpy="494.5" x="160" height="965" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Recomendations.RecChart" id="id_0" atv:refpx="325" width="330" y="11">
+  <atv:argument name="ChartBase" value="AGENT.OBJECTS.SimulatedData.double_1"/>
+  <atv:argument name="TitleChart" value="Проходка"/>
+  <atv:argument name="TitleMax" value="Max"/>
+  <atv:argument name="TitleMin" value="Min"/>
+  <atv:argument name="ColorMin" value="#ffff7f"/>
+  <atv:argument name="ColorMax" value="#ff557f"/>
+  <atv:argument name="ColorChart" value="#55ff00"/>
+  <atv:argument name="UnitChart" value="м/ч"/>
+  <atv:argument name="MaxVal" value="10"/>
+  <atv:argument name="MaxBase" value="AGENT.OBJECTS.SimulatedDataMax.DrillSpeed"/>
+  <atv:argument name="MinBase" value="AGENT.OBJECTS.SimulatedDataMin.DrillSpeed"/>
+ </svg>
+ <svg atv:refpy="494.5" x="490" height="965" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Recomendations.RecChart" id="id_1" atv:refpx="655" width="330" y="11">
+  <atv:argument name="ChartBase" value="AGENT.OBJECTS.SimulatedData.double_2"/>
+  <atv:argument name="MaxBase" value="AGENT.OBJECTS.SimulatedDataMax.WeightOnBit"/>
+  <atv:argument name="MinBase" value="AGENT.OBJECTS.SimulatedDataMin.WeightOnBit"/>
+  <atv:argument name="TitleChart" value="Нагрузка на долото"/>
+  <atv:argument name="TitleMax" value="Max"/>
+  <atv:argument name="TitleMin" value="Min"/>
+  <atv:argument name="chartname" value="rec2"/>
+  <atv:argument name="MaxVal" value="10"/>
+  <atv:argument name="ColorChart" value="#f75200"/>
+  <atv:argument name="ColorMax" value="#ff557f"/>
+  <atv:argument name="UnitChart" value="тс"/>
+ </svg>
+ <svg atv:refpy="492.5" x="820" height="965" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Recomendations.RecChart" id="id_2" atv:refpx="985" width="330" y="11">
+  <atv:argument name="ChartBase" value="AGENT.OBJECTS.SimulatedData.double_3"/>
+  <atv:argument name="MaxBase" value="AGENT.OBJECTS.SimulatedDataMax.DiffPressure"/>
+  <atv:argument name="MinBase" value="AGENT.OBJECTS.SimulatedDataMin.DiffPressure"/>
+  <atv:argument name="TitleChart" value="Перепад давления"/>
+  <atv:argument name="TitleMax" value="Max"/>
+  <atv:argument name="TitleMin" value="Min"/>
+  <atv:argument name="chartname" value="rec3"/>
+  <atv:argument name="MaxVal" value="10"/>
+  <atv:argument name="ColorChart" value="#a0a0ef"/>
+  <atv:argument name="ColorMin" value="#ffff7f"/>
+  <atv:argument name="UnitChart" value="МПа"/>
+ </svg>
+ <svg atv:refpy="493.5" x="1150" height="965" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Recomendations.RecChart" id="id_3" atv:refpx="1315" width="330" y="11">
+  <atv:argument name="chartname" value="rec4"/>
+  <atv:argument name="ChartBase" value="AGENT.OBJECTS.SimulatedData.double_4"/>
+  <atv:argument name="MaxBase" value="AGENT.OBJECTS.SimulatedDataMax.TDSTorque"/>
+  <atv:argument name="MinBase" value="AGENT.OBJECTS.SimulatedDataMin.TDSTorque"/>
+  <atv:argument name="TitleMax" value="Max"/>
+  <atv:argument name="TitleMin" value="Min"/>
+  <atv:argument name="TitleChart" value="Момент ВСП"/>
+  <atv:argument name="MaxVal" value="10"/>
+  <atv:argument name="ColorChart" value="#faa700"/>
+  <atv:argument name="ColorMax" value="#ff557f"/>
+  <atv:argument name="ColorMin" value="#ffff7f"/>
+  <atv:argument name="UnitChart" value="кН.м"/>
+ </svg>
+ <svg atv:refpy="492.5" x="1480" height="965" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Recomendations.RecChart" id="id_4" atv:refpx="1645" width="330" y="11">
+  <atv:argument name="chartname" value="rec5"/>
+  <atv:argument name="ChartBase" value="AGENT.OBJECTS.SimulatedData.double_5"/>
+  <atv:argument name="MaxBase" value="AGENT.OBJECTS.SimulatedDataMax.TDSSpeed"/>
+  <atv:argument name="MinBase" value="AGENT.OBJECTS.SimulatedDataMin.TDSSpeed"/>
+  <atv:argument name="TitleMax" value="Max"/>
+  <atv:argument name="TitleMin" value="Min"/>
+  <atv:argument name="TitleChart" value="Скорость ВСП"/>
+  <atv:argument name="ColorChart" value="#aa55ff"/>
+  <atv:argument name="MaxVal" value="10"/>
+  <atv:argument name="ColorMax" value="#ff557f"/>
+  <atv:argument name="ColorMin" value="#ffff7f"/>
+  <atv:argument name="UnitChart" value="об/мин"/>
+ </svg>
+ <svg atv:refpy="1000" x="640" height="30" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Recomendations.tool.toolbar" id="id_5" atv:refpx="710.5" width="141" y="986"/>
+ <svg atv:refpy="1000" x="680" height="30" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Recomendations.tool.button_back" id="id_6" atv:refpx="720" width="80" y="986"/>
+ <svg atv:refpy="1000" x="770" height="30" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Recomendations.tool.button_forward" id="id_7" atv:refpx="810" width="80" y="986"/>
+ <svg atv:refpy="1000" x="1030" height="30" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Recomendations.tool.set_range" id="id_8" atv:refpx="1110" width="160" y="986"/>
+ <svg atv:refpy="1000" x="860" height="30" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Recomendations.tool.picker_date_start" id="id_9" atv:refpx="940" width="160" y="986"/>
+ <svg atv:refpy="492.5" x="40" height="965" xlink:href="SYSTEM.LIBRARY.PROJECT.OBJECTDISPLAYS.Recomendations.mAxis" id="id_10" atv:refpx="100" width="120" y="10"/>
+</svg>

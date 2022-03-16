@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.Pump.MinFlowOutput
+NodeClass: Variable
+BrowseName: 1:MinFlowOutput
+DisplayName: en|MinFlowOutput
+Description: en|MinFlowOutput
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

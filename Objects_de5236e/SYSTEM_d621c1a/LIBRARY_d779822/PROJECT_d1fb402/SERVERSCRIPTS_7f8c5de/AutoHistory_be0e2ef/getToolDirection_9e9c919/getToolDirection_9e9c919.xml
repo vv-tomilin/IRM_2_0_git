@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="nodeToolPosStr" type="string" trigger="false" relative="false" value="AGENT.OBJECTS.IVE50.Tool.ToolPosition"/>
+  <code><![CDATA[var nodeTimeAnalyse = new UaNode('AGENT.OBJECTS.Support.Auto.TimeToAnalyseHook');
+var retObj = call("AutoHistory.MinQuad", {nodeStr: nodeToolPosStr, countSec: nodeTimeAnalyse.value});
+			
+console.log('Tool.angle = '+retObj.angle);
+console.log('Tool.startVal = '+retObj.startVal);
+console.log('Tool.stopVal = '+retObj.stopVal);
+console.log('Tool.avrVal = '+retObj.avrVal);
+console.log('Tool.diffVal = '+retObj.diffVal);
+console.log('Tool.speedVal = '+retObj.speedVal);
+
+if(retObj.angle > 0){
+	if(retObj.angle > 3)
+		return 2;
+	return 1;
+} else if(retObj.angle < 0){
+	if(retObj.angle < -3)
+		return -2; 
+	return -1;
+}
+return 0;]]></code>
+</script>

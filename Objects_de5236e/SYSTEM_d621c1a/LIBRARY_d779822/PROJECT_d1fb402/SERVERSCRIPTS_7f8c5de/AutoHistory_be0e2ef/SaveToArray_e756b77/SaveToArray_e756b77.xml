@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<script>
+  <metadata>
+    <priority>0</priority>
+  </metadata>
+  <parameter name="namebase" type="string" trigger="false" relative="false" value=""/>
+  <code><![CDATA[//var nnode = JSON.parse(JSON.stringify(new UaNode(namebase)));
+var nnode = new UaNode(namebase);
+var strJSONArray = namebase+'.JsonArray';
+//console.log('strJSONArray = '+strJSONArray);
+var nodeJsonArray = new UaNode(strJSONArray);
+if (!nodeJsonArray.exists()){
+   nodeJsonArray.create({
+    nodeclass: UaNode.NODECLASS_VARIABLE,
+    parent: namebase,
+    typedefinition: UaNode.BASEVARIABLETYPE,
+    reference: UaNode.HASCOMPONENT,
+    datatype: UaNode.STRING,
+    valuerank: UaNode.VALUERANK_SCALAR,
+    value:'[]'
+});
+}
+var valJsonArray = nodeJsonArray.value;
+
+//console.log('valJsonArray = '+valJsonArray);
+var arrObj = [];
+if(valJsonArray !=''){
+	arrObj = JSON.parse(valJsonArray);
+}
+
+if(arrObj.length>60){
+	var lastObj = arrObj.shift();
+}
+
+
+//arrObj.push(tnode);
+/*
+console.log('typeof before ='+typeof nnode.sourcetime);
+if(nnode.sourcetime instanceof Date){
+	console.log('it is Date');
+} else {
+	console.log('it is not Date');
+}
+*/
+/*
+var sourcetime = Date.parse(nnode.sourcetime);//nnode.sourcetime.getTime();//new Date(nnode.sourcetime);
+//console.log('sourcetime = '+sourcetime);
+console.log('typeof sourcetime ='+typeof sourcetime+ ' '+sourcetime);
+
+//delete nnode.sourcetime;
+nnode.sourcetime = sourcetime;//new Date(sourcetime);
+console.log('typeof after ='+typeof nnode.sourcetime);
+console.log('sourcetime after ='+ nnode.sourcetime);
+*/
+arrObj.push(nnode);
+
+//console.log('arrObj.length = '+arrObj.length);
+var strJSON = JSON.stringify(arrObj);
+nodeJsonArray.assign({value:strJSON});
+//console.log('strJSON = '+strJSON);
+/*
+var tarr = arrObj.slice(-5);
+tarr.forEach(function(valReq, indx, tarr){
+	console.log('tarr: value = ', valReq.value+', sourcetime = '+ valReq.sourcetime);
+});
+*/]]></code>
+</script>

@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Settings_param.TDSSpeedParam.tds_speed_params
+NodeClass: Variable
+BrowseName: 1:tds_speed_params
+DisplayName: en|tds_speed_params
+Description: en|tds_speed_params
+DataType: String
+ValueRank: 1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.RawData

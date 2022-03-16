@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.MAIN.Google Maps
+NodeClass: Variable
+BrowseName: 1:Google Maps
+DisplayName: en|Google Maps
+Description: en|Google Maps
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

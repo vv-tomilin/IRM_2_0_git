@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.Tabletest.Vocab
+NodeClass: Variable
+BrowseName: 1:Vocab
+DisplayName: en|Vocab
+Description: en|Vocab
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

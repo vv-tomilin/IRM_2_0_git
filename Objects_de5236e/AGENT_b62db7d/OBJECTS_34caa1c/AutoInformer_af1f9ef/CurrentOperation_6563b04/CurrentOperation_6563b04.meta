@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.AutoInformer.CurrentOperation
+NodeClass: Variable
+BrowseName: 1:CurrentOperation
+DisplayName: en|CurrentOperation
+Description: en|CurrentOperation
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

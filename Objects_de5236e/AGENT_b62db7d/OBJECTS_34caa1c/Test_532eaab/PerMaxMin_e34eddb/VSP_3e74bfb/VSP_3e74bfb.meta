@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.Test.PerMaxMin.VSP
+NodeClass: Object
+BrowseName: 1:VSP
+DisplayName: en|VSP
+Description: en|VSP
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

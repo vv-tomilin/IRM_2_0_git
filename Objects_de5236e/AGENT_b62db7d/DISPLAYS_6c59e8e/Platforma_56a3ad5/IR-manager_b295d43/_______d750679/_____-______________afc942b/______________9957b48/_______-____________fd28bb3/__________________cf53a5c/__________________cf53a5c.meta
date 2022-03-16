@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.Platforma.IR-manager.Регион.Ханты-Мансийский АО.Месторождения.Орехово-Ермаковское.Кустовые площадки
+NodeClass: Object
+BrowseName: 1:Кустовые площадки
+DisplayName: en|Кустовые площадки
+Description: en|Кустовые площадки
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

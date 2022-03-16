@@ -1,0 +1,201 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="168" xmlns:atv="http://webmi.atvise.com/2007/svgext" height="45" xmlns="http://www.w3.org/2000/svg" version="1.2">
+ <defs>
+  <linearGradient y1="0" id="linear_1" x2="1" y2="1" gradientUnits="objectBoundingBox" x1="1">
+   <stop stop-color="#ffffff" stop-opacity="0" offset="0"/>
+   <stop stop-color="#ffffff" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient y1="0" id="linear_2" x2="1" y2="1" gradientUnits="objectBoundingBox" x1="1">
+   <stop stop-color="#ffffff" stop-opacity="0.35" offset="0"/>
+   <stop stop-color="#ffffff" stop-opacity="0.35" offset="1"/>
+  </linearGradient>
+ </defs>
+ <title>Group Zoombuttons</title>
+ <desc>This display provides zooming functionality for the visualisation.</desc>
+ <metadata>
+  <atv:parameter defaultvalue="content" valuetype="string" behavior="optional" name="targetFrame" desc="target frame"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvFillColor" valuetype="global" behavior="optional" group="Appearance" name="fillColor" desc="fill color" substitute="$FILLCOLOR$"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvBorderColor" valuetype="global" behavior="optional" group="Appearance" name="borderColor" desc="border color" substitute="$BORDERCOLOR$"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvSymbolColor" valuetype="global" behavior="optional" group="Appearance" name="symbolColor" desc="symbol color" substitute="$SYMBOLCOLOR$"/>
+  <atv:parameter defaultvalue="SYSTEM.GLOBALS.atvInactiveColor" valuetype="global" behavior="optional" group="Appearance" name="fillColorInactive" desc="fill color when inactive"/>
+  <atv:gridconfig gridstyle="lines" width="20" height="20" enabled="false"/>
+  <atv:snapconfig width="10" height="10" enabled="false"/>
+ </metadata>
+ <g id="clickarea_1" transform="matrix(1.074,0,0,1.074,-1.6171,-1.5903)" atv:refpy="23.523" atv:refpx="21.971">
+  <rect id="id_15" y="5.274" ry="3" stroke-width="0.766" atv:refpy="34.326" x="5.299" rx="3" width="34.452" height="34.452" stroke="none" fill="$FILLCOLOR$" atv:refpx="42.941"/>
+  <rect id="button_stroke_1" y="5.274" ry="3" stroke-width="1" atv:refpy="22.842" x="5.299" rx="3" width="34.452" height="34.452" stroke="#ffffff" fill="$FILLCOLOR$" atv:refpx="42.941"/>
+  <svg id="id_5" y="4.694" transform="matrix(1.5312,0,0,1.5312,0,0)" atv:refpy="37.812" x="4.711" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.zoom_in" width="20" height="20" atv:refpx="29.738">
+   <atv:argument prefix="symbolColor" name="symbolColor" value=""/>
+  </svg>
+ </g>
+ <g id="clickarea_2" transform="matrix(1.074,0,0,1.074,0.0208,-1.6641)" atv:refpy="23.024" atv:refpx="61.608">
+  <rect id="id_11" y="5.274" ry="3" stroke-width="0.766" atv:refpy="34.326" x="41.949" rx="3" width="34.452" height="34.452" stroke="none" fill="$FILLCOLOR$" atv:refpx="188.209"/>
+  <rect id="button_stroke_2" y="5.274" ry="3" stroke-width="1" atv:refpy="22.868" x="41.949" rx="3" width="34.452" height="34.452" stroke="#ffffff" fill="$FILLCOLOR$" atv:refpx="203.49"/>
+  <svg id="id_6" y="4.694" transform="matrix(1.5312,0,0,1.5312,0,0)" atv:refpy="22.5" x="28.646" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.zoom_out" width="20" height="20" atv:refpx="189.551">
+   <atv:argument prefix="symbolColor" name="symbolColor" value=""/>
+  </svg>
+ </g>
+ <g id="clickarea_3" transform="matrix(1.074,0,0,1.074,1.6576,-1.4937)" atv:refpy="23.022" atv:refpx="101.974">
+  <rect id="button_bg" y="5.274" ry="3" stroke-width="0.766" atv:refpy="50.025" x="78.6" rx="3" width="34.452" height="34.452" stroke="none" fill="$FILLCOLOR$" atv:refpx="466.972"/>
+  <rect id="button_stroke_3" y="5.274" ry="3" stroke-width="1" atv:refpy="22.842" x="78.6" rx="3" width="34.452" height="34.452" stroke="#ffffff" fill="$FILLCOLOR$" atv:refpx="337.477"/>
+  <svg id="id_9" y="4.694" transform="matrix(1.5312,0,0,1.5312,0,0)" atv:refpy="22.5" x="52.582" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.zoom_rect" width="20" height="20" atv:refpx="334.82">
+   <atv:argument prefix="symbolColor" name="symbolColor" value=""/>
+  </svg>
+ </g>
+ <g id="clickarea_4" transform="matrix(1.074,0,0,1.074,3.2966,-1.6641)" atv:refpy="22.506" atv:refpx="142.382">
+  <rect id="id_18" y="5.274" ry="3" stroke-width="0.766" atv:refpy="53.336" x="115.249" rx="3" width="34.452" height="34.452" stroke="none" fill="$FILLCOLOR$" atv:refpx="495.703"/>
+  <rect id="button_stroke_4" y="5.274" ry="3" stroke-width="1" atv:refpy="28.116" x="115.249" rx="3" width="34.452" height="34.452" stroke="#ffffff" fill="$FILLCOLOR$" atv:refpx="484.743"/>
+  <svg id="id_12" y="4.694" transform="matrix(1.5312,0,0,1.5312,0,0)" atv:refpy="37.344" x="76.517" xlink:href="SYSTEM.LIBRARY.ATVISE.OBJECTDISPLAYS.Symbols.zoom_1" width="20" height="20" atv:refpx="480.084">
+   <atv:argument prefix="symbolColor" name="symbolColor" value=""/>
+  </svg>
+ </g>
+ <script type="text/ecmascript"><![CDATA[var strokeNormal = "none";
+var strokePressed = webMI.query["strokePressed"];
+var zoomFactor = 0.1;
+var frameName = webMI.query["targetFrame"];
+
+
+webMI.trigger.connect("setFrame", function(e) {
+	myFrame = e.value;
+});
+
+webMI.addEvent("clickarea_1", "mousedown", function(e) {
+	var id = "clickarea_1";
+	var value = true;
+	return function(value) {
+		webMI.gfx.setFill("button_stroke_1", "url(#linear_2)");
+	} (value);
+});
+
+webMI.addEvent("clickarea_1", "mouseup", function(e) {
+	var id = "clickarea_1";
+	var value = true;
+	return function(value) {
+		webMI.gfx.setFill("button_stroke_1", "url(#linear_1)");
+	} (value);
+});
+
+webMI.addEvent("clickarea_1", "mouseout", function(e) {
+	var id = "clickarea_1";
+	var value = true;
+	return function(value) {
+		webMI.gfx.setFill("button_stroke_1", "url(#linear_1)");
+	} (value);
+});
+
+webMI.addEvent("clickarea_1", "click", function(e) {
+	var id = "clickarea_1";
+	var value = true;
+	return function(value) {
+		webMI.trigger.fire("com.atvise.zoomIn_" + frameName, true);
+	} (value);
+});
+
+webMI.addEvent("clickarea_2", "mousedown", function(e) {
+	var id = "clickarea_2";
+	var value = true;
+	return function(value) {
+		webMI.gfx.setFill("button_stroke_2", "url(#linear_2)");
+	} (value);
+});
+
+webMI.addEvent("clickarea_2", "mouseup", function(e) {
+	var id = "clickarea_2";
+	var value = true;
+	return function(value) {
+		webMI.gfx.setFill("button_stroke_2", "url(#linear_1)");
+	} (value);
+});
+
+webMI.addEvent("clickarea_2", "mouseout", function(e) {
+	var id = "clickarea_2";
+	var value = true;
+	return function(value) {
+		webMI.gfx.setFill("button_stroke_2", "url(#linear_1)");
+	} (value);
+});
+
+webMI.addEvent("clickarea_2", "click", function(e) {
+	var id = "clickarea_2";
+	var value = true;
+	return function(value) {
+		webMI.trigger.fire("com.atvise.zoomOut_" + frameName, true);
+	} (value);
+});
+
+var touchDevice = webMI.getClientInfo() ? webMI.getClientInfo().isMultiTouchDevice : false;
+
+if (!touchDevice) {
+	registerEventsForClickarea3();
+} else {
+	webMI.gfx.setFill("button_stroke_3", webMI.query["fillColorInactive"]);
+}
+
+function registerEventsForClickarea3() {
+
+	webMI.addEvent("clickarea_3", "mousedown", function(e) {
+		var id = "clickarea_3";
+		var value = true;
+		return function(value) {
+			webMI.gfx.setFill("button_stroke_3", "url(#linear_2)");
+		} (value);
+	});
+	
+	webMI.addEvent("clickarea_3", "mouseup", function(e) {
+		var id = "clickarea_3";
+		var value = true;
+		return function(value) {
+			webMI.gfx.setFill("button_stroke_3", "url(#linear_1)");
+		} (value);
+	});
+	
+	webMI.addEvent("clickarea_3", "mouseout", function(e) {
+		var id = "clickarea_3";
+		var value = true;
+		return function(value) {
+			webMI.gfx.setFill("button_stroke_3", "url(#linear_1)");
+		} (value);
+	});
+	
+	webMI.addEvent("clickarea_3", "click", function(e) {
+		var id = "clickarea_3";
+		var value = true;
+		return function(value) {
+			webMI.trigger.fire("com.atvise.zoomRect_" + frameName, true);
+		} (value);
+	});
+
+}
+
+webMI.addEvent("clickarea_4", "mousedown", function(e) {
+	var id = "clickarea_4";
+	var value = true;
+	return function(value) {
+		webMI.gfx.setFill("button_stroke_4", "url(#linear_2)");
+	} (value);
+});
+
+webMI.addEvent("clickarea_4", "mouseup", function(e) {
+	var id = "clickarea_4";
+	var value = true;
+	return function(value) {
+		webMI.gfx.setFill("button_stroke_4", "url(#linear_1)");
+	} (value);
+});
+
+webMI.addEvent("clickarea_4", "mouseout", function(e) {
+	var id = "clickarea_4";
+	var value = true;
+	return function(value) {
+		webMI.gfx.setFill("button_stroke_4", "url(#linear_1)");
+	} (value);
+});
+
+webMI.addEvent("clickarea_4", "click", function(e) {
+	var id = "clickarea_4";
+	var value = true;
+	return function(value) {
+		webMI.trigger.fire("com.atvise.zoom11_" + frameName, true);
+	} (value);
+});]]></script>
+</svg>

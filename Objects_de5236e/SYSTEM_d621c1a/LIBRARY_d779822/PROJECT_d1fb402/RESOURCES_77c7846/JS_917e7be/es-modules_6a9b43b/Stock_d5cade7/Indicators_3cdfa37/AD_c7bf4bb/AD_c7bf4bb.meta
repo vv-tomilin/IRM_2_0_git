@@ -1,0 +1,7 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/JS/es-modules/Stock/Indicators/AD
+NodeClass: Object
+BrowseName: 1:AD
+DisplayName: en|AD
+Description: en|AD
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

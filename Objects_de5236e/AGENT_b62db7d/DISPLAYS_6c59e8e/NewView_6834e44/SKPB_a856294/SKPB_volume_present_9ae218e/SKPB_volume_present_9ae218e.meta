@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.SKPB.SKPB_volume_present
+NodeClass: Variable
+BrowseName: 1:SKPB_volume_present
+DisplayName: en|SKPB_volume_present
+Description: en|SKPB_volume_present
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

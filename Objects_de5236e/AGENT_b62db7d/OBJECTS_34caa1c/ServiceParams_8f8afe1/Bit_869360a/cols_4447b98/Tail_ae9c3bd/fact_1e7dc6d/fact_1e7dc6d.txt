@@ -1,0 +1,1 @@
+{"rows":[{"KNBK":"","load":"40.00","flowInput":"10000.00","maxLoad":"40.00","diffPressure":"0","minVmex":"10.00","bitNumber":"","descNumber":"","bitDiam":"","bitModel":"","serialNumber":"","mods":"","depthFromTo":"1255.00-1255.00","drillDepth":"2","drillTime":"","mPerHour":"","bitCondition":"","comment":""}]}

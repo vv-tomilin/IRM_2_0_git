@@ -1,0 +1,8 @@
+NodeId: ns=1;s=AGENT.HISTORY.AGGREGATETEMPLATES.ATDelta
+NodeClass: Object
+BrowseName: 1:ATDelta
+DisplayName: en|ATDelta
+Description: en|ATDelta
+EventNotifier: 0
+Reference: forward HasModellingRule Shared
+Reference: forward HasTypeDefinition ns=1;s=ObjectTypes.ATVISE.AggregateTemplate
