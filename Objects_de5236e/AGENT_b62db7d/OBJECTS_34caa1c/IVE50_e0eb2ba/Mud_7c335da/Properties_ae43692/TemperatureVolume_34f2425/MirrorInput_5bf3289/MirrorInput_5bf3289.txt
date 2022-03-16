@@ -1,1 +1,1 @@
-arOPC/ModbusIVE50.IVE50.Mud.Properties.TemperatureInput
+WITS_GTI/34

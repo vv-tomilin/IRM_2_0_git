@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.FlowOutput.high
+NodeClass: Variable
+BrowseName: 1:high
+DisplayName: en|high
+Description: en|high
+DataType: Int32
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

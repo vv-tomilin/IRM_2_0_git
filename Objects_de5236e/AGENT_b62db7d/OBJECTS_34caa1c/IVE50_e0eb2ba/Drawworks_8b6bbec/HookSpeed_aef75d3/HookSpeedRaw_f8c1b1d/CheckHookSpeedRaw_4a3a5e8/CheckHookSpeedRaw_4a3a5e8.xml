@@ -14,6 +14,7 @@ var operObj = JSON.parse(call('GetVarValue',{varname:'AGENT.OBJECTS.Support.Auto
 //if(diffWellPos > 0.5 && nnode.value != 0 && operObj.oper != 'БУРЕНИЕ' ){
 if(diffWellPos > 0.5 && nnode.value != 0 ){
 	call('SetVarValue',{varname:'AGENT.OBJECTS.IVE50.Drawworks.HookSpeed',varvalue:nnode.value});
+	call('SetVarValue',{varname:'AGENT.OBJECTS.IVE50.Well.DrillSpeed',varvalue:0.0});
 } else {
 	call('SetVarValue',{varname:'AGENT.OBJECTS.IVE50.Drawworks.HookSpeed',varvalue:0.0});
 }

@@ -9,6 +9,7 @@ var toolPos = call('GetVarValue',{varname:'AGENT.OBJECTS.IVE50.Tool.ToolPosition
 var diffWellPos = wellDepth-toolPos;
 if(diffWellPos < 0.5 && nnode.value != 0){
 	call('SetVarValue',{varname:'AGENT.OBJECTS.IVE50.Well.DrillSpeed',varvalue:nnode.value});
+	call('SetVarValue',{varname:'AGENT.OBJECTS.IVE50.Drawworks.HookSpeed',varvalue:0.0});
 } else {
 	call('SetVarValue',{varname:'AGENT.OBJECTS.IVE50.Well.DrillSpeed',varvalue:0.0});
 }

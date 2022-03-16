@@ -1,9 +1,0 @@
-NodeId: ns=1;s=AGENT.OBJECTS.IVE50.IVE50.Drawworks.LoadOnBit.LoadOnBitSensor.CheckLoadOnBitSensor
-NodeClass: Variable
-BrowseName: 1:CheckLoadOnBitSensor
-DisplayName: en|CheckLoadOnBitSensor
-Description: en|CheckLoadOnBitSensor
-DataType: XmlElement
-ValueRank: -1
-AccessLevel: 7
-Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.ScriptCode

@@ -1,1 +1,1 @@
-arOPC/ModbusIVE50.IVE50.Mud.Pump.FlowPump1
+arOPC/ModbusIVE50.IVE50.Mud.FlowPump1

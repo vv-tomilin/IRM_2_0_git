@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<script>
-  <metadata>
-    <priority>0</priority>
-  </metadata>
-  <parameter name="nnode" type="node" trigger="false" relative="false" value="ns=1;s=AGENT.OBJECTS.IVE50.Mud.Properties.DensityVolume1"/>
-  <code><![CDATA[var result = call("SendHTTPJson", {node_id: base.nodeid});]]></code>
-</script>

@@ -4,5 +4,6 @@
     <priority>0</priority>
   </metadata>
   <parameter name="interval" type="interval" trigger="true" relative="false" value="" offset="00:00:05" interval="00:01:00"/>
-  <code><![CDATA[//var res = call("SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.Auto.CountTalKanat", {nsourcenode: base});]]></code>
+  <code><![CDATA[var res = call("CalcRunMs", {nsourcenode: base});
+var res = call("SYSTEM.LIBRARY.PROJECT.SERVERSCRIPTS.Auto.CountTalKanat", {nsourcenode: base});]]></code>
 </script>
