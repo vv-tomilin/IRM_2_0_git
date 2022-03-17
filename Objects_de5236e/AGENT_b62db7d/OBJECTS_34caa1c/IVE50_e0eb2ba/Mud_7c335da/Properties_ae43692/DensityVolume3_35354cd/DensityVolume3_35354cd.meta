@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.Properties.DensityVolume3
+NodeClass: Variable
+BrowseName: 1:DensityVolume3
+DisplayName: en|DensityVolume3
+Description: en|DensityVolume3
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

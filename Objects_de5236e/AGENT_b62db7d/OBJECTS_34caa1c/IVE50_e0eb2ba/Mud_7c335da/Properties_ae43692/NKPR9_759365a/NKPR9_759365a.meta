@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.IVE50.Mud.Properties.NKPR9
+NodeClass: Variable
+BrowseName: 1:NKPR9
+DisplayName: en|NKPR9
+Description: en|NKPR9
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
