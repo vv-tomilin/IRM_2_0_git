@@ -1,1 +1,1 @@
-s1500/ns=3;s="Well1"."Depth"."Value"
+s1500/ns=3;s="OPC_IR_Assistant_OUT_DB"."Well_Depth"."Value"

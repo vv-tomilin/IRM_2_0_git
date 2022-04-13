@@ -61,5 +61,5 @@ webMI.callExtension("SYSTEM.LIBRARY.ATVISE.QUICKDYNAMICS.Set Text", {"decimalPla
  <text atv:refpx="1612.9" atv:refpy="19" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="currentData" x="1603.9" y="24.5">00</text>
  <text atv:refpx="1723.553" atv:refpy="19" fill="#34a9d0" font-family="Arial" font-size="16" font-weight="bold" id="id_0" x="1706.553" y="24.5">0,0,0</text>
  <text atv:refpx="1724.83" atv:refpy="42" fill="#34a9d0" font-family="Arial" font-size="16" font-weight="bold" id="id_1" x="1707.83" y="47.5">0,0,0</text>
- <text atv:refpx="1457.767" atv:refpy="41.522" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_5" x="1390.229" y="47.022">Ханты-Мансийск</text>
+ <text atv:refpx="1429.252" atv:refpy="41.522" fill="#ffffff" font-family="Arial" font-size="16" font-weight="bold" id="id_5" x="1390.229" y="47.022">Ноябрьск</text>
 </svg>

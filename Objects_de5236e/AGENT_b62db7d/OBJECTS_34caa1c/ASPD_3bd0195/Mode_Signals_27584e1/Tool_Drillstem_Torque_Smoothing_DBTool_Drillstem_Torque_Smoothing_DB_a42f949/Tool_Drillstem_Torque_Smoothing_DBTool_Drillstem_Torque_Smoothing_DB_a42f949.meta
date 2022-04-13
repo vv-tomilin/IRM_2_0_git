@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Mode_Signals.Tool_Drillstem_Torque_Smoothing_DBTool_Drillstem_Torque_Smoothing_DB
+NodeClass: Variable
+BrowseName: 1:Tool_Drillstem_Torque_Smoothing_DBTool_Drillstem_Torque_Smoothing_DB
+DisplayName: en|Tool_Drillstem_Torque_Smoothing_DBTool_Drillstem_Torque_Smoothing_DB
+Description: en|Tool_Drillstem_Torque_Smoothing_DBTool_Drillstem_Torque_Smoothing_DB
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

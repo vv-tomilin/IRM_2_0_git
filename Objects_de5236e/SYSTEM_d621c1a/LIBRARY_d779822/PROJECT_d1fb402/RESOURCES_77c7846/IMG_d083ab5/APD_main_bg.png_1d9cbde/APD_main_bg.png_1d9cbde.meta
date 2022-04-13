@@ -1,0 +1,9 @@
+NodeId: ns=1;s=SYSTEM.LIBRARY.PROJECT.RESOURCES/IMG/APD_main_bg.png
+NodeClass: Variable
+BrowseName: 1:APD_main_bg.png
+DisplayName: en|APD_main_bg.png
+Description: en|APD_main_bg.png
+DataType: ByteString
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Resource.Png

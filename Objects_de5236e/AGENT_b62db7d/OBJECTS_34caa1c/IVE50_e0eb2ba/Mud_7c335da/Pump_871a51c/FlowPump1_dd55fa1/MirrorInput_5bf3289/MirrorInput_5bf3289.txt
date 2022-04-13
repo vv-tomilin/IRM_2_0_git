@@ -1,1 +1,1 @@
-arOPC/ModbusIVE50.IVE50.Mud.FlowPump1
+s1500/ns=3;s="DPMS_Data"."Data"[31]."Value"

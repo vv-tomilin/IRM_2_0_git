@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Mode_Signals
+NodeClass: Object
+BrowseName: 1:Mode_Signals
+DisplayName: en|Mode_Signals
+Description: en|Mode_Signals
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

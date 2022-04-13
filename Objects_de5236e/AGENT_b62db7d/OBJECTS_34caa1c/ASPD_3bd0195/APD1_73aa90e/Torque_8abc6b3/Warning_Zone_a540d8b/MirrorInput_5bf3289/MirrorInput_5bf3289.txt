@@ -1,1 +1,1 @@
-s1500/ns=3;s="APD1"."Torque"."Reg"."Warning_Zone"
+s1500/ns=3;s="APD1"."Torque"."Warning_Zone"

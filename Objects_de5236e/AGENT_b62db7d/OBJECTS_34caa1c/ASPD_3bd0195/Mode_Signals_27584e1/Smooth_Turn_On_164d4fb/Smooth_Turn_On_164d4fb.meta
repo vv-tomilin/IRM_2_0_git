@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Mode_Signals.Smooth_Turn_On
+NodeClass: Variable
+BrowseName: 1:Smooth_Turn_On
+DisplayName: en|Smooth_Turn_On
+Description: en|Smooth_Turn_On
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

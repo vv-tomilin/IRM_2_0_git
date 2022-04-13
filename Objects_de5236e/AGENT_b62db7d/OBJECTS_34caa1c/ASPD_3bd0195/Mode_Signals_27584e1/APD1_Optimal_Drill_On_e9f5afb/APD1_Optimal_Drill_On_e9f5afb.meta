@@ -1,0 +1,10 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Mode_Signals.APD1_Optimal_Drill_On
+NodeClass: Variable
+BrowseName: 1:APD1_Optimal_Drill_On
+DisplayName: en|APD1_Optimal_Drill_On
+Description: en|APD1_Optimal_Drill_On
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType
+Reference: forward HasHistoricalConfiguration ns=1;s=AGENT.HISTORY.Evrotec

@@ -3,4 +3,4 @@ NodeClass: ObjectType
 BrowseName: 1:PROJECT
 DisplayName: en|PROJECT
 Description: en|PROJECT
-IsAbstract: false
+IsAbstract: true

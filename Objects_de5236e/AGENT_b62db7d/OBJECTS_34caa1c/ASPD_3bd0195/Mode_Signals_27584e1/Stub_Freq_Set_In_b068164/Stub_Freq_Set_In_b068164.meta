@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Mode_Signals.Stub_Freq_Set_In
+NodeClass: Variable
+BrowseName: 1:Stub_Freq_Set_In
+DisplayName: en|Stub_Freq_Set_In
+Description: en|Stub_Freq_Set_In
+DataType: Float
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

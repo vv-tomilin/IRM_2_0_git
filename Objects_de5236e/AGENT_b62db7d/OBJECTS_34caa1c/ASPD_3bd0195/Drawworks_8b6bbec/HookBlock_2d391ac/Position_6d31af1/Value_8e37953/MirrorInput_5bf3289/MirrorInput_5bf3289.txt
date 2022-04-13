@@ -1,1 +1,1 @@
-s1500/ns=3;s="Drawworks1"."HookBlock"."Position"."Value"."Ing"
+s1500/ns=3;s="Drawworks1"."HookBlock"."Position"."Value"

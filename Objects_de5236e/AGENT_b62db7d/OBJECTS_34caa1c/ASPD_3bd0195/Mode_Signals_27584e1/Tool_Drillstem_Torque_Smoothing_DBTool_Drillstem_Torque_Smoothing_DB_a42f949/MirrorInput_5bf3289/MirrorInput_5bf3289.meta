@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Mode_Signals.Tool_Drillstem_Torque_Smoothing_DBTool_Drillstem_Torque_Smoothing_DB.MirrorInput
+NodeClass: Variable
+BrowseName: 1:MirrorInput
+DisplayName: en|MirrorInput
+Description: en|MirrorInput
+DataType: String
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Mirror.Input

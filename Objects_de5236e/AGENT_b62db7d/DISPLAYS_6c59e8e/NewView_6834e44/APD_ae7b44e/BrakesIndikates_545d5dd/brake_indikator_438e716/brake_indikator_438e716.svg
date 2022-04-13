@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<svg height="16" version="1.2" width="144" xmlns="http://www.w3.org/2000/svg" xmlns:atv="http://webmi.atvise.com/2007/svgext" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs/>
+ <metadata>
+  <atv:parameter behavior="mandatory" desc="Переменная" name="brakeBase" valuetype="address"/>
+  <atv:parameter behavior="mandatory" defaultvalue="Label" desc="Название тормоза" name="label" substitute="$LABEL$" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="#e0e5ec" desc="Заливка фона" group="Other" name="fill" substitute="$FILL$" valuetype="color"/>
+  <atv:parameter behavior="mandatory" desc="min" name="min" valuetype="address"/>
+  <atv:parameter behavior="mandatory" desc="max" name="max" valuetype="address"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="fontSize" group="Other" name="fontSize" substitute="$FONTSIZE$" valuetype="string"/>
+  <atv:parameter behavior="optional" defaultvalue="#0000ff" desc="Цвет индикатора" group="Indikator" name="indicatorColor" substitute="$INDICATORCOLOR$" valuetype="color"/>
+  <atv:parameter behavior="optional" defaultvalue="" desc="Цвет подложки индикатора" group="Indikator" name="backBgIndicator" substitute="$BACKBGINDICATOR$" valuetype="color"/>
+  <atv:gridconfig enabled="false" gridstyle="lines" height="20" width="20"/>
+  <atv:snapconfig enabled="false" height="10" width="10"/>
+ </metadata>
+ <script atv:desc="" atv:name="" type="text/ecmascript"><![CDATA[
+webMI.data.subscribe(webMI.query['brakeBase'], function(e) {
+var id = "id_2";
+var value = e.value;
+
+webMI.data.read([webMI.query['min'], webMI.query['max']], function(g) {
+
+	var min = g[0].value;
+	var max = g[1].value;
+
+	webMI.gfx.setScaleX(id, webMI.translate(value, min, max, 0, 1));
+});
+
+});
+
+]]></script>
+ <rect atv:refpx="28.474" atv:refpy="15.218" fill="$FILL$" height="16" id="id_5" stroke="none" stroke-width="0" width="144" x="0" y="0"/>
+ <rect atv:refpx="96.231" atv:refpy="7.877" fill="#e1e1e1" height="14.67" id="id_1" stroke="$BACKBGINDICATOR$" stroke-width="1.162" width="97.384" x="45.901" y="0.542"/>
+ <rect atv:refpx="46.035" atv:refpy="7.923" fill="$INDICATORCOLOR$" height="15.135" id="id_2" stroke="#000000" stroke-width="1.162" width="97.384" x="46.035" y="0.581"/>
+ <text atv:refpx="15.822" atv:refpy="7.177" fill="#5b5b5b" font-family="Arial" font-size="$FONTSIZE$" id="id_4" text-anchor="middle" transform="matrix(0.6201,0,0,0.5407,7.8951,2.4279)" x="40.282" y="21.286">$LABEL$</text>
+</svg>

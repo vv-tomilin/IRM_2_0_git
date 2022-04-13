@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Mode_Signals.Rotation_Turn_On
+NodeClass: Variable
+BrowseName: 1:Rotation_Turn_On
+DisplayName: en|Rotation_Turn_On
+Description: en|Rotation_Turn_On
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

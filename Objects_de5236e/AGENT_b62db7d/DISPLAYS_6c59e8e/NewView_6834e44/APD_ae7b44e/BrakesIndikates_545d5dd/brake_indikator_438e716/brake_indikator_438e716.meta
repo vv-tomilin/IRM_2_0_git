@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.APD.BrakesIndikates.brake_indikator
+NodeClass: Variable
+BrowseName: 1:brake_indikator
+DisplayName: en|brake_indikator
+Description: en|brake_indikator
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display

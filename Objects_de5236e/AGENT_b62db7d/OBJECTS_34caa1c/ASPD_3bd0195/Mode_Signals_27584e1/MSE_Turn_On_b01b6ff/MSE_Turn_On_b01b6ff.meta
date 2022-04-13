@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.OBJECTS.ASPD.Mode_Signals.MSE_Turn_On
+NodeClass: Variable
+BrowseName: 1:MSE_Turn_On
+DisplayName: en|MSE_Turn_On
+Description: en|MSE_Turn_On
+DataType: Boolean
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition BaseVariableType

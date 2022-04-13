@@ -1,0 +1,7 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.APD.BrakesIndikates
+NodeClass: Object
+BrowseName: 1:BrakesIndikates
+DisplayName: en|BrakesIndikates
+Description: en|BrakesIndikates
+EventNotifier: 0
+Reference: forward HasTypeDefinition FolderType

@@ -1,0 +1,9 @@
+NodeId: ns=1;s=AGENT.DISPLAYS.NewView.APD.APD_Main2
+NodeClass: Variable
+BrowseName: 1:APD_Main2
+DisplayName: en|APD_Main2
+Description: en|APD_Main2
+DataType: XmlElement
+ValueRank: -1
+AccessLevel: 7
+Reference: forward HasTypeDefinition ns=1;s=VariableTypes.ATVISE.Display
